@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>相声师承谱系 · 清末至今</title>
+<meta name="description" content="根据公开资料整理的中国相声演员师承谱系：正式师承、代拉/引保代、亲缘与姻缘关系。">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header>
+  <div class="brand"><span class="logo">谱</span><div><h1>相声师承谱系</h1><small>清末至今 · 公开资料整理</small></div></div>
+  <nav>
+    <a href="#graph" data-view="graph">图谱</a>
+    <a href="#people" data-view="people">人物表</a>
+    <a href="#relations" data-view="relations">关系表</a>
+    <a href="#about" data-view="about">说明与来源</a>
+  </nav>
+</header>
+
+<main>
+<section id="view-graph" class="view">
+  <div class="toolbar">
+    <div class="search">
+      <input id="q" type="search" placeholder="搜索人名或艺名，例如：马三立、郭德纲、侯宝林" autocomplete="off">
+      <ul id="suggest" class="suggest" hidden></ul>
+    </div>
+    <div class="ctrl">
+      <label>模式
+        <select id="mode">
+          <option value="network">全网络（力导向）</option>
+          <option value="ego">聚焦所选人物</option>
+        </select>
+      </label>
+      <label class="ego-only">向下代数 <select id="depthDown"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></label>
+      <label class="ego-only">向上 <select id="depthUp"><option>1</option><option>2</option><option>3</option><option selected>99</option></select></label>
+      <label>代数 <select id="gmin"></select> – <select id="gmax"></select></label>
+    </div>
+    <div class="ctrl types">
+      <label class="t-md"><input type="checkbox" data-type="master_disciple" checked> 师徒</label>
+      <label class="t-other"><input type="checkbox" data-type="other" checked> 代拉/引保代/口盟等</label>
+      <label class="t-kin"><input type="checkbox" data-type="kin" checked> 亲缘</label>
+      <label class="t-mar"><input type="checkbox" data-type="marriage" checked> 姻缘</label>
+      <label class="t-dis"><input type="checkbox" id="showDisputed" checked> 显示存疑</label>
+      <label><input type="checkbox" id="labels"> 显示全部姓名</label>
+      <button id="relayout" type="button">重新力导布局</button>
+      <button id="fit" type="button">适配视图</button>
+    </div>
+  </div>
+  <div class="graph-wrap">
+    <div id="cy" aria-label="师承关系图"></div>
+    <aside id="panel"><div class="placeholder">点击图中人物或搜索，查看其师父、徒弟与亲属。</div></aside>
+  </div>
+  <div class="legend">
+    <span><i class="ln md"></i>师徒（箭头指向徒弟）</span>
+    <span><i class="ln other"></i>代拉 / 引保代 / 口盟 / 义亲</span>
+    <span><i class="ln kin"></i>亲缘</span>
+    <span><i class="ln mar"></i>姻缘</span>
+    <span><i class="ln dis"></i>存疑（橙色）</span>
+    <span><i class="dot rel"></i>非谱系内亲属</span>
+    <span id="genLegend"></span>
+    <span class="muted">节点大小＝关系数；可拖拽、滚轮/双指缩放</span>
+    <span id="stat"></span>
+  </div>
+</section>
+
+<section id="view-people" class="view" hidden>
+  <div class="tbl-tools"><input id="pq" type="search" placeholder="筛选人物（姓名/艺名/备注）"> <select id="pgen"><option value="">全部代数</option></select> <span id="pcount"></span></div>
+  <div class="tbl-wrap"><table id="ptable"><thead><tr>
+    <th data-k="name">姓名</th><th data-k="generation">代</th><th data-k="zibei">字辈</th><th data-k="birth">生</th><th data-k="death">卒</th>
+    <th data-k="masters">师父</th><th data-k="ndis">徒弟数</th><th data-k="notes">备注</th><th>来源</th></tr></thead><tbody></tbody></table></div>
+</section>
+
+<section id="view-relations" class="view" hidden>
+  <div class="tbl-tools"><input id="rq" type="search" placeholder="筛选关系（人名/说明）">
+    <select id="rtype"><option value="">全部类型</option><option value="master_disciple">师徒</option><option value="other">代拉/引保代等</option><option value="kin">亲缘</option><option value="marriage">姻缘</option></select>
+    <select id="rconf"><option value="">全部可信度</option><option value="documented">有记载</option><option value="disputed">存疑</option></select> <span id="rcount"></span></div>
+  <div class="tbl-wrap"><table id="rtable"><thead><tr>
+    <th data-k="type">类型</th><th data-k="fromName">从（师/长）</th><th data-k="toName">到（徒/亲）</th><th data-k="detail">说明</th><th data-k="confidence">可信度</th><th>来源</th></tr></thead><tbody></tbody></table></div>
+</section>
+
+<section id="view-about" class="view" hidden>
+  <article class="about">
+    <h2>说明</h2>
+    <p>本站根据公开资料整理中国相声演员的师承谱系，时间范围从清末（张三禄、朱绍文“穷不怕”、阿彦涛、沈春和）到当代（德云社“云鹤九霄”、“筱”字辈等）。每位人物和每条关系都附有来源链接。</p>
+    <h3>辈分与字辈</h3>
+    <p>相声界通行把张三禄算作第一代，朱绍文、阿彦涛、沈春和为第二代，分为朱、阿、沈三派。第四代至第八代按“<b>德、寿、宝、文、明</b>”排字（也曾有“德、寿、立、仁、义”之说，较少使用）。第一至第三代、第九代及以后没有全行业统一的字辈；各门户自行排字，例如德云社郭德纲门下“云、鹤、九、霄”，再下一辈“筱”字；青曲社“海纳百川万象归春”。</p>
+    <h3>关系类型</h3>
+    <ul>
+      <li><b>师徒</b>：正式拜师（摆知）的师承，箭头由师父指向徒弟。</li>
+      <li><b>代拉/引保代/口盟等</b>：代拉师弟（代师收徒）、拜师时的引师、保师、代师，口盟弟子，义父子，以及早年学艺但不算正式师承等情况。</li>
+      <li><b>亲缘</b>：父子、兄弟、祖孙、舅甥、表亲等血缘关系。</li>
+      <li><b>姻缘</b>：夫妻、翁婿等婚姻关系。</li>
+    </ul>
+    <h3>可信度</h3>
+    <p><b>有记载</b>：至少一个公开来源明确列出。<b>存疑</b>：来源本身标注存疑，不同来源说法冲突，师徒关系后来被解除，或只有网络转载、自媒体之类的弱来源。相声门户的师承本来就常有“改换门庭”、“代拉”、“清门”、“辈分自降”等复杂情况，请把本站当作索引，不要当作定论。</p>
+    <h3>方法</h3>
+    <ol>
+      <li>主干取自维基百科《相声演员师承关系》条目。该条目以中国相声网《师承关系表》（据阎笑儒1960年传殷文硕的《相声宗谱》誊写）为主，第九代以梨园论坛《相声师承关系——九代传人》为主。</li>
+      <li>逐一读取约190个相声演员维基条目里的“师承关系”信息框（从师、世代、辈分、徒弟）和“配偶/父母/儿女/亲属”栏目，再与正文中“之子”、“门婿”、“代拉”、“引保代”等表述互相印证，补充师徒和亲缘、姻缘关系。</li>
+      <li>德云社部分依据郭德纲条目引用的2016年《德云社家谱》（北京晨报），并参考网络整理文章补充“筱、昊、展、奉”等再传弟子；青曲社、孟鹤堂等依据公开报道补充。</li>
+      <li>同名人物：若师父不同、无法确认是否同一人，就分开收录并加注说明；繁简异体、条目消歧义造成的重复，在同一师父下按同名合并。</li>
+      <li>代数：优先采用谱系表的位置和个人条目里的“世代”，其余按师承逐代推定（标为“按师承推定”）。</li>
+    </ol>
+    <h3>参考的同类项目与资料</h3>
+    <ul>
+      <li><a href="https://github.com/jammyfu/xiangsheng-genealogy" target="_blank" rel="noopener">jammyfu/xiangsheng-genealogy《相声家谱》</a>（MIT 许可）：一个开源的水墨三维师承图谱。本站读取了它整理的 338 条带出处的师承边，用来交叉核对，并采用了其中的存疑标注、补充师承和来源链接（凡采用处都在关系的来源和备注里写明了出处）；没有复制它的代码。</li>
+      <li><a href="https://blog.xikao.com/2014/07/14/1273" target="_blank" rel="noopener">梨园百年琐记“师承谱图”</a>（戏考）：根据《相声师承关系总表》整理的逐人展开式谱图，用虚线表示代拉师弟。本站的代拉、引保代关系分类参考了它的做法。</li>
+      <li><a href="https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB" target="_blank" rel="noopener">维基百科《相声演员师承关系》</a>（CC BY-SA 4.0）：本站师承的主干数据。</li>
+      <li><a href="https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206" target="_blank" rel="noopener">百度百科《相声师承关系总表》</a>和<a href="https://big5.cctv.com/gate/big5/ent.cctv.com/special/C18744/20070624/102823.shtml" target="_blank" rel="noopener">央视网转载天津日报“中国相声师承关系族谱”</a>：早期几代的旧谱，用来核对不同说法（例如沈竹善、春长隆、冯昆治的师承归属），只作书目参考。</li>
+      <li><a href="http://ent.sina.com.cn/j/2006-12-20/18141379350.html" target="_blank" rel="noopener">新京报（2006）“中国相声门谱系”</a>：介绍了马三立《京津相声演员谱系》和《中国相声史》师承表的来历，以及张三禄是否算始祖的争议。</li>
+      <li><a href="https://www.xkls.cn/zatan/3884.html" target="_blank" rel="noopener">星空历史“相声师承关系总谱（横版世系图）”</a>、<a href="https://github.com/invictusmuzi/-" target="_blank" rel="noopener">invictusmuzi 的 Neo4j 相声师承图</a>、<a href="http://kpword.com/topics.html" target="_blank" rel="noopener">中国相声网师承图谱专题</a>：在展示方式上作了参考。</li>
+    </ul>
+    <h3>局限</h3>
+    <ul>
+      <li>收录以公开资料为限，大量基层、地方曲艺团和民间演员没有收录；当代各社团收徒更新很快，难免遗漏。</li>
+      <li>原始谱系表本身被维基标注为“原创研究”，有些人名用字、归属彼此不同（例如“贾仑/贾伦”、“徐德奎/徐德魁”、“孙士达/孙世达”），本站尽量保留原貌并作说明。</li>
+      <li>亲缘、姻缘只收录有来源可查的部分；亲属中不是相声演员的，只因关系需要列出（图中显示为灰色）。</li>
+      <li>不收录任何私人联系方式。如果发现错误，欢迎指正。</li>
+    </ul>
+    <h3 id="srcs">来源列表</h3>
+    <p class="muted">按被引用的次数排序（数字是引用该来源的人物和关系条目数）。</p>
+    <ol id="sourceList"></ol>
+    <h3>第三方组件</h3>
+    <p>图谱使用 <a href="https://js.cytoscape.org/">Cytoscape.js</a>（MIT 许可，已本地打包在 <code>vendor/</code> 目录），全网络初始坐标由离线力导向布局（NetworkX spring layout）预先计算，浏览器中可拖拽并可重新运行力导布局。人物与关系数据整理自维基百科等公开来源，维基百科内容采用 CC BY-SA 4.0 许可。</p>
+    <p class="muted" id="buildinfo"></p>
+  </article>
+</section>
+</main>
+<footer>数据：<a href="data/people.json">people.json</a> · <a href="data/relations.json">relations.json</a> · 仅供参考，请以原始来源为准</footer>
+<script src="vendor/cytoscape.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
