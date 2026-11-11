@@ -11,6 +11,9 @@ nav{display:flex;gap:4px;flex-wrap:wrap}
 nav a{padding:6px 12px;border-radius:6px;text-decoration:none;color:var(--fg)}
 nav a.active{background:var(--accent);color:#fff}
 main{padding:12px 16px}
+.mode-tabs{display:flex;gap:6px;margin:0 0 8px;flex-wrap:wrap}
+.mode-tabs a{flex:1 1 auto;text-align:center;padding:8px 14px;border-radius:999px;text-decoration:none;border:1px solid var(--line);background:#fff;color:var(--fg);font-weight:600;min-height:40px}
+.mode-tabs a.active{background:var(--accent);color:#fff;border-color:var(--accent)}
 .toolbar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-bottom:8px}
 .search{position:relative;flex:1 1 280px;max-width:460px}
 .search input{width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:#fff}

@@ -27767,5 +27767,3854 @@
 "仅见网络整理文章称玉浩曾为苗阜“海”字科艺人张海浩；本站另有师承",
 "补录批次：维基/新闻/社团资料"
 ]
+},
+{
+"id": "r02142",
+"type": "partner",
+"from": "p0022",
+"to": "p0025",
+"detail": "民国时期长期搭档，人称“焦溜（刘）”",
+"sources": [
+"https://history.xikao.com/person/%E7%84%A6%E5%BE%B7%E6%B5%B7",
+"https://history.xikao.com/person/%E5%88%98%E5%BE%B7%E6%99%BA"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02143",
+"type": "partner",
+"from": "p0022",
+"to": "p0034",
+"detail": "民国时期合作演出数年",
+"sources": [
+"https://history.xikao.com/person/%E7%84%A6%E5%BE%B7%E6%B5%B7"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02144",
+"type": "partner",
+"from": "p0034",
+"to": "p0027",
+"detail": "民国时期搭伙于“宝和轩”茶园演出",
+"sources": [
+"https://history.xikao.com/person/%E9%83%AD%E7%91%9E%E6%9E%97"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02145",
+"type": "partner",
+"from": "p0156",
+"to": "p0027",
+"detail": "1941年起合作",
+"sources": [
+"https://history.xikao.com/person/%E4%BA%8E%E4%BD%91%E7%A6%8F"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02146",
+"type": "partner",
+"from": "p0034",
+"to": "p0036",
+"detail": "师兄弟搭档，至1920年张德泉病故",
+"sources": [
+"https://history.xikao.com/person/%E6%9D%8E%E5%BE%B7%E9%92%96"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02147",
+"type": "partner",
+"from": "p0034",
+"to": "p0077",
+"detail": "张寿臣早年为李德钖捧哏",
+"sources": [
+"https://history.xikao.com/person/%E5%BC%A0%E5%AF%BF%E8%87%A3"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02148",
+"type": "partner",
+"from": "p0042",
+"to": "p0043",
+"detail": "民国时期合说“文明相声”，至约1937年高玉峰瘫痪；代表作《苏小妹三难新郎》《朱夫子》",
+"sources": [
+"https://history.xikao.com/person/%E8%B0%A2%E8%8A%AE%E8%8A%9D"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02149",
+"type": "partner",
+"from": "p0057",
+"to": "p0058",
+"detail": "搭档期间创作《关公战秦琼》",
+"sources": [
+"https://history.xikao.com/person/%E9%9F%A9%E5%AD%90%E5%BA%B7"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02150",
+"type": "partner",
+"from": "p0057",
+"to": "p0111",
+"detail": "在开封时期搭伙演出",
+"sources": [
+"https://history.xikao.com/person/%E5%BC%A0%E6%9D%B0%E5%B0%A7"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02151",
+"type": "partner",
+"from": "p0060",
+"to": "p0091",
+"detail": "北京市曲艺三团时期合作，至赵霭如去世",
+"sources": [
+"https://history.xikao.com/person/%E9%AB%98%E5%BE%B7%E6%98%8E"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02152",
+"type": "partner",
+"from": "p0060",
+"to": "p0244",
+"detail": "1950年代前后合作，合说《老老年》《新词旧话》",
+"sources": [
+"https://history.xikao.com/person/%E9%AB%98%E5%BE%B7%E6%98%8E"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02153",
+"type": "partner",
+"from": "p0060",
+"to": "p0607",
+"detail": "合说《揭瓦》《造厨》《生意经》等（1950年代录音）",
+"sources": [
+"https://history.xikao.com/person/%E9%AB%98%E5%BE%B7%E6%98%8E"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02154",
+"type": "partner",
+"from": "p0077",
+"to": "p0067",
+"detail": "1925/1926年起陶湘如为张寿臣捧哏，约七年后拆伙；代表作《揣骨相》《哏政部》《窝头论》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BC%A0%E5%AF%BF%E8%87%A3",
+"https://history.xikao.com/person/%E9%99%B6%E6%B9%98%E5%A6%82"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02155",
+"type": "partner",
+"from": "p0072",
+"to": "p0168",
+"detail": "师徒合作说对口相声",
+"sources": [
+"https://history.xikao.com/person/%E7%84%A6%E5%AF%BF%E6%B5%B7"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02156",
+"type": "partner",
+"from": "p0077",
+"to": "p0109",
+"detail": "由临时搭档转为固定搭档（陶湘如拆伙后）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BC%A0%E5%AF%BF%E8%87%A3"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02157",
+"type": "partner",
+"from": "p0078",
+"to": "p0168",
+"detail": "1930年代前期为赵佩茹捧哏；1954年起再度合作",
+"sources": [
+"https://history.xikao.com/person/%E8%B5%B5%E4%BD%A9%E8%8C%B9"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02158",
+"type": "partner",
+"from": "p0082",
+"to": "p0101",
+"detail": "1925年起搭档合作演出",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E4%BA%8E%E4%BF%8A%E6%B3%A2"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02159",
+"type": "partner",
+"from": "p0083",
+"to": "p0168",
+"detail": "1952–1954年常连安为赵佩茹捧哏",
+"sources": [
+"https://history.xikao.com/person/%E8%B5%B5%E4%BD%A9%E8%8C%B9"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02160",
+"type": "partner",
+"from": "p0083",
+"to": "p0189",
+"detail": "父子搭档，在津首演于北大关海风茶社",
+"sources": [
+"https://history.xikao.com/person/%E5%B8%B8%E8%BF%9E%E5%AE%89"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02161",
+"type": "partner",
+"from": "p0226",
+"to": "p0101",
+"detail": "1940年起合作二十余年，郭专事捧哏；代表作《关公战秦琼》《夜行记》《戏剧与方言》《改行》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E4%BE%AF%E5%AE%9D%E6%9E%97",
+"https://zh.wikipedia.org/wiki/%E9%83%AD%E5%90%AF%E5%84%92",
+"https://history.xikao.com/person/%E9%83%AD%E5%90%AF%E5%84%92"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02162",
+"type": "partner",
+"from": "p0536",
+"to": "p0101",
+"detail": "郭启儒为马季捧哏；《打电话》",
+"sources": [
+"https://history.xikao.com/person/%E9%83%AD%E5%90%AF%E5%84%92"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02163",
+"type": "partner",
+"from": "p0103",
+"to": "p0109",
+"detail": "1947–1948年搭档（小梨园、群英戏院、北京电台）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%A9%AC%E4%B8%89%E7%AB%8B",
+"https://history.xikao.com/person/%E9%A9%AC%E4%B8%89%E7%AB%8B",
+"https://history.xikao.com/person/%E4%BE%AF%E4%B8%80%E5%B0%98"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02164",
+"type": "partner",
+"from": "p0103",
+"to": "p0168",
+"detail": "1961/1962年至“文革”前搭档，赵以捧哏为主；首演《黄鹤楼》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%A9%AC%E4%B8%89%E7%AB%8B",
+"https://zh.wikipedia.org/wiki/%E8%B5%B5%E4%BD%A9%E8%8C%B9",
+"https://history.xikao.com/person/%E8%B5%B5%E4%BD%A9%E8%8C%B9"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02165",
+"type": "partner",
+"from": "p0103",
+"to": "p0169",
+"detail": "1949年前搭档，刘为马捧哏，曾同赴南京演出",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%A9%AC%E4%B8%89%E7%AB%8B",
+"https://history.xikao.com/person/%E9%A9%AC%E4%B8%89%E7%AB%8B",
+"https://history.xikao.com/person/%E5%88%98%E5%A5%8E%E7%8F%8D"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02166",
+"type": "partner",
+"from": "p0103",
+"to": "p0171",
+"detail": "1949年前搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%A9%AC%E4%B8%89%E7%AB%8B",
+"https://history.xikao.com/person/%E9%A9%AC%E4%B8%89%E7%AB%8B",
+"https://history.xikao.com/person/%E8%80%BF%E5%AE%9D%E6%9E%97"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02167",
+"type": "partner",
+"from": "p0103",
+"to": "p0224",
+"detail": "1976年10月起王凤山为马三立捧哏，首段《精打细算》",
+"sources": [
+"https://history.xikao.com/person/%E7%8E%8B%E5%87%A4%E5%B1%B1",
+"https://news.qq.com/rain/a/20201115A087AZ00"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02168",
+"type": "partner",
+"from": "p0103",
+"to": "p0261",
+"detail": "1949年前后合作十余年；代表作《开粥场》《文章会》《开会迷》《吃元宵》《钓鱼》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%A9%AC%E4%B8%89%E7%AB%8B",
+"https://zh.wikipedia.org/wiki/%E5%BC%A0%E5%BA%86%E6%A3%AE",
+"https://history.xikao.com/person/%E9%A9%AC%E4%B8%89%E7%AB%8B",
+"https://history.xikao.com/person/%E5%BC%A0%E5%BA%86%E6%A3%AE"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02169",
+"type": "partner",
+"from": "p0110",
+"to": "p0244",
+"detail": "合作",
+"sources": [
+"https://history.xikao.com/person/%E7%8E%8B%E9%95%BF%E5%8F%8B"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02170",
+"type": "partner",
+"from": "p0138",
+"to": "p0270",
+"detail": "1940年代南市连兴茶社合作",
+"sources": [
+"https://history.xikao.com/person/%E9%98%8E%E7%AC%91%E5%84%92"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02171",
+"type": "partner",
+"from": "p0195",
+"to": "p0139",
+"detail": "1946–1956年合作；代表作《绕口令》《打牌论》《怯拉车》《怯演讲》",
+"sources": [
+"https://history.xikao.com/person/%E6%9C%B1%E7%9B%B8%E8%87%A3"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02172",
+"type": "partner",
+"from": "p0139",
+"to": "p0213",
+"detail": "“文革”后合作；《绕口令》《打牌论》《打灯谜》",
+"sources": [
+"https://history.xikao.com/person/%E5%BC%A0%E6%8C%AF%E5%9C%BB"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02173",
+"type": "partner",
+"from": "p0153",
+"to": "p0212",
+"detail": "武汉说唱团长期合作，薛捧哏",
+"sources": [
+"https://history.xikao.com/person/%E8%96%9B%E6%B0%B8%E5%B9%B4"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02174",
+"type": "partner",
+"from": "p0153",
+"to": "p0537",
+"detail": "武汉说唱团长期合作，薛捧哏",
+"sources": [
+"https://history.xikao.com/person/%E8%96%9B%E6%B0%B8%E5%B9%B4"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02175",
+"type": "partner",
+"from": "p0156",
+"to": "p0299",
+"detail": "1953年起为王嘉琪捧哏（天津和平曲艺杂技团）",
+"sources": [
+"https://history.xikao.com/person/%E4%BA%8E%E4%BD%91%E7%A6%8F"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02176",
+"type": "partner",
+"from": "p0159",
+"to": "p0246",
+"detail": "早年搭伙撂地；晚年合作《卖布头》《黄鹤楼》",
+"sources": [
+"https://history.xikao.com/person/%E9%AB%98%E5%87%A4%E5%B1%B1",
+"https://history.xikao.com/person/%E7%BD%97%E8%8D%A3%E5%AF%BF"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02177",
+"type": "partner",
+"from": "p0159",
+"to": "p0608",
+"detail": "合作快板书、数来宝",
+"sources": [
+"https://history.xikao.com/person/%E9%AB%98%E5%87%A4%E5%B1%B1",
+"https://history.xikao.com/person/%E7%8E%8B%E5%AD%A6%E4%B9%89"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02178",
+"type": "partner",
+"from": "p0189",
+"to": "p0168",
+"detail": "1937–1951年（至常宝堃牺牲）互为捧逗，赵以捧为主",
+"sources": [
+"https://history.xikao.com/person/%E5%B8%B8%E5%AE%9D%E5%A0%83",
+"https://history.xikao.com/person/%E8%B5%B5%E4%BD%A9%E8%8C%B9",
+"https://www.cntv.cn/program/tsfx/topic/geography/C18633/20070611/104155_2.shtml"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02179",
+"type": "partner",
+"from": "p0170",
+"to": "p0346",
+"detail": "1955/1962年起合作多年，李捧冯逗",
+"sources": [
+"https://history.xikao.com/person/%E6%9D%8E%E6%B4%81%E5%B0%98",
+"https://history.xikao.com/person/%E5%86%AF%E7%AB%8B%E9%93%8E"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02180",
+"type": "partner",
+"from": "p0175",
+"to": "p0206",
+"detail": "1950年代初交替捧逗",
+"sources": [
+"https://history.xikao.com/person/%E6%9D%A8%E5%B0%91%E5%A5%8E"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02181",
+"type": "partner",
+"from": "p0175",
+"to": "p0286",
+"detail": "1956年起为王本林捧哏（红桥区曲艺团）",
+"sources": [
+"https://history.xikao.com/person/%E6%9D%A8%E5%B0%91%E5%A5%8E"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02182",
+"type": "partner",
+"from": "p0190",
+"to": "p0231",
+"detail": "1950–1960年代中国广播说唱团搭档，郭常为捧哏；《买猴》《找对象》《歪批三国》等",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%83%AD%E5%85%A8%E5%AE%9D",
+"https://history.xikao.com/person/%E9%83%AD%E5%85%A8%E5%AE%9D",
+"https://yule.sohu.com/20040719/n221084260.shtml"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02183",
+"type": "partner",
+"from": "p0190",
+"to": "p0285",
+"detail": "中国广播说唱团时期合作（李捧哏）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E6%9D%8E%E6%96%87%E5%8D%8E_%28%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%29"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02184",
+"type": "partner",
+"from": "p0190",
+"to": "p0463",
+"detail": "搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%94%90%E6%9D%B0%E5%BF%A0"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02185",
+"type": "partner",
+"from": "p0195",
+"to": "p0455",
+"detail": "1956–1966年合作；代表作《批三国》《论捧逗》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E8%8B%8F%E6%96%87%E8%8C%82",
+"https://history.xikao.com/person/%E6%9C%B1%E7%9B%B8%E8%87%A3",
+"https://history.xikao.com/person/%E8%8B%8F%E6%96%87%E8%8C%82"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02186",
+"type": "partner",
+"from": "p0200",
+"to": "p0227",
+"detail": "搭档",
+"sources": [
+"https://history.xikao.com/person/%E7%A9%86%E7%A5%A5%E6%9E%97"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02187",
+"type": "partner",
+"from": "p0200",
+"to": "p0283",
+"detail": "搭档",
+"sources": [
+"https://history.xikao.com/person/%E7%A9%86%E7%A5%A5%E6%9E%97"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02188",
+"type": "partner",
+"from": "p0200",
+"to": "p0422",
+"detail": "搭档",
+"sources": [
+"https://history.xikao.com/person/%E7%A9%86%E7%A5%A5%E6%9E%97"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02189",
+"type": "partner",
+"from": "p0546",
+"to": "p0201",
+"detail": "“文革”后合作，恢复上演一批传统与新相声",
+"sources": [
+"https://history.xikao.com/person/%E4%BA%8E%E4%B8%96%E5%BE%B7"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02190",
+"type": "partner",
+"from": "p0207",
+"to": "p0353",
+"detail": "1940年代末至1950年代初长期合作（广播电台）",
+"sources": [
+"https://history.xikao.com/person/%E6%9D%9C%E4%B8%89%E5%AE%9D"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02191",
+"type": "partner",
+"from": "p0213",
+"to": "p0385",
+"detail": "1950年代南开区相声队为魏文华捧哏；《杂学唱》《捉放曹》",
+"sources": [
+"https://history.xikao.com/person/%E5%BC%A0%E6%8C%AF%E5%9C%BB"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02192",
+"type": "partner",
+"from": "p0226",
+"to": "p0230",
+"detail": "早年合作",
+"sources": [
+"https://history.xikao.com/person/%E7%99%BD%E5%85%A8%E7%A6%8F",
+"https://epaper.tianjinwe.com/tjrb/html/2026-05/12/content_143094_3422708.htm"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02193",
+"type": "partner",
+"from": "p0226",
+"to": "p0231",
+"detail": "郭启儒之后为侯宝林捧哏（1960年代起）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%83%AD%E5%85%A8%E5%AE%9D",
+"https://history.xikao.com/person/%E9%83%AD%E5%85%A8%E5%AE%9D",
+"https://news.qq.com/rain/a/20201115A087AZ00"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02194",
+"type": "partner",
+"from": "p0226",
+"to": "p0238",
+"detail": "1986年后合作演出六年",
+"sources": [
+"https://history.xikao.com/person/%E8%83%A1%E4%BB%B2%E4%BB%81"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02195",
+"type": "partner",
+"from": "p0226",
+"to": "p0422",
+"detail": "1985年起合作",
+"sources": [
+"https://history.xikao.com/person/%E5%A7%9C%E5%AE%9D%E6%9E%97"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02196",
+"type": "partner",
+"from": "p0226",
+"to": "p0542",
+"detail": "1980年代为“笑的艺术研究会”全国义演捧哏百余场；《猜谜》《醉酒》《杂学唱》等",
+"sources": [
+"https://history.xikao.com/person/%E6%9D%8E%E5%A6%82%E5%88%9A"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02197",
+"type": "partner",
+"from": "p0226",
+"to": "p0620",
+"detail": "李国盛曾为侯宝林捧哏三年",
+"sources": [
+"https://history.xikao.com/person/%E6%9D%8E%E5%9B%BD%E7%9B%9B"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02198",
+"type": "partner",
+"from": "p0226",
+"to": "p0781",
+"detail": "1980年代中期合作5年",
+"sources": [
+"https://history.xikao.com/person/%E9%87%91%E6%96%87%E5%92%8C"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02199",
+"type": "partner",
+"from": "p0227",
+"to": "p0292",
+"detail": "调入吉林广播曲艺团后为马敬伯捧哏",
+"sources": [
+"https://history.xikao.com/person/%E7%8E%8B%E5%AE%9D%E7%AB%A5"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02200",
+"type": "partner",
+"from": "p0228",
+"to": "p0354",
+"detail": "杨少华为马志明捧哏，合作多部作品",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%A9%AC%E5%BF%97%E6%98%8E_%28%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%29",
+"https://zh.wikipedia.org/wiki/%E6%9D%A8%E5%B0%91%E5%8D%8E_%28%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%29"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02201",
+"type": "partner",
+"from": "p0228",
+"to": "p0355",
+"detail": "长期合作，谢为捧哏，后散伙",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%A9%AC%E5%BF%97%E6%98%8E_%28%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%29",
+"https://history.xikao.com/person/%E8%B0%A2%E5%A4%A9%E9%A1%BA"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02202",
+"type": "partner",
+"from": "p0228",
+"to": "p0559",
+"detail": "谢天顺散伙后黄族民为马志明捧哏，搭档很长时间",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%A9%AC%E5%BF%97%E6%98%8E_%28%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%29",
+"https://history.xikao.com/person/%E9%BB%84%E6%97%8F%E6%B0%91"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02203",
+"type": "partner",
+"from": "p0351",
+"to": "p0230",
+"detail": "1940年代（约1944年）起搭档，至1993年白全福去世，合作四十余年；《卖布头》《听广播》《挖宝》《道德法庭》",
+"sources": [
+"https://history.xikao.com/person/%E7%99%BD%E5%85%A8%E7%A6%8F",
+"https://www.chinanews.com/yl/2015/01-06/6941783.shtml",
+"https://epaper.tianjinwe.com/tjrb/html/2026-05/12/content_143094_3422708.htm"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02204",
+"type": "partner",
+"from": "p0231",
+"to": "p0246",
+"detail": "晚年常合演双簧",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%83%AD%E5%85%A8%E5%AE%9D",
+"https://history.xikao.com/person/%E9%83%AD%E5%85%A8%E5%AE%9D",
+"https://history.xikao.com/person/%E7%BD%97%E8%8D%A3%E5%AF%BF"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02205",
+"type": "partner",
+"from": "p0536",
+"to": "p0231",
+"detail": "中国广播说唱团时期合作（郭捧哏）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%83%AD%E5%85%A8%E5%AE%9D",
+"https://history.xikao.com/person/%E9%83%AD%E5%85%A8%E5%AE%9D"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02206",
+"type": "partner",
+"from": "p0545",
+"to": "p0231",
+"detail": "中国广播说唱团时期合作",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%83%AD%E5%85%A8%E5%AE%9D",
+"https://history.xikao.com/person/%E9%83%AD%E5%85%A8%E5%AE%9D"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02207",
+"type": "partner",
+"from": "p0256",
+"to": "p0274",
+"detail": "17岁起搭档于天津“三不管”等地撂地",
+"sources": [
+"https://history.xikao.com/person/%E7%8E%8B%E4%B8%96%E8%87%A3"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02208",
+"type": "partner",
+"from": "p0436",
+"to": "p0274",
+"detail": "1973年起搭档；《红灯记》《新风尚》，合拍电影《笑》",
+"sources": [
+"https://history.xikao.com/person/%E5%88%98%E6%96%87%E4%BA%A8",
+"https://history.xikao.com/person/%E7%8F%AD%E5%BE%B7%E8%B4%B5"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02209",
+"type": "partner",
+"from": "p0276",
+"to": "p0291",
+"detail": "1949年搭档登台（北城游艺社）",
+"sources": [
+"https://history.xikao.com/person/%E8%B5%B5%E6%98%A5%E7%94%B0"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02210",
+"type": "partner",
+"from": "p0276",
+"to": "p0353",
+"detail": "1963年起在海政文工团长期合作",
+"sources": [
+"https://history.xikao.com/person/%E6%9D%9C%E4%B8%89%E5%AE%9D"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02211",
+"type": "partner",
+"from": "p0276",
+"to": "p0400",
+"detail": "叔侄搭档，1958年起合作数十年至1993年常宝华退休；《帽子工厂》《追溯》《黄鹤楼》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%B8%B8%E8%B4%B5%E7%94%B0",
+"https://epaper.lnd.com.cn/lswbepaper/pc/con/201812/01/content_9543.html",
+"http://news.cctv.com/2018/11/30/ARTI3FvaUC38zFWiqgnsdRjD181130.shtml"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02212",
+"type": "partner",
+"from": "p0282",
+"to": "p0316",
+"detail": "1951年起合作（抗美援朝慰问团）",
+"sources": [
+"https://history.xikao.com/person/%E5%B0%B9%E7%AC%91%E5%A3%B0"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02213",
+"type": "partner",
+"from": "p0282",
+"to": "p0443",
+"detail": "众友相声艺术团搭档",
+"sources": [
+"https://history.xikao.com/person/%E5%B0%B9%E7%AC%91%E5%A3%B0",
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02214",
+"type": "partner",
+"from": "p0282",
+"to": "p0534",
+"detail": "众友相声艺术团时期先后搭档之一",
+"sources": [
+"https://history.xikao.com/person/%E5%B0%B9%E7%AC%91%E5%A3%B0"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02215",
+"type": "partner",
+"from": "p0282",
+"to": "p0690",
+"detail": "众友相声艺术团时期先后搭档之一",
+"sources": [
+"https://history.xikao.com/person/%E5%B0%B9%E7%AC%91%E5%A3%B0",
+"https://history.xikao.com/person/%E9%82%93%E7%BB%A7%E5%A2%9E"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02216",
+"type": "partner",
+"from": "p0282",
+"to": "p0839",
+"detail": "张永久为尹笑声捧哏（众友相声队）",
+"sources": [
+"https://history.xikao.com/person/%E5%B0%B9%E7%AC%91%E5%A3%B0",
+"https://history.xikao.com/person/%E5%BC%A0%E6%B0%B8%E4%B9%85",
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02217",
+"type": "partner",
+"from": "p0283",
+"to": "p0316",
+"detail": "合作数十年，相声界“火档”",
+"sources": [
+"https://history.xikao.com/person/%E4%BA%8E%E5%AE%9D%E6%9E%97"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02218",
+"type": "partner",
+"from": "p0283",
+"to": "p0696",
+"detail": "1984年于宝林退休后马树春为其捧哏",
+"sources": [
+"https://history.xikao.com/person/%E9%A9%AC%E6%A0%91%E6%98%A5"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02219",
+"type": "partner",
+"from": "p0536",
+"to": "p0285",
+"detail": "中国广播说唱团时期合作（李捧哏）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E6%9D%8E%E6%96%87%E5%8D%8E_%28%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%29"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02220",
+"type": "partner",
+"from": "p0545",
+"to": "p0285",
+"detail": "中国广播说唱团时期合作（李捧哏）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E6%9D%8E%E6%96%87%E5%8D%8E_%28%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%29"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02221",
+"type": "partner",
+"from": "p1005",
+"to": "p0285",
+"detail": "1976年起姜昆第一个固定搭档，至1985年李文华失声；《如此照相》《诗歌与爱情》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E6%9D%8E%E6%96%87%E5%8D%8E_%28%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%29",
+"https://history.xikao.com/person/%E5%A7%9C%E6%98%86",
+"http://phtv.ifeng.com/program/lyyy/detail_2010_10/14/2782659_1.shtml"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02222",
+"type": "partner",
+"from": "p0295",
+"to": "p0512",
+"detail": "1960年代合作化妆相声《两个理发员》，老搭档",
+"sources": [
+"https://history.xikao.com/person/%E5%8F%B2%E6%96%87%E6%83%A0"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02223",
+"type": "partner",
+"from": "p1091",
+"to": "p0295",
+"detail": "1979年起搭档近30年；《武松打虎》《老鼠秘语》",
+"sources": [
+"https://news.bjd.com.cn/2024/04/15/10747096.shtml",
+"https://news.qq.com/rain/a/20201116A04UVL00"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02224",
+"type": "partner",
+"from": "p0296",
+"to": "p0533",
+"detail": "晚年合作；《改行》《婚姻与迷信》",
+"sources": [
+"https://history.xikao.com/person/%E8%B4%BE%E6%8C%AF%E8%89%AF"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02225",
+"type": "partner",
+"from": "p0590",
+"to": "p0296",
+"detail": "1954年起搭档，“北京二赵”（老舍命名）",
+"sources": [
+"https://history.xikao.com/person/%E8%B5%B5%E6%8C%AF%E9%93%8E",
+"https://history.xikao.com/person/%E8%B5%B5%E4%B8%96%E5%BF%A0",
+"https://finance.sina.cn/2022-09-19/detail-imqqsmrn9672830.d.html"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02226",
+"type": "partner",
+"from": "p0333",
+"to": "p0331",
+"detail": "1977年起搭档（沈阳曲艺团）；《假大空》《下棋》《如此大款》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%87%91%E7%82%B3%E6%98%B6",
+"https://www.chinanews.com.cn/cul/2010/10-21/2602081.shtml"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02227",
+"type": "partner",
+"from": "p0331",
+"to": "p0859",
+"detail": "搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%87%91%E7%82%B3%E6%98%B6"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02228",
+"type": "partner",
+"from": "p0331",
+"to": "p1015",
+"detail": "搭档；1984年《临死之前》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%87%91%E7%82%B3%E6%98%B6",
+"https://history.xikao.com/person/%E5%B8%B8%E4%BD%A9%E4%B8%9A"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02229",
+"type": "partner",
+"from": "p0331",
+"to": "p1094",
+"detail": "搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%87%91%E7%82%B3%E6%98%B6"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02230",
+"type": "partner",
+"from": "p0332",
+"to": "p1540",
+"detail": "搭档；《百听不厌》《特殊生活》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E7%8E%8B%E5%BF%97%E6%B6%9B",
+"https://history.xikao.com/person/%E9%99%88%E8%BF%9E%E4%BB%B2"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02231",
+"type": "partner",
+"from": "p0347",
+"to": "p0496",
+"detail": "1953年起搭档，史为王捧哏",
+"sources": [
+"https://history.xikao.com/person/%E5%8F%B2%E9%97%BB%E7%BF%B0"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02232",
+"type": "partner",
+"from": "p0406",
+"to": "p0354",
+"detail": "1962年起为杨少华捧哏（南开区曲艺团）；《八扇屏》《山东话》",
+"sources": [
+"https://history.xikao.com/person/%E9%A9%AC%E5%BF%97%E5%AD%98"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02233",
+"type": "partner",
+"from": "p0354",
+"to": "p0933",
+"detail": "1990年代合作；《枯木逢春》《聘文书》《一举成名》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E6%9D%A8%E5%B0%91%E5%8D%8E_%28%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%29"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02234",
+"type": "partner",
+"from": "p0354",
+"to": "p1554",
+"detail": "父子搭档；2003年《肉烂在锅里》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E6%9D%A8%E5%B0%91%E5%8D%8E_%28%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%29"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02235",
+"type": "partner",
+"from": "p0355",
+"to": "p0933",
+"detail": "多年合作（谢捧哏）",
+"sources": [
+"https://history.xikao.com/person/%E8%B0%A2%E5%A4%A9%E9%A1%BA"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02236",
+"type": "partner",
+"from": "p0355",
+"to": "p0938",
+"detail": "多年合作（谢捧哏）",
+"sources": [
+"https://history.xikao.com/person/%E8%B0%A2%E5%A4%A9%E9%A1%BA"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02237",
+"type": "partner",
+"from": "p0415",
+"to": "p0374",
+"detail": "1965年起搭档42年，至2007年侯耀文去世；《财迷丈人》《糖醋活鱼》《口吐莲花》",
+"sources": [
+"https://history.xikao.com/person/%E7%9F%B3%E5%AF%8C%E5%AE%BD",
+"https://big5.cctv.com/gate/big5/ent.cctv.com/special/C18744/20070709/102133.shtml",
+"http://www.chinanews.com.cn/2000-09-06/26/44992.html"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02238",
+"type": "partner",
+"from": "p0546",
+"to": "p0374",
+"detail": "2007年侯耀文去世后搭档数年",
+"sources": [
+"https://www.dl-library.net.cn/wenxian/dlnet/content.php?id=135510",
+"https://news.qq.com/rain/a/20210411A02LJ600"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02239",
+"type": "partner",
+"from": "p0386",
+"to": "p0839",
+"detail": "1992年起张永久为魏文亮捧哏",
+"sources": [
+"https://history.xikao.com/person/%E5%BC%A0%E6%B0%B8%E4%B9%85"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02240",
+"type": "partner",
+"from": "p0394",
+"to": "p0662",
+"detail": "1978年起搭档约三十年，“李杜黄金搭档”",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E6%9D%8E%E4%BC%AF%E7%A5%A5",
+"https://zh.wikipedia.org/wiki/%E6%9D%9C%E5%9B%BD%E8%8A%9D",
+"https://history.xikao.com/person/%E6%9D%9C%E5%9B%BD%E8%8A%9D"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02241",
+"type": "partner",
+"from": "p0399",
+"to": "p0728",
+"detail": "1954年起搭档四十余年，“高范”；《跟谁对着干》《不正之风》《钓鱼》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%AB%98%E8%8B%B1%E5%9F%B9",
+"https://zh.wikipedia.org/wiki/%E8%8C%83%E6%8C%AF%E9%92%B0",
+"https://history.xikao.com/person/%E9%AB%98%E8%8B%B1%E5%9F%B9",
+"https://history.xikao.com/person/%E8%8C%83%E6%8C%AF%E9%92%B0"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02242",
+"type": "partner",
+"from": "p0400",
+"to": "p0828",
+"detail": "1993年（常宝华退休后）/1997年起搭档",
+"sources": [
+"https://history.xikao.com/person/%E7%8E%8B%E4%BD%A9%E5%85%83",
+"https://epaper.lnd.com.cn/lswbepaper/pc/con/201812/01/content_9543.html"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02243",
+"type": "partner",
+"from": "p0406",
+"to": "p0455",
+"detail": "“文革”后（1977年起）为苏文茂捧哏；《批三国》《论捧逗》《汾河湾》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E8%8B%8F%E6%96%87%E8%8C%82",
+"https://history.xikao.com/person/%E9%A9%AC%E5%BF%97%E5%AD%98",
+"https://history.xikao.com/person/%E8%8B%8F%E6%96%87%E8%8C%82"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02244",
+"type": "partner",
+"from": "p0406",
+"to": "p1806",
+"detail": "搭档；《学电台》《各有所好》",
+"sources": [
+"https://history.xikao.com/person/%E5%B8%B8%E8%B4%B5%E5%BE%B7"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02245",
+"type": "partner",
+"from": "p0436",
+"to": "p0438",
+"detail": "多年合作，刘文贞专事捧哏；《学越剧》《批大戏》《梆子今昔》",
+"sources": [
+"https://history.xikao.com/person/%E5%88%98%E6%96%87%E4%BA%A8",
+"https://history.xikao.com/person/%E5%88%98%E6%96%87%E8%B4%9E"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02246",
+"type": "partner",
+"from": "p0436",
+"to": "p0509",
+"detail": "“文革”后天津市实验曲艺团搭档",
+"sources": [
+"https://history.xikao.com/person/%E5%88%98%E6%96%87%E4%BA%A8",
+"https://history.xikao.com/person/%E7%8E%8B%E6%96%87%E7%8E%89"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02247",
+"type": "partner",
+"from": "p0436",
+"to": "p0544",
+"detail": "刘文亨一生主要捧哏搭档之一",
+"sources": [
+"https://history.xikao.com/person/%E5%88%98%E6%96%87%E4%BA%A8",
+"https://history.xikao.com/person/%E4%BA%8E%E4%B8%96%E7%8C%B7"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02248",
+"type": "partner",
+"from": "p0438",
+"to": "p0534",
+"detail": "天津实验曲艺杂技团时期合作；《猜灯谜》",
+"sources": [
+"https://history.xikao.com/person/%E5%88%98%E6%96%87%E8%B4%9E"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02249",
+"type": "partner",
+"from": "p0443",
+"to": "p0663",
+"detail": "搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02250",
+"type": "partner",
+"from": "p0443",
+"to": "p0839",
+"detail": "搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02251",
+"type": "partner",
+"from": "p0455",
+"to": "p0828",
+"detail": "1988年起搭档至2015年苏文茂去世；《论捧逗》《文章会》",
+"sources": [
+"https://history.xikao.com/person/%E7%8E%8B%E4%BD%A9%E5%85%83",
+"http://3030.com.cn/watch/1182.html"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02252",
+"type": "partner",
+"from": "p1699",
+"to": "p0461",
+"detail": "德云社时期搭档，2008年9月同退德云社（成员表双方互列）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02253",
+"type": "partner",
+"from": "p0536",
+"to": "p0463",
+"detail": "1974年起搭档；《友谊颂》《新〈桃花源记〉》《海燕》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%94%90%E6%9D%B0%E5%BF%A0",
+"https://history.xikao.com/person/%E5%94%90%E6%9D%B0%E5%BF%A0"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02254",
+"type": "partner",
+"from": "p0545",
+"to": "p0463",
+"detail": "搭档；《彬彬有礼》《父与子》《英雄启事》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%94%90%E6%9D%B0%E5%BF%A0",
+"https://history.xikao.com/person/%E5%94%90%E6%9D%B0%E5%BF%A0"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02255",
+"type": "partner",
+"from": "p0463",
+"to": "p0766",
+"detail": "1997–1998年连续两届春晚搭档；《送福》《牛虎交班》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%88%98%E6%B5%81"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02256",
+"type": "partner",
+"from": "p1005",
+"to": "p0463",
+"detail": "1985年起合作约十年；《虎口遐想》《电梯奇遇》《着急》《学唱歌》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%94%90%E6%9D%B0%E5%BF%A0",
+"https://history.xikao.com/person/%E5%A7%9C%E6%98%86",
+"https://history.xikao.com/person/%E5%94%90%E6%9D%B0%E5%BF%A0",
+"http://phtv.ifeng.com/program/lyyy/detail_2010_10/14/2782659_1.shtml"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02257",
+"type": "partner",
+"from": "p0903",
+"to": "p0476",
+"detail": "2000年前后张文顺退休后与郭德纲搭档表演传统相声",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%83%AD%E5%BE%B7%E7%BA%B2",
+"https://zh.wikipedia.org/wiki/%E5%BC%B5%E6%96%87%E9%A0%86",
+"https://history.xikao.com/person/%E5%BC%A0%E6%96%87%E9%A1%BA"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02258",
+"type": "partner",
+"from": "p0510",
+"to": "p0507",
+"detail": "长期在众友相声团结为搭档，汪以捧哏为主",
+"sources": [
+"https://history.xikao.com/person/%E6%B1%AA%E6%81%A9%E7%A6%84"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02259",
+"type": "partner",
+"from": "p0510",
+"to": "p0690",
+"detail": "众友相声团主要搭档",
+"sources": [
+"https://history.xikao.com/person/%E4%BD%9F%E5%AE%88%E6%9C%AC",
+"https://history.xikao.com/person/%E9%82%93%E7%BB%A7%E5%A2%9E"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02260",
+"type": "partner",
+"from": "p0510",
+"to": "p0839",
+"detail": "张永久为佟守本捧哏",
+"sources": [
+"https://history.xikao.com/person/%E5%BC%A0%E6%B0%B8%E4%B9%85"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02261",
+"type": "partner",
+"from": "p0644",
+"to": "p0512",
+"detail": "老搭档，史曾为刘捧哏",
+"sources": [
+"https://history.xikao.com/person/%E5%8F%B2%E6%96%87%E6%83%A0"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02262",
+"type": "partner",
+"from": "p0533",
+"to": "p0608",
+"detail": "北京曲艺三团时期搭档",
+"sources": [
+"https://history.xikao.com/person/%E8%B4%BE%E6%8C%AF%E8%89%AF",
+"https://history.xikao.com/person/%E7%8E%8B%E5%AD%A6%E4%B9%89"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02263",
+"type": "partner",
+"from": "p0536",
+"to": "p0544",
+"detail": "1958–1960年代初合作约六年；《找舅舅》等新相声",
+"sources": [
+"https://history.xikao.com/person/%E4%BA%8E%E4%B8%96%E7%8C%B7",
+"https://www.tq4.cn/3/21094.html"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02264",
+"type": "partner",
+"from": "p0536",
+"to": "p1006",
+"detail": "合作27年，赵为马捧哏；《红眼病》《四字歌》《吹牛》《五官争功》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E8%B5%B5%E7%82%8E",
+"https://history.xikao.com/person/%E8%B5%B5%E7%82%8E"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02265",
+"type": "partner",
+"from": "p0541",
+"to": "p0542",
+"detail": "1964年起结为搭档（邯郸市文工团）",
+"sources": [
+"https://history.xikao.com/person/%E6%9D%8E%E5%A6%82%E5%88%9A"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02266",
+"type": "partner",
+"from": "p0543",
+"to": "p1547",
+"detail": "1950年代起合作40余年，至1998年魏龙豪去世",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%90%B3%E5%85%86%E5%8D%97",
+"https://history.xikao.com/person/%E5%90%B4%E5%85%86%E5%8D%97",
+"https://history.xikao.com/person/%E9%AD%8F%E9%BE%99%E8%B1%AA"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02267",
+"type": "partner",
+"from": "p0543",
+"to": "p1551",
+"detail": "1950年代台湾时期搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%90%B3%E5%85%86%E5%8D%97"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02268",
+"type": "partner",
+"from": "p0562",
+"to": "p1822",
+"detail": "长期合作",
+"sources": [
+"https://history.xikao.com/person/%E8%80%BF%E4%BC%AF%E6%98%A5"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02269",
+"type": "partner",
+"from": "p0580",
+"to": "p0829",
+"detail": "东海舰队文工团专职搭档",
+"sources": [
+"https://history.xikao.com/person/%E7%99%BD%E9%87%91%E5%9F%8E"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02270",
+"type": "partner",
+"from": "p1009",
+"to": "p0620",
+"detail": "1980年起合作，创作表演百余段，获评全国最佳相声搭档；《大篷车》《学电台》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E7%AC%91%E6%9E%97_%28%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%29",
+"https://history.xikao.com/person/%E7%AC%91%E6%9E%97",
+"https://history.xikao.com/person/%E6%9D%8E%E5%9B%BD%E7%9B%9B"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02271",
+"type": "partner",
+"from": "p0647",
+"to": "p0999",
+"detail": "2007年起先后搭档之一",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E8%B0%A2%E9%87%91"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02272",
+"type": "partner",
+"from": "p0647",
+"to": "p1427",
+"detail": "“金文组合”",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E8%B0%A2%E9%87%91"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02273",
+"type": "partner",
+"from": "p0647",
+"to": "p1591",
+"detail": "2017年2月5日起搭档；2018年《相声有新人》亚军",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E8%B0%A2%E9%87%91",
+"https://zh.wikipedia.org/wiki/%E6%9D%8E%E9%B9%A4%E4%B8%9C",
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对",
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02274",
+"type": "partner",
+"from": "p0689",
+"to": "p0663",
+"detail": "合作大量传统相声",
+"sources": [
+"https://history.xikao.com/person/%E9%99%88%E9%B8%A3%E5%BF%97"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02275",
+"type": "partner",
+"from": "p0689",
+"to": "p0690",
+"detail": "众友相声团主要搭档，邓以捧哏为主",
+"sources": [
+"https://history.xikao.com/person/%E9%99%88%E9%B8%A3%E5%BF%97",
+"https://history.xikao.com/person/%E9%82%93%E7%BB%A7%E5%A2%9E"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02276",
+"type": "partner",
+"from": "p0689",
+"to": "p0839",
+"detail": "张永久为陈鸣志捧哏",
+"sources": [
+"https://history.xikao.com/person/%E9%99%88%E9%B8%A3%E5%BF%97",
+"https://history.xikao.com/person/%E5%BC%A0%E6%B0%B8%E4%B9%85"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02277",
+"type": "partner",
+"from": "p0695",
+"to": "p0696",
+"detail": "“佟马组合”，天津哈哈笑相声队",
+"sources": [
+"https://history.xikao.com/person/%E4%BD%9F%E6%9C%89%E4%B8%BA",
+"https://history.xikao.com/person/%E9%A9%AC%E6%A0%91%E6%98%A5"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02278",
+"type": "partner",
+"from": "p0903",
+"to": "p0728",
+"detail": "1998年及2002年后范振钰曾为郭德纲捧哏（维基郭德纲条称仅合作过一次，说法不一）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E8%8C%83%E6%8C%AF%E9%92%B0",
+"https://history.xikao.com/person/%E8%8C%83%E6%8C%AF%E9%92%B0"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02279",
+"type": "partner",
+"from": "p1008",
+"to": "p0735",
+"detail": "1988年起搭档约十年，连续登上春晚；“黄金搭档”",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%86%AF%E5%B7%A9",
+"https://zh.wikipedia.org/wiki/%E7%89%9B%E7%BE%A4",
+"https://history.xikao.com/person/%E5%86%AF%E5%B7%A9"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02280",
+"type": "partner",
+"from": "p0735",
+"to": "p1973",
+"detail": "搭档",
+"sources": [
+"https://history.xikao.com/person/%E5%88%98%E5%BB%BA%E4%BA%91"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02281",
+"type": "partner",
+"from": "p0738",
+"to": "p0739",
+"detail": "1988年起共创相声瓦舍，搭档逾三十年",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%A6%AE%E7%BF%8A%E7%B6%B1",
+"https://time.udn.com/udntime/story/122834/7692174"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02282",
+"type": "partner",
+"from": "p0747",
+"to": "p1799",
+"detail": "搭档；《如此叫卖》",
+"sources": [
+"https://history.xikao.com/person/%E9%83%91%E5%B0%8F%E5%B1%B1"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02283",
+"type": "partner",
+"from": "p0754",
+"to": "p1973",
+"detail": "搭档",
+"sources": [
+"https://history.xikao.com/person/%E5%88%98%E5%BB%BA%E4%BA%91"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02284",
+"type": "partner",
+"from": "p0781",
+"to": "p0784",
+"detail": "长期搭档，黄金期作品多为二人合作",
+"sources": [
+"https://history.xikao.com/person/%E6%9D%8E%E6%96%87%E6%9E%AB"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02285",
+"type": "partner",
+"from": "p0781",
+"to": "p2024",
+"detail": "1993年起合作20余年；《文凭变奏曲》《死不让位》",
+"sources": [
+"https://history.xikao.com/person/%E9%87%91%E6%96%87%E5%92%8C"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02286",
+"type": "partner",
+"from": "p0817",
+"to": "p1253",
+"detail": "德云联合演出队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02287",
+"type": "partner",
+"from": "p0829",
+"to": "p1841",
+"detail": "21世纪以来合作，白金城捧哏",
+"sources": [
+"https://history.xikao.com/person/%E7%99%BD%E9%87%91%E5%9F%8E"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02288",
+"type": "partner",
+"from": "p0832",
+"to": "p1393",
+"detail": "2007年起父子搭档",
+"sources": [
+"https://history.xikao.com/person/%E8%80%BF%E6%AE%BF%E7%94%9F"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02289",
+"type": "partner",
+"from": "p0938",
+"to": "p0839",
+"detail": "1984年调入天津市曲艺团后合作",
+"sources": [
+"https://history.xikao.com/person/%E5%BC%A0%E6%B0%B8%E4%B9%85"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02290",
+"type": "partner",
+"from": "p0851",
+"to": "p1826",
+"detail": "德云一队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02291",
+"type": "partner",
+"from": "p0853",
+"to": "p0859",
+"detail": "合作；《如何是好》《好好说话》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E7%8E%8B%E5%B9%B3_%28%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%29"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02292",
+"type": "partner",
+"from": "p1005",
+"to": "p0854",
+"detail": "1993年底起搭档至今；《其实你不懂我的心》《合家欢》《踩脚》",
+"sources": [
+"https://history.xikao.com/person/%E6%88%B4%E5%BF%97%E8%AF%9A",
+"http://www.cnbpat.com/art/2022/8/30/art_1771_39634.html",
+"http://phtv.ifeng.com/program/lyyy/detail_2010_10/14/2782659_1.shtml"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02293",
+"type": "partner",
+"from": "p1203",
+"to": "p0879",
+"detail": "2009年起搭档（挚友相声）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E7%8E%8B%E8%87%AA%E5%81%A5"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02294",
+"type": "partner",
+"from": "p0893",
+"to": "p1060",
+"detail": "1995年起搭档",
+"sources": [
+"https://history.xikao.com/person/%E9%99%88%E5%AF%92%E6%9F%8F"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02295",
+"type": "partner",
+"from": "p0897",
+"to": "p1429",
+"detail": "1995年起搭档，2003年分手",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%A5%87%E5%BF%97",
+"https://zh.wikipedia.org/wiki/%E5%A4%A7%E5%85%B5_%28%E6%BC%94%E5%91%98%29",
+"https://history.xikao.com/person/%E5%A4%A7%E5%85%B5"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02296",
+"type": "partner",
+"from": "p0897",
+"to": "p1441",
+"detail": "2004年起师徒搭档",
+"sources": [
+"https://history.xikao.com/person/%E5%BC%A0%E4%BC%9F"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02297",
+"type": "partner",
+"from": "p0900",
+"to": "p0941",
+"detail": "1999年起合作多年；《说谚语》",
+"sources": [
+"https://history.xikao.com/person/%E7%8E%8B%E7%8E%89",
+"https://history.xikao.com/person/%E5%AE%8B%E5%BE%B7%E5%85%A8"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02298",
+"type": "partner",
+"from": "p0903",
+"to": "p1109",
+"detail": "德云社早期搭档之一",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%83%AD%E5%BE%B7%E7%BA%B2",
+"https://zh.wikipedia.org/wiki/%E7%8E%8B%E7%8E%A5%E6%B3%A2"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02299",
+"type": "partner",
+"from": "p0903",
+"to": "p1252",
+"detail": "2002年起搭档至今（2000年初次合作）；2013年春晚《败家子》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%83%AD%E5%BE%B7%E7%BA%B2",
+"https://zh.wikipedia.org/wiki/%E4%BA%8E%E8%B0%A6_%28%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%29",
+"https://history.xikao.com/person/%E4%BA%8E%E8%B0%A6",
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对",
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02300",
+"type": "partner",
+"from": "p0913",
+"to": "p1845",
+"detail": "国乐相声团长期搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E8%A3%98%E8%8B%B1%E4%BF%8A"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02301",
+"type": "partner",
+"from": "p0914",
+"to": "p1191",
+"detail": "1980年代下乡返城后合作；1999年起哈哈笑艺术团搭档",
+"sources": [
+"https://history.xikao.com/person/%E9%99%88%E6%A0%91%E6%A1%90",
+"https://history.xikao.com/person/%E5%BC%A0%E5%BE%B7%E8%B5%B7"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02302",
+"type": "partner",
+"from": "p0914",
+"to": "p1861",
+"detail": "1999年后天津哈哈笑艺术团搭档",
+"sources": [
+"https://history.xikao.com/person/%E9%99%88%E6%A0%91%E6%A1%90"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02303",
+"type": "partner",
+"from": "p0914",
+"to": "p1894",
+"detail": "1970年代互为捧逗",
+"sources": [
+"https://history.xikao.com/person/%E6%9D%A8%E9%95%BF%E5%9C%A8"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02304",
+"type": "partner",
+"from": "p0946",
+"to": "p1687",
+"detail": "长期合作，多次共同参赛",
+"sources": [
+"https://history.xikao.com/person/%E6%9D%8E%E9%87%91%E7%A5%A5"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02305",
+"type": "partner",
+"from": "p0999",
+"to": "p0982",
+"detail": "搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02306",
+"type": "partner",
+"from": "p0983",
+"to": "p1115",
+"detail": "德云社已故演员，成员表列为搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "disputed",
+"notes": [
+"德云社成员表“职位及搭档”栏仅单方列出"
+]
+},
+{
+"id": "r02307",
+"type": "partner",
+"from": "p1115",
+"to": "p0997",
+"detail": "德云一队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02308",
+"type": "partner",
+"from": "p0997",
+"to": "p1554",
+"detail": "早年曾搭档（德云社成员表备注）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02309",
+"type": "partner",
+"from": "p1110",
+"to": "p1000",
+"detail": "搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02310",
+"type": "partner",
+"from": "p1203",
+"to": "p1001",
+"detail": "王自健后期搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E7%8E%8B%E8%87%AA%E5%81%A5"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02311",
+"type": "partner",
+"from": "p1003",
+"to": "p1120",
+"detail": "搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E8%B4%BE%E6%97%AD%E6%98%8E",
+"https://zh.wikipedia.org/wiki/%E5%BC%A0%E5%BA%B7_%28%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%29"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02312",
+"type": "partner",
+"from": "p1008",
+"to": "p1007",
+"detail": "1983–1988年搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%86%AF%E5%B7%A9",
+"https://history.xikao.com/person/%E5%86%AF%E5%B7%A9"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02313",
+"type": "partner",
+"from": "p1010",
+"to": "p1011",
+"detail": "1960年起搭档逾60年，“祥瑞相声”；《换包装》《吃葡萄不吐葡萄皮》",
+"sources": [
+"https://history.xikao.com/person/%E7%8E%8B%E8%B0%A6%E7%A5%A5",
+"https://history.xikao.com/person/%E6%9D%8E%E5%A2%9E%E7%91%9E",
+"http://www.cctv.com/program/zgwy/20070615/103576.shtml",
+"https://news.qq.com/rain/a/20201115A087AZ00"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02314",
+"type": "partner",
+"from": "p1015",
+"to": "p1094",
+"detail": "1995年起合作；《如此推销》《团结一心拿大奖》",
+"sources": [
+"https://history.xikao.com/person/%E5%B8%B8%E4%BD%A9%E4%B8%9A",
+"https://history.xikao.com/person/%E8%B4%BE%E6%89%BF%E5%8D%9A"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02315",
+"type": "partner",
+"from": "p1210",
+"to": "p1070",
+"detail": "2004年起搭档，2010年同退德云社，2016年传散伙；《我要幸福》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E4%BD%95%E6%B2%84%E4%BC%9F",
+"https://history.xikao.com/person/%E4%BD%95%E6%B2%84%E4%BC%9F",
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02316",
+"type": "partner",
+"from": "p1377",
+"to": "p1109",
+"detail": "多年搭档（中国煤矿文工团）；《方言歌曲》《拷红》《童年轶事》",
+"sources": [
+"https://www.chinadaily.com.cn/test/2016-04/12/content_24475930.htm",
+"https://tv.cctv.cn/2018/04/26/VIDEGWRjI8wuM7BrXGgf01Jk180426.shtml"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02317",
+"type": "partner",
+"from": "p1115",
+"to": "p1760",
+"detail": "闫云达主要搭档之一",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%97%AB%E5%AE%97%E6%B5%B7"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02318",
+"type": "partner",
+"from": "p1571",
+"to": "p1118",
+"detail": "德云二队现搭档（维基百科德云社成员表；王磊为刘庆福弟子，原艺馨相声社）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02319",
+"type": "partner",
+"from": "p1119",
+"to": "p1283",
+"detail": "2008年起搭档，“高超组合”（嘻哈包袱铺）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE",
+"http://zqb.cyol.com/content/2009-01/13/content_2505761.htm"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02320",
+"type": "partner",
+"from": "p1119",
+"to": "p1829",
+"detail": "搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02321",
+"type": "partner",
+"from": "p1121",
+"to": "p1343",
+"detail": "1984年起长期搭档（北京市曲艺团、老舍茶馆）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E6%9D%8E%E4%BC%9F%E5%BB%BA",
+"https://history.xikao.com/person/%E6%9D%8E%E4%BC%9F%E5%BB%BA",
+"https://history.xikao.com/person/%E6%AD%A6%E5%AE%BE"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02322",
+"type": "partner",
+"from": "p1218",
+"to": "p1159",
+"detail": "2007年起搭档（青曲社）；《满腹经纶》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%9D%92%E6%9B%B2%E7%A4%BE",
+"https://history.xikao.com/person/%E7%8E%8B%E5%A3%B0"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02323",
+"type": "partner",
+"from": "p1167",
+"to": "p1599",
+"detail": "德云八队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02324",
+"type": "partner",
+"from": "p1167",
+"to": "p1760",
+"detail": "闫云达主要搭档之一",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%97%AB%E5%AE%97%E6%B5%B7"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02325",
+"type": "partner",
+"from": "p1180",
+"to": "p1191",
+"detail": "2004年起合作",
+"sources": [
+"https://history.xikao.com/person/%E5%BC%A0%E5%BE%B7%E8%B5%B7"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02326",
+"type": "partner",
+"from": "p1180",
+"to": "p1822",
+"detail": "长期合作",
+"sources": [
+"https://history.xikao.com/person/%E8%80%BF%E4%BC%AF%E6%98%A5"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02327",
+"type": "partner",
+"from": "p1189",
+"to": "p1980",
+"detail": "1999年起搭档",
+"sources": [
+"https://history.xikao.com/person/%E8%92%B2%E5%85%8B"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02328",
+"type": "partner",
+"from": "p1190",
+"to": "p1538",
+"detail": "德云五队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02329",
+"type": "partner",
+"from": "p1192",
+"to": "p1522",
+"detail": "德云一队搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%AB%98%E5%B3%B0_%28%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%29",
+"https://zh.wikipedia.org/wiki/%E6%A0%BE%E4%BA%91%E5%B9%B3",
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对",
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02330",
+"type": "partner",
+"from": "p1528",
+"to": "p1255",
+"detail": "约2011年起搭档（艺馨被德云社收编后），孙越捧哏",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%AD%99%E8%B6%8A_%28%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%29",
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对",
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02331",
+"type": "partner",
+"from": "p1680",
+"to": "p1263",
+"detail": "德云社时期起搭档，2010年同退德云社",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E6%9B%B9%E4%BA%91%E9%87%91",
+"https://zh.wikipedia.org/wiki/%E5%88%98%E4%BA%91%E5%A4%A9",
+"https://history.xikao.com/person/%E5%88%98%E4%BA%91%E5%A4%A9",
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02332",
+"type": "partner",
+"from": "p1359",
+"to": "p1360",
+"detail": "赵卫国此前在武汉的搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E8%B5%B5%E5%8D%AB%E5%9B%BD_%28%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%29"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02333",
+"type": "partner",
+"from": "p1429",
+"to": "p1359",
+"detail": "2003年起搭档，“铂金组合”；《谁让你优秀》《免费电话》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%A4%A7%E5%85%B5_%28%E6%BC%94%E5%91%98%29",
+"https://zh.wikipedia.org/wiki/%E8%B5%B5%E5%8D%AB%E5%9B%BD_%28%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%29",
+"https://www.chinanews.com/cul/news/2009/11-18/1970865.shtml"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02334",
+"type": "partner",
+"from": "p1363",
+"to": "p1364",
+"detail": "夫妻搭档",
+"sources": [
+"https://history.xikao.com/person/%E5%A4%8F%E6%96%87%E5%85%B0",
+"https://history.xikao.com/person/%E5%80%AA%E6%98%8E"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02335",
+"type": "partner",
+"from": "p1365",
+"to": "p1366",
+"detail": "搭档；《懒汉糖葫芦》",
+"sources": [
+"https://history.xikao.com/person/%E5%94%90%E7%88%B1%E5%9B%BD"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02336",
+"type": "partner",
+"from": "p1366",
+"to": "p1518",
+"detail": "2001–2004年合作对口快板《生日》《包饺子比赛》",
+"sources": [
+"https://history.xikao.com/person/%E5%BC%A0%E5%8B%87"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02337",
+"type": "partner",
+"from": "p1390",
+"to": "p1395",
+"detail": "搭档，创立“酷口相声”；2010年春晚《大话捧逗》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E8%B4%BE%E7%8E%B2",
+"https://zh.wikipedia.org/wiki/%E7%99%BD%E5%87%AF%E5%8D%97"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02338",
+"type": "partner",
+"from": "p1426",
+"to": "p1425",
+"detail": "搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02339",
+"type": "partner",
+"from": "p1492",
+"to": "p1629",
+"detail": "德云一队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02340",
+"type": "partner",
+"from": "p1494",
+"to": "p1495",
+"detail": "德云一队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02341",
+"type": "partner",
+"from": "p1502",
+"to": "p1575",
+"detail": "德云四队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02342",
+"type": "partner",
+"from": "p1503",
+"to": "p1565",
+"detail": "搭档；2019年8月举办相声专场",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%96%BB%E9%B6%B4%E7%A5%A5",
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对",
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02343",
+"type": "partner",
+"from": "p1585",
+"to": "p1505",
+"detail": "德云四队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02344",
+"type": "partner",
+"from": "p1522",
+"to": "p1532",
+"detail": "早年栾云平为孔云龙捧哏；《白事会》《八大吉祥》",
+"sources": [
+"https://history.xikao.com/person/%E6%A0%BE%E4%BA%91%E5%B9%B3",
+"https://history.xikao.com/person/%E5%AD%94%E4%BA%91%E9%BE%99"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02345",
+"type": "partner",
+"from": "p1524",
+"to": "p1630",
+"detail": "德云六队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02346",
+"type": "partner",
+"from": "p1526",
+"to": "p1525",
+"detail": "搭档（德云一队）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%AB%98%E7%AD%B1%E8%B4%9D",
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对",
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02347",
+"type": "partner",
+"from": "p1529",
+"to": "p1603",
+"detail": "2009–2010年早期搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%88%98%E7%AD%B1%E4%BA%AD"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02348",
+"type": "partner",
+"from": "p1529",
+"to": "p1626",
+"detail": "2012年7月18日起搭档至今；《论梦》",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%88%98%E7%AD%B1%E4%BA%AD",
+"https://zh.wikipedia.org/wiki/%E5%BC%B5%E4%B9%9D%E6%B3%B0",
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对",
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02349",
+"type": "partner",
+"from": "p1530",
+"to": "p1751",
+"detail": "搭档（德云二队）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%B0%9A%E7%AD%B1%E8%8F%8A",
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对",
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02350",
+"type": "partner",
+"from": "p1531",
+"to": "p1653",
+"detail": "德云二队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02351",
+"type": "partner",
+"from": "p1532",
+"to": "p1631",
+"detail": "德云三队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02352",
+"type": "partner",
+"from": "p1533",
+"to": "p1534",
+"detail": "德云三队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02353",
+"type": "partner",
+"from": "p1557",
+"to": "p1537",
+"detail": "2006年7月15日起搭档；《笑傲江湖第二季》季军",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E6%9C%B1%E9%9B%B2%E5%B3%B0",
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对",
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02354",
+"type": "partner",
+"from": "p1555",
+"to": "p1604",
+"detail": "2013年8月20日起正式搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BC%A0%E4%BA%91%E9%9B%B7",
+"https://zh.wikipedia.org/wiki/%E6%9D%A8%E4%B9%9D%E9%83%8E",
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对",
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02355",
+"type": "partner",
+"from": "p1559",
+"to": "p1825",
+"detail": "德云四队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02356",
+"type": "partner",
+"from": "p1560",
+"to": "p1621",
+"detail": "搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E9%99%B6%E4%BA%91%E5%9C%A3",
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对",
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02357",
+"type": "partner",
+"from": "p1564",
+"to": "p1588",
+"detail": "德云九队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02358",
+"type": "partner",
+"from": "p1566",
+"to": "p1646",
+"detail": "德云联合演出队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02359",
+"type": "partner",
+"from": "p1569",
+"to": "p1587",
+"detail": "2010年起搭档；《欢乐喜剧人第五季》亚军",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BC%A0%E9%B9%A4%E4%BC%A6",
+"https://zh.wikipedia.org/wiki/%E9%83%8E%E9%B9%A4%E7%82%8E",
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对",
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02360",
+"type": "partner",
+"from": "p1574",
+"to": "p1603",
+"detail": "2010年起搭档；2018年《相声有新人》冠军",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%AD%9F%E9%B9%A4%E5%A0%82",
+"https://zh.wikipedia.org/wiki/%E5%91%A8%E4%B9%9D%E8%89%AF",
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对",
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02361",
+"type": "partner",
+"from": "p1580",
+"to": "p1641",
+"detail": "德云三队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02362",
+"type": "partner",
+"from": "p1582",
+"to": "p1627",
+"detail": "德云二队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02363",
+"type": "partner",
+"from": "p1583",
+"to": "p1632",
+"detail": "德云十队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02364",
+"type": "partner",
+"from": "p1592",
+"to": "p1609",
+"detail": "德云六队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02365",
+"type": "partner",
+"from": "p1595",
+"to": "p1809",
+"detail": "德云五队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02366",
+"type": "partner",
+"from": "p1612",
+"to": "p1600",
+"detail": "2023年1月31日起搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%AD%AB%E4%B9%9D%E8%8A%B3",
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对",
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02367",
+"type": "partner",
+"from": "p1602",
+"to": "p1607",
+"detail": "搭档；2018年11月天津首次个人专场",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BC%A0%E4%B9%9D%E9%BE%84_%28%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%29",
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对",
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02368",
+"type": "partner",
+"from": "p1608",
+"to": "p1606",
+"detail": "搭档（曾在德云六队、八队，现德云十队）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BC%A0%E4%B9%9D%E5%8D%97",
+"https://zh.wikipedia.org/wiki/%E9%AB%98%E4%B9%9D%E6%88%90",
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对",
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02369",
+"type": "partner",
+"from": "p1616",
+"to": "p1610",
+"detail": "德云六队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02370",
+"type": "partner",
+"from": "p1611",
+"to": "p1617",
+"detail": "德云七队时期搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%AD%AB%E4%B9%9D%E9%A6%99"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02371",
+"type": "partner",
+"from": "p1611",
+"to": "p1635",
+"detail": "约2018–2020年9月前搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%AD%AB%E4%B9%9D%E9%A6%99",
+"https://zh.wikipedia.org/wiki/%E7%A7%A6%E9%9C%84%E8%B4%A4"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02372",
+"type": "partner",
+"from": "p1611",
+"to": "p1819",
+"detail": "后与赵芸一搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%AD%AB%E4%B9%9D%E9%A6%99",
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对",
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02373",
+"type": "partner",
+"from": "p1612",
+"to": "p1638",
+"detail": "早期搭档（至约2021年）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%AD%AB%E4%B9%9D%E8%8A%B3"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02374",
+"type": "partner",
+"from": "p1612",
+"to": "p1641",
+"detail": "2021年3月起合作",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%AD%AB%E4%B9%9D%E8%8A%B3"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02375",
+"type": "partner",
+"from": "p1612",
+"to": "p1785",
+"detail": "2022年7月起合作",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%AD%AB%E4%B9%9D%E8%8A%B3"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02376",
+"type": "partner",
+"from": "p1613",
+"to": "p1624",
+"detail": "德云十队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02377",
+"type": "partner",
+"from": "p1614",
+"to": "p1746",
+"detail": "德云六队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02378",
+"type": "partner",
+"from": "p1615",
+"to": "p1638",
+"detail": "2021年2月起搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%B0%9A%E4%B9%9D%E7%86%99",
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对",
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02379",
+"type": "partner",
+"from": "p1615",
+"to": "p1807",
+"detail": "2020年9月前搭档；2019年济南首个专场",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%B0%9A%E4%B9%9D%E7%86%99"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02380",
+"type": "partner",
+"from": "p1619",
+"to": "p1651",
+"detail": "德云九队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02381",
+"type": "partner",
+"from": "p1620",
+"to": "p1634",
+"detail": "德云四队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02382",
+"type": "partner",
+"from": "p1622",
+"to": "p1623",
+"detail": "德云八队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02383",
+"type": "partner",
+"from": "p1625",
+"to": "p1753",
+"detail": "德云三队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02384",
+"type": "partner",
+"from": "p1628",
+"to": "p1639",
+"detail": "德云九队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02385",
+"type": "partner",
+"from": "p1650",
+"to": "p1633",
+"detail": "德云八队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02386",
+"type": "partner",
+"from": "p1635",
+"to": "p1807",
+"detail": "2021年4月起搭档",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E7%A7%A6%E9%9C%84%E8%B4%A4",
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对",
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02387",
+"type": "partner",
+"from": "p1637",
+"to": "p1667",
+"detail": "德云九队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02388",
+"type": "partner",
+"from": "p1643",
+"to": "p1654",
+"detail": "德云联合演出队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02389",
+"type": "partner",
+"from": "p1798",
+"to": "p1645",
+"detail": "德云一队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02390",
+"type": "partner",
+"from": "p1648",
+"to": "p1647",
+"detail": "德云八队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02391",
+"type": "partner",
+"from": "p1818",
+"to": "p1652",
+"detail": "德云二队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02392",
+"type": "partner",
+"from": "p1901",
+"to": "p1657",
+"detail": "德云八队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02393",
+"type": "partner",
+"from": "p1658",
+"to": "p1659",
+"detail": "德云联合演出队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02394",
+"type": "partner",
+"from": "p1660",
+"to": "p1661",
+"detail": "德云十队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02395",
+"type": "partner",
+"from": "p1662",
+"to": "p1663",
+"detail": "德云联合演出队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02396",
+"type": "partner",
+"from": "p1664",
+"to": "p1665",
+"detail": "德云七队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02397",
+"type": "partner",
+"from": "p1808",
+"to": "p1666",
+"detail": "德云七队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02398",
+"type": "partner",
+"from": "p1669",
+"to": "p1670",
+"detail": "德云六队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02399",
+"type": "partner",
+"from": "p1821",
+"to": "p1671",
+"detail": "德云七队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02400",
+"type": "partner",
+"from": "p1680",
+"to": "p1925",
+"detail": "刘艺现为曹云金捧哏",
+"sources": [
+"https://history.xikao.com/person/%E5%88%98%E8%89%BA"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02401",
+"type": "partner",
+"from": "p1810",
+"to": "p1752",
+"detail": "德云六队现搭档（维基百科德云社成员表）",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"德云社成员表“职位及搭档”栏双方互列"
+]
+},
+{
+"id": "r02402",
+"type": "partner",
+"from": "p1800",
+"to": "p1793",
+"detail": "约2016–2024年搭档，《笑傲江湖》夺冠、2022年春晚；2024年11月拆伙",
+"sources": [
+"https://news.ycwb.com/2024-11/26/content_53082711.htm",
+"https://news.qq.com/rain/a/20241124A06W8M00"
+],
+"confidence": "documented",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02403",
+"type": "partner",
+"from": "p1839",
+"to": "p1894",
+"detail": "1999年起天津哈哈笑艺术团搭档",
+"sources": [
+"https://history.xikao.com/person/%E5%88%98%E5%85%B0%E4%BA%AD",
+"https://history.xikao.com/person/%E6%9D%A8%E9%95%BF%E5%9C%A8"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
+},
+{
+"id": "r02404",
+"type": "partner",
+"from": "p2040",
+"to": "p2041",
+"detail": "双胞胎兄弟搭档近二十年",
+"sources": [
+"https://history.xikao.com/person/%E5%90%B4%E8%BF%AA"
+],
+"confidence": "disputed",
+"notes": [
+"固定搭档补录：人工核对"
+]
 }
 ]

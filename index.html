@@ -22,6 +22,11 @@
 
 <main>
 <section id="view-graph" class="view">
+  <div class="mode-tabs" role="tablist">
+    <a href="#graph" data-mode="network">谱系图</a>
+    <a href="#nebula" data-mode="nebula">星云图</a>
+    <a href="#graph" data-mode="ego">聚焦</a>
+  </div>
   <div class="toolbar">
     <div class="search">
       <input id="q" type="search" placeholder="搜索人名或艺名，例如：马三立、郭德纲、侯宝林" autocomplete="off">
@@ -31,6 +36,7 @@
       <label>模式
         <select id="mode">
           <option value="network">全网络（力导向）</option>
+          <option value="nebula">星云图</option>
           <option value="ego">聚焦所选人物</option>
         </select>
       </label>

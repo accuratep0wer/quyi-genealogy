@@ -16,8 +16,9 @@ const Z_MIN=0.03,Z_MAX=32;
 let zoomFromSlider=false;
 
 let SPREAD={};
-Promise.all(['data/people.json','data/relations.json','data/layout.json','data/layout-spread.json'].map(u=>fetch(u).then(r=>{if(!r.ok)throw new Error(u);return r.json()})))
-.then(([p,r,l,s])=>{P=p;R=r;L=l;SPREAD=s;init();}).catch(e=>{$('#cy').innerHTML='<p style="padding:20px">数据加载失败：'+esc(e.message)+'</p>';});
+let NEBULA={};
+Promise.all(['data/people.json','data/relations.json','data/layout.json','data/layout-spread.json','data/layout-nebula.json'].map(u=>fetch(u).then(r=>{if(!r.ok)throw new Error(u);return r.json()})))
+.then(([p,r,l,s,n])=>{P=p;R=r;L=l;SPREAD=s;NEBULA=n;init();}).catch(e=>{$('#cy').innerHTML='<p style="padding:20px">数据加载失败：'+esc(e.message)+'</p>';});
 
 function labelOf(p){
   // disambiguate homonyms by master
@@ -108,6 +109,7 @@ function drawNetwork(){
   cy.startBatch();cy.elements().remove();
   cy.add(nodes.map(nodeData));cy.add(drawRels.map(edgeData));
   cy.endBatch();
+  cy.minZoom(Z_MIN);cy.maxZoom(Z_MAX);
   cy.layout({name:'preset',fit:true,padding:20}).run();
   captureHome();
   spread={};
@@ -118,9 +120,50 @@ function drawNetwork(){
   spreadReady=true;
   layoutT=0;
   layoutLock=false;
-  stat(nodes.length,rels.length);
+  stat(nodes.length,drawRels.length);
   if(state.focus&&cy.getElementById(state.focus).length) highlight(state.focus,false);
   updateLayoutButtons();
+  updateModeTabs();
+}
+function nebulaNodeData(p){
+  const n=nodeData(p);
+  const rec=NEBULA[p.id];
+  if(rec){
+    n.position={x:rec[0],y:rec[1]};
+    if(rec[2]) n.data.size=rec[2];
+  }
+  return n;
+}
+function drawNebula(){
+  layoutLock=true;
+  if(layoutAnim){cancelAnimationFrame(layoutAnim); layoutAnim=0;}
+  state.mode='nebula';
+  cy.minZoom(1e-7);cy.maxZoom(32);
+  const f=filters();
+  const rels=R.filter(r=>relOk(r,f)&&personOk(byId[r.from],f)&&personOk(byId[r.to],f));
+  const used=new Set();
+  rels.forEach(r=>{if(r.type!=='partner'){used.add(r.from);used.add(r.to);}});
+  const nodes=P.filter(p=>personOk(p,f)&&(used.has(p.id)||(!!NEBULA[p.id]&&p.role!=='relative')));
+  const ids=new Set(nodes.map(p=>p.id));
+  const drawRels=rels.filter(r=>ids.has(r.from)&&ids.has(r.to));
+  cy.startBatch();cy.elements().remove();
+  cy.add(nodes.map(nebulaNodeData));cy.add(drawRels.map(edgeData));
+  cy.endBatch();
+  cy.fit(undefined,32);
+  layoutLock=false;
+  stat(nodes.length,drawRels.length);
+  syncZoomSlider();
+  updateModeTabs();
+}
+function updateModeTabs(){
+  document.querySelectorAll('.mode-tabs a').forEach(a=>{
+    a.classList.toggle('active', a.dataset.mode===state.mode);
+  });
+  const ego=document.querySelector('.mode-tabs a[data-mode="ego"]');
+  const neb=document.querySelector('.mode-tabs a[data-mode="nebula"]');
+  const id=state.focus||(P.find(p=>p.name==='侯宝林')||P[0]||{}).id||'';
+  if(ego&&id) ego.href='#graph/'+id;
+  if(neb) neb.href=state.focus?'#nebula/'+state.focus:'#nebula';
 }
 function egoSet(id){
   const f=filters(),dd=+$('#depthDown').value,du=+$('#depthUp').value;
@@ -371,7 +414,7 @@ function easeSpread(){
   layoutAnim=requestAnimationFrame(easeSpread);
 }
 function syncSpreadToZoom(){
-  if(layoutLock||state.mode==='ego'||!spreadReady) return;
+  if(layoutLock||state.mode==='ego'||state.mode==='nebula'||!spreadReady) return;
   if(Math.abs(spreadAmount(cy.zoom())-layoutT)<0.004) return;
   if(!layoutAnim) layoutAnim=requestAnimationFrame(easeSpread);
 }
@@ -401,6 +444,7 @@ function updateLayoutButtons(){}
 function drawEgo(id){
   layoutLock=true;
   if(layoutAnim){cancelAnimationFrame(layoutAnim); layoutAnim=0;}
+  cy.minZoom(Z_MIN);cy.maxZoom(Z_MAX);
   const s=egoSet(id);
   const ids=s.nodes.map(p=>p.id);
   const local=layoutRadial(id,ids,s.rels);
@@ -434,7 +478,9 @@ function selectPerson(id,center){
   state.focus=id;
   if(state.mode==='ego'){drawEgo(id);}else highlight(id,center);
   renderPanel(id);
-  if(location.hash!=='#graph/'+id) history.replaceState(null,'','#graph/'+id);
+  const next=state.mode==='nebula'?'#nebula/'+id:'#graph/'+id;
+  if(location.hash!==next) history.replaceState(null,'',next);
+  updateModeTabs();
 }
 function plink(id){const p=byId[id];return '<span class="pl" data-id="'+id+'">'+esc(labelOf(p))+'</span>';}
 function srcLinks(arr){return (arr||[]).map((u,i)=>'<a href="'+esc(u)+'" target="_blank" rel="noopener" title="'+esc(u)+'">['+(i+1)+']</a>').join(' ');}
@@ -466,7 +512,9 @@ function renderPanel(id){
    '<h3>来源</h3><div>'+(p.wiki_url?'<a href="'+esc(p.wiki_url)+'" target="_blank" rel="noopener">维基百科条目</a> ':'')+srcLinks(p.sources)+'</div>';
   $('#egoBtn').onclick=()=>{
     if(state.mode==='ego'){resetGlobal();renderPanel(id);return;}
-    state.mode='ego';$('#mode').value='ego';syncMode();state.focus=id;drawEgo(id);renderPanel(id);
+    state.focus=id;
+    if(location.hash==='#graph/'+id){state.mode='ego';$('#mode').value='ego';syncMode();drawEgo(id);renderPanel(id);updateModeTabs();}
+    else location.hash='#graph/'+id;
   };
   $('#panelFeedback').onclick=()=>openFeedback(id);
 }
@@ -493,17 +541,33 @@ function bindUI(){
     if(state.mode==='network'&&!cy.getElementById(p.id).length){ // ensure visible
       $('#gmin').value=$('#gmin').options[0].value;$('#gmax').value=$('#gmax').options[$('#gmax').options.length-1].value;drawNetwork();}
     selectPerson(p.id,true);}
-  $('#mode').addEventListener('change',e=>{state.mode=e.target.value;syncMode();if(state.mode==='ego'){const id=state.focus||P.find(p=>p.name==='侯宝林').id;selectPerson(id,true);}else{drawNetwork();if(state.focus){highlight(state.focus,true);renderPanel(state.focus);}}});
+  $('#mode').addEventListener('change',e=>{
+    const v=e.target.value;
+    if(v==='nebula'){location.hash=state.focus?'#nebula/'+state.focus:'#nebula';return;}
+    state.mode=v;syncMode();
+    if(state.mode==='ego'){const id=state.focus||P.find(p=>p.name==='侯宝林').id;selectPerson(id,true);}
+    else{drawNetwork();if(state.focus){highlight(state.focus,true);renderPanel(state.focus);}}
+    updateModeTabs();
+  });
   ['#depthDown','#depthUp'].forEach(s=>$(s).addEventListener('change',()=>{if(state.mode==='ego'&&state.focus)drawEgo(state.focus);}));
-  const refilter=()=>{if(state.mode==='ego'&&state.focus)drawEgo(state.focus);else drawNetwork();};
+  const refilter=()=>{if(state.mode==='ego'&&state.focus)drawEgo(state.focus);else if(state.mode==='nebula')drawNebula();else drawNetwork();};
   ['#gmin','#gmax','#onlyDoc','#showPartner'].forEach(s=>$(s).addEventListener('change',refilter));
   document.querySelectorAll('.types input[data-type]').forEach(i=>i.addEventListener('change',refilter));
   $('#fit').onclick=()=>{
     if(state.mode==='ego'){cy.fit(cy.nodes(),44);syncZoomSlider();return;}
+    if(state.mode==='nebula'){cy.fit(undefined,40);syncZoomSlider();return;}
     resetGlobal();
   };
-  $('#expand').onclick=()=>zoomToRead();
-  $('#resetLayout').onclick=()=>resetGlobal();
+  $('#expand').onclick=()=>{
+    if(state.mode!=='nebula'){zoomToRead();return;}
+    const n=state.focus&&cy.getElementById(state.focus);
+    if(n&&n.length) cy.center(n);
+    zoomAtCenter(Math.max(cy.zoom(),1.15));
+  };
+  $('#resetLayout').onclick=()=>{
+    if(state.mode==='nebula'){cy.fit(undefined,40);syncZoomSlider();return;}
+    resetGlobal();
+  };
   $('#labels').addEventListener('change',e=>cy.nodes().toggleClass('alllabels',e.target.checked));
   $('#zoom').addEventListener('input',()=>{
     zoomFromSlider=true;
@@ -526,11 +590,13 @@ function formatZoom(z){
   return z.toFixed(2)+'×';
 }
 function sliderFromZoom(z){
-  const t=Math.log(z/Z_MIN)/Math.log(Z_MAX/Z_MIN);
+  const z0=cy.minZoom(), z1=cy.maxZoom();
+  const t=Math.log(z/z0)/Math.log(z1/z0);
   return Math.round(Math.min(1,Math.max(0,t))*1000);
 }
 function zoomFromSliderValue(v){
-  return Z_MIN*Math.pow(Z_MAX/Z_MIN,Number(v)/1000);
+  const z0=cy.minZoom(), z1=cy.maxZoom();
+  return z0*Math.pow(z1/z0, Number(v)/1000);
 }
 function syncZoomSlider(){
   if(!cy) return;
@@ -608,11 +674,20 @@ function openFeedback(personId){
 function route(){
   const h=location.hash.replace(/^#/,'')||'graph';
   const [view,arg]=h.split('/');
-  const v=['graph','people','relations','about'].includes(view)?view:'graph';
-  document.querySelectorAll('.view').forEach(s=>s.hidden=s.id!=='view-'+v);
-  document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.dataset.view===v));
-  if(v!=='graph') return;
+  const section=view==='nebula'?'graph':(['graph','people','relations','about'].includes(view)?view:'graph');
+  document.querySelectorAll('.view').forEach(s=>s.hidden=s.id!=='view-'+section);
+  document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.dataset.view===section));
+  if(section!=='graph'){updateModeTabs();return;}
   cy.resize();
+  if(view==='nebula'){
+    state.mode='nebula';
+    const sel=$('#mode'); if(sel) sel.value='nebula';
+    syncMode();
+    drawNebula();
+    if(arg&&byId[arg]){state.focus=arg; highlight(arg,true); renderPanel(arg);}
+    updateModeTabs();
+    return;
+  }
   if(arg&&byId[arg]){
     state.mode='ego';
     state.focus=arg;
@@ -620,9 +695,13 @@ function route(){
     syncMode();
     drawEgo(arg);
     renderPanel(arg);
-  } else if(state.mode==='ego'){
+    updateModeTabs();
+    return;
+  }
+  if(state.mode==='ego'||state.mode==='nebula'){
     resetGlobal();
   }
+  updateModeTabs();
 }
 // ---- tables
 let psort={k:'generation',d:1},rsort={k:'type',d:1};
