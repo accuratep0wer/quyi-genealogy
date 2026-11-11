@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>梨园师承谱系 · 京剧为主</title>
+<meta name="description" content="根据梨园百年琐记整理的京剧为主师承谱系：师徒、亲属、搭档，以及科班与院校。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%237f1d1d'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='18' fill='white' font-family='serif'%3E梨%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/mobile.css">
+<link rel="stylesheet" href="assets/liyuan.css">
+</head>
+<body>
+<header>
+  <div class="brand"><span class="logo">梨</span><div><h1>梨园师承谱系</h1><small>京剧为主 · 梨园百年琐记</small></div></div>
+  <nav>
+    <a href="#tree" data-view="graph">图谱</a>
+    <a href="#people" data-view="people">人物表</a>
+    <a href="#relations" data-view="relations">关系表</a>
+    <a href="#about" data-view="about">说明与来源</a>
+    <a href="../">相声</a>
+  </nav>
+  <button type="button" id="feedbackBtn" class="feedback-btn" title="需要 GitHub 账号。将打开预填好的议题；本站不接收邮件。">提交修正</button>
+</header>
+
+<main>
+<section id="view-graph" class="view">
+  <div class="mode-tabs" role="tablist">
+    <a href="#tree/era" data-mode="tree" title="自上而下的家谱，一代一代往下排">谱系图</a>
+    <a href="#nebula" data-mode="nebula" title="星团式布局">2D星云图</a>
+    <a href="#3d" data-mode="network" title="全网络。地址 #graph 仍打开这一张">3D星云图</a>
+    <a href="#graph" data-mode="ego" title="从一个人向外看师承">聚焦</a>
+  </div>
+  <div class="toolbar">
+    <div class="search">
+      <input id="q" type="search" placeholder="搜索人名，例如：梅兰芳、程砚秋、富连成" autocomplete="off">
+      <ul id="suggest" class="suggest" hidden></ul>
+    </div>
+    <div class="ctrl">
+      <label class="phone-hide">模式
+        <select id="mode">
+          <option value="tree">谱系图（家谱）</option>
+          <option value="nebula">2D星云图</option>
+          <option value="network">3D星云图</option>
+          <option value="ego">聚焦所选人物</option>
+        </select>
+      </label>
+      <label class="ego-only">向下代数 <select id="depthDown"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></label>
+      <label class="ego-only">向上 <select id="depthUp"><option>1</option><option>2</option><option>3</option><option selected>99</option></select></label>
+      <label class="phone-hide" hidden>代数 <select id="gmin"></select> – <select id="gmax"></select></label>
+      <span class="tree-only" id="treeVariant">
+        <button type="button" data-variant="era" class="on" title="左边只标清、民国、中华人民共和国">按朝代</button>
+        <button type="button" data-variant="active" title="左边是年号和年代尺，每人标大致活跃时期">按活跃年代</button>
+        <label><input type="checkbox" id="treeLinks"> 显示搭档与亲属</label>
+      </span>
+      <label>科班/院校 <select id="inst"><option value="">全部机构</option></select></label>
+      <label>科 <select id="cohort"><option value="">全部科 / 班</option></select></label>
+      <label><input type="checkbox" id="colorInst"> 按机构上色</label>
+      <button type="button" id="filterToggle" aria-expanded="false">筛选</button>
+    </div>
+    <div class="ctrl types">
+      <label class="t-md"><input type="checkbox" data-type="master_disciple" checked> 师徒</label>
+      <label class="t-other"><input type="checkbox" data-type="other"> 同台 / 受教</label>
+      <label class="t-kin"><input type="checkbox" data-type="kin" checked> 亲属</label>
+      <label class="t-mar"><input type="checkbox" data-type="marriage" checked> 姻缘</label>
+      <label class="t-partner"><input type="checkbox" id="showPartner" checked> 搭档</label>
+      <label class="t-dis"><input type="checkbox" id="onlyDoc"> 只显示确定</label>
+      <label><input type="checkbox" id="labels"> 显示全部姓名</label>
+      <button id="expand" type="button" title="放大到能看清姓名。其他人仍留在图上，缩小或拖动都能看到。">展开此区域</button>
+      <button id="resetLayout" type="button" title="缩小，回到完整全局布局">恢复全局布局</button>
+      <button id="fit" type="button">适配视图</button>
+    </div>
+  </div>
+  <div class="graph-wrap">
+    <div class="cy-stage">
+      <div id="cy" aria-label="梨园师承关系图"></div>
+      <svg id="hull" aria-hidden="true"></svg>
+      <div id="eraRail" hidden></div>
+      <div class="zoombar" role="group" aria-label="缩放">
+        <button type="button" id="zoomOut" aria-label="缩小">−</button>
+        <span class="zoom-label" id="zoomLabel">缩放</span>
+        <input id="zoom" type="range" min="0" max="1000" step="1" value="0" aria-labelledby="zoomLabel">
+        <span id="zoomVal">1×</span>
+        <button type="button" id="zoomIn" aria-label="放大">+</button>
+      </div>
+    </div>
+    <div id="panelDock">
+      <button type="button" id="panelHandle" class="panel-handle">人物详情</button>
+      <aside id="panel"><div class="placeholder">点击图中人物或搜索，查看其师父、徒弟、科班与来源。</div></aside>
+    </div>
+  </div>
+  <div class="legend">
+    <span><i class="ln md"></i>师徒·确定</span>
+    <span><i class="ln md-dis"></i>师徒·存疑</span>
+    <span><i class="ln kin"></i>亲属</span>
+    <span><i class="ln partner"></i>搭档</span>
+    <span><i class="ln other"></i>同台 / 受教</span>
+    <span><i class="ln mar"></i>姻缘</span>
+    <span><i class="dot xo"></i>菱形＝也见于相声谱</span>
+    <span class="muted">较淡的点是没有独立戏考条目的名录人物。</span>
+    <span id="genLegend"></span>
+    <span class="muted" id="hiddenNote"></span>
+    <span id="stat"></span>
+  </div>
+</section>
+
+<section id="view-people" class="view" hidden>
+  <div class="tbl-tools"><input id="pq" type="search" placeholder="筛选人物（姓名/艺名/行当）"> <select id="pgen"><option value="">全部行当</option></select> <span id="pcount"></span></div>
+  <div class="tbl-wrap"><table id="ptable"><thead><tr>
+    <th data-k="name">姓名</th><th data-k="hangdang">行当</th><th data-k="birth">生卒</th><th data-k="liupai">流派</th>
+    <th data-k="masters">师父</th><th data-k="schools">科班/院校</th><th>来源</th></tr></thead><tbody></tbody></table></div>
+</section>
+
+<section id="view-relations" class="view" hidden>
+  <div class="tbl-tools"><input id="rq" type="search" placeholder="筛选关系（人名/说明）">
+    <select id="rtype"><option value="">全部类型</option><option value="master_disciple">师徒</option><option value="other">同台/受教</option><option value="kin">亲属</option><option value="marriage">姻缘</option><option value="partner">搭档</option></select>
+    <select id="rconf"><option value="">全部可信度</option><option value="documented">确定</option><option value="disputed">存疑</option></select> <span id="rcount"></span></div>
+  <div class="tbl-wrap"><table id="rtable"><thead><tr>
+    <th data-k="type">类型</th><th data-k="fromName">从（师/长）</th><th data-k="toName">到（徒/亲）</th><th data-k="detail">说明</th><th data-k="confidence">可信度</th><th>来源</th></tr></thead><tbody></tbody></table></div>
+</section>
+
+<section id="view-about" class="view" hidden>
+  <article class="about">
+    <h2>说明</h2>
+    <p>本页整理京剧为主的梨园师承，供个人、非商业的学习研究使用。资料来源：<a href="https://history.xikao.com/" target="_blank" rel="noopener">梨园百年琐记（history.xikao.com）</a>。每个人物侧栏都链回戏考原条目。正文只摘录条目开头的一小段，版权归原作者及戏考所有，请勿作商业用途或整篇转载。</p>
+    <h3>图上有什么</h3>
+    <ul>
+      <li><b>师徒</b>只收录戏考师承谱图和正文里写明的拜师、学艺、私淑。同科班、同一科（如盛字科）或科班教师身份<b>不会</b>被当成师徒。</li>
+      <li><b>搭档</b>包括长期合作、挎刀配戏、琴师与鼓师。<b>亲属</b>和<b>姻缘</b>来自族谱图与正文中的称谓。</li>
+      <li><b>同台 / 受教</b>默认关掉。同台不等于固定搭档，受教不等于拜师；打开后图会密很多。</li>
+      <li>确定关系用实线，存疑用虚线。一条关系都没有的人不画出。没有独立戏考条目、只出现在别人名单里的人画得更淡。</li>
+      <li>菱形节点是和高置信度对上了相声谱系的人，侧栏可以一键跳到相声图谱里的同一人。</li>
+    </ul>
+    <h3>科班与院校</h3>
+    <p>工具栏可以选择富连成、中华戏曲专科学校等机构，再选一科（喜、连、富、盛、世、元、韵……）。成员会高亮；在 2D星云图上，还会用一块半透明的范围把他们圈起来。也可以改成按机构上色。</p>
+    <h3>谱系图</h3>
+    <p>家谱自上而下。最早的一辈在上，然后一代一代往下。深度按师徒关系计算，不另造师父。没有师承、但有亲属或搭档的人放在下方「无师承，但有其他关系」。按朝代只标清 / 民国 / 共和国；按活跃年代用生卒推一个大概时段，没有生年的标「估」，不写精确年份。</p>
+    <p class="muted" id="buildinfo"></p>
+    <h3 id="srcs">来源列表</h3>
+    <ol id="sourceList"></ol>
+    <p id="hiddenAbout" hidden></p>
+  </article>
+</section>
+</main>
+<footer>资料来源：<a href="https://history.xikao.com/" target="_blank" rel="noopener">梨园百年琐记（history.xikao.com）</a> · <span id="footcount"></span> · 非商业学习研究用途，仅保留短摘录</footer>
+<dialog id="feedbackDlg" aria-labelledby="fbHeading">
+  <div class="dlg">
+    <h2 id="fbHeading">提交修正</h2>
+    <p>下面的标题和正文会带到 GitHub 的新议题里。请补上哪里有误、正确信息和来源链接。师承以戏考原文为准，请不要要求把同科班推成师徒。</p>
+    <p class="notice">提交需要 GitHub 账号。本站没有邮箱或其他反馈通道。</p>
+    <p class="fb-kicker">预填标题</p>
+    <p id="fbTitle" class="fb-title"></p>
+    <p class="fb-kicker">预填正文</p>
+    <pre id="fbPreview" class="fb-preview"></pre>
+    <div class="dlg-actions">
+      <button type="button" id="fbClose">取消</button>
+      <a id="feedbackGo" class="feedback-btn" target="_blank" rel="noopener">前往 GitHub 提交</a>
+    </div>
+  </div>
+</dialog>
+<script src="../vendor/cytoscape.min.js"></script>
+<script src="../assets/mobile.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

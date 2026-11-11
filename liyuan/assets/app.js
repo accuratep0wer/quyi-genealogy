@@ -1,0 +1,1255 @@
+(function(){
+'use strict';
+const TYPE_CN={master_disciple:'师徒',other:'同台/受教',kin:'亲属',marriage:'姻缘',partner:'搭档'};
+const CONF_CN={documented:'确定',disputed:'存疑'};
+const GEN_COLORS=['#7f1d1d','#0ea5e9','#f59e0b','#3730a3','#22c55e','#db2777','#0f766e','#f97316','#7c3aed','#a3e635'];
+const genColor=g=>g?GEN_COLORS[(g-1)%GEN_COLORS.length]:'#9ca3af';
+const STRIPE='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"><path d="M-2 2 L2 -2 M0 8 L8 0 M6 10 L10 6" stroke="white" stroke-opacity="0.85" stroke-width="3.5" stroke-linecap="square"/></svg>');
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let P=[],R=[],L={},byId={},cy=null,state={mode:'network',focus:null,treeVariant:'era'};
+let INST=[],MEM=[],XO=[],INSTBY={},MEMBY={},XOBY={};
+let home={},spread={},layoutT=0,spreadReady=false,layoutLock=false,layoutAnim=0,placing=false;
+let anchorId=null,anchorPt=null,lastPointer=null;
+const Z_LO=0.42,Z_HI=1.2;
+const adj={};
+const Z_MIN=0.03,Z_MAX=32;
+let zoomFromSlider=false;
+
+let SPREAD={};
+let NEBULA={};
+Promise.all(['data/people.json','data/relations.json','data/layout.json','data/layout-spread.json','data/layout-nebula.json','data/institutions.json','data/memberships.json','data/crossover.json'].map(u=>fetch(u).then(r=>{if(!r.ok)throw new Error(u);return r.json()})))
+.then(([p,r,l,sp,n,inst,mem,xo])=>{P=p;R=r;L=l;SPREAD=sp;NEBULA=n;INST=inst;MEM=mem;XO=xo;init();}).catch(e=>{$('#cy').innerHTML='<p style="padding:20px">数据加载失败：'+esc(e.message)+'</p>';});
+function hid(id){return encodeURIComponent(id);}
+
+function labelOf(p){
+  // disambiguate homonyms by master
+  if(p._label) return p._label;
+  return p.name;
+}
+function init(){
+  P.forEach(p=>{byId[p.id]=p;adj[p.id]=[];});
+  R.forEach(r=>{adj[r.from].push(r);adj[r.to].push(r);});
+  const cnt={};P.forEach(p=>cnt[p.name]=(cnt[p.name]||0)+1);
+  P.forEach(p=>{p._deg=adj[p.id].length;
+    p._linked=p._deg>0;
+    if(cnt[p.name]>1){const m=adj[p.id].find(r=>r.type==='master_disciple'&&r.to===p.id);p._label=p.name+(m?'（'+byId[m.from].name+'徒）':p.generation?'（第'+p.generation+'代）':'（同名）');}
+    p._search=[p.name].concat(p.aliases||[]).join(' ');
+  });
+  INST.forEach(i=>INSTBY[i.id]=i);
+  MEM.forEach(m=>{(MEMBY[m.person]=MEMBY[m.person]||[]).push(m);});
+  XO.forEach(x=>XOBY[x.id]=x);
+  const instSel=$('#inst');
+  if(instSel){
+    INST.slice().sort((a,b)=>(b.member_count||0)-(a.member_count||0)||a.name.localeCompare(b.name,'zh')).forEach(i=>{
+      instSel.add(new Option(i.name+'（'+(i.member_count||0)+'）', i.id));
+    });
+  }
+  const gens=[...new Set(P.map(p=>p.generation).filter(Boolean))].sort((a,b)=>a-b);
+  const gmin=$('#gmin'),gmax=$('#gmax'),pgen=$('#pgen');
+  if(gens.length&&gmin&&gmax){
+    gens.forEach(g=>{gmin.add(new Option(g,g));gmax.add(new Option(g,g));});
+    gmin.value=gens[0];gmax.value=gens[gens.length-1];
+  }
+  const hangs=[...new Set(P.map(p=>p.hangdang).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'zh'));
+  if(pgen) hangs.forEach(h=>pgen.add(new Option(h,h)));
+  const buckets=[['生','#1d4ed8'],['旦','#db2777'],['净','#7f1d1d'],['丑','#b45309']];
+  if($('#genLegend')) $('#genLegend').innerHTML='行当：'+buckets.map(([n,c])=>'<span class="gen-swatch" style="background-color:'+c+'"></span>'+n).join('');
+  buildCy();
+  bindUI();
+  renderTables();
+  renderSources();
+  route();
+  window.addEventListener('hashchange',route);
+}
+
+function edgeData(r){
+  return {data:{id:r.id,source:r.from,target:r.to,type:r.type,conf:r.confidence,detail:r.detail||r.subtype||''}};
+}
+function extraClass(p){return (p.stub?' stub':'')+(XOBY[p.id]?' xo':'');}
+function hangColor(p){
+  const h=p.hangdang||'';
+  if(h.includes('旦')) return '#db2777';
+  if(h.includes('净')||h.includes('花脸')) return '#7f1d1d';
+  if(h.includes('丑')) return '#b45309';
+  if(h.includes('生')) return '#1d4ed8';
+  return '#6b7280';
+}
+const INST_PAL=['#1d4ed8','#b45309','#7f1d1d','#0f766e','#7c3aed','#db2777','#0369a1','#a16207','#be123c','#15803d','#4338ca','#c2410c'];
+function instColor(id){let h=0; for(const c of id) h=(h*33+c.charCodeAt(0))>>>0; return INST_PAL[h%INST_PAL.length];}
+function primaryInst(pid){
+  const ms=MEMBY[pid]||[];
+  if(!ms.length) return '';
+  return ms.slice().sort((a,b)=>{
+    const ia=INSTBY[a.institution], ib=INSTBY[b.institution];
+    const sa=(ia&&String(ia.id).indexOf('school:')===0?2:0)+((ia&&ia.member_count)||0)/100000;
+    const sb=(ib&&String(ib.id).indexOf('school:')===0?2:0)+((ib&&ib.member_count)||0)/100000;
+    return sb-sa;
+  })[0].institution;
+}
+function nodeColor(p){
+  if($('#colorInst')&&$('#colorInst').checked){
+    const id=primaryInst(p.id);
+    return id?instColor(id):'#d6d3d1';
+  }
+  return p.generation?genColor(p.generation):hangColor(p);
+}
+let parkN=0;
+function positionFor(p){
+  if(L[p.id]) return {x:L[p.id][0],y:L[p.id][1]};
+  parkN+=1;
+  return {x:-560-(parkN%8)*78, y:Math.floor(parkN/8)*66};
+}
+function nodeData(p){
+  const size=Math.max(12,Math.min(70,10+Math.sqrt(p._deg)*6));
+  return {data:{id:p.id,label:labelOf(p),gen:p.generation||0,color:nodeColor(p),size:size,deg:p._deg,role:p.role||''},classes:extraClass(p).trim(),position:positionFor(p)};
+}
+function buildCy(){
+  cy=cytoscape({container:$('#cy'),wheelSensitivity:0.25,minZoom:Z_MIN,maxZoom:Z_MAX,textureOnViewport:true,hideEdgesOnViewport:false,
+    style:[
+      {selector:'node',style:{'background-color':'data(color)','width':'data(size)','height':'data(size)','label':'data(label)','font-size':12,'color':'#222','text-valign':'bottom','text-margin-y':3,'text-outline-color':'#fff','text-outline-width':2,'min-zoomed-font-size':9,'border-width':1,'border-color':'#fff'}},
+      {selector:'node[deg < 6]',style:{'font-size':10,'min-zoomed-font-size':11}},
+      {selector:'node[deg >= 15]',style:{'font-size':16,'font-weight':'bold','min-zoomed-font-size':4}},
+      {selector:'node[role = "relative"]',style:{'shape':'round-rectangle'}},
+      {selector:'node[gen = 2], node[gen = 4], node[gen = 6], node[gen = 8], node[gen = 10]',style:{'background-image':STRIPE,'background-fit':'none','background-repeat':'repeat','background-width':8,'background-height':8,'background-clip':'node','background-position-x':'0','background-position-y':'0'}},
+      {selector:'edge',style:{'width':1.5,'line-color':'#6b7280','curve-style':'straight','opacity':0.85,'target-arrow-shape':'none','line-style':'solid'}},
+      {selector:'edge[type = "master_disciple"]',style:{'curve-style':'straight','target-arrow-shape':'triangle','target-arrow-color':'#374151','line-color':'#374151','line-style':'solid','width':1.6,'arrow-scale':0.8,'opacity':0.9}},
+      {selector:'edge[type = "master_disciple"][conf = "documented"]',style:{'line-color':'#374151','target-arrow-color':'#374151','target-arrow-shape':'triangle','line-style':'solid','width':1.6,'opacity':0.92}},
+      {selector:'edge[type = "master_disciple"][conf = "disputed"]',style:{'line-color':'#9ca3af','target-arrow-color':'#9ca3af','target-arrow-shape':'triangle','line-style':'dashed','line-dash-pattern':[10,6],'width':1.5,'opacity':0.8,'arrow-scale':0.75}},
+      {selector:'edge[type = "kin"]',style:{'line-color':'#6b7280','line-style':'dashed','line-dash-pattern':[2,5],'width':1.6,'target-arrow-shape':'none','opacity':0.85}},
+      {selector:'edge[type = "marriage"]',style:{'line-color':'#8e44ad','line-style':'dashed','line-dash-pattern':[2,5],'width':2,'target-arrow-shape':'none','opacity':0.9}},
+      {selector:'edge[type = "other"]',style:{'line-color':'#0f766e','line-style':'dashed','line-dash-pattern':[8,3,2,3],'width':1.7,'target-arrow-shape':'none','opacity':0.8}},
+      {selector:'edge[type = "partner"]',style:{'line-color':'#e11d48','target-arrow-shape':'none','line-style':'dashed','line-dash-pattern':[14,5,3,5],'width':2.6,'opacity':0.95,'curve-style':'straight'}},
+      {selector:'.faded',style:{'opacity':0.07,'text-opacity':0}},
+      {selector:'node.hl',style:{'border-width':3,'border-color':'#111','min-zoomed-font-size':0,'z-index':10}},
+      {selector:'node.nb',style:{'min-zoomed-font-size':0,'z-index':9}},
+      {selector:'edge.hl',style:{'opacity':1,'width':2.6,'z-index':9}},
+      {selector:'.alllabels',style:{'min-zoomed-font-size':0}},
+      {selector:'node.local',style:{'min-zoomed-font-size':0,'text-opacity':1}},
+      {selector:'node.nebula',style:{'font-size':14,'min-zoomed-font-size':10,'text-outline-width':3,'text-outline-color':'#fff'}},
+      {selector:'node.nebula[deg >= 8]',style:{'font-size':30,'min-zoomed-font-size':6,'font-weight':'bold'}},
+      {selector:'node.nebula[deg >= 15]',style:{'font-size':42,'min-zoomed-font-size':4,'font-weight':'bold'}},
+      {selector:'node.tree',style:{'shape':'round-rectangle','width':'data(w)','height':'data(h)','font-size':13,'min-zoomed-font-size':7,'text-valign':'center','text-halign':'center','text-margin-y':0,'color':'#1c1917','text-wrap':'wrap','text-max-width':'data(w)','background-color':'#fff','background-image':'none','border-width':3,'border-color':'data(eraColor)','padding':0}},
+      {selector:'node.tree.est',style:{'color':'#78716c','border-style':'dashed','background-color':'#fafaf9'}},
+      {selector:'node.tree.axis',style:{'shape':'round-rectangle','background-color':'#f6f1ea','border-width':0,'font-size':12,'font-weight':'bold','color':'#7c2d12','text-valign':'center','text-halign':'center','z-index':0}},
+      {selector:'node.stub',style:{'opacity':0.55,'color':'#6b7280','font-size':11,'border-style':'dashed','border-color':'#a8a29e'}},
+      {selector:'node.xo',style:{'shape':'diamond','border-width':2,'border-color':'#111'}},
+      {selector:'node.inst',style:{'border-width':4,'border-color':'#b45309','opacity':1,'z-index':8}},
+      {selector:'edge.extra',style:{'width':1,'line-color':'#d6d3d1','target-arrow-color':'#d6d3d1','opacity':0.55,'line-style':'dashed','line-dash-pattern':[3,4],'z-index':0}}
+    ],
+    layout:{name:'preset'}
+  });
+  cy.on('tap','node',e=>{const id=e.target.id(); if(id.indexOf('axis-')===0||id==='loosehead')return; selectPerson(id,false);});
+  cy.on('tap',e=>{if(e.target===cy) clearHL();});
+  cy.on('mousemove',ev=>{if(ev.renderedPosition) lastPointer={x:ev.renderedPosition.x,y:ev.renderedPosition.y,t:performance.now()};});
+  cy.on('pan',()=>{if(!placing&&!layoutAnim) anchorId=null; paintRail(); paintHull();});
+  cy.on('mouseover','edge',e=>{const d=e.target.data();e.target.style('label',(TYPE_CN[d.type]||'')+(d.detail?'：'+d.detail:'')+(CONF_CN[d.conf]?'（'+CONF_CN[d.conf]+'）':''));e.target.style({'font-size':11,'text-background-color':'#fff','text-background-opacity':0.9,'text-background-padding':2});});
+  cy.on('mouseout','edge',e=>e.target.removeStyle('label'));
+  cy.on('zoom',()=>{syncZoomSlider();syncSpreadToZoom(); paintRail(); paintHull();});
+  drawNetwork();
+}
+function filters(){
+  const types=[...document.querySelectorAll('.types input[data-type]')].filter(i=>i.checked).map(i=>i.dataset.type);
+  return {types:new Set(types),onlyDoc:$('#onlyDoc').checked,partners:$('#showPartner').checked,gmin:+$('#gmin').value,gmax:+$('#gmax').value};
+}
+function personOk(p,f){return !p.generation||(p.generation>=f.gmin&&p.generation<=f.gmax);}
+function relOk(r,f){
+  if(r.type==='partner') return !!f.partners&&(!f.onlyDoc||r.confidence==='documented');
+  return f.types.has(r.type)&&(!f.onlyDoc||r.confidence==='documented');
+}
+function memberPick(){
+  const sel=$('#inst');
+  if(!sel||!sel.value) return [];
+  const cohort=$('#cohort')?$('#cohort').value:'';
+  const out=[];
+  MEM.forEach(m=>{
+    if(m.institution!==sel.value) return;
+    if(cohort&&m.cohort!==cohort) return;
+    out.push(m.person);
+  });
+  return out;
+}
+function visibleSet(){
+  const f=filters();
+  const ids=new Set();
+  R.forEach(r=>{
+    if(!byId[r.from]||!byId[r.to]||!relOk(r,f)) return;
+    if(!personOk(byId[r.from],f)||!personOk(byId[r.to],f)) return;
+    ids.add(r.from); ids.add(r.to);
+  });
+  memberPick().forEach(id=>{ if(byId[id]) ids.add(id); });
+  XO.forEach(x=>{ if(byId[x.id]) ids.add(x.id); });
+  return ids;
+}
+function markInst(){
+  if(!cy) return;
+  const ids=new Set(memberPick());
+  cy.nodes().forEach(n=>n.toggleClass('inst', ids.has(n.id())));
+}
+function convexHull(pts){
+  const p=pts.slice().sort((a,b)=>a.x-b.x||a.y-b.y);
+  if(p.length<3) return p;
+  const cross=(o,a,b)=>(a.x-o.x)*(b.y-o.y)-(a.y-o.y)*(b.x-o.x);
+  const lower=[];
+  p.forEach(pt=>{ while(lower.length>=2&&cross(lower[lower.length-2],lower[lower.length-1],pt)<=0) lower.pop(); lower.push(pt); });
+  const upper=[];
+  for(let i=p.length-1;i>=0;i--){ const pt=p[i]; while(upper.length>=2&&cross(upper[upper.length-2],upper[upper.length-1],pt)<=0) upper.pop(); upper.push(pt); }
+  upper.pop(); lower.pop();
+  return lower.concat(upper);
+}
+function paintHull(){
+  const svg=$('#hull');
+  if(!svg||!cy) return;
+  const ids=memberPick().filter(id=>cy.getElementById(id).length);
+  if(state.mode!=='nebula'||ids.length<2){ svg.innerHTML=''; return; }
+  const pts=ids.map(id=>cy.getElementById(id).renderedPosition());
+  let hull=convexHull(pts);
+  const cx=pts.reduce((s,pt)=>s+pt.x,0)/pts.length, cy0=pts.reduce((s,pt)=>s+pt.y,0)/pts.length;
+  if(hull.length<3){
+    const rad=Math.max(36, ...pts.map(pt=>Math.hypot(pt.x-cx,pt.y-cy0)))+28;
+    hull=[];
+    for(let i=0;i<16;i++){ const a=i/16*Math.PI*2; hull.push({x:cx+rad*Math.cos(a), y:cy0+rad*Math.sin(a)}); }
+  }else hull=hull.map(pt=>({x:cx+(pt.x-cx)*1.15, y:cy0+(pt.y-cy0)*1.15}));
+  const d=hull.map((pt,i)=>(i?'L':'M')+pt.x.toFixed(1)+' '+pt.y.toFixed(1)).join(' ')+' Z';
+  const inst=INSTBY[$('#inst').value];
+  const cohort=$('#cohort')&&$('#cohort').value;
+  const title=(inst?inst.name:'')+(cohort?' · '+cohort:'');
+  svg.innerHTML='<path d="'+d+'"></path><text x="'+cx.toFixed(1)+'" y="'+(cy0-10).toFixed(1)+'">'+esc(title)+'</text>';
+}
+function drawNetwork(){
+  layoutLock=true;
+  parkN=0;
+  const f=filters();
+  const show=visibleSet();
+  const rels=R.filter(r=>relOk(r,f)&&show.has(r.from)&&show.has(r.to));
+  const nodes=P.filter(p=>show.has(p.id));
+  cy.startBatch();cy.elements().remove();
+  cy.add(nodes.map(nodeData));cy.add(rels.map(edgeData));
+  cy.endBatch();
+  cy.minZoom(Z_MIN);cy.maxZoom(Z_MAX);
+  cy.layout({name:'preset',fit:true,padding:20}).run();
+  captureHome();
+  spread={};
+  Object.keys(home).forEach(id=>{
+    const s=SPREAD[id];
+    spread[id]=s?{x:s[0],y:s[1]}:{x:home[id].x,y:home[id].y};
+  });
+  spreadReady=true;
+  layoutT=0;
+  layoutLock=false;
+  stat(nodes.length,rels.length);
+  markInst(); paintHull();
+  if(state.focus&&cy.getElementById(state.focus).length) highlight(state.focus,false);
+  updateLayoutButtons();
+  updateModeTabs();
+}
+function nebulaNodeData(p){
+  const n=nodeData(p);
+  n.classes=('nebula'+extraClass(p)).trim();
+  const rec=NEBULA[p.id];
+  if(rec){
+    n.position={x:rec[0],y:rec[1]};
+    if(rec[2]) n.data.size=rec[2];
+  }
+  return n;
+}
+function drawNebula(){
+  layoutLock=true;
+  if(layoutAnim){cancelAnimationFrame(layoutAnim); layoutAnim=0;}
+  state.mode='nebula';
+  cy.minZoom(1e-7);cy.maxZoom(32);
+  parkN=0;
+  const f=filters();
+  const show=visibleSet();
+  const rels=R.filter(r=>relOk(r,f)&&show.has(r.from)&&show.has(r.to));
+  const nodes=P.filter(p=>show.has(p.id));
+  const drawRels=rels;
+  cy.startBatch();cy.elements().remove();
+  cy.add(nodes.map(nebulaNodeData));cy.add(drawRels.map(edgeData));
+  cy.endBatch();
+  cy.fit(undefined,36);
+  // Full-map fit makes every dot a speck. Open close enough that hubs and
+  // their names read; zooming out still reaches the whole star map.
+  // On a phone the opening zoom is fitted to the narrower width.
+  const openZ=cy.width()<700?Math.max(0.7, Math.min(1.05, 300/cy.width())):0.34;
+  if(cy.zoom()<openZ){
+    const bb=cy.elements().boundingBox();
+    const cx=(bb.x1+bb.x2)/2, cy0=(bb.y1+bb.y2)/2;
+    cy.zoom(openZ);
+    cy.pan({x:cy.width()/2-cx*openZ, y:cy.height()/2-cy0*openZ});
+  }
+  layoutLock=false;
+  stat(nodes.length,drawRels.length);
+  markInst(); paintHull();
+  syncZoomSlider();
+  updateModeTabs();
+}
+function updateModeTabs(){
+  document.querySelectorAll('.mode-tabs a').forEach(a=>{
+    a.classList.toggle('active', a.dataset.mode===state.mode);
+  });
+  const ego=document.querySelector('.mode-tabs a[data-mode="ego"]');
+  const neb=document.querySelector('.mode-tabs a[data-mode="nebula"]');
+  const tree=document.querySelector('.mode-tabs a[data-mode="tree"]');
+  const id=state.focus||(P.find(p=>p.name==='侯宝林')||P[0]||{}).id||'';
+  if(ego&&id) ego.href='#graph/'+hid(id);
+  if(neb) neb.href=state.focus?'#nebula/'+hid(state.focus):'#nebula';
+  if(tree) tree.href='#tree/'+(state.treeVariant||'era');
+}
+function egoSet(id){
+  const f=filters(),dd=+$('#depthDown').value,du=+$('#depthUp').value;
+  const keep=new Set([id]),rels=new Set();
+  // up
+  let front=[id];
+  for(let d=0;d<du&&front.length;d++){const nx=[];front.forEach(x=>adj[x].forEach(r=>{if(r.type==='master_disciple'&&r.to===x&&relOk(r,f)){rels.add(r);if(!keep.has(r.from)){keep.add(r.from);nx.push(r.from);}}}));front=nx;}
+  front=[id];
+  for(let d=0;d<dd&&front.length;d++){const nx=[];front.forEach(x=>adj[x].forEach(r=>{if(r.type==='master_disciple'&&r.from===x&&relOk(r,f)){rels.add(r);if(!keep.has(r.to)){keep.add(r.to);nx.push(r.to);}}}));front=nx;}
+  adj[id].forEach(r=>{if(r.type!=='partner'&&relOk(r,f)){rels.add(r);keep.add(r.from);keep.add(r.to);}});
+  // lineage edges among kept; partner edges are drawn but never add people or change placement
+  R.forEach(r=>{if(r.type!=='partner'&&keep.has(r.from)&&keep.has(r.to)&&relOk(r,f))rels.add(r);});
+  R.forEach(r=>{if(r.type==='partner'&&keep.has(r.from)&&keep.has(r.to)&&relOk(r,f))rels.add(r);});
+  return {nodes:[...keep].map(k=>byId[k]),rels:[...rels]};
+}
+function nodeSize(p){return Math.max(12,Math.min(70,10+Math.sqrt(p._deg||1)*6));}
+function labelFont(p){return p._deg>=15?16:(p._deg<6?10:12);}
+function labelRadius(p){
+  const font=labelFont(p);
+  const chars=[...labelOf(p)].length;
+  const halfW=chars*font*0.5+8;
+  const halfH=nodeSize(p)/2+font+6;
+  return Math.hypot(halfW, halfH);
+}
+function edgeDetail(from,to){
+  const r=(adj[from]||[]).find(x=>x.type==='master_disciple'&&x.from===from&&x.to===to);
+  return (r&&r.detail)||'';
+}
+function discipleSort(parent,a,b){
+  const da=edgeDetail(parent,a),db=edgeDetail(parent,b);
+  if(da!==db) return da.localeCompare(db,'zh');
+  const ga=byId[a].generation||0,gb=byId[b].generation||0;
+  if(ga!==gb) return ga-gb;
+  return byId[a].name.localeCompare(byId[b].name,'zh');
+}
+function layoutRadial(rootId,ids,rels){
+  const idset=new Set(ids);
+  const pos={[rootId]:{x:0,y:0}};
+  const children=new Map();
+  idset.forEach(id=>children.set(id,[]));
+  const seen=new Set([rootId]);
+  let front=[rootId];
+  while(front.length){
+    const nx=[];
+    for(const id of front){
+      const ch=[];
+      for(const r of rels){
+        if(r.type==='master_disciple'&&r.from===id&&idset.has(r.to)&&!seen.has(r.to)){
+          seen.add(r.to);ch.push(r.to);nx.push(r.to);
+        }
+      }
+      ch.sort((a,b)=>discipleSort(id,a,b));
+      children.set(id,ch);
+    }
+    front=nx;
+  }
+  const ancestors=[];
+  front=[rootId];
+  const upSeen=new Set([rootId]);
+  while(front.length){
+    const nx=[],layer=[];
+    for(const id of front){
+      for(const r of rels){
+        if(r.type==='master_disciple'&&r.to===id&&idset.has(r.from)&&!seen.has(r.from)&&!upSeen.has(r.from)){
+          upSeen.add(r.from);seen.add(r.from);layer.push(r.from);nx.push(r.from);
+        }
+      }
+    }
+    layer.sort((a,b)=>byId[a].name.localeCompare(byId[b].name,'zh'));
+    ancestors.push(...layer);
+    front=nx;
+  }
+  function packAround(list,r0){
+    let r=Math.max(24,r0),i=0,outer=r0;
+    let guard=0;
+    while(i<list.length&&guard++<list.length+8){
+      const start=i; let ang=-Math.PI; const placed=[];
+      while(i<list.length){
+        const id=list[i], rad=labelRadius(byId[id]), need=rad*2+14;
+        if(need>=2*r-1){r=need/2+12; i=start; ang=-Math.PI; placed.length=0; continue;}
+        const step=2*Math.asin(Math.min(0.999,need/(2*r)));
+        if(placed.length&&ang+step>Math.PI+1e-3) break;
+        placed.push({id,ang:ang+step/2,r,rad});
+        ang+=step; i++;
+      }
+      if(!placed.length){r+=36; i=start; continue;}
+      let maxRad=0;
+      placed.forEach(p=>{pos[p.id]={x:Math.cos(p.ang)*p.r,y:Math.sin(p.ang)*p.r}; maxRad=Math.max(maxRad,p.rad);});
+      outer=r+maxRad;
+      const nextRad=i<list.length?labelRadius(byId[list[i]]):maxRad;
+      r=r+maxRad+nextRad+18;
+    }
+    return outer;
+  }
+  function placeKids(id){
+    const ch=children.get(id)||[];
+    if(!ch.length||!pos[id]) return;
+    const p=pos[id], ang0=Math.atan2(p.y,p.x)||0;
+    let r=Math.hypot(p.x,p.y)+labelRadius(byId[id])+labelRadius(byId[ch[0]])+18;
+    let angles=[],total=99;
+    for(let g=0;g<10;g++){
+      angles=ch.map(cid=>2*Math.asin(Math.min(0.999,(labelRadius(byId[cid])*2+14)/(2*r))));
+      total=angles.reduce((s,a)=>s+a,0);
+      if(total<=Math.PI*1.25) break;
+      r*=1.22;
+    }
+    let a=ang0-total/2;
+    ch.forEach((cid,i)=>{
+      const mid=a+angles[i]/2;
+      pos[cid]={x:Math.cos(mid)*r,y:Math.sin(mid)*r};
+      a+=angles[i];
+    });
+  }
+  const rootKids=children.get(rootId)||[];
+  let outer=labelRadius(byId[rootId])+20;
+  if(rootKids.length){
+    const first=labelRadius(byId[rootKids[0]]);
+    outer=packAround(rootKids, labelRadius(byId[rootId])+first+18);
+  }
+  const depth=new Map();
+  (function mark(id,d){(children.get(id)||[]).forEach(c=>{depth.set(c,d);mark(c,d+1);});})(rootId,1);
+  const maxD=Math.max(0,...depth.values(),0);
+  for(let d=2;d<=maxD;d++){
+    const parents=[...depth.entries()].filter(([,dd])=>dd===d-1).map(([id])=>id);
+    parents.sort((a,b)=>Math.atan2(pos[a].y,pos[a].x)-Math.atan2(pos[b].y,pos[b].x));
+    parents.forEach(placeKids);
+  }
+  Object.values(pos).forEach(p=>{outer=Math.max(outer,Math.hypot(p.x,p.y)+8);});
+  if(ancestors.length){
+    const gap=10;
+    const widths=ancestors.map(id=>labelRadius(byId[id])*2);
+    const total=widths.reduce((s,w)=>s+w,0)+gap*(ancestors.length-1);
+    let x=-total/2;
+    const y=-(outer+24+Math.max(...ancestors.map(id=>labelRadius(byId[id]))));
+    ancestors.forEach((id,i)=>{
+      const rad=labelRadius(byId[id]);
+      pos[id]={x:x+rad,y};
+      x+=rad*2+gap;
+    });
+  }
+  const extras=ids.filter(id=>!pos[id]);
+  extras.forEach((id,i)=>{
+    let anchor=rootId;
+    for(const r of rels){
+      if(r.from===id&&pos[r.to]){anchor=r.to;break;}
+      if(r.to===id&&pos[r.from]){anchor=r.from;break;}
+    }
+    const a=pos[anchor]||{x:0,y:0};
+    const ang=Math.atan2(a.y,a.x)||(-Math.PI/2+(i+1)*0.35);
+    const dist=Math.hypot(a.x,a.y)+labelRadius(byId[anchor])+labelRadius(byId[id])+16;
+    pos[id]={x:Math.cos(ang)*dist,y:Math.sin(ang)*dist};
+  });
+  relax(pos,ids,[rootId]);
+  return pos;
+}
+function relax(pos,ids,pin){
+  const pinSet=new Set(pin||[]);
+  const rad={};
+  ids.forEach(id=>{if(byId[id]) rad[id]=labelRadius(byId[id]);});
+  for(let iter=0;iter<56;iter++){
+    let moved=false;
+    for(let i=0;i<ids.length;i++){
+      for(let j=i+1;j<ids.length;j++){
+        const A=pos[ids[i]],B=pos[ids[j]];
+        if(!A||!B) continue;
+        const pinA=pinSet.has(ids[i]),pinB=pinSet.has(ids[j]);
+        if(pinA&&pinB) continue;
+        let dx=B.x-A.x,dy=B.y-A.y;
+        let d=Math.hypot(dx,dy)||0.01;
+        const need=(rad[ids[i]]||16)+(rad[ids[j]]||16)+8;
+        if(d>=need) continue;
+        const push=(need-d)/(pinA||pinB?1:2);
+        dx/=d;dy/=d;
+        if(!pinA){A.x-=dx*push;A.y-=dy*push;}
+        if(!pinB){B.x+=dx*push;B.y+=dy*push;}
+        moved=true;
+      }
+    }
+    if(!moved) break;
+  }
+}
+function captureHome(){
+  home={};
+  cy.nodes().forEach(n=>{const p=n.position(); home[n.id()]={x:p.x,y:p.y};});
+}
+function spreadAmount(z){
+  if(z<=Z_LO) return 0;
+  if(z>=Z_HI) return 1;
+  const u=(z-Z_LO)/(Z_HI-Z_LO);
+  return u*u*(3-2*u);
+}
+function anchorPoint(){
+  if(lastPointer&&performance.now()-lastPointer.t<700) return {x:lastPointer.x,y:lastPointer.y};
+  return {x:cy.width()/2,y:cy.height()/2};
+}
+function nearestNode(rx,ry){
+  let best=null,bd=1e18;
+  cy.nodes().forEach(n=>{
+    const p=n.renderedPosition();
+    const d=(p.x-rx)*(p.x-rx)+(p.y-ry)*(p.y-ry);
+    if(d<bd){bd=d;best=n;}
+  });
+  return best;
+}
+function snapSpread(t,aid,pt){
+  if(!spreadReady) return;
+  if(!pt) pt=anchorPoint();
+  if(!aid){const n=nearestNode(pt.x,pt.y); aid=n&&n.id();}
+  const z=cy.zoom();
+  placing=true;
+  cy.startBatch();
+  cy.nodes().forEach(n=>{
+    const h=home[n.id()], s=spread[n.id()];
+    if(!h||!s) return;
+    n.position({x:h.x+(s.x-h.x)*t, y:h.y+(s.y-h.y)*t});
+  });
+  cy.endBatch();
+  if(aid&&home[aid]&&spread[aid]){
+    const x=home[aid].x+(spread[aid].x-home[aid].x)*t;
+    const y=home[aid].y+(spread[aid].y-home[aid].y)*t;
+    cy.pan({x:pt.x-x*z, y:pt.y-y*z});
+  }
+  placing=false;
+  layoutT=t;
+}
+function easeSpread(){
+  layoutAnim=0;
+  if(state.mode==='ego'||layoutLock||!spreadReady) return;
+  const goal=spreadAmount(cy.zoom());
+  const diff=goal-layoutT;
+  if(Math.abs(diff)<0.01){if(Math.abs(diff)>0.0001) snapSpread(goal,anchorId,anchorPt); anchorId=null; return;}
+  if(!anchorId){
+    anchorPt=anchorPoint();
+    const focus=state.focus&&cy.getElementById(state.focus);
+    if(focus&&focus.length){
+      const p=focus.renderedPosition();
+      if(p.x>-30&&p.x<cy.width()+30&&p.y>-30&&p.y<cy.height()+30){
+        anchorId=state.focus;
+        anchorPt={x:Math.min(cy.width()-8,Math.max(8,p.x)),y:Math.min(cy.height()-8,Math.max(8,p.y))};
+      }
+    }
+    if(!anchorId){
+      const n=nearestNode(anchorPt.x,anchorPt.y);
+      anchorId=n&&n.id();
+    }
+  }
+  snapSpread(layoutT+diff*0.45, anchorId, anchorPt);
+  layoutAnim=requestAnimationFrame(easeSpread);
+}
+function syncSpreadToZoom(){
+  if(layoutLock||state.mode!=='network'||!spreadReady) return;
+  if(Math.abs(spreadAmount(cy.zoom())-layoutT)<0.004) return;
+  if(!layoutAnim) layoutAnim=requestAnimationFrame(easeSpread);
+}
+function zoomToRead(){
+  if(state.mode==='ego'&&state.focus){drawEgo(state.focus);return;}
+  const id=state.focus&&cy.getElementById(state.focus).length?state.focus:null;
+  const n=id?cy.getElementById(id):nearestNode(cy.width()/2,cy.height()/2);
+  if(n&&n.length) cy.center(n);
+  zoomAtCenter(Math.max(cy.zoom(), Z_HI+0.15));
+}
+function resetGlobal(){
+  if(layoutAnim){cancelAnimationFrame(layoutAnim); layoutAnim=0;}
+  anchorId=null;
+  const wasEgo=state.mode==='ego';
+  state.mode='network';
+  $('#mode').value='network';
+  syncMode();
+  if(location.hash.startsWith('#graph/')) history.replaceState(null,'','#graph');
+  layoutLock=true;
+  if(wasEgo||!spreadReady) drawNetwork();
+  else {snapSpread(0,null,{x:cy.width()/2,y:cy.height()/2}); cy.fit(undefined,28); layoutT=0;}
+  layoutLock=false;
+  syncZoomSlider();
+  updateLayoutButtons();
+}
+function updateLayoutButtons(){}
+function drawEgo(id){
+  layoutLock=true;
+  if(layoutAnim){cancelAnimationFrame(layoutAnim); layoutAnim=0;}
+  cy.minZoom(Z_MIN);cy.maxZoom(Z_MAX);
+  const s=egoSet(id);
+  const ids=s.nodes.map(p=>p.id);
+  const local=layoutRadial(id,ids,s.rels);
+  cy.startBatch();cy.elements().remove();
+  cy.add(s.nodes.map(p=>{const n=nodeData(p); n.position=local[p.id]||{x:0,y:0}; return n;}));
+  cy.add(s.rels.map(edgeData));
+  cy.endBatch();
+  cy.nodes().addClass('local');
+  const eles=cy.nodes();
+  cy.fit(eles,44);
+  if(cy.zoom()>2.4) cy.zoom(2.4);
+  if(cy.zoom()<1.2){cy.center(cy.getElementById(id)); zoomAtCenter(1.2);}
+  syncZoomSlider();
+  stat(s.nodes.length,s.rels.length);
+  highlight(id,false);
+  markInst();
+  updateLayoutButtons();
+  layoutLock=false;
+}
+function stat(n,e){
+  const tag=state.mode==='ego'?' · 聚焦环形谱系':(state.mode==='tree'?' · 家谱':'');
+  $('#stat').textContent='当前显示 '+n+' 人 · '+e+' 条关系（全库 '+P.length+' 人 · '+R.length+' 条）'+tag;
+}
+function clearHL(){cy.elements().removeClass('faded hl nb');}
+function highlight(id,center){
+  const n=cy.getElementById(id);if(!n.length)return;
+  clearHL();
+  const nb=n.closedNeighborhood();
+  nb.nodes().addClass('nb');n.addClass('hl');n.connectedEdges().addClass('hl');
+  if(center) cy.animate({center:{eles:n},zoom:Math.max(cy.zoom(),0.9)},{duration:450});
+}
+function selectPerson(id,center){
+  state.focus=id;
+  if(!byId[id]._linked){
+    renderPanel(id);
+    if(state.mode==='ego'){state.mode='network';$('#mode').value='network';syncMode();drawNetwork();}
+    const next=state.mode==='nebula'?'#nebula':(state.mode==='tree'?'#tree/'+(state.treeVariant||'era'):'#3d');
+    if(location.hash!==next) history.replaceState(null,'',next);
+    if(cy) clearHL();
+    updateModeTabs();
+    return;
+  }
+  if(state.mode==='ego'){drawEgo(id);}
+  else if(state.mode==='tree'){
+    if(!cy.getElementById(id).length) drawTree();
+    highlight(id,true);
+    if(window.XSMobile&&XSMobile.layout()!=='pane') XSMobile.openPanel();
+  }else highlight(id,center);
+  renderPanel(id);
+  const next=state.mode==='nebula'?'#nebula/'+hid(id):(state.mode==='tree'?'#tree/'+hid(id):(state.mode==='ego'?'#graph/'+hid(id):'#graph/'+hid(id)));
+  if(location.hash!==next) history.replaceState(null,'',next);
+  updateModeTabs();
+}
+function plink(id){const p=byId[id];return '<span class="pl" data-id="'+esc(id)+'">'+esc(labelOf(p))+'</span>';}
+function srcLinks(arr){return (arr||[]).map((u,i)=>'<a href="'+esc(u)+'" target="_blank" rel="noopener" title="'+esc(u)+'">['+(i+1)+']</a>').join(' ');}
+function relLine(r,other){
+  const detail=r.detail||r.subtype||'';
+  const src=r.source?'<a href="'+esc(r.source)+'" target="_blank" rel="noopener">来源</a>':srcLinks(r.sources);
+  return '<li>'+plink(other)+(detail?' <small>'+esc(detail)+'</small>':'')+'<span class="tag'+(r.confidence==='disputed'?' dis':'')+'">'+(CONF_CN[r.confidence]||'')+'</span> '+src+'</li>';
+}
+function renderPanel(id){
+  const p=byId[id];const rs=adj[id];
+  const masters=rs.filter(r=>r.type==='master_disciple'&&r.to===id);
+  const dis=rs.filter(r=>r.type==='master_disciple'&&r.from===id);
+  const sib=new Map();masters.forEach(m=>adj[m.from].forEach(r=>{if(r.type==='master_disciple'&&r.from===m.from&&r.to!==id)sib.set(r.to,1);}));
+  const kin=rs.filter(r=>r.type==='kin'),mar=rs.filter(r=>r.type==='marriage'),oth=rs.filter(r=>r.type==='other'),par=rs.filter(r=>r.type==='partner');
+  const sec=(t,arr,fn)=>arr.length?'<h3>'+t+'（'+arr.length+'）</h3><ul>'+arr.map(fn).join('')+'</ul>':'';
+  const yrs=(p.birth||p.death)?(p.birth||'?')+'–'+(p.death||''):'';
+  const confTag=p.confidence?'<span class="tag'+(p.confidence==='disputed'?' dis':'')+'">'+CONF_CN[p.confidence]+'</span>':'';
+  const off=p._linked?'':'<p class="notice">没有任何关系，几张图都不画出此人。</p>';
+  const schools=(MEMBY[id]||[]).map(m=>{
+    const inst=INSTBY[m.institution];
+    return esc(inst?inst.name:m.institution)+(m.cohort?' · '+esc(m.cohort):'')+(m.role?'（'+esc(m.role)+'）':'');
+  });
+  const xo=XOBY[id];
+  const badge=xo?'<p class="xo-badge">相声谱系里的同一人（'+(xo.confidence==='high'?'高置信':'中置信')+'） <a href="'+esc(xo.xs_url)+'">打开相声图谱</a></p>':'';
+  $('#panel').innerHTML='<h2>'+esc(labelOf(p))+'</h2>'+off+badge+
+   '<div class="meta">'+(p.hangdang?esc(p.hangdang):'行当不详')+(p.liupai?' · '+esc(p.liupai):'')+(yrs?' · '+yrs:'')+(p.stub?' · <span class="tag">名录</span>':'')+'</div>'+
+   '<div class="panel-actions"><button type="button" id="egoBtn">'+(state.mode==='ego'?'回到全网络':'聚焦此人的师承子图')+'</button>'+
+   '<button type="button" class="feedback-btn" id="panelFeedback">提交修正</button></div>'+
+   (p.bio?'<p class="bio">'+esc(p.bio)+'</p>':'')+
+   (p.aliases&&p.aliases.length?'<div>别名：'+esc(p.aliases.join('、'))+'</div>':'')+
+   (schools.length?'<h3>科班 / 院校（'+schools.length+'）</h3><ul>'+schools.map(x=>'<li>'+x+'</li>').join('')+'</ul>':'')+
+   sec('师父',masters,r=>relLine(r,r.from))+
+   sec('徒弟',dis,r=>relLine(r,r.to))+
+   sec('同台 / 受教',oth,r=>relLine(r,r.from===id?r.to:r.from))+
+   sec('亲属',kin,r=>relLine(r,r.from===id?r.to:r.from))+
+   sec('姻缘',mar,r=>relLine(r,r.from===id?r.to:r.from))+
+   sec('固定搭档',par,r=>relLine(r,r.from===id?r.to:r.from))+
+   (sib.size?'<h3>同门（'+sib.size+'）</h3><div style="line-height:1.9">'+[...sib.keys()].map(plink).join('、')+'</div>':'')+
+   (p.xikao_url?'<h3>来源</h3><div><a href="'+esc(p.xikao_url)+'" target="_blank" rel="noopener">梨园百年琐记条目</a></div>':'');
+  $('#egoBtn').onclick=()=>{
+    if(state.mode==='ego'){resetGlobal();renderPanel(id);return;}
+    state.focus=id;
+    if(location.hash==='#graph/'+id){state.mode='ego';$('#mode').value='ego';syncMode();drawEgo(id);renderPanel(id);updateModeTabs();}
+    else location.hash='#graph/'+hid(id);
+  };
+  $('#panelFeedback').onclick=()=>openFeedback(id);
+}
+function syncMode(){
+  document.querySelectorAll('.ego-only').forEach(e=>e.style.display=state.mode==='ego'?'':'none');
+  document.querySelectorAll('.tree-only').forEach(e=>e.style.display=state.mode==='tree'?'inline-flex':'none');
+  document.querySelectorAll('#treeVariant button').forEach(b=>b.classList.toggle('on', b.dataset.variant===(state.treeVariant||'era')));
+}
+function bindUI(){
+  $('#panel').addEventListener('click',e=>{const t=e.target.closest('.pl');if(t){selectPerson(t.dataset.id,true);}});
+  const q=$('#q'),sg=$('#suggest');let sel=-1,items=[];
+  q.addEventListener('input',()=>{
+    const v=q.value.trim();sel=-1;
+    if(!v){sg.hidden=true;return;}
+    items=P.filter(p=>p._search.includes(v)).sort((a,b)=>(a.name===v?-1:0)-(b.name===v?-1:0)||(a.name.indexOf(v)-b.name.indexOf(v))||b._deg-a._deg).slice(0,30);
+    sg.innerHTML=items.length?items.map((p,i)=>'<li data-i="'+i+'">'+esc(labelOf(p))+'<small>'+(p.hangdang?esc(p.hangdang):'')+(p.aliases&&p.aliases.length?' · '+esc(p.aliases.slice(0,2).join('、')):'')+'</small></li>').join(''):'<li><small>无匹配</small></li>';
+    sg.hidden=false;
+  });
+  q.addEventListener('keydown',e=>{
+    const lis=sg.querySelectorAll('li[data-i]');
+    if(e.key==='ArrowDown'){sel=Math.min(sel+1,lis.length-1);}else if(e.key==='ArrowUp'){sel=Math.max(sel-1,0);}
+    else if(e.key==='Enter'){const i=sel>=0?sel:0;if(items[i])pick(items[i]);return;}else if(e.key==='Escape'){sg.hidden=true;return;}else return;
+    lis.forEach((l,i)=>l.classList.toggle('sel',i===sel));e.preventDefault();
+  });
+  sg.addEventListener('mousedown',e=>{const li=e.target.closest('li[data-i]');if(li){e.preventDefault();pick(items[+li.dataset.i]);}});
+  q.addEventListener('blur',()=>setTimeout(()=>sg.hidden=true,150));
+  function pick(p){q.value=p.name;sg.hidden=true;
+    if(state.mode==='network'&&!cy.getElementById(p.id).length){ // ensure visible
+      $('#gmin').value=$('#gmin').options[0].value;$('#gmax').value=$('#gmax').options[$('#gmax').options.length-1].value;drawNetwork();}
+    selectPerson(p.id,true);}
+  $('#mode').addEventListener('change',e=>{
+    const v=e.target.value;
+    if(v==='nebula'){location.hash=state.focus?'#nebula/'+state.focus:'#nebula';return;}
+    if(v==='tree'){location.hash='#tree/'+(state.treeVariant||'era');return;}
+    if(v==='network'){location.hash='#3d';return;}
+    const id=state.focus||(P.find(p=>p.name==='侯宝林')||{}).id||'';
+    location.hash='#graph/'+id;
+  });
+  ['#depthDown','#depthUp'].forEach(s=>$(s).addEventListener('change',()=>{if(state.mode==='ego'&&state.focus)drawEgo(state.focus);}));
+  const refilter=()=>{if(state.mode==='ego'&&state.focus)drawEgo(state.focus);else if(state.mode==='nebula')drawNebula();else if(state.mode==='tree')drawTree();else drawNetwork();};
+  ['#gmin','#gmax','#onlyDoc','#showPartner'].forEach(s=>$(s).addEventListener('change',refilter));
+  document.querySelectorAll('.types input[data-type]').forEach(i=>i.addEventListener('change',refilter));
+  $('#fit').onclick=()=>{
+    if(state.mode==='ego'){cy.fit(cy.nodes(),44);syncZoomSlider();return;}
+    if(state.mode==='nebula'){cy.fit(undefined,40);syncZoomSlider();return;}
+    if(state.mode==='tree'){openTreeView();syncZoomSlider();return;}
+    resetGlobal();
+  };
+  $('#expand').onclick=()=>{
+    if(state.mode!=='nebula'){zoomToRead();return;}
+    const n=state.focus&&cy.getElementById(state.focus);
+    if(n&&n.length) cy.center(n);
+    zoomAtCenter(Math.max(cy.zoom(),1.15));
+  };
+  $('#resetLayout').onclick=()=>{
+    if(state.mode==='nebula'){cy.fit(undefined,40);syncZoomSlider();return;}
+    resetGlobal();
+  };
+  $('#labels').addEventListener('change',e=>cy.nodes().toggleClass('alllabels',e.target.checked));
+  $('#zoom').addEventListener('input',()=>{
+    zoomFromSlider=true;
+    zoomAtCenter(zoomFromSliderValue($('#zoom').value));
+    zoomFromSlider=false;
+  });
+  $('#zoomIn').addEventListener('click',()=>zoomAtCenter(cy.zoom()*1.25));
+  $('#zoomOut').addEventListener('click',()=>zoomAtCenter(cy.zoom()/1.25));
+  $('#feedbackBtn').addEventListener('click',()=>openFeedback(state.focus));
+  $('#fbClose').addEventListener('click',()=>$('#feedbackDlg').close());
+  $('#feedbackDlg').addEventListener('click',e=>{if(e.target.id==='feedbackDlg') $('#feedbackDlg').close();});
+  document.querySelectorAll('#treeVariant button').forEach(b=>b.addEventListener('click',()=>{
+    state.treeVariant=b.dataset.variant;
+    const id=state.focus;
+    location.hash='#tree/'+(id&&byId[id]?id:state.treeVariant);
+  }));
+  const treeLinks=$('#treeLinks');
+  if(treeLinks) treeLinks.addEventListener('change',()=>{ if(state.mode==='tree') drawTree(); });
+  function fillCohorts(){
+    const sel=$('#cohort'); if(!sel) return;
+    const id=$('#inst')&&$('#inst').value;
+    sel.innerHTML='<option value="">全部科 / 班</option>';
+    if(!id) return;
+    const counts={};
+    MEM.forEach(m=>{ if(m.institution===id&&m.cohort) counts[m.cohort]=(counts[m.cohort]||0)+1; });
+    Object.keys(counts).sort((a,b)=>counts[b]-counts[a]||a.localeCompare(b,'zh')).forEach(c=>sel.add(new Option(c+'（'+counts[c]+'）', c)));
+  }
+  function focusMembers(){
+    if(!cy||state.mode!=='nebula') return;
+    const ids=memberPick().filter(id=>cy.getElementById(id).length);
+    if(ids.length<2){ paintHull(); return; }
+    let eles=cy.collection();
+    ids.forEach(id=>{ eles=eles.union(cy.getElementById(id)); });
+    cy.fit(eles, 36);
+    paintHull();
+  }
+  if($('#inst')) $('#inst').addEventListener('change',()=>{ fillCohorts(); refilter(); focusMembers(); });
+  if($('#cohort')) $('#cohort').addEventListener('change',()=>{ refilter(); focusMembers(); });
+  if($('#colorInst')) $('#colorInst').addEventListener('change',refilter);
+  function refitAfterLayout(){
+    if(!cy) return;
+    cy.resize();
+    if(state.mode==='nebula') drawNebula();
+    else if(state.mode==='tree') openTreeView();
+    else if(state.mode==='ego'&&state.focus) cy.fit(cy.nodes(),28);
+    else if(state.mode==='network') cy.fit(undefined,24);
+    syncZoomSlider();
+  }
+  document.addEventListener('xsmobile', ev=>{ state._vw=ev.detail&&ev.detail.w; state._vh=ev.detail&&ev.detail.h; refitAfterLayout(); });
+  document.addEventListener('xsmobile-resize', ev=>{
+    if(!cy) return;
+    cy.resize();
+    const d=ev.detail||{};
+    const dw=Math.abs((d.w||0)-(state._vw||0)), dh=Math.abs((d.h||0)-(state._vh||0));
+    if(dw>40||dh>40){ state._vw=d.w; state._vh=d.h; refitAfterLayout(); }
+  });
+  syncZoomSlider();
+  syncMode();
+  updateLayoutButtons();
+}
+function formatZoom(z){
+  if(z>=10) return z.toFixed(0)+'×';
+  if(z>=1) return z.toFixed(1)+'×';
+  return z.toFixed(2)+'×';
+}
+function sliderFromZoom(z){
+  const z0=cy.minZoom(), z1=cy.maxZoom();
+  const t=Math.log(z/z0)/Math.log(z1/z0);
+  return Math.round(Math.min(1,Math.max(0,t))*1000);
+}
+function zoomFromSliderValue(v){
+  const z0=cy.minZoom(), z1=cy.maxZoom();
+  return z0*Math.pow(z1/z0, Number(v)/1000);
+}
+function syncZoomSlider(){
+  if(!cy) return;
+  const z=cy.zoom(),el=$('#zoom');
+  if(!el) return;
+  const label=formatZoom(z);
+  $('#zoomVal').textContent=label;
+  el.setAttribute('aria-valuetext',label);
+  $('#zoomIn').disabled=z>=Z_MAX*0.999;
+  $('#zoomOut').disabled=z<=Z_MIN*1.001;
+  if(!zoomFromSlider) el.value=String(sliderFromZoom(z));
+}
+function zoomAtCenter(level){
+  const z0=cy.zoom();
+  const z=Math.min(Z_MAX,Math.max(Z_MIN,level));
+  const w=cy.width(),h=cy.height();
+  if(!(w>1&&h>1)||!(z0>0)){cy.zoom(z);return;}
+  const pan=cy.pan();
+  const mx=(w/2-pan.x)/z0, my=(h/2-pan.y)/z0;
+  if(typeof cy.viewport==='function') cy.viewport({zoom:z,pan:{x:w/2-mx*z,y:h/2-my*z}});
+  else {cy.zoom(z);cy.pan({x:w/2-mx*z,y:h/2-my*z});}
+}
+function joinCapped(items,n){
+  if(!items.length) return '（无）';
+  if(items.length<=n) return items.join('、');
+  return items.slice(0,n).join('、')+'……等共 '+items.length+' 人';
+}
+function relNames(id,pred){
+  return (adj[id]||[]).filter(pred).map(r=>{
+    const oid=r.from===id?r.to:r.from;
+    const name=byId[oid]?byId[oid].name:oid;
+    return name+(r.detail?'·'+r.detail:'')+(CONF_CN[r.confidence]?'（'+CONF_CN[r.confidence]+'）':'');
+  });
+}
+function issueTitle(personId){
+  if(personId&&byId[personId]) return '修正：'+byId[personId].name+'（'+personId+'）';
+  return '修正：梨园师承谱系';
+}
+function issueBody(personId){
+  const page=location.href;
+  const ask='\n\n### 哪里有误\n请写清现有记录错在哪里。\n\n### 正确信息\n请写上应改成什么。\n\n### 来源链接\n请给出可公开核对的网页、报道或书目。\n';
+  if(!personId||!byId[personId]){
+    return '（未指定具体人物。若针对某位人物，请写上姓名和编号。）\n\n### 页面地址\n'+page+ask;
+  }
+  const p=byId[personId];
+  return [
+    '### 人物',
+    p.name+'（'+p.id+'）'+(p.aliases&&p.aliases.length?'，别名：'+p.aliases.join('、'):''),
+    '',
+    '### 当前代数与关系',
+    '代数：'+(p.generation?'第'+p.generation+'代':'不详')+(p.zibei?'，'+p.zibei+'字辈':''),
+    '师父：'+joinCapped(relNames(personId,r=>r.type==='master_disciple'&&r.to===personId),20),
+    '徒弟：'+joinCapped(relNames(personId,r=>r.type==='master_disciple'&&r.from===personId),25),
+    '同台 / 受教：'+joinCapped(relNames(personId,r=>r.type==='other'),15),
+    '亲缘：'+joinCapped(relNames(personId,r=>r.type==='kin'),15),
+    '姻缘：'+joinCapped(relNames(personId,r=>r.type==='marriage'),10),
+    '',
+    '### 页面地址',
+    page
+  ].join('\n')+ask;
+}
+function issueUrl(personId){
+  const id=(personId&&byId[personId])?personId:null;
+  const q=new URLSearchParams({template:'correction.md',title:issueTitle(id),body:issueBody(id)});
+  return 'https://github.com/accuratep0wer/xiangsheng-genealogy/issues/new?'+q.toString();
+}
+function openFeedback(personId){
+  const id=(personId&&byId[personId])?personId:null;
+  $('#fbTitle').textContent=issueTitle(id);
+  $('#fbPreview').textContent=issueBody(id);
+  $('#feedbackGo').href=issueUrl(id);
+  const dlg=$('#feedbackDlg');
+  if(!dlg.open) dlg.showModal();
+}
+let TREE=null;
+function treeCompact(){
+  const lay=document.documentElement.getAttribute('data-layout')||'pane';
+  return lay==='sheet'||lay==='drawer';
+}
+function bucketYear(y){
+  if(y<1862) return {label:'清咸丰前后', era:'qing'};
+  if(y<=1874) return {label:'清同治', era:'qing'};
+  if(y<=1908) return {label:'清光绪', era:'qing'};
+  if(y<=1911) return {label:'清宣统', era:'qing'};
+  if(y<=1927) return {label:'民国初', era:'roc'};
+  if(y<=1949) return {label:'民国', era:'roc'};
+  const d=Math.floor(y/10)*10;
+  return {label:d+'s', era:'prc'};
+}
+function spanLabel(a,b){
+  const A=bucketYear(a), B=bucketYear(b);
+  if(A.label===B.label) return A;
+  let end=B.label;
+  if(A.era===B.era && A.era==='qing') end=B.label.replace(/^清/,'');
+  return {label:A.label+'–'+end, era:bucketYear((a+b)/2).era};
+}
+function periodOf(p, depth){
+  if(p.birth){
+    const start=p.birth+18;
+    const end=p.death||Math.min(p.birth+70, 2026);
+    const s=spanLabel(start, end);
+    return {label:s.label, era:s.era, estimated:false};
+  }
+  const g=p.generation||(depth+1);
+  const table={
+    1:['清咸丰–同治','qing'],
+    2:['清同治–光绪','qing'],
+    3:['清光绪','qing'],
+    4:['清光绪–民国初','qing'],
+    5:['民国','roc'],
+    6:['民国–1950s','roc'],
+    7:['1950s–80s','prc'],
+    8:['1980s–2000s','prc'],
+    9:['2000s–2010s','prc'],
+    10:['2010s–2020s','prc']
+  };
+  const row=table[g]||(g>10?table[10]:table[6]);
+  return {label:row[0], era:row[1], estimated:true};
+}
+const ERA_COLOR={qing:'#7f1d1d', roc:'#b45309', prc:'#1d4ed8'};
+function buildPedigree(compact){
+  const onlyDoc=$('#onlyDoc').checked;
+  const mastersOf={};
+  R.forEach(r=>{
+    if(r.type!=='master_disciple') return;
+    if(!byId[r.from]||!byId[r.to]||!byId[r.from]._linked||!byId[r.to]._linked) return;
+    if(onlyDoc&&r.confidence!=='documented') return;
+    (mastersOf[r.to]=mastersOf[r.to]||[]).push(r);
+  });
+  const depth={}, primary={};
+  function depthOf(id, stack){
+    if(id in depth) return depth[id];
+    const ms=mastersOf[id]||[];
+    if(!ms.length){depth[id]=0; return 0;}
+    if(stack.has(id)) return -1;
+    stack.add(id);
+    let best=-1, bestM=null, bestDoc=false;
+    ms.forEach(r=>{
+      const d=depthOf(r.from, stack);
+      if(d<0) return;
+      const doc=r.confidence==='documented';
+      if(d>best||(d===best&&doc&&!bestDoc)){best=d; bestM=r.from; bestDoc=doc;}
+    });
+    stack.delete(id);
+    if(best<0){depth[id]=0; return 0;}
+    depth[id]=best+1;
+    primary[id]=bestM;
+    return depth[id];
+  }
+  const allow=visibleSet();
+  P.forEach(p=>{ if(allow.has(p.id)) depthOf(p.id, new Set()); });
+  const kids={};
+  Object.keys(primary).forEach(id=>{
+    const par=primary[id];
+    if(!par) return;
+    (kids[par]=kids[par]||[]).push(id);
+  });
+  Object.keys(kids).forEach(id=>kids[id].sort((a,b)=>byId[a].name.localeCompare(byId[b].name,'zh')));
+  const hasKids={};
+  Object.keys(kids).forEach(id=>{ hasKids[id]=true; });
+  const roots=[], loose=[];
+  P.forEach(p=>{
+    if(!allow.has(p.id)||primary[p.id]) return;
+    if(hasKids[p.id]) roots.push(p.id);
+    else loose.push(p.id);
+  });
+  function descN(id, seen){
+    if(seen.has(id)) return 0;
+    seen.add(id);
+    let n=0;
+    (kids[id]||[]).forEach(c=>{ n+=1+descN(c, seen); });
+    return n;
+  }
+  roots.sort((a,b)=>descN(b, new Set())-descN(a, new Set())||byId[a].name.localeCompare(byId[b].name,'zh'));
+  const gap=compact?6:10;
+  const ROW=compact?70:88;
+  const W={};
+  function leafW(id){
+    const chars=[...byId[id].name].length;
+    const period=periodOf(byId[id], depth[id]||0);
+    const pw=[...period.label].length;
+    return Math.max(compact?78:92, chars*(compact?15:16)+20, state.treeVariant==='active'?pw*(compact?11:12)+16:0);
+  }
+  function width(id){
+    if(W[id]) return W[id];
+    const ch=kids[id]||[];
+    const self=leafW(id);
+    if(!ch.length){W[id]=self; return self;}
+    let sum=0;
+    ch.forEach(c=>{ sum+=width(c); });
+    sum+=(ch.length-1)*gap;
+    W[id]=Math.max(self, sum);
+    return W[id];
+  }
+  roots.forEach(width);
+  Object.keys(kids).forEach(id=>kids[id].sort((a,b)=>width(b)-width(a)||byId[a].name.localeCompare(byId[b].name,'zh')));
+  const pos={};
+  function place(id, left){
+    const ch=kids[id]||[];
+    const w=width(id);
+    pos[id]={x:left+w/2, y:(depth[id]||0)*ROW};
+    let x=left;
+    ch.forEach(c=>{ place(c, x); x+=width(c)+gap; });
+  }
+  let cursor=0;
+  roots.forEach(id=>{ place(id, cursor); cursor+=width(id)+gap*4; });
+  let maxY=0, maxD=0, treeN=0;
+  Object.keys(pos).forEach(id=>{
+    treeN++;
+    if(pos[id].y>maxY) maxY=pos[id].y;
+    if((depth[id]||0)>maxD) maxD=depth[id]||0;
+  });
+  const cols=compact?2:8;
+  const cell=compact?150:170;
+  const base=maxY+ROW*1.6;
+  loose.forEach((id,i)=>{
+    pos[id]={x:(i%cols)*cell+cell/2, y:base+Math.floor(i/cols)*ROW};
+  });
+  let known=0, est=0;
+  const period={};
+  Object.keys(pos).forEach(id=>{
+    const info=periodOf(byId[id], depth[id]||0);
+    period[id]=info;
+    if(info.estimated) est++; else known++;
+  });
+  return {pos, depth, primary, kids, roots, loose, maxD, treeN, known, est, ROW, period, mastersOf};
+}
+function drawTree(){
+  layoutLock=true;
+  if(layoutAnim){cancelAnimationFrame(layoutAnim); layoutAnim=0;}
+  state.mode='tree';
+  const compact=treeCompact();
+  const model=buildPedigree(compact);
+  const variant=state.treeVariant||'era';
+  const showExtra=$('#treeLinks')&&$('#treeLinks').checked;
+  const nodes=[], edges=[];
+  const eraName={qing:'清', roc:'民国', prc:'共和国'};
+  state.treeRows=[];
+  Object.keys(model.pos).forEach(id=>{
+    const p=byId[id];
+    const info=model.period[id]||{label:'',era:'prc',estimated:true};
+    const label=variant==='active'?(p.name+'\n'+(info.estimated?info.label+' · 估':info.label)):p.name;
+    nodes.push({classes:'tree'+(info.estimated?' est':'')+extraClass(byId[id]), data:{
+      id:id, label:label, w:Math.max(72, [...(variant==='active'?info.label:p.name)].length*(variant==='active'?12:15)+24),
+      h:variant==='active'?46:32, eraColor:ERA_COLOR[info.era]||'#a8a29e', gen:p.generation||0, color:genColor(p.generation), deg:p._deg
+    }, position:model.pos[id]});
+  });
+  if(model.loose.length){
+    const y=Math.min(...model.loose.map(id=>model.pos[id].y))-model.ROW*0.55;
+    nodes.push({classes:'tree axis', data:{id:'loosehead', label:'无师承，但有其他关系', w:220, h:28, eraColor:'#a8a29e'}, position:{x:110, y:y}});
+  }
+  const rows={};
+  Object.keys(model.pos).forEach(id=>{
+    if(model.loose.includes(id)) return;
+    const d=model.depth[id]||0;
+    (rows[d]=rows[d]||[]).push(id);
+  });
+  Object.keys(rows).forEach(d=>{
+    const ids=rows[d];
+    const y=model.pos[ids[0]].y;
+    const left=ids.slice().sort((a,b)=>model.pos[a].x-model.pos[b].x)[0];
+    const info=model.period[left]||{label:'',era:'prc',estimated:true};
+    const label=variant==='era'?(eraName[info.era]||''):info.label;
+    state.treeRows=state.treeRows||[];
+    state.treeRows.push({y:y, label:label});
+  });
+  const seen=new Set();
+  R.forEach(r=>{
+    if(r.type!=='master_disciple') return;
+    if(!model.pos[r.from]||!model.pos[r.to]) return;
+    if($('#onlyDoc').checked&&r.confidence!=='documented') return;
+    const extra=model.primary[r.to]!==r.from;
+    const id=(extra?'x':'t')+r.id;
+    if(seen.has(id)) return;
+    seen.add(id);
+    edges.push({classes:extra?'extra':'', data:{id:id, source:r.from, target:r.to, type:'master_disciple', conf:r.confidence, detail:r.detail}});
+  });
+  if(showExtra){
+    R.forEach(r=>{
+      if(r.type!=='partner'&&r.type!=='kin') return;
+      if(!model.pos[r.from]||!model.pos[r.to]) return;
+      edges.push({data:{id:'opt-'+r.id, source:r.from, target:r.to, type:r.type, conf:r.confidence, detail:r.detail}});
+    });
+  }
+  cy.minZoom(0.05); cy.maxZoom(3);
+  cy.startBatch(); cy.elements().remove();
+  cy.add(nodes); cy.add(edges);
+  cy.endBatch();
+  state.treeAnchor=model.roots[0]||'';
+  const treePeople=model.treeN, looseN=model.loose.length;
+  state.treeStats={generations:model.maxD+1, tree:treePeople, loose:looseN, known:model.known, est:model.est};
+  $('#stat').textContent='家谱 '+state.treeStats.generations+' 层 · 树上 '+treePeople+' 人 · 无师承 '+looseN+' 人 · 活跃时期有生卒 '+model.known+' · 按代数估计 '+model.est+'（全库 '+P.length+' 人）';
+  layoutLock=false;
+  if(!(state.focus&&cy.getElementById(state.focus).length)) openTreeView();
+  const rail=$('#eraRail'); if(rail) rail.hidden=false;
+  paintRail();
+  markInst();
+  syncZoomSlider();
+  updateModeTabs();
+}
+function paintRail(){
+  const rail=$('#eraRail');
+  if(!rail) return;
+  if(state.mode!=='tree'||!state.treeRows||!cy){rail.hidden=true; rail.innerHTML=''; return;}
+  rail.hidden=false;
+  const z=cy.zoom(), pan=cy.pan();
+  rail.innerHTML=state.treeRows.map(row=>{
+    const y=row.y*z+pan.y;
+    if(y<-20||y>cy.height()) return '';
+    return '<div style="top:'+(y-12)+'px">'+esc(row.label)+'</div>';
+  }).join('');
+}
+function openTreeView(){
+  const root=cy.getElementById(state.treeAnchor||'');
+  cy.minZoom(0.04); cy.maxZoom(3);
+  if(root.length){
+    const p=root.position();
+    const near=cy.nodes().filter(n=>{
+      if(n.hasClass('axis')) return false;
+      const q=n.position();
+      return Math.abs(q.x-p.x)<640 && q.y<=p.y+120;
+    });
+    const eles=near.length?near:root;
+    cy.fit(eles, treeCompact()?28:60);
+    if(cy.zoom()>1.25) cy.zoom(1.25);
+    if(cy.zoom()<0.8) cy.zoom(0.8);
+    cy.center(eles);
+    const rp=root.renderedPosition();
+    cy.panBy({x:36, y:64-rp.y});
+  }else cy.fit(undefined, 24);
+  paintRail();
+  syncZoomSlider();
+}
+function canonView(view){
+  if(view==='2d'||view==='star2d'||view==='nebula') return 'nebula';
+  if(view==='3d'||view==='star3d') return 'network';
+  if(view==='tree'||view==='pedigree'||view==='lineage') return 'tree';
+  if(view==='graph'||!view) return 'graph';
+  return view;
+}
+function route(){
+  const raw=location.hash.replace(/^#/,'');
+  const h=raw||'tree';
+  const parts=h.split('/');
+  const kind=canonView(parts[0]);
+  let arg=parts.slice(1).join('/');
+  try{arg=decodeURIComponent(arg);}catch(e){}
+  const section=(kind==='nebula'||kind==='network'||kind==='tree'||kind==='graph')?'graph':(['people','relations','about'].includes(kind)?kind:'graph');
+  document.querySelectorAll('.view').forEach(s=>s.hidden=s.id!=='view-'+section);
+  document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.dataset.view===section));
+  if(section!=='graph'){updateModeTabs();return;}
+  cy.resize();
+  if(arg&&byId[arg]&&!byId[arg]._linked){
+    state.mode='network';
+    state.focus=arg;
+    $('#mode').value='network';
+    syncMode();
+    drawNetwork();
+    renderPanel(arg);
+    updateModeTabs();
+    return;
+  }
+  if(kind==='nebula'){
+    state.mode='nebula';
+    $('#mode').value='nebula';
+    syncMode();
+    drawNebula();
+    if(arg&&byId[arg]){state.focus=arg; highlight(arg,true); renderPanel(arg);}
+    updateModeTabs();
+    return;
+  }
+  if(kind==='tree'){
+    state.mode='tree';
+    if(arg==='era'||arg==='active') state.treeVariant=arg;
+    $('#mode').value='tree';
+    syncMode();
+    drawTree();
+    if(arg&&byId[arg]){state.focus=arg; highlight(arg,true); renderPanel(arg);}
+    updateModeTabs();
+    return;
+  }
+  if(kind==='network'){
+    state.mode='network';
+    $('#mode').value='network';
+    syncMode();
+    drawNetwork();
+    if(arg&&byId[arg]){state.focus=arg; highlight(arg,true); renderPanel(arg);}
+    updateModeTabs();
+    return;
+  }
+  if(arg&&byId[arg]){
+    state.mode='ego';
+    state.focus=arg;
+    $('#mode').value='ego';
+    syncMode();
+    drawEgo(arg);
+    renderPanel(arg);
+    updateModeTabs();
+    return;
+  }
+  if(state.mode!=='network'){
+    resetGlobal();
+  }
+  updateModeTabs();
+  paintRail();
+}
+// ---- tables
+let psort={k:'name',d:1},rsort={k:'type',d:1};
+function renderTables(){
+  P.forEach(p=>{p._masters=adj[p.id].filter(r=>r.type==='master_disciple'&&r.to===p.id).map(r=>byId[r.from].name).join('、');p._ndis=adj[p.id].filter(r=>r.type==='master_disciple'&&r.from===p.id).length;p._schools=(MEMBY[p.id]||[]).map(m=>((INSTBY[m.institution]||{}).name||'')).filter(Boolean).slice(0,4).join('、');});
+  R.forEach(r=>{r._fromName=labelOf(byId[r.from]);r._toName=labelOf(byId[r.to]);});
+  const drawP=()=>{
+    const v=$('#pq').value.trim(),g=$('#pgen').value;
+    let rows=P.filter(p=>(!v||(p._search+' '+(p.hangdang||'')+' '+(p.liupai||'')).includes(v))&&(!g||p.hangdang===g));
+    const key={name:p=>p.name,hangdang:p=>p.hangdang||'',birth:p=>p.birth||9999,liupai:p=>p.liupai||'',masters:p=>p._masters,schools:p=>p._schools||''}[psort.k]||(p=>p.name);
+    rows.sort((a,b)=>{const x=key(a),y=key(b);return (x<y?-1:x>y?1:a.name.localeCompare(b.name,'zh'))*psort.d;});
+    $('#pcount').textContent=rows.length+' 人';
+    $('#ptable tbody').innerHTML=rows.map(p=>'<tr><td><a href="#graph/'+hid(p.id)+'">'+esc(labelOf(p))+'</a>'+(p.aliases&&p.aliases.length?'<br><small class="muted">'+esc(p.aliases.join('、'))+'</small>':'')+'</td><td>'+esc(p.hangdang||'')+'</td><td>'+((p.birth||p.death)?((p.birth||'?')+'–'+(p.death||'')):'')+'</td><td>'+esc(p.liupai||'')+'</td><td>'+esc(p._masters)+'</td><td>'+esc(p._schools||'')+'</td><td>'+(p.xikao_url?'<a href="'+esc(p.xikao_url)+'" target="_blank" rel="noopener">戏考</a>':'')+'</td></tr>').join('');
+  };
+  const drawR=()=>{
+    const v=$('#rq').value.trim(),t=$('#rtype').value,c=$('#rconf').value;
+    let rows=R.filter(r=>(!t||r.type===t)&&(!c||r.confidence===c)&&(!v||(r._fromName+' '+r._toName+' '+(r.detail||'')+' '+(r.subtype||'')).includes(v)));
+    const key={type:r=>r.type,fromName:r=>r._fromName,toName:r=>r._toName,detail:r=>r.subtype||r.detail||'',confidence:r=>r.confidence}[rsort.k];
+    rows.sort((a,b)=>{const x=key(a),y=key(b);return (x<y?-1:x>y?1:0)*rsort.d;});
+    $('#rcount').textContent=rows.length+' 条';
+    const lim=rows.slice(0,3000);
+    $('#rtable tbody').innerHTML=lim.map(r=>'<tr><td>'+(TYPE_CN[r.type]||r.type)+(r.subtype?'<br><small class="muted">'+esc(r.subtype)+'</small>':'')+'</td><td><a href="#graph/'+hid(r.from)+'">'+esc(r._fromName)+'</a></td><td><a href="#graph/'+hid(r.to)+'">'+esc(r._toName)+'</a></td><td class="notes">'+esc(r.subtype||r.detail||'')+'</td><td><span class="tag'+(r.confidence==='disputed'?' dis':'')+'">'+(CONF_CN[r.confidence]||'')+'</span></td><td>'+(r.source?'<a href="'+esc(r.source)+'" target="_blank" rel="noopener">来源</a>':srcLinks(r.sources))+'</td></tr>').join('');
+  };
+  const pgenSel=$('#pgen');
+  ['#pq','#pgen'].forEach(s=>$(s).addEventListener('input',drawP));
+  ['#rq','#rtype','#rconf'].forEach(s=>$(s).addEventListener('input',drawR));
+  const sortable=(tbl,st,draw)=>document.querySelectorAll(tbl+' th[data-k]').forEach(th=>th.addEventListener('click',()=>{const k=th.dataset.k;st.d=st.k===k?-st.d:1;st.k=k;document.querySelectorAll(tbl+' th').forEach(x=>x.classList.remove('asc','desc'));th.classList.add(st.d>0?'asc':'desc');draw();}));
+  sortable('#ptable',psort,drawP);sortable('#rtable',rsort,drawR);
+  drawP();drawR();
+}
+function renderSources(){
+  const c={};
+  P.forEach(p=>{ if(p.xikao_url) c[p.xikao_url]=(c[p.xikao_url]||0)+1; (p.sources||[]).forEach(u=>c[u]=(c[u]||0)+1); });
+  R.forEach(r=>{ if(r.source) c[r.source]=(c[r.source]||0)+1; (r.sources||[]).forEach(u=>c[u]=(c[u]||0)+1); });
+  const arr=Object.entries(c).sort((a,b)=>b[1]-a[1]);
+  const nice=u=>{try{const x=new URL(u);if(x.hostname.endsWith('wikipedia.org'))return '维基百科：'+decodeURIComponent(x.pathname.split('/').pop()).replace(/_/g,' ');return x.hostname+decodeURIComponent(x.pathname);}catch(e){return u;}};
+  $('#sourceList').innerHTML=arr.map(([u,n])=>'<li><a href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(nice(u))+'</a> <span class="muted">('+n+')</span></li>').join('');
+  const hidden=P.filter(p=>!p._linked).length;
+  const shownN=P.length-hidden;
+  const stubs=P.filter(p=>p.stub).length;
+  $('#buildinfo').textContent='共收录 '+P.length+' 人（其中名录 '+stubs+' 人）、'+R.length+' 条关系。默认图不画同台/受教，也不画没有任何关系的 '+hidden+' 人。科班与院校 '+INST.length+' 所，成员记录 '+MEM.length+' 条。与相声谱系高/中置信对照 '+XO.length+' 人。资料来源：梨园百年琐记（history.xikao.com）。整理日期：2026-11-11。';
+  const fc=$('#footcount'); if(fc) fc.textContent='全库 '+P.length+' 人、'+R.length+' 条关系';
+  const hn=$('#hiddenNote'); if(hn) hn.textContent='没有任何关系、故不画出：'+hidden+' 人。同台/受教默认关闭。';
+}
+})();

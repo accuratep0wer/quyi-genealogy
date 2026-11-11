@@ -20,7 +20,7 @@ Star-map disks are larger than the lineage map and packed tightly:
 import json, math, os
 from collections import defaultdict
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.environ.get('LAYOUT_ROOT') or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 P = json.load(open(os.path.join(ROOT, 'data/people.json'), encoding='utf-8'))
 R = json.load(open(os.path.join(ROOT, 'data/relations.json'), encoding='utf-8'))
 BY = {p['id']: p for p in P}
@@ -419,7 +419,10 @@ print('people', len(out), 'hubs', len(HUBS), 'roots', len(root_hubs), 'missed', 
 print('span x', round(max(xs) - min(xs)), 'y', round(max(ys) - min(ys)))
 
 def report(name):
-    pid = next(p['id'] for p in P if p['name'] == name)
+    match = [p['id'] for p in P if p['name'] == name]
+    if not match:
+        return
+    pid = match[0]
     hub = cluster_of.get(pid, pid)
     kids = [c for c in children.get(pid, ()) if cluster_of.get(c) == hub]
     far = 0

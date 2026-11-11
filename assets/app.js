@@ -1,6 +1,7 @@
 (function(){
 'use strict';
 const TYPE_CN={master_disciple:'师徒',other:'代拉/引保代等',kin:'亲属',marriage:'姻缘',partner:'固定搭档'};
+const LIYUAN_XO={p0226:'侯宝林',p0189:'常宝堃',p1688:'李福胜',p1241:'杨健',p1716:'王雅兰',p0807:'马贵荣',p0223:'高元钧',p1806:'常贵德'};
 const CONF_CN={documented:'确定',disputed:'存疑'};
 const GEN_COLORS=['#7f1d1d','#0ea5e9','#f59e0b','#3730a3','#22c55e','#db2777','#0f766e','#f97316','#7c3aed','#a3e635'];
 const genColor=g=>g?GEN_COLORS[(g-1)%GEN_COLORS.length]:'#9ca3af';
@@ -532,7 +533,9 @@ function renderPanel(id){
   const yrs=(p.birth||p.death)?(p.birth||'?')+'–'+(p.death||''):'';
   const confTag=p.confidence?'<span class="tag'+(p.confidence==='disputed'?' dis':'')+'">'+CONF_CN[p.confidence]+'</span>':'';
   const off=p._linked?'':'<p class="notice">没有任何关系，几张图都不画出此人。</p>';
-  $('#panel').innerHTML='<h2>'+esc(labelOf(p))+'</h2>'+off+
+  const ly=LIYUAN_XO[id];
+  const lyBadge=ly?'<p class="xo-badge">梨园谱系里的同一人 <a href="liyuan/#graph/'+encodeURIComponent(ly)+'">打开梨园图谱</a></p>':'';
+  $('#panel').innerHTML='<h2>'+esc(labelOf(p))+'</h2>'+lyBadge+off+
    '<div class="meta">'+(p.generation?'第'+p.generation+'代'+(p.zibei?'·“'+p.zibei+'”字辈':''):'代数不详')+(p.gen_source?'<span class="tag">'+esc(p.gen_source)+'</span>':'')+(yrs?' · '+yrs:'')+(p.role==='relative'?' · 非谱系内亲属':'')+(confTag?' '+confTag:'')+'</div>'+
    '<div class="panel-actions"><button type="button" id="egoBtn">'+(state.mode==='ego'?'回到全网络':'聚焦此人的师承子图')+'</button>'+
    '<button type="button" class="feedback-btn" id="panelFeedback">提交修正</button></div>'+
