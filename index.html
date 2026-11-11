@@ -43,7 +43,7 @@
       <label class="t-other"><input type="checkbox" data-type="other" checked> 代拉/引保代/口盟等</label>
       <label class="t-kin"><input type="checkbox" data-type="kin" checked> 亲缘</label>
       <label class="t-mar"><input type="checkbox" data-type="marriage" checked> 姻缘</label>
-      <label class="t-dis"><input type="checkbox" id="showDisputed" checked> 显示存疑</label>
+      <label class="t-dis"><input type="checkbox" id="onlyDoc"> 只显示确定</label>
       <label><input type="checkbox" id="labels"> 显示全部姓名</label>
       <button id="expand" type="button" title="放大到能看清姓名。其他人仍留在图上，缩小或拖动都能看到。">展开此区域</button>
       <button id="resetLayout" type="button" title="缩小，回到完整全局布局">恢复全局布局</button>
@@ -68,7 +68,8 @@
     <span><i class="ln other"></i>代拉 / 引保代 / 口盟 / 义亲</span>
     <span><i class="ln kin"></i>亲缘</span>
     <span><i class="ln mar"></i>姻缘</span>
-    <span><i class="ln dis"></i>存疑（橙色）</span>
+    <span><i class="ln ok"></i>确定（实线）</span>
+    <span><i class="ln dis"></i>存疑（虚线、较淡）</span>
     <span><i class="dot rel"></i>非谱系内亲属</span>
     <span id="genLegend"></span>
     <span class="muted">节点大小＝关系数。放大时人名自动疏开，缩小回到全图；拖动可看到邻近门派，不会藏起其他人。</span>
@@ -86,7 +87,7 @@
 <section id="view-relations" class="view" hidden>
   <div class="tbl-tools"><input id="rq" type="search" placeholder="筛选关系（人名/说明）">
     <select id="rtype"><option value="">全部类型</option><option value="master_disciple">师徒</option><option value="other">代拉/引保代等</option><option value="kin">亲缘</option><option value="marriage">姻缘</option></select>
-    <select id="rconf"><option value="">全部可信度</option><option value="documented">有记载</option><option value="disputed">存疑</option></select> <span id="rcount"></span></div>
+    <select id="rconf"><option value="">全部可信度</option><option value="documented">确定</option><option value="disputed">存疑</option></select> <span id="rcount"></span></div>
   <div class="tbl-wrap"><table id="rtable"><thead><tr>
     <th data-k="type">类型</th><th data-k="fromName">从（师/长）</th><th data-k="toName">到（徒/亲）</th><th data-k="detail">说明</th><th data-k="confidence">可信度</th><th>来源</th></tr></thead><tbody></tbody></table></div>
 </section>
@@ -105,7 +106,7 @@
       <li><b>姻缘</b>：夫妻、翁婿等婚姻关系。</li>
     </ul>
     <h3>可信度</h3>
-    <p><b>有记载</b>：至少一个公开来源明确列出。<b>存疑</b>：来源本身标注存疑，不同来源说法冲突，师徒关系后来被解除，或只有网络转载、自媒体之类的弱来源。相声门户的师承本来就常有“改换门庭”、“代拉”、“清门”、“辈分自降”等复杂情况，请把本站当作索引，不要当作定论。</p>
+    <p><b>确定</b>：至少一个公开来源明确列出，图中用实线。<b>存疑</b>：来源本身标注存疑，不同来源说法冲突，师徒关系后来被解除，或只有网络转载、自媒体之类的弱来源，图中用较淡的虚线。可用「只显示确定」暂时隐去存疑关系。相声门户的师承本来就常有“改换门庭”、“代拉”、“清门”、“辈分自降”等复杂情况，请把本站当作索引，不要当作定论。</p>
     <h3>方法</h3>
     <ol>
       <li>主干取自维基百科《相声演员师承关系》条目。该条目以中国相声网《师承关系表》（据阎笑儒1960年传殷文硕的《相声宗谱》誊写）为主，第九代以梨园论坛《相声师承关系——九代传人》为主。</li>
@@ -139,7 +140,7 @@
   </article>
 </section>
 </main>
-<footer>数据：<a href="data/people.json">people.json</a> · <a href="data/relations.json">relations.json</a> · 仅供参考，请以原始来源为准</footer>
+<footer>数据：<a href="data/people.json">people.json</a> · <a href="data/relations.json">relations.json</a> · <span id="footcount"></span> · 仅供参考，请以原始来源为准</footer>
 <dialog id="feedbackDlg" aria-labelledby="fbHeading">
   <div class="dlg">
     <h2 id="fbHeading">提交修正</h2>

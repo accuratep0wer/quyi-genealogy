@@ -1187,7 +1187,7 @@
 },
 {
 "id": "p0068",
-"name": "[[李少卿",
+"name": "李少卿",
 "aliases": [
 "李顺祯"
 ],
@@ -22546,7 +22546,9 @@
 {
 "id": "p1300",
 "name": "栾奕",
-"aliases": [],
+"aliases": [
+"郭盖"
+],
 "generation": 9,
 "gen_source": "谱系表",
 "birth": null,
@@ -30349,7 +30351,9 @@
 {
 "id": "p1743",
 "name": "张纳驰",
-"aliases": [],
+"aliases": [
+"张再驰"
+],
 "generation": 9,
 "gen_source": "按师承推定",
 "birth": null,
@@ -30381,7 +30385,9 @@
 {
 "id": "p1745",
 "name": "陈浩",
-"aliases": [],
+"aliases": [
+"陈筱兰"
+],
 "generation": 10,
 "gen_source": "按师承推定",
 "birth": null,
@@ -31468,5 +31474,5283 @@
 "zibei": "明",
 "wiki_url": null,
 "role": "performer"
+},
+{
+"id": "p1807",
+"name": "何九华",
+"aliases": [
+"何健（本名）"
+],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": 1987,
+"death": null,
+"notes": [
+"德云社九字科，2015年9月13日拜师",
+"补录批次：德云社"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE",
+"https://ent.chinadaily.com.cn/2016-09/05/content_26698534_16.htm",
+"https://github.com/jammyfu/xiangsheng-genealogy"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p1808",
+"name": "李九春",
+"aliases": [
+"李众军（本名）"
+],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": 1985,
+"death": null,
+"notes": [
+"德云社九字科，2013年9月4日第一批拜师；德云社教导副主任",
+"补录批次：德云社"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE",
+"https://ent.chinadaily.com.cn/2016-09/05/content_26698534_16.htm",
+"https://github.com/jammyfu/xiangsheng-genealogy"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p1809",
+"name": "朱鹤松",
+"aliases": [
+"朱凯（本名）"
+],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": 1992,
+"death": null,
+"notes": [
+"德云社鹤字科",
+"补录批次：德云社"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE",
+"https://ent.chinadaily.com.cn/2016-09/05/content_26698534_11.htm",
+"https://github.com/jammyfu/xiangsheng-genealogy",
+"https://news.qq.com/rain/a/20200120A0J12J00"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p1810",
+"name": "刘鹤龙",
+"aliases": [
+"刘易达（本名）"
+],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": 2003,
+"death": null,
+"notes": [
+"德云社鹤字科，2020年版家谱新列入",
+"补录批次：德云社"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE",
+"https://news.qq.com/rain/a/20200120A0J12J00"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p1811",
+"name": "计九霄",
+"aliases": [
+"计晨（本名）"
+],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": 1990,
+"death": null,
+"notes": [
+"德云社九字科，主攻河北梆子，非以相声为主业",
+"补录批次：德云社"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE",
+"https://knewsmart.com/archives/15318",
+"https://www.jindongjia.com/zatan/29314.html",
+"https://k.sina.cn/article_6434939602_17f8d62d200100xuko.html"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p1812",
+"name": "沈九平",
+"aliases": [
+"沈金伟（本名）"
+],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"评剧演员，郭德纲太平剧社；九字科，非相声演员",
+"补录批次：德云社",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://www.jindongjia.com/zatan/29314.html",
+"https://k.sina.cn/article_6434939602_17f8d62d200100xuko.html"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1813",
+"name": "刘九辉",
+"aliases": [
+"刘星辉（本名）"
+],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": 2010,
+"death": null,
+"notes": [
+"郭德纲九字科最年少弟子，德云社演员刘喆之子",
+"补录批次：德云社",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://www.jindongjia.com/zatan/29314.html",
+"https://k.sina.cn/article_6434939602_17f8d62d200100xuko.html"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1814",
+"name": "邳鹤谙",
+"aliases": [
+"邳俊三（本名）"
+],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"2020年版德云社家谱鹤字科末位",
+"补录批次：德云社",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://news.qq.com/rain/a/20200120A0J12J00",
+"https://www.maigoo.com/top/421601.html"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1815",
+"name": "于筱霖",
+"aliases": [],
+"generation": 10,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"栾云平弟子，筱字科",
+"补录批次：德云社",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://www.maigoo.com/top/421601.html"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1816",
+"name": "李大宇",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"孙越弟子",
+"补录批次：德云社",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://www.maigoo.com/top/421601.html"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1817",
+"name": "李佑健",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"孙越弟子",
+"补录批次：德云社",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://www.maigoo.com/top/421601.html"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1818",
+"name": "冯义凯",
+"aliases": [
+"冯奕凯（本名）"
+],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": 1996,
+"death": null,
+"notes": [
+"德云社演员",
+"补录批次：德云社",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1819",
+"name": "赵芸一",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": 1998,
+"death": null,
+"notes": [
+"德云社女演员，搭档孙九香",
+"补录批次：德云社",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1820",
+"name": "邢鹤薇",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云社演员",
+"补录批次：德云社",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1821",
+"name": "朱汝钊",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": 1984,
+"death": null,
+"notes": [
+"德云社演员，搭档葛霄擎",
+"补录批次：德云社",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1822",
+"name": "耿伯春",
+"aliases": [],
+"generation": 7,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"穆祥林弟子",
+"百度《相声师承关系总表》列于穆祥林门下（第6代→第7代）",
+"补录批次：德云社、百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1823",
+"name": "许广",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": 1972,
+"death": null,
+"notes": [
+"德云社演员",
+"补录批次：德云社",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1824",
+"name": "赵楠",
+"aliases": [],
+"generation": 7,
+"gen_source": "按师承推定",
+"birth": 1960,
+"death": null,
+"notes": [
+"德云社演员",
+"百度《相声师承关系总表》列于李文山门下（第7代→第8代）",
+"补录批次：德云社、百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE",
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1825",
+"name": "郭胜文",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"德云社演员，评书拜郭德纲，相声师父为杨威",
+"补录批次：德云社",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1826",
+"name": "王善勇",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": 1986,
+"death": null,
+"notes": [
+"德云社演员，搭档高玉凯；评书拜郭德纲（西河门）",
+"补录批次：德云社",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1827",
+"name": "杨子春",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"王善勇的相声师父；生平、师承未查到公开资料",
+"补录批次：德云社",
+"仅作为师父/亲属节点补入，其本人师承未查到可靠资料"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE",
+"https://history.xikao.com/person/%E9%80%97%E7%AC%91",
+"https://history.xikao.com/person/%E9%80%97%E4%B9%90"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1828",
+"name": "张铁力",
+"aliases": [
+"张铁利"
+],
+"generation": 7,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"德云社过往成员",
+"百度《相声师承关系总表》列于孙宝才门下（第6代→第7代）",
+"补录批次：德云社、百度相声师承关系总表、梨园百年琐记"
+],
+"sources": [
+"https://history.xikao.com/person/%E5%BC%A0%E9%93%81%E5%88%A9",
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE",
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p1829",
+"name": "潘云侠",
+"aliases": [
+"潘伟（本名）"
+],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": 1989,
+"death": null,
+"notes": [
+"德云社过往成员，后与高晓攀合作",
+"补录批次：德云社",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1830",
+"name": "崇天明",
+"aliases": [
+"崇明（本名）"
+],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"德云社过往成员",
+"补录批次：德云社",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1831",
+"name": "王鹤冠",
+"aliases": [
+"王名赫（现名）"
+],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": 1987,
+"death": null,
+"notes": [
+"德云社过往成员，网络家谱称已“清门”",
+"补录批次：德云社",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE",
+"https://pw.zzmian.cn/308881574410.html"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1832",
+"name": "钱乐",
+"aliases": [],
+"generation": 6,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于薛永年门下（第5代→第6代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1833",
+"name": "刘智鹏",
+"aliases": [],
+"generation": 6,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于薛永年门下（第5代→第6代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1834",
+"name": "吴凯",
+"aliases": [],
+"generation": 6,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于薛永年门下（第5代→第6代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1835",
+"name": "李国兵",
+"aliases": [],
+"generation": 6,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于薛永年门下（第5代→第6代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1836",
+"name": "贾静美子",
+"aliases": [],
+"generation": 6,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于薛永年门下（第5代→第6代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1837",
+"name": "刘雄",
+"aliases": [],
+"generation": 6,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于薛永年门下（第5代→第6代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1838",
+"name": "方勇",
+"aliases": [],
+"generation": 6,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于薛永年门下（第5代→第6代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1839",
+"name": "刘兰亭",
+"aliases": [],
+"generation": 7,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于杨少奎门下（第6代→第7代）",
+"天津哈哈笑艺术团演员",
+"补录批次：百度相声师承关系总表、梨园百年琐记"
+],
+"sources": [
+"https://history.xikao.com/person/%E5%88%98%E5%85%B0%E4%BA%AD",
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p1840",
+"name": "田战义",
+"aliases": [],
+"generation": 7,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于王世臣门下（第6代→第7代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1841",
+"name": "白龙若",
+"aliases": [],
+"generation": 7,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于白全福门下（第6代→第7代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1842",
+"name": "王吉祥",
+"aliases": [],
+"generation": 7,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于白全福门下（第6代→第7代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1843",
+"name": "汪宝琦",
+"aliases": [],
+"generation": 7,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于郭全宝门下（第6代→第7代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1844",
+"name": "崔福祥",
+"aliases": [],
+"generation": 7,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于杨振华门下（第6代→第7代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1845",
+"name": "于丹",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于姜宝林门下（第6代→第7代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1846",
+"name": "穆旭光",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于张存珠门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1847",
+"name": "李再利",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于张存珠门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1848",
+"name": "孔翼云",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于张存珠门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1849",
+"name": "周明涛",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于刘长声门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1850",
+"name": "朱耀斌",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于刘长声门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1851",
+"name": "王鹏",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于刘长声门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1852",
+"name": "梁宏达",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于金文声门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1853",
+"name": "罗广兴",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于金文声门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1854",
+"name": "李涛",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于金文声门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1855",
+"name": "华青",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于金文声门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1856",
+"name": "刘朋",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于金文声门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1857",
+"name": "朱瑞潇",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于金文声门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1858",
+"name": "李洋",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于李立山门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1859",
+"name": "贾承伯",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于赵振铎门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1860",
+"name": "李建忠",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于魏文亮门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1861",
+"name": "李宝忠",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于魏文亮门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1862",
+"name": "赵松涛",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于魏文亮门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1863",
+"name": "郭安瑞",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于丁广泉门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1864",
+"name": "乔亚茹",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于王雅福门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1865",
+"name": "仇君",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于杨紫阳门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1866",
+"name": "王晓磊",
+"aliases": [
+"王筱磊"
+],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于郑小山门下（第7代→第8代）",
+"央视主持人，郑小山弟子",
+"补录批次：百度相声师承关系总表、维基/新闻/社团资料"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206",
+"http://www.chinawriter.com.cn/2014/2014-10-03/220138.html"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p1867",
+"name": "徐力",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于郑小山门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1868",
+"name": "刘宝安",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于郑小山门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1869",
+"name": "师戈",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于郑小山门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1870",
+"name": "曹磊",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于郑小山门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1871",
+"name": "张富桐",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于孙小林门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1872",
+"name": "王立",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于孙小林门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1873",
+"name": "姜超",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于孙小林门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1874",
+"name": "李磊",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于孙小林门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1875",
+"name": "王子善",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于孙小林门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1876",
+"name": "冯淯洋",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于孙小林门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1877",
+"name": "郑卓",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于孙小林门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1878",
+"name": "苏丽丽",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于孙小林门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1879",
+"name": "任安涛",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于孙小林门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1880",
+"name": "于松北",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于孙小林门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1881",
+"name": "李鑫",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于孙小林门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1882",
+"name": "李耕法",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于孙小林门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1883",
+"name": "靖德刚",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于孙小林门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1884",
+"name": "胡克新",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于孙小林门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1885",
+"name": "王昊东",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于孙小林门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1886",
+"name": "王晓婓",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于孙小林门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1887",
+"name": "闫松",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于孙小林门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1888",
+"name": "邢伟伟",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于孙小林门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1889",
+"name": "张国营",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于孙小林门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1890",
+"name": "刘强",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于孙小林门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1891",
+"name": "谭聪",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于孙小林门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1892",
+"name": "孙朝鹏",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于孙小林门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1893",
+"name": "宫大庆",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于范振钰门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1894",
+"name": "杨长在",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于杨志光门下（第7代→第8代）",
+"天津哈哈笑艺术团演员",
+"补录批次：百度相声师承关系总表、梨园百年琐记"
+],
+"sources": [
+"https://history.xikao.com/person/%E6%9D%A8%E9%95%BF%E5%9C%A8",
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p1895",
+"name": "杨长惠",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于马志存门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1896",
+"name": "王文长",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于张志宽门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1897",
+"name": "张楠",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于张志宽门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1898",
+"name": "祁乾宁",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于吕少明门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1899",
+"name": "周威",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于师胜杰门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1900",
+"name": "赵根",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于侯长喜门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1901",
+"name": "任浩",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于侯长喜门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1902",
+"name": "梁园",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于侯长喜门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1903",
+"name": "庞君",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于佟守本门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1904",
+"name": "杨奇军",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于佟守本门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1905",
+"name": "杨化然",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于佟守本门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1906",
+"name": "刘国君",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于佟守本门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1907",
+"name": "刘磊",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于佟守本门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1908",
+"name": "陈鹏",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于佟守本门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1909",
+"name": "管新成",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于佟守本门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1910",
+"name": "杨波",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于杨威门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1911",
+"name": "郭威",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于李如刚门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1912",
+"name": "王义麟",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于田文奎门下（第7代→第8代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1913",
+"name": "陈小锋",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于李金斗门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1914",
+"name": "张浩楠",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于李建华门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1915",
+"name": "初天蓝",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于赵津生门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1916",
+"name": "李三国",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于赵津生门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1917",
+"name": "孔庆利",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于罗广兴门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1918",
+"name": "刘洪刚",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于罗广兴门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1919",
+"name": "孙全云",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于罗广兴门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1920",
+"name": "张豪歌",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于罗广兴门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1921",
+"name": "小荷花",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于罗广兴门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1922",
+"name": "武斌",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于罗广兴门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1923",
+"name": "孙建国",
+"aliases": [],
+"generation": 8,
+"gen_source": "个人条目",
+"birth": null,
+"death": null,
+"notes": [
+"见百度《相声师承关系总表》作为师父列出；本人师承未查到",
+"补录批次：百度相声师承关系总表",
+"仅作为师父/亲属节点补入，其本人师承未查到可靠资料"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1924",
+"name": "孙宗可",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于孙建国门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1925",
+"name": "刘艺",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于孟凡贵门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1926",
+"name": "王越",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于崔金泉门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1927",
+"name": "李彬",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于崔金泉门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1928",
+"name": "张滦",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于崔金泉门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1929",
+"name": "王金明",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": 1968,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于奇志门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表、梨园百年琐记"
+],
+"sources": [
+"https://history.xikao.com/person/%E7%8E%8B%E9%87%91%E6%98%8E",
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p1930",
+"name": "曾强永",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于奇志门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1931",
+"name": "李晗",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于奇志门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1932",
+"name": "彭军锋",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于奇志门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1933",
+"name": "冈华",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于奇志门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1934",
+"name": "主旋",
+"aliases": [
+"主璇"
+],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于奇志门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1935",
+"name": "刘录阳",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于奇志门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1936",
+"name": "邢立军",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于奇志门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1937",
+"name": "钮高乐",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于奇志门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1938",
+"name": "吴勇锋",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于侯冠群门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1939",
+"name": "董彦彬",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于李涛门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1940",
+"name": "张俊杰",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于李涛门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1941",
+"name": "安东",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于姜昆门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1942",
+"name": "邵权",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于姜昆门下（第8代→第9代）",
+"东莞相声演员，“广东十大喜剧新星”",
+"2013年6月深圳拜师姜昆",
+"补录批次：百度相声师承关系总表、收徒新闻"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206",
+"http://www.chinanews.com/yl/2013/06-24/4963306.shtml"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p1943",
+"name": "高杰",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于宋德全门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1944",
+"name": "陈彦波",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于宋德全门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1945",
+"name": "王耀宇",
+"aliases": [
+"王洋",
+"王洋（本名）"
+],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于宋德全门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表、梨园百年琐记"
+],
+"sources": [
+"https://history.xikao.com/person/%E7%8E%8B%E8%80%80%E5%AE%87",
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p1946",
+"name": "寇琦",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于苗阜门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1947",
+"name": "闫子晨",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于苗阜门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1948",
+"name": "刘鲲鹏",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于穆凯门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1949",
+"name": "赵鸣一",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于穆凯门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1950",
+"name": "辛宇",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于刘洪江门下（第8代→第9代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1951",
+"name": "洪昊祥",
+"aliases": [],
+"generation": 10,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于大兵门下（第9代→第10代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1952",
+"name": "张天赐",
+"aliases": [],
+"generation": 10,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》列于赵广群门下（第9代→第10代）",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1953",
+"name": "叶怡君",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"百度《相声师承关系总表》“独立或未明传承”列于陈逸安门下",
+"补录批次：百度相声师承关系总表",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1954",
+"name": "孙同福",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"嘻哈包袱铺“同”字辈",
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E5%AD%99%E5%90%8C%E7%A6%8F",
+"https://wemp.app/posts/718dcb2e-e6a6-4974-b03c-803c689a5247"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1955",
+"name": "冯同贺",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"嘻哈包袱铺“同”字辈",
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E5%86%AF%E5%90%8C%E8%B4%BA",
+"https://wemp.app/posts/718dcb2e-e6a6-4974-b03c-803c689a5247"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1956",
+"name": "张同智",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"嘻哈包袱铺“同”字辈",
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E5%BC%A0%E5%90%8C%E6%99%BA",
+"https://wemp.app/posts/718dcb2e-e6a6-4974-b03c-803c689a5247"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1957",
+"name": "陈同乐",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"嘻哈包袱铺“同”字辈",
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E9%99%88%E5%90%8C%E4%B9%90",
+"https://wemp.app/posts/718dcb2e-e6a6-4974-b03c-803c689a5247"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1958",
+"name": "丁同好",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"嘻哈包袱铺“同”字辈",
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E4%B8%81%E5%90%8C%E5%A5%BD",
+"https://wemp.app/posts/718dcb2e-e6a6-4974-b03c-803c689a5247"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1959",
+"name": "于同道",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"嘻哈包袱铺“同”字辈",
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E4%BA%8E%E5%90%8C%E9%81%93",
+"https://wemp.app/posts/718dcb2e-e6a6-4974-b03c-803c689a5247"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1960",
+"name": "丁宝祥",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": 1935,
+"death": 2014,
+"notes": [
+"成都哈哈曲社创办人",
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E4%B8%81%E5%AE%9D%E7%A5%A5"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1961",
+"name": "董凤桐",
+"aliases": [],
+"generation": 7,
+"gen_source": "按师承推定",
+"birth": null,
+"death": 2022,
+"notes": [
+"新疆乌鲁木齐曲艺团相声作家",
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E8%91%A3%E5%87%A4%E6%A1%90"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1962",
+"name": "范清堂",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"相声、京东大鼓演员，洛阳",
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E8%8C%83%E6%B8%85%E5%A0%82"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1963",
+"name": "冯超",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E5%86%AF%E8%B6%85"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1964",
+"name": "侯博山",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"天津高笑相声艺术团演员",
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E4%BE%AF%E5%8D%9A%E5%B1%B1",
+"http://ent.enorth.com.cn/system/2020/07/25/050307084.shtml"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1965",
+"name": "黄梦如",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E9%BB%84%E6%A2%A6%E5%A6%82"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1966",
+"name": "吴晓峰",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E5%90%B4%E6%99%93%E5%B3%B0",
+"https://www.sohu.com/a/73326757_115403"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1967",
+"name": "孙维绵",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"营口怡笑阁相声俱乐部相关；本人师承未查到",
+"补录批次：梨园百年琐记",
+"仅作为师父/亲属节点补入，其本人师承未查到可靠资料"
+],
+"sources": [
+"https://history.xikao.com/person/%E5%AD%99%E7%BB%B4%E7%BB%B5"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1968",
+"name": "许兆呈",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": 2025,
+"notes": [
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E8%AE%B8%E5%85%86%E5%91%88"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1969",
+"name": "修明炎",
+"aliases": [
+"修红伟（本名）"
+],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"嘻哈包袱铺演员",
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E4%BF%AE%E6%98%8E%E7%82%8E"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1970",
+"name": "王济荣",
+"aliases": [],
+"generation": 7,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E7%8E%8B%E6%B5%8E%E8%8D%A3"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1971",
+"name": "杨钰海",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E6%9D%A8%E9%92%B0%E6%B5%B7"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1972",
+"name": "李彦生",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": 2016,
+"notes": [
+"山西省曲艺团演员",
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E6%9D%8E%E5%BD%A6%E7%94%9F"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1973",
+"name": "刘建云",
+"aliases": [],
+"generation": 7,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"另师从鼓曲艺术家白奉霖",
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E5%88%98%E5%BB%BA%E4%BA%91"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1974",
+"name": "张乃林",
+"aliases": [],
+"generation": 7,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"补录批次：梨园百年琐记"
+],
+"sources": [
+"https://history.xikao.com/person/%E5%BC%A0%E4%B9%83%E6%9E%97"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p1975",
+"name": "张金铭",
+"aliases": [],
+"generation": 7,
+"gen_source": "按师承推定",
+"birth": null,
+"death": 2025,
+"notes": [
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E5%BC%A0%E9%87%91%E9%93%AD"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1976",
+"name": "赵桂兰",
+"aliases": [],
+"generation": 7,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"快板书、相声演员，父赵文增",
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E8%B5%B5%E6%A1%82%E5%85%B0"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1977",
+"name": "阎月明",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": 2023,
+"notes": [
+"春晚群口相声演员",
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E9%98%8E%E6%9C%88%E6%98%8E"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1978",
+"name": "宋清文",
+"aliases": [
+"宋文清"
+],
+"generation": 7,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E5%AE%8B%E6%B8%85%E6%96%87"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1979",
+"name": "蔡小铭",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": 2008,
+"notes": [
+"武汉说唱团演员",
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E8%94%A1%E5%B0%8F%E9%93%AD"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1980",
+"name": "蒲克",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"西安市说唱团演员",
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E8%92%B2%E5%85%8B"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1981",
+"name": "梁拯康",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"马来西亚相声社社长",
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E6%A2%81%E6%8B%AF%E5%BA%B7"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1982",
+"name": "代树昆",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E4%BB%A3%E6%A0%91%E6%98%86"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1983",
+"name": "张浩",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E5%BC%A0%E6%B5%A9"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1984",
+"name": "刘广文",
+"aliases": [],
+"generation": 6,
+"gen_source": "按师承推定",
+"birth": 1912,
+"death": null,
+"notes": [
+"刘文亨之父",
+"补录批次：梨园百年琐记",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E5%88%98%E5%B9%BF%E6%96%87"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1985",
+"name": "杨树",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"补录批次：梨园百年琐记",
+"仅作为师父/亲属节点补入，其本人师承未查到可靠资料"
+],
+"sources": [
+"https://history.xikao.com/person/%E6%9D%A8%E6%A0%91"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1986",
+"name": "武洲",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"补录批次：梨园百年琐记",
+"仅作为师父/亲属节点补入，其本人师承未查到可靠资料"
+],
+"sources": [
+"https://history.xikao.com/person/%E6%AD%A6%E6%B4%B2"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1987",
+"name": "吉文贞",
+"aliases": [
+"荷花女（艺名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"补录批次：梨园百年琐记",
+"仅作为师父/亲属节点补入，其本人师承未查到可靠资料"
+],
+"sources": [
+"https://history.xikao.com/person/%E5%90%89%E6%96%87%E8%B4%9E"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1988",
+"name": "张振铎",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"随兄张春奎学说相声",
+"补录批次：梨园百年琐记",
+"仅作为师父/亲属节点补入，其本人师承未查到可靠资料"
+],
+"sources": [
+"https://history.xikao.com/person/%E5%BC%A0%E6%8C%AF%E9%93%8E"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1989",
+"name": "王一明",
+"aliases": [
+"王腾懋（本名）"
+],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"台湾广播主持人、相声（答嘴鼓）演员",
+"补录批次：维基/新闻/社团资料",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/王一明"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": "https://zh.wikipedia.org/wiki/王一明",
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1990",
+"name": "陈坚雄",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": 1971,
+"death": 2022,
+"notes": [
+"粤语相声演员，广州相声艺术团团长",
+"补录批次：维基/新闻/社团资料"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/陈坚雄",
+"https://history.xikao.com/person/陈坚雄"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": "https://zh.wikipedia.org/wiki/陈坚雄",
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p1991",
+"name": "黄俊英",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": 1936,
+"death": null,
+"notes": [
+"粤语相声代表人物；未见北方相声门正式拜师记载（曾师从粤剧罗品超）",
+"补录批次：维基/新闻/社团资料",
+"仅作为师父/亲属节点补入，其本人师承未查到可靠资料"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/黄俊英_(演员)"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": "https://zh.wikipedia.org/wiki/黄俊英_(演员)",
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1992",
+"name": "弓瑞",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": 1985,
+"death": null,
+"notes": [
+"山西相声演员，山西省曲协副主席",
+"补录批次：维基/新闻/社团资料"
+],
+"sources": [
+"https://www.chinanews.com.cn/cul/2016/02-21/7766262.shtml",
+"https://zh.wikipedia.org/wiki/弓瑞"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": "https://zh.wikipedia.org/wiki/弓瑞",
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p1993",
+"name": "马菁原",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"太原醋溜捧逗会演员",
+"补录批次：维基/新闻/社团资料",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://www.chinanews.com.cn/cul/2016/02-21/7766262.shtml"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1994",
+"name": "高洪胜",
+"aliases": [],
+"generation": 7,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"山东快书传人，海政文工团；高元钧之子",
+"补录批次：维基/新闻/社团资料"
+],
+"sources": [
+"http://culture.people.com.cn/n/2013/0407/c22219-21036633.html"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p1995",
+"name": "王振华",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"沈阳相声演员、冯巩春晚作品编剧；2003年春晚相声《说广告》",
+"补录批次：维基/新闻/社团资料"
+],
+"sources": [
+"https://www.chinanews.com/m/yl/2018/02-27/8455558.shtml"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p1996",
+"name": "杨鲁平",
+"aliases": [],
+"generation": 7,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"军旅曲艺家，两获牡丹奖（相声《把心留住》等）",
+"补录批次：维基/新闻/社团资料"
+],
+"sources": [
+"https://www.cflac.org.cn/gn/201309/t20130927_224003.htm",
+"https://hznews.hangzhou.com.cn/wenti/content/2018-11/08/content_7095052_0.htm"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p1997",
+"name": "李然",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"北京石景山文化馆曲艺队队长，牡丹奖相声获奖者",
+"补录批次：维基/新闻/社团资料",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://wyzs.cnr.cn/xxys/20090730/t20090730_505416041.shtml"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1998",
+"name": "崔艺东",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"相声演员，冯巩相声大专班学员；崔砚君之子",
+"补录批次：维基/新闻/社团资料",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://news.qq.com/rain/a/20210714A05WLZ00"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p1999",
+"name": "崔砚君",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"曲艺作家（牡丹奖相声《论资排辈》作者之一），崔艺东之父；非表演师承",
+"补录批次：维基/新闻/社团资料",
+"仅作为师父/亲属节点补入，其本人师承未查到可靠资料"
+],
+"sources": [
+"https://news.qq.com/rain/a/20210714A05WLZ00"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "relative",
+"confidence": "disputed"
+},
+{
+"id": "p2000",
+"name": "李才",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"嘻哈包袱铺一队队长",
+"补录批次：维基/新闻/社团资料",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E5%98%BB%E5%93%88%E5%8C%85%E8%A2%B1%E9%93%BA/8930947",
+"https://baike.baidu.com/item/%E6%9D%8E%E6%89%8D/20359011"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p2001",
+"name": "刘宇钊",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"嘻哈包袱铺二队队长",
+"补录批次：维基/新闻/社团资料",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E5%98%BB%E5%93%88%E5%8C%85%E8%A2%B1%E9%93%BA/8930947"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p2002",
+"name": "程磊",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"嘻哈包袱铺三队队长",
+"补录批次：维基/新闻/社团资料",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://baike.baidu.com/item/%E5%98%BB%E5%93%88%E5%8C%85%E8%A2%B1%E9%93%BA/8930947"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p2003",
+"name": "田锦瑞",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"青年相声演员",
+"补录批次：维基/新闻/社团资料",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://yanchu.juyoufuli.com/app/performances/83592"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p2004",
+"name": "盛伟",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"北京曲艺团，2024年春晚相声《导演的“心事”》",
+"补录批次：维基/新闻/社团资料",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://yanchu.juyoufuli.com/app/performances/83592",
+"https://tv.cctv.cn/2024/02/10/VIDEeYuO2s40VNndgmzp2z2u240210.shtml"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p2005",
+"name": "周鹏飞",
+"aliases": [],
+"generation": 10,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"2024年春晚相声《导演的“心事”》",
+"补录批次：维基/新闻/社团资料",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://yanchu.juyoufuli.com/app/performances/83592",
+"https://tv.cctv.cn/2024/02/10/VIDEeYuO2s40VNndgmzp2z2u240210.shtml"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p2006",
+"name": "高嘉豪",
+"aliases": [],
+"generation": 10,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"2024年春晚相声《导演的“心事”》",
+"补录批次：维基/新闻/社团资料",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://yanchu.juyoufuli.com/app/performances/83592",
+"https://tv.cctv.cn/2024/02/10/VIDEeYuO2s40VNndgmzp2z2u240210.shtml"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p2007",
+"name": "陈威",
+"aliases": [],
+"generation": 10,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"青年相声演员",
+"补录批次：维基/新闻/社团资料",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://yanchu.juyoufuli.com/app/performances/83592"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p2008",
+"name": "蒋巍",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"杨鲁平2013年杭州收徒",
+"补录批次：维基/新闻/社团资料"
+],
+"sources": [
+"https://www.cflac.org.cn/gn/201309/t20130927_224003.htm"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2009",
+"name": "陈巍良",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"杨鲁平2013年杭州收徒",
+"补录批次：维基/新闻/社团资料"
+],
+"sources": [
+"https://www.cflac.org.cn/gn/201309/t20130927_224003.htm"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2010",
+"name": "沈超凡",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"杨鲁平2013年杭州收徒",
+"补录批次：维基/新闻/社团资料"
+],
+"sources": [
+"https://www.cflac.org.cn/gn/201309/t20130927_224003.htm"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2011",
+"name": "潘守卫",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"杨鲁平2013年杭州收徒",
+"补录批次：维基/新闻/社团资料"
+],
+"sources": [
+"https://www.cflac.org.cn/gn/201309/t20130927_224003.htm"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2012",
+"name": "吴多多",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"杨鲁平2013年杭州收徒",
+"补录批次：维基/新闻/社团资料"
+],
+"sources": [
+"https://www.cflac.org.cn/gn/201309/t20130927_224003.htm"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2013",
+"name": "赵博",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"杨鲁平2018年杭州收徒",
+"补录批次：维基/新闻/社团资料"
+],
+"sources": [
+"https://hznews.hangzhou.com.cn/wenti/content/2018-11/08/content_7095052_0.htm"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2014",
+"name": "孙震伟",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"杨鲁平2018年杭州收徒",
+"补录批次：维基/新闻/社团资料"
+],
+"sources": [
+"https://hznews.hangzhou.com.cn/wenti/content/2018-11/08/content_7095052_0.htm"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2015",
+"name": "沈莹",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"杨鲁平2018年杭州收徒",
+"补录批次：维基/新闻/社团资料"
+],
+"sources": [
+"https://hznews.hangzhou.com.cn/wenti/content/2018-11/08/content_7095052_0.htm"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2016",
+"name": "唐爱超",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"杨鲁平2018年杭州收徒",
+"补录批次：维基/新闻/社团资料"
+],
+"sources": [
+"https://hznews.hangzhou.com.cn/wenti/content/2018-11/08/content_7095052_0.htm"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2017",
+"name": "裘佳",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"沈超凡2018年收徒",
+"补录批次：维基/新闻/社团资料"
+],
+"sources": [
+"https://hznews.hangzhou.com.cn/wenti/content/2018-11/08/content_7095052_0.htm"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2018",
+"name": "齐帅",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"沈超凡2018年收徒",
+"补录批次：维基/新闻/社团资料"
+],
+"sources": [
+"https://hznews.hangzhou.com.cn/wenti/content/2018-11/08/content_7095052_0.htm"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2019",
+"name": "符剑",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"蒋巍2018年收徒",
+"补录批次：维基/新闻/社团资料"
+],
+"sources": [
+"https://hznews.hangzhou.com.cn/wenti/content/2018-11/08/content_7095052_0.htm"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2020",
+"name": "沙剑锋",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"蒋巍2018年收徒",
+"补录批次：维基/新闻/社团资料"
+],
+"sources": [
+"https://hznews.hangzhou.com.cn/wenti/content/2018-11/08/content_7095052_0.htm"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2021",
+"name": "楚君",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"蒋巍2018年收徒",
+"补录批次：维基/新闻/社团资料"
+],
+"sources": [
+"https://hznews.hangzhou.com.cn/wenti/content/2018-11/08/content_7095052_0.htm"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2022",
+"name": "傅克非",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"蒋巍2018年收徒",
+"补录批次：维基/新闻/社团资料"
+],
+"sources": [
+"https://hznews.hangzhou.com.cn/wenti/content/2018-11/08/content_7095052_0.htm"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2023",
+"name": "周超",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"蒋巍2018年收徒",
+"补录批次：维基/新闻/社团资料"
+],
+"sources": [
+"https://hznews.hangzhou.com.cn/wenti/content/2018-11/08/content_7095052_0.htm"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2024",
+"name": "刘昭",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"深圳市曲协副主席，CCTV相声大赛捧哏金奖",
+"2013年6月深圳拜师姜昆",
+"补录批次：收徒新闻"
+],
+"sources": [
+"http://www.chinanews.com/yl/2013/06-24/4963306.shtml"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2025",
+"name": "任世和",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"深圳市曲协副主席",
+"2013年6月深圳拜师姜昆",
+"补录批次：收徒新闻"
+],
+"sources": [
+"http://www.chinanews.com/yl/2013/06-24/4963306.shtml"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2026",
+"name": "蒋帅",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"深圳演员",
+"2013年6月深圳拜师姜昆",
+"补录批次：收徒新闻"
+],
+"sources": [
+"http://www.chinanews.com/yl/2013/06-24/4963306.shtml"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2027",
+"name": "安冬",
+"aliases": [
+"安冬"
+],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"东莞相声演员，“广东十大喜剧新星”",
+"2013年6月深圳拜师姜昆",
+"补录批次：收徒新闻"
+],
+"sources": [
+"http://www.chinanews.com/yl/2013/06-24/4963306.shtml"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2028",
+"name": "胡野碧",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"香港",
+"2013年6月深圳拜师姜昆",
+"补录批次：收徒新闻"
+],
+"sources": [
+"http://www.chinanews.com/yl/2013/06-24/4963306.shtml"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2029",
+"name": "黄家强",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"新加坡新风相声学会会长",
+"补录批次：收徒新闻"
+],
+"sources": [
+"http://www.thecover.cn/news/1724981",
+"https://www.zaobao.com.sg/zlifestyle/culture/story20191110-1004172"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2030",
+"name": "颜贵娟",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"新加坡相声演员，徐惠民之妻",
+"补录批次：收徒新闻"
+],
+"sources": [
+"http://www.thecover.cn/news/1724981",
+"https://www.zaobao.com.sg/zlifestyle/culture/story20191110-1004172"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2031",
+"name": "李耀光",
+"aliases": [],
+"generation": 10,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"新加坡相声演员",
+"补录批次：收徒新闻"
+],
+"sources": [
+"https://www.zaobao.com.sg/zlifestyle/culture/story20191110-1004172"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2032",
+"name": "李晓杰",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"2024年6月拜师李伯祥（报道称既有登台演员也有相声爱好者）",
+"补录批次：收徒新闻"
+],
+"sources": [
+"https://epaper.tianjinwe.com/tjrb/h5/html5/2024-06/17/content_143090_931076.htm"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2033",
+"name": "皇甫英杰",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"2024年6月拜师李伯祥（报道称既有登台演员也有相声爱好者）",
+"补录批次：收徒新闻"
+],
+"sources": [
+"https://epaper.tianjinwe.com/tjrb/h5/html5/2024-06/17/content_143090_931076.htm"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2034",
+"name": "曲祉龙",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"2024年6月拜师李伯祥（报道称既有登台演员也有相声爱好者）",
+"补录批次：收徒新闻"
+],
+"sources": [
+"https://epaper.tianjinwe.com/tjrb/h5/html5/2024-06/17/content_143090_931076.htm"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2035",
+"name": "张文博",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"2023年3月拜师赵津生",
+"补录批次：收徒新闻",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"http://music.china.com.cn/2023-03/28/content_42312027.htm"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p2036",
+"name": "孙华晨",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"2023年3月拜师赵津生",
+"补录批次：收徒新闻",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"http://music.china.com.cn/2023-03/28/content_42312027.htm"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p2037",
+"name": "李兆轮",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"2023年3月拜师赵津生",
+"补录批次：收徒新闻",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"http://music.china.com.cn/2023-03/28/content_42312027.htm"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p2038",
+"name": "刘凯升",
+"aliases": [],
+"generation": 9,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"2023年3月拜师赵津生",
+"补录批次：收徒新闻",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"http://music.china.com.cn/2023-03/28/content_42312027.htm"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p2039",
+"name": "萧国光",
+"aliases": [],
+"generation": 7,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"相声、快板演员，济南市曲艺团；1934—2023",
+"补录批次：戏考补充",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E8%90%A7%E5%9B%BD%E5%85%89"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p2040",
+"name": "吴迪",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"与双胞胎弟弟吴跃搭档“好事成双”，2025年去世",
+"补录批次：戏考补充",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E5%90%B4%E8%BF%AA"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p2041",
+"name": "吴跃",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"吴迪双胞胎弟弟",
+"补录批次：戏考补充",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E5%90%B4%E8%BF%AA"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p2042",
+"name": "逗笑",
+"aliases": [
+"揭熙"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"原名揭熙，杨子春外甥；1994年起随杨子春、史琳学艺，军旅曲艺演员",
+"补录批次：戏考补充",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E9%80%97%E7%AC%91"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p2043",
+"name": "逗乐",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"原名王磊，史琳外甥",
+"补录批次：戏考补充",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E9%80%97%E4%B9%90"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
+},
+{
+"id": "p2044",
+"name": "赵鹏涛",
+"aliases": [],
+"generation": 8,
+"gen_source": "按师承推定",
+"birth": null,
+"death": null,
+"notes": [
+"宁夏相声演员，2013年马街书会一等奖",
+"补录批次：戏考补充",
+"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
+],
+"sources": [
+"https://history.xikao.com/person/%E8%B5%B5%E9%B9%8F%E6%B6%9B"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "disputed"
 }
 ]

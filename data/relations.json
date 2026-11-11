@@ -23779,5 +23779,3993 @@
 "据参考项目 jammyfu/xiangsheng-genealogy 补入：仅见谱系收录。"
 ],
 "id": "r01878"
+},
+{
+"id": "r01879",
+"type": "master_disciple",
+"from": "p0903",
+"to": "p1807",
+"detail": "",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE",
+"https://ent.chinadaily.com.cn/2016-09/05/content_26698534_16.htm",
+"https://github.com/jammyfu/xiangsheng-genealogy"
+],
+"confidence": "documented",
+"notes": [
+"维基德云社成员表、齐鲁晚报2016年家谱均载2015年9月13日拜师",
+"补录批次：德云社"
+]
+},
+{
+"id": "r01880",
+"type": "master_disciple",
+"from": "p0903",
+"to": "p1808",
+"detail": "",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE",
+"https://ent.chinadaily.com.cn/2016-09/05/content_26698534_16.htm",
+"https://github.com/jammyfu/xiangsheng-genealogy"
+],
+"confidence": "documented",
+"notes": [
+"维基德云社成员表、齐鲁晚报2016年家谱均载2013年9月4日拜师",
+"补录批次：德云社"
+]
+},
+{
+"id": "r01881",
+"type": "master_disciple",
+"from": "p0903",
+"to": "p1809",
+"detail": "",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE",
+"https://ent.chinadaily.com.cn/2016-09/05/content_26698534_11.htm",
+"https://github.com/jammyfu/xiangsheng-genealogy",
+"https://news.qq.com/rain/a/20200120A0J12J00"
+],
+"confidence": "documented",
+"notes": [
+"维基德云社成员表与2016/2020年家谱名单均列鹤字科；参考项目注2015谢师转正",
+"补录批次：德云社"
+]
+},
+{
+"id": "r01882",
+"type": "master_disciple",
+"from": "p0903",
+"to": "p1810",
+"detail": "",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE",
+"https://news.qq.com/rain/a/20200120A0J12J00"
+],
+"confidence": "documented",
+"notes": [
+"维基德云社成员表列师承郭德纲；2020年家谱鹤字科新增（报道）",
+"补录批次：德云社"
+]
+},
+{
+"id": "r01883",
+"type": "master_disciple",
+"from": "p0903",
+"to": "p1811",
+"detail": "",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE",
+"https://knewsmart.com/archives/15318",
+"https://www.jindongjia.com/zatan/29314.html",
+"https://k.sina.cn/article_6434939602_17f8d62d200100xuko.html"
+],
+"confidence": "documented",
+"notes": [
+"维基德云社成员表列郭德纲；多篇报道称2013年赐名、2015年正式拜师，列2020年家谱九字科",
+"补录批次：德云社"
+]
+},
+{
+"id": "r01884",
+"type": "master_disciple",
+"from": "p0903",
+"to": "p1812",
+"detail": "",
+"sources": [
+"https://www.jindongjia.com/zatan/29314.html",
+"https://k.sina.cn/article_6434939602_17f8d62d200100xuko.html"
+],
+"confidence": "disputed",
+"notes": [
+"报道称2019年4月拜师、列入2020年家谱九字科；所拜为评剧/戏曲门，非相声师承，且来源为自媒体转述",
+"补录批次：德云社"
+]
+},
+{
+"id": "r01885",
+"type": "master_disciple",
+"from": "p0903",
+"to": "p1813",
+"detail": "",
+"sources": [
+"https://www.jindongjia.com/zatan/29314.html",
+"https://k.sina.cn/article_6434939602_17f8d62d200100xuko.html"
+],
+"confidence": "disputed",
+"notes": [
+"仅见2020年家谱照片的自媒体转述，称4岁被收入门下",
+"补录批次：德云社"
+]
+},
+{
+"id": "r01886",
+"type": "master_disciple",
+"from": "p0903",
+"to": "p1814",
+"detail": "",
+"sources": [
+"https://news.qq.com/rain/a/20200120A0J12J00",
+"https://www.maigoo.com/top/421601.html"
+],
+"confidence": "disputed",
+"notes": [
+"仅见2020年家谱名单（自媒体识别）；报道推测即原“皮鹤安”，2017年拜师，未见相声演出记录",
+"补录批次：德云社"
+]
+},
+{
+"id": "r01887",
+"type": "master_disciple",
+"from": "p1522",
+"to": "p1815",
+"detail": "",
+"sources": [
+"https://www.maigoo.com/top/421601.html"
+],
+"confidence": "disputed",
+"notes": [
+"仅见网络转载的德云社家谱名单",
+"补录批次：德云社"
+]
+},
+{
+"id": "r01888",
+"type": "master_disciple",
+"from": "p1255",
+"to": "p1816",
+"detail": "",
+"sources": [
+"https://www.maigoo.com/top/421601.html"
+],
+"confidence": "disputed",
+"notes": [
+"仅见网络转载的德云社家谱名单",
+"补录批次：德云社"
+]
+},
+{
+"id": "r01889",
+"type": "master_disciple",
+"from": "p1255",
+"to": "p1817",
+"detail": "",
+"sources": [
+"https://www.maigoo.com/top/421601.html"
+],
+"confidence": "disputed",
+"notes": [
+"仅见网络转载的德云社家谱名单",
+"补录批次：德云社"
+]
+},
+{
+"id": "r01890",
+"type": "master_disciple",
+"from": "p0728",
+"to": "p1818",
+"detail": "",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "disputed",
+"notes": [
+"仅见维基德云社成员表；范振钰（2008年卒）公开徒弟名单中未见此人，或为代拉/私淑",
+"补录批次：德云社"
+]
+},
+{
+"id": "r01891",
+"type": "master_disciple",
+"from": "p1734",
+"to": "p1819",
+"detail": "",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "disputed",
+"notes": [
+"仅见维基德云社成员表（王惠为郭德纲之妻，非相声演员，或为戏曲/曲艺授业）",
+"补录批次：德云社"
+]
+},
+{
+"id": "r01892",
+"type": "master_disciple",
+"from": "p1734",
+"to": "p1820",
+"detail": "",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "disputed",
+"notes": [
+"仅见维基德云社成员表",
+"补录批次：德云社"
+]
+},
+{
+"id": "r01893",
+"type": "master_disciple",
+"from": "p1822",
+"to": "p1821",
+"detail": "",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "disputed",
+"notes": [
+"仅见维基德云社成员表",
+"补录批次：德云社"
+]
+},
+{
+"id": "r01894",
+"type": "master_disciple",
+"from": "p0200",
+"to": "p1822",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单；另见百度相声师承关系总表：仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：德云社,百度相声师承关系总表"
+]
+},
+{
+"id": "r01895",
+"type": "master_disciple",
+"from": "p0530",
+"to": "p1823",
+"detail": "",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "disputed",
+"notes": [
+"仅见维基德云社成员表",
+"补录批次：德云社"
+]
+},
+{
+"id": "r01896",
+"type": "master_disciple",
+"from": "p0280",
+"to": "p1824",
+"detail": "",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "disputed",
+"notes": [
+"维基德云社成员表作方笑文；百度《相声师承关系总表》作李文山，两说并存",
+"补录批次：德云社,百度相声师承关系总表"
+]
+},
+{
+"id": "r01897",
+"type": "master_disciple",
+"from": "p0645",
+"to": "p1824",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"百度《相声师承关系总表》列李文山门下；与维基“方笑文”说冲突；另见百度相声师承关系总表：仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：德云社,百度相声师承关系总表"
+]
+},
+{
+"id": "r01898",
+"type": "master_disciple",
+"from": "p0732",
+"to": "p1825",
+"detail": "",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "disputed",
+"notes": [
+"仅见维基德云社成员表（相声门师父杨威）；另拜郭德纲学评书，未单列",
+"补录批次：德云社"
+]
+},
+{
+"id": "r01899",
+"type": "master_disciple",
+"from": "p1827",
+"to": "p1826",
+"detail": "",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "disputed",
+"notes": [
+"仅见维基德云社成员表（相声师父杨子春）",
+"补录批次：德云社"
+]
+},
+{
+"id": "r01900",
+"type": "master_disciple",
+"from": "p0245",
+"to": "p1828",
+"detail": "",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE",
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206",
+"https://history.xikao.com/person/%E5%BC%A0%E9%93%81%E5%88%A9"
+],
+"confidence": "documented",
+"notes": [
+"维基德云社过往成员表与百度《相声师承关系总表》两处均列孙宝才门下；另见百度相声师承关系总表：仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）；另见梨园百年琐记：梨园百年琐记（作“张铁利”）载1958年拜孙宝才为师",
+"补录批次：德云社,百度相声师承关系总表,梨园百年琐记"
+]
+},
+{
+"id": "r01901",
+"type": "master_disciple",
+"from": "p0903",
+"to": "p1829",
+"detail": "",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "disputed",
+"notes": [
+"仅见维基德云社过往成员表；已退出德云社，不在2016/2020家谱",
+"补录批次：德云社"
+]
+},
+{
+"id": "r01902",
+"type": "master_disciple",
+"from": "p1070",
+"to": "p1830",
+"detail": "",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "disputed",
+"notes": [
+"仅见维基德云社过往成员表",
+"补录批次：德云社"
+]
+},
+{
+"id": "r01903",
+"type": "master_disciple",
+"from": "p0903",
+"to": "p1831",
+"detail": "",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE",
+"https://pw.zzmian.cn/308881574410.html"
+],
+"confidence": "disputed",
+"notes": [
+"维基德云社过往成员表列郭德纲；网络家谱称清门出师门",
+"补录批次：德云社"
+]
+},
+{
+"id": "r01904",
+"type": "master_disciple",
+"from": "p0153",
+"to": "p1832",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01905",
+"type": "master_disciple",
+"from": "p0153",
+"to": "p1833",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01906",
+"type": "master_disciple",
+"from": "p0153",
+"to": "p1834",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01907",
+"type": "master_disciple",
+"from": "p0153",
+"to": "p1835",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01908",
+"type": "master_disciple",
+"from": "p0153",
+"to": "p1836",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01909",
+"type": "master_disciple",
+"from": "p0153",
+"to": "p1837",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01910",
+"type": "master_disciple",
+"from": "p0153",
+"to": "p1838",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01911",
+"type": "master_disciple",
+"from": "p0175",
+"to": "p1839",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206",
+"https://history.xikao.com/person/%E5%88%98%E5%85%B0%E4%BA%AD"
+],
+"confidence": "documented",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）；另见梨园百年琐记：梨园百年琐记载2007年由刘文步代师收徒、拜杨少奎为师；与百度总表一致",
+"补录批次：百度相声师承关系总表,梨园百年琐记"
+]
+},
+{
+"id": "r01912",
+"type": "master_disciple",
+"from": "p0256",
+"to": "p1840",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01913",
+"type": "master_disciple",
+"from": "p0230",
+"to": "p1841",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01914",
+"type": "master_disciple",
+"from": "p0230",
+"to": "p1842",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01915",
+"type": "master_disciple",
+"from": "p0231",
+"to": "p1843",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01916",
+"type": "master_disciple",
+"from": "p0333",
+"to": "p1844",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01917",
+"type": "master_disciple",
+"from": "p0422",
+"to": "p1845",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01918",
+"type": "master_disciple",
+"from": "p0478",
+"to": "p1846",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01919",
+"type": "master_disciple",
+"from": "p0478",
+"to": "p1847",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01920",
+"type": "master_disciple",
+"from": "p0478",
+"to": "p1848",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01921",
+"type": "master_disciple",
+"from": "p0527",
+"to": "p1849",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01922",
+"type": "master_disciple",
+"from": "p0527",
+"to": "p1850",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01923",
+"type": "master_disciple",
+"from": "p0527",
+"to": "p1851",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01924",
+"type": "master_disciple",
+"from": "p0558",
+"to": "p1852",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01925",
+"type": "master_disciple",
+"from": "p0558",
+"to": "p1853",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01926",
+"type": "master_disciple",
+"from": "p0558",
+"to": "p1854",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01927",
+"type": "master_disciple",
+"from": "p0558",
+"to": "p1855",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01928",
+"type": "master_disciple",
+"from": "p0558",
+"to": "p1856",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01929",
+"type": "master_disciple",
+"from": "p0558",
+"to": "p1857",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01930",
+"type": "master_disciple",
+"from": "p0530",
+"to": "p1858",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01931",
+"type": "master_disciple",
+"from": "p0590",
+"to": "p1859",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01932",
+"type": "master_disciple",
+"from": "p0386",
+"to": "p1860",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01933",
+"type": "master_disciple",
+"from": "p0386",
+"to": "p1861",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01934",
+"type": "master_disciple",
+"from": "p0386",
+"to": "p1862",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01935",
+"type": "master_disciple",
+"from": "p0540",
+"to": "p1863",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01936",
+"type": "master_disciple",
+"from": "p0712",
+"to": "p1864",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01937",
+"type": "master_disciple",
+"from": "p0535",
+"to": "p1865",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01938",
+"type": "master_disciple",
+"from": "p0747",
+"to": "p1866",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206",
+"http://www.chinawriter.com.cn/2014/2014-10-03/220138.html"
+],
+"confidence": "documented",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）；另见维基/新闻/社团资料：中国作家网（北京晚报）2014年：王晓磊与苗阜师父同为郑小山；百度总表郑小山门下作“王筱磊”",
+"补录批次：百度相声师承关系总表,维基/新闻/社团资料"
+]
+},
+{
+"id": "r01939",
+"type": "master_disciple",
+"from": "p0747",
+"to": "p1867",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01940",
+"type": "master_disciple",
+"from": "p0747",
+"to": "p1868",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01941",
+"type": "master_disciple",
+"from": "p0747",
+"to": "p1869",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01942",
+"type": "master_disciple",
+"from": "p0747",
+"to": "p1870",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01943",
+"type": "master_disciple",
+"from": "p0660",
+"to": "p1871",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01944",
+"type": "master_disciple",
+"from": "p0660",
+"to": "p1872",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01945",
+"type": "master_disciple",
+"from": "p0660",
+"to": "p1873",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01946",
+"type": "master_disciple",
+"from": "p0660",
+"to": "p1874",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01947",
+"type": "master_disciple",
+"from": "p0660",
+"to": "p1875",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01948",
+"type": "master_disciple",
+"from": "p0660",
+"to": "p1876",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01949",
+"type": "master_disciple",
+"from": "p0660",
+"to": "p1877",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01950",
+"type": "master_disciple",
+"from": "p0660",
+"to": "p1878",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01951",
+"type": "master_disciple",
+"from": "p0660",
+"to": "p1879",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01952",
+"type": "master_disciple",
+"from": "p0660",
+"to": "p1880",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01953",
+"type": "master_disciple",
+"from": "p0660",
+"to": "p1881",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01954",
+"type": "master_disciple",
+"from": "p0660",
+"to": "p1882",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01955",
+"type": "master_disciple",
+"from": "p0660",
+"to": "p1883",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01956",
+"type": "master_disciple",
+"from": "p0660",
+"to": "p1884",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01957",
+"type": "master_disciple",
+"from": "p0660",
+"to": "p1885",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01958",
+"type": "master_disciple",
+"from": "p0660",
+"to": "p1886",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01959",
+"type": "master_disciple",
+"from": "p0660",
+"to": "p1887",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01960",
+"type": "master_disciple",
+"from": "p0660",
+"to": "p1888",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01961",
+"type": "master_disciple",
+"from": "p0660",
+"to": "p1889",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01962",
+"type": "master_disciple",
+"from": "p0660",
+"to": "p1890",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01963",
+"type": "master_disciple",
+"from": "p0660",
+"to": "p1891",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01964",
+"type": "master_disciple",
+"from": "p0660",
+"to": "p1892",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01965",
+"type": "master_disciple",
+"from": "p0728",
+"to": "p1893",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01966",
+"type": "master_disciple",
+"from": "p0567",
+"to": "p1894",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206",
+"https://history.xikao.com/person/%E6%9D%A8%E9%95%BF%E5%9C%A8"
+],
+"confidence": "documented",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）；另见梨园百年琐记：梨园百年琐记载1980年正式拜杨志光为师，为门下大弟子；与百度总表一致",
+"补录批次：百度相声师承关系总表,梨园百年琐记"
+]
+},
+{
+"id": "r01967",
+"type": "master_disciple",
+"from": "p0406",
+"to": "p1895",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01968",
+"type": "master_disciple",
+"from": "p0569",
+"to": "p1896",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01969",
+"type": "master_disciple",
+"from": "p0569",
+"to": "p1897",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01970",
+"type": "master_disciple",
+"from": "p0649",
+"to": "p1898",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01971",
+"type": "master_disciple",
+"from": "p0546",
+"to": "p1899",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01972",
+"type": "master_disciple",
+"from": "p0727",
+"to": "p1900",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01973",
+"type": "master_disciple",
+"from": "p0727",
+"to": "p1901",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01974",
+"type": "master_disciple",
+"from": "p0727",
+"to": "p1902",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01975",
+"type": "master_disciple",
+"from": "p0510",
+"to": "p1903",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01976",
+"type": "master_disciple",
+"from": "p0510",
+"to": "p1904",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01977",
+"type": "master_disciple",
+"from": "p0510",
+"to": "p1905",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01978",
+"type": "master_disciple",
+"from": "p0510",
+"to": "p1906",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01979",
+"type": "master_disciple",
+"from": "p0510",
+"to": "p1907",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01980",
+"type": "master_disciple",
+"from": "p0510",
+"to": "p1908",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01981",
+"type": "master_disciple",
+"from": "p0510",
+"to": "p1909",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01982",
+"type": "master_disciple",
+"from": "p0732",
+"to": "p1910",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01983",
+"type": "master_disciple",
+"from": "p0542",
+"to": "p1911",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01984",
+"type": "master_disciple",
+"from": "p0798",
+"to": "p1912",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01985",
+"type": "master_disciple",
+"from": "p1091",
+"to": "p1913",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01986",
+"type": "master_disciple",
+"from": "p0943",
+"to": "p1914",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01987",
+"type": "master_disciple",
+"from": "p1180",
+"to": "p1915",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01988",
+"type": "master_disciple",
+"from": "p1180",
+"to": "p1916",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01989",
+"type": "master_disciple",
+"from": "p1853",
+"to": "p1917",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01990",
+"type": "master_disciple",
+"from": "p1853",
+"to": "p1918",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01991",
+"type": "master_disciple",
+"from": "p1853",
+"to": "p1919",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01992",
+"type": "master_disciple",
+"from": "p1853",
+"to": "p1920",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01993",
+"type": "master_disciple",
+"from": "p1853",
+"to": "p1921",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01994",
+"type": "master_disciple",
+"from": "p1853",
+"to": "p1922",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01995",
+"type": "master_disciple",
+"from": "p1923",
+"to": "p1924",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01996",
+"type": "master_disciple",
+"from": "p0869",
+"to": "p1925",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01997",
+"type": "master_disciple",
+"from": "p0940",
+"to": "p1926",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01998",
+"type": "master_disciple",
+"from": "p0940",
+"to": "p1927",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r01999",
+"type": "master_disciple",
+"from": "p0940",
+"to": "p1928",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02000",
+"type": "master_disciple",
+"from": "p0897",
+"to": "p1929",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206",
+"https://history.xikao.com/person/%E7%8E%8B%E9%87%91%E6%98%8E"
+],
+"confidence": "documented",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）；另见梨园百年琐记：梨园百年琐记载“师承奇志”，与百度总表奇志门下名单一致（两处）",
+"补录批次：百度相声师承关系总表,梨园百年琐记"
+]
+},
+{
+"id": "r02001",
+"type": "master_disciple",
+"from": "p0897",
+"to": "p1930",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02002",
+"type": "master_disciple",
+"from": "p0897",
+"to": "p1931",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02003",
+"type": "master_disciple",
+"from": "p0897",
+"to": "p1932",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02004",
+"type": "master_disciple",
+"from": "p0897",
+"to": "p1933",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02005",
+"type": "master_disciple",
+"from": "p0897",
+"to": "p1934",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02006",
+"type": "master_disciple",
+"from": "p0897",
+"to": "p1935",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02007",
+"type": "master_disciple",
+"from": "p0897",
+"to": "p1936",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02008",
+"type": "master_disciple",
+"from": "p0897",
+"to": "p1937",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02009",
+"type": "master_disciple",
+"from": "p1051",
+"to": "p1938",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02010",
+"type": "master_disciple",
+"from": "p1854",
+"to": "p1939",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02011",
+"type": "master_disciple",
+"from": "p1854",
+"to": "p1940",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02012",
+"type": "master_disciple",
+"from": "p1005",
+"to": "p1941",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02013",
+"type": "master_disciple",
+"from": "p1005",
+"to": "p1942",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206",
+"http://www.chinanews.com/yl/2013/06-24/4963306.shtml"
+],
+"confidence": "documented",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）；另见收徒新闻：中新网（深圳商报）2013年6月报道姜昆深圳收徒，六人正式拜师；百度总表亦列姜昆门下",
+"补录批次：百度相声师承关系总表,收徒新闻"
+]
+},
+{
+"id": "r02014",
+"type": "master_disciple",
+"from": "p0941",
+"to": "p1943",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02015",
+"type": "master_disciple",
+"from": "p0941",
+"to": "p1944",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02016",
+"type": "master_disciple",
+"from": "p0941",
+"to": "p1945",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206",
+"https://history.xikao.com/person/%E7%8E%8B%E8%80%80%E5%AE%87"
+],
+"confidence": "documented",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）；另见梨园百年琐记：梨园百年琐记载2006年5月拜中国煤矿文工团宋德全为师学相声；百度总表宋德全门下“王洋”即其本名",
+"补录批次：百度相声师承关系总表,梨园百年琐记"
+]
+},
+{
+"id": "r02017",
+"type": "master_disciple",
+"from": "p1218",
+"to": "p1946",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02018",
+"type": "master_disciple",
+"from": "p1218",
+"to": "p1947",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02019",
+"type": "master_disciple",
+"from": "p1248",
+"to": "p1948",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02020",
+"type": "master_disciple",
+"from": "p1248",
+"to": "p1949",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02021",
+"type": "master_disciple",
+"from": "p1221",
+"to": "p1950",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02022",
+"type": "master_disciple",
+"from": "p1429",
+"to": "p1951",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02023",
+"type": "master_disciple",
+"from": "p1325",
+"to": "p1952",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02024",
+"type": "master_disciple",
+"from": "p1551",
+"to": "p1953",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02025",
+"type": "master_disciple",
+"from": "p0924",
+"to": "p1954",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E5%AD%99%E5%90%8C%E7%A6%8F",
+"https://wemp.app/posts/718dcb2e-e6a6-4974-b03c-803c689a5247"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记载2017年拜辛明璋为师（引嘻哈包袱铺收徒公众号文章）",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02026",
+"type": "master_disciple",
+"from": "p0924",
+"to": "p1955",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E5%86%AF%E5%90%8C%E8%B4%BA",
+"https://wemp.app/posts/718dcb2e-e6a6-4974-b03c-803c689a5247"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记载2017年拜辛明璋为师（引收徒公众号文章）",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02027",
+"type": "master_disciple",
+"from": "p0924",
+"to": "p1956",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E5%BC%A0%E5%90%8C%E6%99%BA",
+"https://wemp.app/posts/718dcb2e-e6a6-4974-b03c-803c689a5247"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记载2017年拜辛明璋为师（引收徒公众号文章）",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02028",
+"type": "master_disciple",
+"from": "p0923",
+"to": "p1957",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E9%99%88%E5%90%8C%E4%B9%90",
+"https://wemp.app/posts/718dcb2e-e6a6-4974-b03c-803c689a5247"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记载2017年拜李明刚为师（引收徒公众号文章）",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02029",
+"type": "master_disciple",
+"from": "p0923",
+"to": "p1958",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E4%B8%81%E5%90%8C%E5%A5%BD",
+"https://wemp.app/posts/718dcb2e-e6a6-4974-b03c-803c689a5247"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记载2017年拜李明刚为师（引收徒公众号文章）",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02030",
+"type": "master_disciple",
+"from": "p0923",
+"to": "p1959",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E4%BA%8E%E5%90%8C%E9%81%93",
+"https://wemp.app/posts/718dcb2e-e6a6-4974-b03c-803c689a5247"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记载2017年拜李明刚为师（引收徒公众号文章）",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02031",
+"type": "master_disciple",
+"from": "p0535",
+"to": "p1960",
+"detail": "代拉（仇小豹代师收徒）",
+"sources": [
+"https://history.xikao.com/person/%E4%B8%81%E5%AE%9D%E7%A5%A5"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记载2013年4月13日由杨紫阳大弟子仇小豹代师收徒（代拉）",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02032",
+"type": "master_disciple",
+"from": "p0226",
+"to": "p1961",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E8%91%A3%E5%87%A4%E6%A1%90"
+],
+"confidence": "disputed",
+"notes": [
+"仅见梨园百年琐记“师承侯宝林”，未见拜师仪式记载",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02033",
+"type": "master_disciple",
+"from": "p0436",
+"to": "p1962",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E8%8C%83%E6%B8%85%E5%A0%82"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记载1993年在天津正式拜刘文亨为师（单一来源）",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02034",
+"type": "master_disciple",
+"from": "p0877",
+"to": "p1963",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E5%86%AF%E8%B6%85"
+],
+"confidence": "disputed",
+"notes": [
+"仅见梨园百年琐记“师承吴金富”",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02035",
+"type": "master_disciple",
+"from": "p0689",
+"to": "p1964",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E4%BE%AF%E5%8D%9A%E5%B1%B1",
+"http://ent.enorth.com.cn/system/2020/07/25/050307084.shtml"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记称其为陈鸣志“得意高足”（单一来源）",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02036",
+"type": "master_disciple",
+"from": "p1967",
+"to": "p1965",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E9%BB%84%E6%A2%A6%E5%A6%82"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记载2013年11月9日拜师孙维绵，为入室二弟子（单一来源）",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02037",
+"type": "master_disciple",
+"from": "p1967",
+"to": "p1966",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E5%90%B4%E6%99%93%E5%B3%B0",
+"https://www.sohu.com/a/73326757_115403"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记称其为孙维绵第五位入室弟子（引搜狐收徒报道）",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02038",
+"type": "master_disciple",
+"from": "p1894",
+"to": "p1968",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E8%AE%B8%E5%85%86%E5%91%88"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记载2016年拜师杨长在（单一来源）",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02039",
+"type": "master_disciple",
+"from": "p0610",
+"to": "p1969",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E4%BF%AE%E6%98%8E%E7%82%8E"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记载“师从天津相声演员王世勇”，拜师后改名修明炎",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02040",
+"type": "master_disciple",
+"from": "p0186",
+"to": "p1970",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E7%8E%8B%E6%B5%8E%E8%8D%A3"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记载“拜张宝珠先生为师”；张宝珠同名者较多，与本站张宝珠是否同一人待核",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02041",
+"type": "master_disciple",
+"from": "p0386",
+"to": "p1971",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E6%9D%A8%E9%92%B0%E6%B5%B7"
+],
+"confidence": "disputed",
+"notes": [
+"仅见梨园百年琐记“师从魏文亮”",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02042",
+"type": "master_disciple",
+"from": "p0734",
+"to": "p1972",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E6%9D%8E%E5%BD%A6%E7%94%9F"
+],
+"confidence": "disputed",
+"notes": [
+"仅见梨园百年琐记“随后师从侯耀华”",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02043",
+"type": "master_disciple",
+"from": "p0290",
+"to": "p1973",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E5%88%98%E5%BB%BA%E4%BA%91"
+],
+"confidence": "disputed",
+"notes": [
+"仅见梨园百年琐记“师从相声表演艺术家关春山”",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02044",
+"type": "master_disciple",
+"from": "p0282",
+"to": "p1974",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E5%BC%A0%E4%B9%83%E6%9E%97"
+],
+"confidence": "documented",
+"notes": [
+"梨园百年琐记载先为口盟弟子，2017年在天津举行拜师仪式正式成为尹笑声弟子",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02045",
+"type": "master_disciple",
+"from": "p0346",
+"to": "p1975",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E5%BC%A0%E9%87%91%E9%93%AD"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记载随义父武魁海学相声后拜冯立铎为师；另拜王凤山学快板",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02046",
+"type": "master_disciple",
+"from": "p0181",
+"to": "p1976",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E8%B5%B5%E6%A1%82%E5%85%B0"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记载1949年经张寿臣引荐拜李润杰为师（李润杰开山门弟子）；以快板书为主",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02047",
+"type": "master_disciple",
+"from": "p0399",
+"to": "p1977",
+"detail": "代拉（苏明杰代师）",
+"sources": [
+"https://history.xikao.com/person/%E9%98%8E%E6%9C%88%E6%98%8E"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记载2007年高英培诞辰八十周年仪式上由苏明杰代拉为高英培弟子",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02048",
+"type": "master_disciple",
+"from": "p0303",
+"to": "p1978",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E5%AE%8B%E6%B8%85%E6%96%87"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记载2015年拜杨宝璋为师（单一来源）",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02049",
+"type": "master_disciple",
+"from": "p0453",
+"to": "p1979",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E8%94%A1%E5%B0%8F%E9%93%AD"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记载“师从董铁良、薛永年、顾耀宗等”，未明正式拜师",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02050",
+"type": "master_disciple",
+"from": "p1005",
+"to": "p1980",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E8%92%B2%E5%85%8B"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记称其为“姜昆先生的高徒”（单一来源）",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02051",
+"type": "master_disciple",
+"from": "p1019",
+"to": "p1981",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E6%A2%81%E6%8B%AF%E5%BA%B7"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记载“追随姚新光学习相声”，未明正式拜师",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02052",
+"type": "master_disciple",
+"from": "p1226",
+"to": "p1982",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E4%BB%A3%E6%A0%91%E6%98%86"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记载2017年4月22日正式拜唐山相声演员霍士云为师（单一来源）",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02053",
+"type": "master_disciple",
+"from": "p1226",
+"to": "p1983",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E5%BC%A0%E6%B5%A9"
+],
+"confidence": "disputed",
+"notes": [
+"仅见梨园百年琐记“师承霍士云”",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02054",
+"type": "master_disciple",
+"from": "p0072",
+"to": "p1984",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E5%88%98%E5%B9%BF%E6%96%87"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记载“师承焦少海（焦寿海）”",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02055",
+"type": "master_disciple",
+"from": "p0543",
+"to": "p1989",
+"detail": "",
+"sources": [
+"https://zh.wikipedia.org/wiki/王一明"
+],
+"confidence": "disputed",
+"notes": [
+"维基条目称“师承吴兆南”，未见拜师仪式报道",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02056",
+"type": "master_disciple",
+"from": "p1991",
+"to": "p1990",
+"detail": "",
+"sources": [
+"https://zh.wikipedia.org/wiki/陈坚雄",
+"https://history.xikao.com/person/陈坚雄"
+],
+"confidence": "documented",
+"notes": [
+"维基条目与梨园百年琐记均载8岁拜黄俊英为师",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02057",
+"type": "master_disciple",
+"from": "p1690",
+"to": "p1992",
+"detail": "",
+"sources": [
+"https://www.chinanews.com.cn/cul/2016/02-21/7766262.shtml",
+"https://zh.wikipedia.org/wiki/弓瑞"
+],
+"confidence": "documented",
+"notes": [
+"中新网2016年报道：2012年侯耀文逝世五周年纪念演出时向马小平磕头拜师",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02058",
+"type": "master_disciple",
+"from": "p0948",
+"to": "p1993",
+"detail": "",
+"sources": [
+"https://www.chinanews.com.cn/cul/2016/02-21/7766262.shtml"
+],
+"confidence": "disputed",
+"notes": [
+"中新网报道称“崔喜跃（唐杰忠徒弟）弟子马菁原”，未述拜师细节",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02059",
+"type": "master_disciple",
+"from": "p0276",
+"to": "p1994",
+"detail": "",
+"sources": [
+"http://culture.people.com.cn/n/2013/0407/c22219-21036633.html"
+],
+"confidence": "documented",
+"notes": [
+"人民网/京华时报2013年4月报道常宝华收徒仪式，高洪胜为第十一位徒弟",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02060",
+"type": "master_disciple",
+"from": "p0754",
+"to": "p1995",
+"detail": "",
+"sources": [
+"https://www.chinanews.com/m/yl/2018/02-27/8455558.shtml"
+],
+"confidence": "documented",
+"notes": [
+"中新网（沈阳晚报）2018年专访：“王振华拜天津相声前辈刘文亮为师”",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02061",
+"type": "master_disciple",
+"from": "p0276",
+"to": "p1996",
+"detail": "",
+"sources": [
+"https://www.cflac.org.cn/gn/201309/t20130927_224003.htm",
+"https://hznews.hangzhou.com.cn/wenti/content/2018-11/08/content_7095052_0.htm"
+],
+"confidence": "documented",
+"notes": [
+"中国艺术报（中国文艺网）2013年、杭州网2018年均称师从常宝华",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02062",
+"type": "master_disciple",
+"from": "p1896",
+"to": "p1997",
+"detail": "",
+"sources": [
+"https://wyzs.cnr.cn/xxys/20090730/t20090730_505416041.shtml"
+],
+"confidence": "disputed",
+"notes": [
+"中国广播网2009年：“自幼拜王文长为师学艺”（单一报道）",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02063",
+"type": "master_disciple",
+"from": "p1008",
+"to": "p1998",
+"detail": "",
+"sources": [
+"https://news.qq.com/rain/a/20210714A05WLZ00"
+],
+"confidence": "disputed",
+"notes": [
+"仅见自媒体（腾讯新闻创作者）称2001年后拜冯巩为师",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02064",
+"type": "master_disciple",
+"from": "p0637",
+"to": "p2000",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E5%98%BB%E5%93%88%E5%8C%85%E8%A2%B1%E9%93%BA/8930947",
+"https://baike.baidu.com/item/%E6%9D%8E%E6%89%8D/20359011"
+],
+"confidence": "disputed",
+"notes": [
+"百度百科嘻哈包袱铺及李才条目均称“拜相声名家冯春岭先生为师”（同一平台）",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02065",
+"type": "master_disciple",
+"from": "p0900",
+"to": "p2001",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E5%98%BB%E5%93%88%E5%8C%85%E8%A2%B1%E9%93%BA/8930947"
+],
+"confidence": "disputed",
+"notes": [
+"百度百科嘻哈包袱铺成员介绍“师承王玉”",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02066",
+"type": "master_disciple",
+"from": "p0644",
+"to": "p2002",
+"detail": "",
+"sources": [
+"https://baike.baidu.com/item/%E5%98%BB%E5%93%88%E5%8C%85%E8%A2%B1%E9%93%BA/8930947"
+],
+"confidence": "disputed",
+"notes": [
+"百度百科嘻哈包袱铺成员介绍“师承刘洪沂”",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02067",
+"type": "master_disciple",
+"from": "p2002",
+"to": "p2003",
+"detail": "",
+"sources": [
+"https://yanchu.juyoufuli.com/app/performances/83592"
+],
+"confidence": "disputed",
+"notes": [
+"仅见演出票务页演员简介“师从程磊”",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02068",
+"type": "master_disciple",
+"from": "p0686",
+"to": "p2004",
+"detail": "",
+"sources": [
+"https://yanchu.juyoufuli.com/app/performances/83592",
+"https://tv.cctv.cn/2024/02/10/VIDEeYuO2s40VNndgmzp2z2u240210.shtml"
+],
+"confidence": "disputed",
+"notes": [
+"仅见演出票务页演员简介“师从相声名家靳佩良”",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02069",
+"type": "master_disciple",
+"from": "p1787",
+"to": "p2005",
+"detail": "",
+"sources": [
+"https://yanchu.juyoufuli.com/app/performances/83592",
+"https://tv.cctv.cn/2024/02/10/VIDEeYuO2s40VNndgmzp2z2u240210.shtml"
+],
+"confidence": "disputed",
+"notes": [
+"仅见演出票务页演员简介“师从金霏”",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02070",
+"type": "master_disciple",
+"from": "p1787",
+"to": "p2006",
+"detail": "",
+"sources": [
+"https://yanchu.juyoufuli.com/app/performances/83592",
+"https://tv.cctv.cn/2024/02/10/VIDEeYuO2s40VNndgmzp2z2u240210.shtml"
+],
+"confidence": "disputed",
+"notes": [
+"仅见演出票务页演员简介“师承金霏”",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02071",
+"type": "master_disciple",
+"from": "p1397",
+"to": "p2007",
+"detail": "",
+"sources": [
+"https://yanchu.juyoufuli.com/app/performances/83592"
+],
+"confidence": "disputed",
+"notes": [
+"仅见演出票务页演员简介“师从范雷”",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02072",
+"type": "master_disciple",
+"from": "p1996",
+"to": "p2008",
+"detail": "",
+"sources": [
+"https://www.cflac.org.cn/gn/201309/t20130927_224003.htm"
+],
+"confidence": "documented",
+"notes": [
+"中国艺术报2013年报道浙江省曲协主办杨鲁平收徒仪式",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02073",
+"type": "master_disciple",
+"from": "p1996",
+"to": "p2009",
+"detail": "",
+"sources": [
+"https://www.cflac.org.cn/gn/201309/t20130927_224003.htm"
+],
+"confidence": "documented",
+"notes": [
+"中国艺术报2013年报道浙江省曲协主办杨鲁平收徒仪式",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02074",
+"type": "master_disciple",
+"from": "p1996",
+"to": "p2010",
+"detail": "",
+"sources": [
+"https://www.cflac.org.cn/gn/201309/t20130927_224003.htm"
+],
+"confidence": "documented",
+"notes": [
+"中国艺术报2013年报道浙江省曲协主办杨鲁平收徒仪式",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02075",
+"type": "master_disciple",
+"from": "p1996",
+"to": "p2011",
+"detail": "",
+"sources": [
+"https://www.cflac.org.cn/gn/201309/t20130927_224003.htm"
+],
+"confidence": "documented",
+"notes": [
+"中国艺术报2013年报道浙江省曲协主办杨鲁平收徒仪式",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02076",
+"type": "master_disciple",
+"from": "p1996",
+"to": "p2012",
+"detail": "",
+"sources": [
+"https://www.cflac.org.cn/gn/201309/t20130927_224003.htm"
+],
+"confidence": "documented",
+"notes": [
+"中国艺术报2013年报道浙江省曲协主办杨鲁平收徒仪式",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02077",
+"type": "master_disciple",
+"from": "p1996",
+"to": "p2013",
+"detail": "",
+"sources": [
+"https://hznews.hangzhou.com.cn/wenti/content/2018-11/08/content_7095052_0.htm"
+],
+"confidence": "documented",
+"notes": [
+"杭州网2018年11月报道杨鲁平收徒仪式",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02078",
+"type": "master_disciple",
+"from": "p1996",
+"to": "p2014",
+"detail": "",
+"sources": [
+"https://hznews.hangzhou.com.cn/wenti/content/2018-11/08/content_7095052_0.htm"
+],
+"confidence": "documented",
+"notes": [
+"杭州网2018年11月报道杨鲁平收徒仪式",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02079",
+"type": "master_disciple",
+"from": "p1996",
+"to": "p2015",
+"detail": "",
+"sources": [
+"https://hznews.hangzhou.com.cn/wenti/content/2018-11/08/content_7095052_0.htm"
+],
+"confidence": "documented",
+"notes": [
+"杭州网2018年11月报道杨鲁平收徒仪式",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02080",
+"type": "master_disciple",
+"from": "p1996",
+"to": "p2016",
+"detail": "",
+"sources": [
+"https://hznews.hangzhou.com.cn/wenti/content/2018-11/08/content_7095052_0.htm"
+],
+"confidence": "documented",
+"notes": [
+"杭州网2018年11月报道杨鲁平收徒仪式",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02081",
+"type": "master_disciple",
+"from": "p2010",
+"to": "p2017",
+"detail": "",
+"sources": [
+"https://hznews.hangzhou.com.cn/wenti/content/2018-11/08/content_7095052_0.htm"
+],
+"confidence": "documented",
+"notes": [
+"杭州网2018年11月报道同场沈超凡收徒",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02082",
+"type": "master_disciple",
+"from": "p2010",
+"to": "p2018",
+"detail": "",
+"sources": [
+"https://hznews.hangzhou.com.cn/wenti/content/2018-11/08/content_7095052_0.htm"
+],
+"confidence": "documented",
+"notes": [
+"杭州网2018年11月报道同场沈超凡收徒",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02083",
+"type": "master_disciple",
+"from": "p2008",
+"to": "p2019",
+"detail": "",
+"sources": [
+"https://hznews.hangzhou.com.cn/wenti/content/2018-11/08/content_7095052_0.htm"
+],
+"confidence": "documented",
+"notes": [
+"杭州网2018年11月报道同场蒋巍收徒",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02084",
+"type": "master_disciple",
+"from": "p2008",
+"to": "p2020",
+"detail": "",
+"sources": [
+"https://hznews.hangzhou.com.cn/wenti/content/2018-11/08/content_7095052_0.htm"
+],
+"confidence": "documented",
+"notes": [
+"杭州网2018年11月报道同场蒋巍收徒",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02085",
+"type": "master_disciple",
+"from": "p2008",
+"to": "p2021",
+"detail": "",
+"sources": [
+"https://hznews.hangzhou.com.cn/wenti/content/2018-11/08/content_7095052_0.htm"
+],
+"confidence": "documented",
+"notes": [
+"杭州网2018年11月报道同场蒋巍收徒",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02086",
+"type": "master_disciple",
+"from": "p2008",
+"to": "p2022",
+"detail": "",
+"sources": [
+"https://hznews.hangzhou.com.cn/wenti/content/2018-11/08/content_7095052_0.htm"
+],
+"confidence": "documented",
+"notes": [
+"杭州网2018年11月报道同场蒋巍收徒",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02087",
+"type": "master_disciple",
+"from": "p2008",
+"to": "p2023",
+"detail": "",
+"sources": [
+"https://hznews.hangzhou.com.cn/wenti/content/2018-11/08/content_7095052_0.htm"
+],
+"confidence": "documented",
+"notes": [
+"杭州网2018年11月报道同场蒋巍收徒",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02088",
+"type": "master_disciple",
+"from": "p1005",
+"to": "p2024",
+"detail": "",
+"sources": [
+"http://www.chinanews.com/yl/2013/06-24/4963306.shtml"
+],
+"confidence": "documented",
+"notes": [
+"中新网（深圳商报）2013年6月报道姜昆深圳收徒，六人正式拜师",
+"补录批次：收徒新闻"
+]
+},
+{
+"id": "r02089",
+"type": "master_disciple",
+"from": "p1005",
+"to": "p2025",
+"detail": "",
+"sources": [
+"http://www.chinanews.com/yl/2013/06-24/4963306.shtml"
+],
+"confidence": "documented",
+"notes": [
+"中新网（深圳商报）2013年6月报道姜昆深圳收徒，六人正式拜师",
+"补录批次：收徒新闻"
+]
+},
+{
+"id": "r02090",
+"type": "master_disciple",
+"from": "p1005",
+"to": "p2026",
+"detail": "",
+"sources": [
+"http://www.chinanews.com/yl/2013/06-24/4963306.shtml"
+],
+"confidence": "documented",
+"notes": [
+"中新网（深圳商报）2013年6月报道姜昆深圳收徒，六人正式拜师",
+"补录批次：收徒新闻"
+]
+},
+{
+"id": "r02091",
+"type": "master_disciple",
+"from": "p1005",
+"to": "p2027",
+"detail": "",
+"sources": [
+"http://www.chinanews.com/yl/2013/06-24/4963306.shtml"
+],
+"confidence": "documented",
+"notes": [
+"中新网（深圳商报）2013年6月报道姜昆深圳收徒，六人正式拜师",
+"补录批次：收徒新闻"
+]
+},
+{
+"id": "r02092",
+"type": "master_disciple",
+"from": "p1005",
+"to": "p2028",
+"detail": "",
+"sources": [
+"http://www.chinanews.com/yl/2013/06-24/4963306.shtml"
+],
+"confidence": "documented",
+"notes": [
+"中新网（深圳商报）2013年6月报道姜昆深圳收徒，六人正式拜师",
+"补录批次：收徒新闻"
+]
+},
+{
+"id": "r02093",
+"type": "master_disciple",
+"from": "p1005",
+"to": "p2029",
+"detail": "",
+"sources": [
+"http://www.thecover.cn/news/1724981",
+"https://www.zaobao.com.sg/zlifestyle/culture/story20191110-1004172"
+],
+"confidence": "documented",
+"notes": [
+"封面新闻、联合早报均报道2019年2月21日在新加坡按传统仪式拜姜昆为师",
+"补录批次：收徒新闻"
+]
+},
+{
+"id": "r02094",
+"type": "master_disciple",
+"from": "p1005",
+"to": "p2030",
+"detail": "",
+"sources": [
+"http://www.thecover.cn/news/1724981",
+"https://www.zaobao.com.sg/zlifestyle/culture/story20191110-1004172"
+],
+"confidence": "documented",
+"notes": [
+"封面新闻、联合早报均报道2019年2月21日在新加坡按传统仪式拜姜昆为师",
+"补录批次：收徒新闻"
+]
+},
+{
+"id": "r02095",
+"type": "master_disciple",
+"from": "p1371",
+"to": "p2031",
+"detail": "",
+"sources": [
+"https://www.zaobao.com.sg/zlifestyle/culture/story20191110-1004172"
+],
+"confidence": "documented",
+"notes": [
+"联合早报2019年11月报道徐惠民收李耀光为徒，引保代为颜贵娟、邱胜扬、黄家强",
+"补录批次：收徒新闻"
+]
+},
+{
+"id": "r02096",
+"type": "master_disciple",
+"from": "p0394",
+"to": "p2032",
+"detail": "",
+"sources": [
+"https://epaper.tianjinwe.com/tjrb/h5/html5/2024-06/17/content_143090_931076.htm"
+],
+"confidence": "documented",
+"notes": [
+"天津日报2024年6月17日报道李伯祥收徒",
+"补录批次：收徒新闻"
+]
+},
+{
+"id": "r02097",
+"type": "master_disciple",
+"from": "p0394",
+"to": "p2033",
+"detail": "",
+"sources": [
+"https://epaper.tianjinwe.com/tjrb/h5/html5/2024-06/17/content_143090_931076.htm"
+],
+"confidence": "documented",
+"notes": [
+"天津日报2024年6月17日报道李伯祥收徒",
+"补录批次：收徒新闻"
+]
+},
+{
+"id": "r02098",
+"type": "master_disciple",
+"from": "p0394",
+"to": "p2034",
+"detail": "",
+"sources": [
+"https://epaper.tianjinwe.com/tjrb/h5/html5/2024-06/17/content_143090_931076.htm"
+],
+"confidence": "documented",
+"notes": [
+"天津日报2024年6月17日报道李伯祥收徒",
+"补录批次：收徒新闻"
+]
+},
+{
+"id": "r02099",
+"type": "master_disciple",
+"from": "p1180",
+"to": "p2035",
+"detail": "",
+"sources": [
+"http://music.china.com.cn/2023-03/28/content_42312027.htm"
+],
+"confidence": "disputed",
+"notes": [
+"中国网2023年3月报道赵津生收四徒；原文抓取受阻，仅读到搜索结果摘要，名字待核",
+"补录批次：收徒新闻"
+]
+},
+{
+"id": "r02100",
+"type": "master_disciple",
+"from": "p1180",
+"to": "p2036",
+"detail": "",
+"sources": [
+"http://music.china.com.cn/2023-03/28/content_42312027.htm"
+],
+"confidence": "disputed",
+"notes": [
+"中国网2023年3月报道赵津生收四徒；原文抓取受阻，仅读到搜索结果摘要，名字待核",
+"补录批次：收徒新闻"
+]
+},
+{
+"id": "r02101",
+"type": "master_disciple",
+"from": "p1180",
+"to": "p2037",
+"detail": "",
+"sources": [
+"http://music.china.com.cn/2023-03/28/content_42312027.htm"
+],
+"confidence": "disputed",
+"notes": [
+"中国网2023年3月报道赵津生收四徒；原文抓取受阻，仅读到搜索结果摘要，名字待核",
+"补录批次：收徒新闻"
+]
+},
+{
+"id": "r02102",
+"type": "master_disciple",
+"from": "p1180",
+"to": "p2038",
+"detail": "",
+"sources": [
+"http://music.china.com.cn/2023-03/28/content_42312027.htm"
+],
+"confidence": "disputed",
+"notes": [
+"中国网2023年3月报道赵津生收四徒；原文抓取受阻，仅读到搜索结果摘要，名字待核",
+"补录批次：收徒新闻"
+]
+},
+{
+"id": "r02103",
+"type": "master_disciple",
+"from": "p0209",
+"to": "p2039",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E8%90%A7%E5%9B%BD%E5%85%89"
+],
+"confidence": "disputed",
+"notes": [
+"戏考：1962年在上海大世界举行“孙少林收徒萧国光拜师仪式”（有新闻简报专题片）；仅单一来源，故存疑",
+"补录批次：戏考补充"
+]
+},
+{
+"id": "r02104",
+"type": "master_disciple",
+"from": "p0224",
+"to": "p2039",
+"detail": "快板",
+"sources": [
+"https://history.xikao.com/person/%E8%90%A7%E5%9B%BD%E5%85%89"
+],
+"confidence": "disputed",
+"notes": [
+"戏考：1952年随王凤山学快板，属快板师承",
+"补录批次：戏考补充"
+]
+},
+{
+"id": "r02105",
+"type": "master_disciple",
+"from": "p1554",
+"to": "p2040",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E5%90%B4%E8%BF%AA"
+],
+"confidence": "disputed",
+"notes": [
+"戏考：早年与吴跃拜杨议为师；单一来源",
+"补录批次：戏考补充"
+]
+},
+{
+"id": "r02106",
+"type": "master_disciple",
+"from": "p1554",
+"to": "p2041",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E5%90%B4%E8%BF%AA"
+],
+"confidence": "disputed",
+"notes": [
+"戏考吴迪条：兄弟二人早年拜杨议为师；单一来源",
+"补录批次：戏考补充"
+]
+},
+{
+"id": "r02107",
+"type": "master_disciple",
+"from": "p1827",
+"to": "p2042",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E9%80%97%E7%AC%91"
+],
+"confidence": "disputed",
+"notes": [
+"戏考：1994年来到杨子春、史琳身边拜师学艺；单一来源；该杨子春是否即王善勇之师杨子春未核实",
+"补录批次：戏考补充"
+]
+},
+{
+"id": "r02108",
+"type": "master_disciple",
+"from": "p1827",
+"to": "p2043",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E9%80%97%E4%B9%90"
+],
+"confidence": "disputed",
+"notes": [
+"戏考：1994年与逗笑拜杨子春、史琳学艺；单一来源",
+"补录批次：戏考补充"
+]
+},
+{
+"id": "r02109",
+"type": "master_disciple",
+"from": "p0747",
+"to": "p2044",
+"detail": "",
+"sources": [
+"https://history.xikao.com/person/%E8%B5%B5%E9%B9%8F%E6%B6%9B"
+],
+"confidence": "disputed",
+"notes": [
+"戏考：“在郑小山的传授下走上相声之路”，未明确记载拜师仪式",
+"补录批次：戏考补充"
+]
+},
+{
+"id": "r02110",
+"type": "kin",
+"from": "p1253",
+"to": "p1810",
+"detail": "父子（刘献伟之子）",
+"sources": [
+"https://news.qq.com/rain/a/20200120A0J12J00"
+],
+"confidence": "disputed",
+"notes": [
+"仅见自媒体报道",
+"补录批次：德云社"
+]
+},
+{
+"id": "r02111",
+"type": "kin",
+"from": "p1167",
+"to": "p1813",
+"detail": "父子（刘喆之子）",
+"sources": [
+"https://www.jindongjia.com/zatan/29314.html"
+],
+"confidence": "disputed",
+"notes": [
+"仅见自媒体报道",
+"补录批次：德云社"
+]
+},
+{
+"id": "r02112",
+"type": "kin",
+"from": "p1984",
+"to": "p0436",
+"detail": "父子（刘文亨之父）",
+"sources": [
+"https://history.xikao.com/person/%E5%88%98%E5%B9%BF%E6%96%87"
+],
+"confidence": "disputed",
+"notes": [
+"仅见梨园百年琐记",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02113",
+"type": "kin",
+"from": "p0303",
+"to": "p1985",
+"detail": "父子",
+"sources": [
+"https://history.xikao.com/person/%E6%9D%A8%E6%A0%91"
+],
+"confidence": "disputed",
+"notes": [
+"仅见梨园百年琐记",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02114",
+"type": "kin",
+"from": "p0934",
+"to": "p1986",
+"detail": "父子",
+"sources": [
+"https://history.xikao.com/person/%E6%AD%A6%E6%B4%B2"
+],
+"confidence": "disputed",
+"notes": [
+"仅见梨园百年琐记",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02115",
+"type": "kin",
+"from": "p0061",
+"to": "p1987",
+"detail": "父女（荷花女之父吉评三）",
+"sources": [
+"https://history.xikao.com/person/%E5%90%89%E6%96%87%E8%B4%9E",
+"https://zh.wikipedia.org/wiki/%E8%8D%B7%E8%8A%B1%E5%A5%B3"
+],
+"confidence": "documented",
+"notes": [
+"荷花女为吉坪三之女，多处记载",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02116",
+"type": "kin",
+"from": "p0102",
+"to": "p1988",
+"detail": "兄弟（随兄学艺）",
+"sources": [
+"https://history.xikao.com/person/%E5%BC%A0%E6%8C%AF%E9%93%8E"
+],
+"confidence": "disputed",
+"notes": [
+"仅见梨园百年琐记",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02117",
+"type": "kin",
+"from": "p0136",
+"to": "p0277",
+"detail": "父子",
+"sources": [
+"https://history.xikao.com/person/%E9%AB%98%E7%AC%91%E6%9E%97"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记作“高笑林”",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02118",
+"type": "kin",
+"from": "p0022",
+"to": "p0072",
+"detail": "父子",
+"sources": [
+"https://history.xikao.com/person/%E7%84%A6%E5%B0%91%E6%B5%B7"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记作“焦少海”",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02119",
+"type": "kin",
+"from": "p0180",
+"to": "p0718",
+"detail": "父子（张常锁）",
+"sources": [
+"https://history.xikao.com/person/%E5%BC%A0%E5%B8%B8%E9%94%81"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记作“张常锁”",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02120",
+"type": "kin",
+"from": "p0180",
+"to": "p0719",
+"detail": "父子（张常泰）",
+"sources": [
+"https://history.xikao.com/person/%E5%BC%A0%E5%B8%B8%E6%B3%B0"
+],
+"confidence": "disputed",
+"notes": [
+"梨园百年琐记作“张常泰”",
+"补录批次：梨园百年琐记"
+]
+},
+{
+"id": "r02121",
+"type": "kin",
+"from": "p0223",
+"to": "p1994",
+"detail": "父子",
+"sources": [
+"http://culture.people.com.cn/n/2013/0407/c22219-21036633.html"
+],
+"confidence": "documented",
+"notes": [
+"人民网报道高洪胜称“我父亲高元钧”",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02122",
+"type": "kin",
+"from": "p1995",
+"to": "p1337",
+"detail": "父子",
+"sources": [
+"https://www.chinanews.com/m/yl/2018/02-27/8455558.shtml"
+],
+"confidence": "documented",
+"notes": [
+"中新网：为儿子王冬冬助演",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02123",
+"type": "kin",
+"from": "p1999",
+"to": "p1998",
+"detail": "父子",
+"sources": [
+"https://news.qq.com/rain/a/20210714A05WLZ00"
+],
+"confidence": "disputed",
+"notes": [
+"自媒体报道",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02124",
+"type": "marriage",
+"from": "p1371",
+"to": "p2030",
+"detail": "夫妻",
+"sources": [
+"https://www.zaobao.com.sg/zlifestyle/culture/story20191110-1004172"
+],
+"confidence": "documented",
+"notes": [
+"联合早报：徐惠民的妻子颜贵娟",
+"补录批次：收徒新闻"
+]
+},
+{
+"id": "r02125",
+"type": "kin",
+"from": "p1827",
+"to": "p2042",
+"detail": "舅甥（逗笑为杨子春妹妹之子）",
+"sources": [
+"https://history.xikao.com/person/%E9%80%97%E7%AC%91"
+],
+"confidence": "disputed",
+"notes": [
+"戏考单一来源",
+"补录批次：戏考补充"
+]
+},
+{
+"id": "r02126",
+"type": "master_disciple",
+"from": "p0903",
+"to": "p1678",
+"detail": "口盟后转正入九字科，艺名马九萌",
+"sources": [
+"https://www.jindongjia.com/zatan/29314.html",
+"https://k.sina.cn/article_6434939602_17f8d62d200100xuko.html",
+"https://www.maigoo.com/news/663645.html"
+],
+"confidence": "disputed",
+"notes": [
+"2020年家谱列九字科“马九萌”，原为口盟弟子；来源为自媒体转述",
+"补录批次：德云社"
+]
+},
+{
+"id": "r02127",
+"type": "master_disciple",
+"from": "p0003",
+"to": "p0046",
+"detail": "百度总表所载另一位师父",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"本站已有其他师承；此条仅见百度《相声师承关系总表》名单，属多师或异说",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02128",
+"type": "master_disciple",
+"from": "p0012",
+"to": "p0047",
+"detail": "百度总表所载另一位师父",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"本站已有其他师承；此条仅见百度《相声师承关系总表》名单，属多师或异说",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02129",
+"type": "master_disciple",
+"from": "p0012",
+"to": "p0050",
+"detail": "百度总表所载另一位师父",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"本站已有其他师承；此条仅见百度《相声师承关系总表》名单，属多师或异说",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02130",
+"type": "master_disciple",
+"from": "p0103",
+"to": "p0422",
+"detail": "百度总表所载另一位师父",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"本站已有其他师承；此条仅见百度《相声师承关系总表》名单，属多师或异说",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02131",
+"type": "master_disciple",
+"from": "p0181",
+"to": "p0569",
+"detail": "百度总表所载另一位师父",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"本站已有其他师承；此条仅见百度《相声师承关系总表》名单，属多师或异说",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02132",
+"type": "master_disciple",
+"from": "p0558",
+"to": "p0903",
+"detail": "百度总表所载另一位师父",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"本站已有其他师承；此条仅见百度《相声师承关系总表》名单，属多师或异说",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02133",
+"type": "master_disciple",
+"from": "p0558",
+"to": "p1252",
+"detail": "百度总表所载另一位师父",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"本站已有其他师承；此条仅见百度《相声师承关系总表》名单，属多师或异说",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02134",
+"type": "master_disciple",
+"from": "p0558",
+"to": "p1070",
+"detail": "百度总表所载另一位师父",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"本站已有其他师承；此条仅见百度《相声师承关系总表》名单，属多师或异说",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02135",
+"type": "master_disciple",
+"from": "p0558",
+"to": "p1192",
+"detail": "百度总表所载另一位师父",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"本站已有其他师承；此条仅见百度《相声师承关系总表》名单，属多师或异说",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02136",
+"type": "master_disciple",
+"from": "p0712",
+"to": "p0896",
+"detail": "百度总表所载另一位师父",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"本站已有其他师承；此条仅见百度《相声师承关系总表》名单，属多师或异说",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02137",
+"type": "master_disciple",
+"from": "p0415",
+"to": "p1048",
+"detail": "百度总表所载另一位师父",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"本站已有其他师承；此条仅见百度《相声师承关系总表》名单，属多师或异说",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02138",
+"type": "master_disciple",
+"from": "p0415",
+"to": "p0920",
+"detail": "百度总表所载另一位师父",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"本站已有其他师承；此条仅见百度《相声师承关系总表》名单，属多师或异说",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02139",
+"type": "master_disciple",
+"from": "p0903",
+"to": "p1263",
+"detail": "百度总表所载另一位师父",
+"sources": [
+"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
+],
+"confidence": "disputed",
+"notes": [
+"本站已有其他师承；此条仅见百度《相声师承关系总表》名单，属多师或异说",
+"补录批次：百度相声师承关系总表"
+]
+},
+{
+"id": "r02140",
+"type": "master_disciple",
+"from": "p1218",
+"to": "p1800",
+"detail": "青曲社“海”字科（卢海乐）",
+"sources": [
+"https://www.kxting.com/article/20221008/273080.html"
+],
+"confidence": "disputed",
+"notes": [
+"仅见网络整理文章称卢鑫曾为苗阜“海”字科艺人卢海乐；本站另有师承",
+"补录批次：维基/新闻/社团资料"
+]
+},
+{
+"id": "r02141",
+"type": "master_disciple",
+"from": "p1218",
+"to": "p1793",
+"detail": "青曲社“海”字科（张海浩）",
+"sources": [
+"https://www.kxting.com/article/20221008/273080.html"
+],
+"confidence": "disputed",
+"notes": [
+"仅见网络整理文章称玉浩曾为苗阜“海”字科艺人张海浩；本站另有师承",
+"补录批次：维基/新闻/社团资料"
+]
 }
 ]

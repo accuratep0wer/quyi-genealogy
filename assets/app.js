@@ -1,7 +1,7 @@
 (function(){
 'use strict';
 const TYPE_CN={master_disciple:'师徒',other:'代拉/引保代等',kin:'亲缘',marriage:'姻缘'};
-const CONF_CN={documented:'有记载',disputed:'存疑'};
+const CONF_CN={documented:'确定',disputed:'存疑'};
 const GEN_COLORS=['#7f1d1d','#9a3412','#b45309','#a16207','#4d7c0f','#047857','#0e7490','#1d4ed8','#6d28d9','#a21caf','#be185d','#475569'];
 const genColor=g=>g?GEN_COLORS[(g-1)%GEN_COLORS.length]:'#9ca3af';
 const $=s=>document.querySelector(s);
@@ -14,8 +14,9 @@ const adj={};
 const Z_MIN=0.03,Z_MAX=32;
 let zoomFromSlider=false;
 
-Promise.all(['data/people.json','data/relations.json','data/layout.json'].map(u=>fetch(u).then(r=>{if(!r.ok)throw new Error(u);return r.json()})))
-.then(([p,r,l])=>{P=p;R=r;L=l;init();}).catch(e=>{$('#cy').innerHTML='<p style="padding:20px">数据加载失败：'+esc(e.message)+'</p>';});
+let SPREAD={};
+Promise.all(['data/people.json','data/relations.json','data/layout.json','data/layout-spread.json'].map(u=>fetch(u).then(r=>{if(!r.ok)throw new Error(u);return r.json()})))
+.then(([p,r,l,s])=>{P=p;R=r;L=l;SPREAD=s;init();}).catch(e=>{$('#cy').innerHTML='<p style="padding:20px">数据加载失败：'+esc(e.message)+'</p>';});
 
 function labelOf(p){
   // disambiguate homonyms by master
@@ -62,7 +63,9 @@ function buildCy(){
       {selector:'edge[type = "kin"]',style:{'line-color':'#c0392b','line-style':'dashed','width':2,'opacity':0.85}},
       {selector:'edge[type = "marriage"]',style:{'line-color':'#8e44ad','line-style':'dotted','width':3,'opacity':0.9}},
       {selector:'edge[type = "other"]',style:{'line-color':'#16a085','line-style':'dashed','line-dash-pattern':[8,3,2,3],'width':2,'opacity':0.85}},
-      {selector:'edge[conf = "disputed"]',style:{'line-color':'#e67e22','target-arrow-color':'#e67e22','opacity':0.9}},
+      {selector:'edge[conf = "disputed"]',style:{'line-color':'#e67e22','target-arrow-color':'#e67e22'}},
+      {selector:'edge[conf = "documented"]',style:{'line-style':'solid','opacity':0.82}},
+      {selector:'edge[conf = "disputed"]',style:{'line-style':'dashed','line-dash-pattern':[6,4],'opacity':0.42}},
       {selector:'.faded',style:{'opacity':0.07,'text-opacity':0}},
       {selector:'node.hl',style:{'border-width':3,'border-color':'#111','min-zoomed-font-size':0,'z-index':10}},
       {selector:'node.nb',style:{'min-zoomed-font-size':0,'z-index':9}},
@@ -76,17 +79,17 @@ function buildCy(){
   cy.on('tap',e=>{if(e.target===cy) clearHL();});
   cy.on('mousemove',ev=>{if(ev.renderedPosition) lastPointer={x:ev.renderedPosition.x,y:ev.renderedPosition.y,t:performance.now()};});
   cy.on('pan',()=>{if(!placing&&!layoutAnim) anchorId=null;});
-  cy.on('mouseover','edge',e=>{const d=e.target.data();e.target.style('label',(TYPE_CN[d.type]||'')+(d.detail?'：'+d.detail:'')+(d.conf==='disputed'?'（存疑）':''));e.target.style({'font-size':11,'text-background-color':'#fff','text-background-opacity':0.9,'text-background-padding':2});});
+  cy.on('mouseover','edge',e=>{const d=e.target.data();e.target.style('label',(TYPE_CN[d.type]||'')+(d.detail?'：'+d.detail:'')+(CONF_CN[d.conf]?'（'+CONF_CN[d.conf]+'）':''));e.target.style({'font-size':11,'text-background-color':'#fff','text-background-opacity':0.9,'text-background-padding':2});});
   cy.on('mouseout','edge',e=>e.target.removeStyle('label'));
   cy.on('zoom',()=>{syncZoomSlider();syncSpreadToZoom();});
   drawNetwork();
 }
 function filters(){
   const types=[...document.querySelectorAll('.types input[data-type]')].filter(i=>i.checked).map(i=>i.dataset.type);
-  return {types:new Set(types),dis:$('#showDisputed').checked,gmin:+$('#gmin').value,gmax:+$('#gmax').value};
+  return {types:new Set(types),onlyDoc:$('#onlyDoc').checked,gmin:+$('#gmin').value,gmax:+$('#gmax').value};
 }
 function personOk(p,f){return !p.generation||(p.generation>=f.gmin&&p.generation<=f.gmax);}
-function relOk(r,f){return f.types.has(r.type)&&(f.dis||r.confidence!=='disputed');}
+function relOk(r,f){return f.types.has(r.type)&&(!f.onlyDoc||r.confidence==='documented');}
 function drawNetwork(){
   layoutLock=true;
   const f=filters();
@@ -98,7 +101,11 @@ function drawNetwork(){
   cy.endBatch();
   cy.layout({name:'preset',fit:true,padding:20}).run();
   captureHome();
-  spread=buildSpread(Object.keys(home));
+  spread={};
+  Object.keys(home).forEach(id=>{
+    const s=SPREAD[id];
+    spread[id]=s?{x:s[0],y:s[1]}:{x:home[id].x,y:home[id].y};
+  });
   spreadReady=true;
   layoutT=0;
   layoutLock=false;
@@ -289,52 +296,6 @@ function captureHome(){
   home={};
   cy.nodes().forEach(n=>{const p=n.position(); home[n.id()]={x:p.x,y:p.y};});
 }
-function buildSpread(ids){
-  const pos={},rad={};
-  let maxR=24;
-  ids.forEach(id=>{
-    pos[id]={x:home[id].x,y:home[id].y};
-    rad[id]=byId[id]?labelRadius(byId[id]):18;
-    if(rad[id]>maxR) maxR=rad[id];
-  });
-  const cell=maxR*2+12;
-  for(let iter=0;iter<64;iter++){
-    const grid=new Map();
-    for(const id of ids){
-      const p=pos[id];
-      const k=Math.floor(p.x/cell)+','+Math.floor(p.y/cell);
-      let b=grid.get(k); if(!b) grid.set(k,b=[]);
-      b.push(id);
-    }
-    let moved=false;
-    for(const id of ids){
-      const A=pos[id];
-      const cx=Math.floor(A.x/cell), cy0=Math.floor(A.y/cell);
-      for(let ix=cx-1;ix<=cx+1;ix++) for(let iy=cy0-1;iy<=cy0+1;iy++){
-        const b=grid.get(ix+','+iy); if(!b) continue;
-        for(const oid of b){
-          if(oid<=id) continue;
-          const B=pos[oid];
-          let dx=B.x-A.x, dy=B.y-A.y;
-          let dist=Math.hypot(dx,dy);
-          const need=rad[id]+rad[oid]+12;
-          if(dist>=need) continue;
-          if(dist<0.05){
-            const ang=((id.charCodeAt(id.length-1)*13+oid.charCodeAt(oid.length-1)*7)%628)/100;
-            dx=Math.cos(ang); dy=Math.sin(ang); dist=1;
-          }
-          const push=(need-dist)/2*(iter>48?1:0.92);
-          dx/=dist; dy/=dist;
-          A.x-=dx*push; A.y-=dy*push;
-          B.x+=dx*push; B.y+=dy*push;
-          moved=true;
-        }
-      }
-    }
-    if(!moved) break;
-  }
-  return pos;
-}
 function spreadAmount(z){
   if(z<=Z_LO) return 0;
   if(z>=Z_HI) return 1;
@@ -468,7 +429,7 @@ function selectPerson(id,center){
 function plink(id){const p=byId[id];return '<span class="pl" data-id="'+id+'">'+esc(labelOf(p))+'</span>';}
 function srcLinks(arr){return (arr||[]).map((u,i)=>'<a href="'+esc(u)+'" target="_blank" rel="noopener" title="'+esc(u)+'">['+(i+1)+']</a>').join(' ');}
 function relLine(r,other){
-  return '<li>'+plink(other)+(r.detail?' <small>'+esc(r.detail)+'</small>':'')+(r.confidence==='disputed'?'<span class="tag dis">存疑</span>':'')+' <small>'+srcLinks(r.sources)+'</small>'+(r.notes&&r.notes.length?'<br><small class="muted">'+esc(r.notes.join('；'))+'</small>':'')+'</li>';
+  return '<li>'+plink(other)+(r.detail?' <small>'+esc(r.detail)+'</small>':'')+'<span class="tag'+(r.confidence==='disputed'?' dis':'')+'">'+(CONF_CN[r.confidence]||'')+'</span> <small>'+srcLinks(r.sources)+'</small>'+(r.notes&&r.notes.length?'<br><small class="muted">'+esc(r.notes.join('；'))+'</small>':'')+'</li>';
 }
 function renderPanel(id){
   const p=byId[id];const rs=adj[id];
@@ -478,8 +439,9 @@ function renderPanel(id){
   const kin=rs.filter(r=>r.type==='kin'),mar=rs.filter(r=>r.type==='marriage'),oth=rs.filter(r=>r.type==='other');
   const sec=(t,arr,fn)=>arr.length?'<h3>'+t+'（'+arr.length+'）</h3><ul>'+arr.map(fn).join('')+'</ul>':'';
   const yrs=(p.birth||p.death)?(p.birth||'?')+'–'+(p.death||''):'';
+  const confTag=p.confidence?'<span class="tag'+(p.confidence==='disputed'?' dis':'')+'">'+CONF_CN[p.confidence]+'</span>':'';
   $('#panel').innerHTML='<h2>'+esc(labelOf(p))+'</h2>'+
-   '<div class="meta">'+(p.generation?'第'+p.generation+'代'+(p.zibei?'·“'+p.zibei+'”字辈':''):'代数不详')+(p.gen_source?'<span class="tag">'+esc(p.gen_source)+'</span>':'')+(yrs?' · '+yrs:'')+(p.role==='relative'?' · 非谱系内亲属':'')+'</div>'+
+   '<div class="meta">'+(p.generation?'第'+p.generation+'代'+(p.zibei?'·“'+p.zibei+'”字辈':''):'代数不详')+(p.gen_source?'<span class="tag">'+esc(p.gen_source)+'</span>':'')+(yrs?' · '+yrs:'')+(p.role==='relative'?' · 非谱系内亲属':'')+(confTag?' '+confTag:'')+'</div>'+
    '<div class="panel-actions"><button type="button" id="egoBtn">'+(state.mode==='ego'?'回到全网络':'聚焦此人的师承子图')+'</button>'+
    '<button type="button" class="feedback-btn" id="panelFeedback">提交修正</button></div>'+
    (p.aliases&&p.aliases.length?'<div>别名/本名：'+esc(p.aliases.join('、'))+'</div>':'')+
@@ -523,7 +485,7 @@ function bindUI(){
   $('#mode').addEventListener('change',e=>{state.mode=e.target.value;syncMode();if(state.mode==='ego'){const id=state.focus||P.find(p=>p.name==='侯宝林').id;selectPerson(id,true);}else{drawNetwork();if(state.focus){highlight(state.focus,true);renderPanel(state.focus);}}});
   ['#depthDown','#depthUp'].forEach(s=>$(s).addEventListener('change',()=>{if(state.mode==='ego'&&state.focus)drawEgo(state.focus);}));
   const refilter=()=>{if(state.mode==='ego'&&state.focus)drawEgo(state.focus);else drawNetwork();};
-  ['#gmin','#gmax','#showDisputed'].forEach(s=>$(s).addEventListener('change',refilter));
+  ['#gmin','#gmax','#onlyDoc'].forEach(s=>$(s).addEventListener('change',refilter));
   document.querySelectorAll('.types input[data-type]').forEach(i=>i.addEventListener('change',refilter));
   $('#fit').onclick=()=>{
     if(state.mode==='ego'){cy.fit(cy.nodes(),44);syncZoomSlider();return;}
@@ -589,7 +551,7 @@ function relNames(id,pred){
   return (adj[id]||[]).filter(pred).map(r=>{
     const oid=r.from===id?r.to:r.from;
     const name=byId[oid]?byId[oid].name:oid;
-    return name+(r.detail?'·'+r.detail:'')+(r.confidence==='disputed'?'（存疑）':'');
+    return name+(r.detail?'·'+r.detail:'')+(CONF_CN[r.confidence]?'（'+CONF_CN[r.confidence]+'）':'');
   });
 }
 function issueTitle(personId){
@@ -671,7 +633,7 @@ function renderTables(){
     rows.sort((a,b)=>{const x=key(a),y=key(b);return (x<y?-1:x>y?1:0)*rsort.d;});
     $('#rcount').textContent=rows.length+' 条';
     const lim=rows.slice(0,3000);
-    $('#rtable tbody').innerHTML=lim.map(r=>'<tr><td>'+TYPE_CN[r.type]+'</td><td><a href="#graph/'+r.from+'">'+esc(r._fromName)+'</a></td><td><a href="#graph/'+r.to+'">'+esc(r._toName)+'</a></td><td class="notes">'+esc(r.detail)+(r.notes&&r.notes.length?'<br><span class="muted">'+esc(r.notes.join('；'))+'</span>':'')+'</td><td>'+(r.confidence==='disputed'?'<span class="tag dis">存疑</span>':'有记载')+'</td><td>'+srcLinks(r.sources)+'</td></tr>').join('');
+    $('#rtable tbody').innerHTML=lim.map(r=>'<tr><td>'+TYPE_CN[r.type]+'</td><td><a href="#graph/'+r.from+'">'+esc(r._fromName)+'</a></td><td><a href="#graph/'+r.to+'">'+esc(r._toName)+'</a></td><td class="notes">'+esc(r.detail)+(r.notes&&r.notes.length?'<br><span class="muted">'+esc(r.notes.join('；'))+'</span>':'')+'</td><td><span class="tag'+(r.confidence==='disputed'?' dis':'')+'">'+(CONF_CN[r.confidence]||'')+'</span></td><td>'+srcLinks(r.sources)+'</td></tr>').join('');
   };
   const pgenSel=$('#pgen');
   ['#pq','#pgen'].forEach(s=>$(s).addEventListener('input',drawP));
@@ -689,5 +651,6 @@ function renderSources(){
   $('#sourceList').innerHTML=arr.map(([u,n])=>'<li><a href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(nice(u))+'</a> <span class="muted">('+n+')</span></li>').join('');
   const gens=P.map(p=>p.generation).filter(Boolean);
   $('#buildinfo').textContent='共收录 '+P.length+' 人、'+R.length+' 条关系，覆盖第 '+Math.min(...gens)+'–'+Math.max(...gens)+' 代。数据整理日期：2026-11-11。';
+  const fc=$('#footcount'); if(fc) fc.textContent=P.length+' 人、'+R.length+' 条关系';
 }
 })();
