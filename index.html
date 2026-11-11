@@ -7,12 +7,13 @@
 <meta name="description" content="根据公开资料整理的中国相声演员师承谱系：正式师承、代拉/引保代、亲缘与姻缘关系。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23a8322d'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='18' fill='white' font-family='serif'%3E谱%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/mobile.css">
 </head>
 <body>
 <header>
   <div class="brand"><span class="logo">谱</span><div><h1>相声师承谱系</h1><small>清末至今 · 公开资料整理</small></div></div>
   <nav>
-    <a href="#graph" data-view="graph">图谱</a>
+    <a href="#tree" data-view="graph">图谱</a>
     <a href="#people" data-view="people">人物表</a>
     <a href="#relations" data-view="relations">关系表</a>
     <a href="#about" data-view="about">说明与来源</a>
@@ -23,9 +24,10 @@
 <main>
 <section id="view-graph" class="view">
   <div class="mode-tabs" role="tablist">
-    <a href="#graph" data-mode="network">谱系图</a>
-    <a href="#nebula" data-mode="nebula">星云图</a>
-    <a href="#graph" data-mode="ego">聚焦</a>
+    <a href="#tree/era" data-mode="tree" title="自上而下的家谱，一代一代往下排">谱系图</a>
+    <a href="#nebula" data-mode="nebula" title="星团式布局。旧地址 #nebula 仍可用">2D星云图</a>
+    <a href="#3d" data-mode="network" title="原来的全网络图。旧地址 #graph 仍打开这一张">3D星云图</a>
+    <a href="#graph" data-mode="ego" title="从一个人向外看师承">聚焦</a>
   </div>
   <div class="toolbar">
     <div class="search">
@@ -35,14 +37,21 @@
     <div class="ctrl">
       <label>模式
         <select id="mode">
-          <option value="network">全网络（力导向）</option>
-          <option value="nebula">星云图</option>
+          <option value="tree">谱系图（家谱）</option>
+          <option value="nebula">2D星云图</option>
+          <option value="network">3D星云图</option>
           <option value="ego">聚焦所选人物</option>
         </select>
       </label>
       <label class="ego-only">向下代数 <select id="depthDown"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></label>
       <label class="ego-only">向上 <select id="depthUp"><option>1</option><option>2</option><option>3</option><option selected>99</option></select></label>
       <label>代数 <select id="gmin"></select> – <select id="gmax"></select></label>
+      <span class="tree-only" id="treeVariant">
+        <button type="button" data-variant="era" class="on" title="左边只标清、民国、中华人民共和国">按朝代</button>
+        <button type="button" data-variant="active" title="左边是年号和年代尺，每人标大致活跃时期">按活跃年代</button>
+        <label><input type="checkbox" id="treeLinks"> 显示搭档与亲属</label>
+      </span>
+      <button type="button" id="filterToggle" aria-expanded="false">筛选</button>
     </div>
     <div class="ctrl types">
       <label class="t-md"><input type="checkbox" data-type="master_disciple" checked> 师徒</label>
@@ -60,6 +69,7 @@
   <div class="graph-wrap">
     <div class="cy-stage">
       <div id="cy" aria-label="师承关系图"></div>
+      <div id="eraRail" hidden></div>
       <div class="zoombar" role="group" aria-label="缩放">
         <button type="button" id="zoomOut" aria-label="缩小">−</button>
         <span class="zoom-label" id="zoomLabel">缩放</span>
@@ -68,7 +78,10 @@
         <button type="button" id="zoomIn" aria-label="放大">+</button>
       </div>
     </div>
-    <aside id="panel"><div class="placeholder">点击图中人物或搜索，查看其师父、徒弟与亲属。</div></aside>
+    <div id="panelDock">
+      <button type="button" id="panelHandle" class="panel-handle">人物详情</button>
+      <aside id="panel"><div class="placeholder">点击图中人物或搜索，查看其师父、徒弟与亲属。</div></aside>
+    </div>
   </div>
   <div class="legend">
     <span><i class="ln md"></i>师徒·确定</span>
@@ -166,6 +179,7 @@
   </div>
 </dialog>
 <script src="vendor/cytoscape.min.js"></script>
+<script src="assets/mobile.js"></script>
 <script src="assets/app.js"></script>
 </body>
 </html>

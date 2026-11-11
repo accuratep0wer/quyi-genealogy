@@ -7,7 +7,7 @@ const genColor=g=>g?GEN_COLORS[(g-1)%GEN_COLORS.length]:'#9ca3af';
 const STRIPE='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"><path d="M-2 2 L2 -2 M0 8 L8 0 M6 10 L10 6" stroke="white" stroke-opacity="0.85" stroke-width="3.5" stroke-linecap="square"/></svg>');
 const $=s=>document.querySelector(s);
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-let P=[],R=[],L={},byId={},cy=null,state={mode:'network',focus:null};
+let P=[],R=[],L={},byId={},cy=null,state={mode:'network',focus:null,treeVariant:'era'};
 let home={},spread={},layoutT=0,spreadReady=false,layoutLock=false,layoutAnim=0,placing=false;
 let anchorId=null,anchorPt=null,lastPointer=null;
 const Z_LO=0.42,Z_HI=1.2;
@@ -79,17 +79,21 @@ function buildCy(){
       {selector:'node.local',style:{'min-zoomed-font-size':0,'text-opacity':1}},
       {selector:'node.nebula',style:{'font-size':14,'min-zoomed-font-size':10,'text-outline-width':3,'text-outline-color':'#fff'}},
       {selector:'node.nebula[deg >= 8]',style:{'font-size':30,'min-zoomed-font-size':6,'font-weight':'bold'}},
-      {selector:'node.nebula[deg >= 15]',style:{'font-size':42,'min-zoomed-font-size':4,'font-weight':'bold'}}
+      {selector:'node.nebula[deg >= 15]',style:{'font-size':42,'min-zoomed-font-size':4,'font-weight':'bold'}},
+      {selector:'node.tree',style:{'shape':'round-rectangle','width':'data(w)','height':'data(h)','font-size':13,'min-zoomed-font-size':7,'text-valign':'center','text-halign':'center','text-margin-y':0,'color':'#1c1917','text-wrap':'wrap','text-max-width':'data(w)','background-color':'#fff','background-image':'none','border-width':3,'border-color':'data(eraColor)','padding':0}},
+      {selector:'node.tree.est',style:{'color':'#78716c','border-style':'dashed','background-color':'#fafaf9'}},
+      {selector:'node.tree.axis',style:{'shape':'round-rectangle','background-color':'#f6f1ea','border-width':0,'font-size':12,'font-weight':'bold','color':'#7c2d12','text-valign':'center','text-halign':'center','z-index':0}},
+      {selector:'edge.extra',style:{'width':1,'line-color':'#d6d3d1','target-arrow-color':'#d6d3d1','opacity':0.55,'line-style':'dashed','line-dash-pattern':[3,4],'z-index':0}}
     ],
     layout:{name:'preset'}
   });
-  cy.on('tap','node',e=>selectPerson(e.target.id(),false));
+  cy.on('tap','node',e=>{const id=e.target.id(); if(id.indexOf('axis-')===0||id==='loosehead')return; selectPerson(id,false);});
   cy.on('tap',e=>{if(e.target===cy) clearHL();});
   cy.on('mousemove',ev=>{if(ev.renderedPosition) lastPointer={x:ev.renderedPosition.x,y:ev.renderedPosition.y,t:performance.now()};});
-  cy.on('pan',()=>{if(!placing&&!layoutAnim) anchorId=null;});
+  cy.on('pan',()=>{if(!placing&&!layoutAnim) anchorId=null; paintRail();});
   cy.on('mouseover','edge',e=>{const d=e.target.data();e.target.style('label',(TYPE_CN[d.type]||'')+(d.detail?'：'+d.detail:'')+(CONF_CN[d.conf]?'（'+CONF_CN[d.conf]+'）':''));e.target.style({'font-size':11,'text-background-color':'#fff','text-background-opacity':0.9,'text-background-padding':2});});
   cy.on('mouseout','edge',e=>e.target.removeStyle('label'));
-  cy.on('zoom',()=>{syncZoomSlider();syncSpreadToZoom();});
+  cy.on('zoom',()=>{syncZoomSlider();syncSpreadToZoom(); paintRail();});
   drawNetwork();
 }
 function filters(){
@@ -157,11 +161,13 @@ function drawNebula(){
   cy.fit(undefined,36);
   // Full-map fit makes every dot a speck. Open close enough that hubs and
   // their names read; zooming out still reaches the whole star map.
-  if(cy.zoom()<0.34){
+  // On a phone the opening zoom is fitted to the narrower width.
+  const openZ=cy.width()<700?Math.max(0.7, Math.min(1.05, 300/cy.width())):0.34;
+  if(cy.zoom()<openZ){
     const bb=cy.elements().boundingBox();
-    const cx=(bb.x1+bb.x2)/2, cy0=(bb.y1+bb.y2)/2, z=0.34;
-    cy.zoom(z);
-    cy.pan({x:cy.width()/2-cx*z, y:cy.height()/2-cy0*z});
+    const cx=(bb.x1+bb.x2)/2, cy0=(bb.y1+bb.y2)/2;
+    cy.zoom(openZ);
+    cy.pan({x:cy.width()/2-cx*openZ, y:cy.height()/2-cy0*openZ});
   }
   layoutLock=false;
   stat(nodes.length,drawRels.length);
@@ -174,9 +180,11 @@ function updateModeTabs(){
   });
   const ego=document.querySelector('.mode-tabs a[data-mode="ego"]');
   const neb=document.querySelector('.mode-tabs a[data-mode="nebula"]');
+  const tree=document.querySelector('.mode-tabs a[data-mode="tree"]');
   const id=state.focus||(P.find(p=>p.name==='侯宝林')||P[0]||{}).id||'';
   if(ego&&id) ego.href='#graph/'+id;
   if(neb) neb.href=state.focus?'#nebula/'+state.focus:'#nebula';
+  if(tree) tree.href='#tree/'+(state.treeVariant||'era');
 }
 function egoSet(id){
   const f=filters(),dd=+$('#depthDown').value,du=+$('#depthUp').value;
@@ -427,7 +435,7 @@ function easeSpread(){
   layoutAnim=requestAnimationFrame(easeSpread);
 }
 function syncSpreadToZoom(){
-  if(layoutLock||state.mode==='ego'||state.mode==='nebula'||!spreadReady) return;
+  if(layoutLock||state.mode!=='network'||!spreadReady) return;
   if(Math.abs(spreadAmount(cy.zoom())-layoutT)<0.004) return;
   if(!layoutAnim) layoutAnim=requestAnimationFrame(easeSpread);
 }
@@ -476,7 +484,7 @@ function drawEgo(id){
   layoutLock=false;
 }
 function stat(n,e){
-  const tag=state.mode==='ego'?' · 聚焦环形谱系':'';
+  const tag=state.mode==='ego'?' · 聚焦环形谱系':(state.mode==='tree'?' · 家谱':'');
   $('#stat').textContent='当前显示 '+n+' 人 · '+e+' 条关系（全库 '+P.length+' 人 · '+R.length+' 条）'+tag;
 }
 function clearHL(){cy.elements().removeClass('faded hl nb');}
@@ -492,15 +500,20 @@ function selectPerson(id,center){
   if(!byId[id]._linked){
     renderPanel(id);
     if(state.mode==='ego'){state.mode='network';$('#mode').value='network';syncMode();drawNetwork();}
-    const next=state.mode==='nebula'?'#nebula':'#graph';
+    const next=state.mode==='nebula'?'#nebula':(state.mode==='tree'?'#tree/'+(state.treeVariant||'era'):'#3d');
     if(location.hash!==next) history.replaceState(null,'',next);
     if(cy) clearHL();
     updateModeTabs();
     return;
   }
-  if(state.mode==='ego'){drawEgo(id);}else highlight(id,center);
+  if(state.mode==='ego'){drawEgo(id);}
+  else if(state.mode==='tree'){
+    if(!cy.getElementById(id).length) drawTree();
+    highlight(id,true);
+    if(window.XSMobile&&XSMobile.layout()!=='pane') XSMobile.openPanel();
+  }else highlight(id,center);
   renderPanel(id);
-  const next=state.mode==='nebula'?'#nebula/'+id:'#graph/'+id;
+  const next=state.mode==='nebula'?'#nebula/'+id:(state.mode==='tree'?'#tree/'+id:(state.mode==='ego'?'#graph/'+id:'#graph/'+id));
   if(location.hash!==next) history.replaceState(null,'',next);
   updateModeTabs();
 }
@@ -518,7 +531,7 @@ function renderPanel(id){
   const sec=(t,arr,fn)=>arr.length?'<h3>'+t+'（'+arr.length+'）</h3><ul>'+arr.map(fn).join('')+'</ul>':'';
   const yrs=(p.birth||p.death)?(p.birth||'?')+'–'+(p.death||''):'';
   const confTag=p.confidence?'<span class="tag'+(p.confidence==='disputed'?' dis':'')+'">'+CONF_CN[p.confidence]+'</span>':'';
-  const off=p._linked?'':'<p class="notice">没有任何关系，谱系图、星云图和聚焦都不画出此人。</p>';
+  const off=p._linked?'':'<p class="notice">没有任何关系，几张图都不画出此人。</p>';
   $('#panel').innerHTML='<h2>'+esc(labelOf(p))+'</h2>'+off+
    '<div class="meta">'+(p.generation?'第'+p.generation+'代'+(p.zibei?'·“'+p.zibei+'”字辈':''):'代数不详')+(p.gen_source?'<span class="tag">'+esc(p.gen_source)+'</span>':'')+(yrs?' · '+yrs:'')+(p.role==='relative'?' · 非谱系内亲属':'')+(confTag?' '+confTag:'')+'</div>'+
    '<div class="panel-actions"><button type="button" id="egoBtn">'+(state.mode==='ego'?'回到全网络':'聚焦此人的师承子图')+'</button>'+
@@ -541,7 +554,11 @@ function renderPanel(id){
   };
   $('#panelFeedback').onclick=()=>openFeedback(id);
 }
-function syncMode(){document.querySelectorAll('.ego-only').forEach(e=>e.style.display=state.mode==='ego'?'':'none');}
+function syncMode(){
+  document.querySelectorAll('.ego-only').forEach(e=>e.style.display=state.mode==='ego'?'':'none');
+  document.querySelectorAll('.tree-only').forEach(e=>e.style.display=state.mode==='tree'?'inline-flex':'none');
+  document.querySelectorAll('#treeVariant button').forEach(b=>b.classList.toggle('on', b.dataset.variant===(state.treeVariant||'era')));
+}
 function bindUI(){
   $('#panel').addEventListener('click',e=>{const t=e.target.closest('.pl');if(t){selectPerson(t.dataset.id,true);}});
   const q=$('#q'),sg=$('#suggest');let sel=-1,items=[];
@@ -567,18 +584,19 @@ function bindUI(){
   $('#mode').addEventListener('change',e=>{
     const v=e.target.value;
     if(v==='nebula'){location.hash=state.focus?'#nebula/'+state.focus:'#nebula';return;}
-    state.mode=v;syncMode();
-    if(state.mode==='ego'){const id=state.focus||P.find(p=>p.name==='侯宝林').id;selectPerson(id,true);}
-    else{drawNetwork();if(state.focus){highlight(state.focus,true);renderPanel(state.focus);}}
-    updateModeTabs();
+    if(v==='tree'){location.hash='#tree/'+(state.treeVariant||'era');return;}
+    if(v==='network'){location.hash='#3d';return;}
+    const id=state.focus||(P.find(p=>p.name==='侯宝林')||{}).id||'';
+    location.hash='#graph/'+id;
   });
   ['#depthDown','#depthUp'].forEach(s=>$(s).addEventListener('change',()=>{if(state.mode==='ego'&&state.focus)drawEgo(state.focus);}));
-  const refilter=()=>{if(state.mode==='ego'&&state.focus)drawEgo(state.focus);else if(state.mode==='nebula')drawNebula();else drawNetwork();};
+  const refilter=()=>{if(state.mode==='ego'&&state.focus)drawEgo(state.focus);else if(state.mode==='nebula')drawNebula();else if(state.mode==='tree')drawTree();else drawNetwork();};
   ['#gmin','#gmax','#onlyDoc','#showPartner'].forEach(s=>$(s).addEventListener('change',refilter));
   document.querySelectorAll('.types input[data-type]').forEach(i=>i.addEventListener('change',refilter));
   $('#fit').onclick=()=>{
     if(state.mode==='ego'){cy.fit(cy.nodes(),44);syncZoomSlider();return;}
     if(state.mode==='nebula'){cy.fit(undefined,40);syncZoomSlider();return;}
+    if(state.mode==='tree'){openTreeView();syncZoomSlider();return;}
     resetGlobal();
   };
   $('#expand').onclick=()=>{
@@ -602,6 +620,24 @@ function bindUI(){
   $('#feedbackBtn').addEventListener('click',()=>openFeedback(state.focus));
   $('#fbClose').addEventListener('click',()=>$('#feedbackDlg').close());
   $('#feedbackDlg').addEventListener('click',e=>{if(e.target.id==='feedbackDlg') $('#feedbackDlg').close();});
+  document.querySelectorAll('#treeVariant button').forEach(b=>b.addEventListener('click',()=>{
+    state.treeVariant=b.dataset.variant;
+    const id=state.focus;
+    location.hash='#tree/'+(id&&byId[id]?id:state.treeVariant);
+  }));
+  const treeLinks=$('#treeLinks');
+  if(treeLinks) treeLinks.addEventListener('change',()=>{ if(state.mode==='tree') drawTree(); });
+  function refitAfterLayout(){
+    if(!cy) return;
+    cy.resize();
+    if(state.mode==='nebula') drawNebula();
+    else if(state.mode==='tree') openTreeView();
+    else if(state.mode==='ego'&&state.focus) cy.fit(cy.nodes(),28);
+    else if(state.mode==='network') cy.fit(undefined,24);
+    syncZoomSlider();
+  }
+  document.addEventListener('xsmobile', refitAfterLayout);
+  document.addEventListener('xsmobile-resize', ()=>{ if(cy) cy.resize(); });
   window.addEventListener('resize',()=>{if(cy) cy.resize();});
   syncZoomSlider();
   syncMode();
@@ -694,10 +730,277 @@ function openFeedback(personId){
   const dlg=$('#feedbackDlg');
   if(!dlg.open) dlg.showModal();
 }
+let TREE=null;
+function treeCompact(){
+  const lay=document.documentElement.getAttribute('data-layout')||'pane';
+  return lay==='sheet'||lay==='drawer';
+}
+function bucketYear(y){
+  if(y<1862) return {label:'清咸丰前后', era:'qing'};
+  if(y<=1874) return {label:'清同治', era:'qing'};
+  if(y<=1908) return {label:'清光绪', era:'qing'};
+  if(y<=1911) return {label:'清宣统', era:'qing'};
+  if(y<=1927) return {label:'民国初', era:'roc'};
+  if(y<=1949) return {label:'民国', era:'roc'};
+  const d=Math.floor(y/10)*10;
+  return {label:d+'s', era:'prc'};
+}
+function spanLabel(a,b){
+  const A=bucketYear(a), B=bucketYear(b);
+  if(A.label===B.label) return A;
+  let end=B.label;
+  if(A.era===B.era && A.era==='qing') end=B.label.replace(/^清/,'');
+  return {label:A.label+'–'+end, era:bucketYear((a+b)/2).era};
+}
+function periodOf(p, depth){
+  if(p.birth){
+    const start=p.birth+18;
+    const end=p.death||Math.min(p.birth+70, 2026);
+    const s=spanLabel(start, end);
+    return {label:s.label, era:s.era, estimated:false};
+  }
+  const g=p.generation||(depth+1);
+  const table={
+    1:['清咸丰–同治','qing'],
+    2:['清同治–光绪','qing'],
+    3:['清光绪','qing'],
+    4:['清光绪–民国初','qing'],
+    5:['民国','roc'],
+    6:['民国–1950s','roc'],
+    7:['1950s–80s','prc'],
+    8:['1980s–2000s','prc'],
+    9:['2000s–2010s','prc'],
+    10:['2010s–2020s','prc']
+  };
+  const row=table[g]||(g>10?table[10]:table[6]);
+  return {label:row[0], era:row[1], estimated:true};
+}
+const ERA_COLOR={qing:'#7f1d1d', roc:'#b45309', prc:'#1d4ed8'};
+function buildPedigree(compact){
+  const onlyDoc=$('#onlyDoc').checked;
+  const mastersOf={};
+  R.forEach(r=>{
+    if(r.type!=='master_disciple') return;
+    if(!byId[r.from]||!byId[r.to]||!byId[r.from]._linked||!byId[r.to]._linked) return;
+    if(onlyDoc&&r.confidence!=='documented') return;
+    (mastersOf[r.to]=mastersOf[r.to]||[]).push(r);
+  });
+  const depth={}, primary={};
+  function depthOf(id, stack){
+    if(id in depth) return depth[id];
+    const ms=mastersOf[id]||[];
+    if(!ms.length){depth[id]=0; return 0;}
+    if(stack.has(id)) return -1;
+    stack.add(id);
+    let best=-1, bestM=null, bestDoc=false;
+    ms.forEach(r=>{
+      const d=depthOf(r.from, stack);
+      if(d<0) return;
+      const doc=r.confidence==='documented';
+      if(d>best||(d===best&&doc&&!bestDoc)){best=d; bestM=r.from; bestDoc=doc;}
+    });
+    stack.delete(id);
+    if(best<0){depth[id]=0; return 0;}
+    depth[id]=best+1;
+    primary[id]=bestM;
+    return depth[id];
+  }
+  P.forEach(p=>{ if(p._linked) depthOf(p.id, new Set()); });
+  const kids={};
+  Object.keys(primary).forEach(id=>{
+    const par=primary[id];
+    if(!par) return;
+    (kids[par]=kids[par]||[]).push(id);
+  });
+  Object.keys(kids).forEach(id=>kids[id].sort((a,b)=>byId[a].name.localeCompare(byId[b].name,'zh')));
+  const hasKids={};
+  Object.keys(kids).forEach(id=>{ hasKids[id]=true; });
+  const roots=[], loose=[];
+  P.forEach(p=>{
+    if(!p._linked||primary[p.id]) return;
+    if(hasKids[p.id]) roots.push(p.id);
+    else loose.push(p.id);
+  });
+  function descN(id, seen){
+    if(seen.has(id)) return 0;
+    seen.add(id);
+    let n=0;
+    (kids[id]||[]).forEach(c=>{ n+=1+descN(c, seen); });
+    return n;
+  }
+  roots.sort((a,b)=>descN(b, new Set())-descN(a, new Set())||byId[a].name.localeCompare(byId[b].name,'zh'));
+  const gap=compact?6:10;
+  const ROW=compact?70:88;
+  const W={};
+  function leafW(id){
+    const chars=[...byId[id].name].length;
+    const period=periodOf(byId[id], depth[id]||0);
+    const pw=[...period.label].length;
+    return Math.max(compact?78:92, chars*(compact?15:16)+20, state.treeVariant==='active'?pw*(compact?11:12)+16:0);
+  }
+  function width(id){
+    if(W[id]) return W[id];
+    const ch=kids[id]||[];
+    const self=leafW(id);
+    if(!ch.length){W[id]=self; return self;}
+    let sum=0;
+    ch.forEach(c=>{ sum+=width(c); });
+    sum+=(ch.length-1)*gap;
+    W[id]=Math.max(self, sum);
+    return W[id];
+  }
+  roots.forEach(width);
+  Object.keys(kids).forEach(id=>kids[id].sort((a,b)=>width(b)-width(a)||byId[a].name.localeCompare(byId[b].name,'zh')));
+  const pos={};
+  function place(id, left){
+    const ch=kids[id]||[];
+    const w=width(id);
+    pos[id]={x:left+w/2, y:(depth[id]||0)*ROW};
+    let x=left;
+    ch.forEach(c=>{ place(c, x); x+=width(c)+gap; });
+  }
+  let cursor=0;
+  roots.forEach(id=>{ place(id, cursor); cursor+=width(id)+gap*4; });
+  let maxY=0, maxD=0, treeN=0;
+  Object.keys(pos).forEach(id=>{
+    treeN++;
+    if(pos[id].y>maxY) maxY=pos[id].y;
+    if((depth[id]||0)>maxD) maxD=depth[id]||0;
+  });
+  const cols=compact?2:8;
+  const cell=compact?150:170;
+  const base=maxY+ROW*1.6;
+  loose.forEach((id,i)=>{
+    pos[id]={x:(i%cols)*cell+cell/2, y:base+Math.floor(i/cols)*ROW};
+  });
+  let known=0, est=0;
+  const period={};
+  P.forEach(p=>{
+    if(!p._linked) return;
+    const info=periodOf(p, depth[p.id]||0);
+    period[p.id]=info;
+    if(info.estimated) est++; else known++;
+  });
+  return {pos, depth, primary, kids, roots, loose, maxD, treeN, known, est, ROW, period, mastersOf};
+}
+function drawTree(){
+  layoutLock=true;
+  if(layoutAnim){cancelAnimationFrame(layoutAnim); layoutAnim=0;}
+  state.mode='tree';
+  const compact=treeCompact();
+  const model=buildPedigree(compact);
+  const variant=state.treeVariant||'era';
+  const showExtra=$('#treeLinks')&&$('#treeLinks').checked;
+  const nodes=[], edges=[];
+  const eraName={qing:'清', roc:'民国', prc:'共和国'};
+  state.treeRows=[];
+  Object.keys(model.pos).forEach(id=>{
+    const p=byId[id];
+    const info=model.period[id];
+    const label=variant==='active'?(p.name+'\n'+(info.estimated?info.label+' · 估':info.label)):p.name;
+    nodes.push({classes:'tree'+(info.estimated?' est':''), data:{
+      id:id, label:label, w:Math.max(72, [...(variant==='active'?info.label:p.name)].length*(variant==='active'?12:15)+24),
+      h:variant==='active'?46:32, eraColor:ERA_COLOR[info.era]||'#a8a29e', gen:p.generation||0, color:genColor(p.generation), deg:p._deg
+    }, position:model.pos[id]});
+  });
+  if(model.loose.length){
+    const y=Math.min(...model.loose.map(id=>model.pos[id].y))-model.ROW*0.55;
+    nodes.push({classes:'tree axis', data:{id:'loosehead', label:'无师承，但有其他关系', w:220, h:28, eraColor:'#a8a29e'}, position:{x:110, y:y}});
+  }
+  const rows={};
+  Object.keys(model.pos).forEach(id=>{
+    if(model.loose.includes(id)) return;
+    const d=model.depth[id]||0;
+    (rows[d]=rows[d]||[]).push(id);
+  });
+  Object.keys(rows).forEach(d=>{
+    const ids=rows[d];
+    const y=model.pos[ids[0]].y;
+    const left=ids.slice().sort((a,b)=>model.pos[a].x-model.pos[b].x)[0];
+    const info=model.period[left];
+    const label=variant==='era'?(eraName[info.era]||''):info.label;
+    state.treeRows=state.treeRows||[];
+    state.treeRows.push({y:y, label:label});
+  });
+  const seen=new Set();
+  R.forEach(r=>{
+    if(r.type!=='master_disciple') return;
+    if(!model.pos[r.from]||!model.pos[r.to]) return;
+    if($('#onlyDoc').checked&&r.confidence!=='documented') return;
+    const extra=model.primary[r.to]!==r.from;
+    const id=(extra?'x':'t')+r.id;
+    if(seen.has(id)) return;
+    seen.add(id);
+    edges.push({classes:extra?'extra':'', data:{id:id, source:r.from, target:r.to, type:'master_disciple', conf:r.confidence, detail:r.detail}});
+  });
+  if(showExtra){
+    R.forEach(r=>{
+      if(r.type!=='partner'&&r.type!=='kin') return;
+      if(!model.pos[r.from]||!model.pos[r.to]) return;
+      edges.push({data:{id:'opt-'+r.id, source:r.from, target:r.to, type:r.type, conf:r.confidence, detail:r.detail}});
+    });
+  }
+  cy.minZoom(0.05); cy.maxZoom(3);
+  cy.startBatch(); cy.elements().remove();
+  cy.add(nodes); cy.add(edges);
+  cy.endBatch();
+  const treePeople=model.treeN, looseN=model.loose.length;
+  state.treeStats={generations:model.maxD+1, tree:treePeople, loose:looseN, known:model.known, est:model.est};
+  $('#stat').textContent='家谱 '+state.treeStats.generations+' 层 · 树上 '+treePeople+' 人 · 无师承 '+looseN+' 人 · 活跃时期有生卒 '+model.known+' · 按代数估计 '+model.est+'（全库 '+P.length+' 人）';
+  layoutLock=false;
+  if(!(state.focus&&cy.getElementById(state.focus).length)) openTreeView();
+  const rail=$('#eraRail'); if(rail) rail.hidden=false;
+  paintRail();
+  syncZoomSlider();
+  updateModeTabs();
+}
+function paintRail(){
+  const rail=$('#eraRail');
+  if(!rail) return;
+  if(state.mode!=='tree'||!state.treeRows||!cy){rail.hidden=true; rail.innerHTML=''; return;}
+  rail.hidden=false;
+  const z=cy.zoom(), pan=cy.pan();
+  rail.innerHTML=state.treeRows.map(row=>{
+    const y=row.y*z+pan.y;
+    if(y<-20||y>cy.height()) return '';
+    return '<div style="top:'+(y-12)+'px">'+esc(row.label)+'</div>';
+  }).join('');
+}
+function openTreeView(){
+  const root=cy.getElementById('p0001');
+  cy.minZoom(0.04); cy.maxZoom(3);
+  if(root.length){
+    const p=root.position();
+    const near=cy.nodes().filter(n=>{
+      if(n.hasClass('axis')) return false;
+      const q=n.position();
+      return Math.abs(q.x-p.x)<640 && q.y<=p.y+120;
+    });
+    const eles=near.length?near:root;
+    cy.fit(eles, treeCompact()?28:60);
+    if(cy.zoom()>1.25) cy.zoom(1.25);
+    if(cy.zoom()<0.8) cy.zoom(0.8);
+    cy.center(eles);
+    const rp=root.renderedPosition();
+    cy.panBy({x:36, y:64-rp.y});
+  }else cy.fit(undefined, 24);
+  paintRail();
+  syncZoomSlider();
+}
+function canonView(view){
+  if(view==='2d'||view==='star2d'||view==='nebula') return 'nebula';
+  if(view==='3d'||view==='star3d') return 'network';
+  if(view==='tree'||view==='pedigree'||view==='lineage') return 'tree';
+  if(view==='graph'||!view) return 'graph';
+  return view;
+}
 function route(){
-  const h=location.hash.replace(/^#/,'')||'graph';
-  const [view,arg]=h.split('/');
-  const section=view==='nebula'?'graph':(['graph','people','relations','about'].includes(view)?view:'graph');
+  const raw=location.hash.replace(/^#/,'');
+  const h=raw||'tree';
+  const parts=h.split('/');
+  const kind=canonView(parts[0]);
+  const arg=parts[1];
+  const section=(kind==='nebula'||kind==='network'||kind==='tree'||kind==='graph')?'graph':(['people','relations','about'].includes(kind)?kind:'graph');
   document.querySelectorAll('.view').forEach(s=>s.hidden=s.id!=='view-'+section);
   document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.dataset.view===section));
   if(section!=='graph'){updateModeTabs();return;}
@@ -712,11 +1015,30 @@ function route(){
     updateModeTabs();
     return;
   }
-  if(view==='nebula'){
+  if(kind==='nebula'){
     state.mode='nebula';
-    const sel=$('#mode'); if(sel) sel.value='nebula';
+    $('#mode').value='nebula';
     syncMode();
     drawNebula();
+    if(arg&&byId[arg]){state.focus=arg; highlight(arg,true); renderPanel(arg);}
+    updateModeTabs();
+    return;
+  }
+  if(kind==='tree'){
+    state.mode='tree';
+    if(arg==='era'||arg==='active') state.treeVariant=arg;
+    $('#mode').value='tree';
+    syncMode();
+    drawTree();
+    if(arg&&byId[arg]){state.focus=arg; highlight(arg,true); renderPanel(arg);}
+    updateModeTabs();
+    return;
+  }
+  if(kind==='network'){
+    state.mode='network';
+    $('#mode').value='network';
+    syncMode();
+    drawNetwork();
     if(arg&&byId[arg]){state.focus=arg; highlight(arg,true); renderPanel(arg);}
     updateModeTabs();
     return;
@@ -731,10 +1053,11 @@ function route(){
     updateModeTabs();
     return;
   }
-  if(state.mode==='ego'||state.mode==='nebula'){
+  if(state.mode!=='network'){
     resetGlobal();
   }
   updateModeTabs();
+  paintRail();
 }
 // ---- tables
 let psort={k:'generation',d:1},rsort={k:'type',d:1};

@@ -1,0 +1,123 @@
+/* Layout shells. data-layout is set by assets/mobile.js. */
+html, body { max-width: 100%; }
+html[data-layout="sheet"] body,
+html[data-layout="drawer"] body { overflow-x: hidden; }
+
+.panel-handle {
+  display: none;
+  border: 0;
+  background: transparent;
+  font-weight: 700;
+  color: var(--accent, #a8322d);
+  min-height: 44px;
+  width: 100%;
+  cursor: pointer;
+}
+.panel-handle::before {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 4px;
+  border-radius: 4px;
+  background: #d9d0c4;
+  margin: 0 auto 4px;
+}
+
+#filterToggle { display: none; min-height: 44px; }
+
+/* Phone portrait and folded narrow screens: bottom sheet. */
+html[data-layout="sheet"] header { padding: 8px 10px; gap: 6px; }
+html[data-layout="sheet"] h1 { font-size: 16px; }
+html[data-layout="sheet"] .brand small { display: none; }
+html[data-layout="sheet"] nav { order: 3; width: 100%; overflow-x: auto; flex-wrap: nowrap; }
+html[data-layout="sheet"] nav a { flex: 0 0 auto; min-height: 40px; display: inline-flex; align-items: center; }
+html[data-layout="sheet"] main { padding: 8px; }
+html[data-layout="sheet"] .mode-tabs { flex-wrap: nowrap; overflow-x: auto; gap: 4px; }
+html[data-layout="sheet"] .mode-tabs a { flex: 0 0 auto; padding: 8px 12px; font-size: 14px; min-height: 44px; display: inline-flex; align-items: center; }
+html[data-layout="sheet"] #filterToggle { display: inline-flex; align-items: center; }
+html[data-layout="sheet"] .toolbar .ctrl.types { display: none; width: 100%; }
+html[data-layout="sheet"] .toolbar.filters-open .ctrl.types { display: flex; }
+html[data-layout="sheet"] .search { flex: 1 1 100%; max-width: none; }
+html[data-layout="sheet"] .graph-wrap {
+  display: block;
+  height: calc(var(--app-h, 100dvh) - 168px);
+  min-height: 220px;
+}
+html[data-layout="sheet"] .cy-stage { height: 100%; }
+html[data-layout="sheet"] #panelDock {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  width: auto;
+  height: min(52vh, 460px);
+  background: #fff;
+  border: 1px solid var(--line, #e4ded3);
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -8px 28px rgba(0,0,0,.12);
+  display: flex;
+  flex-direction: column;
+  transition: transform .22s ease;
+}
+html[data-layout="sheet"] #panelDock.collapsed { transform: translateY(calc(100% - 48px)); }
+html[data-layout="sheet"] .panel-handle { display: block; }
+html[data-layout="sheet"] #panel {
+  width: auto;
+  flex: 1;
+  border: 0;
+  border-radius: 0;
+  min-height: 0;
+}
+html[data-layout="sheet"] .zoombar { bottom: 56px; }
+html[data-layout="sheet"] .legend { font-size: 12px; }
+
+/* Phone landscape: graph uses the wide area, details in a right drawer. */
+html[data-layout="drawer"] header { padding: 6px 10px; }
+html[data-layout="drawer"] .brand small,
+html[data-layout="drawer"] header .feedback-btn { display: none; }
+html[data-layout="drawer"] main { padding: 6px 8px; }
+html[data-layout="drawer"] .mode-tabs a { min-height: 40px; padding: 6px 10px; font-size: 13px; display: inline-flex; align-items: center; }
+html[data-layout="drawer"] #filterToggle { display: inline-flex; align-items: center; }
+html[data-layout="drawer"] .toolbar .ctrl.types { display: none; }
+html[data-layout="drawer"] .toolbar.filters-open .ctrl.types { display: flex; width: 100%; }
+html[data-layout="drawer"] .graph-wrap {
+  height: calc(var(--app-h, 100dvh) - 132px);
+  min-height: 180px;
+}
+html[data-layout="drawer"] #panelDock {
+  position: fixed;
+  top: 52px;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  width: min(300px, 46vw);
+  background: #fff;
+  border-left: 1px solid var(--line, #e4ded3);
+  box-shadow: -8px 0 24px rgba(0,0,0,.1);
+  display: flex;
+  flex-direction: row;
+  transition: transform .22s ease;
+}
+html[data-layout="drawer"] #panelDock.collapsed { transform: translateX(calc(100% - 44px)); }
+html[data-layout="drawer"] .panel-handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  min-height: 44px;
+  writing-mode: vertical-rl;
+  border-right: 1px solid var(--line, #e4ded3);
+}
+html[data-layout="drawer"] .panel-handle::before { display: none; }
+html[data-layout="drawer"] #panel { width: auto; flex: 1; border: 0; border-radius: 0; min-width: 0; }
+
+/* Tablet / unfolded foldable: keep the two-pane desktop arrangement. */
+html[data-layout="pane"] .graph-wrap { flex-direction: row; flex-wrap: nowrap; }
+html[data-layout="pane"] #panelDock { display: flex; width: 300px; flex: 0 0 300px; min-width: 0; min-height: 0; }
+html[data-layout="pane"] #panel { width: auto; flex: 1; }
+
+html[data-layout="sheet"] button,
+html[data-layout="drawer"] button,
+html[data-layout="sheet"] .mode-tabs a,
+html[data-layout="drawer"] .mode-tabs a { min-height: 40px; }
