@@ -38,12 +38,49 @@ html[data-layout="sheet"] #filterToggle { display: inline-flex; align-items: cen
 html[data-layout="sheet"] .toolbar .ctrl.types { display: none; width: 100%; }
 html[data-layout="sheet"] .toolbar.filters-open .ctrl.types { display: flex; }
 html[data-layout="sheet"] .search { flex: 1 1 100%; max-width: none; }
-html[data-layout="sheet"] .graph-wrap {
-  display: block;
-  height: calc(var(--app-h, 100dvh) - 168px);
-  min-height: 220px;
+html[data-layout="sheet"] body,
+html[data-layout="drawer"] body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
-html[data-layout="sheet"] .cy-stage { height: 100%; }
+html[data-layout="sheet"] main,
+html[data-layout="drawer"] main {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  padding: 6px 8px;
+}
+html[data-layout="sheet"] #view-graph:not([hidden]),
+html[data-layout="drawer"] #view-graph:not([hidden]) {
+  flex: 1 1 auto;
+  min-height: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+html[data-layout="sheet"] .phone-hide,
+html[data-layout="drawer"] .phone-hide { display: none; }
+html[data-layout="sheet"] .graph-wrap,
+html[data-layout="drawer"] .graph-wrap {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 140px;
+}
+html[data-layout="sheet"] .cy-stage,
+html[data-layout="drawer"] .cy-stage { flex: 1 1 auto; height: auto; min-height: 0; }
+html[data-layout="sheet"] .legend {
+  max-height: 2.6em;
+  overflow: hidden;
+  margin-top: 4px;
+}
+html[data-layout="sheet"] footer,
+html[data-layout="drawer"] footer { display: none; }
 html[data-layout="sheet"] #panelDock {
   position: fixed;
   left: 0;
@@ -73,7 +110,12 @@ html[data-layout="sheet"] .zoombar { bottom: 56px; }
 html[data-layout="sheet"] .legend { font-size: 12px; }
 
 /* Phone landscape: graph uses the wide area, details in a right drawer. */
-html[data-layout="drawer"] header { padding: 6px 10px; }
+html[data-layout="drawer"] header { padding: 6px 10px; flex-wrap: nowrap; gap: 8px; }
+html[data-layout="drawer"] nav { flex-wrap: nowrap; overflow-x: auto; }
+html[data-layout="drawer"] .mode-tabs { flex-wrap: nowrap; overflow-x: auto; margin-bottom: 4px; }
+html[data-layout="drawer"] .toolbar { flex-wrap: nowrap; overflow-x: auto; gap: 6px; margin-bottom: 4px; }
+html[data-layout="drawer"] .search { flex: 1 1 160px; min-width: 120px; max-width: none; }
+html[data-layout="drawer"] .legend { display: none; }
 html[data-layout="drawer"] .brand small,
 html[data-layout="drawer"] header .feedback-btn { display: none; }
 html[data-layout="drawer"] main { padding: 6px 8px; }
@@ -82,8 +124,7 @@ html[data-layout="drawer"] #filterToggle { display: inline-flex; align-items: ce
 html[data-layout="drawer"] .toolbar .ctrl.types { display: none; }
 html[data-layout="drawer"] .toolbar.filters-open .ctrl.types { display: flex; width: 100%; }
 html[data-layout="drawer"] .graph-wrap {
-  height: calc(var(--app-h, 100dvh) - 132px);
-  min-height: 180px;
+  min-height: 120px;
 }
 html[data-layout="drawer"] #panelDock {
   position: fixed;
@@ -113,9 +154,25 @@ html[data-layout="drawer"] .panel-handle::before { display: none; }
 html[data-layout="drawer"] #panel { width: auto; flex: 1; border: 0; border-radius: 0; min-width: 0; }
 
 /* Tablet / unfolded foldable: keep the two-pane desktop arrangement. */
-html[data-layout="pane"] .graph-wrap { flex-direction: row; flex-wrap: nowrap; }
-html[data-layout="pane"] #panelDock { display: flex; width: 300px; flex: 0 0 300px; min-width: 0; min-height: 0; }
-html[data-layout="pane"] #panel { width: auto; flex: 1; }
+html[data-layout="pane"] .graph-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  height: calc(var(--app-h, 100vh) - 220px);
+  min-height: 420px;
+}
+html[data-layout="pane"] .cy-stage { flex: 1 1 auto; height: auto; min-height: 0; min-width: 0; }
+html[data-layout="pane"] #panelDock {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  flex: 0 0 300px;
+  min-width: 0;
+  min-height: 0;
+  position: relative;
+}
+html[data-layout="pane"] #panel { width: auto; flex: 1; max-height: none; }
 
 html[data-layout="sheet"] button,
 html[data-layout="drawer"] button,

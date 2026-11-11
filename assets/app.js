@@ -636,9 +636,14 @@ function bindUI(){
     else if(state.mode==='network') cy.fit(undefined,24);
     syncZoomSlider();
   }
-  document.addEventListener('xsmobile', refitAfterLayout);
-  document.addEventListener('xsmobile-resize', ()=>{ if(cy) cy.resize(); });
-  window.addEventListener('resize',()=>{if(cy) cy.resize();});
+  document.addEventListener('xsmobile', ev=>{ state._vw=ev.detail&&ev.detail.w; state._vh=ev.detail&&ev.detail.h; refitAfterLayout(); });
+  document.addEventListener('xsmobile-resize', ev=>{
+    if(!cy) return;
+    cy.resize();
+    const d=ev.detail||{};
+    const dw=Math.abs((d.w||0)-(state._vw||0)), dh=Math.abs((d.h||0)-(state._vh||0));
+    if(dw>40||dh>40){ state._vw=d.w; state._vh=d.h; refitAfterLayout(); }
+  });
   syncZoomSlider();
   syncMode();
   updateLayoutButtons();

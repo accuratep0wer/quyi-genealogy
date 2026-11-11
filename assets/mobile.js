@@ -15,6 +15,8 @@
   var dragging = false;
   var start = 0;
   var lastLayout = '';
+  var lastW = -1;
+  var lastH = -1;
 
   function viewport() {
     var vv = window.visualViewport;
@@ -40,12 +42,15 @@
     root.style.setProperty('--app-w', box.w + 'px');
     root.style.setProperty('--app-h', box.h + 'px');
     var detail = { layout: layout, w: box.w, h: box.h, ratio: box.ratio };
+    var sized = box.w !== lastW || box.h !== lastH;
+    lastW = box.w;
+    lastH = box.h;
     if (layout !== lastLayout) {
       lastLayout = layout;
       if (layout !== 'pane') collapse();
       else expand();
       emit('xsmobile', detail);
-    } else {
+    } else if (sized) {
       emit('xsmobile-resize', detail);
     }
     return detail;
