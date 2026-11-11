@@ -443,19 +443,25 @@
 {
 "id": "p0025",
 "name": "刘德智",
-"aliases": [],
+"aliases": [
+"刘德治"
+],
 "generation": 4,
 "gen_source": "谱系表",
 "birth": null,
-"death": null,
-"notes": [],
+"death": 1952,
+"notes": [
+"一作刘德治。戏考师承表题为刘德智（刘德治），维基百科条目题为刘德治、正文写本名刘德智，1952年卒于北京。徐有禄弟子，“相声八德”之一，长期与焦德海搭档，弟子有郭启儒、张春奎（谱系表又作张振魁）。"
+],
 "sources": [
 "https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB",
-"https://zh.wikipedia.org/wiki/%E9%83%AD%E5%90%AF%E5%84%92"
+"https://zh.wikipedia.org/wiki/%E9%83%AD%E5%90%AF%E5%84%92",
+"https://zh.wikipedia.org/wiki/%E5%88%98%E5%BE%B7%E6%B2%BB",
+"https://history.xikao.com/mentoring/%E5%88%98%E5%BE%B7%E6%99%BA"
 ],
-"wiki": null,
+"wiki": "刘德治",
 "zibei": "德",
-"wiki_url": null,
+"wiki_url": "https://zh.wikipedia.org/wiki/%E5%88%98%E5%BE%B7%E6%B2%BB",
 "role": "performer"
 },
 {
@@ -1927,11 +1933,15 @@
 "aliases": [],
 "generation": 5,
 "gen_source": "谱系表",
-"birth": null,
+"birth": 1901,
 "death": null,
-"notes": [],
+"notes": [
+"原名侯殿魁，约1901年生，郭瑞林弟子，1935年至1942年为张寿臣捧哏。戏考“侯少尘”页引述的回忆称其子侯少尘没有从艺、去了军界；天津日报／央视转载的师承表却把侯少尘单列为张寿臣弟子。两说对不上，故与 p0204 分开，不合并。"
+],
 "sources": [
-"https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB"
+"https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB",
+"https://history.xikao.com/person/%E4%BE%AF%E5%B0%91%E5%B0%98",
+"https://news.cctv.com/performance/20070624/100137.shtml"
 ],
 "wiki": null,
 "zibei": "寿",
@@ -3574,10 +3584,14 @@
 "gen_source": "谱系表",
 "birth": null,
 "death": null,
-"notes": [],
+"notes": [
+"谱系表列为张寿臣弟子（第六代），与第五代的侯一尘分列。戏考“侯少尘”页的正文主要是侯一尘，并有说法称侯一尘之子侯少尘去了军界、没有从艺。不能确认表上的侯少尘就是这个儿子，所以单独保留并加注，不与侯一尘合并。"
+],
 "sources": [
 "https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB",
-"https://zh.wikipedia.org/wiki/%E5%BC%A0%E5%AF%BF%E8%87%A3"
+"https://zh.wikipedia.org/wiki/%E5%BC%A0%E5%AF%BF%E8%87%A3",
+"https://history.xikao.com/person/%E4%BE%AF%E5%B0%91%E5%B0%98",
+"https://news.cctv.com/performance/20070624/100137.shtml"
 ],
 "wiki": null,
 "zibei": "宝",
@@ -15415,15 +15429,20 @@
 {
 "id": "p0888",
 "name": "贾仑",
-"aliases": [],
+"aliases": [
+"贾伦"
+],
 "generation": 8,
 "gen_source": "谱系表",
 "birth": 1963,
 "death": null,
-"notes": [],
+"notes": [
+"部分名单写作贾伦。维基百科、丰台时报与人民网都作贾仑：1963年生，贾冀光之子，先拜赵德亮、后拜侯耀文，是侯耀文的大徒弟，并曾与李金祥搭档。与另一条贾伦记录为同一人，已合并。"
+],
 "sources": [
 "https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB",
-"https://zh.wikipedia.org/wiki/%E8%B4%BE%E4%BB%91"
+"https://zh.wikipedia.org/wiki/%E8%B4%BE%E4%BB%91",
+"https://zh.wikipedia.org/wiki/%E4%BE%AF%E8%80%80%E6%96%87"
 ],
 "wiki": "贾仑",
 "zibei": "明",
@@ -19460,10 +19479,17 @@
 "gen_source": "谱系表",
 "birth": 1986,
 "death": null,
-"notes": [],
+"notes": [
+"郭德纲口盟弟子",
+"参考项目注：德云社师承分类：口盟弟子（无摆知）。",
+"同一人。1986年生，2009年正式拜冯春岭为师（戏考师承表列为冯春岭弟子、与高晓攀同门）；此前是郭德纲口盟弟子，德云社家谱仍把他留在口盟名单里，并与贾旭明搭档。两条关系都保留。"
+],
 "sources": [
 "https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB",
-"https://zh.wikipedia.org/wiki/%E5%BC%A0%E5%BA%B7_%28%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%29"
+"https://zh.wikipedia.org/wiki/%E5%BC%A0%E5%BA%B7_%28%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%29",
+"https://zh.wikipedia.org/wiki/%E9%83%AD%E5%BE%B7%E7%BA%B2",
+"https://zh.wikipedia.org/wiki/%E5%BC%B5%E5%BA%B7",
+"https://history.xikao.com/mentoring/%E5%86%AF%E6%98%A5%E5%B2%AD"
 ],
 "wiki": "张康 (相声演员)",
 "zibei": "明",
@@ -29203,26 +29229,6 @@
 "role": "performer"
 },
 {
-"id": "p1677",
-"name": "张康",
-"aliases": [],
-"generation": 9,
-"gen_source": "推定",
-"birth": null,
-"death": null,
-"notes": [
-"郭德纲口盟弟子",
-"参考项目注：德云社师承分类：口盟弟子（无摆知）。"
-],
-"sources": [
-"https://zh.wikipedia.org/wiki/%E9%83%AD%E5%BE%B7%E7%BA%B2",
-"https://zh.wikipedia.org/wiki/%E5%BC%B5%E5%BA%B7"
-],
-"wiki": "張康",
-"wiki_url": "https://zh.wikipedia.org/wiki/%E5%BC%B5%E5%BA%B7",
-"role": "performer"
-},
-{
 "id": "p1678",
 "name": "马兆壮",
 "aliases": [],
@@ -29386,23 +29392,6 @@
 "role": "performer"
 },
 {
-"id": "p1687",
-"name": "贾伦",
-"aliases": [],
-"generation": 8,
-"gen_source": "按师承推定",
-"birth": null,
-"death": null,
-"notes": [],
-"sources": [
-"https://zh.wikipedia.org/wiki/%E4%BE%AF%E8%80%80%E6%96%87"
-],
-"wiki": null,
-"zibei": "明",
-"wiki_url": null,
-"role": "performer"
-},
-{
 "id": "p1688",
 "name": "李福胜",
 "aliases": [],
@@ -29539,23 +29528,6 @@
 "wiki": null,
 "zibei": "明",
 "wiki_url": null,
-"role": "performer"
-},
-{
-"id": "p1696",
-"name": "刘德治",
-"aliases": [],
-"generation": 4,
-"gen_source": "按师承推定",
-"birth": null,
-"death": 1952,
-"notes": [],
-"sources": [
-"https://zh.wikipedia.org/wiki/%E5%88%98%E5%BE%B7%E6%B2%BB"
-],
-"wiki": "刘德治",
-"zibei": "德",
-"wiki_url": "https://zh.wikipedia.org/wiki/%E5%88%98%E5%BE%B7%E6%B2%BB",
 "role": "performer"
 },
 {
@@ -36753,5 +36725,817 @@
 "wiki_url": null,
 "role": "performer",
 "confidence": "disputed"
+},
+{
+"id": "p2045",
+"name": "金龙鸣",
+"aliases": [
+"金一鸣（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云一队，成员表写尚未拜师，搭档李霄樵。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2046",
+"name": "张金山",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": 1974,
+"death": null,
+"notes": [
+"德云二队。成员表写明评书演员（师承王印权快板、刘兰芳评书），与李云杰搭档。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2047",
+"name": "昊海",
+"aliases": [
+"子淇（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": 2002,
+"death": null,
+"notes": [
+"德云二队成员表艺名昊海，写尚未拜师，搭档黄龙府。早前名单或写作于昊海。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2048",
+"name": "黄龙府",
+"aliases": [
+"黄冠谌（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云二队，成员表写尚未拜师，搭档昊海。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2049",
+"name": "李龙升",
+"aliases": [
+"李栋（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云三队，成员表写尚未拜师，搭档范霄琦。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2050",
+"name": "穆龙行",
+"aliases": [
+"穆澳（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云三队，成员表写尚未拜师，搭档张龙生。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2051",
+"name": "张龙生",
+"aliases": [
+"张宇生（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云三队，成员表写尚未拜师，搭档穆龙行。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2052",
+"name": "史爱东",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": 1968,
+"death": null,
+"notes": [
+"德云四队。成员表写快板书师承梁厚民，与吴霄泽搭档。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2053",
+"name": "李龙威",
+"aliases": [
+"李乐（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云四队，成员表写尚未拜师，搭档李龙章。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2054",
+"name": "李龙章",
+"aliases": [
+"李赟霖（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云四队，成员表写尚未拜师，搭档李龙威。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2055",
+"name": "孙健为",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云四队，成员表写尚未拜师，搭档秦启瑞。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2056",
+"name": "秦启瑞",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云四队，成员表写尚未拜师，搭档孙健为。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2057",
+"name": "彭龙海",
+"aliases": [
+"彭浩松（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云五队，成员表写尚未拜师，搭档李鹤彪。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2058",
+"name": "孟龙江",
+"aliases": [
+"孟祥雨（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云五队，成员表写尚未拜师，搭档徐龙灿。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2059",
+"name": "徐龙灿",
+"aliases": [
+"徐一博（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云五队，成员表写尚未拜师，搭档孟龙江。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2060",
+"name": "宋龙言",
+"aliases": [
+"宋俊谋（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云五队，成员表写尚未拜师，搭档苗昊雨。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2061",
+"name": "徐龙尧",
+"aliases": [
+"徐子洺（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云六队，成员表写尚未拜师，搭档于霄伟（表中艺名霄伟）。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2062",
+"name": "郭龙远",
+"aliases": [
+"郭浩远（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": 2000,
+"death": null,
+"notes": [
+"德云七队，成员表写尚未拜师，搭档宋龙祥。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2063",
+"name": "宋龙祥",
+"aliases": [
+"宋东泽（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云七队，成员表写尚未拜师，搭档郭龙远。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2064",
+"name": "张龙政",
+"aliases": [
+"张政（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云七队，成员表写尚未拜师，搭档陈筱兰。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2065",
+"name": "龙化",
+"aliases": [
+"铎（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云八队成员表艺名龙化，写尚未拜师，搭档赵云侠。早前名单或写作于龙化。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2066",
+"name": "王世杰",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云八队。成员表未写师承，只列与马霄盛互为搭档。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2067",
+"name": "李龙坤",
+"aliases": [
+"李佳坤（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云八队，成员表写尚未拜师，搭档成龙早。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2068",
+"name": "成龙早",
+"aliases": [
+"成继烨（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云八队，成员表写尚未拜师，搭档李龙坤。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2069",
+"name": "李龙吟",
+"aliases": [
+"李梓傲（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云九队，成员表写尚未拜师，搭档刘九儒。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2070",
+"name": "胡龙亭",
+"aliases": [
+"胡伟行（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云十队，成员表写尚未拜师，搭档王龙杰。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2071",
+"name": "王龙杰",
+"aliases": [
+"王小杰（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云十队，成员表写尚未拜师，搭档胡龙亭。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2072",
+"name": "李龙隋",
+"aliases": [
+"李国隋（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云十队，成员表写尚未拜师，搭档王龙平。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2073",
+"name": "王龙平",
+"aliases": [
+"王广平（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云十队，成员表写尚未拜师，搭档李龙隋。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2074",
+"name": "张龙森",
+"aliases": [
+"张浩森（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云十队，成员表写尚未拜师，搭档姬龙飞。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2075",
+"name": "姬龙飞",
+"aliases": [
+"姬生虎（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"德云十队，成员表写尚未拜师，搭档张龙森。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2076",
+"name": "郭底",
+"aliases": [
+"张紫乐（本名）"
+],
+"generation": null,
+"gen_source": null,
+"birth": 1986,
+"death": null,
+"notes": [
+"德云社其他演员。成员表未写师承，与郭盖（栾奕）搭档。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2077",
+"name": "绪德贵",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"民国时期与高德明搭档。戏考高德明条称高、绪配合最为默契；高德明去新疆时，绪德贵去了包头。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://history.xikao.com/person/%E9%AB%98%E5%BE%B7%E6%98%8E"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2078",
+"name": "夏雨田",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"武汉说唱团相声演员。戏考薛永年条称与王树田、胡必达、夏雨田长期合作。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://history.xikao.com/person/%E8%96%9B%E6%B0%B8%E5%B9%B4"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2079",
+"name": "于琪",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"沈阳相声演员。金炳昶去世后，于琪自述与金先生合作近三年，节目有《各有千秋》。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://www.cflac.org.cn/ys/qy/qydt/201301/t20130107_163792.html",
+"https://zh.wikipedia.org/wiki/%E9%87%91%E7%82%B3%E6%98%B6"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
+},
+{
+"id": "p2080",
+"name": "孙伟",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"沈阳相声演员。1982年4月6日拜金炳昶为师，维基百科金炳昶条也把他列为搭档。",
+"补录批次：固定搭档补录"
+],
+"sources": [
+"https://www.cflac.org.cn/ys/qy/qydt/201301/t20130107_163792.html",
+"https://zh.wikipedia.org/wiki/%E9%87%91%E7%82%B3%E6%98%B6"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
 }
 ]

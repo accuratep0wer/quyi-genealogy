@@ -29,6 +29,17 @@ function init(){
   P.forEach(p=>{byId[p.id]=p;adj[p.id]=[];});
   R.forEach(r=>{adj[r.from].push(r);adj[r.to].push(r);});
   const cnt={};P.forEach(p=>cnt[p.name]=(cnt[p.name]||0)+1);
+  const parent={};
+  P.forEach(p=>{parent[p.id]=p.id;});
+  const find=a=>{while(parent[a]!==a){parent[a]=parent[parent[a]];a=parent[a];}return a;};
+  const unite=(a,b)=>{const ra=find(a),rb=find(b);if(ra!==rb)parent[rb]=ra;};
+  R.forEach(r=>{if(parent[r.from]&&parent[r.to])unite(r.from,r.to);});
+  const comp={};
+  P.forEach(p=>{const r=find(p.id);(comp[r]=comp[r]||[]).push(p.id);});
+  let best=null;
+  Object.keys(comp).forEach(k=>{if(!best||comp[k].length>comp[best].length)best=k;});
+  const main=new Set(comp[best]);
+  P.forEach(p=>{p._main=main.has(p.id);});
   P.forEach(p=>{p._deg=adj[p.id].length;
     if(cnt[p.name]>1){const m=adj[p.id].find(r=>r.type==='master_disciple'&&r.to===p.id);p._label=p.name+(m?'（'+byId[m.from].name+'徒）':p.generation?'（第'+p.generation+'代）':'（同名）');}
     p._search=[p.name].concat(p.aliases||[]).join(' ');
@@ -100,10 +111,10 @@ function relOk(r,f){
 function drawNetwork(){
   layoutLock=true;
   const f=filters();
-  const rels=R.filter(r=>relOk(r,f)&&personOk(byId[r.from],f)&&personOk(byId[r.to],f));
+  const rels=R.filter(r=>relOk(r,f)&&byId[r.from]._main&&byId[r.to]._main&&personOk(byId[r.from],f)&&personOk(byId[r.to],f));
   // Partner links are drawn only. They do not pull people into the map or move layout positions.
   const used=new Set();rels.forEach(r=>{if(r.type!=='partner'){used.add(r.from);used.add(r.to);}});
-  const nodes=P.filter(p=>personOk(p,f)&&(used.has(p.id)||(p.role!=='relative'&&f.types.has('master_disciple'))));
+  const nodes=P.filter(p=>p._main&&personOk(p,f)&&(used.has(p.id)||(p.role!=='relative'&&f.types.has('master_disciple'))));
   const ids=new Set(nodes.map(p=>p.id));
   const drawRels=rels.filter(r=>r.type!=='partner'||(ids.has(r.from)&&ids.has(r.to)));
   cy.startBatch();cy.elements().remove();
@@ -140,10 +151,10 @@ function drawNebula(){
   state.mode='nebula';
   cy.minZoom(1e-7);cy.maxZoom(32);
   const f=filters();
-  const rels=R.filter(r=>relOk(r,f)&&personOk(byId[r.from],f)&&personOk(byId[r.to],f));
+  const rels=R.filter(r=>relOk(r,f)&&byId[r.from]._main&&byId[r.to]._main&&personOk(byId[r.from],f)&&personOk(byId[r.to],f));
   const used=new Set();
   rels.forEach(r=>{if(r.type!=='partner'){used.add(r.from);used.add(r.to);}});
-  const nodes=P.filter(p=>personOk(p,f)&&(used.has(p.id)||(!!NEBULA[p.id]&&p.role!=='relative')));
+  const nodes=P.filter(p=>p._main&&personOk(p,f)&&(used.has(p.id)||(!!NEBULA[p.id]&&p.role!=='relative')));
   const ids=new Set(nodes.map(p=>p.id));
   const drawRels=rels.filter(r=>ids.has(r.from)&&ids.has(r.to));
   cy.startBatch();cy.elements().remove();
@@ -476,6 +487,15 @@ function highlight(id,center){
 }
 function selectPerson(id,center){
   state.focus=id;
+  if(!byId[id]._main){
+    renderPanel(id);
+    if(state.mode==='ego'){state.mode='network';$('#mode').value='network';syncMode();drawNetwork();}
+    const next=state.mode==='nebula'?'#nebula':'#graph';
+    if(location.hash!==next) history.replaceState(null,'',next);
+    if(cy) clearHL();
+    updateModeTabs();
+    return;
+  }
   if(state.mode==='ego'){drawEgo(id);}else highlight(id,center);
   renderPanel(id);
   const next=state.mode==='nebula'?'#nebula/'+id:'#graph/'+id;
@@ -496,7 +516,8 @@ function renderPanel(id){
   const sec=(t,arr,fn)=>arr.length?'<h3>'+t+'（'+arr.length+'）</h3><ul>'+arr.map(fn).join('')+'</ul>':'';
   const yrs=(p.birth||p.death)?(p.birth||'?')+'–'+(p.death||''):'';
   const confTag=p.confidence?'<span class="tag'+(p.confidence==='disputed'?' dis':'')+'">'+CONF_CN[p.confidence]+'</span>':'';
-  $('#panel').innerHTML='<h2>'+esc(labelOf(p))+'</h2>'+
+  const off=p._main?'':'<p class="notice">暂无与主谱系相连的关系，谱系图、星云图和聚焦都不画出此人。</p>';
+  $('#panel').innerHTML='<h2>'+esc(labelOf(p))+'</h2>'+off+
    '<div class="meta">'+(p.generation?'第'+p.generation+'代'+(p.zibei?'·“'+p.zibei+'”字辈':''):'代数不详')+(p.gen_source?'<span class="tag">'+esc(p.gen_source)+'</span>':'')+(yrs?' · '+yrs:'')+(p.role==='relative'?' · 非谱系内亲属':'')+(confTag?' '+confTag:'')+'</div>'+
    '<div class="panel-actions"><button type="button" id="egoBtn">'+(state.mode==='ego'?'回到全网络':'聚焦此人的师承子图')+'</button>'+
    '<button type="button" class="feedback-btn" id="panelFeedback">提交修正</button></div>'+
@@ -679,6 +700,16 @@ function route(){
   document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.dataset.view===section));
   if(section!=='graph'){updateModeTabs();return;}
   cy.resize();
+  if(arg&&byId[arg]&&!byId[arg]._main){
+    state.mode='network';
+    state.focus=arg;
+    $('#mode').value='network';
+    syncMode();
+    drawNetwork();
+    renderPanel(arg);
+    updateModeTabs();
+    return;
+  }
   if(view==='nebula'){
     state.mode='nebula';
     const sel=$('#mode'); if(sel) sel.value='nebula';
@@ -714,7 +745,7 @@ function renderTables(){
     const key={name:p=>p.name,generation:p=>p.generation||99,zibei:p=>p.zibei||'',birth:p=>p.birth||9999,death:p=>p.death||9999,masters:p=>p._masters,ndis:p=>p._ndis,notes:p=>(p.notes||[]).join('')}[psort.k]||(p=>p.name);
     rows.sort((a,b)=>{const x=key(a),y=key(b);return (x<y?-1:x>y?1:a.name.localeCompare(b.name,'zh'))*psort.d;});
     $('#pcount').textContent=rows.length+' 人';
-    $('#ptable tbody').innerHTML=rows.map(p=>'<tr><td><a href="#graph/'+p.id+'">'+esc(labelOf(p))+'</a>'+(p.aliases.length?'<br><small class="muted">'+esc(p.aliases.join('、'))+'</small>':'')+'</td><td>'+(p.generation||'')+'</td><td>'+(p.zibei||'')+'</td><td>'+(p.birth||'')+'</td><td>'+(p.death||'')+'</td><td>'+esc(p._masters)+'</td><td>'+(p._ndis||'')+'</td><td class="notes">'+esc((p.notes||[]).join('；'))+'</td><td>'+(p.wiki_url?'<a href="'+esc(p.wiki_url)+'" target="_blank" rel="noopener">维基</a> ':'')+srcLinks(p.sources)+'</td></tr>').join('');
+    $('#ptable tbody').innerHTML=rows.map(p=>'<tr><td><a href="#graph/'+p.id+'">'+esc(labelOf(p))+'</a>'+(p.aliases.length?'<br><small class="muted">'+esc(p.aliases.join('、'))+'</small>':'')+'</td><td>'+(p.generation||'')+'</td><td>'+(p.zibei||'')+'</td><td>'+(p.birth||'')+'</td><td>'+(p.death||'')+'</td><td>'+esc(p._masters)+'</td><td>'+(p._ndis||'')+'</td><td class="notes">'+esc((p._main?[]:['暂无与主谱系相连的关系']).concat(p.notes||[]).join('；'))+'</td><td>'+(p.wiki_url?'<a href="'+esc(p.wiki_url)+'" target="_blank" rel="noopener">维基</a> ':'')+srcLinks(p.sources)+'</td></tr>').join('');
   };
   const drawR=()=>{
     const v=$('#rq').value.trim(),t=$('#rtype').value,c=$('#rconf').value;
@@ -740,7 +771,11 @@ function renderSources(){
   const nice=u=>{try{const x=new URL(u);if(x.hostname.endsWith('wikipedia.org'))return '维基百科：'+decodeURIComponent(x.pathname.split('/').pop()).replace(/_/g,' ');return x.hostname+decodeURIComponent(x.pathname);}catch(e){return u;}};
   $('#sourceList').innerHTML=arr.map(([u,n])=>'<li><a href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(nice(u))+'</a> <span class="muted">('+n+')</span></li>').join('');
   const gens=P.map(p=>p.generation).filter(Boolean);
-  $('#buildinfo').textContent='共收录 '+P.length+' 人、'+R.length+' 条关系，覆盖第 '+Math.min(...gens)+'–'+Math.max(...gens)+' 代。数据整理日期：2026-11-11。';
-  const fc=$('#footcount'); if(fc) fc.textContent=P.length+' 人、'+R.length+' 条关系';
+  const hidden=P.filter(p=>!p._main).length;
+  const shownN=P.length-hidden;
+  $('#buildinfo').textContent='共收录 '+P.length+' 人、'+R.length+' 条关系，图中显示 '+shownN+' 人。另有 '+hidden+' 人暂无与主谱系相连的关系，三张图都不画出。覆盖第 '+Math.min(...gens)+'–'+Math.max(...gens)+' 代。数据整理日期：2026-11-11。';
+  const fc=$('#footcount'); if(fc) fc.textContent='图中 '+shownN+' 人（全库 '+P.length+' 人、'+R.length+' 条关系）';
+  const hn=$('#hiddenNote'); if(hn) hn.textContent='未连入主谱系、故不画出：'+hidden+' 人。';
+  const ha=$('#hiddenAbout'); if(ha) ha.textContent='目前是 '+hidden+' 人。';
 }
 })();

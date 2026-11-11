@@ -7,8 +7,10 @@ right becomes a neighbouring cloud rather than inflating this one. Clouds
 do not overlap, and every person keeps enough room for their name, so
 zooming in does not pile labels together.
 
-Partner edges are ignored: the page draws them and they must not move
-anyone. Output: data/layout-nebula.json as {id: [x, y, diameter]}.
+Partner edges do not move anyone who already has a place. People outside
+the main connected component (any relation type) are left out of this file.
+Someone whose only link is a partner edge is parked beside that partner.
+Output: data/layout-nebula.json as {id: [x, y, diameter]}.
 
 Rendered hub diameter matches assets/app.js, then grows with descendants:
   base = clamp(12, 70, 10 + sqrt(degree) * 6)
@@ -21,6 +23,27 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 P = json.load(open(os.path.join(ROOT, 'data/people.json'), encoding='utf-8'))
 R = json.load(open(os.path.join(ROOT, 'data/relations.json'), encoding='utf-8'))
 BY = {p['id']: p for p in P}
+
+def _find(parent, a):
+    while parent[a] != a:
+        parent[a] = parent[parent[a]]
+        a = parent[a]
+    return a
+
+_parent = {p['id']: p['id'] for p in P}
+for _r in R:
+    if _r['from'] not in _parent or _r['to'] not in _parent:
+        continue
+    ra, rb = _find(_parent, _r['from']), _find(_parent, _r['to'])
+    if ra != rb:
+        _parent[rb] = ra
+_comp = defaultdict(list)
+for _i in _parent:
+    _comp[_find(_parent, _i)].append(_i)
+_main = set(max(_comp.values(), key=len))
+P = [p for p in P if p['id'] in _main]
+BY = {p['id']: p for p in P}
+R = [r for r in R if r['from'] in BY and r['to'] in BY]
 
 DEG = defaultdict(int)
 for r in R:
@@ -264,6 +287,21 @@ roots = [pid for pid in HUBS if pid not in pref or pref[pid] not in cluster_of]
 # Roots are hubs with no placed master.
 sat_ids = {sat for lst in satellites.values() for sat, _att in lst}
 root_hubs = [h for h in HUBS if h not in sat_ids]
+# A person with no master and no students is not a cloud of their own.
+# Park them beside a partner after the real clouds are placed.
+_touch = set()
+for _r in R:
+    if _r['type'] == 'master_disciple':
+        _touch.add(_r['from'])
+        _touch.add(_r['to'])
+_partners = defaultdict(list)
+for _r in R:
+    if _r['type'] == 'partner':
+        _partners[_r['from']].append(_r['to'])
+        _partners[_r['to']].append(_r['from'])
+floaters = [pid for pid in BY if pid not in _touch and _partners.get(pid)]
+floater_set = set(floaters)
+root_hubs = [h for h in root_hubs if h not in floater_set]
 root_hubs.sort(key=lambda h: -DESC[h])
 
 def root_of_person(pid):
@@ -298,6 +336,25 @@ for i, h in enumerate(root_hubs):
             break
     x, y = find_slot(anchor[0], anchor[1], anchor[2], RADIUS[h], hint)
     commit_hub(h, x, y)
+
+def _park(pid, anchor):
+    ax, ay = POS[anchor]
+    need = label_clearance(pid) + label_clearance(anchor) + 8
+    for radius in (need, need + 24, need + 56, need + 100, need + 160):
+        for s in range(48):
+            ang = s * math.tau / 48 + (sum(ord(c) for c in pid) % 7) * 0.2
+            x = ax + radius * math.cos(ang)
+            y = ay + radius * math.sin(ang)
+            if all(math.hypot(x - px, y - py) >= label_clearance(pid) + label_clearance(other) + 6
+                   for other, (px, py) in POS.items()):
+                POS[pid] = [x, y]
+                return
+    POS[pid] = [ax + need, ay]
+
+for pid in floaters:
+    anchor = next((q for q in _partners[pid] if q in POS), None)
+    if anchor:
+        _park(pid, anchor)
 
 missed = [pid for pid in BY if pid not in POS]
 if missed:
