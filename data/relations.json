@@ -31961,5 +31961,20 @@
 "notes": [
 "孙伟自述拜金炳昶为师"
 ]
+},
+{
+"id": "r02432",
+"type": "master_disciple",
+"from": "p1192",
+"to": "p2047",
+"detail": "报道称高峰收于子淇为徒并赐名昊海；维基成员表仍写尚未拜师",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE",
+"https://www.toutiao.com/zixun/7530772396115167267/"
+],
+"confidence": "disputed",
+"notes": [
+"维基百科德云社成员表师承栏为「尚未拜师」，并注明因争议未正式拜师高峰。另有报道称高峰已收于子淇（昊海）为徒并赐名。两说冲突，标为存疑。"
+]
 }
 ]

@@ -7,9 +7,10 @@ right becomes a neighbouring cloud rather than inflating this one. Clouds
 do not overlap, and every person keeps enough room for their name, so
 zooming in does not pile labels together.
 
-Partner edges do not move anyone who already has a place. People outside
-the main connected component (any relation type) are left out of this file.
-Someone whose only link is a partner edge is parked beside that partner.
+Partner edges do not move anyone who already has a master or students.
+People with no relations at all are left out. A partner-only pair is drawn
+as its own small disk. Someone whose partner is already placed sits beside
+that partner.
 Output: data/layout-nebula.json as {id: [x, y, diameter]}.
 
 Rendered hub diameter matches assets/app.js, then grows with descendants:
@@ -24,24 +25,14 @@ P = json.load(open(os.path.join(ROOT, 'data/people.json'), encoding='utf-8'))
 R = json.load(open(os.path.join(ROOT, 'data/relations.json'), encoding='utf-8'))
 BY = {p['id']: p for p in P}
 
-def _find(parent, a):
-    while parent[a] != a:
-        parent[a] = parent[parent[a]]
-        a = parent[a]
-    return a
-
-_parent = {p['id']: p['id'] for p in P}
+_deg = defaultdict(int)
 for _r in R:
-    if _r['from'] not in _parent or _r['to'] not in _parent:
-        continue
-    ra, rb = _find(_parent, _r['from']), _find(_parent, _r['to'])
-    if ra != rb:
-        _parent[rb] = ra
-_comp = defaultdict(list)
-for _i in _parent:
-    _comp[_find(_parent, _i)].append(_i)
-_main = set(max(_comp.values(), key=len))
-P = [p for p in P if p['id'] in _main]
+    if _r['from'] in BY:
+        _deg[_r['from']] += 1
+    if _r['to'] in BY:
+        _deg[_r['to']] += 1
+# Only true isolates (no relation of any type) are omitted.
+P = [p for p in P if _deg[p['id']] > 0]
 BY = {p['id']: p for p in P}
 R = [r for r in R if r['from'] in BY and r['to'] in BY]
 
@@ -352,9 +343,22 @@ def _park(pid, anchor):
     POS[pid] = [ax + need, ay]
 
 for pid in floaters:
+    if pid in POS:
+        continue
     anchor = next((q for q in _partners[pid] if q in POS), None)
     if anchor:
         _park(pid, anchor)
+        continue
+    # Partner-only pair: neither person is in a master tree. Drop the pair
+    # in the first free slot beside the forest, then sit the partner next to them.
+    rad = label_clearance(pid) + 24
+    ax, ay, ar = placed_disks[0] if placed_disks else (0.0, 0.0, 0.0)
+    x, y = find_slot(ax, ay, ar, rad, (sum(ord(c) for c in pid) % 9) * 0.4)
+    POS[pid] = [x, y]
+    placed_disks.append((x, y, rad))
+    other = next((q for q in _partners[pid] if q not in POS), None)
+    if other:
+        _park(other, pid)
 
 missed = [pid for pid in BY if pid not in POS]
 if missed:
