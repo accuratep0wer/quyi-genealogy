@@ -45,7 +45,8 @@
       <label class="t-mar"><input type="checkbox" data-type="marriage" checked> 姻缘</label>
       <label class="t-dis"><input type="checkbox" id="showDisputed" checked> 显示存疑</label>
       <label><input type="checkbox" id="labels"> 显示全部姓名</label>
-      <button id="relayout" type="button">重新力导布局</button>
+      <button id="expand" type="button">展开此区域</button>
+      <button id="resetLayout" type="button" disabled>恢复全局布局</button>
       <button id="fit" type="button">适配视图</button>
     </div>
   </div>
@@ -70,7 +71,7 @@
     <span><i class="ln dis"></i>存疑（橙色）</span>
     <span><i class="dot rel"></i>非谱系内亲属</span>
     <span id="genLegend"></span>
-    <span class="muted">节点大小＝关系数；可拖拽、滚轮/双指缩放，或使用「缩放」滑块</span>
+    <span class="muted">节点大小＝关系数。放大到密集处会自动展开该区域，也可点「展开此区域」；「恢复全局布局」回到全图。</span>
     <span id="stat"></span>
   </div>
 </section>
@@ -133,7 +134,7 @@
     <p class="muted">按被引用的次数排序（数字是引用该来源的人物和关系条目数）。</p>
     <ol id="sourceList"></ol>
     <h3>第三方组件</h3>
-    <p>图谱使用 <a href="https://js.cytoscape.org/">Cytoscape.js</a>（MIT 许可，已本地打包在 <code>vendor/</code> 目录），全网络初始坐标由离线力导向布局（NetworkX spring layout）预先计算，浏览器中可拖拽并可重新运行力导布局。人物与关系数据整理自维基百科等公开来源，维基百科内容采用 CC BY-SA 4.0 许可。</p>
+    <p>图谱使用 <a href="https://js.cytoscape.org/">Cytoscape.js</a>（MIT 许可，已本地打包在 <code>vendor/</code> 目录）。全网络初始坐标由离线力导向布局（NetworkX spring layout）预先计算。放大到人挤在一起的区域时，页面只重排视口里的人物及其师徒邻里：枢纽按代数分成同心环，并按姓名宽度错开，避免标签重叠；其余节点保持原位。聚焦某一人（地址 <code>#graph/人物编号</code>）时改用同一套环形谱系，而不是全局坐标。这两处布局是本站自己的代码，没有再引入第三方布局库。人物与关系数据整理自维基百科等公开来源，维基百科内容采用 CC BY-SA 4.0 许可。</p>
     <p class="muted" id="buildinfo"></p>
   </article>
 </section>

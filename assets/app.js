@@ -6,7 +6,8 @@ const GEN_COLORS=['#7f1d1d','#9a3412','#b45309','#a16207','#4d7c0f','#047857','#
 const genColor=g=>g?GEN_COLORS[(g-1)%GEN_COLORS.length]:'#9ca3af';
 const $=s=>document.querySelector(s);
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-let P=[],R=[],L={},byId={},cy=null,state={mode:'network',focus:null};
+let P=[],R=[],L={},byId={},cy=null,state={mode:'network',focus:null,expanded:false};
+let expanding=false,expandTimer=null;
 const adj={};
 const Z_MIN=0.03,Z_MAX=32;
 let zoomFromSlider=false;
@@ -64,7 +65,10 @@ function buildCy(){
       {selector:'node.hl',style:{'border-width':3,'border-color':'#111','min-zoomed-font-size':0,'z-index':10}},
       {selector:'node.nb',style:{'min-zoomed-font-size':0,'z-index':9}},
       {selector:'edge.hl',style:{'opacity':1,'width':2.6,'z-index':9}},
-      {selector:'.alllabels',style:{'min-zoomed-font-size':0}}
+      {selector:'.alllabels',style:{'min-zoomed-font-size':0}},
+      {selector:'node.local',style:{'min-zoomed-font-size':0,'text-opacity':1}},
+      {selector:'node.parked',style:{'display':'none'}},
+      {selector:'edge.parked',style:{'display':'none'}}
     ],
     layout:{name:'preset'}
   });
@@ -72,7 +76,7 @@ function buildCy(){
   cy.on('tap',e=>{if(e.target===cy) clearHL();});
   cy.on('mouseover','edge',e=>{const d=e.target.data();e.target.style('label',(TYPE_CN[d.type]||'')+(d.detail?'：'+d.detail:'')+(d.conf==='disputed'?'（存疑）':''));e.target.style({'font-size':11,'text-background-color':'#fff','text-background-opacity':0.9,'text-background-padding':2});});
   cy.on('mouseout','edge',e=>e.target.removeStyle('label'));
-  cy.on('zoom',syncZoomSlider);
+  cy.on('zoom',()=>{syncZoomSlider();scheduleExpand();});
   drawNetwork();
 }
 function filters(){
@@ -82,6 +86,7 @@ function filters(){
 function personOk(p,f){return !p.generation||(p.generation>=f.gmin&&p.generation<=f.gmax);}
 function relOk(r,f){return f.types.has(r.type)&&(f.dis||r.confidence!=='disputed');}
 function drawNetwork(){
+  state.expanded=false;
   const f=filters();
   const rels=R.filter(r=>relOk(r,f)&&personOk(byId[r.from],f)&&personOk(byId[r.to],f));
   const used=new Set();rels.forEach(r=>{used.add(r.from);used.add(r.to);});
@@ -91,7 +96,8 @@ function drawNetwork(){
   cy.endBatch();
   cy.layout({name:'preset',fit:true,padding:20}).run();
   stat(nodes.length,rels.length);
-  if(state.focus&&cy.getElementById(state.focus).length) highlight(state.focus,true);
+  if(state.focus&&cy.getElementById(state.focus).length) highlight(state.focus,false);
+  updateLayoutButtons();
 }
 function egoSet(id){
   const f=filters(),dd=+$('#depthDown').value,du=+$('#depthUp').value;
@@ -106,25 +112,377 @@ function egoSet(id){
   R.forEach(r=>{if(keep.has(r.from)&&keep.has(r.to)&&relOk(r,f))rels.add(r);});
   return {nodes:[...keep].map(k=>byId[k]),rels:[...rels]};
 }
+function nodeSize(p){return Math.max(12,Math.min(70,10+Math.sqrt(p._deg||1)*6));}
+function labelFont(p){return p._deg>=15?16:(p._deg<6?10:12);}
+function labelRadius(p){
+  const font=labelFont(p);
+  const chars=[...labelOf(p)].length;
+  const halfW=chars*font*0.55+8;
+  const halfH=nodeSize(p)/2+font+8;
+  return Math.max(halfW, halfH*0.92);
+}
+function edgeDetail(from,to){
+  const r=(adj[from]||[]).find(x=>x.type==='master_disciple'&&x.from===from&&x.to===to);
+  return (r&&r.detail)||'';
+}
+function discipleSort(parent,a,b){
+  const da=edgeDetail(parent,a),db=edgeDetail(parent,b);
+  if(da!==db) return da.localeCompare(db,'zh');
+  const ga=byId[a].generation||0,gb=byId[b].generation||0;
+  if(ga!==gb) return ga-gb;
+  return byId[a].name.localeCompare(byId[b].name,'zh');
+}
+function layoutRadial(rootId,ids,rels){
+  const idset=new Set(ids);
+  const pos={[rootId]:{x:0,y:0}};
+  const children=new Map();
+  idset.forEach(id=>children.set(id,[]));
+  const seen=new Set([rootId]);
+  let front=[rootId];
+  while(front.length){
+    const nx=[];
+    for(const id of front){
+      const ch=[];
+      for(const r of rels){
+        if(r.type==='master_disciple'&&r.from===id&&idset.has(r.to)&&!seen.has(r.to)){
+          seen.add(r.to);ch.push(r.to);nx.push(r.to);
+        }
+      }
+      ch.sort((a,b)=>discipleSort(id,a,b));
+      children.set(id,ch);
+    }
+    front=nx;
+  }
+  const ancestors=[];
+  front=[rootId];
+  const upSeen=new Set([rootId]);
+  while(front.length){
+    const nx=[],layer=[];
+    for(const id of front){
+      for(const r of rels){
+        if(r.type==='master_disciple'&&r.to===id&&idset.has(r.from)&&!seen.has(r.from)&&!upSeen.has(r.from)){
+          upSeen.add(r.from);seen.add(r.from);layer.push(r.from);nx.push(r.from);
+        }
+      }
+    }
+    layer.sort((a,b)=>byId[a].name.localeCompare(byId[b].name,'zh'));
+    ancestors.push(...layer);
+    front=nx;
+  }
+  function packAround(list,r0){
+    let r=Math.max(24,r0),i=0,outer=r0;
+    let guard=0;
+    while(i<list.length&&guard++<list.length+8){
+      const start=i; let ang=-Math.PI; const placed=[];
+      while(i<list.length){
+        const id=list[i], rad=labelRadius(byId[id]), need=rad*2+14;
+        if(need>=2*r-1){r=need/2+12; i=start; ang=-Math.PI; placed.length=0; continue;}
+        const step=2*Math.asin(Math.min(0.999,need/(2*r)));
+        if(placed.length&&ang+step>Math.PI+1e-3) break;
+        placed.push({id,ang:ang+step/2,r,rad});
+        ang+=step; i++;
+      }
+      if(!placed.length){r+=36; i=start; continue;}
+      let maxRad=0;
+      placed.forEach(p=>{pos[p.id]={x:Math.cos(p.ang)*p.r,y:Math.sin(p.ang)*p.r}; maxRad=Math.max(maxRad,p.rad);});
+      outer=r+maxRad;
+      const nextRad=i<list.length?labelRadius(byId[list[i]]):maxRad;
+      r=r+maxRad+nextRad+18;
+    }
+    return outer;
+  }
+  function placeKids(id){
+    const ch=children.get(id)||[];
+    if(!ch.length||!pos[id]) return;
+    const p=pos[id], ang0=Math.atan2(p.y,p.x)||0;
+    let r=Math.hypot(p.x,p.y)+labelRadius(byId[id])+labelRadius(byId[ch[0]])+18;
+    let angles=[],total=99;
+    for(let g=0;g<10;g++){
+      angles=ch.map(cid=>2*Math.asin(Math.min(0.999,(labelRadius(byId[cid])*2+14)/(2*r))));
+      total=angles.reduce((s,a)=>s+a,0);
+      if(total<=Math.PI*1.25) break;
+      r*=1.22;
+    }
+    let a=ang0-total/2;
+    ch.forEach((cid,i)=>{
+      const mid=a+angles[i]/2;
+      pos[cid]={x:Math.cos(mid)*r,y:Math.sin(mid)*r};
+      a+=angles[i];
+    });
+  }
+  const rootKids=children.get(rootId)||[];
+  let outer=labelRadius(byId[rootId])+20;
+  if(rootKids.length){
+    const first=labelRadius(byId[rootKids[0]]);
+    outer=packAround(rootKids, labelRadius(byId[rootId])+first+18);
+  }
+  const depth=new Map();
+  (function mark(id,d){(children.get(id)||[]).forEach(c=>{depth.set(c,d);mark(c,d+1);});})(rootId,1);
+  const maxD=Math.max(0,...depth.values(),0);
+  for(let d=2;d<=maxD;d++){
+    const parents=[...depth.entries()].filter(([,dd])=>dd===d-1).map(([id])=>id);
+    parents.sort((a,b)=>Math.atan2(pos[a].y,pos[a].x)-Math.atan2(pos[b].y,pos[b].x));
+    parents.forEach(placeKids);
+  }
+  Object.values(pos).forEach(p=>{outer=Math.max(outer,Math.hypot(p.x,p.y)+8);});
+  if(ancestors.length){
+    const gap=10;
+    const widths=ancestors.map(id=>labelRadius(byId[id])*2);
+    const total=widths.reduce((s,w)=>s+w,0)+gap*(ancestors.length-1);
+    let x=-total/2;
+    const y=-(outer+24+Math.max(...ancestors.map(id=>labelRadius(byId[id]))));
+    ancestors.forEach((id,i)=>{
+      const rad=labelRadius(byId[id]);
+      pos[id]={x:x+rad,y};
+      x+=rad*2+gap;
+    });
+  }
+  const extras=ids.filter(id=>!pos[id]);
+  extras.forEach((id,i)=>{
+    let anchor=rootId;
+    for(const r of rels){
+      if(r.from===id&&pos[r.to]){anchor=r.to;break;}
+      if(r.to===id&&pos[r.from]){anchor=r.from;break;}
+    }
+    const a=pos[anchor]||{x:0,y:0};
+    const ang=Math.atan2(a.y,a.x)||(-Math.PI/2+(i+1)*0.35);
+    const dist=Math.hypot(a.x,a.y)+labelRadius(byId[anchor])+labelRadius(byId[id])+16;
+    pos[id]={x:Math.cos(ang)*dist,y:Math.sin(ang)*dist};
+  });
+  relax(pos,ids,[rootId]);
+  return pos;
+}
+function relax(pos,ids,pin){
+  const pinSet=new Set(pin||[]);
+  const rad={};
+  ids.forEach(id=>{if(byId[id]) rad[id]=labelRadius(byId[id]);});
+  for(let iter=0;iter<56;iter++){
+    let moved=false;
+    for(let i=0;i<ids.length;i++){
+      for(let j=i+1;j<ids.length;j++){
+        const A=pos[ids[i]],B=pos[ids[j]];
+        if(!A||!B) continue;
+        const pinA=pinSet.has(ids[i]),pinB=pinSet.has(ids[j]);
+        if(pinA&&pinB) continue;
+        let dx=B.x-A.x,dy=B.y-A.y;
+        let d=Math.hypot(dx,dy)||0.01;
+        const need=(rad[ids[i]]||16)+(rad[ids[j]]||16)+8;
+        if(d>=need) continue;
+        const push=(need-d)/(pinA||pinB?1:2);
+        dx/=d;dy/=d;
+        if(!pinA){A.x-=dx*push;A.y-=dy*push;}
+        if(!pinB){B.x+=dx*push;B.y+=dy*push;}
+        moved=true;
+      }
+    }
+    if(!moved) break;
+  }
+}
+function spreadPositions(ids){
+  const pos={};
+  ids.forEach((id,i)=>{
+    const n=cy.getElementById(id);
+    const p=n.nonempty&&n.length?n.position():{x:0,y:0};
+    pos[id]={x:p.x+(i%9)*0.2,y:p.y+((i*3)%9)*0.2};
+  });
+  relax(pos,ids,[]);
+  return pos;
+}
+function nodesInView(){
+  const e=cy.extent(),ids=[];
+  cy.nodes().forEach(n=>{
+    if(n.hasClass('parked')) return;
+    const p=n.position();
+    if(p.x>=e.x1-30&&p.x<=e.x2+30&&p.y>=e.y1-30&&p.y<=e.y2+30) ids.push(n.id());
+  });
+  return ids;
+}
+function dominantHub(ids){
+  const set=new Set(ids);
+  let best=null,score=-1;
+  ids.forEach(id=>{
+    let c=0;
+    (adj[id]||[]).forEach(r=>{if(r.type==='master_disciple'&&r.from===id&&set.has(r.to)) c++;});
+    if(c>score){score=c;best=id;}
+  });
+  return score>=6?best:null;
+}
+function isClumped(ids){
+  if(ids.length<8) return false;
+  const sample=ids.length>160?ids.filter((_,i)=>i%2===0):ids;
+  let close=0;
+  for(let i=0;i<sample.length;i++){
+    const A=cy.getElementById(sample[i]).position();
+    let best=1e9;
+    for(let j=0;j<sample.length;j++) if(i!==j){
+      const B=cy.getElementById(sample[j]).position();
+      const d=Math.hypot(A.x-B.x,A.y-B.y);
+      if(d<best) best=d;
+    }
+    const need=labelRadius(byId[sample[i]])*1.7;
+    if(best<need) close++;
+  }
+  return close/sample.length>0.45;
+}
+function neighborhoodIds(id,down,up){
+  const f=filters(),keep=new Set([id]);
+  let front=[id];
+  for(let d=0;d<up&&front.length;d++){
+    const nx=[];
+    front.forEach(x=>(adj[x]||[]).forEach(r=>{
+      if(r.type==='master_disciple'&&r.to===x&&relOk(r,f)&&!keep.has(r.from)&&cy.getElementById(r.from).length){keep.add(r.from);nx.push(r.from);}
+    }));
+    front=nx;
+  }
+  front=[id];
+  for(let d=0;d<down&&front.length;d++){
+    const nx=[];
+    front.forEach(x=>(adj[x]||[]).forEach(r=>{
+      if(r.type==='master_disciple'&&r.from===x&&relOk(r,f)&&!keep.has(r.to)&&cy.getElementById(r.to).length){keep.add(r.to);nx.push(r.to);}
+    }));
+    front=nx;
+  }
+  (adj[id]||[]).forEach(r=>{if(relOk(r,f)){if(cy.getElementById(r.from).length) keep.add(r.from); if(cy.getElementById(r.to).length) keep.add(r.to);}});
+  return [...keep];
+}
+function present(centerId){
+  const eles=cy.nodes('.local');
+  cy.fit(eles.length?eles:undefined,44);
+  const minZ=1.2;
+  if(cy.zoom()<minZ&&centerId){
+    const n=cy.getElementById(centerId);
+    if(n.length){cy.center(n);zoomAtCenter(minZ);}
+  }
+  syncZoomSlider();
+}
+function applySpread(hubId,ids){
+  const idset=new Set(ids);
+  idset.add(hubId);
+  const list=[...idset].filter(id=>byId[id]&&cy.getElementById(id).length);
+  const rels=R.filter(r=>idset.has(r.from)&&idset.has(r.to));
+  const hub=hubId&&idset.has(hubId)?hubId:list[0];
+  const useRadial=dominantHub(list)===hub||((childrenCount(hub,idset))>=6);
+  let local;
+  if(useRadial) local=layoutRadial(hub,list,rels);
+  else local=spreadPositions(list);
+  const originNode=cy.getElementById(hub);
+  const origin=originNode.length?originNode.position():{x:0,y:0};
+  cy.startBatch();
+  cy.nodes().forEach(n=>{
+    const p=local[n.id()];
+    if(p){
+      n.removeClass('parked'); n.addClass('local');
+      n.position(useRadial?{x:origin.x+p.x,y:origin.y+p.y}:p);
+    }else{
+      n.addClass('parked'); n.removeClass('local');
+    }
+  });
+  cy.edges().forEach(e=>e.toggleClass('parked',e.source().hasClass('parked')||e.target().hasClass('parked')));
+  cy.endBatch();
+  state.expanded=true;
+  present(hub);
+  const shown=cy.nodes('.local');
+  stat(shown.length, cy.edges().not('.parked').length);
+  if(state.focus&&cy.getElementById(state.focus).length) highlight(state.focus,false);
+  updateLayoutButtons();
+}
+function childrenCount(id,set){
+  let c=0;
+  (adj[id]||[]).forEach(r=>{if(r.type==='master_disciple'&&r.from===id&&(!set||set.has(r.to))) c++;});
+  return c;
+}
+function hubInView(ids){
+  const e=cy.extent(), cx=(e.x1+e.x2)/2, cy0=(e.y1+e.y2)/2;
+  let best=null,score=-1;
+  ids.forEach(id=>{
+    const n=cy.getElementById(id); if(!n.length) return;
+    const p=n.position();
+    const dist=Math.hypot(p.x-cx,p.y-cy0);
+    const s=(childrenCount(id)+1)/(1+dist/70);
+    if(s>score){score=s;best=id;}
+  });
+  return best;
+}
+function expandVisible(){
+  if(expanding) return;
+  clearTimeout(expandTimer);
+  if(state.mode==='ego'&&state.focus){drawEgo(state.focus);return;}
+  expanding=true;
+  try{
+    let vis=nodesInView();
+    if(!vis.length&&state.focus) vis=[state.focus];
+    const hub=(state.focus&&vis.includes(state.focus))?state.focus:(hubInView(vis)||vis[0]);
+    if(!hub) return;
+    let ids;
+    if(childrenCount(hub)>=6) ids=neighborhoodIds(hub,2,1);
+    else {
+      const set=new Set(vis);
+      vis.forEach(id=>{(adj[id]||[]).forEach(r=>{
+        if(set.size>=120||!relOk(r,filters())) return;
+        if(cy.getElementById(r.from).length) set.add(r.from);
+        if(cy.getElementById(r.to).length) set.add(r.to);
+      });});
+      ids=[...set];
+    }
+    if(ids.length) applySpread(hub,ids);
+  } finally { expanding=false; }
+}
+function scheduleExpand(){
+  if(expanding||state.expanded||state.mode!=='network') return;
+  clearTimeout(expandTimer);
+  expandTimer=setTimeout(()=>{
+    if(expanding||state.expanded||state.mode!=='network') return;
+    if(cy.zoom()<1.15) return;
+    const vis=nodesInView();
+    if(vis.length<8||vis.length>320) return;
+    if(!isClumped(vis)) return;
+    expandVisible();
+  },340);
+}
+function resetGlobal(){
+  clearTimeout(expandTimer);
+  expanding=true;
+  state.mode='network';
+  state.expanded=false;
+  $('#mode').value='network';
+  syncMode();
+  if(location.hash.startsWith('#graph/')) history.replaceState(null,'','#graph');
+  drawNetwork();
+  expanding=false;
+  updateLayoutButtons();
+}
+function updateLayoutButtons(){
+  const btn=$('#resetLayout');
+  if(btn) btn.disabled=state.mode!=='ego'&&!state.expanded;
+}
 function drawEgo(id){
+  expanding=true;
+  clearTimeout(expandTimer);
   const s=egoSet(id);
+  const ids=s.nodes.map(p=>p.id);
+  const local=layoutRadial(id,ids,s.rels);
   cy.startBatch();cy.elements().remove();
-  cy.add(s.nodes.map(p=>{const n=nodeData(p);delete n.position;return n;}));cy.add(s.rels.map(edgeData));cy.endBatch();
-  runForce(true);
+  cy.add(s.nodes.map(p=>{const n=nodeData(p); n.position=local[p.id]||{x:0,y:0}; return n;}));
+  cy.add(s.rels.map(edgeData));
+  cy.endBatch();
+  cy.nodes().addClass('local');
+  state.expanded=false;
+  present(id);
   stat(s.nodes.length,s.rels.length);
   highlight(id,false);
+  updateLayoutButtons();
+  expanding=false;
 }
-function runForce(fit){
-  const n=cy.nodes().length;
-  cy.layout({name:'cose',animate:n<400,animationDuration:700,fit:fit!==false,padding:30,randomize:n<400,nodeRepulsion:()=>n>800?4500:9000,idealEdgeLength:()=>n>800?40:70,edgeElasticity:()=>100,gravity:n>800?0.6:1,numIter:n>800?600:1500,nodeDimensionsIncludeLabels:false}).run();
+function stat(n,e){
+  const tag=state.mode==='ego'?' · 聚焦环形谱系':(state.expanded?' · 已局部展开':'');
+  $('#stat').textContent='当前显示 '+n+' 人 · '+e+' 条关系（全库 '+P.length+' 人 · '+R.length+' 条）'+tag;
 }
-function stat(n,e){$('#stat').textContent='当前显示 '+n+' 人 · '+e+' 条关系（全库 '+P.length+' 人 · '+R.length+' 条）';}
 function clearHL(){cy.elements().removeClass('faded hl nb');}
 function highlight(id,center){
   const n=cy.getElementById(id);if(!n.length)return;
   clearHL();
   const nb=n.closedNeighborhood();
-  if(state.mode!=='ego') cy.elements().not(nb).addClass('faded');
+  if(state.mode!=='ego'&&!state.expanded) cy.elements().not(nb).addClass('faded');
   nb.nodes().addClass('nb');n.addClass('hl');n.connectedEdges().addClass('hl');
   if(center) cy.animate({center:{eles:n},zoom:Math.max(cy.zoom(),0.9)},{duration:450});
 }
@@ -160,7 +518,10 @@ function renderPanel(id){
    sec('姻缘',mar,r=>relLine(r,r.from===id?r.to:r.from))+
    (sib.size?'<h3>同门（'+sib.size+'）</h3><div style="line-height:1.9">'+[...sib.keys()].map(plink).join('、')+'</div>':'')+
    '<h3>来源</h3><div>'+(p.wiki_url?'<a href="'+esc(p.wiki_url)+'" target="_blank" rel="noopener">维基百科条目</a> ':'')+srcLinks(p.sources)+'</div>';
-  $('#egoBtn').onclick=()=>{state.mode=state.mode==='ego'?'network':'ego';$('#mode').value=state.mode;syncMode();if(state.mode==='ego')drawEgo(id);else{drawNetwork();highlight(id,true);}renderPanel(id);};
+  $('#egoBtn').onclick=()=>{
+    if(state.mode==='ego'){resetGlobal();renderPanel(id);return;}
+    state.mode='ego';$('#mode').value='ego';syncMode();state.focus=id;drawEgo(id);renderPanel(id);
+  };
   $('#panelFeedback').onclick=()=>openFeedback(id);
 }
 function syncMode(){document.querySelectorAll('.ego-only').forEach(e=>e.style.display=state.mode==='ego'?'':'none');}
@@ -191,8 +552,14 @@ function bindUI(){
   const refilter=()=>{if(state.mode==='ego'&&state.focus)drawEgo(state.focus);else drawNetwork();};
   ['#gmin','#gmax','#showDisputed'].forEach(s=>$(s).addEventListener('change',refilter));
   document.querySelectorAll('.types input[data-type]').forEach(i=>i.addEventListener('change',refilter));
-  $('#fit').onclick=()=>cy.fit(undefined,20);
-  $('#relayout').onclick=()=>runForce(true);
+  $('#fit').onclick=()=>{
+    const local=cy.nodes('.local');
+    if((state.expanded||state.mode==='ego')&&local.length) cy.fit(local,44);
+    else cy.fit(undefined,30);
+    syncZoomSlider();
+  };
+  $('#expand').onclick=()=>expandVisible();
+  $('#resetLayout').onclick=()=>resetGlobal();
   $('#labels').addEventListener('change',e=>cy.nodes().toggleClass('alllabels',e.target.checked));
   $('#zoom').addEventListener('input',()=>{
     zoomFromSlider=true;
@@ -207,6 +574,7 @@ function bindUI(){
   window.addEventListener('resize',()=>{if(cy) cy.resize();});
   syncZoomSlider();
   syncMode();
+  updateLayoutButtons();
 }
 function formatZoom(z){
   if(z>=10) return z.toFixed(0)+'×';
@@ -299,7 +667,18 @@ function route(){
   const v=['graph','people','relations','about'].includes(view)?view:'graph';
   document.querySelectorAll('.view').forEach(s=>s.hidden=s.id!=='view-'+v);
   document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.dataset.view===v));
-  if(v==='graph'){cy.resize();if(arg&&byId[arg]&&state.focus!==arg){selectPerson(arg,true);} }
+  if(v!=='graph') return;
+  cy.resize();
+  if(arg&&byId[arg]){
+    state.mode='ego';
+    state.focus=arg;
+    $('#mode').value='ego';
+    syncMode();
+    drawEgo(arg);
+    renderPanel(arg);
+  } else if(state.mode==='ego'||state.expanded){
+    resetGlobal();
+  }
 }
 // ---- tables
 let psort={k:'generation',d:1},rsort={k:'type',d:1};
