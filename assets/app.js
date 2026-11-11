@@ -1,9 +1,10 @@
 (function(){
 'use strict';
-const TYPE_CN={master_disciple:'师徒',other:'代拉/引保代等',kin:'亲缘',marriage:'姻缘'};
+const TYPE_CN={master_disciple:'师徒',other:'代拉/引保代等',kin:'亲属',marriage:'姻缘',partner:'固定搭档'};
 const CONF_CN={documented:'确定',disputed:'存疑'};
-const GEN_COLORS=['#7f1d1d','#9a3412','#b45309','#a16207','#4d7c0f','#047857','#0e7490','#1d4ed8','#6d28d9','#a21caf','#be185d','#475569'];
+const GEN_COLORS=['#7f1d1d','#0ea5e9','#f59e0b','#3730a3','#22c55e','#db2777','#0f766e','#f97316','#7c3aed','#a3e635'];
 const genColor=g=>g?GEN_COLORS[(g-1)%GEN_COLORS.length]:'#9ca3af';
+const STRIPE='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"><path d="M-2 2 L2 -2 M0 8 L8 0 M6 10 L10 6" stroke="white" stroke-opacity="0.85" stroke-width="3.5" stroke-linecap="square"/></svg>');
 const $=s=>document.querySelector(s);
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 let P=[],R=[],L={},byId={},cy=null,state={mode:'network',focus:null};
@@ -35,7 +36,8 @@ function init(){
   const gmin=$('#gmin'),gmax=$('#gmax'),pgen=$('#pgen');
   gens.forEach(g=>{gmin.add(new Option(g,g));gmax.add(new Option(g,g));pgen.add(new Option('第'+g+'代',g));});
   gmin.value=gens[0];gmax.value=gens[gens.length-1];
-  $('#genLegend').innerHTML='代数颜色：'+gens.map(g=>'<span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:'+genColor(g)+';vertical-align:middle;margin:0 2px 0 6px"></span>'+g).join('');
+  const sw=g=>'<span class="gen-swatch'+(g%2===0?' stripe':'')+'" style="background-color:'+genColor(g)+'"></span>'+g;
+  $('#genLegend').innerHTML='代数：'+gens.map(sw).join('')+(P.some(p=>!p.generation)?'<span class="gen-swatch" style="background-color:#9ca3af"></span>不详':'');
   buildCy();
   bindUI();
   renderTables();
@@ -58,14 +60,15 @@ function buildCy(){
       {selector:'node[deg < 6]',style:{'font-size':10,'min-zoomed-font-size':11}},
       {selector:'node[deg >= 15]',style:{'font-size':16,'font-weight':'bold','min-zoomed-font-size':4}},
       {selector:'node[role = "relative"]',style:{'shape':'round-rectangle'}},
-      {selector:'edge',style:{'width':1.2,'line-color':'#9a9a9a','curve-style':'haystack','opacity':0.55}},
-      {selector:'edge[type = "master_disciple"]',style:{'curve-style':'straight','target-arrow-shape':'triangle','target-arrow-color':'#9a9a9a','arrow-scale':0.7}},
-      {selector:'edge[type = "kin"]',style:{'line-color':'#c0392b','line-style':'dashed','width':2,'opacity':0.85}},
-      {selector:'edge[type = "marriage"]',style:{'line-color':'#8e44ad','line-style':'dotted','width':3,'opacity':0.9}},
-      {selector:'edge[type = "other"]',style:{'line-color':'#16a085','line-style':'dashed','line-dash-pattern':[8,3,2,3],'width':2,'opacity':0.85}},
-      {selector:'edge[conf = "disputed"]',style:{'line-color':'#e67e22','target-arrow-color':'#e67e22'}},
-      {selector:'edge[conf = "documented"]',style:{'line-style':'solid','opacity':0.82}},
-      {selector:'edge[conf = "disputed"]',style:{'line-style':'dashed','line-dash-pattern':[6,4],'opacity':0.42}},
+      {selector:'node[gen = 2], node[gen = 4], node[gen = 6], node[gen = 8], node[gen = 10]',style:{'background-image':STRIPE,'background-fit':'none','background-repeat':'repeat','background-width':8,'background-height':8,'background-clip':'node','background-position-x':'0','background-position-y':'0'}},
+      {selector:'edge',style:{'width':1.5,'line-color':'#6b7280','curve-style':'straight','opacity':0.85,'target-arrow-shape':'none','line-style':'solid'}},
+      {selector:'edge[type = "master_disciple"]',style:{'curve-style':'straight','target-arrow-shape':'triangle','target-arrow-color':'#374151','line-color':'#374151','line-style':'solid','width':1.6,'arrow-scale':0.8,'opacity':0.9}},
+      {selector:'edge[type = "master_disciple"][conf = "documented"]',style:{'line-color':'#374151','target-arrow-color':'#374151','target-arrow-shape':'triangle','line-style':'solid','width':1.6,'opacity':0.92}},
+      {selector:'edge[type = "master_disciple"][conf = "disputed"]',style:{'line-color':'#9ca3af','target-arrow-color':'#9ca3af','target-arrow-shape':'triangle','line-style':'dashed','line-dash-pattern':[10,6],'width':1.5,'opacity':0.8,'arrow-scale':0.75}},
+      {selector:'edge[type = "kin"]',style:{'line-color':'#6b7280','line-style':'dashed','line-dash-pattern':[2,5],'width':1.6,'target-arrow-shape':'none','opacity':0.85}},
+      {selector:'edge[type = "marriage"]',style:{'line-color':'#8e44ad','line-style':'dashed','line-dash-pattern':[2,5],'width':2,'target-arrow-shape':'none','opacity':0.9}},
+      {selector:'edge[type = "other"]',style:{'line-color':'#0f766e','line-style':'dashed','line-dash-pattern':[8,3,2,3],'width':1.7,'target-arrow-shape':'none','opacity':0.8}},
+      {selector:'edge[type = "partner"]',style:{'line-color':'#e11d48','target-arrow-shape':'none','line-style':'dashed','line-dash-pattern':[14,5,3,5],'width':2.6,'opacity':0.95,'curve-style':'straight'}},
       {selector:'.faded',style:{'opacity':0.07,'text-opacity':0}},
       {selector:'node.hl',style:{'border-width':3,'border-color':'#111','min-zoomed-font-size':0,'z-index':10}},
       {selector:'node.nb',style:{'min-zoomed-font-size':0,'z-index':9}},
@@ -86,18 +89,24 @@ function buildCy(){
 }
 function filters(){
   const types=[...document.querySelectorAll('.types input[data-type]')].filter(i=>i.checked).map(i=>i.dataset.type);
-  return {types:new Set(types),onlyDoc:$('#onlyDoc').checked,gmin:+$('#gmin').value,gmax:+$('#gmax').value};
+  return {types:new Set(types),onlyDoc:$('#onlyDoc').checked,partners:$('#showPartner').checked,gmin:+$('#gmin').value,gmax:+$('#gmax').value};
 }
 function personOk(p,f){return !p.generation||(p.generation>=f.gmin&&p.generation<=f.gmax);}
-function relOk(r,f){return f.types.has(r.type)&&(!f.onlyDoc||r.confidence==='documented');}
+function relOk(r,f){
+  if(r.type==='partner') return !!f.partners&&(!f.onlyDoc||r.confidence==='documented');
+  return f.types.has(r.type)&&(!f.onlyDoc||r.confidence==='documented');
+}
 function drawNetwork(){
   layoutLock=true;
   const f=filters();
   const rels=R.filter(r=>relOk(r,f)&&personOk(byId[r.from],f)&&personOk(byId[r.to],f));
-  const used=new Set();rels.forEach(r=>{used.add(r.from);used.add(r.to);});
+  // Partner links are drawn only. They do not pull people into the map or move layout positions.
+  const used=new Set();rels.forEach(r=>{if(r.type!=='partner'){used.add(r.from);used.add(r.to);}});
   const nodes=P.filter(p=>personOk(p,f)&&(used.has(p.id)||(p.role!=='relative'&&f.types.has('master_disciple'))));
+  const ids=new Set(nodes.map(p=>p.id));
+  const drawRels=rels.filter(r=>r.type!=='partner'||(ids.has(r.from)&&ids.has(r.to)));
   cy.startBatch();cy.elements().remove();
-  cy.add(nodes.map(nodeData));cy.add(rels.map(edgeData));
+  cy.add(nodes.map(nodeData));cy.add(drawRels.map(edgeData));
   cy.endBatch();
   cy.layout({name:'preset',fit:true,padding:20}).run();
   captureHome();
@@ -121,9 +130,10 @@ function egoSet(id){
   for(let d=0;d<du&&front.length;d++){const nx=[];front.forEach(x=>adj[x].forEach(r=>{if(r.type==='master_disciple'&&r.to===x&&relOk(r,f)){rels.add(r);if(!keep.has(r.from)){keep.add(r.from);nx.push(r.from);}}}));front=nx;}
   front=[id];
   for(let d=0;d<dd&&front.length;d++){const nx=[];front.forEach(x=>adj[x].forEach(r=>{if(r.type==='master_disciple'&&r.from===x&&relOk(r,f)){rels.add(r);if(!keep.has(r.to)){keep.add(r.to);nx.push(r.to);}}}));front=nx;}
-  adj[id].forEach(r=>{if(relOk(r,f)){rels.add(r);keep.add(r.from);keep.add(r.to);}});
-  // edges among kept
-  R.forEach(r=>{if(keep.has(r.from)&&keep.has(r.to)&&relOk(r,f))rels.add(r);});
+  adj[id].forEach(r=>{if(r.type!=='partner'&&relOk(r,f)){rels.add(r);keep.add(r.from);keep.add(r.to);}});
+  // lineage edges among kept; partner edges are drawn but never add people or change placement
+  R.forEach(r=>{if(r.type!=='partner'&&keep.has(r.from)&&keep.has(r.to)&&relOk(r,f))rels.add(r);});
+  R.forEach(r=>{if(r.type==='partner'&&keep.has(r.from)&&keep.has(r.to)&&relOk(r,f))rels.add(r);});
   return {nodes:[...keep].map(k=>byId[k]),rels:[...rels]};
 }
 function nodeSize(p){return Math.max(12,Math.min(70,10+Math.sqrt(p._deg||1)*6));}
@@ -436,7 +446,7 @@ function renderPanel(id){
   const masters=rs.filter(r=>r.type==='master_disciple'&&r.to===id);
   const dis=rs.filter(r=>r.type==='master_disciple'&&r.from===id);
   const sib=new Map();masters.forEach(m=>adj[m.from].forEach(r=>{if(r.type==='master_disciple'&&r.from===m.from&&r.to!==id)sib.set(r.to,1);}));
-  const kin=rs.filter(r=>r.type==='kin'),mar=rs.filter(r=>r.type==='marriage'),oth=rs.filter(r=>r.type==='other');
+  const kin=rs.filter(r=>r.type==='kin'),mar=rs.filter(r=>r.type==='marriage'),oth=rs.filter(r=>r.type==='other'),par=rs.filter(r=>r.type==='partner');
   const sec=(t,arr,fn)=>arr.length?'<h3>'+t+'（'+arr.length+'）</h3><ul>'+arr.map(fn).join('')+'</ul>':'';
   const yrs=(p.birth||p.death)?(p.birth||'?')+'–'+(p.death||''):'';
   const confTag=p.confidence?'<span class="tag'+(p.confidence==='disputed'?' dis':'')+'">'+CONF_CN[p.confidence]+'</span>':'';
@@ -449,8 +459,9 @@ function renderPanel(id){
    sec('师父',masters,r=>relLine(r,r.from))+
    sec('徒弟',dis,r=>relLine(r,r.to))+
    sec('代拉 / 引保代 / 口盟等',oth,r=>relLine(r,r.from===id?r.to:r.from))+
-   sec('亲缘',kin,r=>relLine(r,r.from===id?r.to:r.from))+
+   sec('亲属',kin,r=>relLine(r,r.from===id?r.to:r.from))+
    sec('姻缘',mar,r=>relLine(r,r.from===id?r.to:r.from))+
+   sec('固定搭档',par,r=>relLine(r,r.from===id?r.to:r.from))+
    (sib.size?'<h3>同门（'+sib.size+'）</h3><div style="line-height:1.9">'+[...sib.keys()].map(plink).join('、')+'</div>':'')+
    '<h3>来源</h3><div>'+(p.wiki_url?'<a href="'+esc(p.wiki_url)+'" target="_blank" rel="noopener">维基百科条目</a> ':'')+srcLinks(p.sources)+'</div>';
   $('#egoBtn').onclick=()=>{
@@ -485,7 +496,7 @@ function bindUI(){
   $('#mode').addEventListener('change',e=>{state.mode=e.target.value;syncMode();if(state.mode==='ego'){const id=state.focus||P.find(p=>p.name==='侯宝林').id;selectPerson(id,true);}else{drawNetwork();if(state.focus){highlight(state.focus,true);renderPanel(state.focus);}}});
   ['#depthDown','#depthUp'].forEach(s=>$(s).addEventListener('change',()=>{if(state.mode==='ego'&&state.focus)drawEgo(state.focus);}));
   const refilter=()=>{if(state.mode==='ego'&&state.focus)drawEgo(state.focus);else drawNetwork();};
-  ['#gmin','#gmax','#onlyDoc'].forEach(s=>$(s).addEventListener('change',refilter));
+  ['#gmin','#gmax','#onlyDoc','#showPartner'].forEach(s=>$(s).addEventListener('change',refilter));
   document.querySelectorAll('.types input[data-type]').forEach(i=>i.addEventListener('change',refilter));
   $('#fit').onclick=()=>{
     if(state.mode==='ego'){cy.fit(cy.nodes(),44);syncZoomSlider();return;}

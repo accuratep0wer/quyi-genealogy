@@ -41,8 +41,9 @@
     <div class="ctrl types">
       <label class="t-md"><input type="checkbox" data-type="master_disciple" checked> 师徒</label>
       <label class="t-other"><input type="checkbox" data-type="other" checked> 代拉/引保代/口盟等</label>
-      <label class="t-kin"><input type="checkbox" data-type="kin" checked> 亲缘</label>
+      <label class="t-kin"><input type="checkbox" data-type="kin" checked> 亲属</label>
       <label class="t-mar"><input type="checkbox" data-type="marriage" checked> 姻缘</label>
+      <label class="t-partner"><input type="checkbox" id="showPartner" checked> 搭档</label>
       <label class="t-dis"><input type="checkbox" id="onlyDoc"> 只显示确定</label>
       <label><input type="checkbox" id="labels"> 显示全部姓名</label>
       <button id="expand" type="button" title="放大到能看清姓名。其他人仍留在图上，缩小或拖动都能看到。">展开此区域</button>
@@ -64,12 +65,12 @@
     <aside id="panel"><div class="placeholder">点击图中人物或搜索，查看其师父、徒弟与亲属。</div></aside>
   </div>
   <div class="legend">
-    <span><i class="ln md"></i>师徒（箭头指向徒弟）</span>
-    <span><i class="ln other"></i>代拉 / 引保代 / 口盟 / 义亲</span>
-    <span><i class="ln kin"></i>亲缘</span>
+    <span><i class="ln md"></i>师徒·确定</span>
+    <span><i class="ln md-dis"></i>师徒·存疑</span>
+    <span><i class="ln kin"></i>亲属</span>
+    <span><i class="ln partner"></i>固定搭档</span>
+    <span><i class="ln other"></i>代拉 / 引保代 / 口盟</span>
     <span><i class="ln mar"></i>姻缘</span>
-    <span><i class="ln ok"></i>确定（实线）</span>
-    <span><i class="ln dis"></i>存疑（虚线、较淡）</span>
     <span><i class="dot rel"></i>非谱系内亲属</span>
     <span id="genLegend"></span>
     <span class="muted">节点大小＝关系数。放大时人名自动疏开，缩小回到全图；拖动可看到邻近门派，不会藏起其他人。</span>
@@ -86,7 +87,7 @@
 
 <section id="view-relations" class="view" hidden>
   <div class="tbl-tools"><input id="rq" type="search" placeholder="筛选关系（人名/说明）">
-    <select id="rtype"><option value="">全部类型</option><option value="master_disciple">师徒</option><option value="other">代拉/引保代等</option><option value="kin">亲缘</option><option value="marriage">姻缘</option></select>
+    <select id="rtype"><option value="">全部类型</option><option value="master_disciple">师徒</option><option value="other">代拉/引保代等</option><option value="kin">亲属</option><option value="marriage">姻缘</option><option value="partner">固定搭档</option></select>
     <select id="rconf"><option value="">全部可信度</option><option value="documented">确定</option><option value="disputed">存疑</option></select> <span id="rcount"></span></div>
   <div class="tbl-wrap"><table id="rtable"><thead><tr>
     <th data-k="type">类型</th><th data-k="fromName">从（师/长）</th><th data-k="toName">到（徒/亲）</th><th data-k="detail">说明</th><th data-k="confidence">可信度</th><th>来源</th></tr></thead><tbody></tbody></table></div>
