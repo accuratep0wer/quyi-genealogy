@@ -76,7 +76,10 @@ function buildCy(){
       {selector:'node.nb',style:{'min-zoomed-font-size':0,'z-index':9}},
       {selector:'edge.hl',style:{'opacity':1,'width':2.6,'z-index':9}},
       {selector:'.alllabels',style:{'min-zoomed-font-size':0}},
-      {selector:'node.local',style:{'min-zoomed-font-size':0,'text-opacity':1}}
+      {selector:'node.local',style:{'min-zoomed-font-size':0,'text-opacity':1}},
+      {selector:'node.nebula',style:{'font-size':14,'min-zoomed-font-size':10,'text-outline-width':3,'text-outline-color':'#fff'}},
+      {selector:'node.nebula[deg >= 8]',style:{'font-size':30,'min-zoomed-font-size':6,'font-weight':'bold'}},
+      {selector:'node.nebula[deg >= 15]',style:{'font-size':42,'min-zoomed-font-size':4,'font-weight':'bold'}}
     ],
     layout:{name:'preset'}
   });
@@ -128,6 +131,7 @@ function drawNetwork(){
 }
 function nebulaNodeData(p){
   const n=nodeData(p);
+  n.classes='nebula';
   const rec=NEBULA[p.id];
   if(rec){
     n.position={x:rec[0],y:rec[1]};
@@ -150,7 +154,15 @@ function drawNebula(){
   cy.startBatch();cy.elements().remove();
   cy.add(nodes.map(nebulaNodeData));cy.add(drawRels.map(edgeData));
   cy.endBatch();
-  cy.fit(undefined,32);
+  cy.fit(undefined,36);
+  // Full-map fit makes every dot a speck. Open close enough that hubs and
+  // their names read; zooming out still reaches the whole star map.
+  if(cy.zoom()<0.34){
+    const bb=cy.elements().boundingBox();
+    const cx=(bb.x1+bb.x2)/2, cy0=(bb.y1+bb.y2)/2, z=0.34;
+    cy.zoom(z);
+    cy.pan({x:cy.width()/2-cx*z, y:cy.height()/2-cy0*z});
+  }
   layoutLock=false;
   stat(nodes.length,drawRels.length);
   syncZoomSlider();

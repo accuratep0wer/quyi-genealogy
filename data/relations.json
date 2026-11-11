@@ -29744,15 +29744,20 @@
 "type": "partner",
 "from": "p1008",
 "to": "p0735",
-"detail": "1988年起搭档约十年，连续登上春晚；“黄金搭档”",
+"detail": "1988年起搭档约十年，1989–1999年连续十一年央视春晚：1989《生日祝辞》、1990《无所适从》、1991《亚运之最》、1992《办晚会》、1993《拍卖》、1994《点子公司》、1995《最差先生》、1996《明天会更好》、1997《两个人的世界》、1998《坐享其成》、1999《瞧这俩爹》",
 "sources": [
 "https://zh.wikipedia.org/wiki/%E5%86%AF%E5%B7%A9",
 "https://zh.wikipedia.org/wiki/%E7%89%9B%E7%BE%A4",
-"https://history.xikao.com/person/%E5%86%AF%E5%B7%A9"
+"https://history.xikao.com/person/%E5%86%AF%E5%B7%A9",
+"https://baike.baidu.com/item/%E7%89%9B%E7%BE%A4/915613",
+"https://baike.baidu.com/item/%E5%86%AF%E5%B7%A9/313654",
+"https://www.163.com/dy/article/I0MF6E4105562974.html",
+"https://www.xiquwenhua.com/index.php/xiqu-xinwen/0OkMpzp2gd.html"
 ],
 "confidence": "documented",
 "notes": [
-"固定搭档补录：人工核对"
+"固定搭档补录：人工核对",
+"节目单据百度百科牛群、冯巩条目与网易《冯巩33年春晚之路》、戏曲文化网春晚相声节目单"
 ]
 },
 {
@@ -31975,6 +31980,92 @@
 "confidence": "disputed",
 "notes": [
 "维基百科德云社成员表师承栏为「尚未拜师」，并注明因争议未正式拜师高峰。另有报道称高峰已收于子淇（昊海）为徒并赐名。两说冲突，标为存疑。"
+]
+},
+{
+"id": "r02433",
+"type": "partner",
+"from": "p0546",
+"to": "p0870",
+"detail": "1994年南京五台山首次合说《白字先生》，此后合作约五年；央视《综艺大观》第100期《该不该》，并录制数十段",
+"sources": [
+"https://news.bandao.cn/a/126573.html",
+"https://k.sina.cn/article_1210154912_48217fa002001jlkc.html"
+],
+"confidence": "documented",
+"notes": [
+"赵保乐自述与师胜杰合作五年；半岛网、新浪"
+]
+},
+{
+"id": "r02434",
+"type": "partner",
+"from": "p1091",
+"to": "p0943",
+"detail": "长期捧逗搭档；1986年中央电视台全国相声大奖赛李建华获捧哏一等奖",
+"sources": [
+"https://www.thepaper.cn/newsDetail_forward_4931556"
+],
+"confidence": "documented",
+"notes": [
+"澎湃新闻转述专场介绍：李建华长期与李金斗合作"
+]
+},
+{
+"id": "r02435",
+"type": "partner",
+"from": "p1008",
+"to": "p2081",
+"detail": "央视春晚连续三年：2000《旧曲新歌》、2001《得寸进尺》、2002《台上台下》",
+"sources": [
+"https://baike.baidu.com/item/%E5%86%AF%E5%B7%A9/313654",
+"https://www.163.com/dy/article/I0MF6E4105562974.html"
+],
+"confidence": "documented",
+"notes": [
+"百度百科冯巩春晚表与网易春晚逐年节目单"
+]
+},
+{
+"id": "r02436",
+"type": "partner",
+"from": "p0735",
+"to": "p0530",
+"detail": "1988年央视春晚《巧立名目》",
+"sources": [
+"https://baike.baidu.com/item/%E7%89%9B%E7%BE%A4/915613"
+],
+"confidence": "disputed",
+"notes": [
+"单次合作：目前只查到这一场春晚"
+]
+},
+{
+"id": "r02437",
+"type": "partner",
+"from": "p1005",
+"to": "p0536",
+"detail": "1983年央视春晚《猜谜语》",
+"sources": [
+"https://www.xiquwenhua.com/index.php/xiqu-xinwen/0OkMpzp2gd.html"
+],
+"confidence": "disputed",
+"notes": [
+"单次合作：春晚节目单只列这一场对口"
+]
+},
+{
+"id": "r02438",
+"type": "partner",
+"from": "p0536",
+"to": "p1007",
+"detail": "1989年央视春晚《送别》",
+"sources": [
+"https://www.xiquwenhua.com/index.php/xiqu-xinwen/0OkMpzp2gd.html"
+],
+"confidence": "disputed",
+"notes": [
+"单次合作：节目单只列这一场对口；群口《五官争功》未另计"
 ]
 }
 ]

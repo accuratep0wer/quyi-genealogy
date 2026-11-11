@@ -37559,5 +37559,27 @@
 "wiki_url": null,
 "role": "performer",
 "confidence": "documented"
+},
+{
+"id": "p2081",
+"name": "郭冬临",
+"aliases": [],
+"generation": null,
+"gen_source": null,
+"birth": null,
+"death": null,
+"notes": [
+"相声演员。2000–2002年连续三年与冯巩在央视春晚合作相声。",
+"补录批次：演出节目单"
+],
+"sources": [
+"https://baike.baidu.com/item/%E5%86%AF%E5%B7%A9/313654",
+"https://www.163.com/dy/article/I0MF6E4105562974.html"
+],
+"wiki": null,
+"zibei": null,
+"wiki_url": null,
+"role": "performer",
+"confidence": "documented"
 }
 ]

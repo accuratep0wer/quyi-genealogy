@@ -13,9 +13,9 @@ as its own small disk. Someone whose partner is already placed sits beside
 that partner.
 Output: data/layout-nebula.json as {id: [x, y, diameter]}.
 
-Rendered hub diameter matches assets/app.js, then grows with descendants:
-  base = clamp(12, 70, 10 + sqrt(degree) * 6)
-  if descendants >= 8: base = max(base, min(128, 20 + sqrt(descendants) * 8.4))
+Star-map disks are larger than the lineage map and packed tightly:
+  base = clamp(36, 120, 32 + sqrt(degree) * 9)
+  if descendants >= 8: base = max(base, min(220, 52 + sqrt(descendants) * 12))
 """
 import json, math, os
 from collections import defaultdict
@@ -44,19 +44,23 @@ for r in R:
     DEG[r['to']] += 1
 
 def visual_diameter(pid, desc):
-    base = max(12.0, min(70.0, 10 + (DEG[pid] or 1) ** 0.5 * 6))
+    # Larger than the lineage map so a fitted star map is not a field of specks.
+    # Leaves stay big enough to see; hubs grow with degree and descendants.
+    base = max(36.0, min(120.0, 32 + (DEG[pid] or 1) ** 0.5 * 9))
     if desc >= 8:
-        base = max(base, min(128.0, 20 + desc ** 0.5 * 8.4))
+        base = max(base, min(220.0, 52 + desc ** 0.5 * 12))
     return base
+
+def body_radius(pid):
+    """How far the next person must stay: the disk plus a slim name margin."""
+    d = DEG[pid]
+    font = 14 if d >= 15 else (11 if d < 6 else 12)
+    chars = len(BY[pid]['name'])
+    return max(visual_diameter(pid, DESC.get(pid, 0)) / 2 + 8, chars * font * 0.34 + 6)
 
 def label_clearance(pid):
     """Radius that must stay clear of neighbouring labels."""
-    d = DEG[pid]
-    font = 16 if d >= 15 else (10 if d < 6 else 12)
-    chars = len(BY[pid]['name'])
-    half_w = chars * font * 0.52 + 10
-    half_h = visual_diameter(pid, DESC[pid]) / 2 + font + 8
-    return math.hypot(half_w, half_h)
+    return body_radius(pid)
 
 masters = defaultdict(list)
 for r in R:
@@ -122,9 +126,9 @@ for pid, ch in list(children.items()):
 # master's cloud so a 100-person ring does not push the whole tree apart.
 def is_hub(pid):
     kids = len(children.get(pid, ()))
-    return pid not in pref or kids >= 8 or DESC[pid] >= 28
+    return pid not in pref or kids >= 4 or DESC[pid] >= 8
 
-GAP = 16
+GAP = 6
 GOLDEN = math.pi * (3 - math.sqrt(5))
 
 def pack(hub_r, items):
@@ -199,33 +203,53 @@ def build_local(hub):
         local_children[pid] = [c for c in children.get(pid, ()) if c in ids]
     disk = {}
 
+    def step_to(pid, c):
+        # A one-disciple line stays short. A disciple with their own crowd
+        # stands off by that crowd's radius so the two clouds do not cross.
+        if len(local_children.get(c, [])) <= 1:
+            return body_radius(pid) + body_radius(c) + GAP
+        return body_radius(pid) + disk[c] + GAP
+
     def disk_of(pid):
         if pid in disk:
             return disk[pid]
         ch = local_children.get(pid, [])
         for c in ch:
             disk_of(c)
-        hub_r = label_clearance(pid)
+        hub_r = body_radius(pid)
         if not ch:
             disk[pid] = hub_r
             return hub_r
-        pos = pack(hub_r, [(c, disk[c]) for c in ch])
+        if len(ch) == 1:
+            c = ch[0]
+            d = step_to(pid, c)
+            disk[pid] = d + max(0.0, disk[c] - body_radius(c))
+            return disk[pid]
+        pos = pack(hub_r, [(c, max(disk[c], body_radius(c))) for c in ch])
         disk[pid] = max(hub_r, max(math.hypot(x, y) + disk[c] for c, (x, y) in pos.items()))
         return disk[pid]
 
     disk_of(hub)
     rel = {hub: (0.0, 0.0)}
 
-    def place_local(pid, cx, cy):
+    def place_local(pid, cx, cy, facing=0.0):
         ch = local_children.get(pid, [])
         if not ch:
             return
-        pos = pack(label_clearance(pid), [(c, disk[c]) for c in ch])
+        if len(ch) == 1:
+            c = ch[0]
+            d = step_to(pid, c)
+            nx = cx + d * math.cos(facing)
+            ny = cy + d * math.sin(facing)
+            rel[c] = (nx, ny)
+            place_local(c, nx, ny, facing)
+            return
+        pos = pack(body_radius(pid), [(c, max(disk[c], body_radius(c))) for c in ch])
         for c, (x, y) in pos.items():
             rel[c] = (cx + x, cy + y)
-            place_local(c, cx + x, cy + y)
+            place_local(c, cx + x, cy + y, math.atan2(y, x))
 
-    place_local(hub, 0.0, 0.0)
+    place_local(hub, 0.0, 0.0, -math.pi / 2)
     LOCAL[hub] = rel
     RADIUS[hub] = disk[hub]
 
@@ -235,7 +259,7 @@ for h in HUBS:
 POS = {}
 placed_disks = []  # x, y, r
 
-def disk_free(x, y, r, pad=28):
+def disk_free(x, y, r, pad=8):
     for px, py, pr in placed_disks:
         if math.hypot(x - px, y - py) < r + pr + pad:
             return False
@@ -245,7 +269,7 @@ def find_slot(ax, ay, ar, r, hint):
     """First free centre for a disk of radius r outside the disk at (ax, ay)."""
     step = max(12.0, min(36.0, r * 0.08))
     for k in range(5000):
-        dist = (ar + r + 42) + k * step * 0.42
+        dist = (ar + r + 10) + k * step * 0.22
         ang = hint + k * GOLDEN
         x = ax + dist * math.cos(ang)
         y = ay + dist * math.sin(ang)
@@ -312,20 +336,10 @@ for rel in R:
         kin_roots[a].add(b)
         kin_roots[b].add(a)
 
-for i, h in enumerate(root_hubs):
-    if i == 0:
-        commit_hub(h, 0.0, 0.0)
-        continue
-    near = [d for d in placed_disks if any(POS.get(k) and abs(POS[k][0] - d[0]) < 1 and abs(POS[k][1] - d[1]) < 1 and k in kin_roots.get(h, ()) for k in root_set)]
-    # Prefer a kin root's cloud as the anchor; otherwise the largest cloud.
-    anchor = placed_disks[0]
-    hint = 0.0
-    for kh in kin_roots.get(h, ()):
-        if kh in POS:
-            anchor = (POS[kh][0], POS[kh][1], RADIUS.get(kh, 40))
-            hint = math.atan2(anchor[1], anchor[0]) if (anchor[0] or anchor[1]) else 0.0
-            break
-    x, y = find_slot(anchor[0], anchor[1], anchor[2], RADIUS[h], hint)
+# Pack lineage clouds into one tight galaxy instead of spiralling them apart.
+packed_roots = pack(48, [(h, RADIUS[h] + 28) for h in root_hubs])
+for h, _rad in sorted(((h, RADIUS[h]) for h in root_hubs), key=lambda kv: -kv[1]):
+    x, y = packed_roots[h]
     commit_hub(h, x, y)
 
 def _park(pid, anchor):
