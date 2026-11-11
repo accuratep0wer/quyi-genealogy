@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>相声师承谱系 · 清末至今</title>
 <meta name="description" content="根据公开资料整理的中国相声演员师承谱系：正式师承、代拉/引保代、亲缘与姻缘关系。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23a8322d'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='18' fill='white' font-family='serif'%3E谱%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -16,6 +17,7 @@
     <a href="#relations" data-view="relations">关系表</a>
     <a href="#about" data-view="about">说明与来源</a>
   </nav>
+  <button type="button" id="feedbackBtn" class="feedback-btn" title="需要 GitHub 账号。将打开预填好的议题；本站不接收邮件。">提交修正</button>
 </header>
 
 <main>
@@ -48,7 +50,16 @@
     </div>
   </div>
   <div class="graph-wrap">
-    <div id="cy" aria-label="师承关系图"></div>
+    <div class="cy-stage">
+      <div id="cy" aria-label="师承关系图"></div>
+      <div class="zoombar" role="group" aria-label="缩放">
+        <button type="button" id="zoomOut" aria-label="缩小">−</button>
+        <span class="zoom-label" id="zoomLabel">缩放</span>
+        <input id="zoom" type="range" min="0" max="1000" step="1" value="0" aria-labelledby="zoomLabel">
+        <span id="zoomVal">1×</span>
+        <button type="button" id="zoomIn" aria-label="放大">+</button>
+      </div>
+    </div>
     <aside id="panel"><div class="placeholder">点击图中人物或搜索，查看其师父、徒弟与亲属。</div></aside>
   </div>
   <div class="legend">
@@ -59,7 +70,7 @@
     <span><i class="ln dis"></i>存疑（橙色）</span>
     <span><i class="dot rel"></i>非谱系内亲属</span>
     <span id="genLegend"></span>
-    <span class="muted">节点大小＝关系数；可拖拽、滚轮/双指缩放</span>
+    <span class="muted">节点大小＝关系数；可拖拽、滚轮/双指缩放，或使用「缩放」滑块</span>
     <span id="stat"></span>
   </div>
 </section>
@@ -116,7 +127,7 @@
       <li>收录以公开资料为限，大量基层、地方曲艺团和民间演员没有收录；当代各社团收徒更新很快，难免遗漏。</li>
       <li>原始谱系表本身被维基标注为“原创研究”，有些人名用字、归属彼此不同（例如“贾仑/贾伦”、“徐德奎/徐德魁”、“孙士达/孙世达”），本站尽量保留原貌并作说明。</li>
       <li>亲缘、姻缘只收录有来源可查的部分；亲属中不是相声演员的，只因关系需要列出（图中显示为灰色）。</li>
-      <li>不收录任何私人联系方式。如果发现错误，欢迎指正。</li>
+      <li>不收录任何私人联系方式。如果发现错误，请用页眉或人物侧栏的「提交修正」打开 GitHub 议题（需要 GitHub 账号，本站没有邮箱通道）。</li>
     </ul>
     <h3 id="srcs">来源列表</h3>
     <p class="muted">按被引用的次数排序（数字是引用该来源的人物和关系条目数）。</p>
@@ -128,6 +139,21 @@
 </section>
 </main>
 <footer>数据：<a href="data/people.json">people.json</a> · <a href="data/relations.json">relations.json</a> · 仅供参考，请以原始来源为准</footer>
+<dialog id="feedbackDlg" aria-labelledby="fbHeading">
+  <div class="dlg">
+    <h2 id="fbHeading">提交修正</h2>
+    <p>下面的标题和正文会带到 GitHub 的新议题里，已经写上人物、编号、代数、关系摘要和当前页面地址。请在议题中补全「哪里有误」「正确信息」和「来源链接」。</p>
+    <p class="notice">提交需要 GitHub 账号。本站没有邮箱或其他反馈通道；若尚未登录，GitHub 会先要求登录或注册。</p>
+    <p class="fb-kicker">预填标题</p>
+    <p id="fbTitle" class="fb-title"></p>
+    <p class="fb-kicker">预填正文</p>
+    <pre id="fbPreview" class="fb-preview"></pre>
+    <div class="dlg-actions">
+      <button type="button" id="fbClose">取消</button>
+      <a id="feedbackGo" class="feedback-btn" target="_blank" rel="noopener">前往 GitHub 提交</a>
+    </div>
+  </div>
+</dialog>
 <script src="vendor/cytoscape.min.js"></script>
 <script src="assets/app.js"></script>
 </body>

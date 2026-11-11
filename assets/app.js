@@ -8,6 +8,8 @@ const $=s=>document.querySelector(s);
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 let P=[],R=[],L={},byId={},cy=null,state={mode:'network',focus:null};
 const adj={};
+const Z_MIN=0.03,Z_MAX=32;
+let zoomFromSlider=false;
 
 Promise.all(['data/people.json','data/relations.json','data/layout.json'].map(u=>fetch(u).then(r=>{if(!r.ok)throw new Error(u);return r.json()})))
 .then(([p,r,l])=>{P=p;R=r;L=l;init();}).catch(e=>{$('#cy').innerHTML='<p style="padding:20px">数据加载失败：'+esc(e.message)+'</p>';});
@@ -46,7 +48,7 @@ function nodeData(p){
   return {data:{id:p.id,label:labelOf(p),gen:p.generation||0,color:p.role==='relative'?'#c7c7c7':genColor(p.generation),size:size,deg:p._deg,role:p.role},position:L[p.id]?{x:L[p.id][0],y:L[p.id][1]}:undefined};
 }
 function buildCy(){
-  cy=cytoscape({container:$('#cy'),wheelSensitivity:0.25,minZoom:0.03,maxZoom:4,textureOnViewport:true,hideEdgesOnViewport:false,
+  cy=cytoscape({container:$('#cy'),wheelSensitivity:0.25,minZoom:Z_MIN,maxZoom:Z_MAX,textureOnViewport:true,hideEdgesOnViewport:false,
     style:[
       {selector:'node',style:{'background-color':'data(color)','width':'data(size)','height':'data(size)','label':'data(label)','font-size':12,'color':'#222','text-valign':'bottom','text-margin-y':3,'text-outline-color':'#fff','text-outline-width':2,'min-zoomed-font-size':9,'border-width':1,'border-color':'#fff'}},
       {selector:'node[deg < 6]',style:{'font-size':10,'min-zoomed-font-size':11}},
@@ -70,6 +72,7 @@ function buildCy(){
   cy.on('tap',e=>{if(e.target===cy) clearHL();});
   cy.on('mouseover','edge',e=>{const d=e.target.data();e.target.style('label',(TYPE_CN[d.type]||'')+(d.detail?'：'+d.detail:'')+(d.conf==='disputed'?'（存疑）':''));e.target.style({'font-size':11,'text-background-color':'#fff','text-background-opacity':0.9,'text-background-padding':2});});
   cy.on('mouseout','edge',e=>e.target.removeStyle('label'));
+  cy.on('zoom',syncZoomSlider);
   drawNetwork();
 }
 function filters(){
@@ -146,6 +149,8 @@ function renderPanel(id){
   const yrs=(p.birth||p.death)?(p.birth||'?')+'–'+(p.death||''):'';
   $('#panel').innerHTML='<h2>'+esc(labelOf(p))+'</h2>'+
    '<div class="meta">'+(p.generation?'第'+p.generation+'代'+(p.zibei?'·“'+p.zibei+'”字辈':''):'代数不详')+(p.gen_source?'<span class="tag">'+esc(p.gen_source)+'</span>':'')+(yrs?' · '+yrs:'')+(p.role==='relative'?' · 非谱系内亲属':'')+'</div>'+
+   '<div class="panel-actions"><button type="button" id="egoBtn">'+(state.mode==='ego'?'回到全网络':'聚焦此人的师承子图')+'</button>'+
+   '<button type="button" class="feedback-btn" id="panelFeedback">提交修正</button></div>'+
    (p.aliases&&p.aliases.length?'<div>别名/本名：'+esc(p.aliases.join('、'))+'</div>':'')+
    (p.notes&&p.notes.length?'<div class="muted" style="margin-top:6px">'+p.notes.map(esc).join('<br>')+'</div>':'')+
    sec('师父',masters,r=>relLine(r,r.from))+
@@ -154,9 +159,9 @@ function renderPanel(id){
    sec('亲缘',kin,r=>relLine(r,r.from===id?r.to:r.from))+
    sec('姻缘',mar,r=>relLine(r,r.from===id?r.to:r.from))+
    (sib.size?'<h3>同门（'+sib.size+'）</h3><div style="line-height:1.9">'+[...sib.keys()].map(plink).join('、')+'</div>':'')+
-   '<h3>来源</h3><div>'+(p.wiki_url?'<a href="'+esc(p.wiki_url)+'" target="_blank" rel="noopener">维基百科条目</a> ':'')+srcLinks(p.sources)+'</div>'+
-   '<div style="margin-top:10px"><button type="button" id="egoBtn">'+(state.mode==='ego'?'回到全网络':'聚焦此人的师承子图')+'</button></div>';
+   '<h3>来源</h3><div>'+(p.wiki_url?'<a href="'+esc(p.wiki_url)+'" target="_blank" rel="noopener">维基百科条目</a> ':'')+srcLinks(p.sources)+'</div>';
   $('#egoBtn').onclick=()=>{state.mode=state.mode==='ego'?'network':'ego';$('#mode').value=state.mode;syncMode();if(state.mode==='ego')drawEgo(id);else{drawNetwork();highlight(id,true);}renderPanel(id);};
+  $('#panelFeedback').onclick=()=>openFeedback(id);
 }
 function syncMode(){document.querySelectorAll('.ego-only').forEach(e=>e.style.display=state.mode==='ego'?'':'none');}
 function bindUI(){
@@ -189,7 +194,104 @@ function bindUI(){
   $('#fit').onclick=()=>cy.fit(undefined,20);
   $('#relayout').onclick=()=>runForce(true);
   $('#labels').addEventListener('change',e=>cy.nodes().toggleClass('alllabels',e.target.checked));
+  $('#zoom').addEventListener('input',()=>{
+    zoomFromSlider=true;
+    zoomAtCenter(zoomFromSliderValue($('#zoom').value));
+    zoomFromSlider=false;
+  });
+  $('#zoomIn').addEventListener('click',()=>zoomAtCenter(cy.zoom()*1.25));
+  $('#zoomOut').addEventListener('click',()=>zoomAtCenter(cy.zoom()/1.25));
+  $('#feedbackBtn').addEventListener('click',()=>openFeedback(state.focus));
+  $('#fbClose').addEventListener('click',()=>$('#feedbackDlg').close());
+  $('#feedbackDlg').addEventListener('click',e=>{if(e.target.id==='feedbackDlg') $('#feedbackDlg').close();});
+  window.addEventListener('resize',()=>{if(cy) cy.resize();});
+  syncZoomSlider();
   syncMode();
+}
+function formatZoom(z){
+  if(z>=10) return z.toFixed(0)+'×';
+  if(z>=1) return z.toFixed(1)+'×';
+  return z.toFixed(2)+'×';
+}
+function sliderFromZoom(z){
+  const t=Math.log(z/Z_MIN)/Math.log(Z_MAX/Z_MIN);
+  return Math.round(Math.min(1,Math.max(0,t))*1000);
+}
+function zoomFromSliderValue(v){
+  return Z_MIN*Math.pow(Z_MAX/Z_MIN,Number(v)/1000);
+}
+function syncZoomSlider(){
+  if(!cy) return;
+  const z=cy.zoom(),el=$('#zoom');
+  if(!el) return;
+  const label=formatZoom(z);
+  $('#zoomVal').textContent=label;
+  el.setAttribute('aria-valuetext',label);
+  $('#zoomIn').disabled=z>=Z_MAX*0.999;
+  $('#zoomOut').disabled=z<=Z_MIN*1.001;
+  if(!zoomFromSlider) el.value=String(sliderFromZoom(z));
+}
+function zoomAtCenter(level){
+  const z0=cy.zoom();
+  const z=Math.min(Z_MAX,Math.max(Z_MIN,level));
+  const w=cy.width(),h=cy.height();
+  if(!(w>1&&h>1)||!(z0>0)){cy.zoom(z);return;}
+  const pan=cy.pan();
+  const mx=(w/2-pan.x)/z0, my=(h/2-pan.y)/z0;
+  if(typeof cy.viewport==='function') cy.viewport({zoom:z,pan:{x:w/2-mx*z,y:h/2-my*z}});
+  else {cy.zoom(z);cy.pan({x:w/2-mx*z,y:h/2-my*z});}
+}
+function joinCapped(items,n){
+  if(!items.length) return '（无）';
+  if(items.length<=n) return items.join('、');
+  return items.slice(0,n).join('、')+'……等共 '+items.length+' 人';
+}
+function relNames(id,pred){
+  return (adj[id]||[]).filter(pred).map(r=>{
+    const oid=r.from===id?r.to:r.from;
+    const name=byId[oid]?byId[oid].name:oid;
+    return name+(r.detail?'·'+r.detail:'')+(r.confidence==='disputed'?'（存疑）':'');
+  });
+}
+function issueTitle(personId){
+  if(personId&&byId[personId]) return '修正：'+byId[personId].name+'（'+personId+'）';
+  return '修正：相声师承谱系';
+}
+function issueBody(personId){
+  const page=location.href;
+  const ask='\n\n### 哪里有误\n请写清现有记录错在哪里。\n\n### 正确信息\n请写上应改成什么。\n\n### 来源链接\n请给出可公开核对的网页、报道或书目。\n';
+  if(!personId||!byId[personId]){
+    return '（未指定具体人物。若针对某位人物，请写上姓名和编号。）\n\n### 页面地址\n'+page+ask;
+  }
+  const p=byId[personId];
+  return [
+    '### 人物',
+    p.name+'（'+p.id+'）'+(p.aliases&&p.aliases.length?'，别名：'+p.aliases.join('、'):''),
+    '',
+    '### 当前代数与关系',
+    '代数：'+(p.generation?'第'+p.generation+'代':'不详')+(p.zibei?'，'+p.zibei+'字辈':''),
+    '师父：'+joinCapped(relNames(personId,r=>r.type==='master_disciple'&&r.to===personId),20),
+    '徒弟：'+joinCapped(relNames(personId,r=>r.type==='master_disciple'&&r.from===personId),25),
+    '代拉 / 引保代 / 口盟等：'+joinCapped(relNames(personId,r=>r.type==='other'),15),
+    '亲缘：'+joinCapped(relNames(personId,r=>r.type==='kin'),15),
+    '姻缘：'+joinCapped(relNames(personId,r=>r.type==='marriage'),10),
+    '',
+    '### 页面地址',
+    page
+  ].join('\n')+ask;
+}
+function issueUrl(personId){
+  const id=(personId&&byId[personId])?personId:null;
+  const q=new URLSearchParams({template:'correction.md',title:issueTitle(id),body:issueBody(id)});
+  return 'https://github.com/accuratep0wer/xiangsheng-genealogy/issues/new?'+q.toString();
+}
+function openFeedback(personId){
+  const id=(personId&&byId[personId])?personId:null;
+  $('#fbTitle').textContent=issueTitle(id);
+  $('#fbPreview').textContent=issueBody(id);
+  $('#feedbackGo').href=issueUrl(id);
+  const dlg=$('#feedbackDlg');
+  if(!dlg.open) dlg.showModal();
 }
 function route(){
   const h=location.hash.replace(/^#/,'')||'graph';
