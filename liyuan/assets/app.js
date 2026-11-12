@@ -135,7 +135,9 @@ function buildCy(){
       {selector:'node.stub',style:{'opacity':0.55,'color':'#6b7280','font-size':11,'border-style':'dashed','border-color':'#a8a29e'}},
       {selector:'node.xo',style:{'shape':'diamond','border-width':2,'border-color':'#111'}},
       {selector:'node.inst',style:{'border-width':4,'border-color':'#b45309','opacity':1,'z-index':8}},
-      {selector:'edge.extra',style:{'width':1,'line-color':'#d6d3d1','target-arrow-color':'#d6d3d1','opacity':0.55,'line-style':'dashed','line-dash-pattern':[3,4],'z-index':0}}
+      {selector:'edge.extra',style:{'width':1,'line-color':'#d6d3d1','target-arrow-color':'#d6d3d1','opacity':0.55,'line-style':'dashed','line-dash-pattern':[3,4],'z-index':0}},
+      {selector:'edge.tree-link',style:{'width':5,'line-color':'#b91c1c','target-arrow-color':'#b91c1c','opacity':1,'z-index':20,'line-style':'solid','arrow-scale':1.3}},
+      {selector:'edge.tree-reveal',style:{'width':3.5,'line-color':'#7c3aed','target-arrow-color':'#7c3aed','opacity':1,'z-index':24,'curve-style':'bezier','control-point-step-size':90,'line-style':'dashed','line-dash-pattern':[10,6]}}
     ],
     layout:{name:'preset'}
   });
@@ -218,6 +220,7 @@ function paintHull(){
 }
 function drawNetwork(){
   layoutLock=true;
+  if(cy) cy.autoungrabify(false);
   parkN=0;
   const f=filters();
   const show=visibleSet();
@@ -255,6 +258,7 @@ function nebulaNodeData(p){
 }
 function drawNebula(){
   layoutLock=true;
+  if(cy) cy.autoungrabify(false);
   if(layoutAnim){cancelAnimationFrame(layoutAnim); layoutAnim=0;}
   state.mode='nebula';
   cy.minZoom(1e-7);cy.maxZoom(32);
@@ -574,6 +578,7 @@ function resetGlobal(){
 function updateLayoutButtons(){}
 function drawEgo(id){
   layoutLock=true;
+  if(cy) cy.autoungrabify(false);
   if(layoutAnim){cancelAnimationFrame(layoutAnim); layoutAnim=0;}
   cy.minZoom(Z_MIN);cy.maxZoom(Z_MAX);
   const s=egoSet(id);
@@ -599,8 +604,38 @@ function stat(n,e){
   const tag=state.mode==='ego'?' · 聚焦环形谱系':(state.mode==='tree'?' · 家谱':'');
   $('#stat').textContent='当前显示 '+n+' 人 · '+e+' 条关系（全库 '+P.length+' 人 · '+R.length+' 条）'+tag;
 }
-function clearHL(){cy.elements().removeClass('faded hl nb');}
+function clearHL(){
+  if(cy) cy.edges('.tree-reveal').remove();
+  cy.elements().removeClass('faded hl nb tree-link');
+}
+function revealOtherLines(id){
+  const add=[], seen=new Set();
+  R.forEach(r=>{
+    if(!r||r.type==='master_disciple') return;
+    if(r.from!==id&&r.to!==id) return;
+    if(!cy.getElementById(r.from).length||!cy.getElementById(r.to).length) return;
+    const eid='reveal-'+r.id;
+    if(seen.has(eid)) return;
+    seen.add(eid);
+    add.push({classes:'tree-reveal', data:{id:eid, source:r.from, target:r.to, type:r.type, conf:r.confidence, detail:r.detail||r.subtype||''}});
+  });
+  if(add.length) cy.add(add);
+}
+function highlightTree(id,center){
+  const n=cy.getElementById(id);if(!n.length)return;
+  clearHL();
+  revealOtherLines(id);
+  cy.elements().addClass('faded');
+  const edges=n.connectedEdges();
+  const near=edges.connectedNodes();
+  near.removeClass('faded').addClass('nb');
+  n.removeClass('faded').addClass('hl');
+  edges.filter(e=>!e.hasClass('tree-reveal')).removeClass('faded').addClass('tree-link');
+  edges.filter('.tree-reveal').removeClass('faded');
+  if(center) cy.animate({center:{eles:n},zoom:Math.max(cy.zoom(),0.9)},{duration:350});
+}
 function highlight(id,center){
+  if(state.mode==='tree'){highlightTree(id,center);return;}
   const n=cy.getElementById(id);if(!n.length)return;
   clearHL();
   const nb=n.closedNeighborhood();
@@ -1130,10 +1165,10 @@ function drawTree(){
   layoutLock=true;
   if(layoutAnim){cancelAnimationFrame(layoutAnim); layoutAnim=0;}
   state.mode='tree';
+  if(cy) cy.autoungrabify(true);
   const compact=treeCompact();
   const model=buildPedigree(compact);
   const variant=state.treeVariant||'era';
-  const showExtra=$('#treeLinks')&&$('#treeLinks').checked;
   const nodes=[], edges=[];
   Object.keys(model.pos).forEach(id=>{
     const p=byId[id];
@@ -1159,13 +1194,6 @@ function drawTree(){
     seen.add(id);
     edges.push({classes:extra?'extra':'', data:{id:id, source:r.from, target:r.to, type:'master_disciple', conf:r.confidence, detail:r.detail}});
   });
-  if(showExtra){
-    R.forEach(r=>{
-      if(r.type!=='partner'&&r.type!=='kin') return;
-      if(!model.pos[r.from]||!model.pos[r.to]) return;
-      edges.push({data:{id:'opt-'+r.id, source:r.from, target:r.to, type:r.type, conf:r.confidence, detail:r.detail}});
-    });
-  }
   cy.minZoom(0.05); cy.maxZoom(3);
   cy.startBatch(); cy.elements().remove();
   cy.add(nodes); cy.add(edges);
