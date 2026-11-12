@@ -1212,7 +1212,7 @@ function treeNudge(dx, dy){
   const p=cy.pan();
   cy.pan({x:p.x-dx, y:p.y-dy});
 }
-let rightPan=null, pointerPress=null, draggingNode=false;
+let rightPan=null, pointerPress=null, draggingNode=false, overPerson=false;
 function pointerMode(){return state.mode==='tree'||state.mode==='nebula'||state.mode==='network'||state.mode==='ego';}
 function setGraphCursor(cur){
   const box=cy&&cy.container();
@@ -1236,12 +1236,17 @@ function bindPointer(){
     if(!pointerMode()) return;
     ev.preventDefault();
   });
+  function restCursor(){
+    if(!pointerMode()){setGraphCursor(''); return;}
+    setGraphCursor(overPerson&&!rightPan?'grab':'move');
+  }
   box.addEventListener('mousemove', ()=>{
     if(rightPan||draggingNode||!pointerMode()) return;
-    setGraphCursor('grab');
+    setGraphCursor(overPerson?'grab':'move');
   });
   box.addEventListener('mouseleave', ()=>{
     if(rightPan) return;
+    overPerson=false;
     setGraphCursor('');
   });
   box.addEventListener('mousedown', ev=>{
@@ -1250,18 +1255,18 @@ function bindPointer(){
     ev.stopPropagation();
     const p=cy.pan();
     rightPan={x:ev.clientX, y:ev.clientY, px:p.x, py:p.y};
-    setGraphCursor('crosshair');
+    setGraphCursor('move');
   }, true);
   window.addEventListener('mousemove', ev=>{
     if(!rightPan) return;
     if(!pointerMode()){rightPan=null; setGraphCursor(''); return;}
     cy.pan({x:rightPan.px+(ev.clientX-rightPan.x), y:rightPan.py+(ev.clientY-rightPan.y)});
-    setGraphCursor('crosshair');
+    setGraphCursor('move');
   });
   window.addEventListener('mouseup', ev=>{
     if(ev.button!==2||!rightPan) return;
     rightPan=null;
-    if(!draggingNode) setGraphCursor(pointerMode()?'grab':'');
+    if(!draggingNode) restCursor();
   });
   cy.on('mousedown','node', e=>{
     const oe=e.originalEvent;
@@ -1272,14 +1277,19 @@ function bindPointer(){
     pointerPress={id:n.id(), x:p.x, y:p.y};
   });
   cy.on('mouseover','node', e=>{
-    if(rightPan||draggingNode||!pointerMode()) return;
+    if(!pointerMode()) return;
     const n=e.target;
     if(n.hasClass('period-tag')||n.hasClass('axis')) return;
+    overPerson=true;
+    if(rightPan||draggingNode) return;
     setGraphCursor('grab');
   });
-  cy.on('mouseout','node', ()=>{
+  cy.on('mouseout','node', e=>{
+    const n=e.target;
+    if(n.hasClass('period-tag')||n.hasClass('axis')) return;
+    overPerson=false;
     if(rightPan||draggingNode||!pointerMode()) return;
-    setGraphCursor('grab');
+    setGraphCursor('move');
   });
   cy.on('grab','node', e=>{
     if(!pointerMode()) return;
@@ -1296,7 +1306,7 @@ function bindPointer(){
     syncPeriodTag(e.target);
     draggingNode=false;
     if(rightPan||!pointerMode()) return;
-    setGraphCursor('grab');
+    setGraphCursor(overPerson?'grab':'move');
   });
 }
 function bindTreeScroll(){
