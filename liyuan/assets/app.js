@@ -899,28 +899,68 @@ function spanLabel(a,b){
   if(A.era===B.era && A.era==='qing') end=B.label.replace(/^清/,'');
   return {label:A.label+'–'+end, era:bucketYear((a+b)/2).era};
 }
-function periodOf(p, depth){
+function datedSpan(p){
   if(p.birth){
-    const start=p.birth+18;
-    const end=p.death||Math.min(p.birth+70, 2026);
-    const s=spanLabel(start, end);
-    return {label:s.label, era:s.era, estimated:false};
+    return {start:p.birth+18, end:p.death||Math.min(p.birth+70, 2026)};
   }
-  const g=p.generation||(depth+1);
+  if(p.death){
+    return {start:Math.max(1600, p.death-45), end:p.death};
+  }
+  return null;
+}
+function periodFromSpan(start, end, estimated){
+  const s=spanLabel(Math.round(start), Math.round(end));
+  return {label:s.label, era:s.era, estimated:!!estimated, sortYear:Math.round(start), end:Math.round(end)};
+}
+function periodFromGen(g){
   const table={
-    1:['清咸丰–同治','qing'],
-    2:['清同治–光绪','qing'],
-    3:['清光绪','qing'],
-    4:['清光绪–民国初','qing'],
-    5:['民国','roc'],
-    6:['民国–1950s','roc'],
-    7:['1950s–80s','prc'],
-    8:['1980s–2000s','prc'],
-    9:['2000s–2010s','prc'],
-    10:['2010s–2020s','prc']
+    1:['清咸丰–同治','qing',1856],
+    2:['清同治–光绪','qing',1868],
+    3:['清光绪','qing',1890],
+    4:['清光绪–民国初','qing',1902],
+    5:['民国','roc',1935],
+    6:['民国–1950s','roc',1950],
+    7:['1950s–80s','prc',1968],
+    8:['1980s–2000s','prc',1990],
+    9:['2000s–2010s','prc',2005],
+    10:['2010s–2020s','prc',2015]
   };
-  const row=table[g]||(g>10?table[10]:table[6]);
-  return {label:row[0], era:row[1], estimated:true};
+  const gg=g||6;
+  const row=table[gg]||(gg>10?table[10]:table[6]);
+  return {label:row[0], era:row[1], estimated:true, sortYear:row[2], end:row[2]+30};
+}
+function periodOf(p, depth){
+  const span=datedSpan(p);
+  if(span) return periodFromSpan(span.start, span.end, false);
+  return periodFromGen(p.generation||((depth||0)+1));
+}
+function assignPeriods(ids, depth, primary, kids){
+  const period={};
+  ids.forEach(id=>{
+    const span=datedSpan(byId[id]);
+    if(span) period[id]=periodFromSpan(span.start, span.end, false);
+  });
+  const levels=[...new Set(ids.map(id=>depth[id]||0))].sort((a,b)=>a-b);
+  levels.forEach(d=>{
+    ids.filter(id=>(depth[id]||0)===d&&!period[id]).forEach(id=>{
+      const par=primary[id];
+      if(!par||!period[par]) return;
+      const start=(period[par].end||period[par].sortYear)+2;
+      period[id]=periodFromSpan(start, Math.min(start+40, 2026), true);
+    });
+  });
+  levels.slice().reverse().forEach(d=>{
+    ids.filter(id=>(depth[id]||0)===d&&!period[id]).forEach(id=>{
+      const ch=(kids[id]||[]).filter(c=>period[c]&&!period[c].estimated);
+      if(!ch.length) return;
+      const earliest=Math.min.apply(null, ch.map(c=>period[c].sortYear));
+      period[id]=periodFromSpan(earliest-42, earliest-2, true);
+    });
+  });
+  ids.forEach(id=>{
+    if(!period[id]) period[id]=periodFromGen(byId[id].generation||((depth[id]||0)+1));
+  });
+  return period;
 }
 const ERA_COLOR={qing:'#7f1d1d', roc:'#b45309', prc:'#1d4ed8'};
 function buildPedigree(compact){
@@ -977,12 +1017,23 @@ function buildPedigree(compact){
     return n;
   }
   roots.sort((a,b)=>descN(b, new Set())-descN(a, new Set())||byId[a].name.localeCompare(byId[b].name,'zh'));
+  const periodIds=[...new Set(roots.concat(loose, Object.keys(primary), Object.keys(kids)))];
+  const periodEarly=assignPeriods(periodIds, depth, primary, kids);
+  function byTime(a,b){
+    const A=periodEarly[a], B=periodEarly[b];
+    if(!A||!B) return byId[a].name.localeCompare(byId[b].name,'zh');
+    if(A.sortYear!==B.sortYear) return A.sortYear-B.sortYear;
+    const da=byId[a].death||9999, db=byId[b].death||9999;
+    if(da!==db) return da-db;
+    if(!!A.estimated!==!!B.estimated) return A.estimated?1:-1;
+    return byId[a].name.localeCompare(byId[b].name,'zh');
+  }
   const gap=compact?6:10;
   const ROW=compact?70:88;
   const W={};
   function leafW(id){
     const chars=[...byId[id].name].length;
-    const period=periodOf(byId[id], depth[id]||0);
+    const period=periodEarly[id]||periodOf(byId[id], depth[id]||0);
     const pw=[...period.label].length;
     return Math.max(compact?78:92, chars*(compact?15:16)+20, state.treeVariant==='active'?pw*(compact?11:12)+16:0);
   }
@@ -998,7 +1049,7 @@ function buildPedigree(compact){
     return W[id];
   }
   roots.forEach(width);
-  Object.keys(kids).forEach(id=>kids[id].sort((a,b)=>width(b)-width(a)||byId[a].name.localeCompare(byId[b].name,'zh')));
+  Object.keys(kids).forEach(id=>kids[id].sort(byTime));
   const pos={};
   function place(id, left){
     const ch=kids[id]||[];
@@ -1009,6 +1060,12 @@ function buildPedigree(compact){
   }
   let cursor=0;
   roots.forEach(id=>{ place(id, cursor); cursor+=width(id)+gap*4; });
+  const ERA_SHIFT={qing:0, roc:30, prc:58};
+  Object.keys(pos).forEach(id=>{
+    if(loose.indexOf(id)>=0) return;
+    const info=periodEarly[id];
+    if(info) pos[id].y += ERA_SHIFT[info.era]||0;
+  });
   let maxY=0, maxD=0, treeN=0;
   Object.keys(pos).forEach(id=>{
     treeN++;
@@ -1018,15 +1075,14 @@ function buildPedigree(compact){
   const cols=compact?2:8;
   const cell=compact?150:170;
   const base=maxY+ROW*1.6;
+  loose.sort(byTime);
   loose.forEach((id,i)=>{
     pos[id]={x:(i%cols)*cell+cell/2, y:base+Math.floor(i/cols)*ROW};
   });
   let known=0, est=0;
-  const period={};
+  const period=periodEarly;
   Object.keys(pos).forEach(id=>{
-    const info=periodOf(byId[id], depth[id]||0);
-    period[id]=info;
-    if(info.estimated) est++; else known++;
+    if(period[id].estimated) est++; else known++;
   });
   return {pos, depth, primary, kids, roots, loose, maxD, treeN, known, est, ROW, period, mastersOf};
 }
@@ -1054,20 +1110,29 @@ function drawTree(){
     const y=Math.min(...model.loose.map(id=>model.pos[id].y))-model.ROW*0.55;
     nodes.push({classes:'tree axis', data:{id:'loosehead', label:'无师承，但有其他关系', w:220, h:28, eraColor:'#a8a29e'}, position:{x:110, y:y}});
   }
-  const rows={};
+  const looseSet=new Set(model.loose);
+  const yBands={};
   Object.keys(model.pos).forEach(id=>{
-    if(model.loose.includes(id)) return;
-    const d=model.depth[id]||0;
-    (rows[d]=rows[d]||[]).push(id);
+    if(looseSet.has(id)) return;
+    const y=Math.round(model.pos[id].y);
+    (yBands[y]=yBands[y]||[]).push(id);
   });
-  Object.keys(rows).forEach(d=>{
-    const ids=rows[d];
-    const y=model.pos[ids[0]].y;
-    const left=ids.slice().sort((a,b)=>model.pos[a].x-model.pos[b].x)[0];
-    const info=model.period[left]||{label:'',era:'prc',estimated:true};
-    const label=variant==='era'?(eraName[info.era]||''):info.label;
-    state.treeRows=state.treeRows||[];
-    state.treeRows.push({y:y, label:label});
+  let prevRail='';
+  Object.keys(yBands).map(Number).sort((a,b)=>a-b).forEach(y=>{
+    const list=yBands[y];
+    const dated=list.filter(id=>model.period[id]&&!model.period[id].estimated);
+    const src=dated.length?dated:list;
+    let label;
+    if(variant==='era'){
+      const count={};
+      src.forEach(id=>{ const e=model.period[id].era; count[e]=(count[e]||0)+1; });
+      label=eraName[Object.keys(count).sort((a,b)=>count[b]-count[a])[0]]||'';
+    }else{
+      const count={};
+      src.forEach(id=>{ const e=model.period[id].label; count[e]=(count[e]||0)+1; });
+      label=Object.keys(count).sort((a,b)=>count[b]-count[a])[0]||'';
+    }
+    if(label&&label!==prevRail){ state.treeRows.push({y:y, label:label}); prevRail=label; }
   });
   const seen=new Set();
   R.forEach(r=>{
@@ -1177,6 +1242,7 @@ function route(){
   if(kind==='tree'){
     state.mode='tree';
     if(arg==='era'||arg==='active') state.treeVariant=arg;
+    else if(!arg) state.treeVariant='era';
     $('#mode').value='tree';
     syncMode();
     drawTree();
