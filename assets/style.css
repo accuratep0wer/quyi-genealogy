@@ -87,6 +87,43 @@ td.notes{max-width:360px;color:#555;font-size:13px}
 .muted{color:var(--muted)}
 #sourceList{font-size:13px;word-break:break-all}
 footer{padding:10px 16px;color:var(--muted);font-size:13px;text-align:center}
+@media (min-width:821px){
+  body:has(#view-graph:not([hidden])){
+    height:100%;
+    height:100dvh;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+  body:has(#view-graph:not([hidden])) main{
+    flex:1 1 auto;
+    min-height:0;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    padding:8px 16px 4px;
+  }
+  body:has(#view-graph:not([hidden])) #view-graph{
+    flex:1 1 auto;
+    min-height:0;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+  body:has(#view-graph:not([hidden])) .toolbar{margin-bottom:6px}
+  body:has(#view-graph:not([hidden])) .graph-wrap{
+    flex:1 1 auto;
+    height:auto;
+    min-height:0;
+  }
+  body:has(#view-graph:not([hidden])) .legend{
+    flex:0 1 auto;
+    max-height:min(168px,24vh);
+    overflow:auto;
+    margin-top:6px;
+  }
+  body:has(#view-graph:not([hidden])) footer{flex:0 0 auto;padding:6px 16px}
+}
 dialog{border:none;border-radius:12px;padding:0;max-width:560px;width:min(560px,calc(100vw - 24px));box-shadow:0 16px 48px rgba(0,0,0,.22);color:var(--fg)}
 dialog::backdrop{background:rgba(0,0,0,.45)}
 .dlg{padding:16px 18px 18px;max-height:min(84vh,760px);overflow:auto}
