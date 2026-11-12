@@ -154,7 +154,11 @@ function buildCy(){
       {selector:'node.inst',style:{'border-width':4,'border-color':'#b45309','opacity':1,'z-index':8}},
       {selector:'edge.extra',style:{'width':1,'line-color':'#d6d3d1','target-arrow-color':'#d6d3d1','opacity':0.55,'line-style':'dashed','line-dash-pattern':[3,4],'z-index':0}},
       {selector:'edge.tree-link',style:{'width':5,'line-color':'#b91c1c','target-arrow-color':'#b91c1c','opacity':1,'z-index':20,'line-style':'solid','arrow-scale':1.3}},
-      {selector:'edge.tree-reveal',style:{'width':3.5,'line-color':'#7c3aed','target-arrow-color':'#7c3aed','opacity':1,'z-index':24,'curve-style':'bezier','control-point-step-size':90,'line-style':'dashed','line-dash-pattern':[10,6]}}
+      {selector:'edge.tree-reveal',style:{'width':2.6,'line-color':'#7c3aed','target-arrow-color':'#7c3aed','opacity':1,'z-index':24,'curve-style':'bezier','control-point-step-size':90,'line-style':'dashed','line-dash-pattern':[10,6]}},
+      {selector:'edge.tree-reveal[type = "partner"]',style:{'width':2.8,'line-color':'#e11d48','target-arrow-color':'#e11d48','line-style':'dashed','line-dash-pattern':[16,7,3,7],'opacity':1}},
+      {selector:'edge.tree-reveal[type = "marriage"]',style:{'width':2.6,'line-color':'#7e22ce','target-arrow-color':'#7e22ce','line-style':'dashed','line-dash-pattern':[22,9],'opacity':1}},
+      {selector:'edge.tree-reveal[type = "kin"]',style:{'width':2.4,'line-color':'#374151','target-arrow-color':'#374151','line-style':'dashed','line-dash-pattern':[14,6,3,5,3,6],'opacity':1}},
+      {selector:'edge.tree-reveal[type = "other"]',style:{'width':2.4,'line-color':'#0f766e','target-arrow-color':'#0f766e','line-style':'dashed','line-dash-pattern':[9,5,9,5,3,5],'opacity':1}}
     ],
     layout:{name:'preset'}
   });
