@@ -81,16 +81,17 @@ function buildCy(){
       {selector:'node.nebula',style:{'font-size':14,'min-zoomed-font-size':10,'text-outline-width':3,'text-outline-color':'#fff'}},
       {selector:'node.nebula[deg >= 8]',style:{'font-size':30,'min-zoomed-font-size':6,'font-weight':'bold'}},
       {selector:'node.nebula[deg >= 15]',style:{'font-size':42,'min-zoomed-font-size':4,'font-weight':'bold'}},
-      {selector:'node.tree',style:{'shape':'ellipse','width':28,'height':28,'font-size':13,'min-zoomed-font-size':7,'text-valign':'bottom','text-halign':'center','text-margin-y':4,'color':'#1c1917','text-wrap':'wrap','text-max-width':'data(labelW)','background-color':'#fff','background-image':'none','border-width':3,'border-color':'data(eraColor)','padding':0}},
+      {selector:'node.tree',style:{'shape':'ellipse','width':86,'height':42,'font-size':'data(fs)','text-valign':'center','text-halign':'center','text-margin-y':0,'text-outline-width':0,'color':'#1c1917','text-wrap':'wrap','text-max-width':78,'line-height':1.1,'min-zoomed-font-size':6,'background-color':'#fff','background-image':'none','border-width':2.5,'border-color':'data(eraColor)','padding':0}},
       {selector:'node.tree.est',style:{'color':'#78716c','border-style':'dashed','background-color':'#fafaf9'}},
       {selector:'node.tree.axis',style:{'shape':'ellipse','width':1,'height':1,'background-opacity':0,'border-width':0,'font-size':13,'font-weight':'bold','color':'#7c2d12','text-valign':'center','text-halign':'center','text-margin-y':0,'text-max-width':240,'z-index':0}},
+      {selector:'node.period-tag',style:{'shape':'ellipse','width':1,'height':1,'background-opacity':0,'border-width':0,'font-size':11,'color':'#57534e','text-valign':'center','text-halign':'center','text-margin-y':0,'text-wrap':'none','text-max-width':120,'text-outline-width':0,'min-zoomed-font-size':6,'z-index':2}},
       {selector:'edge.extra',style:{'width':1,'line-color':'#d6d3d1','target-arrow-color':'#d6d3d1','opacity':0.55,'line-style':'dashed','line-dash-pattern':[3,4],'z-index':0}},
       {selector:'edge.tree-link',style:{'width':5,'line-color':'#b91c1c','target-arrow-color':'#b91c1c','opacity':1,'z-index':20,'line-style':'solid','arrow-scale':1.3}},
       {selector:'edge.tree-reveal',style:{'width':3.5,'line-color':'#7c3aed','target-arrow-color':'#7c3aed','opacity':1,'z-index':24,'curve-style':'bezier','control-point-step-size':90,'line-style':'dashed','line-dash-pattern':[10,6]}}
     ],
     layout:{name:'preset'}
   });
-  cy.on('tap','node',e=>{const id=e.target.id(); if(id.indexOf('axis-')===0||id==='loosehead')return; selectPerson(id,false);});
+  cy.on('tap','node',e=>{let id=e.target.id(); if(id.indexOf('period-')===0) id=id.slice(7); if(id.indexOf('axis-')===0||id==='loosehead')return; selectPerson(id,false);});
   cy.on('tap',e=>{if(e.target===cy) clearHL();});
   cy.on('mousemove',ev=>{if(ev.renderedPosition) lastPointer={x:ev.renderedPosition.x,y:ev.renderedPosition.y,t:performance.now()};});
   cy.on('pan',()=>{if(!placing&&!layoutAnim) anchorId=null; paintRail();});
@@ -518,7 +519,13 @@ function highlightTree(id,center){
   const edges=n.connectedEdges();
   const near=edges.connectedNodes();
   near.removeClass('faded').addClass('nb');
+  near.forEach(node=>{
+    const t=cy.getElementById('period-'+node.id());
+    if(t.length) t.removeClass('faded');
+  });
   n.removeClass('faded').addClass('hl');
+  const tag=cy.getElementById('period-'+id);
+  if(tag.length) tag.removeClass('faded');
   edges.filter(e=>!e.hasClass('tree-reveal')).removeClass('faded').addClass('tree-link');
   edges.filter('.tree-reveal').removeClass('faded');
   if(center) cy.animate({center:{eles:n},zoom:Math.max(cy.zoom(),0.9)},{duration:350});
@@ -774,6 +781,13 @@ function openFeedback(personId){
   if(!dlg.open) dlg.showModal();
 }
 let TREE=null;
+function ellipseName(name){
+  const n=[...String(name||'')];
+  if(n.length<=2) return {t:name, fs:17};
+  if(n.length<=4) return {t:name, fs:16};
+  const k=Math.ceil(n.length/2);
+  return {t:n.slice(0,k).join('')+'\n'+n.slice(k).join(''), fs:12};
+}
 function treeCompact(){
   const lay=document.documentElement.getAttribute('data-layout')||'pane';
   return lay==='sheet'||lay==='drawer';
@@ -912,16 +926,11 @@ function buildPedigree(compact){
     return n;
   }
   roots.sort((a,b)=>descN(b, new Set())-descN(a, new Set())||byId[a].name.localeCompare(byId[b].name,'zh'));
-  const variant=state.treeVariant||'era';
   const boxOf={};
   function nodeBox(id){
     if(boxOf[id]) return boxOf[id];
-    const p=byId[id];
-    const info=periodEarly[id]||periodOf(p, depth[id]||0);
-    const text=variant==='active'?info.label:p.name;
-    const w=Math.max(variant==='active'?100:74, [...p.name].length*15+18, [...text].length*(variant==='active'?12:15)+20);
-    const h=variant==='active'?70:50;
-    boxOf[id]={w,h};
+    const h=(state.treeVariant||'era')==='active'?64:50;
+    boxOf[id]={w:94,h};
     return boxOf[id];
   }
   const onTree=new Set(roots);
@@ -1039,11 +1048,15 @@ function drawTree(){
   Object.keys(model.pos).forEach(id=>{
     const p=byId[id];
     const info=model.period[id];
-    const label=variant==='active'?(p.name+'\n'+(info.estimated?info.label+' · 估':info.label)):p.name;
-    const box=model.box[id]||{w:80,h:32};
+    const fit=ellipseName(p.name);
+    const label=fit.t;
+    const box=model.box[id]||{w:94,h:50};
     nodes.push({classes:'tree'+(info.estimated?' est':''), data:{
-      id:id, label:label, labelW:box.w, eraColor:ERA_COLOR[info.era]||'#a8a29e', gen:p.generation||0, color:genColor(p.generation), deg:p._deg
+      id:id, label:label, fs:fit.fs, labelW:box.w, eraColor:ERA_COLOR[info.era]||'#a8a29e', gen:p.generation||0, color:genColor(p.generation), deg:p._deg
     }, position:model.pos[id]});
+    if(variant==='active'){
+      nodes.push({classes:'period-tag', data:{id:'period-'+id, label:info.estimated?info.label+' · 估':info.label}, position:{x:model.pos[id].x, y:model.pos[id].y+30}});
+    }
   });
   if(model.loose.length){
     const y=Math.min(...model.loose.map(id=>model.pos[id].y))-model.ROW*0.55;
