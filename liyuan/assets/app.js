@@ -162,7 +162,10 @@ function buildCy(){
     ],
     layout:{name:'preset'}
   });
-  cy.on('tap','node',e=>{let id=e.target.id(); if(id.indexOf('period-')===0) id=id.slice(7); if(id.indexOf('axis-')===0||id==='loosehead')return; selectPerson(id,false);});
+  cy.on('tap','node',e=>{
+    if(pointerMoved(e.target)) return;
+    let id=e.target.id(); if(id.indexOf('period-')===0) id=id.slice(7); if(id.indexOf('axis-')===0||id==='loosehead')return; selectPerson(id,false);
+  });
   cy.on('tap',e=>{if(e.target===cy) clearHL();});
   cy.on('mousemove',ev=>{if(ev.renderedPosition) lastPointer={x:ev.renderedPosition.x,y:ev.renderedPosition.y,t:performance.now()};});
   cy.on('pan',()=>{if(!placing&&!layoutAnim) anchorId=null; paintRail(); paintHull(); if(state.mode==='tree') clampTreePan();});
@@ -170,6 +173,7 @@ function buildCy(){
   cy.on('mouseout','edge',e=>e.target.removeStyle('label'));
   cy.on('zoom',()=>{syncZoomSlider();syncSpreadToZoom(); paintRail(); paintHull(); if(state.mode==='tree') clampTreePan();});
   bindTreeScroll();
+  bindPointer();
   drawNetwork();
 }
 function filters(){
@@ -1198,7 +1202,7 @@ function drawTree(){
   layoutLock=true;
   if(layoutAnim){cancelAnimationFrame(layoutAnim); layoutAnim=0;}
   state.mode='tree';
-  if(cy) cy.autoungrabify(true);
+  if(cy) cy.autoungrabify(false);
   const compact=treeCompact();
   const model=buildPedigree(compact);
   const variant=state.treeVariant||'era';
@@ -1215,12 +1219,12 @@ function drawTree(){
       id:id, label:label, fs:fit.fs, labelW:box.w, eraColor:instOn?fill:(ERA_COLOR[info.era]||'#a8a29e'), fill:fill, ink:inkFor(fill), gen:p.generation||0, color:fill, deg:p._deg
     }, position:model.pos[id]});
     if(variant==='active'){
-      nodes.push({classes:'period-tag', data:{id:'period-'+id, label:info.estimated?info.label+' · 估':info.label}, position:{x:model.pos[id].x, y:model.pos[id].y+30}});
+      nodes.push({classes:'period-tag', grabbable:false, data:{id:'period-'+id, label:info.estimated?info.label+' · 估':info.label}, position:{x:model.pos[id].x, y:model.pos[id].y+30}});
     }
   });
   if(model.loose.length){
     const y=Math.min(...model.loose.map(id=>model.pos[id].y))-model.ROW*0.55;
-    nodes.push({classes:'tree axis', data:{id:'loosehead', label:'无师承，但有其他关系', w:220, h:28, eraColor:'#a8a29e'}, position:{x:110, y:y}});
+    nodes.push({classes:'tree axis', grabbable:false, data:{id:'loosehead', label:'无师承，但有其他关系', w:220, h:28, eraColor:'#a8a29e'}, position:{x:110, y:y}});
   }
   const seen=new Set();
   R.forEach(r=>{
@@ -1236,6 +1240,7 @@ function drawTree(){
   cy.maxZoom(3);
   cy.startBatch(); cy.elements().remove();
   cy.add(nodes); cy.add(edges);
+  cy.nodes('.period-tag, .axis').ungrabify();
   cy.endBatch();
   state.treeAnchor=model.roots[0]||'';
   const treePeople=model.treeN, looseN=model.loose.length;
@@ -1361,6 +1366,91 @@ function treeNudge(dx, dy){
   if(state.mode!=='tree'||!cy) return;
   const p=cy.pan();
   cy.pan({x:p.x-dx, y:p.y-dy});
+}
+let rightPan=null, pointerPress=null, draggingNode=false;
+function pointerMode(){return state.mode==='tree'||state.mode==='nebula';}
+function setGraphCursor(cur){
+  const box=cy&&cy.container();
+  if(!box) return;
+  box.style.cursor=cur;
+  box.querySelectorAll('canvas').forEach(cv=>{cv.style.cursor=cur;});
+}
+function pointerMoved(node){
+  if(!pointerPress||!node||pointerPress.id!==node.id()) return false;
+  const p=node.position();
+  return Math.hypot(p.x-pointerPress.x, p.y-pointerPress.y)*cy.zoom()>6;
+}
+function syncPeriodTag(n){
+  if(state.mode!=='tree'||!n||n.hasClass('period-tag')||n.hasClass('axis')) return;
+  const tag=cy.getElementById('period-'+n.id());
+  if(tag.length) tag.position({x:n.position('x'), y:n.position('y')+30});
+}
+function bindPointer(){
+  const box=cy.container();
+  box.addEventListener('contextmenu', ev=>{
+    if(!pointerMode()) return;
+    ev.preventDefault();
+  });
+  box.addEventListener('mousedown', ev=>{
+    if(ev.button!==2||!pointerMode()) return;
+    ev.preventDefault();
+    ev.stopPropagation();
+    const p=cy.pan();
+    rightPan={x:ev.clientX, y:ev.clientY, px:p.x, py:p.y};
+    setGraphCursor('all-scroll');
+  }, true);
+  window.addEventListener('mousemove', ev=>{
+    if(!rightPan) return;
+    if(!pointerMode()){rightPan=null; setGraphCursor(''); return;}
+    cy.pan({x:rightPan.px+(ev.clientX-rightPan.x), y:rightPan.py+(ev.clientY-rightPan.y)});
+    setGraphCursor('all-scroll');
+  });
+  window.addEventListener('mouseup', ev=>{
+    if(ev.button!==2||!rightPan) return;
+    rightPan=null;
+    if(!draggingNode) setGraphCursor('');
+  });
+  cy.on('mousedown','node', e=>{
+    const oe=e.originalEvent;
+    if(!pointerMode()||(oe&&oe.button!==0)) return;
+    const n=e.target;
+    if(n.hasClass('period-tag')||n.hasClass('axis')) return;
+    const p=n.position();
+    pointerPress={id:n.id(), x:p.x, y:p.y};
+  });
+  cy.on('mouseover','node', e=>{
+    if(rightPan||draggingNode||!pointerMode()) return;
+    const n=e.target;
+    if(n.hasClass('period-tag')||n.hasClass('axis')) return;
+    setGraphCursor('grab');
+  });
+  cy.on('mouseout','node', ()=>{
+    if(rightPan||draggingNode) return;
+    setGraphCursor('');
+  });
+  cy.on('grab','node', e=>{
+    if(!pointerMode()) return;
+    const n=e.target;
+    if(n.hasClass('period-tag')||n.hasClass('axis')) return;
+    draggingNode=true;
+    setGraphCursor('grabbing');
+  });
+  cy.on('drag','node', e=>{
+    syncPeriodTag(e.target);
+    if(pointerMode()) setGraphCursor('grabbing');
+  });
+  cy.on('free','node', e=>{
+    syncPeriodTag(e.target);
+    draggingNode=false;
+    if(rightPan||!pointerMode()) return;
+    const oe=e.originalEvent;
+    const bb=e.target.renderedBoundingBox();
+    const rect=cy.container().getBoundingClientRect();
+    if(oe&&bb){
+      const x=oe.clientX-rect.left, y=oe.clientY-rect.top;
+      setGraphCursor(x>=bb.x1&&x<=bb.x2&&y>=bb.y1&&y<=bb.y2?'grab':'');
+    }else setGraphCursor('');
+  });
 }
 function bindTreeScroll(){
   ensureTreeScroll();
