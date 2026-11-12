@@ -14,7 +14,7 @@ function inkFor(hex){
 const STRIPE='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"><path d="M-2 2 L2 -2 M0 8 L8 0 M6 10 L10 6" stroke="white" stroke-opacity="0.85" stroke-width="3.5" stroke-linecap="square"/></svg>');
 const $=s=>document.querySelector(s);
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-let P=[],R=[],L={},byId={},cy=null,state={mode:'network',focus:null,lyColor:'inst'};
+let P=[],R=[],L={},byId={},cy=null,state={mode:'network',focus:null};
 let INST=[],MEM=[],XO=[],INSTBY={},MEMBY={},XOBY={};
 let home={},spread={},layoutT=0,spreadReady=false,layoutLock=false,layoutAnim=0,placing=false;
 let anchorId=null,anchorPt=null,lastPointer=null;
@@ -112,52 +112,19 @@ function lyChip(color,label){
 function paintLyLegend(){
   const host=$('#lyColorLegend');
   if(!host) return;
-  const insts=INST.filter(i=>(i.member_count||0)>0).slice().sort((a,b)=>(b.member_count||0)-(a.member_count||0)||a.name.localeCompare(b.name,'zh'));
-  const nInst=P.filter(p=>primaryInst(p.id)).length;
   const nRole=P.filter(p=>p.hangdang).length;
-  const nNeither=P.filter(p=>!primaryInst(p.id)&&!p.hangdang).length;
-  const roleOn=state.lyColor==='role';
+  const nBlank=P.length-nRole;
   const roles=[['生','生'],['旦','旦'],['净','净'],['末','末（记载中暂无）'],['丑','丑'],['兼行','兼行'],['其他','其他'],['不详','不详']];
   host.innerHTML=
-    '<div class="ly-keyline"><button type="button" id="lyModeInst" class="'+(roleOn?'':'on')+'">按机构</button>'+
-    '<span class="muted">'+P.length+' 人里 '+nInst+' 人有科班或院校，'+nRole+' 人写了行当，'+nNeither+' 人两项都没有。没有机构记录的人用「不详」。</span></div>'+
-    '<div class="ly-chips"'+(roleOn?' hidden':'')+'>'+insts.map(i=>lyChip(instColor(i.id), i.name)).join('')+lyChip('#d6d3d1','不详')+'</div>'+
-    '<details id="roleFold"'+(roleOn?' open':'')+'><summary>行当上色：生、旦、净、末、丑</summary>'+
-    '<div class="ly-chips">'+roles.map(([k,label])=>lyChip(ROLE_COLOR[k], label)).join('')+'</div>'+
-    '<p class="muted">写了不止一个行当的人标为「兼行」，不改成其中一行。琴师、票友、教师等不是生旦净末丑的，标为「其他」。</p></details>';
-  $('#lyModeInst').onclick=()=>{
-    state.lyColor='inst';
-    const fold=$('#roleFold');
-    if(fold&&fold.open) fold.open=false;
-    if($('#colorInst')) $('#colorInst').checked=true;
-    paintLyLegend();
-    if(state.mode==='tree') drawTree();
-  };
-  $('#roleFold').addEventListener('toggle',()=>{
-    const next=$('#roleFold').open?'role':'inst';
-    if(state.lyColor===next) return;
-    state.lyColor=next;
-    if(next==='inst'&&$('#colorInst')) $('#colorInst').checked=true;
-    $('#lyModeInst').classList.toggle('on', next!=='role');
-    const chips=host.querySelector('.ly-chips');
-    if(chips) chips.hidden=next==='role';
-    if(state.mode==='tree') drawTree();
-  });
+    '<div class="ly-keyline"><strong>行当</strong> <span class="muted">'+nRole+' 人写了行当，'+nBlank+' 人没有，用「不详」。写了不止一个行当的人是「兼行」。琴师、票友、教师等标为「其他」。</span></div>'+
+    '<div class="ly-chips">'+roles.map(([k,label])=>lyChip(ROLE_COLOR[k], label)).join('')+'</div>';
 }
 function treeFill(p){
-  if(state.lyColor==='role') return ROLE_COLOR[roleKey(p)];
-  if(!$('#colorInst')||$('#colorInst').checked){
-    const id=primaryInst(p.id);
-    return id?instColor(id):'#d6d3d1';
-  }
-  return genColor(p.generation);
+  return ROLE_COLOR[roleKey(p)];
 }
 function nodeColor(p){
-  if($('#colorInst')&&$('#colorInst').checked){
-    const id=primaryInst(p.id);
-    return id?instColor(id):'#d6d3d1';
-  }
-  return p.generation?genColor(p.generation):hangColor(p);
+  const id=primaryInst(p.id);
+  return id?instColor(id):'#d6d3d1';
 }
 let parkN=0;
 function positionFor(p){
@@ -881,7 +848,6 @@ function bindUI(){
   }
   if($('#inst')) $('#inst').addEventListener('change',()=>{ fillCohorts(); refilter(); focusMembers(); });
   if($('#cohort')) $('#cohort').addEventListener('change',()=>{ refilter(); focusMembers(); });
-  if($('#colorInst')) $('#colorInst').addEventListener('change',refilter);
   function refitAfterLayout(){
     if(!cy) return;
     cy.resize();
