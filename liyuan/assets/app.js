@@ -1028,63 +1028,114 @@ function buildPedigree(compact){
     if(!!A.estimated!==!!B.estimated) return A.estimated?1:-1;
     return byId[a].name.localeCompare(byId[b].name,'zh');
   }
-  const gap=compact?6:10;
-  const ROW=compact?70:88;
-  const W={};
-  function leafW(id){
-    const chars=[...byId[id].name].length;
-    const period=periodEarly[id]||periodOf(byId[id], depth[id]||0);
-    const pw=[...period.label].length;
-    return Math.max(compact?78:92, chars*(compact?15:16)+20, state.treeVariant==='active'?pw*(compact?11:12)+16:0);
+  function splitByTime(ids){
+    const sorted=ids.slice().sort(byTime);
+    const out=[];
+    let cur=null, key=null;
+    sorted.forEach(id=>{
+      const info=periodEarly[id];
+      const k=(state.treeVariant||'era')==='era'?(info&&info.era):((info&&info.label)||'');
+      if(k!==key){cur=[]; out.push(cur); key=k;}
+      cur.push(id);
+    });
+    return out.filter(g=>g.length);
   }
-  function width(id){
-    if(W[id]) return W[id];
-    const ch=kids[id]||[];
-    const self=leafW(id);
-    if(!ch.length){W[id]=self; return self;}
-    let sum=0;
-    ch.forEach(c=>{ sum+=width(c); });
-    sum+=(ch.length-1)*gap;
-    W[id]=Math.max(self, sum);
-    return W[id];
+  const onTree=new Set(roots);
+  Object.keys(primary).forEach(id=>{ if(allow.has(id)) onTree.add(id); });
+  const variantNow=state.treeVariant||'era';
+  const boxOf={};
+  function nodeBox(id){
+    if(boxOf[id]) return boxOf[id];
+    const p=byId[id];
+    const info=periodEarly[id]||periodOf(p, depth[id]||0);
+    const text=variantNow==='active'?info.label:p.name;
+    const w=Math.max(variantNow==='active'?100:74, [...p.name].length*15+18, [...text].length*(variantNow==='active'?12:15)+20);
+    const h=variantNow==='active'?44:32;
+    boxOf[id]={w,h};
+    return boxOf[id];
   }
-  roots.forEach(width);
-  Object.keys(kids).forEach(id=>kids[id].sort(byTime));
+  const vw=Math.max(320, (typeof cy!=='undefined'&&cy&&cy.width())||1200);
+  const vh=Math.max(420, (typeof cy!=='undefined'&&cy&&cy.height())||800);
+  const sample=nodeBox((roots[0])||[...onTree][0]);
+  const pitch=sample.h+(compact?8:10);
+  const targetH=vh*(vw<700?7:3.2);
+  const colsWanted=Math.max(4, Math.ceil(Math.max(1,onTree.size)/(targetH/pitch)));
+  const cap=vw<700?vw*0.98:vw*1.9;
+  const maxRow=Math.max(sample.w*3, Math.min(cap, Math.max(cap*0.92, colsWanted*(sample.w+6))));
+  const gapX=compact?4:6;
+  const gapY=compact?4:5;
+  const bandGap=compact?10:14;
   const pos={};
-  function place(id, left){
-    const ch=kids[id]||[];
-    const w=width(id);
-    pos[id]={x:left+w/2, y:(depth[id]||0)*ROW};
-    let x=left;
-    ch.forEach(c=>{ place(c, x); x+=width(c)+gap; });
+  function packGroups(groups, y){
+    let x=0, rowH=0, rowKey=null;
+    function wrap(){
+      if(!rowH){x=0; return;}
+      y+=rowH+gapY;
+      x=0; rowH=0;
+    }
+    groups.forEach(ids=>{
+      if(!ids.length) return;
+      const info=periodEarly[ids[0]];
+      const gkey=variantNow==='era'?(info&&info.era):((info&&info.label)||'');
+      if(rowKey&&gkey!==rowKey) wrap();
+      rowKey=gkey;
+      const boxes=ids.map(id=>{const b=nodeBox(id); return {id,w:b.w,h:b.h};});
+      const gw=boxes.reduce((s,b)=>s+b.w,0)+gapX*Math.max(0, boxes.length-1);
+      const placeOne=b=>{
+        if(x>0&&x+b.w>maxRow) wrap();
+        pos[b.id]={x:x+b.w/2, y:y+b.h/2};
+        x+=b.w+gapX;
+        rowH=Math.max(rowH, b.h);
+      };
+      if(gw>maxRow){
+        if(x>0) wrap();
+        boxes.forEach(placeOne);
+        wrap();
+        return;
+      }
+      if(x>0&&x+gw>maxRow) wrap();
+      boxes.forEach(placeOne);
+      x+=gapX;
+    });
+    if(rowH) y+=rowH;
+    return y;
   }
-  let cursor=0;
-  roots.forEach(id=>{ place(id, cursor); cursor+=width(id)+gap*4; });
-  const ERA_SHIFT={qing:0, roc:30, prc:58};
-  Object.keys(pos).forEach(id=>{
-    if(loose.indexOf(id)>=0) return;
-    const info=periodEarly[id];
-    if(info) pos[id].y += ERA_SHIFT[info.era]||0;
+  const depthList=[...new Set([...onTree].map(id=>depth[id]||0))].sort((a,b)=>a-b);
+  let yCursor=0, maxD=0;
+  depthList.forEach(d=>{
+    maxD=Math.max(maxD, d);
+    const ids=[...onTree].filter(id=>(depth[id]||0)===d);
+    const groups=d===0?splitByTime(ids):[];
+    if(d!==0){
+      const grouped=new Map();
+      ids.forEach(id=>{
+        const par=primary[id];
+        if(!grouped.has(par)) grouped.set(par, []);
+        grouped.get(par).push(id);
+      });
+      const order=[...grouped.keys()].sort((a,b)=>((pos[a]&&pos[a].x)||0)-((pos[b]&&pos[b].x)||0));
+      order.forEach(par=>splitByTime(grouped.get(par)).forEach(g=>{ if(g.length) groups.push(g); }));
+    }
+    yCursor=packGroups(groups, yCursor);
+    yCursor+=bandGap;
   });
-  let maxY=0, maxD=0, treeN=0;
-  Object.keys(pos).forEach(id=>{
-    treeN++;
-    if(pos[id].y>maxY) maxY=pos[id].y;
-    if((depth[id]||0)>maxD) maxD=depth[id]||0;
-  });
-  const cols=compact?2:8;
-  const cell=compact?150:170;
-  const base=maxY+ROW*1.6;
+  let maxY=0, treeN=onTree.size;
+  onTree.forEach(id=>{ if(pos[id]&&pos[id].y>maxY) maxY=pos[id].y; });
+  const looseCols=Math.max(4, Math.floor(maxRow/((sample.w||90)+gapX)));
+  const base=maxY+sample.h+bandGap*1.4;
   loose.sort(byTime);
   loose.forEach((id,i)=>{
-    pos[id]={x:(i%cols)*cell+cell/2, y:base+Math.floor(i/cols)*ROW};
+    const b=nodeBox(id);
+    const col=i%looseCols;
+    pos[id]={x:col*(b.w+gapX)+b.w/2, y:base+Math.floor(i/looseCols)*(b.h+gapY)+b.h/2};
   });
+  const ROW=pitch;
   let known=0, est=0;
   const period=periodEarly;
   Object.keys(pos).forEach(id=>{
     if(period[id].estimated) est++; else known++;
   });
-  return {pos, depth, primary, kids, roots, loose, maxD, treeN, known, est, ROW, period, mastersOf};
+  return {pos, depth, primary, kids, roots, loose, maxD, treeN, known, est, ROW, period, mastersOf, box:boxOf};
 }
 function drawTree(){
   layoutLock=true;
@@ -1101,9 +1152,9 @@ function drawTree(){
     const p=byId[id];
     const info=model.period[id]||{label:'',era:'prc',estimated:true};
     const label=variant==='active'?(p.name+'\n'+(info.estimated?info.label+' · 估':info.label)):p.name;
+    const box=model.box[id]||{w:80,h:32};
     nodes.push({classes:'tree'+(info.estimated?' est':'')+extraClass(byId[id]), data:{
-      id:id, label:label, w:Math.max(72, [...(variant==='active'?info.label:p.name)].length*(variant==='active'?12:15)+24),
-      h:variant==='active'?46:32, eraColor:ERA_COLOR[info.era]||'#a8a29e', gen:p.generation||0, color:genColor(p.generation), deg:p._deg
+      id:id, label:label, w:box.w, h:box.h, eraColor:ERA_COLOR[info.era]||'#a8a29e', gen:p.generation||0, color:genColor(p.generation), deg:p._deg
     }, position:model.pos[id]});
   });
   if(model.loose.length){
@@ -1181,23 +1232,15 @@ function paintRail(){
   }).join('');
 }
 function openTreeView(){
-  const root=cy.getElementById(state.treeAnchor||'');
+  const nodes=cy.nodes().filter(n=>!n.hasClass('axis'));
   cy.minZoom(0.04); cy.maxZoom(3);
-  if(root.length){
-    const p=root.position();
-    const near=cy.nodes().filter(n=>{
-      if(n.hasClass('axis')) return false;
-      const q=n.position();
-      return Math.abs(q.x-p.x)<640 && q.y<=p.y+120;
-    });
-    const eles=near.length?near:root;
-    cy.fit(eles, treeCompact()?28:60);
-    if(cy.zoom()>1.25) cy.zoom(1.25);
-    if(cy.zoom()<0.8) cy.zoom(0.8);
-    cy.center(eles);
-    const rp=root.renderedPosition();
-    cy.panBy({x:36, y:64-rp.y});
-  }else cy.fit(undefined, 24);
+  if(!nodes.length){cy.fit(undefined, 24); paintRail(); syncZoomSlider(); return;}
+  const bb=nodes.boundingBox();
+  const padX=treeCompact()?12:20;
+  const zFitW=(cy.width()-padX*2)/Math.max(1, bb.w);
+  let z=cy.width()<700?Math.min(1.08, Math.max(0.8, zFitW)):Math.min(1.02, Math.max(0.9, zFitW));
+  cy.zoom(z);
+  cy.pan({x:padX-bb.x1*z, y:14-bb.y1*z});
   paintRail();
   syncZoomSlider();
 }
