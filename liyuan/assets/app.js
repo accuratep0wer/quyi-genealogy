@@ -14,7 +14,7 @@ function inkFor(hex){
 const STRIPE='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"><path d="M-2 2 L2 -2 M0 8 L8 0 M6 10 L10 6" stroke="white" stroke-opacity="0.85" stroke-width="3.5" stroke-linecap="square"/></svg>');
 const $=s=>document.querySelector(s);
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-let P=[],R=[],L={},byId={},cy=null,state={mode:'network',focus:null,treeVariant:'era'};
+let P=[],R=[],L={},byId={},cy=null,state={mode:'network',focus:null,treeVariant:'era',lyColor:'inst'};
 let INST=[],MEM=[],XO=[],INSTBY={},MEMBY={},XOBY={};
 let home={},spread={},layoutT=0,spreadReady=false,layoutLock=false,layoutAnim=0,placing=false;
 let anchorId=null,anchorPt=null,lastPointer=null;
@@ -60,8 +60,7 @@ function init(){
   }
   const hangs=[...new Set(P.map(p=>p.hangdang).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'zh'));
   if(pgen) hangs.forEach(h=>pgen.add(new Option(h,h)));
-  const buckets=[['生','#1d4ed8'],['旦','#db2777'],['净','#7f1d1d'],['丑','#b45309']];
-  if($('#genLegend')) $('#genLegend').innerHTML='行当：'+buckets.map(([n,c])=>'<span class="gen-swatch" style="background-color:'+c+'"></span>'+n).join('');
+  paintLyLegend();
   buildCy();
   bindUI();
   renderTables();
@@ -94,8 +93,60 @@ function primaryInst(pid){
     return sb-sa;
   })[0].institution;
 }
+const ROLE_COLOR={生:'#1d4ed8',旦:'#db2777',净:'#7f1d1d',末:'#4d7c0f',丑:'#b45309',兼行:'#6d28d9',其他:'#78716c',不详:'#d6d3d1'};
+function roleKey(p){
+  const h=p.hangdang||'';
+  const fams=[];
+  if(h.includes('生')) fams.push('生');
+  if(h.includes('旦')) fams.push('旦');
+  if(h.includes('净')||h.includes('花脸')) fams.push('净');
+  if(h.includes('末')) fams.push('末');
+  if(h.includes('丑')) fams.push('丑');
+  if(fams.length>1) return '兼行';
+  if(fams.length===1) return fams[0];
+  return h?'其他':'不详';
+}
+function lyChip(color,label){
+  return '<span class="ly-chip"><i class="gen-swatch" style="background-color:'+color+'"></i>'+esc(label)+'</span>';
+}
+function paintLyLegend(){
+  const host=$('#lyColorLegend');
+  if(!host) return;
+  const insts=INST.filter(i=>(i.member_count||0)>0).slice().sort((a,b)=>(b.member_count||0)-(a.member_count||0)||a.name.localeCompare(b.name,'zh'));
+  const nInst=P.filter(p=>primaryInst(p.id)).length;
+  const nRole=P.filter(p=>p.hangdang).length;
+  const nNeither=P.filter(p=>!primaryInst(p.id)&&!p.hangdang).length;
+  const roleOn=state.lyColor==='role';
+  const roles=[['生','生'],['旦','旦'],['净','净'],['末','末（记载中暂无）'],['丑','丑'],['兼行','兼行'],['其他','其他'],['不详','不详']];
+  host.innerHTML=
+    '<div class="ly-keyline"><button type="button" id="lyModeInst" class="'+(roleOn?'':'on')+'">按机构</button>'+
+    '<span class="muted">'+P.length+' 人里 '+nInst+' 人有科班或院校，'+nRole+' 人写了行当，'+nNeither+' 人两项都没有。没有机构记录的人用「不详」。</span></div>'+
+    '<div class="ly-chips"'+(roleOn?' hidden':'')+'>'+insts.map(i=>lyChip(instColor(i.id), i.name)).join('')+lyChip('#d6d3d1','不详')+'</div>'+
+    '<details id="roleFold"'+(roleOn?' open':'')+'><summary>行当上色：生、旦、净、末、丑</summary>'+
+    '<div class="ly-chips">'+roles.map(([k,label])=>lyChip(ROLE_COLOR[k], label)).join('')+'</div>'+
+    '<p class="muted">写了不止一个行当的人标为「兼行」，不改成其中一行。琴师、票友、教师等不是生旦净末丑的，标为「其他」。</p></details>';
+  $('#lyModeInst').onclick=()=>{
+    state.lyColor='inst';
+    const fold=$('#roleFold');
+    if(fold&&fold.open) fold.open=false;
+    if($('#colorInst')) $('#colorInst').checked=true;
+    paintLyLegend();
+    if(state.mode==='tree') drawTree();
+  };
+  $('#roleFold').addEventListener('toggle',()=>{
+    const next=$('#roleFold').open?'role':'inst';
+    if(state.lyColor===next) return;
+    state.lyColor=next;
+    if(next==='inst'&&$('#colorInst')) $('#colorInst').checked=true;
+    $('#lyModeInst').classList.toggle('on', next!=='role');
+    const chips=host.querySelector('.ly-chips');
+    if(chips) chips.hidden=next==='role';
+    if(state.mode==='tree') drawTree();
+  });
+}
 function treeFill(p){
-  if($('#colorInst')&&$('#colorInst').checked){
+  if(state.lyColor==='role') return ROLE_COLOR[roleKey(p)];
+  if(!$('#colorInst')||$('#colorInst').checked){
     const id=primaryInst(p.id);
     return id?instColor(id):'#d6d3d1';
   }
@@ -1214,9 +1265,9 @@ function drawTree(){
     const label=fit.t;
     const box=model.box[id]||{w:94,h:50};
     const fill=treeFill(p);
-    const instOn=$('#colorInst')&&$('#colorInst').checked;
+    const themed=state.lyColor==='role'||!$('#colorInst')||$('#colorInst').checked;
     nodes.push({classes:'tree'+(info.estimated?' est':'')+extraClass(byId[id]), data:{
-      id:id, label:label, fs:fit.fs, labelW:box.w, eraColor:instOn?fill:(ERA_COLOR[info.era]||'#a8a29e'), fill:fill, ink:inkFor(fill), gen:p.generation||0, color:fill, deg:p._deg
+      id:id, label:label, fs:fit.fs, labelW:box.w, eraColor:themed?fill:(ERA_COLOR[info.era]||'#a8a29e'), fill:fill, ink:inkFor(fill), gen:p.generation||0, color:fill, deg:p._deg
     }, position:model.pos[id]});
     if(variant==='active'){
       nodes.push({classes:'period-tag', grabbable:false, data:{id:'period-'+id, label:info.estimated?info.label+' · 估':info.label}, position:{x:model.pos[id].x, y:model.pos[id].y+30}});

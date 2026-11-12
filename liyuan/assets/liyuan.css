@@ -22,8 +22,15 @@
 .dot.xo {
   background: #fff;
   border: 2px solid #111;
-  transform: rotate(45deg);
-  border-radius: 2px;
+  transform: none;
+  border-radius: 50%;
 }
+.ly-color-legend{flex:1 1 100%;display:flex;flex-direction:column;gap:4px;margin-top:4px}
+.ly-keyline{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.ly-keyline button.on{background:var(--accent);color:#fff;border-color:transparent}
+.ly-chips{display:flex;flex-wrap:wrap;gap:2px 8px}
+.ly-chip{display:inline-flex;align-items:center;font-size:12px;white-space:nowrap}
+#roleFold summary{cursor:pointer;font-weight:700}
+#roleFold p{margin:4px 0}
 .bio { margin: 8px 0; line-height: 1.6; font-size: 14px; }
 #inst, #cohort { max-width: 11em; }
