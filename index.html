@@ -25,7 +25,7 @@
 <main>
 <section id="view-graph" class="view">
   <div class="mode-tabs" role="tablist">
-    <a href="#tree/era" data-mode="tree" title="自上而下的家谱，一代一代往下排">谱系图</a>
+    <a href="#tree" data-mode="tree" title="自上而下的家谱，一代一代往下排">谱系图</a>
     <a href="#nebula" data-mode="nebula" title="星团式布局。旧地址 #nebula 仍可用">2D星云图</a>
     <a href="#3d" data-mode="network" title="原来的全网络图。旧地址 #graph 仍打开这一张">3D星云图</a>
     <a href="#graph" data-mode="ego" title="从一个人向外看师承">聚焦</a>
@@ -47,10 +47,6 @@
       <label class="ego-only">向下代数 <select id="depthDown"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></label>
       <label class="ego-only">向上 <select id="depthUp"><option>1</option><option>2</option><option>3</option><option selected>99</option></select></label>
       <label class="phone-hide">代数 <select id="gmin"></select> – <select id="gmax"></select></label>
-      <span class="tree-only" id="treeVariant">
-        <button type="button" data-variant="era" class="on" title="左边只标清、民国、中华人民共和国">按朝代</button>
-        <button type="button" data-variant="active" title="每人标大致活跃时期">按活跃年代</button>
-      </span>
       <button type="button" id="filterToggle" aria-expanded="false">筛选</button>
     </div>
     <div class="ctrl types">

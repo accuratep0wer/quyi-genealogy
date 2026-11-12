@@ -14,7 +14,7 @@ function inkFor(hex){
 const STRIPE='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"><path d="M-2 2 L2 -2 M0 8 L8 0 M6 10 L10 6" stroke="white" stroke-opacity="0.85" stroke-width="3.5" stroke-linecap="square"/></svg>');
 const $=s=>document.querySelector(s);
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-let P=[],R=[],L={},byId={},cy=null,state={mode:'network',focus:null,treeVariant:'era',lyColor:'inst'};
+let P=[],R=[],L={},byId={},cy=null,state={mode:'network',focus:null,lyColor:'inst'};
 let INST=[],MEM=[],XO=[],INSTBY={},MEMBY={},XOBY={};
 let home={},spread={},layoutT=0,spreadReady=false,layoutLock=false,layoutAnim=0,placing=false;
 let anchorId=null,anchorPt=null,lastPointer=null;
@@ -194,7 +194,7 @@ function buildCy(){
       {selector:'node.nebula',style:{'font-size':14,'min-zoomed-font-size':10,'text-outline-width':3,'text-outline-color':'#fff'}},
       {selector:'node.nebula[deg >= 8]',style:{'font-size':30,'min-zoomed-font-size':6,'font-weight':'bold'}},
       {selector:'node.nebula[deg >= 15]',style:{'font-size':42,'min-zoomed-font-size':4,'font-weight':'bold'}},
-      {selector:'node.tree',style:{'shape':'ellipse','width':86,'height':42,'font-size':'data(fs)','text-valign':'center','text-halign':'center','text-margin-y':0,'text-outline-width':0,'color':'data(ink)','text-wrap':'wrap','text-max-width':78,'line-height':1.1,'min-zoomed-font-size':6,'background-color':'data(fill)','background-image':'none','border-width':2.5,'border-color':'data(eraColor)','padding':0}},
+      {selector:'node.tree',style:{'shape':'ellipse','width':86,'height':42,'font-size':'data(fs)','text-valign':'center','text-halign':'center','text-margin-y':0,'text-outline-width':0,'color':'data(ink)','text-wrap':'wrap','text-max-width':78,'line-height':1.1,'min-zoomed-font-size':6,'background-color':'data(fill)','background-image':'none','border-width':2.5,'border-color':'data(fill)','padding':0}},
       {selector:'node.tree.est',style:{'border-style':'dashed'}},
       {selector:'node.tree.axis',style:{'shape':'ellipse','width':1,'height':1,'background-opacity':0,'border-width':0,'font-size':13,'font-weight':'bold','color':'#7c2d12','text-valign':'center','text-halign':'center','text-margin-y':0,'text-max-width':240,'z-index':0}},
       {selector:'node.period-tag',style:{'shape':'ellipse','width':1,'height':1,'background-opacity':0,'border-width':0,'font-size':11,'font-weight':600,'color':'#44403c','text-valign':'center','text-halign':'center','text-margin-y':0,'text-wrap':'none','text-max-width':120,'text-outline-width':0,'text-background-color':'#fff','text-background-opacity':0.92,'text-background-padding':2,'min-zoomed-font-size':6,'z-index':40}},
@@ -375,7 +375,7 @@ function updateModeTabs(){
   const id=state.focus||(P.find(p=>p.name==='侯宝林')||P[0]||{}).id||'';
   if(ego&&id) ego.href='#graph/'+hid(id);
   if(neb) neb.href=state.focus?'#nebula/'+hid(state.focus):'#nebula';
-  if(tree) tree.href='#tree/'+(state.treeVariant||'era');
+  if(tree) tree.href=state.focus?'#tree/'+hid(state.focus):'#tree';
 }
 function egoSet(id){
   const f=filters(),dd=+$('#depthDown').value,du=+$('#depthUp').value;
@@ -730,7 +730,7 @@ function selectPerson(id,center){
   if(!byId[id]._linked){
     renderPanel(id);
     if(state.mode==='ego'){state.mode='network';$('#mode').value='network';syncMode();drawNetwork();}
-    const next=state.mode==='nebula'?'#nebula':(state.mode==='tree'?'#tree/'+(state.treeVariant||'era'):'#3d');
+    const next=state.mode==='nebula'?'#nebula':(state.mode==='tree'?'#tree':'#3d');
     if(location.hash!==next) history.replaceState(null,'',next);
     if(cy) clearHL();
     updateModeTabs();
@@ -797,7 +797,6 @@ function syncMode(){
   document.querySelectorAll('.ego-only').forEach(e=>e.style.display=state.mode==='ego'?'':'none');
   document.querySelectorAll('.tree-only').forEach(e=>e.style.display=state.mode==='tree'?'inline-flex':'none');
   if(state.mode!=='tree') hideTreeScroll();
-  document.querySelectorAll('#treeVariant button').forEach(b=>b.classList.toggle('on', b.dataset.variant===(state.treeVariant||'era')));
 }
 function bindUI(){
   $('#panel').addEventListener('click',e=>{const t=e.target.closest('.pl');if(t){selectPerson(t.dataset.id,true);}});
@@ -824,7 +823,7 @@ function bindUI(){
   $('#mode').addEventListener('change',e=>{
     const v=e.target.value;
     if(v==='nebula'){location.hash=state.focus?'#nebula/'+state.focus:'#nebula';return;}
-    if(v==='tree'){location.hash='#tree/'+(state.treeVariant||'era');return;}
+    if(v==='tree'){location.hash=state.focus?'#tree/'+hid(state.focus):'#tree';return;}
     if(v==='network'){location.hash='#3d';return;}
     const id=state.focus||(P.find(p=>p.name==='侯宝林')||{}).id||'';
     location.hash='#graph/'+id;
@@ -860,11 +859,6 @@ function bindUI(){
   $('#feedbackBtn').addEventListener('click',()=>openFeedback(state.focus));
   $('#fbClose').addEventListener('click',()=>$('#feedbackDlg').close());
   $('#feedbackDlg').addEventListener('click',e=>{if(e.target.id==='feedbackDlg') $('#feedbackDlg').close();});
-  document.querySelectorAll('#treeVariant button').forEach(b=>b.addEventListener('click',()=>{
-    state.treeVariant=b.dataset.variant;
-    const id=state.focus;
-    location.hash='#tree/'+(id&&byId[id]?id:state.treeVariant);
-  }));
   const treeLinks=$('#treeLinks');
   if(treeLinks) treeLinks.addEventListener('change',()=>{ if(state.mode==='tree') drawTree(); });
   function fillCohorts(){
@@ -1162,8 +1156,7 @@ function buildPedigree(compact){
   Object.keys(primary).forEach(id=>{ if(allow.has(id)) onTree.add(id); });
   const boxOf={};
   function nodeBox(){
-    const h=(state.treeVariant||'era')==='active'?64:50;
-    return {w:94,h};
+    return {w:94,h:50};
   }
   const vw=Math.max(320, (typeof cy!=='undefined'&&cy&&cy.width())||1200);
   const vh=Math.max(420, (typeof cy!=='undefined'&&cy&&cy.height())||800);
@@ -1256,7 +1249,6 @@ function drawTree(){
   if(cy) cy.autoungrabify(false);
   const compact=treeCompact();
   const model=buildPedigree(compact);
-  const variant=state.treeVariant||'era';
   const nodes=[], edges=[];
   Object.keys(model.pos).forEach(id=>{
     const p=byId[id];
@@ -1265,13 +1257,9 @@ function drawTree(){
     const label=fit.t;
     const box=model.box[id]||{w:94,h:50};
     const fill=treeFill(p);
-    const themed=state.lyColor==='role'||!$('#colorInst')||$('#colorInst').checked;
     nodes.push({classes:'tree'+(info.estimated?' est':'')+extraClass(byId[id]), data:{
-      id:id, label:label, fs:fit.fs, labelW:box.w, eraColor:themed?fill:(ERA_COLOR[info.era]||'#a8a29e'), fill:fill, ink:inkFor(fill), gen:p.generation||0, color:fill, deg:p._deg
+      id:id, label:label, fs:fit.fs, labelW:box.w, fill:fill, ink:inkFor(fill), gen:p.generation||0, color:fill, deg:p._deg
     }, position:model.pos[id]});
-    if(variant==='active'){
-      nodes.push({classes:'period-tag', grabbable:false, data:{id:'period-'+id, label:info.estimated?info.label+' · 估':info.label}, position:{x:model.pos[id].x, y:model.pos[id].y+30}});
-    }
   });
   if(model.loose.length){
     const y=Math.min(...model.loose.map(id=>model.pos[id].y))-model.ROW*0.55;
@@ -1296,7 +1284,7 @@ function drawTree(){
   state.treeAnchor=model.roots[0]||'';
   const treePeople=model.treeN, looseN=model.loose.length;
   state.treeStats={generations:model.maxD+1, tree:treePeople, loose:looseN, known:model.known, est:model.est};
-  $('#stat').textContent='家谱 '+state.treeStats.generations+' 层 · 树上 '+treePeople+' 人 · 无师承 '+looseN+' 人 · 活跃时期有生卒 '+model.known+' · 按代数估计 '+model.est+'（全库 '+P.length+' 人）';
+  $('#stat').textContent='家谱 '+state.treeStats.generations+' 层 · 树上 '+treePeople+' 人 · 无师承 '+looseN+' 人（全库 '+P.length+' 人）';
   layoutLock=false;
   if(!(state.focus&&cy.getElementById(state.focus).length)) openTreeView();
   else applyTreeViewport(false);
@@ -1611,8 +1599,6 @@ function route(){
   }
   if(kind==='tree'){
     state.mode='tree';
-    if(arg==='era'||arg==='active') state.treeVariant=arg;
-    else if(!arg) state.treeVariant='era';
     $('#mode').value='tree';
     syncMode();
     drawTree();

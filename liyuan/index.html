@@ -26,7 +26,7 @@
 <main>
 <section id="view-graph" class="view">
   <div class="mode-tabs" role="tablist">
-    <a href="#tree/era" data-mode="tree" title="自上而下的家谱，一代一代往下排">谱系图</a>
+    <a href="#tree" data-mode="tree" title="自上而下的家谱，一代一代往下排">谱系图</a>
     <a href="#nebula" data-mode="nebula" title="星团式布局">2D星云图</a>
     <a href="#3d" data-mode="network" title="全网络。地址 #graph 仍打开这一张">3D星云图</a>
     <a href="#graph" data-mode="ego" title="从一个人向外看师承">聚焦</a>
@@ -48,10 +48,6 @@
       <label class="ego-only">向下代数 <select id="depthDown"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></label>
       <label class="ego-only">向上 <select id="depthUp"><option>1</option><option>2</option><option>3</option><option selected>99</option></select></label>
       <label class="phone-hide" hidden>代数 <select id="gmin"></select> – <select id="gmax"></select></label>
-      <span class="tree-only" id="treeVariant">
-        <button type="button" data-variant="era" class="on" title="左边只标清、民国、中华人民共和国">按朝代</button>
-        <button type="button" data-variant="active" title="每人标大致活跃时期">按活跃年代</button>
-      </span>
       <label>科班/院校 <select id="inst"><option value="">全部机构</option></select></label>
       <label>科 <select id="cohort"><option value="">全部科 / 班</option></select></label>
       <label><input type="checkbox" id="colorInst" checked> 按机构上色</label>
@@ -132,7 +128,7 @@
     <h3>科班与院校</h3>
     <p>工具栏可以选择富连成、中华戏曲专科学校等机构，再选一科（喜、连、富、盛、世、元、韵……）。成员会高亮；在 2D星云图上，还会用一块半透明的范围把他们圈起来。也可以改成按机构上色。</p>
     <h3>谱系图</h3>
-    <p>家谱自上而下。最早的一辈在上，然后一代一代往下。深度按师徒关系计算，不另造师父。没有师承、但有亲属或搭档的人放在下方「无师承，但有其他关系」。按朝代只标清 / 民国 / 共和国；按活跃年代用生卒推一个大概时段，没有生年的标「估」，不写精确年份。</p>
+    <p>家谱自上而下。最早的一辈在上，然后一代一代往下。深度按师徒关系计算，不另造师父。没有师承、但有亲属或搭档的人放在下方「无师承，但有其他关系」。</p>
     <p class="muted" id="buildinfo"></p>
     <h3 id="srcs">来源列表</h3>
     <ol id="sourceList"></ol>
