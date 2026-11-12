@@ -390,24 +390,50 @@ function nearestNode(rx,ry){
   });
   return best;
 }
+function terrain(x,y){
+  // A rolling height field. Neighbouring groups sit on different slopes,
+  // so a zoom into one of them pulls the others forward or back.
+  return Math.sin(x/230)*0.66+Math.cos(y/200)*0.52+Math.sin((x*0.65+y)/340)*0.4;
+}
 function snapSpread(t,aid,pt){
   if(!spreadReady) return;
   if(!pt) pt=anchorPoint();
   if(!aid){const n=nearestNode(pt.x,pt.y); aid=n&&n.id();}
   const z=cy.zoom();
+  const relief=state.mode==='network'&&t>0.012;
+  const strength=0.12+1.15*t;
+  let ax=null, ay=null, zA=0;
+  if(aid&&home[aid]&&spread[aid]){
+    ax=home[aid].x+(spread[aid].x-home[aid].x)*t;
+    ay=home[aid].y+(spread[aid].y-home[aid].y)*t;
+    zA=terrain(ax,ay);
+  }
   placing=true;
   cy.startBatch();
   cy.nodes().forEach(n=>{
     const h=home[n.id()], s=spread[n.id()];
     if(!h||!s) return;
-    n.position({x:h.x+(s.x-h.x)*t, y:h.y+(s.y-h.y)*t});
+    let x=h.x+(s.x-h.x)*t, y=h.y+(s.y-h.y)*t;
+    if(relief&&ax!=null){
+      const dz=terrain(x,y)-zA;
+      const denom=1-dz*0.7*strength;
+      const f=Math.max(0.58, Math.min(1.9, denom>0.2?1/denom:4));
+      x=ax+(x-ax)*f;
+      y=ay+(y-ay)*f+dz*110*strength;
+      const s0=n.data('size')||12;
+      const sc=Math.max(0.7, Math.min(1.65, 1+dz*0.42*strength));
+      n.style({width:s0*sc, height:s0*sc, 'z-index':Math.round(80+dz*40)});
+      state._relief=1;
+    }else if(state._relief){
+      n.removeStyle('width');
+      n.removeStyle('height');
+      n.removeStyle('z-index');
+    }
+    n.position({x:x,y:y});
   });
   cy.endBatch();
-  if(aid&&home[aid]&&spread[aid]){
-    const x=home[aid].x+(spread[aid].x-home[aid].x)*t;
-    const y=home[aid].y+(spread[aid].y-home[aid].y)*t;
-    cy.pan({x:pt.x-x*z, y:pt.y-y*z});
-  }
+  if(!relief) state._relief=0;
+  if(ax!=null) cy.pan({x:pt.x-ax*z, y:pt.y-ay*z});
   placing=false;
   layoutT=t;
 }
