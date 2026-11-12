@@ -420,22 +420,47 @@ function nearestNode(rx,ry){
   });
   return best;
 }
+function nodeDepth(id){
+  let h=2166136261;
+  const s=String(id);
+  for(let i=0;i<s.length;i++) h=Math.imul(h^s.charCodeAt(i), 16777619);
+  return ((h>>>0)%1000)/999;
+}
+function depthShift(id, z){
+  const depth=nodeDepth(id);
+  const boost=Math.max(0, Math.min(1, (z-0.3)/1.05));
+  const lift=(depth-0.5)*Math.min(160, 200/Math.max(0.45,z))*boost;
+  return {dx:lift*0.35, dy:-lift, depth, boost};
+}
 function snapSpread(t,aid,pt){
   if(!spreadReady) return;
   if(!pt) pt=anchorPoint();
   if(!aid){const n=nearestNode(pt.x,pt.y); aid=n&&n.id();}
   const z=cy.zoom();
+  const volumetric=state.mode==='network';
   placing=true;
   cy.startBatch();
   cy.nodes().forEach(n=>{
     const h=home[n.id()], s=spread[n.id()];
     if(!h||!s) return;
-    n.position({x:h.x+(s.x-h.x)*t, y:h.y+(s.y-h.y)*t});
+    let x=h.x+(s.x-h.x)*t, y=h.y+(s.y-h.y)*t;
+    if(volumetric){
+      const d=depthShift(n.id(), z);
+      x+=d.dx; y+=d.dy;
+      const base=n.data('size')||24;
+      if(d.boost<0.02) n.removeStyle();
+      else {
+        const scale=Math.max(0.28, 1+(d.depth-0.5)*1.75*d.boost);
+        n.style({width:base*scale, height:base*scale, opacity:1-(1-d.depth)*0.72*d.boost, 'z-index':Math.round(6+d.depth*90)});
+      }
+    }
+    n.position({x, y});
   });
   cy.endBatch();
   if(aid&&home[aid]&&spread[aid]){
-    const x=home[aid].x+(spread[aid].x-home[aid].x)*t;
-    const y=home[aid].y+(spread[aid].y-home[aid].y)*t;
+    let x=home[aid].x+(spread[aid].x-home[aid].x)*t;
+    let y=home[aid].y+(spread[aid].y-home[aid].y)*t;
+    if(volumetric){const d=depthShift(aid, z); x+=d.dx; y+=d.dy;}
     cy.pan({x:pt.x-x*z, y:pt.y-y*z});
   }
   placing=false;
