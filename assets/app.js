@@ -81,9 +81,9 @@ function buildCy(){
       {selector:'node.nebula',style:{'font-size':14,'min-zoomed-font-size':10,'text-outline-width':3,'text-outline-color':'#fff'}},
       {selector:'node.nebula[deg >= 8]',style:{'font-size':30,'min-zoomed-font-size':6,'font-weight':'bold'}},
       {selector:'node.nebula[deg >= 15]',style:{'font-size':42,'min-zoomed-font-size':4,'font-weight':'bold'}},
-      {selector:'node.tree',style:{'shape':'round-rectangle','width':'data(w)','height':'data(h)','font-size':13,'min-zoomed-font-size':7,'text-valign':'center','text-halign':'center','text-margin-y':0,'color':'#1c1917','text-wrap':'wrap','text-max-width':'data(w)','background-color':'#fff','background-image':'none','border-width':3,'border-color':'data(eraColor)','padding':0}},
+      {selector:'node.tree',style:{'shape':'ellipse','width':28,'height':28,'font-size':13,'min-zoomed-font-size':7,'text-valign':'bottom','text-halign':'center','text-margin-y':4,'color':'#1c1917','text-wrap':'wrap','text-max-width':'data(labelW)','background-color':'#fff','background-image':'none','border-width':3,'border-color':'data(eraColor)','padding':0}},
       {selector:'node.tree.est',style:{'color':'#78716c','border-style':'dashed','background-color':'#fafaf9'}},
-      {selector:'node.tree.axis',style:{'shape':'round-rectangle','background-color':'#f6f1ea','border-width':0,'font-size':12,'font-weight':'bold','color':'#7c2d12','text-valign':'center','text-halign':'center','z-index':0}},
+      {selector:'node.tree.axis',style:{'shape':'ellipse','width':1,'height':1,'background-opacity':0,'border-width':0,'font-size':13,'font-weight':'bold','color':'#7c2d12','text-valign':'center','text-halign':'center','text-margin-y':0,'text-max-width':240,'z-index':0}},
       {selector:'edge.extra',style:{'width':1,'line-color':'#d6d3d1','target-arrow-color':'#d6d3d1','opacity':0.55,'line-style':'dashed','line-dash-pattern':[3,4],'z-index':0}},
       {selector:'edge.tree-link',style:{'width':5,'line-color':'#b91c1c','target-arrow-color':'#b91c1c','opacity':1,'z-index':20,'line-style':'solid','arrow-scale':1.3}},
       {selector:'edge.tree-reveal',style:{'width':3.5,'line-color':'#7c3aed','target-arrow-color':'#7c3aed','opacity':1,'z-index':24,'curve-style':'bezier','control-point-step-size':90,'line-style':'dashed','line-dash-pattern':[10,6]}}
@@ -920,7 +920,7 @@ function buildPedigree(compact){
     const info=periodEarly[id]||periodOf(p, depth[id]||0);
     const text=variant==='active'?info.label:p.name;
     const w=Math.max(variant==='active'?100:74, [...p.name].length*15+18, [...text].length*(variant==='active'?12:15)+20);
-    const h=variant==='active'?44:32;
+    const h=variant==='active'?70:50;
     boxOf[id]={w,h};
     return boxOf[id];
   }
@@ -1042,7 +1042,7 @@ function drawTree(){
     const label=variant==='active'?(p.name+'\n'+(info.estimated?info.label+' · 估':info.label)):p.name;
     const box=model.box[id]||{w:80,h:32};
     nodes.push({classes:'tree'+(info.estimated?' est':''), data:{
-      id:id, label:label, w:box.w, h:box.h, eraColor:ERA_COLOR[info.era]||'#a8a29e', gen:p.generation||0, color:genColor(p.generation), deg:p._deg
+      id:id, label:label, labelW:box.w, eraColor:ERA_COLOR[info.era]||'#a8a29e', gen:p.generation||0, color:genColor(p.generation), deg:p._deg
     }, position:model.pos[id]});
   });
   if(model.loose.length){

@@ -129,9 +129,9 @@ function buildCy(){
       {selector:'node.nebula',style:{'font-size':14,'min-zoomed-font-size':10,'text-outline-width':3,'text-outline-color':'#fff'}},
       {selector:'node.nebula[deg >= 8]',style:{'font-size':30,'min-zoomed-font-size':6,'font-weight':'bold'}},
       {selector:'node.nebula[deg >= 15]',style:{'font-size':42,'min-zoomed-font-size':4,'font-weight':'bold'}},
-      {selector:'node.tree',style:{'shape':'round-rectangle','width':'data(w)','height':'data(h)','font-size':13,'min-zoomed-font-size':7,'text-valign':'center','text-halign':'center','text-margin-y':0,'color':'#1c1917','text-wrap':'wrap','text-max-width':'data(w)','background-color':'#fff','background-image':'none','border-width':3,'border-color':'data(eraColor)','padding':0}},
+      {selector:'node.tree',style:{'shape':'ellipse','width':28,'height':28,'font-size':13,'min-zoomed-font-size':7,'text-valign':'bottom','text-halign':'center','text-margin-y':4,'color':'#1c1917','text-wrap':'wrap','text-max-width':'data(labelW)','background-color':'#fff','background-image':'none','border-width':3,'border-color':'data(eraColor)','padding':0}},
       {selector:'node.tree.est',style:{'color':'#78716c','border-style':'dashed','background-color':'#fafaf9'}},
-      {selector:'node.tree.axis',style:{'shape':'round-rectangle','background-color':'#f6f1ea','border-width':0,'font-size':12,'font-weight':'bold','color':'#7c2d12','text-valign':'center','text-halign':'center','z-index':0}},
+      {selector:'node.tree.axis',style:{'shape':'ellipse','width':1,'height':1,'background-opacity':0,'border-width':0,'font-size':13,'font-weight':'bold','color':'#7c2d12','text-valign':'center','text-halign':'center','text-margin-y':0,'text-max-width':240,'z-index':0}},
       {selector:'node.stub',style:{'opacity':0.55,'color':'#6b7280','font-size':11,'border-style':'dashed','border-color':'#a8a29e'}},
       {selector:'node.xo',style:{'shape':'diamond','border-width':2,'border-color':'#111'}},
       {selector:'node.inst',style:{'border-width':4,'border-color':'#b45309','opacity':1,'z-index':8}},
@@ -1073,7 +1073,7 @@ function buildPedigree(compact){
     const info=periodEarly[id]||periodOf(p, depth[id]||0);
     const text=variantNow==='active'?info.label:p.name;
     const w=Math.max(variantNow==='active'?100:74, [...p.name].length*15+18, [...text].length*(variantNow==='active'?12:15)+20);
-    const h=variantNow==='active'?44:32;
+    const h=variantNow==='active'?70:50;
     boxOf[id]={w,h};
     return boxOf[id];
   }
@@ -1176,7 +1176,7 @@ function drawTree(){
     const label=variant==='active'?(p.name+'\n'+(info.estimated?info.label+' · 估':info.label)):p.name;
     const box=model.box[id]||{w:80,h:32};
     nodes.push({classes:'tree'+(info.estimated?' est':'')+extraClass(byId[id]), data:{
-      id:id, label:label, w:box.w, h:box.h, eraColor:ERA_COLOR[info.era]||'#a8a29e', gen:p.generation||0, color:genColor(p.generation), deg:p._deg
+      id:id, label:label, labelW:box.w, eraColor:ERA_COLOR[info.era]||'#a8a29e', gen:p.generation||0, color:genColor(p.generation), deg:p._deg
     }, position:model.pos[id]});
   });
   if(model.loose.length){
