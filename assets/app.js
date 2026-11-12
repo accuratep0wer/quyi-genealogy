@@ -901,17 +901,6 @@ function buildPedigree(compact){
     if(!!A.estimated!==!!B.estimated) return A.estimated?1:-1;
     return byId[a].name.localeCompare(byId[b].name,'zh');
   }
-  function splitByTime(ids){
-    const sorted=ids.slice().sort(byTime);
-    const out=[];
-    let cur=null, key=null;
-    sorted.forEach(id=>{
-      const k=(state.treeVariant||'era')==='era'?periodEarly[id].era:periodEarly[id].label;
-      if(k!==key){cur=[]; out.push(cur); key=k;}
-      cur.push(id);
-    });
-    return out;
-  }
   const vw=Math.max(320, (typeof cy!=='undefined'&&cy&&cy.width())||1200);
   const vh=Math.max(420, (typeof cy!=='undefined'&&cy&&cy.height())||800);
   const sample=nodeBox((roots[0])||[...onTree][0]);
@@ -932,13 +921,8 @@ function buildPedigree(compact){
       y+=rowH+gapY;
       x=0; rowH=0;
     }
-    let rowKey=null;
     groups.forEach(ids=>{
       if(!ids.length) return;
-      const keyId=ids[0];
-      const gkey=(state.treeVariant||'era')==='era'?periodEarly[keyId].era:periodEarly[keyId].label;
-      if(rowKey&&gkey!==rowKey) wrap();
-      rowKey=gkey;
       const boxes=ids.map(id=>{const b=nodeBox(id); return {id,w:b.w,h:b.h};});
       const gw=boxes.reduce((s,b)=>s+b.w,0)+gapX*Math.max(0, boxes.length-1);
       const placeOne=(b)=>{
@@ -971,7 +955,7 @@ function buildPedigree(compact){
     const ids=[...onTree].filter(id=>(depth[id]||0)===d);
     let groups;
     if(d===0){
-      groups=splitByTime(ids);
+      groups=[ids.slice().sort(byTime)];
     }else{
       const grouped=new Map();
       ids.forEach(id=>{
@@ -981,7 +965,10 @@ function buildPedigree(compact){
       });
       const order=[...grouped.keys()].sort((a,b)=>((pos[a]&&pos[a].x)||0)-((pos[b]&&pos[b].x)||0));
       groups=[];
-      order.forEach(par=>splitByTime(grouped.get(par)).forEach(g=>{ if(g.length) groups.push(g); }));
+      order.forEach(par=>{
+        const g=grouped.get(par).slice().sort(byTime);
+        if(g.length) groups.push(g);
+      });
     }
     yCursor=packGroups(groups, yCursor);
     yCursor+=bandGap;
@@ -1014,8 +1001,6 @@ function drawTree(){
   const variant=state.treeVariant||'era';
   const showExtra=$('#treeLinks')&&$('#treeLinks').checked;
   const nodes=[], edges=[];
-  const eraName={qing:'清', roc:'民国', prc:'共和国'};
-  state.treeRows=[];
   Object.keys(model.pos).forEach(id=>{
     const p=byId[id];
     const info=model.period[id];
@@ -1029,30 +1014,6 @@ function drawTree(){
     const y=Math.min(...model.loose.map(id=>model.pos[id].y))-model.ROW*0.55;
     nodes.push({classes:'tree axis', data:{id:'loosehead', label:'无师承，但有其他关系', w:220, h:28, eraColor:'#a8a29e'}, position:{x:110, y:y}});
   }
-  const looseSet=new Set(model.loose);
-  const yBands={};
-  Object.keys(model.pos).forEach(id=>{
-    if(looseSet.has(id)) return;
-    const y=Math.round(model.pos[id].y);
-    (yBands[y]=yBands[y]||[]).push(id);
-  });
-  let prevRail='';
-  Object.keys(yBands).map(Number).sort((a,b)=>a-b).forEach(y=>{
-    const list=yBands[y];
-    const dated=list.filter(id=>model.period[id]&&!model.period[id].estimated);
-    const src=dated.length?dated:list;
-    let label;
-    if(variant==='era'){
-      const count={};
-      src.forEach(id=>{ const e=model.period[id].era; count[e]=(count[e]||0)+1; });
-      label=eraName[Object.keys(count).sort((a,b)=>count[b]-count[a])[0]]||'';
-    }else{
-      const count={};
-      src.forEach(id=>{ const e=model.period[id].label; count[e]=(count[e]||0)+1; });
-      label=Object.keys(count).sort((a,b)=>count[b]-count[a])[0]||'';
-    }
-    if(label&&label!==prevRail){ state.treeRows.push({y:y, label:label}); prevRail=label; }
-  });
   const seen=new Set();
   R.forEach(r=>{
     if(r.type!=='master_disciple') return;
@@ -1080,7 +1041,6 @@ function drawTree(){
   $('#stat').textContent='家谱 '+state.treeStats.generations+' 层 · 树上 '+treePeople+' 人 · 无师承 '+looseN+' 人 · 活跃时期有生卒 '+model.known+' · 按代数估计 '+model.est+'（全库 '+P.length+' 人）';
   layoutLock=false;
   if(!(state.focus&&cy.getElementById(state.focus).length)) openTreeView();
-  const rail=$('#eraRail'); if(rail) rail.hidden=false;
   paintRail();
   syncZoomSlider();
   updateModeTabs();
@@ -1088,14 +1048,8 @@ function drawTree(){
 function paintRail(){
   const rail=$('#eraRail');
   if(!rail) return;
-  if(state.mode!=='tree'||!state.treeRows||!cy){rail.hidden=true; rail.innerHTML=''; return;}
-  rail.hidden=false;
-  const z=cy.zoom(), pan=cy.pan();
-  rail.innerHTML=state.treeRows.map(row=>{
-    const y=row.y*z+pan.y;
-    if(y<-20||y>cy.height()) return '';
-    return '<div style="top:'+(y-12)+'px">'+esc(row.label)+'</div>';
-  }).join('');
+  rail.hidden=true;
+  rail.innerHTML='';
 }
 function openTreeView(){
   const nodes=cy.nodes().filter(n=>!n.hasClass('axis'));
