@@ -94,10 +94,11 @@ function buildCy(){
   cy.on('tap','node',e=>{let id=e.target.id(); if(id.indexOf('period-')===0) id=id.slice(7); if(id.indexOf('axis-')===0||id==='loosehead')return; selectPerson(id,false);});
   cy.on('tap',e=>{if(e.target===cy) clearHL();});
   cy.on('mousemove',ev=>{if(ev.renderedPosition) lastPointer={x:ev.renderedPosition.x,y:ev.renderedPosition.y,t:performance.now()};});
-  cy.on('pan',()=>{if(!placing&&!layoutAnim) anchorId=null; paintRail();});
+  cy.on('pan',()=>{if(!placing&&!layoutAnim) anchorId=null; paintRail(); if(state.mode==='tree') clampTreePan();});
   cy.on('mouseover','edge',e=>{const d=e.target.data();e.target.style('label',(TYPE_CN[d.type]||'')+(d.detail?'：'+d.detail:'')+(CONF_CN[d.conf]?'（'+CONF_CN[d.conf]+'）':''));e.target.style({'font-size':11,'text-background-color':'#fff','text-background-opacity':0.9,'text-background-padding':2});});
   cy.on('mouseout','edge',e=>e.target.removeStyle('label'));
-  cy.on('zoom',()=>{syncZoomSlider();syncSpreadToZoom(); paintRail();});
+  cy.on('zoom',()=>{syncZoomSlider();syncSpreadToZoom(); paintRail(); if(state.mode==='tree') clampTreePan();});
+  bindTreeScroll();
   drawNetwork();
 }
 function filters(){
@@ -602,6 +603,7 @@ function renderPanel(id){
 function syncMode(){
   document.querySelectorAll('.ego-only').forEach(e=>e.style.display=state.mode==='ego'?'':'none');
   document.querySelectorAll('.tree-only').forEach(e=>e.style.display=state.mode==='tree'?'inline-flex':'none');
+  if(state.mode!=='tree') hideTreeScroll();
   document.querySelectorAll('#treeVariant button').forEach(b=>b.classList.toggle('on', b.dataset.variant===(state.treeVariant||'era')));
 }
 function bindUI(){
@@ -676,7 +678,7 @@ function bindUI(){
     if(!cy) return;
     cy.resize();
     if(state.mode==='nebula') drawNebula();
-    else if(state.mode==='tree') openTreeView();
+    else if(state.mode==='tree') applyTreeViewport(false);
     else if(state.mode==='ego'&&state.focus) cy.fit(cy.nodes(),28);
     else if(state.mode==='network') cy.fit(undefined,24);
     syncZoomSlider();
@@ -714,13 +716,17 @@ function syncZoomSlider(){
   const label=formatZoom(z);
   $('#zoomVal').textContent=label;
   el.setAttribute('aria-valuetext',label);
-  $('#zoomIn').disabled=z>=Z_MAX*0.999;
-  $('#zoomOut').disabled=z<=Z_MIN*1.001;
+  const floor=state.mode==='tree'?cy.minZoom():Z_MIN;
+  const ceil=state.mode==='tree'?cy.maxZoom():Z_MAX;
+  $('#zoomIn').disabled=z>=ceil*0.999;
+  $('#zoomOut').disabled=z<=floor*1.001;
   if(!zoomFromSlider) el.value=String(sliderFromZoom(z));
 }
 function zoomAtCenter(level){
   const z0=cy.zoom();
-  const z=Math.min(Z_MAX,Math.max(Z_MIN,level));
+  const zLo=state.mode==='tree'?cy.minZoom():Z_MIN;
+  const zHi=state.mode==='tree'?cy.maxZoom():Z_MAX;
+  const z=Math.min(zHi,Math.max(zLo,level));
   const w=cy.width(),h=cy.height();
   if(!(w>1&&h>1)||!(z0>0)){cy.zoom(z);return;}
   const pan=cy.pan();
@@ -1073,7 +1079,7 @@ function drawTree(){
     seen.add(id);
     edges.push({classes:extra?'extra':'', data:{id:id, source:r.from, target:r.to, type:'master_disciple', conf:r.confidence, detail:r.detail}});
   });
-  cy.minZoom(0.05); cy.maxZoom(3);
+  cy.maxZoom(3);
   cy.startBatch(); cy.elements().remove();
   cy.add(nodes); cy.add(edges);
   cy.endBatch();
@@ -1082,6 +1088,7 @@ function drawTree(){
   $('#stat').textContent='家谱 '+state.treeStats.generations+' 层 · 树上 '+treePeople+' 人 · 无师承 '+looseN+' 人 · 活跃时期有生卒 '+model.known+' · 按代数估计 '+model.est+'（全库 '+P.length+' 人）';
   layoutLock=false;
   if(!(state.focus&&cy.getElementById(state.focus).length)) openTreeView();
+  else applyTreeViewport(false);
   paintRail();
   syncZoomSlider();
   updateModeTabs();
@@ -1092,19 +1099,178 @@ function paintRail(){
   rail.hidden=true;
   rail.innerHTML='';
 }
-function openTreeView(){
-  const nodes=cy.nodes().filter(n=>!n.hasClass('axis'));
-  cy.minZoom(0.04); cy.maxZoom(3);
-  if(!nodes.length){cy.fit(undefined, 24); paintRail(); syncZoomSlider(); return;}
+let treeGuard=0;
+function hideTreeScroll(){
+  const y=$('#treeScrollY'), x=$('#treeScrollX');
+  if(y) y.classList.remove('show');
+  if(x) x.classList.remove('show');
+}
+function ensureTreeScroll(){
+  if($('#treeScrollY')) return;
+  const stage=document.querySelector('.cy-stage');
+  if(!stage) return;
+  stage.insertAdjacentHTML('beforeend',
+    '<div id="treeScrollY" class="tree-scroll y" aria-label="谱系图纵向滚动"><div class="thumb"></div></div>'+
+    '<div id="treeScrollX" class="tree-scroll x" aria-label="谱系图横向滚动"><div class="thumb"></div></div>');
+}
+function treeContent(){
+  const nodes=cy.nodes().filter(n=>!n.hasClass('axis')&&n.id()!=='loosehead');
+  if(!nodes.length) return null;
   const bb=nodes.boundingBox();
-  const padX=treeCompact()?12:20;
-  const zFitW=(cy.width()-padX*2)/Math.max(1, bb.w);
-  // Names stay readable. On a phone the width fits the screen; on a desktop
-  // the chart is about two pages wide and three tall, so the opening page
-  // does not shrink the whole tree into specks.
-  let z=cy.width()<700?Math.min(1.08, Math.max(0.8, zFitW)):Math.min(1.02, Math.max(0.9, zFitW));
-  cy.zoom(z);
-  cy.pan({x:padX-bb.x1*z, y:14-bb.y1*z});
+  if(!(bb.w>1)||!(bb.h>1)) return null;
+  const pad=treeCompact()?10:16;
+  const gutter=16;
+  const W=cy.width(), H=cy.height();
+  const availW=Math.max(80, W-pad*2-gutter);
+  const zMin=Math.max(0.02, Math.min(3, availW/bb.w));
+  return {bb, pad, gutter, W, H, zMin};
+}
+function treePanLimits(m){
+  const z=cy.zoom();
+  const top=m.pad-m.bb.y1*z;
+  let bot=(m.H-m.pad)-m.bb.y2*z;
+  if(bot>top) bot=top;
+  const left=m.pad-m.bb.x1*z;
+  let right=(m.W-m.pad-m.gutter)-m.bb.x2*z;
+  if(right>left) right=left;
+  return {top, bot, left, right};
+}
+function paintTreeScroll(m, lim){
+  ensureTreeScroll();
+  const yBar=$('#treeScrollY'), xBar=$('#treeScrollX');
+  if(!yBar||!xBar) return;
+  const z=cy.zoom(), p=cy.pan();
+  const maxY=lim.top-lim.bot;
+  const trackY=Math.max(40, m.H-8-64);
+  if(maxY>2){
+    yBar.classList.add('show');
+    const thumbH=Math.max(32, Math.min(trackY-4, trackY*m.H/Math.max(m.H, m.bb.h*z+m.pad*2)));
+    const travel=Math.max(1, trackY-thumbH);
+    const top=(maxY<=0?0:((lim.top-p.y)/maxY))*travel;
+    const th=yBar.querySelector('.thumb');
+    th.style.height=thumbH+'px';
+    th.style.top=Math.max(0, Math.min(travel, top))+'px';
+    yBar.dataset.track=String(trackY);
+    yBar.dataset.thumb=String(thumbH);
+  }else yBar.classList.remove('show');
+  const maxX=lim.left-lim.right;
+  const trackX=Math.max(40, m.W-8-26);
+  if(maxX>2){
+    xBar.classList.add('show');
+    const thumbW=Math.max(32, Math.min(trackX-4, trackX*m.W/Math.max(m.W, m.bb.w*z+m.pad*2)));
+    const travel=Math.max(1, trackX-thumbW);
+    const left=(maxX<=0?0:((lim.left-p.x)/maxX))*travel;
+    const th=xBar.querySelector('.thumb');
+    th.style.width=thumbW+'px';
+    th.style.left=Math.max(0, Math.min(travel, left))+'px';
+    xBar.dataset.track=String(trackX);
+    xBar.dataset.thumb=String(thumbW);
+  }else xBar.classList.remove('show');
+}
+function clampTreePan(){
+  if(treeGuard||state.mode!=='tree'||!cy) return;
+  const m=treeContent();
+  if(!m){hideTreeScroll(); return;}
+  const lim=treePanLimits(m);
+  const p=cy.pan();
+  const x=Math.min(lim.left, Math.max(lim.right, p.x));
+  const y=Math.min(lim.top, Math.max(lim.bot, p.y));
+  if(Math.abs(x-p.x)>0.5||Math.abs(y-p.y)>0.5){
+    treeGuard++;
+    cy.pan({x, y});
+    treeGuard--;
+  }
+  paintTreeScroll(m, lim);
+}
+function applyTreeViewport(fit){
+  if(state.mode!=='tree'||!cy) return;
+  const m=treeContent();
+  if(!m){hideTreeScroll(); return;}
+  cy.minZoom(m.zMin);
+  cy.maxZoom(3);
+  if(fit){
+    treeGuard++;
+    cy.zoom(m.zMin);
+    const z=cy.zoom();
+    cy.pan({x:m.pad-m.bb.x1*z, y:m.pad-m.bb.y1*z});
+    treeGuard--;
+  }else if(cy.zoom()<m.zMin-0.0001){
+    treeGuard++;
+    cy.zoom(m.zMin);
+    treeGuard--;
+  }
+  clampTreePan();
+}
+function treeNudge(dx, dy){
+  if(state.mode!=='tree'||!cy) return;
+  const p=cy.pan();
+  cy.pan({x:p.x-dx, y:p.y-dy});
+}
+function bindTreeScroll(){
+  ensureTreeScroll();
+  const stage=document.querySelector('.cy-stage');
+  const yBar=$('#treeScrollY'), xBar=$('#treeScrollX');
+  if(stage&&!stage.dataset.treeWheel){
+    stage.dataset.treeWheel='1';
+    stage.addEventListener('wheel', ev=>{
+      if(state.mode!=='tree') return;
+      if(ev.ctrlKey||ev.metaKey) return;
+      if(ev.target.closest&&ev.target.closest('.zoombar')) return;
+      ev.preventDefault();
+      ev.stopPropagation();
+      const unit=ev.deltaMode===1?16:(ev.deltaMode===2?(cy.height()||480):1);
+      treeNudge(ev.deltaX*unit, ev.deltaY*unit);
+    }, {capture:true, passive:false});
+  }
+  if(!yBar||yBar.dataset.bound) return;
+  yBar.dataset.bound='1';
+  let drag=null;
+  function onBar(which, ev){
+    if(state.mode!=='tree') return;
+    ev.preventDefault();
+    ev.stopPropagation();
+    const bar=which==='y'?yBar:xBar;
+    const thumb=bar.querySelector('.thumb');
+    const tRect=thumb.getBoundingClientRect();
+    const onThumb=ev.target===thumb;
+    const m=treeContent();
+    if(!m) return;
+    const lim=treePanLimits(m);
+    const p=cy.pan();
+    if(!onThumb){
+      if(which==='y'){
+        const dir=ev.clientY<tRect.top?-1:1;
+        cy.pan({x:p.x, y:Math.min(lim.top, Math.max(lim.bot, p.y-dir*m.H*0.82))});
+      }else{
+        const dir=ev.clientX<tRect.left?-1:1;
+        cy.pan({x:Math.min(lim.left, Math.max(lim.right, p.x-dir*m.W*0.82)), y:p.y});
+      }
+      return;
+    }
+    drag={which, start:which==='y'?ev.clientY:ev.clientX, pan:which==='y'?p.y:p.x, track:+bar.dataset.track||1, thumb:+bar.dataset.thumb||32};
+  }
+  yBar.addEventListener('pointerdown', ev=>onBar('y', ev));
+  xBar.addEventListener('pointerdown', ev=>onBar('x', ev));
+  window.addEventListener('pointermove', ev=>{
+    if(!drag) return;
+    const m=treeContent();
+    if(!m) return;
+    const lim=treePanLimits(m);
+    const d=(drag.which==='y'?ev.clientY:ev.clientX)-drag.start;
+    const travel=Math.max(1, drag.track-drag.thumb);
+    if(drag.which==='y'){
+      const range=lim.top-lim.bot;
+      cy.pan({x:cy.pan().x, y:Math.min(lim.top, Math.max(lim.bot, drag.pan-d/travel*range))});
+    }else{
+      const range=lim.left-lim.right;
+      cy.pan({x:Math.min(lim.left, Math.max(lim.right, drag.pan-d/travel*range)), y:cy.pan().y});
+    }
+  });
+  window.addEventListener('pointerup', ()=>{drag=null;});
+  window.addEventListener('pointercancel', ()=>{drag=null;});
+}
+function openTreeView(){
+  applyTreeViewport(true);
   paintRail();
   syncZoomSlider();
 }
