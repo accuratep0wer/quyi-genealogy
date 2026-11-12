@@ -1213,7 +1213,7 @@ function treeNudge(dx, dy){
   cy.pan({x:p.x-dx, y:p.y-dy});
 }
 let rightPan=null, pointerPress=null, draggingNode=false;
-function pointerMode(){return state.mode==='tree'||state.mode==='nebula';}
+function pointerMode(){return state.mode==='tree'||state.mode==='nebula'||state.mode==='network'||state.mode==='ego';}
 function setGraphCursor(cur){
   const box=cy&&cy.container();
   if(!box) return;
@@ -1236,24 +1236,32 @@ function bindPointer(){
     if(!pointerMode()) return;
     ev.preventDefault();
   });
+  box.addEventListener('mousemove', ()=>{
+    if(rightPan||draggingNode||!pointerMode()) return;
+    setGraphCursor('grab');
+  });
+  box.addEventListener('mouseleave', ()=>{
+    if(rightPan) return;
+    setGraphCursor('');
+  });
   box.addEventListener('mousedown', ev=>{
     if(ev.button!==2||!pointerMode()) return;
     ev.preventDefault();
     ev.stopPropagation();
     const p=cy.pan();
     rightPan={x:ev.clientX, y:ev.clientY, px:p.x, py:p.y};
-    setGraphCursor('all-scroll');
+    setGraphCursor('crosshair');
   }, true);
   window.addEventListener('mousemove', ev=>{
     if(!rightPan) return;
     if(!pointerMode()){rightPan=null; setGraphCursor(''); return;}
     cy.pan({x:rightPan.px+(ev.clientX-rightPan.x), y:rightPan.py+(ev.clientY-rightPan.y)});
-    setGraphCursor('all-scroll');
+    setGraphCursor('crosshair');
   });
   window.addEventListener('mouseup', ev=>{
     if(ev.button!==2||!rightPan) return;
     rightPan=null;
-    if(!draggingNode) setGraphCursor('');
+    if(!draggingNode) setGraphCursor(pointerMode()?'grab':'');
   });
   cy.on('mousedown','node', e=>{
     const oe=e.originalEvent;
@@ -1270,8 +1278,8 @@ function bindPointer(){
     setGraphCursor('grab');
   });
   cy.on('mouseout','node', ()=>{
-    if(rightPan||draggingNode) return;
-    setGraphCursor('');
+    if(rightPan||draggingNode||!pointerMode()) return;
+    setGraphCursor('grab');
   });
   cy.on('grab','node', e=>{
     if(!pointerMode()) return;
@@ -1288,13 +1296,7 @@ function bindPointer(){
     syncPeriodTag(e.target);
     draggingNode=false;
     if(rightPan||!pointerMode()) return;
-    const oe=e.originalEvent;
-    const bb=e.target.renderedBoundingBox();
-    const rect=cy.container().getBoundingClientRect();
-    if(oe&&bb){
-      const x=oe.clientX-rect.left, y=oe.clientY-rect.top;
-      setGraphCursor(x>=bb.x1&&x<=bb.x2&&y>=bb.y1&&y<=bb.y2?'grab':'');
-    }else setGraphCursor('');
+    setGraphCursor('grab');
   });
 }
 function bindTreeScroll(){
