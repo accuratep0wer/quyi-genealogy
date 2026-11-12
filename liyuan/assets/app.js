@@ -295,10 +295,19 @@ function nebulaNodeData(p){
   n.classes=('nebula'+extraClass(p)).trim();
   const rec=NEBULA[p.id];
   if(rec){
-    n.position={x:rec[0],y:rec[1]};
+    const c=nebulaCentroid();
+    const k=0.66;
+    n.position={x:c.x+(rec[0]-c.x)*k, y:c.y+(rec[1]-c.y)*k};
     if(rec[2]) n.data.size=rec[2];
   }
   return n;
+}
+function nebulaCentroid(){
+  if(nebulaCentroid.p) return nebulaCentroid.p;
+  let sx=0,sy=0,n=0;
+  Object.keys(NEBULA).forEach(id=>{sx+=NEBULA[id][0]; sy+=NEBULA[id][1]; n++;});
+  nebulaCentroid.p=n?{x:sx/n,y:sy/n}:{x:0,y:0};
+  return nebulaCentroid.p;
 }
 function drawNebula(){
   layoutLock=true;
