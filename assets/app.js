@@ -86,10 +86,7 @@ function buildCy(){
       {selector:'node.tree.axis',style:{'shape':'ellipse','width':1,'height':1,'background-opacity':0,'border-width':0,'font-size':13,'font-weight':'bold','color':'#7c2d12','text-valign':'center','text-halign':'center','text-margin-y':0,'text-max-width':240,'z-index':0}},
       {selector:'node.period-tag',style:{'shape':'ellipse','width':1,'height':1,'background-opacity':0,'border-width':0,'font-size':11,'font-weight':600,'color':'#44403c','text-valign':'center','text-halign':'center','text-margin-y':0,'text-wrap':'none','text-max-width':120,'text-outline-width':0,'text-background-color':'#fff','text-background-opacity':0.92,'text-background-padding':2,'min-zoomed-font-size':6,'z-index':40}},
       {selector:'edge.extra',style:{'width':1,'line-color':'#d6d3d1','target-arrow-color':'#d6d3d1','opacity':0.55,'line-style':'dashed','line-dash-pattern':[3,4],'z-index':0}},
-      {selector:'edge.branch',style:{'width':3.6,'line-color':'#1c1917','target-arrow-color':'#1c1917','target-arrow-shape':'triangle','target-arrow-fill':'filled','arrow-scale':2.15,'opacity':1,'z-index':2}},
-      {selector:'edge.branch[conf = "disputed"]',style:{'width':3,'line-color':'#57534e','target-arrow-color':'#57534e','line-style':'dashed','line-dash-pattern':[10,6],'arrow-scale':1.9}},
-      {selector:'edge.branch.extra',style:{'width':1.8,'line-color':'#a8a29e','target-arrow-color':'#a8a29e','opacity':0.7,'line-style':'dashed','line-dash-pattern':[3,4],'arrow-scale':1.35,'z-index':1}},
-      {selector:'edge.tree-link',style:{'width':6.5,'line-color':'#991b1b','target-arrow-color':'#991b1b','target-arrow-shape':'triangle','target-arrow-fill':'filled','opacity':1,'z-index':20,'line-style':'solid','arrow-scale':2.35}},
+      {selector:'edge.tree-link',style:{'width':5,'line-color':'#b91c1c','target-arrow-color':'#b91c1c','opacity':1,'z-index':20,'line-style':'solid','arrow-scale':1.3}},
       {selector:'edge.tree-reveal',style:{'width':3.5,'line-color':'#7c3aed','target-arrow-color':'#7c3aed','opacity':1,'z-index':24,'curve-style':'bezier','control-point-step-size':90,'line-style':'dashed','line-dash-pattern':[10,6]}}
     ],
     layout:{name:'preset'}
@@ -1074,7 +1071,7 @@ function drawTree(){
     const id=(extra?'x':'t')+r.id;
     if(seen.has(id)) return;
     seen.add(id);
-    edges.push({classes:(extra?'extra ':'')+'branch', data:{id:id, source:r.from, target:r.to, type:'master_disciple', conf:r.confidence, detail:r.detail}});
+    edges.push({classes:extra?'extra':'', data:{id:id, source:r.from, target:r.to, type:'master_disciple', conf:r.confidence, detail:r.detail}});
   });
   cy.minZoom(0.05); cy.maxZoom(3);
   cy.startBatch(); cy.elements().remove();
