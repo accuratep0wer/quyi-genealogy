@@ -1192,25 +1192,6 @@
 "role": "performer"
 },
 {
-"id": "p0068",
-"name": "李少卿",
-"aliases": [
-"李顺祯"
-],
-"generation": 5,
-"gen_source": "谱系表",
-"birth": null,
-"death": null,
-"notes": [],
-"sources": [
-"https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB"
-],
-"wiki": null,
-"zibei": "寿",
-"wiki_url": null,
-"role": "performer"
-},
-{
 "id": "p0069",
 "name": "张云武",
 "aliases": [
@@ -2842,7 +2823,9 @@
 {
 "id": "p0162",
 "name": "李少卿",
-"aliases": [],
+"aliases": [
+"李顺祯"
+],
 "generation": 5,
 "gen_source": "谱系表",
 "birth": null,
@@ -19653,7 +19636,9 @@
 {
 "id": "p1130",
 "name": "祁干宁",
-"aliases": [],
+"aliases": [
+"祁乾宁"
+],
 "generation": 8,
 "gen_source": "谱系表",
 "birth": null,
@@ -21925,23 +21910,6 @@
 {
 "id": "p1260",
 "name": "高滨江",
-"aliases": [],
-"generation": 8,
-"gen_source": "谱系表",
-"birth": null,
-"death": null,
-"notes": [],
-"sources": [
-"https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB"
-],
-"wiki": null,
-"zibei": "明",
-"wiki_url": null,
-"role": "performer"
-},
-{
-"id": "p1261",
-"name": "巫明如。",
 "aliases": [],
 "generation": 8,
 "gen_source": "谱系表",
@@ -33486,28 +33454,6 @@
 "death": null,
 "notes": [
 "百度《相声师承关系总表》列于张志宽门下（第7代→第8代）",
-"补录批次：百度相声师承关系总表",
-"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
-],
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"wiki": null,
-"zibei": null,
-"wiki_url": null,
-"role": "performer",
-"confidence": "disputed"
-},
-{
-"id": "p1898",
-"name": "祁乾宁",
-"aliases": [],
-"generation": 8,
-"gen_source": "按师承推定",
-"birth": null,
-"death": null,
-"notes": [
-"百度《相声师承关系总表》列于吕少明门下（第7代→第8代）",
 "补录批次：百度相声师承关系总表",
 "师承仅有单一或较弱来源，标为存疑（详见关系备注）"
 ],

@@ -863,7 +863,7 @@
 {
 "type": "master_disciple",
 "from": "p0019",
-"to": "p0068",
+"to": "p0162",
 "detail": "",
 "sources": [
 "https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB"
@@ -15609,20 +15609,6 @@
 },
 {
 "type": "master_disciple",
-"from": "p0739",
-"to": "p1261",
-"detail": "",
-"sources": [
-"https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB"
-],
-"confidence": "disputed",
-"notes": [
-"维基谱系表列于“存疑”"
-],
-"id": "r01256"
-},
-{
-"type": "master_disciple",
 "from": "p0855",
 "to": "p1262",
 "detail": "",
@@ -25119,21 +25105,6 @@
 "type": "master_disciple",
 "from": "p0569",
 "to": "p1897",
-"detail": "",
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"confidence": "disputed",
-"notes": [
-"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
-"补录批次：百度相声师承关系总表"
-]
-},
-{
-"id": "r01970",
-"type": "master_disciple",
-"from": "p0649",
-"to": "p1898",
 "detail": "",
 "sources": [
 "https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
