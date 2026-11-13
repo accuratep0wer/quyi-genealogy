@@ -175,23 +175,6 @@
 "role": "performer"
 },
 {
-"id": "p0010",
-"name": "高文奎",
-"aliases": [],
-"generation": 3,
-"gen_source": "谱系表",
-"birth": null,
-"death": null,
-"notes": [],
-"sources": [
-"https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB",
-"https://zh.wikipedia.org/wiki/%E9%98%BF%E5%BD%A6%E6%B6%9B"
-],
-"wiki": null,
-"wiki_url": null,
-"role": "performer"
-},
-{
 "id": "p0011",
 "name": "春长隆",
 "aliases": [],
@@ -810,7 +793,9 @@
 {
 "id": "p0046",
 "name": "高闻奎",
-"aliases": [],
+"aliases": [
+"高文奎"
+],
 "generation": 3,
 "gen_source": "谱系表",
 "birth": null,
@@ -9114,23 +9099,6 @@
 "role": "performer"
 },
 {
-"id": "p0522",
-"name": "肖国光",
-"aliases": [],
-"generation": 7,
-"gen_source": "谱系表",
-"birth": null,
-"death": null,
-"notes": [],
-"sources": [
-"https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB"
-],
-"wiki": null,
-"zibei": "文",
-"wiki_url": null,
-"role": "performer"
-},
-{
 "id": "p0523",
 "name": "王文豪",
 "aliases": [],
@@ -10101,7 +10069,9 @@
 {
 "id": "p0578",
 "name": "白龙岩",
-"aliases": [],
+"aliases": [
+"白龙若"
+],
 "generation": 7,
 "gen_source": "谱系表",
 "birth": null,
@@ -10169,7 +10139,9 @@
 {
 "id": "p0582",
 "name": "汪保琦",
-"aliases": [],
+"aliases": [
+"汪宝琦"
+],
 "generation": 7,
 "gen_source": "谱系表",
 "birth": null,
@@ -13428,7 +13400,9 @@
 {
 "id": "p0772",
 "name": "王辅廷",
-"aliases": [],
+"aliases": [
+"王辅庭"
+],
 "generation": 7,
 "gen_source": "谱系表",
 "birth": null,
@@ -15524,7 +15498,9 @@
 {
 "id": "p0894",
 "name": "李福盛",
-"aliases": [],
+"aliases": [
+"李福胜"
+],
 "generation": 8,
 "gen_source": "谱系表",
 "birth": null,
@@ -18584,7 +18560,9 @@
 {
 "id": "p1069",
 "name": "周巍",
-"aliases": [],
+"aliases": [
+"周威"
+],
 "generation": 8,
 "gen_source": "谱系表",
 "birth": null,
@@ -19012,7 +18990,10 @@
 {
 "id": "p1094",
 "name": "贾承博",
-"aliases": [],
+"aliases": [
+"贾承伯",
+"贾承搏"
+],
 "generation": 8,
 "gen_source": "谱系表",
 "birth": null,
@@ -20395,7 +20376,8 @@
 "id": "p1173",
 "name": "乔雅茹",
 "aliases": [
-"学茹"
+"学茹",
+"乔亚茹"
 ],
 "generation": 8,
 "gen_source": "谱系表",
@@ -21728,7 +21710,9 @@
 {
 "id": "p1250",
 "name": "张杰",
-"aliases": [],
+"aliases": [
+"尚杰"
+],
 "generation": 8,
 "gen_source": "谱系表",
 "birth": null,
@@ -22609,24 +22593,6 @@
 "role": "performer"
 },
 {
-"id": "p1304",
-"name": "张杰",
-"aliases": [],
-"generation": 9,
-"gen_source": "谱系表",
-"birth": null,
-"death": null,
-"notes": [
-"与另一同名者无法确认是否同一人，暂分开收录"
-],
-"sources": [
-"https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB"
-],
-"wiki": null,
-"wiki_url": null,
-"role": "performer"
-},
-{
 "id": "p1305",
 "name": "闫嘉庆",
 "aliases": [],
@@ -22775,7 +22741,9 @@
 {
 "id": "p1314",
 "name": "王悦",
-"aliases": [],
+"aliases": [
+"王越"
+],
 "generation": 9,
 "gen_source": "谱系表",
 "birth": null,
@@ -22839,7 +22807,9 @@
 {
 "id": "p1318",
 "name": "李宾",
-"aliases": [],
+"aliases": [
+"李彬"
+],
 "generation": 9,
 "gen_source": "谱系表",
 "birth": null,
@@ -23304,7 +23274,9 @@
 {
 "id": "p1347",
 "name": "张浩南",
-"aliases": [],
+"aliases": [
+"张浩楠"
+],
 "generation": 9,
 "gen_source": "谱系表",
 "birth": null,
@@ -23848,22 +23820,6 @@
 {
 "id": "p1379",
 "name": "杜文革",
-"aliases": [],
-"generation": 9,
-"gen_source": "谱系表",
-"birth": null,
-"death": null,
-"notes": [],
-"sources": [
-"https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB"
-],
-"wiki": null,
-"wiki_url": null,
-"role": "performer"
-},
-{
-"id": "p1380",
-"name": "刘金霏",
 "aliases": [],
 "generation": 9,
 "gen_source": "谱系表",
@@ -24877,7 +24833,9 @@
 {
 "id": "p1440",
 "name": "薛晓冬",
-"aliases": [],
+"aliases": [
+"薛晓东"
+],
 "generation": 9,
 "gen_source": "谱系表",
 "birth": null,
@@ -25354,26 +25312,6 @@
 "role": "performer"
 },
 {
-"id": "p1469",
-"name": "张杰",
-"aliases": [
-"尚杰"
-],
-"generation": 9,
-"gen_source": "谱系表",
-"birth": null,
-"death": null,
-"notes": [
-"与另一同名者无法确认是否同一人，暂分开收录"
-],
-"sources": [
-"https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB"
-],
-"wiki": null,
-"wiki_url": null,
-"role": "performer"
-},
-{
 "id": "p1470",
 "name": "金诗雨",
 "aliases": [
@@ -25660,7 +25598,9 @@
 {
 "id": "p1486",
 "name": "初天岚",
-"aliases": [],
+"aliases": [
+"初天蓝"
+],
 "generation": 9,
 "gen_source": "谱系表",
 "birth": null,
@@ -25822,24 +25762,6 @@
 "role": "performer"
 },
 {
-"id": "p1496",
-"name": "张宏",
-"aliases": [],
-"generation": 9,
-"gen_source": "谱系表",
-"birth": null,
-"death": null,
-"notes": [
-"与另一同名者无法确认是否同一人，暂分开收录"
-],
-"sources": [
-"https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB"
-],
-"wiki": null,
-"wiki_url": null,
-"role": "performer"
-},
-{
 "id": "p1497",
 "name": "谷宗翰",
 "aliases": [],
@@ -25880,24 +25802,6 @@
 "birth": null,
 "death": null,
 "notes": [],
-"sources": [
-"https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB"
-],
-"wiki": null,
-"wiki_url": null,
-"role": "performer"
-},
-{
-"id": "p1500",
-"name": "张志斌",
-"aliases": [],
-"generation": 9,
-"gen_source": "谱系表",
-"birth": null,
-"death": null,
-"notes": [
-"与另一同名者无法确认是否同一人，暂分开收录"
-],
 "sources": [
 "https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB"
 ],
@@ -26042,7 +25946,9 @@
 {
 "id": "p1509",
 "name": "洪昊翔",
-"aliases": [],
+"aliases": [
+"洪昊祥"
+],
 "generation": 10,
 "gen_source": "谱系表",
 "birth": null,
@@ -26817,7 +26723,9 @@
 {
 "id": "p1553",
 "name": "叶怡均",
-"aliases": [],
+"aliases": [
+"叶怡君"
+],
 "generation": null,
 "gen_source": null,
 "birth": null,
@@ -29360,23 +29268,6 @@
 "role": "performer"
 },
 {
-"id": "p1688",
-"name": "李福胜",
-"aliases": [],
-"generation": 8,
-"gen_source": "按师承推定",
-"birth": null,
-"death": null,
-"notes": [],
-"sources": [
-"https://zh.wikipedia.org/wiki/%E4%BE%AF%E8%80%80%E6%96%87"
-],
-"wiki": null,
-"zibei": "明",
-"wiki_url": null,
-"role": "performer"
-},
-{
 "id": "p1689",
 "name": "王伟",
 "aliases": [],
@@ -29566,22 +29457,6 @@
 "role": "performer"
 },
 {
-"id": "p1701",
-"name": "薛晓东",
-"aliases": [],
-"generation": 9,
-"gen_source": "按师承推定",
-"birth": null,
-"death": null,
-"notes": [],
-"sources": [
-"https://zh.wikipedia.org/wiki/%E6%9D%8E%E9%87%91%E6%96%97"
-],
-"wiki": null,
-"wiki_url": null,
-"role": "performer"
-},
-{
 "id": "p1702",
 "name": "于文皓",
 "aliases": [],
@@ -29691,23 +29566,6 @@
 ],
 "wiki": null,
 "zibei": "寿",
-"wiki_url": null,
-"role": "performer"
-},
-{
-"id": "p1709",
-"name": "王辅庭",
-"aliases": [],
-"generation": 7,
-"gen_source": "按师承推定",
-"birth": null,
-"death": null,
-"notes": [],
-"sources": [
-"https://zh.wikipedia.org/wiki/%E9%99%88%E6%B6%8C%E6%B3%89"
-],
-"wiki": null,
-"zibei": "文",
 "wiki_url": null,
 "role": "performer"
 },
@@ -31038,7 +30896,9 @@
 {
 "id": "p1787",
 "name": "金霏",
-"aliases": [],
+"aliases": [
+"刘金霏"
+],
 "generation": 9,
 "gen_source": "参考项目",
 "birth": null,
@@ -32209,28 +32069,6 @@
 "confidence": "disputed"
 },
 {
-"id": "p1841",
-"name": "白龙若",
-"aliases": [],
-"generation": 7,
-"gen_source": "按师承推定",
-"birth": null,
-"death": null,
-"notes": [
-"百度《相声师承关系总表》列于白全福门下（第6代→第7代）",
-"补录批次：百度相声师承关系总表",
-"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
-],
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"wiki": null,
-"zibei": null,
-"wiki_url": null,
-"role": "performer",
-"confidence": "disputed"
-},
-{
 "id": "p1842",
 "name": "王吉祥",
 "aliases": [],
@@ -32240,28 +32078,6 @@
 "death": null,
 "notes": [
 "百度《相声师承关系总表》列于白全福门下（第6代→第7代）",
-"补录批次：百度相声师承关系总表",
-"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
-],
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"wiki": null,
-"zibei": null,
-"wiki_url": null,
-"role": "performer",
-"confidence": "disputed"
-},
-{
-"id": "p1843",
-"name": "汪宝琦",
-"aliases": [],
-"generation": 7,
-"gen_source": "按师承推定",
-"birth": null,
-"death": null,
-"notes": [
-"百度《相声师承关系总表》列于郭全宝门下（第6代→第7代）",
 "补录批次：百度相声师承关系总表",
 "师承仅有单一或较弱来源，标为存疑（详见关系备注）"
 ],
@@ -32605,28 +32421,6 @@
 "confidence": "disputed"
 },
 {
-"id": "p1859",
-"name": "贾承伯",
-"aliases": [],
-"generation": 8,
-"gen_source": "按师承推定",
-"birth": null,
-"death": null,
-"notes": [
-"百度《相声师承关系总表》列于赵振铎门下（第7代→第8代）",
-"补录批次：百度相声师承关系总表",
-"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
-],
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"wiki": null,
-"zibei": null,
-"wiki_url": null,
-"role": "performer",
-"confidence": "disputed"
-},
-{
 "id": "p1860",
 "name": "李建忠",
 "aliases": [],
@@ -32702,28 +32496,6 @@
 "death": null,
 "notes": [
 "百度《相声师承关系总表》列于丁广泉门下（第7代→第8代）",
-"补录批次：百度相声师承关系总表",
-"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
-],
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"wiki": null,
-"zibei": null,
-"wiki_url": null,
-"role": "performer",
-"confidence": "disputed"
-},
-{
-"id": "p1864",
-"name": "乔亚茹",
-"aliases": [],
-"generation": 8,
-"gen_source": "按师承推定",
-"birth": null,
-"death": null,
-"notes": [
-"百度《相声师承关系总表》列于王雅福门下（第7代→第8代）",
 "补录批次：百度相声师承关系总表",
 "师承仅有单一或较弱来源，标为存疑（详见关系备注）"
 ],
@@ -33467,28 +33239,6 @@
 "confidence": "disputed"
 },
 {
-"id": "p1899",
-"name": "周威",
-"aliases": [],
-"generation": 8,
-"gen_source": "按师承推定",
-"birth": null,
-"death": null,
-"notes": [
-"百度《相声师承关系总表》列于师胜杰门下（第7代→第8代）",
-"补录批次：百度相声师承关系总表",
-"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
-],
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"wiki": null,
-"zibei": null,
-"wiki_url": null,
-"role": "performer",
-"confidence": "disputed"
-},
-{
 "id": "p1900",
 "name": "赵根",
 "aliases": [],
@@ -33797,50 +33547,6 @@
 "confidence": "disputed"
 },
 {
-"id": "p1914",
-"name": "张浩楠",
-"aliases": [],
-"generation": 9,
-"gen_source": "按师承推定",
-"birth": null,
-"death": null,
-"notes": [
-"百度《相声师承关系总表》列于李建华门下（第8代→第9代）",
-"补录批次：百度相声师承关系总表",
-"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
-],
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"wiki": null,
-"zibei": null,
-"wiki_url": null,
-"role": "performer",
-"confidence": "disputed"
-},
-{
-"id": "p1915",
-"name": "初天蓝",
-"aliases": [],
-"generation": 9,
-"gen_source": "按师承推定",
-"birth": null,
-"death": null,
-"notes": [
-"百度《相声师承关系总表》列于赵津生门下（第8代→第9代）",
-"补录批次：百度相声师承关系总表",
-"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
-],
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"wiki": null,
-"zibei": null,
-"wiki_url": null,
-"role": "performer",
-"confidence": "disputed"
-},
-{
 "id": "p1916",
 "name": "李三国",
 "aliases": [],
@@ -34048,50 +33754,6 @@
 "death": null,
 "notes": [
 "百度《相声师承关系总表》列于孟凡贵门下（第8代→第9代）",
-"补录批次：百度相声师承关系总表",
-"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
-],
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"wiki": null,
-"zibei": null,
-"wiki_url": null,
-"role": "performer",
-"confidence": "disputed"
-},
-{
-"id": "p1926",
-"name": "王越",
-"aliases": [],
-"generation": 9,
-"gen_source": "按师承推定",
-"birth": null,
-"death": null,
-"notes": [
-"百度《相声师承关系总表》列于崔金泉门下（第8代→第9代）",
-"补录批次：百度相声师承关系总表",
-"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
-],
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"wiki": null,
-"zibei": null,
-"wiki_url": null,
-"role": "performer",
-"confidence": "disputed"
-},
-{
-"id": "p1927",
-"name": "李彬",
-"aliases": [],
-"generation": 9,
-"gen_source": "按师承推定",
-"birth": null,
-"death": null,
-"notes": [
-"百度《相声师承关系总表》列于崔金泉门下（第8代→第9代）",
 "补录批次：百度相声师承关系总表",
 "师承仅有单一或较弱来源，标为存疑（详见关系备注）"
 ],
@@ -34393,28 +34055,6 @@
 "confidence": "disputed"
 },
 {
-"id": "p1941",
-"name": "安东",
-"aliases": [],
-"generation": 9,
-"gen_source": "按师承推定",
-"birth": null,
-"death": null,
-"notes": [
-"百度《相声师承关系总表》列于姜昆门下（第8代→第9代）",
-"补录批次：百度相声师承关系总表",
-"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
-],
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"wiki": null,
-"zibei": null,
-"wiki_url": null,
-"role": "performer",
-"confidence": "disputed"
-},
-{
 "id": "p1942",
 "name": "邵权",
 "aliases": [],
@@ -34618,28 +34258,6 @@
 "confidence": "disputed"
 },
 {
-"id": "p1951",
-"name": "洪昊祥",
-"aliases": [],
-"generation": 10,
-"gen_source": "按师承推定",
-"birth": null,
-"death": null,
-"notes": [
-"百度《相声师承关系总表》列于大兵门下（第9代→第10代）",
-"补录批次：百度相声师承关系总表",
-"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
-],
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"wiki": null,
-"zibei": null,
-"wiki_url": null,
-"role": "performer",
-"confidence": "disputed"
-},
-{
 "id": "p1952",
 "name": "张天赐",
 "aliases": [],
@@ -34649,28 +34267,6 @@
 "death": null,
 "notes": [
 "百度《相声师承关系总表》列于赵广群门下（第9代→第10代）",
-"补录批次：百度相声师承关系总表",
-"师承仅有单一或较弱来源，标为存疑（详见关系备注）"
-],
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"wiki": null,
-"zibei": null,
-"wiki_url": null,
-"role": "performer",
-"confidence": "disputed"
-},
-{
-"id": "p1953",
-"name": "叶怡君",
-"aliases": [],
-"generation": null,
-"gen_source": null,
-"birth": null,
-"death": null,
-"notes": [
-"百度《相声师承关系总表》“独立或未明传承”列于陈逸安门下",
 "补录批次：百度相声师承关系总表",
 "师承仅有单一或较弱来源，标为存疑（详见关系备注）"
 ],
@@ -36280,7 +35876,8 @@
 "id": "p2027",
 "name": "安冬",
 "aliases": [
-"安冬"
+"安冬",
+"安东"
 ],
 "generation": 9,
 "gen_source": "按师承推定",
@@ -36541,7 +36138,9 @@
 {
 "id": "p2039",
 "name": "萧国光",
-"aliases": [],
+"aliases": [
+"肖国光"
+],
 "generation": 7,
 "gen_source": "按师承推定",
 "birth": null,

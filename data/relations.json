@@ -125,19 +125,6 @@
 {
 "type": "master_disciple",
 "from": "p0003",
-"to": "p0010",
-"detail": "",
-"sources": [
-"https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB",
-"https://zh.wikipedia.org/wiki/%E9%98%BF%E5%BD%A6%E6%B6%9B"
-],
-"confidence": "documented",
-"notes": [],
-"id": "r00009"
-},
-{
-"type": "master_disciple",
-"from": "p0003",
 "to": "p0011",
 "detail": "",
 "sources": [
@@ -6506,18 +6493,6 @@
 "confidence": "documented",
 "notes": [],
 "id": "r00518"
-},
-{
-"type": "master_disciple",
-"from": "p0209",
-"to": "p0522",
-"detail": "",
-"sources": [
-"https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB"
-],
-"confidence": "documented",
-"notes": [],
-"id": "r00519"
 },
 {
 "type": "master_disciple",
@@ -16127,7 +16102,7 @@
 {
 "type": "master_disciple",
 "from": "p0896",
-"to": "p1304",
+"to": "p1250",
 "detail": "",
 "sources": [
 "https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB"
@@ -17119,18 +17094,6 @@
 "confidence": "documented",
 "notes": [],
 "id": "r01375"
-},
-{
-"type": "master_disciple",
-"from": "p1010",
-"to": "p1380",
-"detail": "",
-"sources": [
-"https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB"
-],
-"confidence": "documented",
-"notes": [],
-"id": "r01376"
 },
 {
 "type": "master_disciple",
@@ -18259,7 +18222,7 @@
 {
 "type": "master_disciple",
 "from": "p1163",
-"to": "p1469",
+"to": "p1250",
 "detail": "",
 "sources": [
 "https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB"
@@ -18587,7 +18550,7 @@
 {
 "type": "master_disciple",
 "from": "p1191",
-"to": "p1496",
+"to": "p0906",
 "detail": "",
 "sources": [
 "https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB"
@@ -18635,7 +18598,7 @@
 {
 "type": "master_disciple",
 "from": "p1224",
-"to": "p1500",
+"to": "p1172",
 "detail": "",
 "sources": [
 "https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB"
@@ -21258,18 +21221,6 @@
 {
 "type": "master_disciple",
 "from": "p0415",
-"to": "p1688",
-"detail": "",
-"sources": [
-"https://zh.wikipedia.org/wiki/%E4%BE%AF%E8%80%80%E6%96%87"
-],
-"confidence": "documented",
-"notes": [],
-"id": "r01683"
-},
-{
-"type": "master_disciple",
-"from": "p0415",
 "to": "p1689",
 "detail": "",
 "sources": [
@@ -21462,18 +21413,6 @@
 },
 {
 "type": "master_disciple",
-"from": "p1091",
-"to": "p1701",
-"detail": "",
-"sources": [
-"https://zh.wikipedia.org/wiki/%E6%9D%8E%E9%87%91%E6%96%97"
-],
-"confidence": "documented",
-"notes": [],
-"id": "r01702"
-},
-{
-"type": "master_disciple",
 "from": "p1522",
 "to": "p1702",
 "detail": "",
@@ -21555,18 +21494,6 @@
 "confidence": "documented",
 "notes": [],
 "id": "r01709"
-},
-{
-"type": "master_disciple",
-"from": "p0295",
-"to": "p1709",
-"detail": "",
-"sources": [
-"https://zh.wikipedia.org/wiki/%E9%99%88%E6%B6%8C%E6%B3%89"
-],
-"confidence": "documented",
-"notes": [],
-"id": "r01710"
 },
 {
 "type": "master_disciple",
@@ -24259,40 +24186,10 @@
 ]
 },
 {
-"id": "r01913",
-"type": "master_disciple",
-"from": "p0230",
-"to": "p1841",
-"detail": "",
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"confidence": "disputed",
-"notes": [
-"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
-"补录批次：百度相声师承关系总表"
-]
-},
-{
 "id": "r01914",
 "type": "master_disciple",
 "from": "p0230",
 "to": "p1842",
-"detail": "",
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"confidence": "disputed",
-"notes": [
-"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
-"补录批次：百度相声师承关系总表"
-]
-},
-{
-"id": "r01915",
-"type": "master_disciple",
-"from": "p0231",
-"to": "p1843",
 "detail": "",
 "sources": [
 "https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
@@ -24529,21 +24426,6 @@
 ]
 },
 {
-"id": "r01931",
-"type": "master_disciple",
-"from": "p0590",
-"to": "p1859",
-"detail": "",
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"confidence": "disputed",
-"notes": [
-"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
-"补录批次：百度相声师承关系总表"
-]
-},
-{
 "id": "r01932",
 "type": "master_disciple",
 "from": "p0386",
@@ -24593,21 +24475,6 @@
 "type": "master_disciple",
 "from": "p0540",
 "to": "p1863",
-"detail": "",
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"confidence": "disputed",
-"notes": [
-"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
-"补录批次：百度相声师承关系总表"
-]
-},
-{
-"id": "r01936",
-"type": "master_disciple",
-"from": "p0712",
-"to": "p1864",
 "detail": "",
 "sources": [
 "https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
@@ -25116,21 +24983,6 @@
 ]
 },
 {
-"id": "r01971",
-"type": "master_disciple",
-"from": "p0546",
-"to": "p1899",
-"detail": "",
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"confidence": "disputed",
-"notes": [
-"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
-"补录批次：百度相声师承关系总表"
-]
-},
-{
 "id": "r01972",
 "type": "master_disciple",
 "from": "p0727",
@@ -25341,36 +25193,6 @@
 ]
 },
 {
-"id": "r01986",
-"type": "master_disciple",
-"from": "p0943",
-"to": "p1914",
-"detail": "",
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"confidence": "disputed",
-"notes": [
-"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
-"补录批次：百度相声师承关系总表"
-]
-},
-{
-"id": "r01987",
-"type": "master_disciple",
-"from": "p1180",
-"to": "p1915",
-"detail": "",
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"confidence": "disputed",
-"notes": [
-"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
-"补录批次：百度相声师承关系总表"
-]
-},
-{
 "id": "r01988",
 "type": "master_disciple",
 "from": "p1180",
@@ -25495,36 +25317,6 @@
 "type": "master_disciple",
 "from": "p0869",
 "to": "p1925",
-"detail": "",
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"confidence": "disputed",
-"notes": [
-"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
-"补录批次：百度相声师承关系总表"
-]
-},
-{
-"id": "r01997",
-"type": "master_disciple",
-"from": "p0940",
-"to": "p1926",
-"detail": "",
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"confidence": "disputed",
-"notes": [
-"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
-"补录批次：百度相声师承关系总表"
-]
-},
-{
-"id": "r01998",
-"type": "master_disciple",
-"from": "p0940",
-"to": "p1927",
 "detail": "",
 "sources": [
 "https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
@@ -25732,21 +25524,6 @@
 ]
 },
 {
-"id": "r02012",
-"type": "master_disciple",
-"from": "p1005",
-"to": "p1941",
-"detail": "",
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"confidence": "disputed",
-"notes": [
-"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
-"补录批次：百度相声师承关系总表"
-]
-},
-{
 "id": "r02013",
 "type": "master_disciple",
 "from": "p1005",
@@ -25884,40 +25661,10 @@
 ]
 },
 {
-"id": "r02022",
-"type": "master_disciple",
-"from": "p1429",
-"to": "p1951",
-"detail": "",
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"confidence": "disputed",
-"notes": [
-"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
-"补录批次：百度相声师承关系总表"
-]
-},
-{
 "id": "r02023",
 "type": "master_disciple",
 "from": "p1325",
 "to": "p1952",
-"detail": "",
-"sources": [
-"https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
-],
-"confidence": "disputed",
-"notes": [
-"仅见百度百科《相声师承关系总表》名单（据阎笑儒《相声宗谱》誊写，名单式记载）",
-"补录批次：百度相声师承关系总表"
-]
-},
-{
-"id": "r02024",
-"type": "master_disciple",
-"from": "p1551",
-"to": "p1953",
 "detail": "",
 "sources": [
 "https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206"
@@ -29834,7 +29581,7 @@
 "id": "r02287",
 "type": "partner",
 "from": "p0829",
-"to": "p1841",
+"to": "p0578",
 "detail": "21世纪以来合作，白金城捧哏",
 "sources": [
 "https://history.xikao.com/person/%E7%99%BD%E9%87%91%E5%9F%8E"

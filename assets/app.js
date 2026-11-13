@@ -1,7 +1,7 @@
 (function(){
 'use strict';
 const TYPE_CN={master_disciple:'师徒',other:'代拉/引保代等',kin:'亲属',marriage:'姻缘',partner:'固定搭档'};
-const LIYUAN_XO={p0226:'侯宝林',p0189:'常宝堃',p1688:'李福胜',p1241:'杨健',p1716:'王雅兰',p0807:'马贵荣',p0223:'高元钧',p1806:'常贵德'};
+const LIYUAN_XO={p0226:'侯宝林',p0189:'常宝堃',p0894:'李福胜',p1241:'杨健',p1716:'王雅兰',p0807:'马贵荣',p0223:'高元钧',p1806:'常贵德'};
 const CONF_CN={documented:'确定',disputed:'存疑'};
 const GEN_COLORS=['#7f1d1d','#0ea5e9','#f59e0b','#3730a3','#22c55e','#db2777','#0f766e','#f97316','#7c3aed','#a3e635'];
 const genColor=g=>g?GEN_COLORS[(g-1)%GEN_COLORS.length]:'#9ca3af';
