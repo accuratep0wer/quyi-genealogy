@@ -1539,7 +1539,6 @@ function renderSources(){
   const shownN=P.length-hidden;
   $('#buildinfo').textContent='共收录 '+P.length+' 人、'+R.length+' 条关系，图中显示 '+shownN+' 人。另有 '+hidden+' 人没有任何关系，三张图都不画出。有关系的小团体也会画出。覆盖第 '+Math.min(...gens)+'–'+Math.max(...gens)+' 代。数据整理日期：2026-11-11。';
   const fc=$('#footcount'); if(fc) fc.textContent='图中 '+shownN+' 人（全库 '+P.length+' 人、'+R.length+' 条关系）';
-  const hn=$('#hiddenNote'); if(hn) hn.textContent='没有任何关系、故不画出：'+hidden+' 人。';
   const ha=$('#hiddenAbout'); if(ha) ha.textContent='目前是 '+hidden+' 人。';
 }
 })();

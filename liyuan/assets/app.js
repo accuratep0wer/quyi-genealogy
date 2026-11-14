@@ -121,11 +121,9 @@ function lyChip(color,label){
 function paintLyLegend(){
   const host=$('#lyColorLegend');
   if(!host) return;
-  const nRole=P.filter(p=>p.hangdang).length;
-  const nBlank=P.length-nRole;
   const roles=[['生','生'],['旦','旦'],['净','净'],['末','末（记载中暂无）'],['丑','丑'],['兼行','兼行'],['其他','其他'],['不详','不详']];
   host.innerHTML=
-    '<div class="ly-keyline"><strong>行当</strong> <span class="muted">'+nRole+' 人写了行当，'+nBlank+' 人没有，用「不详」。写了不止一个行当的人是「兼行」。琴师、票友、教师等标为「其他」。</span></div>'+
+    '<div class="ly-keyline"><strong>行当</strong></div>'+
     '<div class="ly-chips">'+roles.map(([k,label])=>lyChip(ROLE_COLOR[k], label)).join('')+'</div>';
 }
 function treeFill(p){
@@ -1700,6 +1698,5 @@ function renderSources(){
   const stubs=P.filter(p=>p.stub).length;
   $('#buildinfo').textContent='共收录 '+P.length+' 人（其中名录 '+stubs+' 人）、'+R.length+' 条关系。默认图不画同台/受教，也不画没有任何关系的 '+hidden+' 人。科班与院校 '+INST.length+' 所，成员记录 '+MEM.length+' 条。与相声谱系高/中置信对照 '+XO.length+' 人。资料来源：梨园百年琐记（history.xikao.com）。整理日期：2026-11-11。';
   const fc=$('#footcount'); if(fc) fc.textContent='全库 '+P.length+' 人、'+R.length+' 条关系';
-  const hn=$('#hiddenNote'); if(hn) hn.textContent='没有任何关系、故不画出：'+hidden+' 人。同台/受教默认关闭。';
 }
 })();
