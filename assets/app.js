@@ -23,7 +23,7 @@ const adj={};
 const Z_MIN=0.03,Z_MAX=32;
 let zoomFromSlider=false;
 
-let ORGS={organizations:[],affiliations:[]},ORG_BY={},ORG_MEM={},ORG_ROWS=[];
+let ORGS={organizations:[],affiliations:[]},ORG_BY={},ORG_MEM={},ORG_ROWS=[],ORG_COUNTS=new Map();
 let EVIDENCE={},ROSTER_AUDIT={};
 let SPREAD={};
 let NEBULA={};
@@ -58,20 +58,37 @@ function matchesOrganizationScope(m,scope){
   }
   return m.status===scope;
 }
+// Count people, not rows. Entries without a person ID use the recorded name;
+// only evidence-backed affiliation statuses count as membership.
+function orgPeopleCount(rows){
+  const knownNames=new Set(rows.filter(m=>byId[m.personId]).map(m=>m.personName||byId[m.personId].name));
+  return new Set(rows.flatMap(m=>byId[m.personId]?['id:'+m.personId]:knownNames.has(m.personName)?[]:['name:'+m.personName])).size;
+}
+function countOrganization(rows){
+  const confirmed=rows.filter(m=>['current','historical','former'].includes(m.status));
+  return {confirmed:orgPeopleCount(confirmed),current:orgPeopleCount(confirmed.filter(m=>m.status==='current'))};
+}
 function initOrganizations(){
   (ORGS.organizations||[]).forEach(o=>ORG_BY[o.id]=o);
   ORG_ROWS=(ORGS.affiliations||[]).filter(m=>ORG_BY[m.organizationId]&&(m.personName||byId[m.personId])&&(m.sources||[]).some(x=>/^https?:\/\//.test(x.url||'')));
   ORG_ROWS.forEach(m=>{if(byId[m.personId]) (ORG_MEM[m.personId]||(ORG_MEM[m.personId]=[])).push(m);});
   Object.values(ORG_MEM).forEach(ms=>ms.sort((a,b)=>ORG_ORDER[a.status]-ORG_ORDER[b.status]));
   const sel=$('#organization'),tbl=$('#orgTableGroup');
-  (ORGS.organizations||[]).forEach(o=>{
-    const ms=ORG_ROWS.filter(m=>m.organizationId===o.id);
-    if(ms.length){
-      const n=new Set(ms.map(m=>m.personId||m.personName)).size;
-      tbl.add(new Option(o.name+'（'+n+' 人）',o.id));
-      if(ms.some(m=>byId[m.personId]&&m.status!=='uncertain')) sel.add(new Option(o.name,o.id));
-    }
-  });
+  const orgs=(ORGS.organizations||[]).map(o=>{
+    const count=countOrganization(ORG_ROWS.filter(m=>m.organizationId===o.id));
+    ORG_COUNTS.set(o.id,count);
+    return o;
+  }).sort((a,b)=>ORG_COUNTS.get(b.id).confirmed-ORG_COUNTS.get(a.id).confirmed||a.name.localeCompare(b.name,'zh'));
+  for(const o of orgs){
+    const label=o.name+'（'+ORG_COUNTS.get(o.id).confirmed+' 人）';
+    sel.add(new Option(label,o.id));
+    tbl.add(new Option(label,o.id));
+  }
+  $('#orgCounts tbody').innerHTML=orgs.map(o=>{
+    const count=ORG_COUNTS.get(o.id);
+    return '<tr><td><a href="#people/organizations/'+encodeURIComponent(o.id)+'">'+esc(o.name)+'</a></td><td>'+count.confirmed+'</td><td>'+
+      (count.current||'<span class="muted">暂无</span>')+'</td></tr>';
+  }).join('');
   sel.addEventListener('change',()=>clearHL());
   $('#organizationScope').addEventListener('change',()=>clearHL());
   $('#organizationFocus').onclick=focusOrganization;
@@ -81,8 +98,10 @@ function drawOrgRoster(){
   const group=$('#orgTableGroup').value,status=$('#orgTableStatus').value,q=$('#orgTableQuery').value.trim();
   const rows=ORG_ROWS.filter(m=>(!group||group===m.organizationId)&&(!status||status===m.status)&&(!q||[m.personName,byId[m.personId]?._search,ORG_BY[m.organizationId].name,m.note].some(t=>(t||'').includes(q))));
   rows.sort((a,b)=>(a.organizationId===b.organizationId?0:ORG_BY[a.organizationId].name.localeCompare(ORG_BY[b.organizationId].name,'zh'))||ORG_ORDER[a.status]-ORG_ORDER[b.status]||(a.personName||byId[a.personId]?.name||'').localeCompare(b.personName||byId[b.personId]?.name||'','zh'));
-  const peopleCount=new Set(rows.map(m=>m.personId||m.personName)).size;
-  $('#orgTableCount').textContent=peopleCount+' 人 · '+rows.length+' 条记录';
+  const peopleCount=orgPeopleCount(rows);
+  const total=ORG_COUNTS.get(group);
+  $('#orgTableCount').textContent=(total?'有归属记录 '+total.confirmed+' 人 · 最新公开归属 '+(total.current?total.current+' 人':'暂无')+'；':'')+
+    '筛选结果 '+peopleCount+' 人 · '+rows.length+' 条记录';
   $('#orgTable tbody').innerHTML=rows.length?rows.map(m=>{
     const p=byId[m.personId], name=esc(m.personName||p?.name||'');
     return '<tr><td>'+esc(ORG_BY[m.organizationId].name)+'</td><td>'+(p?'<a href="#graph/'+esc(p.id)+'">'+name+'</a>':name+' <small class="muted">仅在名册</small>')+'</td><td><span class="tag'+(m.status==='uncertain'?' dis':'')+'">'+esc(orgStatusLabel(m))+'</span></td><td class="notes">'+(m.asOf?'<small class="muted">资料时点 '+esc(m.asOf)+'</small><br>':'')+esc(m.note||'')+'</td><td class="org-source">'+organizationSourceLinks(m)+'</td></tr>';
@@ -118,26 +137,28 @@ function markOrganization(){
   document.querySelector('.organization-strip').toggleAttribute('data-org-selected',!!id);
   const members=ORG_ROWS.filter(m=>m.organizationId===id&&matchesOrganizationScope(m,scope));
   const ids=new Set(members.map(m=>m.personId));
+  const hasNodes=cy.nodes().some(n=>ids.has(n.id()));
   cy.batch(()=>{
     cy.nodes().forEach(n=>{
       const pid=n.id().startsWith('period-')?n.id().slice(7):n.id();
       const person=!!byId[pid],member=!!id&&ids.has(pid);
       n.toggleClass('org-member',member&&!n.hasClass('period-tag'));
-      n.toggleClass('org-muted',!!id&&person&&!member);
+      n.toggleClass('org-muted',hasNodes&&person&&!member);
       if(state.mode==='network'&&person){
         const depth=depthShift(pid,cy.zoom());
         if(depth.boost>=0.02) n.style('z-index',member?250:Math.round(6+depth.depth*90));
       }
     });
-    cy.edges().forEach(e=>e.toggleClass('org-muted',!!id&&!(ids.has(e.source().id())&&ids.has(e.target().id()))));
+    cy.edges().forEach(e=>e.toggleClass('org-muted',hasNodes&&!(ids.has(e.source().id())&&ids.has(e.target().id()))));
   });
   const shown=cy.nodes('.org-member').length;
   $('#organizationFocus').disabled=!id||!shown;
   $('#organizationRosterLink').href=id?'#people/organizations/'+id:'#people/organizations';
-  const rosterCount=new Set(members.map(m=>m.personId||m.personName)).size;
+  const rosterCount=orgPeopleCount(members);
+  const total=ORG_COUNTS.get(id);
   $('#organizationStatus').textContent=id
-    ? ORG_BY[id].name+'：此类别名册 '+rosterCount+' 人，当前图谱突出 '+shown+' 人。'+(scope==='roster'?'历史归属不代表现属；已离团者请切到历史／曾属。':'点击人物或进入名册查看出处。')
-    : '历史归属不代表现属，未收录不代表没有团体。'+(ORGS.updated?' 核验日期：'+ORGS.updated:'');
+    ? ORG_BY[id].name+'：有归属记录 '+total.confirmed+' 人（含历史），最新公开归属 '+(total.current?total.current+' 人':'暂无')+'。此筛选范围 '+rosterCount+' 人，图中可高亮 '+shown+' 人。'+(scope==='roster'?'历史归属不代表现属；已离团者请切到历史／曾属。':'点击人物或进入名册查看出处。')
+    : '括号为本站已收录的有据归属人数，含历史与已离团，不含仅参演；不代表现有人数。'+(ORGS.updated?' 核验日期：'+ORGS.updated:'');
 }
 function organizationPanel(id){
   const ms=ORG_MEM[id]||[];
