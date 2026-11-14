@@ -65,7 +65,7 @@
       <span class="relation-filter-actions"><button type="button" id="applyRelations" disabled>应用关系筛选</button><button type="button" id="resetRelationDraft" disabled>撤销未应用修改</button><small id="relationFilterStatus" role="status">已应用</small></span>
       <label><input type="checkbox" id="labels"> 显示全部姓名</label>
       <button id="expand" type="button" title="放大到能看清姓名。其他人仍留在图上，缩小或拖动都能看到。">展开此区域</button>
-      <button id="resetLayout" type="button" title="缩小，回到完整全局布局">恢复全局布局</button>
+      <button id="resetLayout" type="button" title="谱系图按宽度复位，高度超出时可上下滚动；星云图回到全局">恢复全局布局</button>
       <button id="fit" type="button">适配视图</button>
     </div>
   </div>
@@ -132,7 +132,7 @@
   <article class="about">
     <h2>说明</h2>
     <p>本页整理京剧为主的梨园师承，供个人、非商业的学习研究使用。资料来源：<a href="https://history.xikao.com/" target="_blank" rel="noopener">梨园百年琐记（history.xikao.com）</a>。每个人物侧栏都链回戏考原条目。正文只摘录条目开头的一小段，版权归原作者及戏考所有，请勿作商业用途或整篇转载。</p>
-    <p>点击人物查看师承与亲属，再次点击可取消选中。关系选项先暂存，点击「应用关系筛选」后统一更新；「恢复全图布局」在谱系图内缩小查看全部人物，不切换视图。</p>
+    <p>点击人物查看师承与亲属，再次点击可取消选中。关系选项先暂存，点击「应用关系筛选」后统一更新；「恢复全图布局」在谱系图内按宽度重新铺开，可上下滚动，不切换视图。</p>
     <p>科班/院校与科别可筛选高亮成员，同科班不等于师徒。谱系图按行当上色；跨相声的人物可在侧栏跳转。手机支持单指平移、双指缩放、全屏看图及折叠图例。</p>
     <p class="muted" id="buildinfo"></p>
     <h3>证据与不确定性</h3>
@@ -161,7 +161,7 @@
 <script src="../vendor/cytoscape.min.js"></script>
 <script src="../assets/mobile.js?v=20261114-parity"></script>
 <script src="../assets/line-style.js"></script>
-<script src="assets/app.js?v=20261114-parity"></script>
+<script src="assets/app.js?v=20261114-tree-width"></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "337a81f2145c44d1aca19c5d9b5fbe1d"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

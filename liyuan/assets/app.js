@@ -921,7 +921,7 @@ function bindUI(){
     zoomAtCenter(Math.max(cy.zoom(),1.15));
   };
   $('#resetLayout').onclick=()=>{
-    if(state.mode==='tree'){deselectPerson();fitWholeTree();return;}
+    if(state.mode==='tree'){deselectPerson();openTreeView();return;}
     if(state.mode==='nebula'){cy.fit(undefined,40);syncZoomSlider();return;}
     resetGlobal();
   };
@@ -1669,18 +1669,6 @@ function bindTreeScroll(){
   window.addEventListener('pointercancel',endDrag);
   yBar.addEventListener('lostpointercapture',endDrag);
   xBar.addEventListener('lostpointercapture',endDrag);
-}
-function fitWholeTree(){
-  if(state.mode!=='tree'||!cy) return;
-  if(layoutAnim){cancelAnimationFrame(layoutAnim);layoutAnim=0;}
-  anchorId=null;cy.stop(true,false);
-  const m=treeContent();if(!m)return;
-  cy.minZoom(m.zMin);cy.maxZoom(3);
-  treeGuard++;
-  cy.zoom(m.zMin);
-  cy.pan({x:m.pad-m.bb.x1*m.zMin,y:m.pad-m.bb.y1*m.zMin});
-  treeGuard--;
-  clampTreePan();syncZoomSlider();paintRail();
 }
 function openTreeView(){
   applyTreeViewport(true);

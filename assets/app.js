@@ -977,8 +977,7 @@ function bindUI(){
   $('#resetLayout').onclick=()=>{
     if(state.mode==='tree'){
       deselectPerson();
-      applyTreeViewport('whole');
-      syncZoomSlider();
+      openTreeView();
       return;
     }
     if(state.mode==='nebula'){cy.fit(undefined,40);syncZoomSlider();return;}
@@ -1530,7 +1529,7 @@ function applyTreeViewport(fit){
   cy.maxZoom(3);
   if(fit){
     treeGuard++;
-    cy.zoom(fit==='whole'?m.zMin:m.zWidth);
+    cy.zoom(m.zWidth);
     const z=cy.zoom();
     cy.pan({x:m.pad-m.bb.x1*z, y:m.pad-m.bb.y1*z});
     treeGuard--;
