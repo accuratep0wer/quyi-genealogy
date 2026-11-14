@@ -86,16 +86,23 @@
     </div>
   </div>
   <div class="legend">
-    <span><i class="ln md"></i>师徒·确定</span>
-    <span><i class="ln md-dis"></i>师徒·存疑</span>
-    <span><i class="ln kin"></i>亲属</span>
-    <span><i class="ln partner"></i>搭档</span>
-    <span><i class="ln other"></i>同台 / 受教</span>
-    <span><i class="ln ganqin"></i>干亲/义亲</span>
-    <span><i class="ln ganqin-dis"></i>干亲·存疑</span>
-    <span><i class="ln jiebai"></i>结拜</span>
-    <span><i class="ln guoji"></i>过继/收养</span>
-    <span><i class="ln mar"></i>姻缘</span>
+    <span><i class="ln" data-line="md"></i>师徒·确定</span>
+    <span><i class="ln" data-line="md" data-dis="1"></i>师徒·存疑</span>
+    <span><i class="ln" data-line="ganqin"></i>干亲/义亲</span>
+    <span><i class="ln" data-line="ganqin" data-dis="1"></i>干亲·存疑</span>
+    <span><i class="ln" data-line="jiebai"></i>结拜</span>
+    <span><i class="ln" data-line="jiebai" data-dis="1"></i>结拜·存疑</span>
+    <span><i class="ln" data-line="guoji"></i>过继/收养</span>
+    <span><i class="ln" data-line="guoji" data-dis="1"></i>过继·存疑</span>
+    <span><i class="ln" data-line="kin"></i>亲属</span>
+    <span><i class="ln" data-line="kin" data-dis="1"></i>亲属·存疑</span>
+    <span><i class="ln" data-line="mar"></i>姻缘</span>
+    <span><i class="ln" data-line="mar" data-dis="1"></i>姻缘·存疑</span>
+    <span><i class="ln" data-line="partner"></i>搭档</span>
+    <span><i class="ln" data-line="partner" data-dis="1"></i>搭档·存疑</span>
+    <span><i class="ln" data-line="other"></i>同台 / 受教</span>
+    <span><i class="ln" data-line="other" data-dis="1"></i>同台·存疑</span>
+    <span class="muted">存疑一律是疏圆点，颜色比同类型更淡。这种点线不用在确定关系上。</span>
     <span><i class="dot xo"></i>黑边＝也见于相声谱</span>
     <span class="muted">较淡的字是没有独立戏考条目的名录人物。</span>
     <div id="lyColorLegend" class="ly-color-legend"></div>
@@ -127,9 +134,9 @@
     <ul>
       <li><b>师徒</b>只收录戏考师承谱图和正文里写明的拜师、学艺、私淑。同科班、同一科（如盛字科）或科班教师身份<b>不会</b>被当成师徒。</li>
       <li><b>搭档</b>包括长期合作、挎刀配戏、琴师与鼓师。<b>亲属</b>和<b>姻缘</b>来自族谱图与正文中的称谓。</li>
-      <li><b>干亲/义亲</b>是橙色点线，箭头由义父或义母指向义子、义女。<b>结拜</b>是靛蓝色点划线，没有箭头。<b>过继/收养</b>用亲属的灰色，虚线更疏。较淡的线是存疑。</li>
+      <li><b>干亲/义亲</b>是橙色成对短划，箭头由义父或义母指向义子、义女。<b>结拜</b>是靛蓝色长划加点，没有箭头。<b>过继/收养</b>是褐色点点划。<b>姻缘</b>是紫色双线。</li>
       <li><b>同台 / 受教</b>默认关掉。同台不等于固定搭档，受教不等于拜师；打开后图会密很多。</li>
-      <li>确定关系用实线，存疑用虚线。一条关系都没有的人不画出。没有独立戏考条目、只出现在别人名单里的人画得更淡。</li>
+      <li>确定关系用各类型自己的线型。存疑一律改成同色更淡的疏圆点，这种点线不用在确定关系上。一条关系都没有的人不画出。没有独立戏考条目、只出现在别人名单里的人画得更淡。</li>
       <li>菱形节点是和高置信度对上了相声谱系的人，侧栏可以一键跳到相声图谱里的同一人。</li>
     </ul>
     <h3>科班与院校</h3>
@@ -161,6 +168,7 @@
 </dialog>
 <script src="../vendor/cytoscape.min.js"></script>
 <script src="../assets/mobile.js"></script>
+<script src="../assets/line-style.js"></script>
 <script src="assets/app.js"></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "337a81f2145c44d1aca19c5d9b5fbe1d"}'></script><!-- End Cloudflare Web Analytics -->
 </body>

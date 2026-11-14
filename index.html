@@ -82,16 +82,23 @@
     </div>
   </div>
   <div class="legend">
-    <span><i class="ln md"></i>师徒·确定</span>
-    <span><i class="ln md-dis"></i>师徒·存疑</span>
-    <span><i class="ln kin"></i>亲属</span>
-    <span><i class="ln partner"></i>固定搭档</span>
-    <span><i class="ln other"></i>代拉 / 引保代 / 口盟</span>
-    <span><i class="ln ganqin"></i>干亲/义亲</span>
-    <span><i class="ln ganqin-dis"></i>干亲·存疑</span>
-    <span><i class="ln jiebai"></i>结拜</span>
-    <span><i class="ln guoji"></i>过继/收养</span>
-    <span><i class="ln mar"></i>姻缘</span>
+    <span><i class="ln" data-line="md"></i>师徒·确定</span>
+    <span><i class="ln" data-line="md" data-dis="1"></i>师徒·存疑</span>
+    <span><i class="ln" data-line="ganqin"></i>干亲/义亲</span>
+    <span><i class="ln" data-line="ganqin" data-dis="1"></i>干亲·存疑</span>
+    <span><i class="ln" data-line="jiebai"></i>结拜</span>
+    <span><i class="ln" data-line="jiebai" data-dis="1"></i>结拜·存疑</span>
+    <span><i class="ln" data-line="guoji"></i>过继/收养</span>
+    <span><i class="ln" data-line="guoji" data-dis="1"></i>过继·存疑</span>
+    <span><i class="ln" data-line="kin"></i>亲属</span>
+    <span><i class="ln" data-line="kin" data-dis="1"></i>亲属·存疑</span>
+    <span><i class="ln" data-line="mar"></i>姻缘</span>
+    <span><i class="ln" data-line="mar" data-dis="1"></i>姻缘·存疑</span>
+    <span><i class="ln" data-line="partner"></i>固定搭档</span>
+    <span><i class="ln" data-line="partner" data-dis="1"></i>搭档·存疑</span>
+    <span><i class="ln" data-line="other"></i>代拉 / 引保代 / 口盟</span>
+    <span><i class="ln" data-line="other" data-dis="1"></i>代拉·存疑</span>
+    <span class="muted">存疑一律是疏圆点，颜色比同类型更淡。这种点线不用在确定关系上。</span>
     <span><i class="dot rel"></i>非谱系内亲属</span>
     <span id="genLegend"></span>
     <span class="muted">节点大小＝关系数。放大时人名自动疏开，缩小回到全图；拖动可看到邻近门派。</span>
@@ -125,14 +132,14 @@
     <ul>
       <li><b>师徒</b>：正式拜师（摆知）的师承，箭头由师父指向徒弟。</li>
       <li><b>代拉/引保代/口盟等</b>：代拉师弟（代师收徒）、拜师时的引师、保师、代师，口盟弟子，以及早年学艺但不算正式师承等情况。</li>
-      <li><b>干亲/义亲</b>：义父、义母与义子、义女。点线，箭头由义父/义母指向义子/义女。较淡的是存疑。</li>
-      <li><b>结拜</b>：把兄弟、盟兄弟。没有箭头。</li>
-      <li><b>亲缘</b>：父子、兄弟、祖孙、舅甥、表亲等血缘关系。</li>
-      <li><b>过继/收养</b>：过继、嗣子、养子、养女。用亲属的灰色，虚线更疏。</li>
-      <li><b>姻缘</b>：夫妻、翁婿等婚姻关系。</li>
+      <li><b>干亲/义亲</b>：义父、义母与义子、义女。橙色成对短划，箭头由义父或义母指向义子、义女。</li>
+      <li><b>结拜</b>：把兄弟、盟兄弟。靛蓝色长划加点，没有箭头。</li>
+      <li><b>亲缘</b>：父子、兄弟、祖孙、舅甥、表亲等血缘关系。蓝色长划。</li>
+      <li><b>过继/收养</b>：过继、嗣子、养子、养女。褐色点点划（一长两短），没有箭头。</li>
+      <li><b>姻缘</b>：夫妻、翁婿等婚姻关系。紫色双线，没有箭头。</li>
     </ul>
     <h3>可信度</h3>
-    <p><b>确定</b>：至少一个公开来源明确列出，图中用实线。<b>存疑</b>：来源本身标注存疑，不同来源说法冲突，师徒关系后来被解除，或只有网络转载、自媒体之类的弱来源，图中用较淡的虚线。可用「只显示确定」暂时隐去存疑关系。相声门户的师承本来就常有“改换门庭”、“代拉”、“清门”、“辈分自降”等复杂情况，请把本站当作索引，不要当作定论。</p>
+    <p><b>确定</b>：至少一个公开来源明确列出，图中用该类型自己的线型。<b>存疑</b>：来源本身标注存疑，不同来源说法冲突，师徒关系后来被解除，或只有网络转载、自媒体之类的弱来源。图中一律改成同色更淡的疏圆点；这种疏圆点只表示存疑，确定关系不用。可用「只显示确定」暂时隐去存疑关系。相声门户的师承本来就常有“改换门庭”、“代拉”、“清门”、“辈分自降”等复杂情况，请把本站当作索引，不要当作定论。</p>
     <h3>方法</h3>
     <ol>
       <li>主干取自维基百科《相声演员师承关系》条目。该条目以中国相声网《师承关系表》（据阎笑儒1960年传殷文硕的《相声宗谱》誊写）为主，第九代以梨园论坛《相声师承关系——九代传人》为主。</li>
@@ -185,6 +192,7 @@
 </dialog>
 <script src="vendor/cytoscape.min.js"></script>
 <script src="assets/mobile.js"></script>
+<script src="assets/line-style.js"></script>
 <script src="assets/app.js"></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "337a81f2145c44d1aca19c5d9b5fbe1d"}'></script><!-- End Cloudflare Web Analytics -->
 </body>

@@ -60,7 +60,7 @@ html[data-layout="drawer"] #view-graph:not([hidden]) {
   height: 100%;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: auto;
 }
 html[data-layout="sheet"] .phone-hide,
 html[data-layout="drawer"] .phone-hide { display: none; }
@@ -75,8 +75,8 @@ html[data-layout="drawer"] .graph-wrap {
 html[data-layout="sheet"] .cy-stage,
 html[data-layout="drawer"] .cy-stage { flex: 1 1 auto; height: auto; min-height: 0; }
 html[data-layout="sheet"] .legend {
-  max-height: 2.6em;
-  overflow: hidden;
+  max-height: none;
+  overflow: visible;
   margin-top: 4px;
 }
 html[data-layout="sheet"] footer,
@@ -115,7 +115,12 @@ html[data-layout="drawer"] nav { flex-wrap: nowrap; overflow-x: auto; }
 html[data-layout="drawer"] .mode-tabs { flex-wrap: nowrap; overflow-x: auto; margin-bottom: 4px; }
 html[data-layout="drawer"] .toolbar { flex-wrap: nowrap; overflow-x: auto; gap: 6px; margin-bottom: 4px; }
 html[data-layout="drawer"] .search { flex: 1 1 160px; min-width: 120px; max-width: none; }
-html[data-layout="drawer"] .legend { display: none; }
+html[data-layout="drawer"] .legend {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: none;
+  overflow: visible;
+}
 html[data-layout="drawer"] .brand small,
 html[data-layout="drawer"] header .feedback-btn { display: none; }
 html[data-layout="drawer"] main { padding: 6px 8px; }

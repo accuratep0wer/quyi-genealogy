@@ -34,6 +34,7 @@ function labelOf(p){
   return p.name;
 }
 function init(){
+  XSLines.mountLegend();
   P.forEach(p=>{byId[p.id]=p;adj[p.id]=[];});
   R.forEach(r=>{adj[r.from].push(r);adj[r.to].push(r);});
   const cnt={};P.forEach(p=>cnt[p.name]=(cnt[p.name]||0)+1);
@@ -79,18 +80,8 @@ function buildCy(){
       {selector:'node[deg >= 15]',style:{'font-size':16,'font-weight':'bold','min-zoomed-font-size':4}},
       {selector:'node[role = "relative"]',style:{'shape':'round-rectangle'}},
       {selector:'node[gen = 2], node[gen = 4], node[gen = 6], node[gen = 8], node[gen = 10]',style:{'background-image':STRIPE,'background-fit':'none','background-repeat':'repeat','background-width':8,'background-height':8,'background-clip':'node','background-position-x':'0','background-position-y':'0'}},
-      {selector:'edge',style:{'width':1.5,'line-color':'#6b7280','curve-style':'straight','opacity':0.85,'target-arrow-shape':'none','line-style':'solid'}},
-      {selector:'edge[type = "master_disciple"]',style:{'curve-style':'straight','target-arrow-shape':'triangle','target-arrow-color':'#374151','line-color':'#374151','line-style':'solid','width':1.6,'arrow-scale':0.8,'opacity':0.9}},
-      {selector:'edge[type = "master_disciple"][conf = "documented"]',style:{'line-color':'#374151','target-arrow-color':'#374151','target-arrow-shape':'triangle','line-style':'solid','width':1.6,'opacity':0.92}},
-      {selector:'edge[type = "master_disciple"][conf = "disputed"]',style:{'line-color':'#9ca3af','target-arrow-color':'#9ca3af','target-arrow-shape':'triangle','line-style':'dashed','line-dash-pattern':[10,6],'width':1.5,'opacity':0.8,'arrow-scale':0.75}},
-      {selector:'edge[type = "kin"]',style:{'line-color':'#6b7280','line-style':'dashed','line-dash-pattern':[2,5],'width':1.6,'target-arrow-shape':'none','opacity':0.85}},
-      {selector:'edge[type = "marriage"]',style:{'line-color':'#8e44ad','line-style':'dashed','line-dash-pattern':[2,5],'width':2,'target-arrow-shape':'none','opacity':0.9}},
-      {selector:'edge[type = "other"]',style:{'line-color':'#0f766e','line-style':'dashed','line-dash-pattern':[8,3,2,3],'width':1.7,'target-arrow-shape':'none','opacity':0.8}},
-      {selector:'edge[type = "partner"]',style:{'line-color':'#e11d48','target-arrow-shape':'none','line-style':'dashed','line-dash-pattern':[14,5,3,5],'width':2.6,'opacity':0.95,'curve-style':'straight'}},
-      {selector:'.faded',style:{'opacity':0.07,'text-opacity':0}},
       {selector:'node.hl',style:{'border-width':3,'border-color':'#111','min-zoomed-font-size':0,'z-index':10}},
       {selector:'node.nb',style:{'min-zoomed-font-size':0,'z-index':9}},
-      {selector:'edge.hl',style:{'opacity':1,'width':2.6,'z-index':9}},
       {selector:'.alllabels',style:{'min-zoomed-font-size':0}},
       {selector:'node.local',style:{'min-zoomed-font-size':0,'text-opacity':1}},
       {selector:'node.nebula',style:{'font-size':14,'min-zoomed-font-size':10,'text-outline-width':3,'text-outline-color':'#fff'}},
@@ -100,26 +91,9 @@ function buildCy(){
       {selector:'node.tree.est',style:{'border-style':'dashed'}},
       {selector:'node.tree.axis',style:{'shape':'ellipse','width':1,'height':1,'background-opacity':0,'border-width':0,'font-size':13,'font-weight':'bold','color':'#7c2d12','text-valign':'center','text-halign':'center','text-margin-y':0,'text-max-width':240,'z-index':0}},
       {selector:'node.period-tag',style:{'shape':'ellipse','width':1,'height':1,'background-opacity':0,'border-width':0,'font-size':11,'font-weight':600,'color':'#44403c','text-valign':'center','text-halign':'center','text-margin-y':0,'text-wrap':'none','text-max-width':120,'text-outline-width':0,'text-background-color':'#fff','text-background-opacity':0.92,'text-background-padding':2,'min-zoomed-font-size':6,'z-index':40}},
-      {selector:'edge.extra',style:{'width':1,'line-color':'#d6d3d1','target-arrow-color':'#d6d3d1','opacity':0.55,'line-style':'dashed','line-dash-pattern':[3,4],'z-index':0}},
-      {selector:'edge.tree-link',style:{'width':5,'line-color':'#b91c1c','target-arrow-color':'#b91c1c','opacity':1,'z-index':20,'line-style':'solid','arrow-scale':1.3}},
-      {selector:'edge.tree-reveal',style:{'width':2.6,'line-color':'#7c3aed','target-arrow-color':'#7c3aed','opacity':1,'z-index':24,'curve-style':'bezier','control-point-step-size':90,'line-style':'dashed','line-dash-pattern':[10,6]}},
-      {selector:'edge.tree-reveal[type = "partner"]',style:{'width':2.8,'line-color':'#e11d48','target-arrow-color':'#e11d48','line-style':'dashed','line-dash-pattern':[16,7,3,7],'opacity':1}},
-      {selector:'edge.tree-reveal[type = "marriage"]',style:{'width':2.6,'line-color':'#7e22ce','target-arrow-color':'#7e22ce','line-style':'dashed','line-dash-pattern':[22,9],'opacity':1}},
-      {selector:'edge.tree-reveal[type = "kin"]',style:{'width':2.4,'line-color':'#374151','target-arrow-color':'#374151','line-style':'dashed','line-dash-pattern':[14,6,3,5,3,6],'opacity':1}},
-      {selector:'edge.tree-reveal[type = "other"]',style:{'width':2.4,'line-color':'#0f766e','target-arrow-color':'#0f766e','line-style':'dashed','line-dash-pattern':[9,5,9,5,3,5],'opacity':1}},
-      {selector:'edge[sub = "ganqin"]',style:{'line-color':'#c2410c','target-arrow-color':'#c2410c','target-arrow-shape':'triangle','line-style':'dotted','width':2.1,'arrow-scale':0.9,'opacity':0.95}},
-      {selector:'edge[sub = "ganqin"][conf = "disputed"]',style:{'line-color':'#fdba74','target-arrow-color':'#fdba74','opacity':0.48,'width':1.6}},
-      {selector:'edge[sub = "jiebai"]',style:{'line-color':'#4338ca','target-arrow-shape':'none','line-style':'dashed','line-dash-pattern':[9,4,2,4],'width':2.3,'opacity':0.95}},
-      {selector:'edge[sub = "jiebai"][conf = "disputed"]',style:{'line-color':'#a5b4fc','opacity':0.48,'width':1.7}},
-      {selector:'edge[sub = "guoji"]',style:{'line-color':'#57534e','target-arrow-shape':'none','line-style':'dashed','line-dash-pattern':[14,6],'width':1.9,'opacity':0.92}},
-      {selector:'edge[sub = "guoji"][conf = "disputed"]',style:{'line-color':'#d6d3d1','opacity':0.45,'width':1.6}},
-      {selector:'edge.tree-reveal[sub = "ganqin"]',style:{'width':2.6,'line-color':'#c2410c','target-arrow-color':'#c2410c','target-arrow-shape':'triangle','line-style':'dotted','opacity':1,'z-index':26}},
-      {selector:'edge.tree-reveal[sub = "ganqin"][conf = "disputed"]',style:{'line-color':'#fdba74','target-arrow-color':'#fdba74','opacity':0.55}},
-      {selector:'edge.tree-reveal[sub = "jiebai"]',style:{'width':2.6,'line-color':'#4338ca','target-arrow-shape':'none','line-style':'dashed','line-dash-pattern':[9,4,2,4],'opacity':1,'z-index':26}},
-      {selector:'edge.tree-reveal[sub = "jiebai"][conf = "disputed"]',style:{'line-color':'#a5b4fc','opacity':0.55}},
-      {selector:'edge.tree-reveal[sub = "guoji"]',style:{'width':2.4,'line-color':'#57534e','target-arrow-shape':'none','line-style':'dashed','line-dash-pattern':[14,6],'opacity':1,'z-index':26}},
-      {selector:'edge.tree-reveal[sub = "guoji"][conf = "disputed"]',style:{'line-color':'#d6d3d1','opacity':0.5}}
-    ],
+    ].concat(XSLines.selectors()).concat([
+      {selector:'.faded',style:{'opacity':0.07,'text-opacity':0}}
+    ]),
     layout:{name:'preset'}
   });
   cy.on('tap','node',e=>{
@@ -651,7 +625,7 @@ function selectPerson(id,center){
 function plink(id){const p=byId[id];return '<span class="pl" data-id="'+id+'">'+esc(labelOf(p))+'</span>';}
 function srcLinks(arr){return (arr||[]).map((u,i)=>'<a href="'+esc(u)+'" target="_blank" rel="noopener" title="'+esc(u)+'">['+(i+1)+']</a>').join(' ');}
 function relLine(r,other){
-  return '<li>'+plink(other)+(r.detail?' <small>'+esc(r.detail)+'</small>':'')+'<span class="tag'+(r.confidence==='disputed'?' dis':'')+'">'+(CONF_CN[r.confidence]||'')+'</span> <small>'+srcLinks(r.sources)+'</small>'+(r.notes&&r.notes.length?'<br><small class="muted">'+esc(r.notes.join('；'))+'</small>':'')+'</li>';
+  return '<li>'+XSLines.swatchHtml(XSLines.kindOf(r), r.confidence==='disputed')+plink(other)+(r.detail?' <small>'+esc(r.detail)+'</small>':'')+'<span class="tag'+(r.confidence==='disputed'?' dis':'')+'">'+(CONF_CN[r.confidence]||'')+'</span> <small>'+srcLinks(r.sources)+'</small>'+(r.notes&&r.notes.length?'<br><small class="muted">'+esc(r.notes.join('；'))+'</small>':'')+'</li>';
 }
 function renderPanel(id){
   const p=byId[id];const rs=adj[id];
@@ -1544,7 +1518,7 @@ function renderTables(){
     rows.sort((a,b)=>{const x=key(a),y=key(b);return (x<y?-1:x>y?1:0)*rsort.d;});
     $('#rcount').textContent=rows.length+' 条';
     const lim=rows.slice(0,3000);
-    $('#rtable tbody').innerHTML=lim.map(r=>'<tr><td>'+typeLabel(r)+'</td><td><a href="#graph/'+r.from+'">'+esc(r._fromName)+'</a></td><td><a href="#graph/'+r.to+'">'+esc(r._toName)+'</a></td><td class="notes">'+esc(r.detail)+(r.notes&&r.notes.length?'<br><span class="muted">'+esc(r.notes.join('；'))+'</span>':'')+'</td><td><span class="tag'+(r.confidence==='disputed'?' dis':'')+'">'+(CONF_CN[r.confidence]||'')+'</span></td><td>'+srcLinks(r.sources)+'</td></tr>').join('');
+    $('#rtable tbody').innerHTML=lim.map(r=>'<tr><td>'+XSLines.swatchHtml(XSLines.kindOf(r), r.confidence==='disputed')+typeLabel(r)+'</td><td><a href="#graph/'+r.from+'">'+esc(r._fromName)+'</a></td><td><a href="#graph/'+r.to+'">'+esc(r._toName)+'</a></td><td class="notes">'+esc(r.detail)+(r.notes&&r.notes.length?'<br><span class="muted">'+esc(r.notes.join('；'))+'</span>':'')+'</td><td><span class="tag'+(r.confidence==='disputed'?' dis':'')+'">'+(CONF_CN[r.confidence]||'')+'</span></td><td>'+srcLinks(r.sources)+'</td></tr>').join('');
   };
   const pgenSel=$('#pgen');
   ['#pq','#pgen'].forEach(s=>$(s).addEventListener('input',drawP));
