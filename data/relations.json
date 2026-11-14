@@ -21691,15 +21691,16 @@
 },
 {
 "type": "other",
-"from": "p1603",
-"to": "p1252",
+"from": "p1252",
+"to": "p1603",
 "detail": "于谦是周九良的義父",
 "sources": [
 "https://zh.wikipedia.org/wiki/%E5%91%A8%E4%B9%9D%E8%89%AF"
 ],
 "confidence": "documented",
 "notes": [],
-"id": "r01727"
+"id": "r01727",
+"subtype": "ganqin"
 },
 {
 "type": "kin",
@@ -21715,15 +21716,16 @@
 },
 {
 "type": "other",
-"from": "p1574",
-"to": "p1252",
+"from": "p1252",
+"to": "p1574",
 "detail": "于谦是孟鹤堂的義父",
 "sources": [
 "https://zh.wikipedia.org/wiki/%E5%AD%9F%E9%B9%A4%E5%A0%82"
 ],
 "confidence": "documented",
 "notes": [],
-"id": "r01729"
+"id": "r01729",
+"subtype": "ganqin"
 },
 {
 "type": "marriage",
@@ -21787,7 +21789,8 @@
 ],
 "confidence": "documented",
 "notes": [],
-"id": "r01734"
+"id": "r01734",
+"subtype": "ganqin"
 },
 {
 "type": "marriage",
@@ -21827,15 +21830,16 @@
 },
 {
 "type": "other",
-"from": "p1591",
-"to": "p0903",
+"from": "p0903",
+"to": "p1591",
 "detail": "郭德纲是李鹤东的義父",
 "sources": [
 "https://zh.wikipedia.org/wiki/%E6%9D%8E%E9%B9%A4%E4%B8%9C"
 ],
 "confidence": "documented",
 "notes": [],
-"id": "r01738"
+"id": "r01738",
+"subtype": "ganqin"
 },
 {
 "type": "kin",
@@ -21950,15 +21954,16 @@
 },
 {
 "type": "other",
-"from": "p1560",
-"to": "p0903",
+"from": "p0903",
+"to": "p1560",
 "detail": "郭德纲是陶云圣的義父",
 "sources": [
 "https://zh.wikipedia.org/wiki/%E9%99%B6%E4%BA%91%E5%9C%A3"
 ],
 "confidence": "documented",
 "notes": [],
-"id": "r01748"
+"id": "r01748",
+"subtype": "ganqin"
 },
 {
 "type": "marriage",
@@ -31785,5 +31790,857 @@
 "notes": [
 "单次合作：节目单只列这一场对口；群口《五官争功》未另计"
 ]
+},
+{
+"type": "other",
+"from": "p0228",
+"to": "p0903",
+"detail": "义父子",
+"sources": [
+"https://www.thepaper.cn/newsDetail_forward_34465480",
+"https://www.shidiannet.com/2026/1112/179444948822857.html"
+],
+"confidence": "documented",
+"notes": [
+"「义父子」",
+"澎湃 https://www.thepaper.cn/newsDetail_forward_34465480",
+"视点网 https://www.shidiannet.com/2026/1112/179444948822857.html"
+],
+"subtype": "ganqin",
+"id": "r02439"
+},
+{
+"type": "other",
+"from": "p0903",
+"to": "p1561",
+"detail": "干父子",
+"sources": [
+"http://www.bianpian.cn/zatan/136.html"
+],
+"confidence": "documented",
+"notes": [
+"「干父子」",
+"bianpian http://www.bianpian.cn/zatan/136.html"
+],
+"subtype": "ganqin",
+"id": "r02440"
+},
+{
+"type": "other",
+"from": "p0164",
+"to": "p1975",
+"detail": "义父子",
+"sources": [
+"https://history.xikao.com/person/%E5%BC%A0%E9%87%91%E9%93%AD"
+],
+"confidence": "documented",
+"notes": [
+"「义父子」",
+"戏考 https://history.xikao.com/person/%E5%BC%A0%E9%87%91%E9%93%AD"
+],
+"subtype": "ganqin",
+"id": "r02441"
+},
+{
+"type": "other",
+"from": "p0546",
+"to": "p0893",
+"detail": "义父子",
+"sources": [
+"http://news.cntv.cn/20120617/106232.shtml"
+],
+"confidence": "documented",
+"notes": [
+"「义父子」",
+"央视网 http://news.cntv.cn/20120617/106232.shtml"
+],
+"subtype": "ganqin",
+"id": "r02442"
+},
+{
+"type": "other",
+"from": "p0546",
+"to": "p1119",
+"detail": "义父子",
+"sources": [
+"http://news.cntv.cn/20120617/106232.shtml"
+],
+"confidence": "documented",
+"notes": [
+"「义父子」",
+"央视网 http://news.cntv.cn/20120617/106232.shtml"
+],
+"subtype": "ganqin",
+"id": "r02443"
+},
+{
+"type": "other",
+"from": "p0546",
+"to": "p1218",
+"detail": "义父子",
+"sources": [
+"https://www.wlmqw.com/view/12224",
+"https://www.toutiao.com/article/7087836777544892941/"
+],
+"confidence": "documented",
+"notes": [
+"「义父子」",
+"乌市微生活 https://www.wlmqw.com/view/12224",
+"头条 https://www.toutiao.com/article/7087836777544892941/"
+],
+"subtype": "ganqin",
+"id": "r02444"
+},
+{
+"type": "other",
+"from": "p0546",
+"to": "p1159",
+"detail": "义父子",
+"sources": [
+"https://k.sina.cn/article_1210154912_48217fa002001j5n3.html"
+],
+"confidence": "disputed",
+"notes": [
+"「义父子」",
+"新浪 https://k.sina.cn/article_1210154912_48217fa002001j5n3.html"
+],
+"subtype": "ganqin",
+"id": "r02445"
+},
+{
+"type": "other",
+"from": "p0374",
+"to": "p0893",
+"detail": "干父子",
+"sources": [
+"https://www.toutiao.com/article/7087836777544892941/",
+"https://www.wlmqw.com/view/12224"
+],
+"confidence": "documented",
+"notes": [
+"「干父子」",
+"头条 https://www.toutiao.com/article/7087836777544892941/",
+"乌市微生活 https://www.wlmqw.com/view/12224"
+],
+"subtype": "ganqin",
+"id": "r02446"
+},
+{
+"type": "other",
+"from": "p0400",
+"to": "p0893",
+"detail": "干父子",
+"sources": [
+"https://www.toutiao.com/article/7087836777544892941/",
+"https://www.wlmqw.com/view/12224"
+],
+"confidence": "documented",
+"notes": [
+"「干父子」",
+"头条 https://www.toutiao.com/article/7087836777544892941/",
+"乌市微生活 https://www.wlmqw.com/view/12224"
+],
+"subtype": "ganqin",
+"id": "r02447"
+},
+{
+"type": "other",
+"from": "p0564",
+"to": "p0893",
+"detail": "干父子",
+"sources": [
+"https://www.toutiao.com/article/7087836777544892941/",
+"https://www.wlmqw.com/view/12224"
+],
+"confidence": "documented",
+"notes": [
+"「干父子」",
+"头条 https://www.toutiao.com/article/7087836777544892941/",
+"乌市微生活 https://www.wlmqw.com/view/12224"
+],
+"subtype": "ganqin",
+"id": "r02448"
+},
+{
+"type": "other",
+"from": "p0436",
+"to": "p0893",
+"detail": "干父子",
+"sources": [
+"https://www.toutiao.com/article/7087836777544892941/",
+"https://www.wlmqw.com/view/12224"
+],
+"confidence": "documented",
+"notes": [
+"「干父子」",
+"头条 https://www.toutiao.com/article/7087836777544892941/",
+"乌市微生活 https://www.wlmqw.com/view/12224"
+],
+"subtype": "ganqin",
+"id": "r02449"
+},
+{
+"type": "other",
+"from": "p0728",
+"to": "p0893",
+"detail": "干父子",
+"sources": [
+"https://www.wlmqw.com/view/12224"
+],
+"confidence": "disputed",
+"notes": [
+"「干父子」",
+"乌市微生活 https://www.wlmqw.com/view/12224"
+],
+"subtype": "ganqin",
+"id": "r02450"
+},
+{
+"type": "other",
+"from": "p0385",
+"to": "p0893",
+"detail": "干母子",
+"sources": [
+"https://www.wlmqw.com/view/12224"
+],
+"confidence": "disputed",
+"notes": [
+"「干母子」",
+"乌市微生活 https://www.wlmqw.com/view/12224"
+],
+"subtype": "ganqin",
+"id": "r02451"
+},
+{
+"type": "other",
+"from": "p0399",
+"to": "p1091",
+"detail": "干父子",
+"sources": [
+"https://www.toutiao.com/article/7087836777544892941/",
+"https://www.wlmqw.com/view/12224"
+],
+"confidence": "documented",
+"notes": [
+"「干父子」",
+"头条 https://www.toutiao.com/article/7087836777544892941/",
+"乌市微生活 https://www.wlmqw.com/view/12224"
+],
+"subtype": "ganqin",
+"id": "r02452"
+},
+{
+"type": "other",
+"from": "p0603",
+"to": "p1091",
+"detail": "干父子",
+"sources": [
+"https://www.wlmqw.com/view/12224"
+],
+"confidence": "disputed",
+"notes": [
+"「干父子」",
+"乌市微生活 https://www.wlmqw.com/view/12224"
+],
+"subtype": "ganqin",
+"id": "r02453"
+},
+{
+"type": "other",
+"from": "p0394",
+"to": "p1091",
+"detail": "干父子",
+"sources": [
+"https://www.wlmqw.com/view/12224"
+],
+"confidence": "disputed",
+"notes": [
+"「干父子」",
+"乌市微生活 https://www.wlmqw.com/view/12224"
+],
+"subtype": "ganqin",
+"id": "r02454"
+},
+{
+"type": "other",
+"from": "p0190",
+"to": "p0394",
+"detail": "干父子",
+"sources": [
+"https://www.chengshitoutiao.com/news/new/271435.html",
+"https://www.wlmqw.com/view/12224"
+],
+"confidence": "documented",
+"notes": [
+"「干父子」",
+"头条 https://www.chengshitoutiao.com/news/new/271435.html",
+"乌市微生活 https://www.wlmqw.com/view/12224"
+],
+"subtype": "ganqin",
+"id": "r02455"
+},
+{
+"type": "other",
+"from": "p0394",
+"to": "p1218",
+"detail": "干父子",
+"sources": [
+"https://www.wlmqw.com/view/12224",
+"https://read01.com/AAk7BE.html"
+],
+"confidence": "documented",
+"notes": [
+"「干父子」",
+"乌市微生活 https://www.wlmqw.com/view/12224",
+"壹读 https://read01.com/AAk7BE.html"
+],
+"subtype": "ganqin",
+"id": "r02456"
+},
+{
+"type": "other",
+"from": "p0734",
+"to": "p1396",
+"detail": "干父子",
+"sources": [
+"https://www.wlmqw.com/view/12224"
+],
+"confidence": "disputed",
+"notes": [
+"「干父子」",
+"乌市微生活 https://www.wlmqw.com/view/12224"
+],
+"subtype": "ganqin",
+"id": "r02457"
+},
+{
+"type": "other",
+"from": "p0415",
+"to": "p1252",
+"detail": "干父子",
+"sources": [
+"https://www.wlmqw.com/view/12224"
+],
+"confidence": "disputed",
+"notes": [
+"「干父子」",
+"乌市微生活 https://www.wlmqw.com/view/12224"
+],
+"subtype": "ganqin",
+"id": "r02458"
+},
+{
+"type": "other",
+"from": "p0728",
+"to": "p0903",
+"detail": "义父子",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE",
+"https://www.toutiao.com/article/7087836777544892941/"
+],
+"confidence": "documented",
+"notes": [
+"「义父子」",
+"维基 https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE",
+"头条 https://www.toutiao.com/article/7087836777544892941/"
+],
+"subtype": "ganqin",
+"id": "r02459"
+},
+{
+"type": "other",
+"from": "p0391",
+"to": "p0903",
+"detail": "义父子",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE",
+"https://www.toutiao.com/article/7087836777544892941/"
+],
+"confidence": "documented",
+"notes": [
+"「义父子」",
+"维基 https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE",
+"头条 https://www.toutiao.com/article/7087836777544892941/"
+],
+"subtype": "ganqin",
+"id": "r02460"
+},
+{
+"type": "other",
+"from": "p0374",
+"to": "p0903",
+"detail": "干父子",
+"sources": [
+"https://www.toutiao.com/article/7087836777544892941/"
+],
+"confidence": "disputed",
+"notes": [
+"「干父子」",
+"头条 https://www.toutiao.com/article/7087836777544892941/"
+],
+"subtype": "ganqin",
+"id": "r02461"
+},
+{
+"type": "other",
+"from": "p0546",
+"to": "p0903",
+"detail": "干父子",
+"sources": [
+"https://www.toutiao.com/article/7087836777544892941/"
+],
+"confidence": "disputed",
+"notes": [
+"「干父子」",
+"头条 https://www.toutiao.com/article/7087836777544892941/"
+],
+"subtype": "ganqin",
+"id": "r02462"
+},
+{
+"type": "other",
+"from": "p1252",
+"to": "p1503",
+"detail": "干父子",
+"sources": [
+"https://www.wlmqw.com/view/12224"
+],
+"confidence": "disputed",
+"notes": [
+"「干父子」",
+"乌市微生活 https://www.wlmqw.com/view/12224"
+],
+"subtype": "ganqin",
+"id": "r02463"
+},
+{
+"type": "other",
+"from": "p0103",
+"to": "p0354",
+"detail": "义父子",
+"sources": [
+"https://k.sina.cn/article_7032809220_1a330270400100l9xu.html",
+"https://www.chengshitoutiao.com/news/new/271435.html"
+],
+"confidence": "documented",
+"notes": [
+"「义父子」",
+"新浪 https://k.sina.cn/article_7032809220_1a330270400100l9xu.html",
+"头条 https://www.chengshitoutiao.com/news/new/271435.html"
+],
+"subtype": "ganqin",
+"id": "r02464"
+},
+{
+"type": "other",
+"from": "p0354",
+"to": "p0997",
+"detail": "义父子",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E6%9D%A8%E5%B0%91%E5%8D%8E%20%28%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%29",
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "documented",
+"notes": [
+"「义父子」",
+"维基 https://zh.wikipedia.org/wiki/%E6%9D%A8%E5%B0%91%E5%8D%8E%20%28%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%29",
+"维基 https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"subtype": "ganqin",
+"id": "r02465"
+},
+{
+"type": "other",
+"from": "p0077",
+"to": "p0159",
+"detail": "义父子",
+"sources": [
+"https://www.chengshitoutiao.com/news/new/271435.html",
+"https://www.wlmqw.com/view/12224"
+],
+"confidence": "documented",
+"notes": [
+"「义父子」",
+"头条 https://www.chengshitoutiao.com/news/new/271435.html",
+"乌市微生活 https://www.wlmqw.com/view/12224"
+],
+"subtype": "ganqin",
+"id": "r02466"
+},
+{
+"type": "other",
+"from": "p0077",
+"to": "p0168",
+"detail": "义父子",
+"sources": [
+"https://www.chengshitoutiao.com/news/new/271435.html",
+"https://c.m.163.com/news/a/JOUF1ARC05567BZG.html"
+],
+"confidence": "documented",
+"notes": [
+"「义父子」",
+"头条 https://www.chengshitoutiao.com/news/new/271435.html",
+"网易 https://c.m.163.com/news/a/JOUF1ARC05567BZG.html"
+],
+"subtype": "ganqin",
+"id": "r02467"
+},
+{
+"type": "other",
+"from": "p0077",
+"to": "p0286",
+"detail": "义父子",
+"sources": [
+"https://www.chengshitoutiao.com/news/new/271435.html"
+],
+"confidence": "disputed",
+"notes": [
+"「义父子」",
+"头条 https://www.chengshitoutiao.com/news/new/271435.html"
+],
+"subtype": "ganqin",
+"id": "r02468"
+},
+{
+"type": "other",
+"from": "p0077",
+"to": "p0322",
+"detail": "义父女",
+"sources": [
+"https://www.chinanews.com.cn/cul/2016/11-15/8063163.shtml"
+],
+"confidence": "documented",
+"notes": [
+"「义父女」",
+"中新网 https://www.chinanews.com.cn/cul/2016/11-15/8063163.shtml"
+],
+"subtype": "ganqin",
+"id": "r02469"
+},
+{
+"type": "other",
+"from": "p0903",
+"to": "p1502",
+"detail": "义父子",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "disputed",
+"notes": [
+"「义父子」",
+"维基 https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"subtype": "ganqin",
+"id": "r02470"
+},
+{
+"type": "other",
+"from": "p1192",
+"to": "p1576",
+"detail": "义父子",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "disputed",
+"notes": [
+"「义父子」",
+"维基 https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"subtype": "ganqin",
+"id": "r02471"
+},
+{
+"type": "other",
+"from": "p0888",
+"to": "p1317",
+"detail": "义父子",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"confidence": "disputed",
+"notes": [
+"「义父子」",
+"维基 https://zh.wikipedia.org/wiki/%E5%BE%B7%E4%BA%91%E7%A4%BE"
+],
+"subtype": "ganqin",
+"id": "r02472"
+},
+{
+"type": "other",
+"from": "p0644",
+"to": "p1210",
+"detail": "义父子",
+"sources": [
+"https://zh.wikipedia.org/wiki/%E4%BD%95%E6%B2%84%E4%BC%9F",
+"https://k.sina.cn/article_1210154912_48217fa002001j5n3.html"
+],
+"confidence": "documented",
+"notes": [
+"「义父子」",
+"维基 https://zh.wikipedia.org/wiki/%E4%BD%95%E6%B2%84%E4%BC%9F",
+"新浪 https://k.sina.cn/article_1210154912_48217fa002001j5n3.html"
+],
+"subtype": "ganqin",
+"id": "r02473"
+},
+{
+"type": "other",
+"from": "p0226",
+"to": "p0544",
+"detail": "义父子",
+"sources": [
+"https://www.toutiao.com/article/7087836777544892941/",
+"https://www.chengshitoutiao.com/news/new/271435.html"
+],
+"confidence": "documented",
+"notes": [
+"「义父子」",
+"头条 https://www.toutiao.com/article/7087836777544892941/",
+"头条 https://www.chengshitoutiao.com/news/new/271435.html"
+],
+"subtype": "ganqin",
+"id": "r02474"
+},
+{
+"type": "other",
+"from": "p0544",
+"to": "p1077",
+"detail": "义父子",
+"sources": [
+"https://www.toutiao.com/article/7087836777544892941/"
+],
+"confidence": "disputed",
+"notes": [
+"「义父子」",
+"头条 https://www.toutiao.com/article/7087836777544892941/"
+],
+"subtype": "ganqin",
+"id": "r02475"
+},
+{
+"type": "other",
+"from": "p0083",
+"to": "p0223",
+"detail": "干父子",
+"sources": [
+"https://www.chinanews.com.cn/cul/2013/04-07/4705678.shtml",
+"http://culture.people.com.cn/n/2013/0407/c22219-21036633.html"
+],
+"confidence": "documented",
+"notes": [
+"「干父子」",
+"中新网 https://www.chinanews.com.cn/cul/2013/04-07/4705678.shtml",
+"人民网 http://culture.people.com.cn/n/2013/0407/c22219-21036633.html"
+],
+"subtype": "ganqin",
+"id": "r02476"
+},
+{
+"type": "other",
+"from": "p0077",
+"to": "p0083",
+"detail": "把兄弟",
+"sources": [
+"https://www.laoziliao.net/tv/info/44829441"
+],
+"confidence": "documented",
+"notes": [
+"「把兄弟」",
+"老资料网 https://www.laoziliao.net/tv/info/44829441"
+],
+"subtype": "jiebai",
+"id": "r02477"
+},
+{
+"type": "other",
+"from": "p0077",
+"to": "p0109",
+"detail": "把兄弟",
+"sources": [
+"https://www.laoziliao.net/tv/info/44829441"
+],
+"confidence": "documented",
+"notes": [
+"「把兄弟」",
+"老资料网 https://www.laoziliao.net/tv/info/44829441"
+],
+"subtype": "jiebai",
+"id": "r02478"
+},
+{
+"type": "other",
+"from": "p0083",
+"to": "p0109",
+"detail": "把兄弟",
+"sources": [
+"https://www.laoziliao.net/tv/info/44829441"
+],
+"confidence": "documented",
+"notes": [
+"「把兄弟」",
+"老资料网 https://www.laoziliao.net/tv/info/44829441"
+],
+"subtype": "jiebai",
+"id": "r02479"
+},
+{
+"type": "other",
+"from": "p0422",
+"to": "p0206",
+"detail": "盟兄弟",
+"sources": [
+"https://c.m.163.com/news/a/JOUF1ARC05567BZG.html"
+],
+"confidence": "disputed",
+"notes": [
+"「盟兄弟」",
+"网易 https://c.m.163.com/news/a/JOUF1ARC05567BZG.html"
+],
+"subtype": "jiebai",
+"id": "r02480"
+},
+{
+"type": "other",
+"from": "p0422",
+"to": "p0441",
+"detail": "盟兄弟",
+"sources": [
+"https://c.m.163.com/news/a/JOUF1ARC05567BZG.html"
+],
+"confidence": "disputed",
+"notes": [
+"「盟兄弟」",
+"网易 https://c.m.163.com/news/a/JOUF1ARC05567BZG.html"
+],
+"subtype": "jiebai",
+"id": "r02481"
+},
+{
+"type": "other",
+"from": "p0422",
+"to": "p0394",
+"detail": "盟兄弟",
+"sources": [
+"https://c.m.163.com/news/a/JOUF1ARC05567BZG.html"
+],
+"confidence": "disputed",
+"notes": [
+"「盟兄弟」",
+"网易 https://c.m.163.com/news/a/JOUF1ARC05567BZG.html"
+],
+"subtype": "jiebai",
+"id": "r02482"
+},
+{
+"type": "other",
+"from": "p0422",
+"to": "p0386",
+"detail": "盟兄弟",
+"sources": [
+"https://c.m.163.com/news/a/JOUF1ARC05567BZG.html"
+],
+"confidence": "disputed",
+"notes": [
+"「盟兄弟」",
+"网易 https://c.m.163.com/news/a/JOUF1ARC05567BZG.html"
+],
+"subtype": "jiebai",
+"id": "r02483"
+},
+{
+"type": "other",
+"from": "p0206",
+"to": "p0441",
+"detail": "盟兄弟",
+"sources": [
+"https://c.m.163.com/news/a/JOUF1ARC05567BZG.html"
+],
+"confidence": "disputed",
+"notes": [
+"「盟兄弟」",
+"网易 https://c.m.163.com/news/a/JOUF1ARC05567BZG.html"
+],
+"subtype": "jiebai",
+"id": "r02484"
+},
+{
+"type": "other",
+"from": "p0206",
+"to": "p0394",
+"detail": "盟兄弟",
+"sources": [
+"https://c.m.163.com/news/a/JOUF1ARC05567BZG.html"
+],
+"confidence": "disputed",
+"notes": [
+"「盟兄弟」",
+"网易 https://c.m.163.com/news/a/JOUF1ARC05567BZG.html"
+],
+"subtype": "jiebai",
+"id": "r02485"
+},
+{
+"type": "other",
+"from": "p0206",
+"to": "p0386",
+"detail": "盟兄弟",
+"sources": [
+"https://c.m.163.com/news/a/JOUF1ARC05567BZG.html"
+],
+"confidence": "disputed",
+"notes": [
+"「盟兄弟」",
+"网易 https://c.m.163.com/news/a/JOUF1ARC05567BZG.html"
+],
+"subtype": "jiebai",
+"id": "r02486"
+},
+{
+"type": "other",
+"from": "p0441",
+"to": "p0394",
+"detail": "盟兄弟",
+"sources": [
+"https://c.m.163.com/news/a/JOUF1ARC05567BZG.html"
+],
+"confidence": "disputed",
+"notes": [
+"「盟兄弟」",
+"网易 https://c.m.163.com/news/a/JOUF1ARC05567BZG.html"
+],
+"subtype": "jiebai",
+"id": "r02487"
+},
+{
+"type": "other",
+"from": "p0441",
+"to": "p0386",
+"detail": "盟兄弟",
+"sources": [
+"https://c.m.163.com/news/a/JOUF1ARC05567BZG.html"
+],
+"confidence": "disputed",
+"notes": [
+"「盟兄弟」",
+"网易 https://c.m.163.com/news/a/JOUF1ARC05567BZG.html"
+],
+"subtype": "jiebai",
+"id": "r02488"
+},
+{
+"type": "other",
+"from": "p0394",
+"to": "p0386",
+"detail": "盟兄弟",
+"sources": [
+"https://c.m.163.com/news/a/JOUF1ARC05567BZG.html"
+],
+"confidence": "disputed",
+"notes": [
+"「盟兄弟」",
+"网易 https://c.m.163.com/news/a/JOUF1ARC05567BZG.html"
+],
+"subtype": "jiebai",
+"id": "r02489"
 }
 ]

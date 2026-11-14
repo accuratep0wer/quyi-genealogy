@@ -56,8 +56,16 @@ function init(){
   window.addEventListener('hashchange',route);
 }
 
+function edgeKindLabel(d){
+  if(d.sub==='ganqin') return '干亲/义亲';
+  if(d.sub==='jiebai') return '结拜';
+  if(d.sub==='guoji') return '过继/收养';
+  return TYPE_CN[d.type]||'';
+}
 function edgeData(r){
-  return {data:{id:r.id,source:r.from,target:r.to,type:r.type,conf:r.confidence,detail:r.detail}};
+  const sub=r.subtype||'';
+  const detail=r.detail||(sub&&sub!=='ganqin'&&sub!=='jiebai'&&sub!=='guoji'?sub:'');
+  return {data:{id:r.id,source:r.from,target:r.to,type:r.type,conf:r.confidence,detail:detail,sub:sub}};
 }
 function nodeData(p){
   const size=Math.max(12,Math.min(70,10+Math.sqrt(p._deg)*6));
@@ -98,7 +106,19 @@ function buildCy(){
       {selector:'edge.tree-reveal[type = "partner"]',style:{'width':2.8,'line-color':'#e11d48','target-arrow-color':'#e11d48','line-style':'dashed','line-dash-pattern':[16,7,3,7],'opacity':1}},
       {selector:'edge.tree-reveal[type = "marriage"]',style:{'width':2.6,'line-color':'#7e22ce','target-arrow-color':'#7e22ce','line-style':'dashed','line-dash-pattern':[22,9],'opacity':1}},
       {selector:'edge.tree-reveal[type = "kin"]',style:{'width':2.4,'line-color':'#374151','target-arrow-color':'#374151','line-style':'dashed','line-dash-pattern':[14,6,3,5,3,6],'opacity':1}},
-      {selector:'edge.tree-reveal[type = "other"]',style:{'width':2.4,'line-color':'#0f766e','target-arrow-color':'#0f766e','line-style':'dashed','line-dash-pattern':[9,5,9,5,3,5],'opacity':1}}
+      {selector:'edge.tree-reveal[type = "other"]',style:{'width':2.4,'line-color':'#0f766e','target-arrow-color':'#0f766e','line-style':'dashed','line-dash-pattern':[9,5,9,5,3,5],'opacity':1}},
+      {selector:'edge[sub = "ganqin"]',style:{'line-color':'#c2410c','target-arrow-color':'#c2410c','target-arrow-shape':'triangle','line-style':'dotted','width':2.1,'arrow-scale':0.9,'opacity':0.95}},
+      {selector:'edge[sub = "ganqin"][conf = "disputed"]',style:{'line-color':'#fdba74','target-arrow-color':'#fdba74','opacity':0.48,'width':1.6}},
+      {selector:'edge[sub = "jiebai"]',style:{'line-color':'#4338ca','target-arrow-shape':'none','line-style':'dashed','line-dash-pattern':[9,4,2,4],'width':2.3,'opacity':0.95}},
+      {selector:'edge[sub = "jiebai"][conf = "disputed"]',style:{'line-color':'#a5b4fc','opacity':0.48,'width':1.7}},
+      {selector:'edge[sub = "guoji"]',style:{'line-color':'#57534e','target-arrow-shape':'none','line-style':'dashed','line-dash-pattern':[14,6],'width':1.9,'opacity':0.92}},
+      {selector:'edge[sub = "guoji"][conf = "disputed"]',style:{'line-color':'#d6d3d1','opacity':0.45,'width':1.6}},
+      {selector:'edge.tree-reveal[sub = "ganqin"]',style:{'width':2.6,'line-color':'#c2410c','target-arrow-color':'#c2410c','target-arrow-shape':'triangle','line-style':'dotted','opacity':1,'z-index':26}},
+      {selector:'edge.tree-reveal[sub = "ganqin"][conf = "disputed"]',style:{'line-color':'#fdba74','target-arrow-color':'#fdba74','opacity':0.55}},
+      {selector:'edge.tree-reveal[sub = "jiebai"]',style:{'width':2.6,'line-color':'#4338ca','target-arrow-shape':'none','line-style':'dashed','line-dash-pattern':[9,4,2,4],'opacity':1,'z-index':26}},
+      {selector:'edge.tree-reveal[sub = "jiebai"][conf = "disputed"]',style:{'line-color':'#a5b4fc','opacity':0.55}},
+      {selector:'edge.tree-reveal[sub = "guoji"]',style:{'width':2.4,'line-color':'#57534e','target-arrow-shape':'none','line-style':'dashed','line-dash-pattern':[14,6],'opacity':1,'z-index':26}},
+      {selector:'edge.tree-reveal[sub = "guoji"][conf = "disputed"]',style:{'line-color':'#d6d3d1','opacity':0.5}}
     ],
     layout:{name:'preset'}
   });
@@ -109,7 +129,7 @@ function buildCy(){
   cy.on('tap',e=>{if(e.target===cy) clearHL();});
   cy.on('mousemove',ev=>{if(ev.renderedPosition) lastPointer={x:ev.renderedPosition.x,y:ev.renderedPosition.y,t:performance.now()};});
   cy.on('pan',()=>{if(!placing&&!layoutAnim) anchorId=null; paintRail(); if(state.mode==='tree') clampTreePan();});
-  cy.on('mouseover','edge',e=>{const d=e.target.data();e.target.style('label',(TYPE_CN[d.type]||'')+(d.detail?'：'+d.detail:'')+(CONF_CN[d.conf]?'（'+CONF_CN[d.conf]+'）':''));e.target.style({'font-size':11,'text-background-color':'#fff','text-background-opacity':0.9,'text-background-padding':2});});
+  cy.on('mouseover','edge',e=>{const d=e.target.data();e.target.style('label',edgeKindLabel(d)+(d.detail?'：'+d.detail:'')+(CONF_CN[d.conf]?'（'+CONF_CN[d.conf]+'）':''));e.target.style({'font-size':11,'text-background-color':'#fff','text-background-opacity':0.9,'text-background-padding':2});});
   cy.on('mouseout','edge',e=>e.target.removeStyle('label'));
   cy.on('zoom',()=>{syncZoomSlider();syncSpreadToZoom(); paintRail(); if(state.mode==='tree') clampTreePan();});
   bindTreeScroll();
@@ -121,9 +141,26 @@ function filters(){
   return {types:new Set(types),onlyDoc:$('#onlyDoc').checked,partners:$('#showPartner').checked,gmin:+$('#gmin').value,gmax:+$('#gmax').value};
 }
 function personOk(p,f){return !p.generation||(p.generation>=f.gmin&&p.generation<=f.gmax);}
+function relKind(r){
+  if(r.subtype==='ganqin'||r.subtype==='jiebai'||r.subtype==='guoji') return r.subtype;
+  return r.type;
+}
 function relOk(r,f){
   if(r.type==='partner') return !!f.partners&&(!f.onlyDoc||r.confidence==='documented');
-  return f.types.has(r.type)&&(!f.onlyDoc||r.confidence==='documented');
+  return f.types.has(relKind(r))&&(!f.onlyDoc||r.confidence==='documented');
+}
+function rowTypeOk(r,t){
+  if(!t) return true;
+  if(t==='ganqin'||t==='jiebai'||t==='guoji') return r.subtype===t;
+  if(t==='other') return r.type==='other'&&r.subtype!=='ganqin'&&r.subtype!=='jiebai';
+  if(t==='kin') return r.type==='kin'&&r.subtype!=='guoji';
+  return r.type===t;
+}
+function typeLabel(r){
+  if(r.subtype==='ganqin') return '干亲/义亲';
+  if(r.subtype==='jiebai') return '结拜';
+  if(r.subtype==='guoji') return '过继/收养';
+  return TYPE_CN[r.type]||r.type;
 }
 function drawNetwork(){
   layoutLock=true;
@@ -552,12 +589,13 @@ function revealOtherLines(id){
   const add=[], seen=new Set();
   R.forEach(r=>{
     if(!r||r.type==='master_disciple') return;
+    if(!relOk(r, filters())) return;
     if(r.from!==id&&r.to!==id) return;
     if(!cy.getElementById(r.from).length||!cy.getElementById(r.to).length) return;
     const eid='reveal-'+r.id;
     if(seen.has(eid)) return;
     seen.add(eid);
-    add.push({classes:'tree-reveal', data:{id:eid, source:r.from, target:r.to, type:r.type, conf:r.confidence, detail:r.detail||r.subtype||''}});
+    add.push({classes:'tree-reveal', data:{id:eid, source:r.from, target:r.to, type:r.type, conf:r.confidence, detail:r.detail||'', sub:r.subtype||''}});
   });
   if(add.length) cy.add(add);
 }
@@ -620,7 +658,8 @@ function renderPanel(id){
   const masters=rs.filter(r=>r.type==='master_disciple'&&r.to===id);
   const dis=rs.filter(r=>r.type==='master_disciple'&&r.from===id);
   const sib=new Map();masters.forEach(m=>adj[m.from].forEach(r=>{if(r.type==='master_disciple'&&r.from===m.from&&r.to!==id)sib.set(r.to,1);}));
-  const kin=rs.filter(r=>r.type==='kin'),mar=rs.filter(r=>r.type==='marriage'),oth=rs.filter(r=>r.type==='other'),par=rs.filter(r=>r.type==='partner');
+  const gan=rs.filter(r=>r.subtype==='ganqin'),jb=rs.filter(r=>r.subtype==='jiebai'),gj=rs.filter(r=>r.subtype==='guoji');
+  const kin=rs.filter(r=>r.type==='kin'&&r.subtype!=='guoji'),mar=rs.filter(r=>r.type==='marriage'),oth=rs.filter(r=>r.type==='other'&&r.subtype!=='ganqin'&&r.subtype!=='jiebai'),par=rs.filter(r=>r.type==='partner');
   const sec=(t,arr,fn)=>arr.length?'<h3>'+t+'（'+arr.length+'）</h3><ul>'+arr.map(fn).join('')+'</ul>':'';
   const yrs=(p.birth||p.death)?(p.birth||'?')+'–'+(p.death||''):'';
   const confTag=p.confidence?'<span class="tag'+(p.confidence==='disputed'?' dis':'')+'">'+CONF_CN[p.confidence]+'</span>':'';
@@ -636,7 +675,10 @@ function renderPanel(id){
    sec('师父',masters,r=>relLine(r,r.from))+
    sec('徒弟',dis,r=>relLine(r,r.to))+
    sec('代拉 / 引保代 / 口盟等',oth,r=>relLine(r,r.from===id?r.to:r.from))+
+   sec('干亲 / 义亲',gan,r=>relLine(r,r.from===id?r.to:r.from))+
+   sec('结拜',jb,r=>relLine(r,r.from===id?r.to:r.from))+
    sec('亲属',kin,r=>relLine(r,r.from===id?r.to:r.from))+
+   sec('过继 / 收养',gj,r=>relLine(r,r.from===id?r.to:r.from))+
    sec('姻缘',mar,r=>relLine(r,r.from===id?r.to:r.from))+
    sec('固定搭档',par,r=>relLine(r,r.from===id?r.to:r.from))+
    (sib.size?'<h3>同门（'+sib.size+'）</h3><div style="line-height:1.9">'+[...sib.keys()].map(plink).join('、')+'</div>':'')+
@@ -1497,12 +1539,12 @@ function renderTables(){
   };
   const drawR=()=>{
     const v=$('#rq').value.trim(),t=$('#rtype').value,c=$('#rconf').value;
-    let rows=R.filter(r=>(!t||r.type===t)&&(!c||r.confidence===c)&&(!v||(r._fromName+' '+r._toName+' '+r.detail+' '+(r.notes||[]).join(' ')).includes(v)));
+    let rows=R.filter(r=>rowTypeOk(r,t)&&(!c||r.confidence===c)&&(!v||(r._fromName+' '+r._toName+' '+(r.detail||'')+' '+(r.subtype||'')+' '+(r.notes||[]).join(' ')).includes(v)));
     const key={type:r=>r.type,fromName:r=>r._fromName,toName:r=>r._toName,detail:r=>r.detail,confidence:r=>r.confidence}[rsort.k];
     rows.sort((a,b)=>{const x=key(a),y=key(b);return (x<y?-1:x>y?1:0)*rsort.d;});
     $('#rcount').textContent=rows.length+' 条';
     const lim=rows.slice(0,3000);
-    $('#rtable tbody').innerHTML=lim.map(r=>'<tr><td>'+TYPE_CN[r.type]+'</td><td><a href="#graph/'+r.from+'">'+esc(r._fromName)+'</a></td><td><a href="#graph/'+r.to+'">'+esc(r._toName)+'</a></td><td class="notes">'+esc(r.detail)+(r.notes&&r.notes.length?'<br><span class="muted">'+esc(r.notes.join('；'))+'</span>':'')+'</td><td><span class="tag'+(r.confidence==='disputed'?' dis':'')+'">'+(CONF_CN[r.confidence]||'')+'</span></td><td>'+srcLinks(r.sources)+'</td></tr>').join('');
+    $('#rtable tbody').innerHTML=lim.map(r=>'<tr><td>'+typeLabel(r)+'</td><td><a href="#graph/'+r.from+'">'+esc(r._fromName)+'</a></td><td><a href="#graph/'+r.to+'">'+esc(r._toName)+'</a></td><td class="notes">'+esc(r.detail)+(r.notes&&r.notes.length?'<br><span class="muted">'+esc(r.notes.join('；'))+'</span>':'')+'</td><td><span class="tag'+(r.confidence==='disputed'?' dis':'')+'">'+(CONF_CN[r.confidence]||'')+'</span></td><td>'+srcLinks(r.sources)+'</td></tr>').join('');
   };
   const pgenSel=$('#pgen');
   ['#pq','#pgen'].forEach(s=>$(s).addEventListener('input',drawP));

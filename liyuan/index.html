@@ -55,7 +55,10 @@
     <div class="ctrl types">
       <label class="t-md"><input type="checkbox" data-type="master_disciple" checked> 师徒</label>
       <label class="t-other"><input type="checkbox" data-type="other"> 同台 / 受教</label>
+      <label class="t-ganqin"><input type="checkbox" data-type="ganqin" checked> 干亲/义亲</label>
+      <label class="t-jiebai"><input type="checkbox" data-type="jiebai" checked> 结拜</label>
       <label class="t-kin"><input type="checkbox" data-type="kin" checked> 亲属</label>
+      <label class="t-guoji"><input type="checkbox" data-type="guoji" checked> 过继/收养</label>
       <label class="t-mar"><input type="checkbox" data-type="marriage" checked> 姻缘</label>
       <label class="t-partner"><input type="checkbox" id="showPartner" checked> 搭档</label>
       <label class="t-dis"><input type="checkbox" id="onlyDoc"> 只显示确定</label>
@@ -88,6 +91,10 @@
     <span><i class="ln kin"></i>亲属</span>
     <span><i class="ln partner"></i>搭档</span>
     <span><i class="ln other"></i>同台 / 受教</span>
+    <span><i class="ln ganqin"></i>干亲/义亲</span>
+    <span><i class="ln ganqin-dis"></i>干亲·存疑</span>
+    <span><i class="ln jiebai"></i>结拜</span>
+    <span><i class="ln guoji"></i>过继/收养</span>
     <span><i class="ln mar"></i>姻缘</span>
     <span><i class="dot xo"></i>黑边＝也见于相声谱</span>
     <span class="muted">较淡的字是没有独立戏考条目的名录人物。</span>
@@ -106,7 +113,7 @@
 
 <section id="view-relations" class="view" hidden>
   <div class="tbl-tools"><input id="rq" type="search" placeholder="筛选关系（人名/说明）">
-    <select id="rtype"><option value="">全部类型</option><option value="master_disciple">师徒</option><option value="other">同台/受教</option><option value="kin">亲属</option><option value="marriage">姻缘</option><option value="partner">搭档</option></select>
+    <select id="rtype"><option value="">全部类型</option><option value="master_disciple">师徒</option><option value="other">同台/受教</option><option value="ganqin">干亲/义亲</option><option value="jiebai">结拜</option><option value="kin">亲属</option><option value="guoji">过继/收养</option><option value="marriage">姻缘</option><option value="partner">搭档</option></select>
     <select id="rconf"><option value="">全部可信度</option><option value="documented">确定</option><option value="disputed">存疑</option></select> <span id="rcount"></span></div>
   <div class="tbl-wrap"><table id="rtable"><thead><tr>
     <th data-k="type">类型</th><th data-k="fromName">从（师/长）</th><th data-k="toName">到（徒/亲）</th><th data-k="detail">说明</th><th data-k="confidence">可信度</th><th>来源</th></tr></thead><tbody></tbody></table></div>
@@ -120,6 +127,7 @@
     <ul>
       <li><b>师徒</b>只收录戏考师承谱图和正文里写明的拜师、学艺、私淑。同科班、同一科（如盛字科）或科班教师身份<b>不会</b>被当成师徒。</li>
       <li><b>搭档</b>包括长期合作、挎刀配戏、琴师与鼓师。<b>亲属</b>和<b>姻缘</b>来自族谱图与正文中的称谓。</li>
+      <li><b>干亲/义亲</b>是橙色点线，箭头由义父或义母指向义子、义女。<b>结拜</b>是靛蓝色点划线，没有箭头。<b>过继/收养</b>用亲属的灰色，虚线更疏。较淡的线是存疑。</li>
       <li><b>同台 / 受教</b>默认关掉。同台不等于固定搭档，受教不等于拜师；打开后图会密很多。</li>
       <li>确定关系用实线，存疑用虚线。一条关系都没有的人不画出。没有独立戏考条目、只出现在别人名单里的人画得更淡。</li>
       <li>菱形节点是和高置信度对上了相声谱系的人，侧栏可以一键跳到相声图谱里的同一人。</li>

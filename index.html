@@ -52,7 +52,10 @@
     <div class="ctrl types">
       <label class="t-md"><input type="checkbox" data-type="master_disciple" checked> 师徒</label>
       <label class="t-other"><input type="checkbox" data-type="other" checked> 代拉/引保代/口盟等</label>
+      <label class="t-ganqin"><input type="checkbox" data-type="ganqin" checked> 干亲/义亲</label>
+      <label class="t-jiebai"><input type="checkbox" data-type="jiebai" checked> 结拜</label>
       <label class="t-kin"><input type="checkbox" data-type="kin" checked> 亲属</label>
+      <label class="t-guoji"><input type="checkbox" data-type="guoji" checked> 过继/收养</label>
       <label class="t-mar"><input type="checkbox" data-type="marriage" checked> 姻缘</label>
       <label class="t-partner"><input type="checkbox" id="showPartner" checked> 搭档</label>
       <label class="t-dis"><input type="checkbox" id="onlyDoc"> 只显示确定</label>
@@ -84,6 +87,10 @@
     <span><i class="ln kin"></i>亲属</span>
     <span><i class="ln partner"></i>固定搭档</span>
     <span><i class="ln other"></i>代拉 / 引保代 / 口盟</span>
+    <span><i class="ln ganqin"></i>干亲/义亲</span>
+    <span><i class="ln ganqin-dis"></i>干亲·存疑</span>
+    <span><i class="ln jiebai"></i>结拜</span>
+    <span><i class="ln guoji"></i>过继/收养</span>
     <span><i class="ln mar"></i>姻缘</span>
     <span><i class="dot rel"></i>非谱系内亲属</span>
     <span id="genLegend"></span>
@@ -102,7 +109,7 @@
 
 <section id="view-relations" class="view" hidden>
   <div class="tbl-tools"><input id="rq" type="search" placeholder="筛选关系（人名/说明）">
-    <select id="rtype"><option value="">全部类型</option><option value="master_disciple">师徒</option><option value="other">代拉/引保代等</option><option value="kin">亲属</option><option value="marriage">姻缘</option><option value="partner">固定搭档</option></select>
+    <select id="rtype"><option value="">全部类型</option><option value="master_disciple">师徒</option><option value="other">代拉/引保代等</option><option value="ganqin">干亲/义亲</option><option value="jiebai">结拜</option><option value="kin">亲属</option><option value="guoji">过继/收养</option><option value="marriage">姻缘</option><option value="partner">固定搭档</option></select>
     <select id="rconf"><option value="">全部可信度</option><option value="documented">确定</option><option value="disputed">存疑</option></select> <span id="rcount"></span></div>
   <div class="tbl-wrap"><table id="rtable"><thead><tr>
     <th data-k="type">类型</th><th data-k="fromName">从（师/长）</th><th data-k="toName">到（徒/亲）</th><th data-k="detail">说明</th><th data-k="confidence">可信度</th><th>来源</th></tr></thead><tbody></tbody></table></div>
@@ -117,8 +124,11 @@
     <h3>关系类型</h3>
     <ul>
       <li><b>师徒</b>：正式拜师（摆知）的师承，箭头由师父指向徒弟。</li>
-      <li><b>代拉/引保代/口盟等</b>：代拉师弟（代师收徒）、拜师时的引师、保师、代师，口盟弟子，义父子，以及早年学艺但不算正式师承等情况。</li>
+      <li><b>代拉/引保代/口盟等</b>：代拉师弟（代师收徒）、拜师时的引师、保师、代师，口盟弟子，以及早年学艺但不算正式师承等情况。</li>
+      <li><b>干亲/义亲</b>：义父、义母与义子、义女。点线，箭头由义父/义母指向义子/义女。较淡的是存疑。</li>
+      <li><b>结拜</b>：把兄弟、盟兄弟。没有箭头。</li>
       <li><b>亲缘</b>：父子、兄弟、祖孙、舅甥、表亲等血缘关系。</li>
+      <li><b>过继/收养</b>：过继、嗣子、养子、养女。用亲属的灰色，虚线更疏。</li>
       <li><b>姻缘</b>：夫妻、翁婿等婚姻关系。</li>
     </ul>
     <h3>可信度</h3>
