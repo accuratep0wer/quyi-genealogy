@@ -1,7 +1,7 @@
 (function(){
 'use strict';
 const TYPE_CN={master_disciple:'师徒',other:'同台/受教',kin:'亲属',marriage:'姻缘',partner:'搭档'};
-const CONF_CN={documented:'确定',disputed:'存疑'};
+const CONF_CN={documented:'资料有载',disputed:'存疑'};
 const GEN_COLORS=['#7f1d1d','#0ea5e9','#f59e0b','#3730a3','#22c55e','#db2777','#0f766e','#f97316','#7c3aed','#a3e635'];
 const genColor=g=>g?GEN_COLORS[(g-1)%GEN_COLORS.length]:'#9ca3af';
 function inkFor(hex){
@@ -25,8 +25,8 @@ let zoomFromSlider=false;
 
 let SPREAD={};
 let NEBULA={};
-Promise.all(['data/people.json','data/relations.json','data/layout.json','data/layout-spread.json','data/layout-nebula.json','data/institutions.json','data/memberships.json','data/crossover.json'].map(u=>fetch(u).then(r=>{if(!r.ok)throw new Error(u);return r.json()})))
-.then(([p,r,l,sp,n,inst,mem,xo])=>{P=p;R=r;L=l;SPREAD=sp;NEBULA=n;INST=inst;MEM=mem;XO=xo;init();}).catch(e=>{$('#cy').innerHTML='<p style="padding:20px">数据加载失败：'+esc(e.message)+'</p>';});
+Promise.all(['data/people.json','data/relations.json','data/layout.json','data/layout-spread.json','data/layout-nebula.json','data/institutions.json','data/memberships.json','data/crossover.json'].map(u=>fetch(u).then(r=>{if(!r.ok)throw new Error(u);return r.json()})).concat([fetch('data/relationship-evidence.json').then(r=>r.ok?r.json():{}).catch(()=>({}))]))
+.then(([p,r,l,sp,n,inst,mem,xo,evidence])=>{P=p;R=r;R.forEach(rel=>{if(evidence[rel.id]) rel._evidence=evidence[rel.id];});L=l;SPREAD=sp;NEBULA=n;INST=inst;MEM=mem;XO=xo;init();}).catch(e=>{$('#cy').innerHTML='<p style="padding:20px">数据加载失败：'+esc(e.message)+'</p>';});
 function hid(id){return encodeURIComponent(id);}
 
 function labelOf(p){
@@ -759,11 +759,23 @@ function selectPerson(id,center){
   updateModeTabs();
 }
 function plink(id){const p=byId[id];return '<span class="pl" data-id="'+esc(id)+'">'+esc(labelOf(p))+'</span>';}
-function srcLinks(arr){return (arr||[]).map((u,i)=>'<a href="'+esc(u)+'" target="_blank" rel="noopener" title="'+esc(u)+'">['+(i+1)+']</a>').join(' ');}
+function sourceUrls(record){
+  return [...new Set([record.source,record.xikao_url].concat(record.sources||[],((record._evidence||{}).sources||[]).map(s=>s.url)).filter(u=>typeof u==='string'&&/^https?:\/\//i.test(u)))];
+}
+function srcLinks(arr){return (arr||[]).filter(u=>/^https?:\/\//i.test(u)).map((u,i)=>'<a href="'+esc(u)+'" target="_blank" rel="noopener" title="'+esc(u)+'">来源 '+(i+1)+'</a>').join(' · ');}
+function supplementalEvidence(r){
+  const e=r._evidence;if(!e) return '';
+  const links=(e.sources||[]).filter(s=>typeof s.url==='string'&&/^https?:\/\//i.test(s.url)).map(s=>'<li><a href="'+esc(s.url)+'" target="_blank" rel="noopener">'+esc(s.title||s.url)+'</a>'+(s.publisher?' · '+esc(s.publisher):'')+'</li>').join('');
+  return '<div class="supplemental-evidence"><b>补充核对记录</b><ul>'+links+'</ul><p>'+esc(e.notes||'')+'</p><p class="muted">补充来源核对日期：'+esc(e.verified_at||'未记录')+'。此记录不自动改变原关系状态。</p></div>';
+}
+function evidenceDetails(r){
+  const origins={xikao_bio_text:'人物正文',xikao_family_chart:'亲属谱图',xikao_mentoring_chart:'师承谱图',deploy_edges:'补充关系数据（整理方式未注明）'};
+  const urls=sourceUrls(r);
+  return '<details class="rel-evidence"><summary>查看依据与时间</summary><dl><dt>记录类型</dt><dd>'+esc(origins[r.origin]||'整理方式未注明')+'</dd><dt>关系年份</dt><dd>'+esc(r.year==null?'未记录':r.year)+'（非网页更新时间）</dd><dt>资料链接</dt><dd>'+(urls.length?srcLinks(urls):'未提供')+'</dd><dt>原记录核验日期</dt><dd>未记录</dd></dl>'+(r.notes&&r.notes.length?'<p>'+esc(r.notes.join('；'))+'</p>':'')+'<p class="muted">'+(r.confidence==='disputed'?'此关系在数据中标为存疑，应回看原文核对。':'“资料有载”是数据中的记录标记，不表示已由独立来源交叉核验。')+'</p>'+supplementalEvidence(r)+'</details>';
+}
 function relLine(r,other){
   const detail=r.detail||r.subtype||'';
-  const src=r.source?'<a href="'+esc(r.source)+'" target="_blank" rel="noopener">来源</a>':srcLinks(r.sources);
-  return '<li>'+XSLines.swatchHtml(XSLines.kindOf(r), r.confidence==='disputed')+plink(other)+(detail?' <small>'+esc(detail)+'</small>':'')+'<span class="tag'+(r.confidence==='disputed'?' dis':'')+'">'+(CONF_CN[r.confidence]||'')+'</span> '+src+'</li>';
+  return '<li>'+XSLines.swatchHtml(XSLines.kindOf(r), r.confidence==='disputed')+plink(other)+(detail?' <small>'+esc(detail)+'</small>':'')+'<span class="tag'+(r.confidence==='disputed'?' dis':'')+'">'+esc(CONF_CN[r.confidence]||'未标注')+'</span>'+evidenceDetails(r)+'</li>';
 }
 function renderPanel(id){
   const p=byId[id];const rs=adj[id];
@@ -798,8 +810,8 @@ function renderPanel(id){
    sec('过继 / 收养',gj,r=>relLine(r,r.from===id?r.to:r.from))+
    sec('姻缘',mar,r=>relLine(r,r.from===id?r.to:r.from))+
    sec('固定搭档',par,r=>relLine(r,r.from===id?r.to:r.from))+
-   (sib.size?'<h3>同门（'+sib.size+'）</h3><div style="line-height:1.9">'+[...sib.keys()].map(plink).join('、')+'</div>':'')+
-   (p.xikao_url?'<h3>来源</h3><div><a href="'+esc(p.xikao_url)+'" target="_blank" rel="noopener">梨园百年琐记条目</a></div>':'');
+   (sib.size?'<h3>同门（'+sib.size+'）</h3><p class="muted">由共同师父的关系推导，不代表另有直接交往记录。</p><div style="line-height:1.9">'+[...sib.keys()].map(plink).join('、')+'</div>':'')+
+   '<h3>人物来源</h3><div>'+(sourceUrls(p).length?srcLinks(sourceUrls(p)):'未提供独立人物来源')+'</div>';
   $('#egoBtn').onclick=()=>{
     if(state.mode==='ego'){resetGlobal();renderPanel(id);return;}
     state.focus=id;
@@ -1677,7 +1689,7 @@ function renderTables(){
     rows.sort((a,b)=>{const x=key(a),y=key(b);return (x<y?-1:x>y?1:0)*rsort.d;});
     $('#rcount').textContent=rows.length+' 条';
     const lim=rows.slice(0,3000);
-    $('#rtable tbody').innerHTML=lim.map(r=>'<tr><td>'+XSLines.swatchHtml(XSLines.kindOf(r), r.confidence==='disputed')+typeLabel(r)+'</td><td><a href="#graph/'+hid(r.from)+'">'+esc(r._fromName)+'</a></td><td><a href="#graph/'+hid(r.to)+'">'+esc(r._toName)+'</a></td><td class="notes">'+esc(r.detail||'')+(r.notes&&r.notes.length?'<br><span class="muted">'+esc(r.notes.join('；'))+'</span>':'')+'</td><td><span class="tag'+(r.confidence==='disputed'?' dis':'')+'">'+(CONF_CN[r.confidence]||'')+'</span></td><td>'+((r.sources&&r.sources.length)?srcLinks(r.sources):(r.source?'<a href="'+esc(r.source)+'" target="_blank" rel="noopener">来源</a>':''))+'</td></tr>').join('');
+    $('#rtable tbody').innerHTML=lim.map(r=>'<tr><td>'+XSLines.swatchHtml(XSLines.kindOf(r), r.confidence==='disputed')+typeLabel(r)+'</td><td><a href="#graph/'+hid(r.from)+'">'+esc(r._fromName)+'</a></td><td><a href="#graph/'+hid(r.to)+'">'+esc(r._toName)+'</a></td><td class="notes">'+esc(r.detail||'')+(r.notes&&r.notes.length?'<br><span class="muted">'+esc(r.notes.join('；'))+'</span>':'')+'</td><td><span class="tag'+(r.confidence==='disputed'?' dis':'')+'">'+(CONF_CN[r.confidence]||'')+'</span></td><td>'+evidenceDetails(r)+'</td></tr>').join('');
   };
   const pgenSel=$('#pgen');
   ['#pq','#pgen'].forEach(s=>$(s).addEventListener('input',drawP));
@@ -1689,9 +1701,13 @@ function renderTables(){
 function renderSources(){
   const c={};
   P.forEach(p=>{ if(p.xikao_url) c[p.xikao_url]=(c[p.xikao_url]||0)+1; (p.sources||[]).forEach(u=>c[u]=(c[u]||0)+1); });
-  R.forEach(r=>{ if(r.source) c[r.source]=(c[r.source]||0)+1; (r.sources||[]).forEach(u=>c[u]=(c[u]||0)+1); });
+  R.forEach(r=>sourceUrls(r).forEach(u=>c[u]=(c[u]||0)+1));
   const arr=Object.entries(c).sort((a,b)=>b[1]-a[1]);
   const nice=u=>{try{const x=new URL(u);if(x.hostname.endsWith('wikipedia.org'))return '维基百科：'+decodeURIComponent(x.pathname.split('/').pop()).replace(/_/g,' ');return x.hostname+decodeURIComponent(x.pathname);}catch(e){return u;}};
+  const sourced=R.filter(r=>sourceUrls(r).length).length;
+  const dated=R.filter(r=>r.year!=null).length;
+  const domains=new Set(R.flatMap(sourceUrls).map(u=>new URL(u).hostname));
+  $('#evidenceCoverage').textContent='关系来源覆盖 '+sourced+' / '+R.length+'；记录年份 '+dated+' / '+R.length+'；来源域名 '+domains.size+' 个；补充核对记录 '+R.filter(r=>r._evidence).length+' 条。链接数量不等于独立证据数量。无补充核对记录的关系，核验日期未记录。';
   $('#sourceList').innerHTML=arr.map(([u,n])=>'<li><a href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(nice(u))+'</a> <span class="muted">('+n+')</span></li>').join('');
   const hidden=P.filter(p=>!p._linked).length;
   const shownN=P.length-hidden;

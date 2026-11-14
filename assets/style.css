@@ -146,3 +146,15 @@ dialog::backdrop{background:rgba(0,0,0,.45)}
   .dlg-actions{justify-content:stretch}
   .dlg-actions button,.dlg-actions a{flex:1 1 auto;text-align:center}
 }
+
+/* Relation evidence stays adjacent to the claim; long source URLs wrap on phones. */
+.relation-evidence{margin:6px 0 12px;border-left:2px solid var(--line);padding-left:9px;font-size:13px}
+.relation-evidence summary{cursor:pointer;color:var(--accent);padding:4px 0}
+.relation-evidence summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.evidence-status{margin:8px 0}
+.evidence-sources,.evidence-notes{padding-left:20px!important;list-style:decimal!important}
+.evidence-sources li,.evidence-notes li{margin:7px 0!important;overflow-wrap:anywhere}
+.evidence-sources a{overflow-wrap:anywhere}
+.focus-presets{display:inline-flex;gap:4px;flex-wrap:wrap}
+
+.cross-evidence{margin-top:12px;border-top:1px solid var(--line);padding-top:6px}.cross-evidence article{margin:10px 0;overflow-wrap:anywhere}.cross-evidence article p{margin:5px 0}

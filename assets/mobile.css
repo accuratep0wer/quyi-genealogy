@@ -4,6 +4,7 @@ html[data-layout="sheet"] body,
 html[data-layout="drawer"] body { overflow-x: hidden; }
 
 .panel-handle {
+  touch-action: none;
   display: none;
   border: 0;
   background: transparent;

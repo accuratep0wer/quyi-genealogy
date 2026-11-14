@@ -27,7 +27,7 @@
   <div class="mode-tabs" role="tablist">
     <a href="#tree" data-mode="tree" title="自上而下的家谱，一代一代往下排">谱系图</a>
     <a href="#nebula" data-mode="nebula" title="星团式布局。旧地址 #nebula 仍可用">2D星云图</a>
-    <a href="#3d" data-mode="network" title="原来的全网络图。旧地址 #graph 仍打开这一张">3D星云图</a>
+    <a href="#3d" data-mode="network" title="二维平面上的全网络布局；保留 #3d 和 #graph 旧地址">全景星云图</a>
     <a href="#graph" data-mode="ego" title="从一个人向外看师承">聚焦</a>
   </div>
   <div class="toolbar">
@@ -40,12 +40,13 @@
         <select id="mode">
           <option value="tree">谱系图（家谱）</option>
           <option value="nebula">2D星云图</option>
-          <option value="network">3D星云图</option>
+          <option value="network">全景星云图</option>
           <option value="ego">聚焦所选人物</option>
         </select>
       </label>
       <label class="ego-only">向下代数 <select id="depthDown"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></label>
-      <label class="ego-only">向上 <select id="depthUp"><option>1</option><option>2</option><option>3</option><option selected>99</option></select></label>
+      <label class="ego-only">向上代数 <select id="depthUp"><option>1</option><option selected>2</option><option>3</option><option value="99">全部</option></select></label>
+      <span class="ego-only focus-presets" role="group" aria-label="师承探索范围"><button type="button" data-focus-depth="1">上下各一代</button><button type="button" data-focus-depth="2">上下各两代</button></span>
       <label class="phone-hide">代数 <select id="gmin"></select> – <select id="gmax"></select></label>
       <button type="button" id="filterToggle" aria-expanded="false">筛选</button>
     </div>
@@ -78,7 +79,7 @@
     </div>
     <div id="panelDock">
       <button type="button" id="panelHandle" class="panel-handle">人物详情</button>
-      <aside id="panel"><div class="placeholder">点击图中人物或搜索，查看其师父、徒弟与亲属。</div></aside>
+      <aside id="panel"><div class="placeholder">点击图中人物或搜索，查看其师父、徒弟与亲属。点击关系连线可查看依据；聚焦默认展示上下各两代。</div></aside>
     </div>
   </div>
   <div class="legend">

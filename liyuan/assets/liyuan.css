@@ -32,3 +32,12 @@
 .ly-chip{display:inline-flex;align-items:center;font-size:12px;white-space:nowrap}
 .bio { margin: 8px 0; line-height: 1.6; font-size: 14px; }
 #inst, #cohort { max-width: 11em; }
+
+/* Evidence stays compact until requested; useful on narrow person panels too. */
+.rel-evidence { margin: 5px 0 10px; font-size: 12px; line-height: 1.6; }
+.rel-evidence summary { cursor: pointer; color: #7f1d1d; }
+.rel-evidence dl { display: grid; grid-template-columns: 5.5em minmax(0, 1fr); gap: 3px 8px; margin: 6px 0; }
+.rel-evidence dt { color: #6b7280; }
+.rel-evidence dd { margin: 0; overflow-wrap: anywhere; }
+.rel-evidence p { margin: 5px 0; }
+#rtable .rel-evidence { min-width: 160px; }

@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-11-14",
+  "scope": "相声师承关系的小规模来源复核，不代表全库复核完成。",
+  "method": "逐页核查新增来源，以关系ID关联原始数据。claim为证据摘要而非引文；origin用于辨识原始报道，转载和同源回忆不重复计算独立证据。不自动修改原始confidence。",
+  "relations": {
+    "r00001": {
+      "label": "张三禄 → 朱绍文",
+      "reviewStatus": "disputed",
+      "reviewNote": "保留存疑线。中广网援引马三立的谱系记载传艺，但传授技艺不等于已经查到正式拜师记录；营口日报刊文明确并列直接师承与无直接师承两种说法。",
+      "evidence": [
+        {
+          "url": "https://wyzs.cnr.cn/xp/200606/t20060621_504227475.html",
+          "title": "相声艺术简介",
+          "publisher": "中广网",
+          "claim": "援引马三立《京津相声演员谱系》，记载张三禄曾向朱绍文传授部分说演技艺。",
+          "published": "2006-06-21",
+          "accessed": "2026-11-14",
+          "kind": "文史资料转述",
+          "origin": "cnr-20060621"
+        },
+        {
+          "url": "https://www.ykd.com.cn/pc/con/202607/02/content_73539.html",
+          "title": "营口日报电子报：相声史资料",
+          "publisher": "营口日报",
+          "claim": "文章列出两种意见：朱绍文是张三禄的徒弟，或两人没有直接师承关系。该文呈现争议，不是对后一意见的独立证实。",
+          "accessed": "2026-11-14",
+          "kind": "报刊文章",
+          "origin": "yingkou-daily-73539"
+        }
+      ]
+    },
+    "r00223": {
+      "label": "朱阔泉 → 侯宝林",
+      "reviewStatus": "corroborated",
+      "reviewNote": "新增来源对师承关系相互印证；不据此推定全部生平细节或拜师年份均已核实。",
+      "evidence": [
+        {
+          "url": "https://www.cntv.cn/program/tsfx/topic/geography/C18633/20070611/103867.shtml",
+          "title": "《相声人生》第六集：相声大师侯宝林",
+          "publisher": "央视《探索·发现》",
+          "claim": "节目文字稿明确记载侯宝林拜朱阔泉为师。",
+          "published": "2007-06-11",
+          "accessed": "2026-11-14",
+          "kind": "纪录片文字稿",
+          "origin": "cctv-xiangshengrensheng-2007"
+        },
+        {
+          "url": "https://paper.people.com.cn/hqrw/html/2016-09/16/content_1726783.htm",
+          "title": "“班主”郭德纲：师承制的昨天与明天",
+          "publisher": "环球人物／人民网",
+          "claim": "采访中孙福海讲述朱阔泉收侯宝林为徒、鼓励其独立演出的经历。",
+          "published": "2016-09-16",
+          "accessed": "2026-11-14",
+          "kind": "专家访谈",
+          "origin": "hqrw-20160916"
+        }
+      ]
+    },
+    "r00452": {
+      "label": "常宝堃 → 苏文茂",
+      "reviewStatus": "corroborated",
+      "reviewNote": "新增来源对师承关系相互印证；不据此推定全部生平细节或拜师年份均已核实。",
+      "evidence": [
+        {
+          "url": "https://wyzs.cnr.cn/kxsk/200905/t20090507_505325580.shtml",
+          "title": "笑星轶事：苏文茂—“文”字辈相声演员的代表",
+          "publisher": "中国广播网",
+          "claim": "文章记述苏文茂在天津拜常宝堃为师及命名经过；正文首处姓名写作常宝坤，后文写常宝堃。",
+          "published": "2009-05-07",
+          "accessed": "2026-11-14",
+          "kind": "广播机构文章",
+          "origin": "cnr-20090507"
+        },
+        {
+          "url": "https://paper.people.com.cn/hqrw/html/2016-09/16/content_1726783.htm",
+          "title": "“班主”郭德纲：师承制的昨天与明天",
+          "publisher": "环球人物／人民网",
+          "claim": "孙福海的采访叙述涉及常宝堃收苏文茂为徒、苏文茂出师的经历。",
+          "published": "2016-09-16",
+          "accessed": "2026-11-14",
+          "kind": "专家访谈",
+          "origin": "hqrw-20160916"
+        }
+      ]
+    },
+    "r00533": {
+      "label": "侯宝林 → 马季",
+      "reviewStatus": "corroborated",
+      "reviewNote": "两篇不同年份报道相互印证，但都含姜昆的回忆，不应当作两个完全独立的一手证人；马季亦曾向多位老师学习。",
+      "evidence": [
+        {
+          "url": "https://www.alac.org.cn/content/details_49_35897.html",
+          "title": "我院特聘导师、中国曲艺家协会主席姜昆推出新书《马季老师给我的思考》",
+          "publisher": "中国文联文艺研修院",
+          "claim": "新书活动报道转述姜昆谈及侯宝林称马季为自己的学生。",
+          "published": "2015-02-12",
+          "accessed": "2026-11-14",
+          "kind": "机构活动报道／当事人回忆",
+          "origin": "alac-20150212"
+        },
+        {
+          "url": "https://news.bjd.com.cn/2025/02/24/11088042.shtml",
+          "title": "75岁姜昆：跟头是翻不动了，但脑子不能老",
+          "publisher": "京报网／长安街知事，记者王润",
+          "claim": "姜昆受访回忆1983年春晚侯宝林公开介绍马季是自己的徒弟。",
+          "published": "2025-02-24",
+          "accessed": "2026-11-14",
+          "kind": "人物专访",
+          "origin": "bjd-wangrun-20250224"
+        }
+      ]
+    },
+    "r01002": {
+      "label": "马季 → 姜昆",
+      "reviewStatus": "corroborated",
+      "reviewNote": "两篇不同年份报道相互印证，但都含姜昆的回忆，不应当作两个完全独立的一手证人。",
+      "evidence": [
+        {
+          "url": "https://www.alac.org.cn/content/details_49_35897.html",
+          "title": "我院特聘导师、中国曲艺家协会主席姜昆推出新书《马季老师给我的思考》",
+          "publisher": "中国文联文艺研修院",
+          "claim": "报道记录姜昆以马季学生身份谈新书，并回忆马季对其弟子身份的认可。",
+          "published": "2015-02-12",
+          "accessed": "2026-11-14",
+          "kind": "机构活动报道／当事人回忆",
+          "origin": "alac-20150212"
+        },
+        {
+          "url": "https://news.bjd.com.cn/2025/02/24/11088042.shtml",
+          "title": "75岁姜昆：跟头是翻不动了，但脑子不能老",
+          "publisher": "京报网／长安街知事，记者王润",
+          "claim": "姜昆专访回忆侯宝林在1983年春晚公开介绍姜昆为马季的徒弟。",
+          "published": "2025-02-24",
+          "accessed": "2026-11-14",
+          "kind": "人物专访",
+          "origin": "bjd-wangrun-20250224"
+        }
+      ]
+    }
+  }
+}

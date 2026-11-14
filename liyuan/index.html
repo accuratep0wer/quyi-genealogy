@@ -61,7 +61,7 @@
       <label class="t-guoji"><input type="checkbox" data-type="guoji" checked> 过继/收养</label>
       <label class="t-mar"><input type="checkbox" data-type="marriage" checked> 姻缘</label>
       <label class="t-partner"><input type="checkbox" id="showPartner" checked> 搭档</label>
-      <label class="t-dis"><input type="checkbox" id="onlyDoc"> 只显示确定</label>
+      <label class="t-dis"><input type="checkbox" id="onlyDoc"> 只显示资料有载</label>
       <label><input type="checkbox" id="labels"> 显示全部姓名</label>
       <button id="expand" type="button" title="放大到能看清姓名。其他人仍留在图上，缩小或拖动都能看到。">展开此区域</button>
       <button id="resetLayout" type="button" title="缩小，回到完整全局布局">恢复全局布局</button>
@@ -86,7 +86,7 @@
     </div>
   </div>
   <div class="legend">
-    <span><i class="ln" data-line="md"></i>师徒·确定</span>
+    <span><i class="ln" data-line="md"></i>师徒·资料有载</span>
     <span><i class="ln" data-line="md" data-dis="1"></i>师徒·存疑</span>
     <span><i class="ln" data-line="ganqin"></i>干亲/义亲</span>
     <span><i class="ln" data-line="ganqin" data-dis="1"></i>干亲·存疑</span>
@@ -118,9 +118,9 @@
 <section id="view-relations" class="view" hidden>
   <div class="tbl-tools"><input id="rq" type="search" placeholder="筛选关系（人名/说明）">
     <select id="rtype"><option value="">全部类型</option><option value="master_disciple">师徒</option><option value="other">同台/受教</option><option value="ganqin">干亲/义亲</option><option value="jiebai">结拜</option><option value="kin">亲属</option><option value="guoji">过继/收养</option><option value="marriage">姻缘</option><option value="partner">搭档</option></select>
-    <select id="rconf"><option value="">全部可信度</option><option value="documented">确定</option><option value="disputed">存疑</option></select> <span id="rcount"></span></div>
+    <select id="rconf"><option value="">全部记录状态</option><option value="documented">资料有载</option><option value="disputed">存疑</option></select> <span id="rcount"></span></div>
   <div class="tbl-wrap"><table id="rtable"><thead><tr>
-    <th data-k="type">类型</th><th data-k="fromName">从（师/长）</th><th data-k="toName">到（徒/亲）</th><th data-k="detail">说明</th><th data-k="confidence">可信度</th><th>来源</th></tr></thead><tbody></tbody></table></div>
+    <th data-k="type">类型</th><th data-k="fromName">从（师/长）</th><th data-k="toName">到（徒/亲）</th><th data-k="detail">说明</th><th data-k="confidence">记录状态</th><th>来源</th></tr></thead><tbody></tbody></table></div>
 </section>
 
 <section id="view-about" class="view" hidden>
@@ -133,7 +133,7 @@
       <li><b>搭档</b>包括长期合作、挎刀配戏、琴师与鼓师。<b>亲属</b>和<b>姻缘</b>来自族谱图与正文中的称谓。</li>
       <li><b>干亲/义亲</b>是橙色成对短划，箭头由义父或义母指向义子、义女。<b>结拜</b>是靛蓝色长划加点，没有箭头。<b>过继/收养</b>是褐色点点划。<b>姻缘</b>是紫色双线。</li>
       <li><b>同台 / 受教</b>默认关掉。同台不等于固定搭档，受教不等于拜师；打开后图会密很多。</li>
-      <li>确定关系用各类型自己的线型。存疑一律改成同色更淡的疏圆点，这种点线不用在确定关系上。一条关系都没有的人不画出。没有独立戏考条目、只出现在别人名单里的人画得更淡。</li>
+      <li>资料有载的关系用各类型自己的线型。存疑一律改成同色更淡的疏圆点，这种点线不用在资料有载的关系上。一条关系都没有的人不画出。没有独立戏考条目、只出现在别人名单里的人画得更淡。</li>
       <li>菱形节点是和高置信度对上了相声谱系的人，侧栏可以一键跳到相声图谱里的同一人。</li>
     </ul>
     <h3>科班与院校</h3>
@@ -141,6 +141,9 @@
     <h3>谱系图</h3>
     <p>家谱自上而下。最早的一辈在上，然后一代一代往下。深度按师徒关系计算，不另造师父。没有师承、但有亲属或搭档的人放在下方「无师承，但有其他关系」。</p>
     <p class="muted" id="buildinfo"></p>
+    <h3>证据与不确定性</h3>
+    <p>“资料有载”对应原始数据的 documented 标记，不等于独立核验结论。关系卡可展开查看正文或谱图来源、关系年份及备注。缺少年份不代表关系不存在；“私淑”“受教”也不应直接等同正式拜师。同门是共同师父关系的推导。</p>
+    <p id="evidenceCoverage" class="notice"></p>
     <h3 id="srcs">来源列表</h3>
     <ol id="sourceList"></ol>
     <p id="hiddenAbout" hidden></p>

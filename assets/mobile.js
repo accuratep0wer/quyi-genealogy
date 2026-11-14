@@ -12,7 +12,8 @@
   var root = document.documentElement;
   var dock = null;
   var handle = null;
-  var dragging = false;
+  var pointerId = null;
+  var suppressPointerClick = false;
   var start = 0;
   var lastLayout = '';
   var lastW = -1;
@@ -58,31 +59,34 @@
 
   function collapse() {
     if (dock) dock.classList.add('collapsed');
+    if (handle) handle.setAttribute('aria-expanded', 'false');
   }
   function expand() {
     if (dock) dock.classList.remove('collapsed');
+    if (handle) handle.setAttribute('aria-expanded', 'true');
   }
   function toggle() {
     if (!dock) return;
-    dock.classList.toggle('collapsed');
+    if (dock.classList.contains('collapsed')) expand();
+    else collapse();
   }
 
   function onDown(ev) {
-    if (!dock || root.getAttribute('data-layout') === 'pane') return;
-    dragging = true;
-    var p = ev.touches ? ev.touches[0] : ev;
-    start = root.getAttribute('data-layout') === 'drawer' ? p.clientX : p.clientY;
-    if (ev.cancelable && ev.type === 'touchstart') { /* keep the click */ }
+    if (!dock || root.getAttribute('data-layout') === 'pane' || ev.isPrimary === false || ev.button !== 0) return;
+    pointerId = ev.pointerId;
+    suppressPointerClick = false;
+    start = root.getAttribute('data-layout') === 'drawer' ? ev.clientX : ev.clientY;
   }
   function onUp(ev) {
-    if (!dragging) return;
-    dragging = false;
-    var p = ev.changedTouches ? ev.changedTouches[0] : ev;
+    if (pointerId === null || ev.pointerId !== pointerId) return;
+    pointerId = null;
     var layout = root.getAttribute('data-layout');
-    var delta = layout === 'drawer' ? (p.clientX - start) : (p.clientY - start);
-    if (delta > 36) collapse();
-    else if (delta < -36) expand();
-    else toggle();
+    if (layout === 'pane') return;
+    var delta = layout === 'drawer' ? (ev.clientX - start) : (ev.clientY - start);
+    if (Math.abs(delta) <= 36) return; // A tap is handled by click exactly once.
+    suppressPointerClick = true;
+    if (delta > 0) collapse();
+    else expand();
   }
 
   function bind() {
@@ -91,10 +95,17 @@
     if (handle) {
       handle.addEventListener('click', function (ev) {
         ev.preventDefault();
+        if (ev.detail > 0 && suppressPointerClick) {
+          suppressPointerClick = false;
+          return;
+        }
         toggle();
       });
       handle.addEventListener('pointerdown', onDown);
       window.addEventListener('pointerup', onUp);
+      window.addEventListener('pointercancel', function (ev) {
+        if (ev.pointerId === pointerId) pointerId = null;
+      });
     }
     var menu = document.getElementById('filterToggle');
     var bar = document.querySelector('.toolbar');
