@@ -23,11 +23,89 @@ const adj={};
 const Z_MIN=0.03,Z_MAX=32;
 let zoomFromSlider=false;
 
+let ORGS={organizations:[],affiliations:[]},ORG_BY={},ORG_MEM={};
 let EVIDENCE={};
 let SPREAD={};
 let NEBULA={};
-Promise.all(['data/people.json','data/relations.json','data/layout.json','data/layout-spread.json','data/layout-nebula.json'].map(u=>fetch(u).then(r=>{if(!r.ok)throw new Error(u);return r.json()})).concat([fetch('data/relationship-evidence.json').then(r=>r.ok?r.json():{}).catch(()=>({}))]))
-.then(([p,r,l,s,n,e])=>{P=p;R=r;L=l;SPREAD=s;NEBULA=n;EVIDENCE=e.relations||{};init();}).catch(e=>{$('#cy').innerHTML='<p style="padding:20px">数据加载失败：'+esc(e.message)+'</p>';});
+Promise.all(['data/people.json','data/relations.json','data/layout.json','data/layout-spread.json','data/layout-nebula.json'].map(u=>fetch(u).then(r=>{if(!r.ok)throw new Error(u);return r.json()})).concat([fetch('data/relationship-evidence.json').then(r=>r.ok?r.json():{}).catch(()=>({})),fetch('data/organizations.json').then(r=>r.ok?r.json():{}).catch(()=>({}))]))
+.then(([p,r,l,s,n,e,o])=>{P=p;R=r;L=l;SPREAD=s;NEBULA=n;EVIDENCE=e.relations||{};ORGS=o;init();}).catch(e=>{$('#cy').innerHTML='<p style="padding:20px">数据加载失败：'+esc(e.message)+'</p>';});
+
+// Organization evidence is separate from lineage: affiliation never implies teaching.
+function usableAffiliation(m){
+  if(!byId[m.personId]||!ORG_BY[m.organizationId]||!(m.sources||[]).some(x=>/^https?:\/\//.test(x.url||''))) return false;
+  if(m.status==='current') return true;
+  if(m.status!=='historical') return false;
+  return !(ORG_MEM[m.personId]||[]).some(x=>x.status==='current'||(x.status==='former'&&x.organizationId===m.organizationId));
+}
+function initOrganizations(){
+  (ORGS.organizations||[]).forEach(o=>ORG_BY[o.id]=o);
+  (ORGS.affiliations||[]).forEach(m=>{(ORG_MEM[m.personId]||(ORG_MEM[m.personId]=[])).push(m);});
+  const sel=$('#organization');
+  (ORGS.organizations||[]).forEach(o=>{
+    const ms=(ORGS.affiliations||[]).filter(m=>m.organizationId===o.id&&usableAffiliation(m));
+    const current=new Set(ms.filter(m=>m.status==='current').map(m=>m.personId)).size;
+    const historical=new Set(ms.filter(m=>m.status==='historical').map(m=>m.personId)).size;
+    if(ms.length) sel.add(new Option(o.name+'（'+current+' 最新记录 / '+historical+' 历史）',o.id));
+  });
+  sel.addEventListener('change',()=>{clearHL();markOrganization();});
+  $('#organizationFocus').onclick=focusOrganization;
+}
+function focusOrganization(){
+  const nodes=cy.nodes('.org-member');
+  if(!nodes.length) return;
+  if(layoutAnim){cancelAnimationFrame(layoutAnim); layoutAnim=0;}
+  anchorId=null;
+  // Frame marked nodes after any zoom-driven position change, not the old layout.
+  layoutLock=true;
+  try {
+    if(nodes.length===1) cy.zoom(Math.min(2.2,Math.max(cy.zoom(),state.mode==='tree'?1.0:1.45)));
+    else cy.fit(nodes,65);
+    if(state.mode==='network'&&spreadReady){
+      const center={x:cy.width()/2,y:cy.height()/2};
+      snapSpread(spreadAmount(cy.zoom()),null,center);
+      if(nodes.length>1){
+        cy.fit(nodes,65);
+        snapSpread(spreadAmount(cy.zoom()),null,center);
+      }
+    }
+    cy.center(nodes);
+  } finally {layoutLock=false;}
+  syncZoomSlider();
+}
+function markOrganization(){
+  if(!cy) return;
+  const id=$('#organization').value;
+  const members=(ORGS.affiliations||[]).filter(m=>m.organizationId===id&&usableAffiliation(m));
+  const ids=new Set(members.map(m=>m.personId));
+  cy.batch(()=>{
+    cy.nodes().forEach(n=>{
+      const pid=n.id().startsWith('period-')?n.id().slice(7):n.id();
+      const person=!!byId[pid],member=!!id&&ids.has(pid);
+      n.toggleClass('org-member',member&&!n.hasClass('period-tag'));
+      n.toggleClass('org-muted',!!id&&person&&!member);
+      if(state.mode==='network'&&person){
+        const depth=depthShift(pid,cy.zoom());
+        if(depth.boost>=0.02) n.style('z-index',member?250:Math.round(6+depth.depth*90));
+      }
+    });
+    cy.edges().forEach(e=>e.toggleClass('org-muted',!!id&&!(ids.has(e.source().id())&&ids.has(e.target().id()))));
+  });
+  const shown=cy.nodes('.org-member').length;
+  $('#organizationFocus').disabled=!id||!shown;
+  $('#organizationStatus').textContent=id
+    ? ORG_BY[id].name+'：已收录 '+ids.size+' 人，当前视图突出 '+shown+' 人。有最新公开归属的，按最新记录突出；否则只显示有据的旧团体记录。离团者不计入原团体。点击人物查看依据。'
+    : '团体资料仅收录有来源的部分人物；历史记录不代表现属，未收录不代表没有团体。'+(ORGS.updated?' 核验日期：'+ORGS.updated:'');
+}
+function organizationPanel(id){
+  const ms=ORG_MEM[id]||[];
+  if(!ms.length) return '<h3>1949 年后团体</h3><p class="muted">尚未收录可靠团体资料，不代表没有所属团体。</p>';
+  const labels={current:'最新公开记录',historical:'历史记录（非现属）',former:'曾属（已离开）',uncertain:'存疑（不参与筛选）'};
+  return '<h3>1949 年后团体</h3><ul class="organization-evidence">'+ms.map(m=>
+    '<li><strong>'+esc((ORG_BY[m.organizationId]||{}).name||m.organizationId)+'</strong> · '+esc(labels[m.status]||'待核验')+
+    (m.note?'<p>'+esc(m.note)+'</p>':'')+
+    '<div>'+ (m.sources||[]).filter(x=>/^https?:\/\//.test(x.url||'')).map(x=>'<a target="_blank" rel="noopener noreferrer" href="'+esc(x.url)+'">'+esc(x.title||x.publisher||'来源')+'</a>'+(x.published?' <small>资料 '+esc(x.published)+'</small>':'')+(x.accessed?' <small>查阅 '+esc(x.accessed)+'</small>':'')).join('<br>')+'</div></li>'
+  ).join('')+'</ul>';
+}
 
 function labelOf(p){
   // disambiguate homonyms by master
@@ -50,6 +128,7 @@ function init(){
   gmin.value=gens[0];gmax.value=gens[gens.length-1];
   const sw=g=>'<span class="gen-swatch'+(g%2===0?' stripe':'')+'" style="background-color:'+genColor(g)+'"></span>'+g;
   $('#genLegend').innerHTML='代数：'+gens.map(sw).join('')+(P.some(p=>!p.generation)?'<span class="gen-swatch" style="background-color:#9ca3af"></span>不详':'');
+  initOrganizations();
   buildCy();
   bindUI();
   renderTables();
@@ -93,6 +172,9 @@ function buildCy(){
       {selector:'node.tree.axis',style:{'shape':'ellipse','width':1,'height':1,'background-opacity':0,'border-width':0,'font-size':13,'font-weight':'bold','color':'#7c2d12','text-valign':'center','text-halign':'center','text-margin-y':0,'text-max-width':240,'z-index':0}},
       {selector:'node.period-tag',style:{'shape':'ellipse','width':1,'height':1,'background-opacity':0,'border-width':0,'font-size':11,'font-weight':600,'color':'#44403c','text-valign':'center','text-halign':'center','text-margin-y':0,'text-wrap':'none','text-max-width':120,'text-outline-width':0,'text-background-color':'#fff','text-background-opacity':0.92,'text-background-padding':2,'min-zoomed-font-size':6,'z-index':40}},
     ].concat(XSLines.selectors()).concat([
+      {selector:'node.org-muted',style:{'background-opacity':0.055,'text-opacity':0,'text-background-opacity':0,'border-opacity':0.08}},
+      {selector:'edge.org-muted',style:{'opacity':0.035,'text-opacity':0}},
+      {selector:'node.org-member',style:{'border-width':5,'border-color':'#b45309','border-opacity':1,'background-opacity':1,'text-opacity':1,'min-zoomed-font-size':0,'z-index':30}},
       {selector:'.faded',style:{'opacity':0.07,'text-opacity':0}}
     ]),
     layout:{name:'preset'}
@@ -188,7 +270,7 @@ function nebulaCentroid(){
 }
 function drawNebula(){
   layoutLock=true;
-  if(cy) cy.autoungrabify(false);
+  if(cy) cy.autoungrabify(true);
   if(layoutAnim){cancelAnimationFrame(layoutAnim); layoutAnim=0;}
   state.mode='nebula';
   cy.minZoom(1e-7);cy.maxZoom(32);
@@ -464,7 +546,7 @@ function snapSpread(t,aid,pt){
       if(d.boost<0.02) n.removeStyle();
       else {
         const scale=Math.max(0.28, 1+(d.depth-0.5)*1.75*d.boost);
-        n.style({width:base*scale, height:base*scale, opacity:1-(1-d.depth)*0.72*d.boost, 'z-index':Math.round(6+d.depth*90)});
+        n.style({width:base*scale, height:base*scale, opacity:1-(1-d.depth)*0.72*d.boost, 'z-index':n.hasClass('org-member')?250:Math.round(6+d.depth*90)});
       }
     }
     n.position({x, y});
@@ -554,12 +636,14 @@ function drawEgo(id){
   layoutLock=false;
 }
 function stat(n,e){
+  markOrganization();
   const tag=state.mode==='ego'?' · 师承上 '+$('#depthUp').selectedOptions[0].textContent+' / 下 '+$('#depthDown').value+' 代（另含直连关系）':(state.mode==='tree'?' · 家谱':'');
   $('#stat').textContent='当前显示 '+n+' 人 · '+e+' 条关系（全库 '+P.length+' 人 · '+R.length+' 条）'+tag;
 }
 function clearHL(){
   if(cy) cy.edges('.tree-reveal').remove();
   cy.elements().removeClass('faded hl nb tree-link');
+  markOrganization();
 }
 function revealOtherLines(id){
   const add=[], seen=new Set();
@@ -678,6 +762,7 @@ function renderPanel(id){
    '<button type="button" class="feedback-btn" id="panelFeedback">提交修正</button></div>'+
    (p.aliases&&p.aliases.length?'<div>别名/本名：'+esc(p.aliases.join('、'))+'</div>':'')+
    (p.notes&&p.notes.length?'<div class="muted" style="margin-top:6px">'+p.notes.map(esc).join('<br>')+'</div>':'')+
+   organizationPanel(id)+
    sec('师父',masters,r=>relLine(r,r.from))+
    sec('徒弟',dis,r=>relLine(r,r.to))+
    sec('代拉 / 引保代 / 口盟等',oth,r=>relLine(r,r.from===id?r.to:r.from))+
@@ -1140,7 +1225,7 @@ function drawTree(){
   layoutLock=true;
   if(layoutAnim){cancelAnimationFrame(layoutAnim); layoutAnim=0;}
   state.mode='tree';
-  if(cy) cy.autoungrabify(false);
+  if(cy) cy.autoungrabify(true);
   const compact=treeCompact();
   const model=buildPedigree(compact);
   const nodes=[], edges=[];
@@ -1175,6 +1260,7 @@ function drawTree(){
   cy.add(nodes); cy.add(edges);
   cy.nodes('.period-tag, .axis').ungrabify();
   cy.endBatch();
+  markOrganization();
   const treePeople=model.treeN, looseN=model.loose.length;
   state.treeStats={generations:model.maxD+1, tree:treePeople, loose:looseN, known:model.known, est:model.est};
   $('#stat').textContent='家谱 '+state.treeStats.generations+' 层 · 树上 '+treePeople+' 人 · 无师承 '+looseN+' 人（全库 '+P.length+' 人）';
@@ -1324,11 +1410,11 @@ function bindPointer(){
   });
   function restCursor(){
     if(!pointerMode()){setGraphCursor(''); return;}
-    setGraphCursor(overPerson&&!rightPan?'grab':'move');
+    setGraphCursor(overPerson&&!rightPan?(cy.autoungrabify()?'pointer':'grab'):'move');
   }
   box.addEventListener('mousemove', ()=>{
     if(rightPan||draggingNode||!pointerMode()) return;
-    setGraphCursor(overPerson?'grab':'move');
+    setGraphCursor(overPerson?(cy.autoungrabify()?'pointer':'grab'):'move');
   });
   box.addEventListener('mouseleave', ()=>{
     if(rightPan) return;
@@ -1368,7 +1454,7 @@ function bindPointer(){
     if(n.hasClass('period-tag')||n.hasClass('axis')) return;
     overPerson=true;
     if(rightPan||draggingNode) return;
-    setGraphCursor('grab');
+    setGraphCursor(cy.autoungrabify()?'pointer':'grab');
   });
   cy.on('mouseout','node', e=>{
     const n=e.target;
@@ -1392,7 +1478,7 @@ function bindPointer(){
     syncPeriodTag(e.target);
     draggingNode=false;
     if(rightPan||!pointerMode()) return;
-    setGraphCursor(overPerson?'grab':'move');
+    setGraphCursor(overPerson?(cy.autoungrabify()?'pointer':'grab'):'move');
   });
 }
 function bindTreeScroll(){
