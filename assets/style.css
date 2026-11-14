@@ -183,4 +183,10 @@ dialog::backdrop{background:rgba(0,0,0,.45)}
 #orgTable .org-source{min-width:13em;max-width:24em}
 #orgTable .org-source small,#orgTable .org-source span{color:var(--muted)}
 #organization{max-width:17em}
-@media(max-width:600px){#organization{max-width:10em}.organization-strip{padding-inline:8px}#view-organizations .tbl-tools input{min-width:10em}.org-table-intro{font-size:14px}}
+@media(max-width:600px){#organization{max-width:10em}.organization-strip{padding-inline:8px}#organizationRoster .tbl-tools input{min-width:10em}.org-table-intro{font-size:14px}}
+
+.organization-roster{margin:16px 0;padding:10px 12px;border:1px solid var(--line);border-radius:8px}
+.organization-roster>summary{cursor:pointer;font-weight:700;color:var(--accent)}
+.person-org{min-width:12em;max-width:26em;white-space:normal}
+.person-org-record{overflow-wrap:anywhere}
+.person-org-record p{margin:.4em 0 .65em}

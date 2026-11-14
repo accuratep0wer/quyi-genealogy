@@ -44,6 +44,7 @@ Promise.all(['data/people.json','data/relations.json','data/layout.json','data/l
 // Organization evidence is separate from lineage: affiliation never implies teaching.
 const ORG_LABELS={current:'最新公开归属',historical:'历史归属',former:'已离团',performance:'演出记录（不等于成员）',uncertain:'存疑'};
 const ORG_ORDER={current:0,historical:1,former:2,performance:3,uncertain:4};
+const orgName=m=>ORG_BY[m.organizationId]?.name||m.organizationId;
 const orgStatusLabel=m=>ORG_LABELS[m.status]||'待核验';
 function organizationSourceLinks(m){
   return (m.sources||[]).filter(x=>/^https?:\/\//.test(x.url||'')).map(x=>'<a target="_blank" rel="noopener noreferrer" href="'+esc(x.url)+'">'+esc(x.publisher||x.title||'来源')+'</a>'+(x.title&&x.publisher?' <span>'+esc(x.title)+'</span>':'')+(x.published?' <small>· '+esc(x.published)+'</small>':'')).join('<br>');
@@ -132,7 +133,7 @@ function markOrganization(){
   });
   const shown=cy.nodes('.org-member').length;
   $('#organizationFocus').disabled=!id||!shown;
-  $('#organizationRosterLink').href=id?'#organizations/'+id:'#organizations';
+  $('#organizationRosterLink').href=id?'#people/organizations/'+id:'#people/organizations';
   const rosterCount=new Set(members.map(m=>m.personId||m.personName)).size;
   $('#organizationStatus').textContent=id
     ? ORG_BY[id].name+'：此类别名册 '+rosterCount+' 人，当前图谱突出 '+shown+' 人。'+(scope==='roster'?'历史归属不代表现属；已离团者请切到历史／曾属。':'点击人物或进入名册查看出处。')
@@ -233,10 +234,10 @@ function buildCy(){
   });
   cy.on('tap','node',e=>{
     if(!phoneGraph()&&pointerMoved(e.target)) return;
-    let id=e.target.id(); if(id.indexOf('period-')===0) id=id.slice(7); if(id.indexOf('axis-')===0||id==='loosehead')return; selectPerson(id,false);
+    let id=e.target.id(); if(id.indexOf('period-')===0) id=id.slice(7); if(!byId[id])return; if(state.focus===id) deselectPerson(); else selectPerson(id,false);
   });
   cy.on('tap','edge',e=>{const rid=e.target.data('relationId')||e.target.id();const r=R.find(r=>r.id===rid);if(r)renderRelation(r);});
-  cy.on('tap',e=>{if(e.target===cy) clearHL();});
+  cy.on('tap',e=>{if(e.target===cy&&state.focus&&state.mode!=='ego') deselectPerson();});
   cy.on('mousemove',ev=>{if(ev.renderedPosition) lastPointer={x:ev.renderedPosition.x,y:ev.renderedPosition.y,t:performance.now()};});
   cy.on('pan',()=>{if(!placing&&!layoutAnim) anchorId=null; paintRail(); if(state.mode==='tree') clampTreePan();});
   cy.on('mouseover','edge',e=>{const d=e.target.data();e.target.style('label',edgeKindLabel(d)+(d.detail?'：'+d.detail:'')+(CONF_CN[d.conf]?'（'+CONF_CN[d.conf]+'）':''));e.target.style({'font-size':11,'text-background-color':'#fff','text-background-opacity':0.9,'text-background-padding':2});});
@@ -364,6 +365,7 @@ function drawNebula(){
   }
   layoutLock=false;
   stat(nodes.length,drawRels.length);
+  if(state.focus&&cy.getElementById(state.focus).length) highlight(state.focus,false);
   syncZoomSlider();
   updateModeTabs();
 }
@@ -711,6 +713,18 @@ function clearHL(){
   cy.elements().removeClass('faded hl nb tree-link');
   markOrganization();
 }
+function deselectPerson(){
+  state.focus=null;
+  anchorId=null;
+  cy.stop(true,false);
+  if(state.mode==='ego') resetGlobal();
+  clearHL();
+  const next=state.mode==='tree'?'#tree':state.mode==='nebula'?'#nebula':'#3d';
+  if(location.hash!==next) history.replaceState(null,'',next);
+  $('#panel').innerHTML='<div class="placeholder">点击人物查看详情；再点同一人物取消选中。</div>';
+  if(phoneGraph()) XSMobile.closePanel();
+  updateModeTabs();
+}
 function highlightTree(id,center){
   const n=cy.getElementById(id);if(!n.length)return;
   clearHL();
@@ -750,7 +764,7 @@ function selectPerson(id,center){
   if(state.mode==='ego'){drawEgo(id);}
   else if(state.mode==='tree'){
     if(!cy.getElementById(id).length) drawTree();
-    highlight(id,center||!phoneGraph());
+    highlight(id,center);
   }else highlight(id,center);
   renderPanel(id);
   if(phoneGraph()) XSMobile.openPanel();
@@ -940,6 +954,12 @@ function bindUI(){
     zoomAtCenter(Math.max(cy.zoom(),1.15));
   };
   $('#resetLayout').onclick=()=>{
+    if(state.mode==='tree'){
+      deselectPerson();
+      applyTreeViewport('whole');
+      syncZoomSlider();
+      return;
+    }
     if(state.mode==='nebula'){cy.fit(undefined,40);syncZoomSlider();return;}
     resetGlobal();
   };
@@ -1420,8 +1440,9 @@ function treeContent(){
   const gutter=16;
   const W=cy.width(), H=cy.height();
   const availW=Math.max(80, W-pad*2-gutter);
-  const zMin=Math.max(0.02, Math.min(3, availW/bb.w));
-  return {bb, pad, gutter, W, H, zMin};
+  const zWidth=Math.min(3, availW/bb.w);
+  const zMin=Math.min(zWidth, Math.max(1,H-pad*2)/bb.h);
+  return {bb, pad, gutter, W, H, zMin, zWidth};
 }
 function treePanLimits(m){
   const z=cy.zoom();
@@ -1488,7 +1509,7 @@ function applyTreeViewport(fit){
   cy.maxZoom(3);
   if(fit){
     treeGuard++;
-    cy.zoom(m.zMin);
+    cy.zoom(fit==='whole'?m.zMin:m.zWidth);
     const z=cy.zoom();
     cy.pan({x:m.pad-m.bb.x1*z, y:m.pad-m.bb.y1*z});
     treeGuard--;
@@ -1693,10 +1714,19 @@ function route(){
   const parts=h.split('/');
   const kind=canonView(parts[0]);
   const arg=parts[1];
-  const section=(kind==='nebula'||kind==='network'||kind==='tree'||kind==='graph')?'graph':(['people','relations','organizations','about'].includes(kind)?kind:'graph');
+  const roster=kind==='organizations'||(kind==='people'&&arg==='organizations');
+  const section=roster?'people':(kind==='nebula'||kind==='network'||kind==='tree'||kind==='graph')?'graph':(['people','relations','about'].includes(kind)?kind:'graph');
   document.querySelectorAll('.view').forEach(s=>s.hidden=s.id!=='view-'+section);
   document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.dataset.view===section));
-  if(section==='organizations'){if(arg&&ORG_BY[arg]){$('#orgTableGroup').value=arg;$('#orgTableStatus').value='';$('#orgTableQuery').value='';} drawOrgRoster();}
+  if(roster){
+    const group=kind==='organizations'?arg:parts[2];
+    $('#orgTableGroup').value=ORG_BY[group]?group:'';
+    $('#orgTableStatus').value='';
+    $('#orgTableQuery').value='';
+    $('#organizationRoster').open=true;
+    drawOrgRoster();
+    requestAnimationFrame(()=>{if(location.hash==='#'+raw) $('#organizationRoster').scrollIntoView({block:'start'});});
+  }
   if(section!=='graph'){window.XSMobile?.leaveGraph();updateModeTabs();return;}
   cy.resize();
   if(arg&&byId[arg]&&!byId[arg]._linked){
@@ -1759,16 +1789,28 @@ function personBioLinks(id){
   if(!Array.isArray(bio)||!bio.length) return '';
   return '<details class="relation-evidence"><summary>生平出处</summary>'+bio.map(x=>'<div>'+esc(x.label||x.field||'生平')+'：'+srcLinks((x.sources||[]).map(y=>typeof y==='string'?y:y.url).filter(Boolean))+'</div>').join('')+'</details>';
 }
+function personOrganizationCell(id){
+  const groups=new Map();
+  for(const m of ORG_MEM[id]||[]){
+    if(!groups.has(m.organizationId)) groups.set(m.organizationId,[]);
+    groups.get(m.organizationId).push(m);
+  }
+  if(!groups.size) return '<span class="muted" title="暂无已收录团体资料">—</span>';
+  return [...groups.values()].map(ms=>'<details class="relation-evidence person-org-record"><summary>'+
+    esc(orgName(ms[0]))+' <small class="muted">'+esc([...new Set(ms.map(orgStatusLabel))].join('／'))+'</small></summary>'+
+    ms.map(m=>'<p><small>'+esc(orgStatusLabel(m)+(m.asOf?' · '+m.asOf:''))+'</small>'+
+      (m.note?'<br>'+esc(m.note):'')+'<br>'+organizationSourceLinks(m)+'</p>').join('')+'</details>').join('');
+}
 function renderTables(){
   P.forEach(p=>{p._masters=adj[p.id].filter(r=>r.type==='master_disciple'&&r.to===p.id).map(r=>byId[r.from].name).join('、');p._ndis=adj[p.id].filter(r=>r.type==='master_disciple'&&r.from===p.id).length;});
   R.forEach(r=>{r._fromName=labelOf(byId[r.from]);r._toName=labelOf(byId[r.to]);});
   const drawP=()=>{
     const v=$('#pq').value.trim(),g=$('#pgen').value;
-    let rows=P.filter(p=>(!v||(p._search+' '+(p.notes||[]).join(' ')).includes(v))&&(!g||String(p.generation)===g));
+    let rows=P.filter(p=>(!v||(p._search+' '+(p.notes||[]).join(' ')+' '+(ORG_MEM[p.id]||[]).map(orgName).join(' ')).includes(v))&&(!g||String(p.generation)===g));
     const key={name:p=>p.name,generation:p=>p.generation||99,zibei:p=>p.zibei||'',birth:p=>p.birth||9999,death:p=>p.death||9999,masters:p=>p._masters,ndis:p=>p._ndis,notes:p=>(p.notes||[]).join('')}[psort.k]||(p=>p.name);
     rows.sort((a,b)=>{const x=key(a),y=key(b);return (x<y?-1:x>y?1:a.name.localeCompare(b.name,'zh'))*psort.d;});
     $('#pcount').textContent=rows.length+' 人';
-    $('#ptable tbody').innerHTML=rows.map(p=>'<tr><td><a href="#graph/'+p.id+'">'+esc(labelOf(p))+'</a>'+(p.aliases.length?'<br><small class="muted">'+esc(p.aliases.join('、'))+'</small>':'')+'</td><td>'+(p.generation||'')+'</td><td>'+(p.zibei||'')+'</td><td>'+(p.birth||'')+disputedYear(p,'birth')+'</td><td>'+(p.death||'')+disputedYear(p,'death')+'</td><td>'+esc(p._masters)+'</td><td>'+(p._ndis||'')+'</td><td class="notes">'+esc((p._linked?[]:['没有任何关系']).concat(p.notes||[]).join('；'))+'</td><td>'+(p.wiki_url?'<a href="'+esc(p.wiki_url)+'" target="_blank" rel="noopener">维基</a> ':'')+srcLinks(p.sources)+personBioLinks(p.id)+'</td></tr>').join('');
+    $('#ptable tbody').innerHTML=rows.map(p=>'<tr><td><a href="#graph/'+p.id+'">'+esc(labelOf(p))+'</a>'+(p.aliases.length?'<br><small class="muted">'+esc(p.aliases.join('、'))+'</small>':'')+'</td><td>'+(p.generation||'')+'</td><td>'+(p.zibei||'')+'</td><td>'+(p.birth||'')+disputedYear(p,'birth')+'</td><td>'+(p.death||'')+disputedYear(p,'death')+'</td><td>'+esc(p._masters)+'</td><td>'+(p._ndis||'')+'</td><td class="person-org">'+personOrganizationCell(p.id)+'</td><td class="notes">'+esc((p._linked?[]:['没有任何关系']).concat(p.notes||[]).join('；'))+'</td><td>'+(p.wiki_url?'<a href="'+esc(p.wiki_url)+'" target="_blank" rel="noopener">维基</a> ':'')+srcLinks(p.sources)+personBioLinks(p.id)+'</td></tr>').join('');
   };
   const drawR=()=>{
     const v=$('#rq').value.trim(),t=$('#rtype').value,c=$('#rconf').value;

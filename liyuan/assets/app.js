@@ -62,6 +62,7 @@ function init(){
   const hangs=[...new Set(P.map(p=>p.hangdang).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'zh'));
   if(pgen) hangs.forEach(h=>pgen.add(new Option(h,h)));
   paintLyLegend();
+  state.appliedRelations=readRelationDraft();
   buildCy();
   bindUI();
   renderTables();
@@ -143,8 +144,14 @@ function nodeData(p){
   const size=Math.max(12,Math.min(70,10+Math.sqrt(p._deg)*6));
   return {data:{id:p.id,label:labelOf(p),gen:p.generation||0,color:nodeColor(p),size:size,deg:p._deg,role:p.role||''},classes:extraClass(p).trim(),position:positionFor(p)};
 }
+function phoneGraph(){return !!window.XSMobile&&XSMobile.layout()!=='pane';}
+function applyGraphGestures(mode){
+  const mobile=phoneGraph(), nodes=cy.nodes();
+  cy.autoungrabify(mobile||mode==='tree'||mode==='nebula');
+  if(mobile) nodes.panify(); else nodes.unpanify();
+}
 function buildCy(){
-  cy=cytoscape({container:$('#cy'),wheelSensitivity:0.25,minZoom:Z_MIN,maxZoom:Z_MAX,textureOnViewport:true,hideEdgesOnViewport:false,
+  cy=cytoscape({container:$('#cy'),wheelSensitivity:0.25,touchTapThreshold:10,minZoom:Z_MIN,maxZoom:Z_MAX,textureOnViewport:true,hideEdgesOnViewport:false,
     style:[
       {selector:'node',style:{'background-color':'data(color)','width':'data(size)','height':'data(size)','label':'data(label)','font-size':12,'color':'#222','text-valign':'bottom','text-margin-y':3,'text-outline-color':'#fff','text-outline-width':2,'min-zoomed-font-size':9,'border-width':1,'border-color':'#fff'}},
       {selector:'node[deg < 6]',style:{'font-size':10,'min-zoomed-font-size':11}},
@@ -168,15 +175,22 @@ function buildCy(){
       {selector:'node.tree.xo',style:{'shape':'ellipse','width':86,'height':42,'border-width':3,'border-color':'#111'}},
       {selector:'node.inst',style:{'border-width':4,'border-color':'#b45309','opacity':1,'z-index':8}},
     ].concat(XSLines.selectors()).concat([
+      {selector:'edge.tree-secondary',style:{'curve-style':'bezier','control-point-step-size':42,'line-opacity':0.48,'target-arrow-opacity':0.48}},
+      {selector:'edge.tree-secondary.tree-link',style:{'line-opacity':1,'target-arrow-opacity':1}},
       {selector:'.faded',style:{'opacity':0.07,'text-opacity':0}}
     ]),
     layout:{name:'preset'}
   });
   cy.on('tap','node',e=>{
-    if(pointerMoved(e.target)) return;
-    let id=e.target.id(); if(id.indexOf('period-')===0) id=id.slice(7); if(id.indexOf('axis-')===0||id==='loosehead')return; selectPerson(id,false);
+    if(!phoneGraph()&&pointerMoved(e.target)) return;
+    let id=e.target.id(); if(id.indexOf('period-')===0) id=id.slice(7); if(!byId[id])return; if(state.focus===id) deselectPerson(); else selectPerson(id,false);
   });
-  cy.on('tap',e=>{if(e.target===cy) clearHL();});
+  cy.on('tap','edge',e=>{
+    const id=e.target.data('relationId')||e.target.id();
+    const r=R.find(r=>r.id===id);
+    if(r) renderRelation(r);
+  });
+  cy.on('tap',e=>{if(e.target===cy&&state.focus&&state.mode!=='ego') deselectPerson();});
   cy.on('mousemove',ev=>{if(ev.renderedPosition) lastPointer={x:ev.renderedPosition.x,y:ev.renderedPosition.y,t:performance.now()};});
   cy.on('pan',()=>{if(!placing&&!layoutAnim) anchorId=null; paintRail(); paintHull(); if(state.mode==='tree') clampTreePan();});
   cy.on('mouseover','edge',e=>{const d=e.target.data();e.target.style('label',edgeKindLabel(d)+(d.detail?'：'+d.detail:'')+(CONF_CN[d.conf]?'（'+CONF_CN[d.conf]+'）':''));e.target.style({'font-size':11,'text-background-color':'#fff','text-background-opacity':0.9,'text-background-padding':2});});
@@ -186,9 +200,24 @@ function buildCy(){
   bindPointer();
   drawNetwork();
 }
+function relationControls(){
+  return [...document.querySelectorAll('.types input[data-type], #onlyDoc, #showPartner')];
+}
+function readRelationDraft(){
+  return {types:new Set(relationControls().filter(i=>i.checked&&i.dataset.type).map(i=>i.dataset.type)),onlyDoc:$('#onlyDoc').checked,partners:$('#showPartner').checked};
+}
+function sameRelationFilters(a,b){
+  return a.onlyDoc===b.onlyDoc&&a.partners===b.partners&&a.types.size===b.types.size&&[...a.types].every(t=>b.types.has(t));
+}
+function showRelationDraft(){
+  const dirty=!sameRelationFilters(readRelationDraft(),state.appliedRelations);
+  $('#applyRelations').disabled=!dirty;
+  $('#resetRelationDraft').disabled=!dirty;
+  $('#relationFilterStatus').textContent=dirty?'有未应用的修改':'已应用';
+}
 function filters(){
-  const types=[...document.querySelectorAll('.types input[data-type]')].filter(i=>i.checked).map(i=>i.dataset.type);
-  return {types:new Set(types),onlyDoc:$('#onlyDoc').checked,partners:$('#showPartner').checked,gmin:+$('#gmin').value,gmax:+$('#gmax').value};
+  const r=state.appliedRelations||readRelationDraft();
+  return {...r,gmin:+$('#gmin').value,gmax:+$('#gmax').value};
 }
 function personOk(p,f){return !p.generation||(p.generation>=f.gmin&&p.generation<=f.gmax);}
 function relKind(r){
@@ -273,7 +302,6 @@ function paintHull(){
 }
 function drawNetwork(){
   layoutLock=true;
-  if(cy) cy.autoungrabify(false);
   parkN=0;
   const f=filters();
   const show=visibleSet();
@@ -281,6 +309,7 @@ function drawNetwork(){
   const nodes=P.filter(p=>show.has(p.id));
   cy.startBatch();cy.elements().remove();
   cy.add(nodes.map(nodeData));cy.add(rels.map(edgeData));
+  applyGraphGestures('network');
   cy.endBatch();
   cy.minZoom(Z_MIN);cy.maxZoom(Z_MAX);
   cy.layout({name:'preset',fit:true,padding:20}).run();
@@ -320,7 +349,6 @@ function nebulaCentroid(){
 }
 function drawNebula(){
   layoutLock=true;
-  if(cy) cy.autoungrabify(false);
   if(layoutAnim){cancelAnimationFrame(layoutAnim); layoutAnim=0;}
   state.mode='nebula';
   cy.minZoom(1e-7);cy.maxZoom(32);
@@ -332,6 +360,7 @@ function drawNebula(){
   const drawRels=rels;
   cy.startBatch();cy.elements().remove();
   cy.add(nodes.map(nebulaNodeData));cy.add(drawRels.map(edgeData));
+  applyGraphGestures('nebula');
   cy.endBatch();
   cy.fit(undefined,36);
   // Full-map fit makes every dot a speck. Open close enough that hubs and
@@ -357,7 +386,7 @@ function updateModeTabs(){
   const ego=document.querySelector('.mode-tabs a[data-mode="ego"]');
   const neb=document.querySelector('.mode-tabs a[data-mode="nebula"]');
   const tree=document.querySelector('.mode-tabs a[data-mode="tree"]');
-  const id=state.focus||(P.find(p=>p.name==='侯宝林')||P[0]||{}).id||'';
+  const id=state.focus||(P.find(p=>p.name==='梅兰芳')||P[0]||{}).id||'';
   if(ego&&id) ego.href='#graph/'+hid(id);
   if(neb) neb.href=state.focus?'#nebula/'+hid(state.focus):'#nebula';
   if(tree) tree.href=state.focus?'#tree/'+hid(state.focus):'#tree';
@@ -665,7 +694,6 @@ function resetGlobal(){
 function updateLayoutButtons(){}
 function drawEgo(id){
   layoutLock=true;
-  if(cy) cy.autoungrabify(false);
   if(layoutAnim){cancelAnimationFrame(layoutAnim); layoutAnim=0;}
   cy.minZoom(Z_MIN);cy.maxZoom(Z_MAX);
   const s=egoSet(id);
@@ -674,6 +702,7 @@ function drawEgo(id){
   cy.startBatch();cy.elements().remove();
   cy.add(s.nodes.map(p=>{const n=nodeData(p); n.position=local[p.id]||{x:0,y:0}; return n;}));
   cy.add(s.rels.map(edgeData));
+  applyGraphGestures('ego');
   cy.endBatch();
   cy.nodes().addClass('local');
   const eles=cy.nodes();
@@ -692,27 +721,12 @@ function stat(n,e){
   $('#stat').textContent='当前显示 '+n+' 人 · '+e+' 条关系（全库 '+P.length+' 人 · '+R.length+' 条）'+tag;
 }
 function clearHL(){
-  if(cy) cy.edges('.tree-reveal').remove();
   cy.elements().removeClass('faded hl nb tree-link');
-}
-function revealOtherLines(id){
-  const add=[], seen=new Set();
-  R.forEach(r=>{
-    if(!r||r.type==='master_disciple') return;
-    if(!relOk(r, filters())) return;
-    if(r.from!==id&&r.to!==id) return;
-    if(!cy.getElementById(r.from).length||!cy.getElementById(r.to).length) return;
-    const eid='reveal-'+r.id;
-    if(seen.has(eid)) return;
-    seen.add(eid);
-    add.push({classes:'tree-reveal', data:{id:eid, source:r.from, target:r.to, type:r.type, conf:r.confidence, detail:r.detail||'', sub:r.subtype||''}});
-  });
-  if(add.length) cy.add(add);
 }
 function highlightTree(id,center){
   const n=cy.getElementById(id);if(!n.length)return;
   clearHL();
-  revealOtherLines(id);
+  // All applied relation types are already rendered, without duplicate reveal lines.
   cy.elements().addClass('faded');
   const edges=n.connectedEdges();
   const near=edges.connectedNodes();
@@ -724,8 +738,7 @@ function highlightTree(id,center){
   n.removeClass('faded').addClass('hl');
   const tag=cy.getElementById('period-'+id);
   if(tag.length) tag.removeClass('faded');
-  edges.filter(e=>!e.hasClass('tree-reveal')).removeClass('faded').addClass('tree-link');
-  edges.filter('.tree-reveal').removeClass('faded');
+  edges.removeClass('faded').addClass('tree-link');
   if(center) cy.animate({center:{eles:n},zoom:Math.max(cy.zoom(),0.9)},{duration:350});
 }
 function highlight(id,center){
@@ -735,6 +748,19 @@ function highlight(id,center){
   const nb=n.closedNeighborhood();
   nb.nodes().addClass('nb');n.addClass('hl');n.connectedEdges().addClass('hl');
   if(center) cy.animate({center:{eles:n},zoom:Math.max(cy.zoom(),0.9)},{duration:450});
+}
+function deselectPerson(){
+  if(!cy) return;
+  const wasEgo=state.mode==='ego';
+  state.focus=null;
+  cy.stop(true,false);
+  clearHL();
+  if(wasEgo){state.mode='network';$('#mode').value='network';syncMode();drawNetwork();}
+  $('#panel').innerHTML='<div class="placeholder">点击人物查看关系；再次点击同一人物或空白处取消选中，返回全部关系。</div>';
+  if(phoneGraph()) XSMobile.closePanel();
+  const next=state.mode==='tree'?'#tree':state.mode==='nebula'?'#nebula':'#3d';
+  if(location.hash!==next) history.replaceState(null,'',next);
+  updateModeTabs();
 }
 function selectPerson(id,center){
   state.focus=id;
@@ -750,10 +776,10 @@ function selectPerson(id,center){
   if(state.mode==='ego'){drawEgo(id);}
   else if(state.mode==='tree'){
     if(!cy.getElementById(id).length) drawTree();
-    highlight(id,true);
-    if(window.XSMobile&&XSMobile.layout()!=='pane') XSMobile.openPanel();
+    highlight(id,center);
   }else highlight(id,center);
   renderPanel(id);
+  if(phoneGraph()) XSMobile.openPanel();
   const next=state.mode==='nebula'?'#nebula/'+hid(id):(state.mode==='tree'?'#tree/'+hid(id):(state.mode==='ego'?'#graph/'+hid(id):'#graph/'+hid(id)));
   if(location.hash!==next) history.replaceState(null,'',next);
   updateModeTabs();
@@ -776,6 +802,13 @@ function evidenceDetails(r){
 function relLine(r,other){
   const detail=r.detail||r.subtype||'';
   return '<li>'+XSLines.swatchHtml(XSLines.kindOf(r), r.confidence==='disputed')+plink(other)+(detail?' <small>'+esc(detail)+'</small>':'')+'<span class="tag'+(r.confidence==='disputed'?' dis':'')+'">'+esc(CONF_CN[r.confidence]||'未标注')+'</span>'+evidenceDetails(r)+'</li>';
+}
+function renderRelation(r){
+  $('#panel').innerHTML='<h2>关系依据</h2><p>'+plink(r.from)+' · '+esc(typeLabel(r))+' · '+plink(r.to)+'</p>'+
+    (r.detail?'<p>'+esc(r.detail)+'</p>':'')+evidenceDetails(r);
+  const evidence=$('#panel .rel-evidence');
+  if(evidence) evidence.open=true;
+  if(phoneGraph()) XSMobile.openPanel();
 }
 function renderPanel(id){
   const p=byId[id];const rs=adj[id];
@@ -815,7 +848,7 @@ function renderPanel(id){
   $('#egoBtn').onclick=()=>{
     if(state.mode==='ego'){resetGlobal();renderPanel(id);return;}
     state.focus=id;
-    if(location.hash==='#graph/'+id){state.mode='ego';$('#mode').value='ego';syncMode();drawEgo(id);renderPanel(id);updateModeTabs();}
+    if(location.hash==='#graph/'+hid(id)){state.mode='ego';$('#mode').value='ego';syncMode();drawEgo(id);renderPanel(id);updateModeTabs();}
     else location.hash='#graph/'+hid(id);
   };
   $('#panelFeedback').onclick=()=>openFeedback(id);
@@ -852,13 +885,29 @@ function bindUI(){
     if(v==='nebula'){location.hash=state.focus?'#nebula/'+state.focus:'#nebula';return;}
     if(v==='tree'){location.hash=state.focus?'#tree/'+hid(state.focus):'#tree';return;}
     if(v==='network'){location.hash='#3d';return;}
-    const id=state.focus||(P.find(p=>p.name==='侯宝林')||{}).id||'';
-    location.hash='#graph/'+id;
+    const id=state.focus||(P.find(p=>p.name==='梅兰芳')||P[0]||{}).id||'';
+    location.hash='#graph/'+hid(id);
   });
   ['#depthDown','#depthUp'].forEach(s=>$(s).addEventListener('change',()=>{if(state.mode==='ego'&&state.focus)drawEgo(state.focus);}));
   const refilter=()=>{if(state.mode==='ego'&&state.focus)drawEgo(state.focus);else if(state.mode==='nebula')drawNebula();else if(state.mode==='tree')drawTree();else drawNetwork();};
-  ['#gmin','#gmax','#onlyDoc','#showPartner'].forEach(s=>$(s).addEventListener('change',refilter));
-  document.querySelectorAll('.types input[data-type]').forEach(i=>i.addEventListener('change',refilter));
+  ['#gmin','#gmax'].forEach(s=>$(s).addEventListener('change',refilter));
+  relationControls().forEach(i=>i.addEventListener('change',showRelationDraft));
+  $('#applyRelations').addEventListener('click',()=>{
+    const draft=readRelationDraft();
+    if(sameRelationFilters(draft,state.appliedRelations)) return;
+    state.appliedRelations=draft;
+    if(state.mode==='tree') drawTree(true);
+    else refilter();
+    showRelationDraft();
+  });
+  $('#resetRelationDraft').addEventListener('click',()=>{
+    const applied=state.appliedRelations;
+    for(const i of relationControls()){
+      i.checked=i.dataset.type?applied.types.has(i.dataset.type):i.id==='onlyDoc'?applied.onlyDoc:applied.partners;
+    }
+    showRelationDraft();
+  });
+  showRelationDraft();
   $('#fit').onclick=()=>{
     if(state.mode==='ego'){cy.fit(cy.nodes(),44);syncZoomSlider();return;}
     if(state.mode==='nebula'){cy.fit(undefined,40);syncZoomSlider();return;}
@@ -872,6 +921,7 @@ function bindUI(){
     zoomAtCenter(Math.max(cy.zoom(),1.15));
   };
   $('#resetLayout').onclick=()=>{
+    if(state.mode==='tree'){deselectPerson();fitWholeTree();return;}
     if(state.mode==='nebula'){cy.fit(undefined,40);syncZoomSlider();return;}
     resetGlobal();
   };
@@ -917,7 +967,7 @@ function bindUI(){
     else if(state.mode==='network') cy.fit(undefined,24);
     syncZoomSlider();
   }
-  document.addEventListener('xsmobile', ev=>{ state._vw=ev.detail&&ev.detail.w; state._vh=ev.detail&&ev.detail.h; refitAfterLayout(); });
+  document.addEventListener('xsmobile', ev=>{ applyGraphGestures(state.mode); state._vw=ev.detail&&ev.detail.w; state._vh=ev.detail&&ev.detail.h; refitAfterLayout(); });
   document.addEventListener('xsmobile-resize', ev=>{
     if(!cy) return;
     cy.resize();
@@ -925,6 +975,22 @@ function bindUI(){
     const dw=Math.abs((d.w||0)-(state._vw||0)), dh=Math.abs((d.h||0)-(state._vh||0));
     if(dw>40||dh>40){ state._vw=d.w; state._vh=d.h; refitAfterLayout(); }
   });
+  // The graph canvas can resize without a window resize (full-screen button, filter bar).
+  const stage=document.querySelector('.cy-stage');
+  if(window.ResizeObserver&&stage){
+    let oldW=stage.clientWidth,oldH=stage.clientHeight;
+    new ResizeObserver(()=>{
+      if($('#view-graph').hidden) return;
+      const w=stage.clientWidth,h=stage.clientHeight;
+      if(!w||!h||(oldW===w&&oldH===h)) return;
+      const p=cy.pan(), dx=oldW?(w-oldW)/2:0, dy=oldH?(h-oldH)/2:0;
+      oldW=w;oldH=h;
+      cy.resize();
+      cy.pan({x:p.x+dx,y:p.y+dy});
+      if(state.mode==='tree') applyTreeViewport(false);
+      syncZoomSlider();
+    }).observe(stage);
+  }
   syncZoomSlider();
   syncMode();
   updateLayoutButtons();
@@ -1114,12 +1180,11 @@ function assignPeriods(ids, depth, primary, kids){
 }
 const ERA_COLOR={qing:'#7f1d1d', roc:'#b45309', prc:'#1d4ed8'};
 function buildPedigree(compact){
-  const onlyDoc=$('#onlyDoc').checked;
+  // Relation filters affect lines, not stable pedigree generations.
   const mastersOf={};
   R.forEach(r=>{
     if(r.type!=='master_disciple') return;
     if(!byId[r.from]||!byId[r.to]||!byId[r.from]._linked||!byId[r.to]._linked) return;
-    if(onlyDoc&&r.confidence!=='documented') return;
     (mastersOf[r.to]=mastersOf[r.to]||[]).push(r);
   });
   const depth={}, primary={};
@@ -1142,7 +1207,7 @@ function buildPedigree(compact){
     primary[id]=bestM;
     return depth[id];
   }
-  const allow=visibleSet();
+  const allow=new Set(P.filter(p=>p._linked).map(p=>p.id));
   P.forEach(p=>{ if(allow.has(p.id)) depthOf(p.id, new Set()); });
   const kids={};
   Object.keys(primary).forEach(id=>{
@@ -1268,11 +1333,11 @@ function buildPedigree(compact){
   });
   return {pos, depth, primary, kids, roots, loose, maxD, treeN, known, est, ROW, period, mastersOf, box:boxOf};
 }
-function drawTree(){
+function drawTree(keepViewport=false){
+  const viewport=keepViewport?{zoom:cy.zoom(),pan:{...cy.pan()}}:null;
   layoutLock=true;
   if(layoutAnim){cancelAnimationFrame(layoutAnim); layoutAnim=0;}
   state.mode='tree';
-  if(cy) cy.autoungrabify(false);
   const compact=treeCompact();
   const model=buildPedigree(compact);
   const nodes=[], edges=[];
@@ -1291,29 +1356,32 @@ function drawTree(){
     const y=Math.min(...model.loose.map(id=>model.pos[id].y))-model.ROW*0.55;
     nodes.push({classes:'tree axis', grabbable:false, data:{id:'loosehead', label:'无师承，但有其他关系', w:220, h:28, eraColor:'#a8a29e'}, position:{x:110, y:y}});
   }
-  const seen=new Set();
+  const seen=new Set(), f=filters();
   R.forEach(r=>{
-    if(r.type!=='master_disciple') return;
     if(!model.pos[r.from]||!model.pos[r.to]) return;
-    if($('#onlyDoc').checked&&r.confidence!=='documented') return;
-    const extra=model.primary[r.to]!==r.from;
-    const id=(extra?'x':'t')+r.id;
+    const master=r.type==='master_disciple';
+    if(!relOk(r,f)) return;
+    const extra=master&&model.primary[r.to]!==r.from;
+    const id=(master?(extra?'x':'t'):'k')+r.id;
     if(seen.has(id)) return;
     seen.add(id);
-    edges.push({classes:extra?'extra':'', data:{id:id, source:r.from, target:r.to, type:'master_disciple', conf:r.confidence, detail:r.detail}});
+    const e=edgeData(r);e.classes=master?(extra?'extra':''):'tree-secondary';e.data.id=id;e.data.relationId=r.id;edges.push(e);
   });
   cy.maxZoom(3);
   cy.startBatch(); cy.elements().remove();
   cy.add(nodes); cy.add(edges);
   cy.nodes('.period-tag, .axis').ungrabify();
+  applyGraphGestures('tree');
   cy.endBatch();
   state.treeAnchor=model.roots[0]||'';
   const treePeople=model.treeN, looseN=model.loose.length;
   state.treeStats={generations:model.maxD+1, tree:treePeople, loose:looseN, known:model.known, est:model.est};
   $('#stat').textContent='家谱 '+state.treeStats.generations+' 层 · 树上 '+treePeople+' 人 · 无师承 '+looseN+' 人（全库 '+P.length+' 人）';
   layoutLock=false;
-  if(!(state.focus&&cy.getElementById(state.focus).length)) openTreeView();
+  if(viewport) cy.viewport(viewport);
+  else if(!(state.focus&&cy.getElementById(state.focus).length)) openTreeView();
   else applyTreeViewport(false);
+  if(state.focus&&cy.getElementById(state.focus).length) highlightTree(state.focus,false);
   paintRail();
   markInst();
   syncZoomSlider();
@@ -1348,8 +1416,9 @@ function treeContent(){
   const gutter=16;
   const W=cy.width(), H=cy.height();
   const availW=Math.max(80, W-pad*2-gutter);
-  const zMin=Math.max(0.02, Math.min(3, availW/bb.w));
-  return {bb, pad, gutter, W, H, zMin};
+  const widthZoom=Math.min(3,availW/bb.w);
+  const zMin=Math.max(Number.EPSILON,Math.min(widthZoom,Math.max(1,H-pad*2)/bb.h));
+  return {bb, pad, gutter, W, H, zMin, widthZoom};
 }
 function treePanLimits(m){
   const z=cy.zoom();
@@ -1367,10 +1436,10 @@ function paintTreeScroll(m, lim){
   if(!yBar||!xBar) return;
   const z=cy.zoom(), p=cy.pan();
   const maxY=lim.top-lim.bot;
-  const trackY=Math.max(40, m.H-8-64);
   if(maxY>2){
     yBar.classList.add('show');
-    const thumbH=Math.max(32, Math.min(trackY-4, trackY*m.H/Math.max(m.H, m.bb.h*z+m.pad*2)));
+    const trackY=Math.max(1,yBar.clientHeight);
+    const thumbH=Math.min(trackY-1,Math.max(phoneGraph()?44:32,trackY*m.H/Math.max(m.H,m.bb.h*z+m.pad*2)));
     const travel=Math.max(1, trackY-thumbH);
     const top=(maxY<=0?0:((lim.top-p.y)/maxY))*travel;
     const th=yBar.querySelector('.thumb');
@@ -1380,10 +1449,10 @@ function paintTreeScroll(m, lim){
     yBar.dataset.thumb=String(thumbH);
   }else yBar.classList.remove('show');
   const maxX=lim.left-lim.right;
-  const trackX=Math.max(40, m.W-8-26);
   if(maxX>2){
     xBar.classList.add('show');
-    const thumbW=Math.max(32, Math.min(trackX-4, trackX*m.W/Math.max(m.W, m.bb.w*z+m.pad*2)));
+    const trackX=Math.max(1,xBar.clientWidth);
+    const thumbW=Math.min(trackX-1,Math.max(phoneGraph()?44:32,trackX*m.W/Math.max(m.W,m.bb.w*z+m.pad*2)));
     const travel=Math.max(1, trackX-thumbW);
     const left=(maxX<=0?0:((lim.left-p.x)/maxX))*travel;
     const th=xBar.querySelector('.thumb');
@@ -1416,13 +1485,13 @@ function applyTreeViewport(fit){
   cy.maxZoom(3);
   if(fit){
     treeGuard++;
-    cy.zoom(m.zMin);
+    cy.zoom(m.widthZoom);
     const z=cy.zoom();
     cy.pan({x:m.pad-m.bb.x1*z, y:m.pad-m.bb.y1*z});
     treeGuard--;
   }else if(cy.zoom()<m.zMin-0.0001){
     treeGuard++;
-    cy.zoom(m.zMin);
+    cy.zoom(m.widthZoom);
     treeGuard--;
   }
   clampTreePan();
@@ -1452,6 +1521,11 @@ function syncPeriodTag(n){
 }
 function bindPointer(){
   const box=cy.container();
+  box.addEventListener('touchstart', ev=>{
+    if(!phoneGraph()||ev.touches.length!==1) return;
+    if(layoutAnim){cancelAnimationFrame(layoutAnim);layoutAnim=0;}
+    anchorId=null;cy.stop(true,false);
+  },{capture:true,passive:true});
   box.addEventListener('contextmenu', ev=>{
     if(!pointerMode()) return;
     ev.preventDefault();
@@ -1549,7 +1623,7 @@ function bindTreeScroll(){
   yBar.dataset.bound='1';
   let drag=null;
   function onBar(which, ev){
-    if(state.mode!=='tree') return;
+    if(state.mode!=='tree'||ev.isPrimary===false||ev.button!==0) return;
     ev.preventDefault();
     ev.stopPropagation();
     const bar=which==='y'?yBar:xBar;
@@ -1570,12 +1644,13 @@ function bindTreeScroll(){
       }
       return;
     }
-    drag={which, start:which==='y'?ev.clientY:ev.clientX, pan:which==='y'?p.y:p.x, track:+bar.dataset.track||1, thumb:+bar.dataset.thumb||32};
+    if(bar.setPointerCapture) bar.setPointerCapture(ev.pointerId);
+    drag={which, pointerId:ev.pointerId, start:which==='y'?ev.clientY:ev.clientX, pan:which==='y'?p.y:p.x, track:+bar.dataset.track||1, thumb:+bar.dataset.thumb||32};
   }
   yBar.addEventListener('pointerdown', ev=>onBar('y', ev));
   xBar.addEventListener('pointerdown', ev=>onBar('x', ev));
   window.addEventListener('pointermove', ev=>{
-    if(!drag) return;
+    if(!drag||drag.pointerId!==ev.pointerId||state.mode!=='tree') return;
     const m=treeContent();
     if(!m) return;
     const lim=treePanLimits(m);
@@ -1589,8 +1664,23 @@ function bindTreeScroll(){
       cy.pan({x:Math.min(lim.left, Math.max(lim.right, drag.pan-d/travel*range)), y:cy.pan().y});
     }
   });
-  window.addEventListener('pointerup', ()=>{drag=null;});
-  window.addEventListener('pointercancel', ()=>{drag=null;});
+  const endDrag=ev=>{if(drag?.pointerId===ev.pointerId) drag=null;};
+  window.addEventListener('pointerup',endDrag);
+  window.addEventListener('pointercancel',endDrag);
+  yBar.addEventListener('lostpointercapture',endDrag);
+  xBar.addEventListener('lostpointercapture',endDrag);
+}
+function fitWholeTree(){
+  if(state.mode!=='tree'||!cy) return;
+  if(layoutAnim){cancelAnimationFrame(layoutAnim);layoutAnim=0;}
+  anchorId=null;cy.stop(true,false);
+  const m=treeContent();if(!m)return;
+  cy.minZoom(m.zMin);cy.maxZoom(3);
+  treeGuard++;
+  cy.zoom(m.zMin);
+  cy.pan({x:m.pad-m.bb.x1*m.zMin,y:m.pad-m.bb.y1*m.zMin});
+  treeGuard--;
+  clampTreePan();syncZoomSlider();paintRail();
 }
 function openTreeView(){
   applyTreeViewport(true);
@@ -1614,8 +1704,9 @@ function route(){
   const section=(kind==='nebula'||kind==='network'||kind==='tree'||kind==='graph')?'graph':(['people','relations','about'].includes(kind)?kind:'graph');
   document.querySelectorAll('.view').forEach(s=>s.hidden=s.id!=='view-'+section);
   document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.dataset.view===section));
-  if(section!=='graph'){updateModeTabs();return;}
+  if(section!=='graph'){if(window.XSMobile) XSMobile.leaveGraph();updateModeTabs();return;}
   cy.resize();
+  state.focus=arg&&byId[arg]?arg:null;
   if(arg&&byId[arg]&&!byId[arg]._linked){
     state.mode='network';
     state.focus=arg;
@@ -1699,16 +1790,10 @@ function renderTables(){
   drawP();drawR();
 }
 function renderSources(){
-  const c={};
-  P.forEach(p=>{ if(p.xikao_url) c[p.xikao_url]=(c[p.xikao_url]||0)+1; (p.sources||[]).forEach(u=>c[u]=(c[u]||0)+1); });
-  R.forEach(r=>sourceUrls(r).forEach(u=>c[u]=(c[u]||0)+1));
-  const arr=Object.entries(c).sort((a,b)=>b[1]-a[1]);
-  const nice=u=>{try{const x=new URL(u);if(x.hostname.endsWith('wikipedia.org'))return '维基百科：'+decodeURIComponent(x.pathname.split('/').pop()).replace(/_/g,' ');return x.hostname+decodeURIComponent(x.pathname);}catch(e){return u;}};
   const sourced=R.filter(r=>sourceUrls(r).length).length;
   const dated=R.filter(r=>r.year!=null).length;
   const domains=new Set(R.flatMap(sourceUrls).map(u=>new URL(u).hostname));
   $('#evidenceCoverage').textContent='关系来源覆盖 '+sourced+' / '+R.length+'；记录年份 '+dated+' / '+R.length+'；来源域名 '+domains.size+' 个；补充核对记录 '+R.filter(r=>r._evidence).length+' 条。链接数量不等于独立证据数量。无补充核对记录的关系，核验日期未记录。';
-  $('#sourceList').innerHTML=arr.map(([u,n])=>'<li><a href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(nice(u))+'</a> <span class="muted">('+n+')</span></li>').join('');
   const hidden=P.filter(p=>!p._linked).length;
   const shownN=P.length-hidden;
   const stubs=P.filter(p=>p.stub).length;

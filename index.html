@@ -6,7 +6,7 @@
 <title>相声师承谱系 · 清末至今</title>
 <meta name="description" content="根据公开资料整理的中国相声演员师承谱系：正式师承、代拉/引保代、亲缘与姻缘关系。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23a8322d'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='18' fill='white' font-family='serif'%3E谱%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="assets/style.css?v=20261114-org-rosters">
+<link rel="stylesheet" href="assets/style.css?v=20261114-parity">
 <link rel="stylesheet" href="assets/mobile.css?v=20261114-mobile-graph">
 </head>
 <body>
@@ -16,7 +16,6 @@
     <a href="#tree" data-view="graph">图谱</a>
     <a href="#people" data-view="people">人物表</a>
     <a href="#relations" data-view="relations">关系表</a>
-    <a href="#organizations" data-view="organizations">团体名册</a>
     <a href="#about" data-view="about">说明</a>
     <a href="liyuan/">梨园</a>
   </nav>
@@ -71,7 +70,7 @@
       <button id="fit" type="button">适配视图</button>
     </div>
   </div>
-  <div class="organization-strip"><p id="organizationStatus" class="organization-status" role="status">历史任职不代表现属，未收录不代表没有团体。</p><a id="organizationRosterLink" href="#organizations">查看团体名册与出处</a></div>
+  <div class="organization-strip"><p id="organizationStatus" class="organization-status" role="status">历史任职不代表现属，未收录不代表没有团体。</p><a id="organizationRosterLink" href="#people/organizations">查看团体名册与出处</a></div>
   <div class="graph-wrap">
     <div class="cy-stage">
       <div id="cy" aria-label="师承关系图"></div>
@@ -89,7 +88,7 @@
     </div>
     <div id="panelDock">
       <button type="button" id="panelHandle" class="panel-handle">人物详情</button>
-      <aside id="panel"><div class="placeholder">点击图中人物或搜索，查看其师父、徒弟与亲属。勾选「亲属」并点「应用关系筛选」可查看亲属线；点击连线查看依据。聚焦默认展示上下各两代。</div></aside>
+      <aside id="panel"><div class="placeholder">点击图中人物或搜索，查看其师父、徒弟与亲属；再点同一人物取消选中。勾选「亲属」并点「应用关系筛选」可查看亲属线；点击连线查看依据。聚焦默认展示上下各两代。</div></aside>
     </div>
   </div>
   <div class="legend" id="graphLegend">
@@ -116,10 +115,21 @@
 </section>
 
 <section id="view-people" class="view" hidden>
-  <div class="tbl-tools"><input id="pq" type="search" placeholder="筛选人物（姓名/艺名/备注）"> <select id="pgen"><option value="">全部代数</option></select> <span id="pcount"></span></div>
+  <div class="tbl-tools"><input id="pq" type="search" placeholder="筛选人物（姓名/艺名/团体/备注）"> <select id="pgen"><option value="">全部代数</option></select> <span id="pcount"></span></div>
   <div class="tbl-wrap"><table id="ptable"><thead><tr>
     <th data-k="name">姓名</th><th data-k="generation">代</th><th data-k="zibei">字辈</th><th data-k="birth">生</th><th data-k="death">卒</th>
-    <th data-k="masters">师父</th><th data-k="ndis">徒弟数</th><th data-k="notes">备注</th><th>来源</th></tr></thead><tbody></tbody></table></div>
+    <th data-k="masters">师父</th><th data-k="ndis">徒弟数</th><th class="person-org">团体／组织关系</th><th data-k="notes">备注</th><th>来源</th></tr></thead><tbody></tbody></table></div>
+<details id="organizationRoster" class="organization-roster">
+  <summary>1949 年后团体名册</summary>
+  <p class="org-table-intro muted">区别团体任职、历史归属和演出记录。仅凭师承或同台不认定在团；「最新有据」指最新找到的公开归属，不代表实时在职名单。未建人物节点的名字也可在这里查询。</p>
+  <div class="tbl-tools">
+    <label>团体 <select id="orgTableGroup"><option value="">全部团体</option></select></label>
+    <label>记录类别 <select id="orgTableStatus"><option value="">全部记录</option><option value="current">最新公开归属</option><option value="historical">历史任职／归属</option><option value="former">已离团</option><option value="performance">演出记录</option><option value="uncertain">存疑</option></select></label>
+    <input id="orgTableQuery" type="search" placeholder="搜索姓名、队别或资料" aria-label="搜索名册">
+    <span id="orgTableCount" role="status"></span>
+  </div>
+  <div class="tbl-wrap"><table id="orgTable"><thead><tr><th>团体</th><th>姓名</th><th>记录类别</th><th>核对说明</th><th>出处</th></tr></thead><tbody></tbody></table></div>
+</details>
 </section>
 
 <section id="view-relations" class="view" hidden>
@@ -131,17 +141,7 @@
     <th data-k="type">类型</th><th data-k="fromName">从（师/长）</th><th data-k="toName">到（徒/亲）</th><th data-k="detail">说明</th><th data-k="confidence">可信度</th><th>来源</th></tr></thead><tbody></tbody></table></div>
 </section>
 
-<section id="view-organizations" class="view" hidden>
-  <h2 class="org-table-title">1949 年后团体名册</h2>
-  <p class="org-table-intro muted">区别团体任职、历史归属和演出记录。仅凭师承或同台不认定在团；「最新有据」指最新找到的公开归属，不代表实时在职名单。未建人物节点的名字也可在这里查询。</p>
-  <div class="tbl-tools">
-    <label>团体 <select id="orgTableGroup"><option value="">全部团体</option></select></label>
-    <label>记录类别 <select id="orgTableStatus"><option value="">全部记录</option><option value="current">最新公开归属</option><option value="historical">历史任职／归属</option><option value="former">已离团</option><option value="performance">演出记录</option><option value="uncertain">存疑</option></select></label>
-    <input id="orgTableQuery" type="search" placeholder="搜索姓名、队别或资料" aria-label="搜索名册">
-    <span id="orgTableCount" role="status"></span>
-  </div>
-  <div class="tbl-wrap"><table id="orgTable"><thead><tr><th>团体</th><th>姓名</th><th>记录类别</th><th>核对说明</th><th>出处</th></tr></thead><tbody></tbody></table></div>
-</section>
+
 
 <section id="view-about" class="view" hidden>
   <article class="about">
@@ -162,7 +162,7 @@
     <h3>可信度</h3>
     <p><b>确定</b>：至少一个公开来源明确列出，图中用该类型自己的线型。<b>存疑</b>：来源本身标注存疑，不同来源说法冲突，师徒关系后来被解除，或只有网络转载、自媒体之类的弱来源。图中一律改成同色更淡的疏圆点；这种疏圆点只表示存疑，确定关系不用。可用「只显示确定」暂时隐去存疑关系。相声门户的师承本来就常有“改换门庭”、“代拉”、“清门”、“辈分自降”等复杂情况，请把本站当作索引，不要当作定论。</p>
     <h3>使用提示</h3>
-    <p>在图谱选择团体可突出已有的人物节点；完整的已收录记录请看「团体名册」。历史归属与参演不等于现任；出处见人物表、关系表和团体名册。</p>
+    <p>在图谱选择团体可突出已有的人物节点；团体归属与出处在「人物表」相应栏目，完整名册也可在人物表展开。历史归属与参演不等于现任。</p>
     <p>资料可能有遗漏或异说，可点击「提交修正」。<span id="hiddenAbout"></span></p>
     <p class="muted" id="buildinfo"></p>
   </article>
@@ -187,7 +187,7 @@
 <script src="vendor/cytoscape.min.js"></script>
 <script src="assets/mobile.js?v=20261114-mobile-graph"></script>
 <script src="assets/line-style.js"></script>
-<script src="assets/app.js?v=20261114-mobile-graph"></script>
+<script src="assets/app.js?v=20261114-parity"></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "337a81f2145c44d1aca19c5d9b5fbe1d"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

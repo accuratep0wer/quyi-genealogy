@@ -2,13 +2,13 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>梨园师承谱系 · 京剧为主</title>
 <meta name="description" content="根据梨园百年琐记整理的京剧为主师承谱系：师徒、亲属、搭档，以及科班与院校。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%237f1d1d'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='18' fill='white' font-family='serif'%3E梨%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/style.css?v=20261114-evidence">
-<link rel="stylesheet" href="../assets/mobile.css?v=20261114-evidence">
-<link rel="stylesheet" href="assets/liyuan.css?v=20261114-evidence">
+<link rel="stylesheet" href="../assets/style.css?v=20261114-parity">
+<link rel="stylesheet" href="../assets/mobile.css?v=20261114-parity">
+<link rel="stylesheet" href="assets/liyuan.css?v=20261114-parity">
 </head>
 <body>
 <header>
@@ -17,7 +17,7 @@
     <a href="#tree" data-view="graph">图谱</a>
     <a href="#people" data-view="people">人物表</a>
     <a href="#relations" data-view="relations">关系表</a>
-    <a href="#about" data-view="about">说明与来源</a>
+    <a href="#about" data-view="about">说明</a>
     <a href="../">相声</a>
   </nav>
   <button type="button" id="feedbackBtn" class="feedback-btn" title="需要 GitHub 账号。将打开预填好的议题；本站不接收邮件。">提交修正</button>
@@ -28,7 +28,7 @@
   <div class="mode-tabs" role="tablist">
     <a href="#tree" data-mode="tree" title="自上而下的家谱，一代一代往下排">谱系图</a>
     <a href="#nebula" data-mode="nebula" title="星团式布局">2D星云图</a>
-    <a href="#3d" data-mode="network" title="全网络。地址 #graph 仍打开这一张">3D星云图</a>
+    <a href="#3d" data-mode="network" title="全网络。地址 #graph 仍打开这一张">全景星云图</a>
     <a href="#graph" data-mode="ego" title="从一个人向外看师承">聚焦</a>
   </div>
   <div class="toolbar">
@@ -41,7 +41,7 @@
         <select id="mode">
           <option value="tree">谱系图（家谱）</option>
           <option value="nebula">2D星云图</option>
-          <option value="network">3D星云图</option>
+          <option value="network">全景星云图</option>
           <option value="ego">聚焦所选人物</option>
         </select>
       </label>
@@ -62,6 +62,7 @@
       <label class="t-mar"><input type="checkbox" data-type="marriage" checked> 姻缘</label>
       <label class="t-partner"><input type="checkbox" id="showPartner" checked> 搭档</label>
       <label class="t-dis"><input type="checkbox" id="onlyDoc"> 只显示资料有载</label>
+      <span class="relation-filter-actions"><button type="button" id="applyRelations" disabled>应用关系筛选</button><button type="button" id="resetRelationDraft" disabled>撤销未应用修改</button><small id="relationFilterStatus" role="status">已应用</small></span>
       <label><input type="checkbox" id="labels"> 显示全部姓名</label>
       <button id="expand" type="button" title="放大到能看清姓名。其他人仍留在图上，缩小或拖动都能看到。">展开此区域</button>
       <button id="resetLayout" type="button" title="缩小，回到完整全局布局">恢复全局布局</button>
@@ -71,6 +72,10 @@
   <div class="graph-wrap">
     <div class="cy-stage">
       <div id="cy" aria-label="梨园师承关系图"></div>
+      <div class="phone-graph-actions" role="group" aria-label="手机图谱工具">
+        <button type="button" id="graphWideToggle" aria-pressed="false">全屏看图</button>
+        <button type="button" id="graphLegendToggle" aria-controls="graphLegend" aria-expanded="false">图例</button>
+      </div>
       <svg id="hull" aria-hidden="true"></svg>
       <div class="zoombar" role="group" aria-label="缩放">
         <button type="button" id="zoomOut" aria-label="缩小">−</button>
@@ -85,7 +90,7 @@
       <aside id="panel"><div class="placeholder">点击图中人物或搜索，查看其师父、徒弟、科班与来源。</div></aside>
     </div>
   </div>
-  <div class="legend">
+  <div class="legend" id="graphLegend">
     <span><i class="ln" data-line="md"></i>师徒·资料有载</span>
     <span><i class="ln" data-line="md" data-dis="1"></i>师徒·存疑</span>
     <span><i class="ln" data-line="ganqin"></i>干亲/义亲</span>
@@ -127,25 +132,12 @@
   <article class="about">
     <h2>说明</h2>
     <p>本页整理京剧为主的梨园师承，供个人、非商业的学习研究使用。资料来源：<a href="https://history.xikao.com/" target="_blank" rel="noopener">梨园百年琐记（history.xikao.com）</a>。每个人物侧栏都链回戏考原条目。正文只摘录条目开头的一小段，版权归原作者及戏考所有，请勿作商业用途或整篇转载。</p>
-    <h3>图上有什么</h3>
-    <ul>
-      <li><b>师徒</b>只收录戏考师承谱图和正文里写明的拜师、学艺、私淑。同科班、同一科（如盛字科）或科班教师身份<b>不会</b>被当成师徒。</li>
-      <li><b>搭档</b>包括长期合作、挎刀配戏、琴师与鼓师。<b>亲属</b>和<b>姻缘</b>来自族谱图与正文中的称谓。</li>
-      <li><b>干亲/义亲</b>是橙色成对短划，箭头由义父或义母指向义子、义女。<b>结拜</b>是靛蓝色长划加点，没有箭头。<b>过继/收养</b>是褐色点点划。<b>姻缘</b>是紫色双线。</li>
-      <li><b>同台 / 受教</b>默认关掉。同台不等于固定搭档，受教不等于拜师；打开后图会密很多。</li>
-      <li>资料有载的关系用各类型自己的线型。存疑一律改成同色更淡的疏圆点，这种点线不用在资料有载的关系上。一条关系都没有的人不画出。没有独立戏考条目、只出现在别人名单里的人画得更淡。</li>
-      <li>菱形节点是和高置信度对上了相声谱系的人，侧栏可以一键跳到相声图谱里的同一人。</li>
-    </ul>
-    <h3>科班与院校</h3>
-    <p>工具栏可以选择富连成、中华戏曲专科学校等机构，再选一科（喜、连、富、盛、世、元、韵……）。成员会高亮；在 2D星云图上，还会用一块半透明的范围把他们圈起来。谱系图按生、旦、净、末、丑上色。</p>
-    <h3>谱系图</h3>
-    <p>家谱自上而下。最早的一辈在上，然后一代一代往下。深度按师徒关系计算，不另造师父。没有师承、但有亲属或搭档的人放在下方「无师承，但有其他关系」。</p>
+    <p>点击人物查看师承与亲属，再次点击可取消选中。关系选项先暂存，点击「应用关系筛选」后统一更新；「恢复全图布局」在谱系图内缩小查看全部人物，不切换视图。</p>
+    <p>科班/院校与科别可筛选高亮成员，同科班不等于师徒。谱系图按行当上色；跨相声的人物可在侧栏跳转。手机支持单指平移、双指缩放、全屏看图及折叠图例。</p>
     <p class="muted" id="buildinfo"></p>
     <h3>证据与不确定性</h3>
     <p>“资料有载”对应原始数据的 documented 标记，不等于独立核验结论。关系卡可展开查看正文或谱图来源、关系年份及备注。缺少年份不代表关系不存在；“私淑”“受教”也不应直接等同正式拜师。同门是共同师父关系的推导。</p>
     <p id="evidenceCoverage" class="notice"></p>
-    <h3 id="srcs">来源列表</h3>
-    <ol id="sourceList"></ol>
     <p id="hiddenAbout" hidden></p>
   </article>
 </section>
@@ -167,9 +159,9 @@
   </div>
 </dialog>
 <script src="../vendor/cytoscape.min.js"></script>
-<script src="../assets/mobile.js?v=20261114-evidence"></script>
+<script src="../assets/mobile.js?v=20261114-parity"></script>
 <script src="../assets/line-style.js"></script>
-<script src="assets/app.js?v=20261114-evidence"></script>
+<script src="assets/app.js?v=20261114-parity"></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "337a81f2145c44d1aca19c5d9b5fbe1d"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
