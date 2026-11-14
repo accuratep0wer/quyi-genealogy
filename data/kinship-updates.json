@@ -1,0 +1,1048 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-11-14",
+  "scope": "分批核验相声人物公开近亲。报道日期不是亲属关系起始时间；不从同姓、艺名或师承推出血缘。",
+  "people": [
+    {
+      "id": "p2082",
+      "name": "侯耀中",
+      "aliases": [],
+      "generation": null,
+      "gen_source": null,
+      "birth": null,
+      "death": null,
+      "wiki": null,
+      "wiki_url": null,
+      "role": "relative",
+      "notes": [
+        "侯宝林长子、侯震之父。本图收录其亲属关系，不推定相声师承。"
+      ],
+      "sources": [
+        "https://ent.sina.com.cn/s/m/2009-07-24/12482623579.shtml",
+        "https://ent.sina.com.cn/j/2008-04-03/14451973590.shtml"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "r02490",
+      "type": "kin",
+      "from": "p0734",
+      "to": "p1254",
+      "detail": "侯耀华是侯震的二叔；侯震是侯耀华的侄子",
+      "confidence": "documented",
+      "sources": [
+        "https://www.chinanews.com/sh/news/2009/07-23/1787066.shtml",
+        "https://ent.sina.com.cn/s/m/2009-07-24/12482623579.shtml"
+      ],
+      "notes": []
+    },
+    {
+      "id": "r02491",
+      "type": "kin",
+      "from": "p0415",
+      "to": "p1254",
+      "detail": "侯耀文是侯震的三叔；侯震是侯耀文的侄子",
+      "confidence": "documented",
+      "sources": [
+        "https://www.chinanews.com/sh/news/2009/07-23/1787066.shtml",
+        "https://ent.sina.com.cn/s/m/2009-07-24/12482623579.shtml"
+      ],
+      "notes": []
+    },
+    {
+      "id": "r02492",
+      "type": "kin",
+      "from": "p0226",
+      "to": "p2082",
+      "detail": "侯耀中是侯宝林的长子",
+      "confidence": "documented",
+      "sources": [
+        "https://ent.sina.com.cn/s/m/2009-07-24/12482623579.shtml",
+        "https://ent.sina.com.cn/j/2008-04-03/14451973590.shtml"
+      ],
+      "notes": []
+    },
+    {
+      "id": "r02493",
+      "type": "kin",
+      "from": "p2082",
+      "to": "p1254",
+      "detail": "侯耀中是侯震的父亲",
+      "confidence": "documented",
+      "sources": [
+        "https://ent.sina.com.cn/s/m/2009-07-24/12482623579.shtml",
+        "https://ent.sina.com.cn/j/2008-04-03/14451973590.shtml"
+      ],
+      "notes": []
+    },
+    {
+      "id": "r02494",
+      "type": "kin",
+      "from": "p2082",
+      "to": "p0734",
+      "detail": "侯耀中是侯耀华的哥哥",
+      "confidence": "documented",
+      "sources": [
+        "https://ent.sina.com.cn/s/m/2009-07-24/12482623579.shtml",
+        "https://news.sina.cn/sa/2010-06-23/detail-ikmyaawa2983504.d.html"
+      ],
+      "notes": []
+    },
+    {
+      "id": "r02495",
+      "type": "kin",
+      "from": "p2082",
+      "to": "p0415",
+      "detail": "侯耀中是侯耀文的哥哥",
+      "confidence": "documented",
+      "sources": [
+        "https://ent.sina.com.cn/s/m/2009-07-24/12482623579.shtml",
+        "https://news.sina.cn/sa/2010-06-23/detail-ikmyaawa2983504.d.html"
+      ],
+      "notes": []
+    },
+    {
+      "id": "r02496",
+      "type": "kin",
+      "from": "p0734",
+      "to": "p1063",
+      "detail": "侯耀华是侯军的父亲",
+      "confidence": "documented",
+      "sources": [
+        "https://ent.sina.com.cn/j/2008-04-03/14451973590.shtml",
+        "https://www.cflac.org.cn/zgysb/dz/ysb/page_4/201812/P020181203340000608159.pdf"
+      ],
+      "notes": []
+    },
+    {
+      "id": "r02497",
+      "type": "kin",
+      "from": "p0226",
+      "to": "p1063",
+      "detail": "侯宝林是侯军的祖父",
+      "confidence": "documented",
+      "sources": [
+        "https://ent.sina.com.cn/j/2008-04-03/14451973590.shtml",
+        "https://www.cflac.org.cn/zgysb/dz/ysb/page_4/201812/P020181203340000608159.pdf"
+      ],
+      "notes": []
+    },
+    {
+      "id": "r02498",
+      "type": "kin",
+      "from": "p0415",
+      "to": "p1063",
+      "detail": "侯耀文是侯军的叔叔",
+      "confidence": "documented",
+      "sources": [
+        "https://www.cflac.org.cn/zgysb/dz/ysb/page_4/201812/P020181203340000608159.pdf",
+        "https://news.sina.cn/sa/2010-06-23/detail-ikmyaawa2983504.d.html"
+      ],
+      "notes": [
+        "由侯军是侯耀华之子、侯耀文是侯耀华弟弟两项公开记载推得。"
+      ]
+    },
+    {
+      "id": "r02499",
+      "type": "kin",
+      "from": "p2082",
+      "to": "p1063",
+      "detail": "侯耀中是侯军的伯父",
+      "confidence": "documented",
+      "sources": [
+        "https://ent.sina.com.cn/s/m/2009-07-24/12482623579.shtml",
+        "https://www.cflac.org.cn/zgysb/dz/ysb/page_4/201812/P020181203340000608159.pdf"
+      ],
+      "notes": [
+        "由侯军是侯耀华之子、侯耀中是侯耀华哥哥两项公开记载推得。"
+      ]
+    },
+    {
+      "id": "r02500",
+      "type": "kin",
+      "from": "p1254",
+      "to": "p1063",
+      "detail": "侯震与侯军是堂兄弟",
+      "confidence": "documented",
+      "sources": [
+        "https://ent.sina.com.cn/s/m/2009-07-24/12482623579.shtml",
+        "https://www.cflac.org.cn/zgysb/dz/ysb/page_4/201812/P020181203340000608159.pdf"
+      ],
+      "notes": [
+        "由两人的父亲是兄弟推得，未标注两人的长幼。"
+      ]
+    },
+    {
+      "id": "r02501",
+      "type": "kin",
+      "from": "p0228",
+      "to": "p0556",
+      "detail": "马志明是马六甲的父亲",
+      "confidence": "documented",
+      "sources": [
+        "https://epaper.tianjinwe.com/tjrb/html/2026-01/20/content_143094_3057905.htm"
+      ],
+      "notes": []
+    },
+    {
+      "id": "r02502",
+      "type": "kin",
+      "from": "p0124",
+      "to": "p0292",
+      "detail": "马敬伯是马桂元的儿子",
+      "confidence": "documented",
+      "sources": [
+        "https://www.people.com.cn/24hour/n/2013/0227/c25408-20610051.html"
+      ],
+      "notes": []
+    },
+    {
+      "id": "r02503",
+      "type": "kin",
+      "from": "p0103",
+      "to": "p0556",
+      "detail": "马三立是马六甲的祖父",
+      "confidence": "documented",
+      "sources": [
+        "https://epaper.tianjinwe.com/tjrb/html/2026-01/20/content_143094_3057905.htm"
+      ],
+      "notes": []
+    },
+    {
+      "id": "r02504",
+      "type": "kin",
+      "from": "p0189",
+      "to": "p0289",
+      "detail": "常宝霖是常宝堃的弟弟",
+      "confidence": "documented",
+      "sources": [
+        "https://xinwen.bjd.com.cn/content/s5f97b6bee4b05e21b533fa94.html",
+        "https://www.jfdaily.com/wx/detail.do?id=119257"
+      ],
+      "notes": []
+    },
+    {
+      "id": "r02505",
+      "type": "kin",
+      "from": "p0189",
+      "to": "p0351",
+      "detail": "常宝霆是常宝堃的弟弟",
+      "confidence": "documented",
+      "sources": [
+        "https://xinwen.bjd.com.cn/content/s5f97b6bee4b05e21b533fa94.html",
+        "https://www.ihchina.cn/Article/Index/detail?id=2384",
+        "https://www.chinanews.com/yl/2015/01-05/6938068.shtml"
+      ],
+      "notes": []
+    },
+    {
+      "id": "r02506",
+      "type": "kin",
+      "from": "p0189",
+      "to": "p0276",
+      "detail": "常宝华是常宝堃的弟弟",
+      "confidence": "documented",
+      "sources": [
+        "https://xinwen.bjd.com.cn/content/s5f97b6bee4b05e21b533fa94.html",
+        "https://www.jfdaily.com/wx/detail.do?id=119257"
+      ],
+      "notes": []
+    },
+    {
+      "id": "r02507",
+      "type": "kin",
+      "from": "p0351",
+      "to": "p0276",
+      "detail": "常宝华是常宝霆的弟弟",
+      "confidence": "documented",
+      "sources": [
+        "https://www.chinanews.com/yl/2015/01-05/6938068.shtml",
+        "https://xinwen.bjd.com.cn/content/s5f97b6bee4b05e21b533fa94.html"
+      ],
+      "notes": []
+    },
+    {
+      "id": "r02508",
+      "type": "kin",
+      "from": "p0289",
+      "to": "p0400",
+      "detail": "常宝霖是常贵田的二叔",
+      "confidence": "documented",
+      "sources": [
+        "https://www.jfdaily.com/wx/detail.do?id=119257"
+      ],
+      "notes": []
+    },
+    {
+      "id": "r02509",
+      "type": "kin",
+      "from": "p0351",
+      "to": "p0400",
+      "detail": "常宝霆是常贵田的三叔",
+      "confidence": "documented",
+      "sources": [
+        "https://www.jfdaily.com/wx/detail.do?id=119257"
+      ],
+      "notes": []
+    },
+    {
+      "id": "r02510",
+      "type": "kin",
+      "from": "p1717",
+      "to": "p1254",
+      "detail": "侯耀茹是侯震的姑姑",
+      "confidence": "documented",
+      "sources": [
+        "https://ent.sina.com.cn/s/m/2009-07-24/16372623968.shtml",
+        "https://ent.sina.com.cn/s/m/2009-07-24/12482623579.shtml"
+      ],
+      "notes": [
+        "按已公开的父女、父子关系推得，不推断母系或长幼。"
+      ]
+    },
+    {
+      "id": "r02511",
+      "type": "kin",
+      "from": "p1717",
+      "to": "p1063",
+      "detail": "侯耀茹是侯军的姑姑",
+      "confidence": "documented",
+      "sources": [
+        "https://ent.sina.com.cn/s/m/2009-07-24/16372623968.shtml",
+        "https://www.cflac.org.cn/zgysb/dz/ysb/page_4/201812/P020181203340000608159.pdf"
+      ],
+      "notes": [
+        "按已公开的父女、父子关系推得，不推断母系或长幼。"
+      ]
+    },
+    {
+      "id": "r02512",
+      "type": "kin",
+      "from": "p1718",
+      "to": "p1254",
+      "detail": "侯錱是侯震的姑姑",
+      "confidence": "documented",
+      "sources": [
+        "https://ent.sina.com.cn/s/m/2009-07-24/16372623968.shtml",
+        "https://ent.sina.com.cn/s/m/2009-07-24/12482623579.shtml"
+      ],
+      "notes": [
+        "按已公开的父女、父子关系推得，不推断母系或长幼。"
+      ]
+    },
+    {
+      "id": "r02513",
+      "type": "kin",
+      "from": "p1718",
+      "to": "p1063",
+      "detail": "侯錱是侯军的姑姑",
+      "confidence": "documented",
+      "sources": [
+        "https://ent.sina.com.cn/s/m/2009-07-24/16372623968.shtml",
+        "https://www.cflac.org.cn/zgysb/dz/ysb/page_4/201812/P020181203340000608159.pdf"
+      ],
+      "notes": [
+        "按已公开的父女、父子关系推得，不推断母系或长幼。"
+      ]
+    }
+  ],
+  "updates": {
+    "r01719": {
+      "sources": [
+        "https://news.sina.cn/sa/2010-06-23/detail-ikmyaawa2983504.d.html",
+        "https://zh.wikipedia.org/wiki/%E4%BE%AF%E5%AE%9D%E6%9E%97"
+      ]
+    },
+    "r01720": {
+      "sources": [
+        "https://news.sina.cn/sa/2010-06-23/detail-ikmyaawa2983504.d.html",
+        "https://zh.wikipedia.org/wiki/%E4%BE%AF%E5%AE%9D%E6%9E%97",
+        "https://zh.wikipedia.org/wiki/%E4%BE%AF%E8%80%80%E6%96%87"
+      ]
+    },
+    "r01765": {
+      "sources": [
+        "https://news.sina.cn/sa/2010-06-23/detail-ikmyaawa2983504.d.html",
+        "https://ent.sina.com.cn/s/m/2009-07-24/12482623579.shtml",
+        "https://zh.wikipedia.org/wiki/%E4%BE%AF%E8%80%80%E5%8D%8E"
+      ]
+    },
+    "r01766": {
+      "sources": [
+        "https://ent.sina.com.cn/s/m/2009-07-24/12482623579.shtml",
+        "https://ent.sina.com.cn/j/2008-04-03/14451973590.shtml",
+        "https://zh.wikipedia.org/wiki/%E4%BE%AF%E9%9C%87"
+      ]
+    }
+  },
+  "layout": {
+    "network": {
+      "p2082": [
+        2412.7,
+        1293.6
+      ]
+    },
+    "spread": {
+      "p2082": [
+        1755.8,
+        1304.7
+      ]
+    },
+    "nebula": {
+      "p2082": [
+        -1188.9,
+        -4081.2,
+        42
+      ]
+    }
+  },
+  "evidence": {
+    "r02490": {
+      "label": "侯耀华 → 侯震",
+      "reviewStatus": "documented",
+      "reviewNote": "所列资料明确记载这项亲属关系。",
+      "evidence": [
+        {
+          "url": "https://www.chinanews.com/sh/news/2009/07-23/1787066.shtml",
+          "title": "侯震接受新京报采访",
+          "publisher": "新京报／中新网",
+          "published": "2009-07-23",
+          "accessed": "2026-11-14",
+          "claim": "侯震本人明确称侯耀华为二叔、侯耀文为三叔。",
+          "kind": "当事人采访"
+        },
+        {
+          "url": "https://ent.sina.com.cn/s/m/2009-07-24/12482623579.shtml",
+          "title": "侯家长孙侯震接受采访",
+          "publisher": "时代商报／新浪",
+          "published": "2009-07-24",
+          "accessed": "2026-11-14",
+          "claim": "记者明确记载侯震是侯宝林长孙、侯耀中之子，侯耀中是侯耀华和侯耀文的大哥。",
+          "kind": "当事人采访"
+        }
+      ]
+    },
+    "r02491": {
+      "label": "侯耀文 → 侯震",
+      "reviewStatus": "documented",
+      "reviewNote": "所列资料明确记载这项亲属关系。",
+      "evidence": [
+        {
+          "url": "https://www.chinanews.com/sh/news/2009/07-23/1787066.shtml",
+          "title": "侯震接受新京报采访",
+          "publisher": "新京报／中新网",
+          "published": "2009-07-23",
+          "accessed": "2026-11-14",
+          "claim": "侯震本人明确称侯耀华为二叔、侯耀文为三叔。",
+          "kind": "当事人采访"
+        },
+        {
+          "url": "https://ent.sina.com.cn/s/m/2009-07-24/12482623579.shtml",
+          "title": "侯家长孙侯震接受采访",
+          "publisher": "时代商报／新浪",
+          "published": "2009-07-24",
+          "accessed": "2026-11-14",
+          "claim": "记者明确记载侯震是侯宝林长孙、侯耀中之子，侯耀中是侯耀华和侯耀文的大哥。",
+          "kind": "当事人采访"
+        }
+      ]
+    },
+    "r02492": {
+      "label": "侯宝林 → 侯耀中",
+      "reviewStatus": "documented",
+      "reviewNote": "所列资料明确记载这项亲属关系。",
+      "evidence": [
+        {
+          "url": "https://ent.sina.com.cn/s/m/2009-07-24/12482623579.shtml",
+          "title": "侯家长孙侯震接受采访",
+          "publisher": "时代商报／新浪",
+          "published": "2009-07-24",
+          "accessed": "2026-11-14",
+          "claim": "记者明确记载侯震是侯宝林长孙、侯耀中之子，侯耀中是侯耀华和侯耀文的大哥。",
+          "kind": "当事人采访"
+        },
+        {
+          "url": "https://ent.sina.com.cn/j/2008-04-03/14451973590.shtml",
+          "title": "纪念侯宝林专场的主办方介绍",
+          "publisher": "新浪娱乐",
+          "published": "2008-04-03",
+          "accessed": "2026-11-14",
+          "claim": "主办方介绍侯震为侯宝林长子侯耀中的儿子，侯军为侯耀华的儿子。",
+          "kind": "主办方资料"
+        }
+      ]
+    },
+    "r02493": {
+      "label": "侯耀中 → 侯震",
+      "reviewStatus": "documented",
+      "reviewNote": "所列资料明确记载这项亲属关系。",
+      "evidence": [
+        {
+          "url": "https://ent.sina.com.cn/s/m/2009-07-24/12482623579.shtml",
+          "title": "侯家长孙侯震接受采访",
+          "publisher": "时代商报／新浪",
+          "published": "2009-07-24",
+          "accessed": "2026-11-14",
+          "claim": "记者明确记载侯震是侯宝林长孙、侯耀中之子，侯耀中是侯耀华和侯耀文的大哥。",
+          "kind": "当事人采访"
+        },
+        {
+          "url": "https://ent.sina.com.cn/j/2008-04-03/14451973590.shtml",
+          "title": "纪念侯宝林专场的主办方介绍",
+          "publisher": "新浪娱乐",
+          "published": "2008-04-03",
+          "accessed": "2026-11-14",
+          "claim": "主办方介绍侯震为侯宝林长子侯耀中的儿子，侯军为侯耀华的儿子。",
+          "kind": "主办方资料"
+        }
+      ]
+    },
+    "r02494": {
+      "label": "侯耀中 → 侯耀华",
+      "reviewStatus": "documented",
+      "reviewNote": "所列资料明确记载这项亲属关系。",
+      "evidence": [
+        {
+          "url": "https://ent.sina.com.cn/s/m/2009-07-24/12482623579.shtml",
+          "title": "侯家长孙侯震接受采访",
+          "publisher": "时代商报／新浪",
+          "published": "2009-07-24",
+          "accessed": "2026-11-14",
+          "claim": "记者明确记载侯震是侯宝林长孙、侯耀中之子，侯耀中是侯耀华和侯耀文的大哥。",
+          "kind": "当事人采访"
+        },
+        {
+          "url": "https://news.sina.cn/sa/2010-06-23/detail-ikmyaawa2983504.d.html",
+          "title": "侯耀华回忆家人与演出",
+          "publisher": "媒体当事人专访／新浪",
+          "published": "2010-06-23",
+          "accessed": "2026-11-14",
+          "claim": "侯耀华在采访中明确称侯宝林是其父、侯耀文是其弟。",
+          "kind": "当事人采访"
+        }
+      ]
+    },
+    "r02495": {
+      "label": "侯耀中 → 侯耀文",
+      "reviewStatus": "documented",
+      "reviewNote": "所列资料明确记载这项亲属关系。",
+      "evidence": [
+        {
+          "url": "https://ent.sina.com.cn/s/m/2009-07-24/12482623579.shtml",
+          "title": "侯家长孙侯震接受采访",
+          "publisher": "时代商报／新浪",
+          "published": "2009-07-24",
+          "accessed": "2026-11-14",
+          "claim": "记者明确记载侯震是侯宝林长孙、侯耀中之子，侯耀中是侯耀华和侯耀文的大哥。",
+          "kind": "当事人采访"
+        },
+        {
+          "url": "https://news.sina.cn/sa/2010-06-23/detail-ikmyaawa2983504.d.html",
+          "title": "侯耀华回忆家人与演出",
+          "publisher": "媒体当事人专访／新浪",
+          "published": "2010-06-23",
+          "accessed": "2026-11-14",
+          "claim": "侯耀华在采访中明确称侯宝林是其父、侯耀文是其弟。",
+          "kind": "当事人采访"
+        }
+      ]
+    },
+    "r02496": {
+      "label": "侯耀华 → 侯军",
+      "reviewStatus": "documented",
+      "reviewNote": "所列资料明确记载这项亲属关系。",
+      "evidence": [
+        {
+          "url": "https://ent.sina.com.cn/j/2008-04-03/14451973590.shtml",
+          "title": "纪念侯宝林专场的主办方介绍",
+          "publisher": "新浪娱乐",
+          "published": "2008-04-03",
+          "accessed": "2026-11-14",
+          "claim": "主办方介绍侯震为侯宝林长子侯耀中的儿子，侯军为侯耀华的儿子。",
+          "kind": "主办方资料"
+        },
+        {
+          "url": "https://www.cflac.org.cn/zgysb/dz/ysb/page_4/201812/P020181203340000608159.pdf",
+          "title": "侯军在师胜杰纪念活动上回忆学艺",
+          "publisher": "中国艺术报／中国文联",
+          "published": "2018-12-03",
+          "accessed": "2026-11-14",
+          "claim": "报道明确记载侯军是侯耀华的儿子、侯宝林的孙子。",
+          "kind": "现场报道"
+        }
+      ]
+    },
+    "r02497": {
+      "label": "侯宝林 → 侯军",
+      "reviewStatus": "documented",
+      "reviewNote": "所列资料明确记载这项亲属关系。",
+      "evidence": [
+        {
+          "url": "https://ent.sina.com.cn/j/2008-04-03/14451973590.shtml",
+          "title": "纪念侯宝林专场的主办方介绍",
+          "publisher": "新浪娱乐",
+          "published": "2008-04-03",
+          "accessed": "2026-11-14",
+          "claim": "主办方介绍侯震为侯宝林长子侯耀中的儿子，侯军为侯耀华的儿子。",
+          "kind": "主办方资料"
+        },
+        {
+          "url": "https://www.cflac.org.cn/zgysb/dz/ysb/page_4/201812/P020181203340000608159.pdf",
+          "title": "侯军在师胜杰纪念活动上回忆学艺",
+          "publisher": "中国艺术报／中国文联",
+          "published": "2018-12-03",
+          "accessed": "2026-11-14",
+          "claim": "报道明确记载侯军是侯耀华的儿子、侯宝林的孙子。",
+          "kind": "现场报道"
+        }
+      ]
+    },
+    "r02498": {
+      "label": "侯耀文 → 侯军",
+      "reviewStatus": "documented",
+      "reviewNote": "由侯军是侯耀华之子、侯耀文是侯耀华弟弟两项公开记载推得。",
+      "evidence": [
+        {
+          "url": "https://www.cflac.org.cn/zgysb/dz/ysb/page_4/201812/P020181203340000608159.pdf",
+          "title": "侯军在师胜杰纪念活动上回忆学艺",
+          "publisher": "中国艺术报／中国文联",
+          "published": "2018-12-03",
+          "accessed": "2026-11-14",
+          "claim": "报道明确记载侯军是侯耀华的儿子、侯宝林的孙子。",
+          "kind": "现场报道"
+        },
+        {
+          "url": "https://news.sina.cn/sa/2010-06-23/detail-ikmyaawa2983504.d.html",
+          "title": "侯耀华回忆家人与演出",
+          "publisher": "媒体当事人专访／新浪",
+          "published": "2010-06-23",
+          "accessed": "2026-11-14",
+          "claim": "侯耀华在采访中明确称侯宝林是其父、侯耀文是其弟。",
+          "kind": "当事人采访"
+        }
+      ]
+    },
+    "r02499": {
+      "label": "侯耀中 → 侯军",
+      "reviewStatus": "documented",
+      "reviewNote": "由侯军是侯耀华之子、侯耀中是侯耀华哥哥两项公开记载推得。",
+      "evidence": [
+        {
+          "url": "https://ent.sina.com.cn/s/m/2009-07-24/12482623579.shtml",
+          "title": "侯家长孙侯震接受采访",
+          "publisher": "时代商报／新浪",
+          "published": "2009-07-24",
+          "accessed": "2026-11-14",
+          "claim": "记者明确记载侯震是侯宝林长孙、侯耀中之子，侯耀中是侯耀华和侯耀文的大哥。",
+          "kind": "当事人采访"
+        },
+        {
+          "url": "https://www.cflac.org.cn/zgysb/dz/ysb/page_4/201812/P020181203340000608159.pdf",
+          "title": "侯军在师胜杰纪念活动上回忆学艺",
+          "publisher": "中国艺术报／中国文联",
+          "published": "2018-12-03",
+          "accessed": "2026-11-14",
+          "claim": "报道明确记载侯军是侯耀华的儿子、侯宝林的孙子。",
+          "kind": "现场报道"
+        }
+      ]
+    },
+    "r02500": {
+      "label": "侯震 → 侯军",
+      "reviewStatus": "documented",
+      "reviewNote": "由两人的父亲是兄弟推得，未标注两人的长幼。",
+      "evidence": [
+        {
+          "url": "https://ent.sina.com.cn/s/m/2009-07-24/12482623579.shtml",
+          "title": "侯家长孙侯震接受采访",
+          "publisher": "时代商报／新浪",
+          "published": "2009-07-24",
+          "accessed": "2026-11-14",
+          "claim": "记者明确记载侯震是侯宝林长孙、侯耀中之子，侯耀中是侯耀华和侯耀文的大哥。",
+          "kind": "当事人采访"
+        },
+        {
+          "url": "https://www.cflac.org.cn/zgysb/dz/ysb/page_4/201812/P020181203340000608159.pdf",
+          "title": "侯军在师胜杰纪念活动上回忆学艺",
+          "publisher": "中国艺术报／中国文联",
+          "published": "2018-12-03",
+          "accessed": "2026-11-14",
+          "claim": "报道明确记载侯军是侯耀华的儿子、侯宝林的孙子。",
+          "kind": "现场报道"
+        }
+      ]
+    },
+    "r02501": {
+      "label": "马志明 → 马六甲",
+      "reviewStatus": "documented",
+      "reviewNote": "所列资料明确记载这项亲属关系。",
+      "evidence": [
+        {
+          "url": "https://epaper.tianjinwe.com/tjrb/html/2026-01/20/content_143094_3057905.htm",
+          "title": "马志明、马六甲传承马氏相声",
+          "publisher": "天津日报",
+          "published": "2026-01-20",
+          "accessed": "2026-11-14",
+          "claim": "采访明确记载马六甲是马志明之子。",
+          "kind": "采访报道"
+        }
+      ]
+    },
+    "r02502": {
+      "label": "马桂元 → 马敬伯",
+      "reviewStatus": "documented",
+      "reviewNote": "所列资料明确记载这项亲属关系。",
+      "evidence": [
+        {
+          "url": "https://www.people.com.cn/24hour/n/2013/0227/c25408-20610051.html",
+          "title": "马敬伯去世报道",
+          "publisher": "人民网",
+          "published": "2013-02-27",
+          "accessed": "2026-11-14",
+          "claim": "报道说明马敬伯是马桂元之子。",
+          "kind": "报刊记录"
+        }
+      ]
+    },
+    "r02503": {
+      "label": "马三立 → 马六甲",
+      "reviewStatus": "documented",
+      "reviewNote": "所列资料明确记载这项亲属关系。",
+      "evidence": [
+        {
+          "url": "https://epaper.tianjinwe.com/tjrb/html/2026-01/20/content_143094_3057905.htm",
+          "title": "马志明、马六甲传承马氏相声",
+          "publisher": "天津日报",
+          "published": "2026-01-20",
+          "accessed": "2026-11-14",
+          "claim": "采访明确记载马六甲是马志明之子。",
+          "kind": "采访报道"
+        }
+      ]
+    },
+    "r02504": {
+      "label": "常宝堃 → 常宝霖",
+      "reviewStatus": "documented",
+      "reviewNote": "所列资料明确记载这项亲属关系。",
+      "evidence": [
+        {
+          "url": "https://xinwen.bjd.com.cn/content/s5f97b6bee4b05e21b533fa94.html",
+          "title": "常宝堃生平",
+          "publisher": "北京晚报",
+          "published": "2020-10-26",
+          "accessed": "2026-11-14",
+          "claim": "生平文章明确列举常宝堃的三个弟弟常宝霖、常宝霆、常宝华。",
+          "kind": "报刊记录"
+        },
+        {
+          "url": "https://www.jfdaily.com/wx/detail.do?id=119257",
+          "title": "常贵田生平与从艺经历",
+          "publisher": "上观新闻",
+          "published": "2018-11-30",
+          "accessed": "2026-11-14",
+          "claim": "报道明确常宝霖、常宝霆分别为常贵田的二叔、三叔，并列常宝堃为其父亲。",
+          "kind": "报刊记录"
+        }
+      ]
+    },
+    "r02505": {
+      "label": "常宝堃 → 常宝霆",
+      "reviewStatus": "documented",
+      "reviewNote": "所列资料明确记载这项亲属关系。",
+      "evidence": [
+        {
+          "url": "https://xinwen.bjd.com.cn/content/s5f97b6bee4b05e21b533fa94.html",
+          "title": "常宝堃生平",
+          "publisher": "北京晚报",
+          "published": "2020-10-26",
+          "accessed": "2026-11-14",
+          "claim": "生平文章明确列举常宝堃的三个弟弟常宝霖、常宝霆、常宝华。",
+          "kind": "报刊记录"
+        },
+        {
+          "url": "https://www.ihchina.cn/Article/Index/detail?id=2384",
+          "title": "常宝霆传承人资料",
+          "publisher": "中国非物质文化遗产网",
+          "published": null,
+          "accessed": "2026-11-14",
+          "claim": "传承人条目明确称常宝堃为常宝霆的兄长。",
+          "kind": "报刊记录"
+        },
+        {
+          "url": "https://www.chinanews.com/yl/2015/01-05/6938068.shtml",
+          "title": "常宝霆生平与家族",
+          "publisher": "中国新闻网",
+          "published": "2015-01-05",
+          "accessed": "2026-11-14",
+          "claim": "报道明确常宝堃为常宝霆兄长、常宝华为常宝霆弟弟。",
+          "kind": "报刊记录"
+        }
+      ]
+    },
+    "r02506": {
+      "label": "常宝堃 → 常宝华",
+      "reviewStatus": "documented",
+      "reviewNote": "所列资料明确记载这项亲属关系。",
+      "evidence": [
+        {
+          "url": "https://xinwen.bjd.com.cn/content/s5f97b6bee4b05e21b533fa94.html",
+          "title": "常宝堃生平",
+          "publisher": "北京晚报",
+          "published": "2020-10-26",
+          "accessed": "2026-11-14",
+          "claim": "生平文章明确列举常宝堃的三个弟弟常宝霖、常宝霆、常宝华。",
+          "kind": "报刊记录"
+        },
+        {
+          "url": "https://www.jfdaily.com/wx/detail.do?id=119257",
+          "title": "常贵田生平与从艺经历",
+          "publisher": "上观新闻",
+          "published": "2018-11-30",
+          "accessed": "2026-11-14",
+          "claim": "报道明确常宝霖、常宝霆分别为常贵田的二叔、三叔，并列常宝堃为其父亲。",
+          "kind": "报刊记录"
+        }
+      ]
+    },
+    "r02507": {
+      "label": "常宝霆 → 常宝华",
+      "reviewStatus": "documented",
+      "reviewNote": "所列资料明确记载这项亲属关系。",
+      "evidence": [
+        {
+          "url": "https://www.chinanews.com/yl/2015/01-05/6938068.shtml",
+          "title": "常宝霆生平与家族",
+          "publisher": "中国新闻网",
+          "published": "2015-01-05",
+          "accessed": "2026-11-14",
+          "claim": "报道明确常宝堃为常宝霆兄长、常宝华为常宝霆弟弟。",
+          "kind": "报刊记录"
+        },
+        {
+          "url": "https://xinwen.bjd.com.cn/content/s5f97b6bee4b05e21b533fa94.html",
+          "title": "常宝堃生平",
+          "publisher": "北京晚报",
+          "published": "2020-10-26",
+          "accessed": "2026-11-14",
+          "claim": "生平文章明确列举常宝堃的三个弟弟常宝霖、常宝霆、常宝华。",
+          "kind": "报刊记录"
+        }
+      ]
+    },
+    "r02508": {
+      "label": "常宝霖 → 常贵田",
+      "reviewStatus": "documented",
+      "reviewNote": "所列资料明确记载这项亲属关系。",
+      "evidence": [
+        {
+          "url": "https://www.jfdaily.com/wx/detail.do?id=119257",
+          "title": "常贵田生平与从艺经历",
+          "publisher": "上观新闻",
+          "published": "2018-11-30",
+          "accessed": "2026-11-14",
+          "claim": "报道明确常宝霖、常宝霆分别为常贵田的二叔、三叔，并列常宝堃为其父亲。",
+          "kind": "报刊记录"
+        }
+      ]
+    },
+    "r02509": {
+      "label": "常宝霆 → 常贵田",
+      "reviewStatus": "documented",
+      "reviewNote": "所列资料明确记载这项亲属关系。",
+      "evidence": [
+        {
+          "url": "https://www.jfdaily.com/wx/detail.do?id=119257",
+          "title": "常贵田生平与从艺经历",
+          "publisher": "上观新闻",
+          "published": "2018-11-30",
+          "accessed": "2026-11-14",
+          "claim": "报道明确常宝霖、常宝霆分别为常贵田的二叔、三叔，并列常宝堃为其父亲。",
+          "kind": "报刊记录"
+        }
+      ]
+    },
+    "r02510": {
+      "label": "侯耀茹 → 侯震",
+      "reviewStatus": "documented",
+      "reviewNote": "按已公开的父女、父子关系推得，不推断母系或长幼。",
+      "evidence": [
+        {
+          "url": "https://ent.sina.com.cn/s/m/2009-07-24/16372623968.shtml",
+          "title": "侯氏家庭关系（据侯錱编述）",
+          "publisher": "新浪娱乐",
+          "published": "2009-07-24",
+          "accessed": "2026-11-14",
+          "claim": "报道援引家族回忆资料，列出侯耀茹、侯錱为侯宝林的女儿。",
+          "kind": "家族回忆转述"
+        },
+        {
+          "url": "https://ent.sina.com.cn/s/m/2009-07-24/12482623579.shtml",
+          "title": "侯家长孙侯震接受采访",
+          "publisher": "时代商报／新浪",
+          "published": "2009-07-24",
+          "accessed": "2026-11-14",
+          "claim": "记者明确记载侯震是侯宝林长孙、侯耀中之子，侯耀中是侯耀华和侯耀文的大哥。",
+          "kind": "当事人采访"
+        }
+      ]
+    },
+    "r02511": {
+      "label": "侯耀茹 → 侯军",
+      "reviewStatus": "documented",
+      "reviewNote": "按已公开的父女、父子关系推得，不推断母系或长幼。",
+      "evidence": [
+        {
+          "url": "https://ent.sina.com.cn/s/m/2009-07-24/16372623968.shtml",
+          "title": "侯氏家庭关系（据侯錱编述）",
+          "publisher": "新浪娱乐",
+          "published": "2009-07-24",
+          "accessed": "2026-11-14",
+          "claim": "报道援引家族回忆资料，列出侯耀茹、侯錱为侯宝林的女儿。",
+          "kind": "家族回忆转述"
+        },
+        {
+          "url": "https://www.cflac.org.cn/zgysb/dz/ysb/page_4/201812/P020181203340000608159.pdf",
+          "title": "侯军在师胜杰纪念活动上回忆学艺",
+          "publisher": "中国艺术报／中国文联",
+          "published": "2018-12-03",
+          "accessed": "2026-11-14",
+          "claim": "报道明确记载侯军是侯耀华的儿子、侯宝林的孙子。",
+          "kind": "现场报道"
+        }
+      ]
+    },
+    "r02512": {
+      "label": "侯錱 → 侯震",
+      "reviewStatus": "documented",
+      "reviewNote": "按已公开的父女、父子关系推得，不推断母系或长幼。",
+      "evidence": [
+        {
+          "url": "https://ent.sina.com.cn/s/m/2009-07-24/16372623968.shtml",
+          "title": "侯氏家庭关系（据侯錱编述）",
+          "publisher": "新浪娱乐",
+          "published": "2009-07-24",
+          "accessed": "2026-11-14",
+          "claim": "报道援引家族回忆资料，列出侯耀茹、侯錱为侯宝林的女儿。",
+          "kind": "家族回忆转述"
+        },
+        {
+          "url": "https://ent.sina.com.cn/s/m/2009-07-24/12482623579.shtml",
+          "title": "侯家长孙侯震接受采访",
+          "publisher": "时代商报／新浪",
+          "published": "2009-07-24",
+          "accessed": "2026-11-14",
+          "claim": "记者明确记载侯震是侯宝林长孙、侯耀中之子，侯耀中是侯耀华和侯耀文的大哥。",
+          "kind": "当事人采访"
+        }
+      ]
+    },
+    "r02513": {
+      "label": "侯錱 → 侯军",
+      "reviewStatus": "documented",
+      "reviewNote": "按已公开的父女、父子关系推得，不推断母系或长幼。",
+      "evidence": [
+        {
+          "url": "https://ent.sina.com.cn/s/m/2009-07-24/16372623968.shtml",
+          "title": "侯氏家庭关系（据侯錱编述）",
+          "publisher": "新浪娱乐",
+          "published": "2009-07-24",
+          "accessed": "2026-11-14",
+          "claim": "报道援引家族回忆资料，列出侯耀茹、侯錱为侯宝林的女儿。",
+          "kind": "家族回忆转述"
+        },
+        {
+          "url": "https://www.cflac.org.cn/zgysb/dz/ysb/page_4/201812/P020181203340000608159.pdf",
+          "title": "侯军在师胜杰纪念活动上回忆学艺",
+          "publisher": "中国艺术报／中国文联",
+          "published": "2018-12-03",
+          "accessed": "2026-11-14",
+          "claim": "报道明确记载侯军是侯耀华的儿子、侯宝林的孙子。",
+          "kind": "现场报道"
+        }
+      ]
+    },
+    "r01719": {
+      "label": "侯宝林 → 侯耀华",
+      "reviewStatus": "documented",
+      "reviewNote": "补充公开资料，不改变原关系类型。",
+      "evidence": [
+        {
+          "url": "https://news.sina.cn/sa/2010-06-23/detail-ikmyaawa2983504.d.html",
+          "title": "侯耀华回忆家人与演出",
+          "publisher": "媒体当事人专访／新浪",
+          "published": "2010-06-23",
+          "accessed": "2026-11-14",
+          "claim": "侯耀华在采访中明确称侯宝林是其父、侯耀文是其弟。",
+          "kind": "当事人采访"
+        }
+      ]
+    },
+    "r01720": {
+      "label": "侯宝林 → 侯耀文",
+      "reviewStatus": "documented",
+      "reviewNote": "补充公开资料，不改变原关系类型。",
+      "evidence": [
+        {
+          "url": "https://news.sina.cn/sa/2010-06-23/detail-ikmyaawa2983504.d.html",
+          "title": "侯耀华回忆家人与演出",
+          "publisher": "媒体当事人专访／新浪",
+          "published": "2010-06-23",
+          "accessed": "2026-11-14",
+          "claim": "侯耀华在采访中明确称侯宝林是其父、侯耀文是其弟。",
+          "kind": "当事人采访"
+        }
+      ]
+    },
+    "r01765": {
+      "label": "侯耀华 → 侯耀文",
+      "reviewStatus": "documented",
+      "reviewNote": "补充公开资料，不改变原关系类型。",
+      "evidence": [
+        {
+          "url": "https://news.sina.cn/sa/2010-06-23/detail-ikmyaawa2983504.d.html",
+          "title": "侯耀华回忆家人与演出",
+          "publisher": "媒体当事人专访／新浪",
+          "published": "2010-06-23",
+          "accessed": "2026-11-14",
+          "claim": "侯耀华在采访中明确称侯宝林是其父、侯耀文是其弟。",
+          "kind": "当事人采访"
+        },
+        {
+          "url": "https://ent.sina.com.cn/s/m/2009-07-24/12482623579.shtml",
+          "title": "侯家长孙侯震接受采访",
+          "publisher": "时代商报／新浪",
+          "published": "2009-07-24",
+          "accessed": "2026-11-14",
+          "claim": "记者明确记载侯震是侯宝林长孙、侯耀中之子，侯耀中是侯耀华和侯耀文的大哥。",
+          "kind": "当事人采访"
+        }
+      ]
+    },
+    "r01766": {
+      "label": "侯宝林 → 侯震",
+      "reviewStatus": "documented",
+      "reviewNote": "补充公开资料，不改变原关系类型。",
+      "evidence": [
+        {
+          "url": "https://ent.sina.com.cn/s/m/2009-07-24/12482623579.shtml",
+          "title": "侯家长孙侯震接受采访",
+          "publisher": "时代商报／新浪",
+          "published": "2009-07-24",
+          "accessed": "2026-11-14",
+          "claim": "记者明确记载侯震是侯宝林长孙、侯耀中之子，侯耀中是侯耀华和侯耀文的大哥。",
+          "kind": "当事人采访"
+        },
+        {
+          "url": "https://ent.sina.com.cn/j/2008-04-03/14451973590.shtml",
+          "title": "纪念侯宝林专场的主办方介绍",
+          "publisher": "新浪娱乐",
+          "published": "2008-04-03",
+          "accessed": "2026-11-14",
+          "claim": "主办方介绍侯震为侯宝林长子侯耀中的儿子，侯军为侯耀华的儿子。",
+          "kind": "主办方资料"
+        }
+      ]
+    }
+  }
+}

@@ -6,7 +6,7 @@
 <title>相声师承谱系 · 清末至今</title>
 <meta name="description" content="根据公开资料整理的中国相声演员师承谱系：正式师承、代拉/引保代、亲缘与姻缘关系。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23a8322d'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='18' fill='white' font-family='serif'%3E谱%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="assets/style.css?v=20261114-org-pin">
+<link rel="stylesheet" href="assets/style.css?v=20261114-kin-filters">
 <link rel="stylesheet" href="assets/mobile.css?v=20261114-evidence">
 </head>
 <body>
@@ -62,6 +62,7 @@
       <label class="t-mar"><input type="checkbox" data-type="marriage" checked> 姻缘</label>
       <label class="t-partner"><input type="checkbox" id="showPartner" checked> 搭档</label>
       <label class="t-dis"><input type="checkbox" id="onlyDoc"> 只显示确定</label>
+      <span class="relation-filter-actions"><button type="button" id="applyRelations" disabled>应用关系筛选</button><button type="button" id="resetRelationDraft" disabled>撤销未应用修改</button><small id="relationFilterStatus" role="status">已应用</small></span>
       <label><input type="checkbox" id="labels"> 显示全部姓名</label>
       <button id="expand" type="button" title="放大到能看清姓名。其他人仍留在图上，缩小或拖动都能看到。">展开此区域</button>
       <button id="resetLayout" type="button" title="缩小，回到完整全局布局">恢复全局布局</button>
@@ -82,7 +83,7 @@
     </div>
     <div id="panelDock">
       <button type="button" id="panelHandle" class="panel-handle">人物详情</button>
-      <aside id="panel"><div class="placeholder">点击图中人物或搜索，查看其师父、徒弟与亲属。点击关系连线可查看依据；聚焦默认展示上下各两代。</div></aside>
+      <aside id="panel"><div class="placeholder">点击图中人物或搜索，查看其师父、徒弟与亲属。勾选「亲属」并点「应用关系筛选」可查看亲属线；点击连线查看依据。聚焦默认展示上下各两代。</div></aside>
     </div>
   </div>
   <div class="legend">
@@ -175,7 +176,7 @@
   </article>
 </section>
 </main>
-<footer>数据：<a href="data/people.json">people.json</a> · <a href="data/relations.json">relations.json</a> · <span id="footcount"></span> · 仅供参考，请以原始来源为准</footer>
+<footer>数据：<a href="data/people.json">people.json</a> · <a href="data/relations.json">relations.json</a> · <a href="data/kinship-updates.json">亲属补录及出处</a> · <span id="footcount"></span> · 仅供参考，请以原始来源为准</footer>
 <dialog id="feedbackDlg" aria-labelledby="fbHeading">
   <div class="dlg">
     <h2 id="fbHeading">提交修正</h2>
@@ -194,7 +195,7 @@
 <script src="vendor/cytoscape.min.js"></script>
 <script src="assets/mobile.js?v=20261114-evidence"></script>
 <script src="assets/line-style.js"></script>
-<script src="assets/app.js?v=20261114-org-pin"></script>
+<script src="assets/app.js?v=20261114-kin-filters"></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "337a81f2145c44d1aca19c5d9b5fbe1d"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

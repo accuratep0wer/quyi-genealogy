@@ -162,3 +162,7 @@ dialog::backdrop{background:rgba(0,0,0,.45)}
 /* Organization selector matches the native 梨园 institution control. */
 .organization-status{margin:0;padding:5px 14px;color:#78716c;font-size:12px;background:#fafaf9;border-bottom:1px solid #e7e5e4}
 .organization-evidence li{margin-bottom:12px}.organization-evidence p{margin:4px 0}.organization-evidence small{color:#78716c}
+
+.relation-filter-actions{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap}
+#applyRelations:not(:disabled){background:var(--accent,#a8322d);color:#fff;border-color:var(--accent,#a8322d);font-weight:700}
+#relationFilterStatus{color:#6f665f;white-space:nowrap}

@@ -27,8 +27,18 @@ let ORGS={organizations:[],affiliations:[]},ORG_BY={},ORG_MEM={};
 let EVIDENCE={};
 let SPREAD={};
 let NEBULA={};
-Promise.all(['data/people.json','data/relations.json','data/layout.json','data/layout-spread.json','data/layout-nebula.json'].map(u=>fetch(u).then(r=>{if(!r.ok)throw new Error(u);return r.json()})).concat([fetch('data/relationship-evidence.json').then(r=>r.ok?r.json():{}).catch(()=>({})),fetch('data/organizations.json').then(r=>r.ok?r.json():{}).catch(()=>({}))]))
-.then(([p,r,l,s,n,e,o])=>{P=p;R=r;L=l;SPREAD=s;NEBULA=n;EVIDENCE=e.relations||{};ORGS=o;init();}).catch(e=>{$('#cy').innerHTML='<p style="padding:20px">数据加载失败：'+esc(e.message)+'</p>';});
+function optionalData(url){return fetch(url).then(r=>r.ok?r.json():{}).catch(()=>({}));}
+Promise.all(['data/people.json','data/relations.json','data/layout.json','data/layout-spread.json','data/layout-nebula.json'].map(u=>fetch(u).then(r=>{if(!r.ok)throw new Error(u);return r.json()})).concat([optionalData('data/relationship-evidence.json'),optionalData('data/organizations.json'),optionalData('data/kinship-updates.json?v=1')]))
+.then(([p,r,l,s,n,e,o,k])=>{
+  const changes=k.updates||{};
+  P=p.concat(k.people||[]);
+  R=r.map(row=>changes[row.id]?{...row,...changes[row.id],id:row.id}:row).concat(k.relations||[]);
+  L={...l,...(k.layout?.network||{})};
+  SPREAD={...s,...(k.layout?.spread||{})};
+  NEBULA={...n,...(k.layout?.nebula||{})};
+  EVIDENCE={...(e.relations||{}),...(k.evidence||{})};
+  ORGS=o;init();
+}).catch(e=>{$('#cy').innerHTML='<p style="padding:20px">数据加载失败：'+esc(e.message)+'</p>';});
 
 // Organization evidence is separate from lineage: affiliation never implies teaching.
 function usableAffiliation(m){
@@ -129,6 +139,7 @@ function init(){
   const sw=g=>'<span class="gen-swatch'+(g%2===0?' stripe':'')+'" style="background-color:'+genColor(g)+'"></span>'+g;
   $('#genLegend').innerHTML='代数：'+gens.map(sw).join('')+(P.some(p=>!p.generation)?'<span class="gen-swatch" style="background-color:#9ca3af"></span>不详':'');
   initOrganizations();
+  state.appliedRelations=readRelationDraft();
   buildCy();
   bindUI();
   renderTables();
@@ -173,6 +184,8 @@ function buildCy(){
       {selector:'node.period-tag',style:{'shape':'ellipse','width':1,'height':1,'background-opacity':0,'border-width':0,'font-size':11,'font-weight':600,'color':'#44403c','text-valign':'center','text-halign':'center','text-margin-y':0,'text-wrap':'none','text-max-width':120,'text-outline-width':0,'text-background-color':'#fff','text-background-opacity':0.92,'text-background-padding':2,'min-zoomed-font-size':6,'z-index':40}},
     ].concat(XSLines.selectors()).concat([
       {selector:'node.org-muted',style:{'background-opacity':0.055,'text-opacity':0,'text-background-opacity':0,'border-opacity':0.08}},
+      {selector:'edge.tree-secondary',style:{'curve-style':'bezier','control-point-step-size':42,'line-opacity':0.48,'target-arrow-opacity':0.48}},
+      {selector:'edge.tree-secondary.tree-link',style:{'line-opacity':1,'target-arrow-opacity':1}},
       {selector:'edge.org-muted',style:{'opacity':0.035,'text-opacity':0}},
       {selector:'node.org-member',style:{'border-width':5,'border-color':'#b45309','border-opacity':1,'background-opacity':1,'text-opacity':1,'min-zoomed-font-size':0,'z-index':30}},
       {selector:'.faded',style:{'opacity':0.07,'text-opacity':0}}
@@ -183,7 +196,7 @@ function buildCy(){
     if(pointerMoved(e.target)) return;
     let id=e.target.id(); if(id.indexOf('period-')===0) id=id.slice(7); if(id.indexOf('axis-')===0||id==='loosehead')return; selectPerson(id,false);
   });
-  cy.on('tap','edge',e=>{const r=R.find(r=>r.id===e.target.id());if(r)renderRelation(r);});
+  cy.on('tap','edge',e=>{const rid=e.target.data('relationId')||e.target.id();const r=R.find(r=>r.id===rid);if(r)renderRelation(r);});
   cy.on('tap',e=>{if(e.target===cy) clearHL();});
   cy.on('mousemove',ev=>{if(ev.renderedPosition) lastPointer={x:ev.renderedPosition.x,y:ev.renderedPosition.y,t:performance.now()};});
   cy.on('pan',()=>{if(!placing&&!layoutAnim) anchorId=null; paintRail(); if(state.mode==='tree') clampTreePan();});
@@ -194,9 +207,24 @@ function buildCy(){
   bindPointer();
   drawNetwork();
 }
+function relationControls(){
+  return [...document.querySelectorAll('.types input[data-type], #onlyDoc, #showPartner')];
+}
+function readRelationDraft(){
+  return {types:new Set(relationControls().filter(i=>i.checked&&i.dataset.type).map(i=>i.dataset.type)),onlyDoc:$('#onlyDoc').checked,partners:$('#showPartner').checked};
+}
+function sameRelationFilters(a,b){
+  return a.onlyDoc===b.onlyDoc&&a.partners===b.partners&&a.types.size===b.types.size&&[...a.types].every(t=>b.types.has(t));
+}
+function showRelationDraft(){
+  const dirty=!sameRelationFilters(readRelationDraft(),state.appliedRelations);
+  $('#applyRelations').disabled=!dirty;
+  $('#resetRelationDraft').disabled=!dirty;
+  $('#relationFilterStatus').textContent=dirty?'有未应用的修改':'已应用';
+}
 function filters(){
-  const types=[...document.querySelectorAll('.types input[data-type]')].filter(i=>i.checked).map(i=>i.dataset.type);
-  return {types:new Set(types),onlyDoc:$('#onlyDoc').checked,partners:$('#showPartner').checked,gmin:+$('#gmin').value,gmax:+$('#gmax').value};
+  const r=state.appliedRelations||readRelationDraft();
+  return {...r,gmin:+$('#gmin').value,gmax:+$('#gmax').value};
 }
 function personOk(p,f){return !p.generation||(p.generation>=f.gmin&&p.generation<=f.gmax);}
 function relKind(r){
@@ -641,28 +669,12 @@ function stat(n,e){
   $('#stat').textContent='当前显示 '+n+' 人 · '+e+' 条关系（全库 '+P.length+' 人 · '+R.length+' 条）'+tag;
 }
 function clearHL(){
-  if(cy) cy.edges('.tree-reveal').remove();
   cy.elements().removeClass('faded hl nb tree-link');
   markOrganization();
-}
-function revealOtherLines(id){
-  const add=[], seen=new Set();
-  R.forEach(r=>{
-    if(!r||r.type==='master_disciple') return;
-    if(!relOk(r, filters())) return;
-    if(r.from!==id&&r.to!==id) return;
-    if(!cy.getElementById(r.from).length||!cy.getElementById(r.to).length) return;
-    const eid='reveal-'+r.id;
-    if(seen.has(eid)) return;
-    seen.add(eid);
-    add.push({classes:'tree-reveal', data:{id:eid, source:r.from, target:r.to, type:r.type, conf:r.confidence, detail:r.detail||'', sub:r.subtype||''}});
-  });
-  if(add.length) cy.add(add);
 }
 function highlightTree(id,center){
   const n=cy.getElementById(id);if(!n.length)return;
   clearHL();
-  revealOtherLines(id);
   cy.elements().addClass('faded');
   const edges=n.connectedEdges();
   const near=edges.connectedNodes();
@@ -674,8 +686,7 @@ function highlightTree(id,center){
   n.removeClass('faded').addClass('hl');
   const tag=cy.getElementById('period-'+id);
   if(tag.length) tag.removeClass('faded');
-  edges.filter(e=>!e.hasClass('tree-reveal')).removeClass('faded').addClass('tree-link');
-  edges.filter('.tree-reveal').removeClass('faded');
+  edges.removeClass('faded').addClass('tree-link');
   if(center) cy.animate({center:{eles:n},zoom:Math.max(cy.zoom(),0.9)},{duration:350});
 }
 function highlight(id,center){
@@ -823,8 +834,24 @@ function bindUI(){
   }));
   ['#depthDown','#depthUp'].forEach(s=>$(s).addEventListener('change',()=>{if(state.mode==='ego'&&state.focus)drawEgo(state.focus);}));
   const refilter=()=>{if(state.mode==='ego'&&state.focus)drawEgo(state.focus);else if(state.mode==='nebula')drawNebula();else if(state.mode==='tree')drawTree();else drawNetwork();};
-  ['#gmin','#gmax','#onlyDoc','#showPartner'].forEach(s=>$(s).addEventListener('change',refilter));
-  document.querySelectorAll('.types input[data-type]').forEach(i=>i.addEventListener('change',refilter));
+  ['#gmin','#gmax'].forEach(s=>$(s).addEventListener('change',refilter));
+  relationControls().forEach(i=>i.addEventListener('change',showRelationDraft));
+  $('#applyRelations').addEventListener('click',()=>{
+    const draft=readRelationDraft();
+    if(sameRelationFilters(draft,state.appliedRelations)) return;
+    state.appliedRelations=draft;
+    if(state.mode==='tree') drawTree(true);
+    else refilter();
+    showRelationDraft();
+  });
+  $('#resetRelationDraft').addEventListener('click',()=>{
+    const applied=state.appliedRelations;
+    for(const i of relationControls()){
+      i.checked=i.dataset.type?applied.types.has(i.dataset.type):i.id==='onlyDoc'?applied.onlyDoc:applied.partners;
+    }
+    showRelationDraft();
+  });
+  showRelationDraft();
   $('#fit').onclick=()=>{
     if(state.mode==='ego'){cy.fit(cy.nodes(),44);syncZoomSlider();return;}
     if(state.mode==='nebula'){cy.fit(undefined,40);syncZoomSlider();return;}
@@ -1060,12 +1087,11 @@ function assignPeriods(ids, depth, primary, kids){
 }
 const ERA_COLOR={qing:'#7f1d1d', roc:'#b45309', prc:'#1d4ed8'};
 function buildPedigree(compact){
-  const onlyDoc=$('#onlyDoc').checked;
+  // Relationship filters change line visibility, not the stable family-tree positions.
   const mastersOf={};
   R.forEach(r=>{
     if(r.type!=='master_disciple') return;
     if(!byId[r.from]||!byId[r.to]||!byId[r.from]._linked||!byId[r.to]._linked) return;
-    if(onlyDoc&&r.confidence!=='documented') return;
     (mastersOf[r.to]=mastersOf[r.to]||[]).push(r);
   });
   const depth={}, primary={};
@@ -1221,7 +1247,8 @@ function buildPedigree(compact){
   });
   return {pos, depth, primary, kids, roots, loose, maxD, treeN, known, est, ROW, period, mastersOf, box:boxOf};
 }
-function drawTree(){
+function drawTree(keepViewport=false){
+  const viewport=keepViewport?{zoom:cy.zoom(),pan:{...cy.pan()}}:null;
   layoutLock=true;
   if(layoutAnim){cancelAnimationFrame(layoutAnim); layoutAnim=0;}
   state.mode='tree';
@@ -1244,16 +1271,16 @@ function drawTree(){
     const y=Math.min(...model.loose.map(id=>model.pos[id].y))-model.ROW*0.55;
     nodes.push({classes:'tree axis', grabbable:false, data:{id:'loosehead', label:'无师承，但有其他关系', w:220, h:28, eraColor:'#a8a29e'}, position:{x:110, y:y}});
   }
-  const seen=new Set();
+  const seen=new Set(), f=filters();
   R.forEach(r=>{
-    if(r.type!=='master_disciple') return;
     if(!model.pos[r.from]||!model.pos[r.to]) return;
-    if($('#onlyDoc').checked&&r.confidence!=='documented') return;
-    const extra=model.primary[r.to]!==r.from;
-    const id=(extra?'x':'t')+r.id;
+    const master=r.type==='master_disciple';
+    if(!relOk(r,f)) return;
+    const extra=master&&model.primary[r.to]!==r.from;
+    const id=(master?(extra?'x':'t'):'k')+r.id;
     if(seen.has(id)) return;
     seen.add(id);
-    edges.push({classes:extra?'extra':'', data:{id:id, source:r.from, target:r.to, type:'master_disciple', conf:r.confidence, detail:r.detail}});
+    const e=edgeData(r);e.classes=master?(extra?'extra':''):'tree-secondary';e.data.id=id;e.data.relationId=r.id;edges.push(e);
   });
   cy.maxZoom(3);
   cy.startBatch(); cy.elements().remove();
@@ -1263,10 +1290,12 @@ function drawTree(){
   markOrganization();
   const treePeople=model.treeN, looseN=model.loose.length;
   state.treeStats={generations:model.maxD+1, tree:treePeople, loose:looseN, known:model.known, est:model.est};
-  $('#stat').textContent='家谱 '+state.treeStats.generations+' 层 · 树上 '+treePeople+' 人 · 无师承 '+looseN+' 人（全库 '+P.length+' 人）';
+  $('#stat').textContent='家谱 '+state.treeStats.generations+' 层 · 树上 '+treePeople+' 人 · 无师承 '+looseN+' 人 · '+edges.length+' 条连线（全库 '+P.length+' 人）';
   layoutLock=false;
-  if(!(state.focus&&cy.getElementById(state.focus).length)) openTreeView();
+  if(viewport) cy.viewport(viewport);
+  else if(!(state.focus&&cy.getElementById(state.focus).length)) openTreeView();
   else applyTreeViewport(false);
+  if(state.focus&&cy.getElementById(state.focus).length) highlightTree(state.focus,false);
   paintRail();
   syncZoomSlider();
   updateModeTabs();
