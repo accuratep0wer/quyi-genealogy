@@ -188,3 +188,131 @@ html[data-layout="sheet"] button,
 html[data-layout="drawer"] button,
 html[data-layout="sheet"] .mode-tabs a,
 html[data-layout="drawer"] .mode-tabs a { min-height: 40px; }
+
+/* Keep the guide outside the canvas on desktop, as before. */
+.phone-graph-actions { display: none; }
+
+/* Compact view: the legend is a temporary overlay, not a row that shrinks the graph. */
+html:is([data-layout="sheet"],[data-layout="drawer"]) body:has(#view-graph:not([hidden])) {
+  height: 100dvh;
+  height: var(--app-h, 100dvh);
+  overflow: hidden;
+}
+html:is([data-layout="sheet"],[data-layout="drawer"]) #view-graph { position: relative; }
+html:is([data-layout="sheet"],[data-layout="drawer"]) .phone-graph-actions {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  z-index: 8;
+  display: flex;
+  gap: 5px;
+}
+.phone-graph-actions button {
+  font-size: 13px;
+  background: rgba(255,255,255,.96);
+  box-shadow: 0 1px 5px rgba(0,0,0,.1);
+}
+html:is([data-layout="sheet"],[data-layout="drawer"]) #graphLegend { display: none; }
+html:is([data-layout="sheet"],[data-layout="drawer"])[data-graph-legend] #graphLegend {
+  position: fixed;
+  z-index: 32;
+  left: max(8px, env(safe-area-inset-left));
+  right: max(48px, env(safe-area-inset-right));
+  bottom: max(54px, calc(8px + env(safe-area-inset-bottom)));
+  display: flex;
+  align-content: flex-start;
+  gap: 8px 12px;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 18px #0002;
+  max-height: min(45dvh, 280px);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+html:is([data-layout="sheet"],[data-layout="drawer"]) #cy { touch-action: none; }
+html:is([data-layout="sheet"],[data-layout="drawer"]) .tree-scroll {
+  background: transparent;
+}
+html:is([data-layout="sheet"],[data-layout="drawer"]) .tree-scroll::before {
+  content: "";
+  position: absolute;
+  border-radius: 8px;
+  background: rgba(28,25,23,.15);
+  pointer-events: none;
+}
+html:is([data-layout="sheet"],[data-layout="drawer"]) .tree-scroll.y { width: 36px; right: 0; bottom: 60px; }
+html:is([data-layout="sheet"],[data-layout="drawer"]) .tree-scroll.y::before { inset: 0 11px; }
+html:is([data-layout="sheet"],[data-layout="drawer"]) .tree-scroll.y .thumb { left: 10px; right: 10px; }
+html:is([data-layout="sheet"],[data-layout="drawer"]) .tree-scroll.x { height: 24px; right: 40px; bottom: 12px; }
+html:is([data-layout="sheet"],[data-layout="drawer"]) .tree-scroll.x::before { inset: 7px 0; }
+html:is([data-layout="sheet"],[data-layout="drawer"]) .tree-scroll.x .thumb { top: 6px; bottom: 6px; }
+html[data-layout="sheet"] .tree-scroll.y { bottom: 110px; }
+html[data-layout="sheet"] .tree-scroll.x { bottom: 48px; }
+html[data-layout="sheet"] .zoombar { bottom: 76px; }
+html[data-layout="drawer"] .tree-scroll.y { right: 44px; }
+html[data-layout="drawer"] .tree-scroll.x, html[data-layout="drawer"] .zoombar { right: 82px; }
+html[data-layout="drawer"] .zoombar { bottom: 39px; }
+
+/* Full-view mode is a layout choice, independent of the graph type. */
+html:is([data-layout="sheet"],[data-layout="drawer"])[data-graph-wide] body > header,
+html:is([data-layout="sheet"],[data-layout="drawer"])[data-graph-wide] #view-graph > :is(.mode-tabs,.toolbar,.organization-strip) {
+  display: none;
+}
+html:is([data-layout="sheet"],[data-layout="drawer"])[data-graph-wide] body:has(#view-graph:not([hidden])) main {
+  position: fixed;
+  inset: 0;
+  height: 100dvh;
+  height: var(--app-h, 100dvh);
+  overflow: hidden;
+  padding: 0;
+}
+html:is([data-layout="sheet"],[data-layout="drawer"])[data-graph-wide] #view-graph:not([hidden]) { overflow: hidden; }
+html:is([data-layout="sheet"],[data-layout="drawer"])[data-graph-wide] .graph-wrap { min-height: 0; }
+html:is([data-layout="sheet"],[data-layout="drawer"])[data-graph-wide] #cy { border: 0; border-radius: 0; }
+html:is([data-layout="sheet"],[data-layout="drawer"])[data-graph-wide] .phone-graph-actions {
+  top: calc(6px + env(safe-area-inset-top));
+  left: calc(6px + env(safe-area-inset-left));
+}
+html:is([data-layout="sheet"],[data-layout="drawer"])[data-graph-wide] .tree-scroll.y {
+  top: calc(4px + env(safe-area-inset-top));
+  right: env(safe-area-inset-right);
+  bottom: calc(4px + env(safe-area-inset-bottom));
+}
+html:is([data-layout="sheet"],[data-layout="drawer"])[data-graph-wide] .tree-scroll.x {
+  left: calc(8px + env(safe-area-inset-left));
+  right: calc(40px + env(safe-area-inset-right));
+  bottom: calc(49px + env(safe-area-inset-bottom));
+}
+html:is([data-layout="sheet"],[data-layout="drawer"])[data-graph-wide] .zoombar {
+  left: calc(6px + env(safe-area-inset-left));
+  right: calc(42px + env(safe-area-inset-right));
+  bottom: calc(77px + env(safe-area-inset-bottom));
+}
+html:is([data-layout="sheet"],[data-layout="drawer"])[data-graph-wide] #panelDock {
+  right: calc(40px + env(safe-area-inset-right));
+  bottom: env(safe-area-inset-bottom);
+}
+html[data-layout="drawer"][data-graph-wide] #panelDock { top: calc(52px + env(safe-area-inset-top)); }
+html[data-layout="drawer"][data-graph-wide] #panelDock.collapsed {
+  top: auto;
+  left: calc(8px + env(safe-area-inset-left));
+  right: auto;
+  width: auto;
+  height: 45px;
+  transform: none;
+  border-radius: 10px;
+}
+html[data-layout="drawer"][data-graph-wide] #panelDock.collapsed .panel-handle {
+  writing-mode: horizontal-tb;
+  width: auto;
+}
+html[data-layout="drawer"][data-graph-wide] #panelDock.collapsed #panel { display: none; }
+
+html:is([data-layout="sheet"],[data-layout="drawer"]) #organizationFocus:disabled,
+html:is([data-layout="sheet"],[data-layout="drawer"]) .organization-strip:not([data-org-selected]) { display: none; }
+html:is([data-layout="sheet"],[data-layout="drawer"]) :is(nav,.mode-tabs) { scrollbar-width: none; }
+html[data-layout="sheet"] .toolbar { gap: 4px 8px; }
+html[data-layout="sheet"] #organization { max-width: 9em; }

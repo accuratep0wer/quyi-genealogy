@@ -11,6 +11,8 @@
   'use strict';
   var root = document.documentElement;
   var dock = null;
+  var wideBtn = null;
+  var legendBtn = null;
   var handle = null;
   var pointerId = null;
   var suppressPointerClick = false;
@@ -36,6 +38,31 @@
     document.dispatchEvent(new CustomEvent(name, { detail: detail }));
   }
 
+  function setLegend(open) {
+    root.toggleAttribute('data-graph-legend', open);
+    if (legendBtn) {
+      legendBtn.setAttribute('aria-expanded', String(open));
+      legendBtn.textContent = open ? '收起图例' : '图例';
+    }
+  }
+
+  function setGraphWide(open) {
+    if (open && root.getAttribute('data-layout') === 'pane') return;
+    root.toggleAttribute('data-graph-wide', open);
+    if (wideBtn) {
+      wideBtn.setAttribute('aria-pressed', String(open));
+      wideBtn.textContent = open ? '退出全屏' : '全屏看图';
+    }
+    if (open) {
+      collapse();
+      setLegend(false);
+      var bar = document.querySelector('.toolbar');
+      var menu = document.getElementById('filterToggle');
+      if (bar) bar.classList.remove('filters-open');
+      if (menu) menu.setAttribute('aria-expanded', 'false');
+    }
+  }
+
   function measure() {
     var box = viewport();
     var layout = choose(box);
@@ -49,7 +76,7 @@
     if (layout !== lastLayout) {
       lastLayout = layout;
       if (layout !== 'pane') collapse();
-      else expand();
+      else { setGraphWide(false); setLegend(false); expand(); }
       emit('xsmobile', detail);
     } else if (sized) {
       emit('xsmobile-resize', detail);
@@ -107,6 +134,15 @@
         if (ev.pointerId === pointerId) pointerId = null;
       });
     }
+    wideBtn = document.getElementById('graphWideToggle');
+    legendBtn = document.getElementById('graphLegendToggle');
+    if (wideBtn) wideBtn.addEventListener('click', function () { setGraphWide(!root.hasAttribute('data-graph-wide')); });
+    if (legendBtn) legendBtn.addEventListener('click', function () { setLegend(!root.hasAttribute('data-graph-legend')); });
+    document.addEventListener('keydown', function (ev) {
+      if (ev.key !== 'Escape' || document.querySelector('dialog[open]')) return;
+      if (root.hasAttribute('data-graph-legend')) { setLegend(false); if (legendBtn) legendBtn.focus(); }
+      else if (root.hasAttribute('data-graph-wide')) { setGraphWide(false); if (wideBtn) wideBtn.focus(); }
+    });
     var menu = document.getElementById('filterToggle');
     var bar = document.querySelector('.toolbar');
     if (menu && bar) {
@@ -132,7 +168,8 @@
     layout: function () { return root.getAttribute('data-layout') || 'pane'; },
     openPanel: expand,
     closePanel: collapse,
-    togglePanel: toggle
+    togglePanel: toggle,
+    leaveGraph: function () { setGraphWide(false); setLegend(false); }
   };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bind);

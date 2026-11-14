@@ -22,3 +22,6 @@
 ### 数据及软件署名
 
 人物、关系和团体的出处在网页对应条目。源自维基百科的内容遵循 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。图谱使用 [Cytoscape.js](https://js.cytoscape.org/)（MIT）；曾交叉核对 [开源《相声家谱》](https://github.com/jammyfu/xiangsheng-genealogy) 中带出处的师承资料（MIT，不含该项目代码）。
+
+### 手机图谱
+窄屏按可用视口尺寸适配。图例默认收起；「全屏看图」是独立的显示选项，不改变图谱类型。手机轻点人物打开详情，从节点或空白处单指滑动都平移画布，双指捏合缩放；电脑版全景节点仍可拖动。谱系图放大后按实际溢出显示右侧纵向和底部横向滚动条。

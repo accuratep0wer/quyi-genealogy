@@ -114,6 +114,7 @@ function markOrganization(){
   const id=$('#organization').value;
   const scope=$('#organizationScope').value;
   $('#organizationScopeLabel').hidden=!id;
+  document.querySelector('.organization-strip').toggleAttribute('data-org-selected',!!id);
   const members=ORG_ROWS.filter(m=>m.organizationId===id&&matchesOrganizationScope(m,scope));
   const ids=new Set(members.map(m=>m.personId));
   cy.batch(()=>{
@@ -195,8 +196,14 @@ function nodeData(p){
   const size=Math.max(12,Math.min(70,10+Math.sqrt(p._deg)*6));
   return {data:{id:p.id,label:labelOf(p),gen:p.generation||0,color:p.role==='relative'?'#c7c7c7':genColor(p.generation),size:size,deg:p._deg,role:p.role},position:L[p.id]?{x:L[p.id][0],y:L[p.id][1]}:undefined};
 }
+function phoneGraph(){return !!window.XSMobile&&XSMobile.layout()!=='pane';}
+function applyGraphGestures(mode){
+  const mobile=phoneGraph(), nodes=cy.nodes();
+  cy.autoungrabify(mobile||mode==='tree'||mode==='nebula');
+  if(mobile) nodes.panify(); else nodes.unpanify();
+}
 function buildCy(){
-  cy=cytoscape({container:$('#cy'),wheelSensitivity:0.25,minZoom:Z_MIN,maxZoom:Z_MAX,textureOnViewport:true,hideEdgesOnViewport:false,
+  cy=cytoscape({container:$('#cy'),wheelSensitivity:0.25,touchTapThreshold:10,minZoom:Z_MIN,maxZoom:Z_MAX,textureOnViewport:true,hideEdgesOnViewport:false,
     style:[
       {selector:'node',style:{'background-color':'data(color)','width':'data(size)','height':'data(size)','label':'data(label)','font-size':12,'color':'#222','text-valign':'bottom','text-margin-y':3,'text-outline-color':'#fff','text-outline-width':2,'min-zoomed-font-size':9,'border-width':1,'border-color':'#fff'}},
       {selector:'node[deg < 6]',style:{'font-size':10,'min-zoomed-font-size':11}},
@@ -225,7 +232,7 @@ function buildCy(){
     layout:{name:'preset'}
   });
   cy.on('tap','node',e=>{
-    if(pointerMoved(e.target)) return;
+    if(!phoneGraph()&&pointerMoved(e.target)) return;
     let id=e.target.id(); if(id.indexOf('period-')===0) id=id.slice(7); if(id.indexOf('axis-')===0||id==='loosehead')return; selectPerson(id,false);
   });
   cy.on('tap','edge',e=>{const rid=e.target.data('relationId')||e.target.id();const r=R.find(r=>r.id===rid);if(r)renderRelation(r);});
@@ -282,7 +289,6 @@ function typeLabel(r){
 }
 function drawNetwork(){
   layoutLock=true;
-  if(cy) cy.autoungrabify(false);
   const f=filters();
   const rels=R.filter(r=>relOk(r,f)&&byId[r.from]._linked&&byId[r.to]._linked&&personOk(byId[r.from],f)&&personOk(byId[r.to],f));
   // Partner links are drawn only. They do not pull people into the map or move layout positions.
@@ -292,6 +298,7 @@ function drawNetwork(){
   const drawRels=rels.filter(r=>r.type!=='partner'||(ids.has(r.from)&&ids.has(r.to)));
   cy.startBatch();cy.elements().remove();
   cy.add(nodes.map(nodeData));cy.add(drawRels.map(edgeData));
+  applyGraphGestures('network');
   cy.endBatch();
   cy.minZoom(Z_MIN);cy.maxZoom(Z_MAX);
   cy.layout({name:'preset',fit:true,padding:20}).run();
@@ -330,7 +337,6 @@ function nebulaCentroid(){
 }
 function drawNebula(){
   layoutLock=true;
-  if(cy) cy.autoungrabify(true);
   if(layoutAnim){cancelAnimationFrame(layoutAnim); layoutAnim=0;}
   state.mode='nebula';
   cy.minZoom(1e-7);cy.maxZoom(32);
@@ -343,6 +349,7 @@ function drawNebula(){
   const drawRels=rels.filter(r=>ids.has(r.from)&&ids.has(r.to));
   cy.startBatch();cy.elements().remove();
   cy.add(nodes.map(nebulaNodeData));cy.add(drawRels.map(edgeData));
+  applyGraphGestures('nebula');
   cy.endBatch();
   cy.fit(undefined,36);
   // Full-map fit makes every dot a speck. Open close enough that hubs and
@@ -675,7 +682,6 @@ function resetGlobal(){
 function updateLayoutButtons(){}
 function drawEgo(id){
   layoutLock=true;
-  if(cy) cy.autoungrabify(false);
   if(layoutAnim){cancelAnimationFrame(layoutAnim); layoutAnim=0;}
   cy.minZoom(Z_MIN);cy.maxZoom(Z_MAX);
   const s=egoSet(id);
@@ -684,6 +690,7 @@ function drawEgo(id){
   cy.startBatch();cy.elements().remove();
   cy.add(s.nodes.map(p=>{const n=nodeData(p); n.position=local[p.id]||{x:0,y:0}; return n;}));
   cy.add(s.rels.map(edgeData));
+  applyGraphGestures('ego');
   cy.endBatch();
   cy.nodes().addClass('local');
   const eles=cy.nodes();
@@ -743,10 +750,10 @@ function selectPerson(id,center){
   if(state.mode==='ego'){drawEgo(id);}
   else if(state.mode==='tree'){
     if(!cy.getElementById(id).length) drawTree();
-    highlight(id,true);
-    if(window.XSMobile&&XSMobile.layout()!=='pane') XSMobile.openPanel();
+    highlight(id,center||!phoneGraph());
   }else highlight(id,center);
   renderPanel(id);
+  if(phoneGraph()) XSMobile.openPanel();
   const next=state.mode==='nebula'?'#nebula/'+id:(state.mode==='tree'?'#tree/'+id:(state.mode==='ego'?'#graph/'+id:'#graph/'+id));
   if(location.hash!==next) history.replaceState(null,'',next);
   updateModeTabs();
@@ -958,7 +965,7 @@ function bindUI(){
     else if(state.mode==='network') cy.fit(undefined,24);
     syncZoomSlider();
   }
-  document.addEventListener('xsmobile', ev=>{ state._vw=ev.detail&&ev.detail.w; state._vh=ev.detail&&ev.detail.h; refitAfterLayout(); });
+  document.addEventListener('xsmobile', ev=>{ applyGraphGestures(state.mode); state._vw=ev.detail&&ev.detail.w; state._vh=ev.detail&&ev.detail.h; refitAfterLayout(); });
   document.addEventListener('xsmobile-resize', ev=>{
     if(!cy) return;
     cy.resize();
@@ -966,6 +973,22 @@ function bindUI(){
     const dw=Math.abs((d.w||0)-(state._vw||0)), dh=Math.abs((d.h||0)-(state._vh||0));
     if(dw>40||dh>40){ state._vw=d.w; state._vh=d.h; refitAfterLayout(); }
   });
+  // The graph canvas can resize without a window resize (full-screen button, filter bar).
+  const stage=document.querySelector('.cy-stage');
+  if(window.ResizeObserver&&stage){
+    let oldW=stage.clientWidth,oldH=stage.clientHeight;
+    new ResizeObserver(()=>{
+      if($('#view-graph').hidden) return;
+      const w=stage.clientWidth,h=stage.clientHeight;
+      if(!w||!h||(oldW===w&&oldH===h)) return;
+      const p=cy.pan(), dx=oldW?(w-oldW)/2:0, dy=oldH?(h-oldH)/2:0;
+      oldW=w;oldH=h;
+      cy.resize();
+      cy.pan({x:p.x+dx,y:p.y+dy});
+      if(state.mode==='tree') applyTreeViewport(false);
+      syncZoomSlider();
+    }).observe(stage);
+  }
   syncZoomSlider();
   syncMode();
   updateLayoutButtons();
@@ -1320,7 +1343,6 @@ function drawTree(keepViewport=false){
   layoutLock=true;
   if(layoutAnim){cancelAnimationFrame(layoutAnim); layoutAnim=0;}
   state.mode='tree';
-  if(cy) cy.autoungrabify(true);
   const compact=treeCompact();
   const model=buildPedigree(compact);
   const nodes=[], edges=[];
@@ -1354,6 +1376,7 @@ function drawTree(keepViewport=false){
   cy.startBatch(); cy.elements().remove();
   cy.add(nodes); cy.add(edges);
   cy.nodes('.period-tag, .axis').ungrabify();
+  applyGraphGestures('tree');
   cy.endBatch();
   markOrganization();
   const treePeople=model.treeN, looseN=model.loose.length;
@@ -1416,10 +1439,10 @@ function paintTreeScroll(m, lim){
   if(!yBar||!xBar) return;
   const z=cy.zoom(), p=cy.pan();
   const maxY=lim.top-lim.bot;
-  const trackY=Math.max(40, m.H-8-64);
   if(maxY>2){
     yBar.classList.add('show');
-    const thumbH=Math.max(32, Math.min(trackY-4, trackY*m.H/Math.max(m.H, m.bb.h*z+m.pad*2)));
+    const trackY=Math.max(1,yBar.clientHeight);
+    const thumbH=Math.min(trackY-1,Math.max(phoneGraph()?44:32,trackY*m.H/Math.max(m.H,m.bb.h*z+m.pad*2)));
     const travel=Math.max(1, trackY-thumbH);
     const top=(maxY<=0?0:((lim.top-p.y)/maxY))*travel;
     const th=yBar.querySelector('.thumb');
@@ -1429,10 +1452,10 @@ function paintTreeScroll(m, lim){
     yBar.dataset.thumb=String(thumbH);
   }else yBar.classList.remove('show');
   const maxX=lim.left-lim.right;
-  const trackX=Math.max(40, m.W-8-26);
   if(maxX>2){
     xBar.classList.add('show');
-    const thumbW=Math.max(32, Math.min(trackX-4, trackX*m.W/Math.max(m.W, m.bb.w*z+m.pad*2)));
+    const trackX=Math.max(1,xBar.clientWidth);
+    const thumbW=Math.min(trackX-1,Math.max(phoneGraph()?44:32,trackX*m.W/Math.max(m.W,m.bb.w*z+m.pad*2)));
     const travel=Math.max(1, trackX-thumbW);
     const left=(maxX<=0?0:((lim.left-p.x)/maxX))*travel;
     const th=xBar.querySelector('.thumb');
@@ -1501,6 +1524,13 @@ function syncPeriodTag(n){
 }
 function bindPointer(){
   const box=cy.container();
+  box.addEventListener('touchstart', ev=>{
+    if(!phoneGraph()||ev.touches.length!==1) return;
+    // A new one-finger action takes control from any previous camera movement.
+    if(layoutAnim){cancelAnimationFrame(layoutAnim);layoutAnim=0;}
+    anchorId=null;
+    cy.stop(true,false);
+  },{capture:true,passive:true});
   box.addEventListener('contextmenu', ev=>{
     if(!pointerMode()) return;
     ev.preventDefault();
@@ -1598,7 +1628,7 @@ function bindTreeScroll(){
   yBar.dataset.bound='1';
   let drag=null;
   function onBar(which, ev){
-    if(state.mode!=='tree') return;
+    if(state.mode!=='tree'||ev.isPrimary===false||ev.button!==0) return;
     ev.preventDefault();
     ev.stopPropagation();
     const bar=which==='y'?yBar:xBar;
@@ -1619,12 +1649,13 @@ function bindTreeScroll(){
       }
       return;
     }
-    drag={which, start:which==='y'?ev.clientY:ev.clientX, pan:which==='y'?p.y:p.x, track:+bar.dataset.track||1, thumb:+bar.dataset.thumb||32};
+    if(bar.setPointerCapture) bar.setPointerCapture(ev.pointerId);
+    drag={which, pointerId:ev.pointerId, start:which==='y'?ev.clientY:ev.clientX, pan:which==='y'?p.y:p.x, track:+bar.dataset.track||1, thumb:+bar.dataset.thumb||32};
   }
   yBar.addEventListener('pointerdown', ev=>onBar('y', ev));
   xBar.addEventListener('pointerdown', ev=>onBar('x', ev));
   window.addEventListener('pointermove', ev=>{
-    if(!drag) return;
+    if(!drag||drag.pointerId!==ev.pointerId||state.mode!=='tree') return;
     const m=treeContent();
     if(!m) return;
     const lim=treePanLimits(m);
@@ -1638,8 +1669,11 @@ function bindTreeScroll(){
       cy.pan({x:Math.min(lim.left, Math.max(lim.right, drag.pan-d/travel*range)), y:cy.pan().y});
     }
   });
-  window.addEventListener('pointerup', ()=>{drag=null;});
-  window.addEventListener('pointercancel', ()=>{drag=null;});
+  const endDrag=ev=>{if(drag?.pointerId===ev.pointerId) drag=null;};
+  window.addEventListener('pointerup',endDrag);
+  window.addEventListener('pointercancel',endDrag);
+  yBar.addEventListener('lostpointercapture',endDrag);
+  xBar.addEventListener('lostpointercapture',endDrag);
 }
 function openTreeView(){
   applyTreeViewport(true);
@@ -1663,7 +1697,7 @@ function route(){
   document.querySelectorAll('.view').forEach(s=>s.hidden=s.id!=='view-'+section);
   document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.dataset.view===section));
   if(section==='organizations'){if(arg&&ORG_BY[arg]){$('#orgTableGroup').value=arg;$('#orgTableStatus').value='';$('#orgTableQuery').value='';} drawOrgRoster();}
-  if(section!=='graph'){updateModeTabs();return;}
+  if(section!=='graph'){window.XSMobile?.leaveGraph();updateModeTabs();return;}
   cy.resize();
   if(arg&&byId[arg]&&!byId[arg]._linked){
     state.mode='network';
