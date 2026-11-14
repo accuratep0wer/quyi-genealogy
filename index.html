@@ -6,7 +6,7 @@
 <title>相声师承谱系 · 清末至今</title>
 <meta name="description" content="根据公开资料整理的中国相声演员师承谱系：正式师承、代拉/引保代、亲缘与姻缘关系。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23a8322d'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='18' fill='white' font-family='serif'%3E谱%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="assets/style.css?v=20261114-kin-filters">
+<link rel="stylesheet" href="assets/style.css?v=20261114-roster-audit">
 <link rel="stylesheet" href="assets/mobile.css?v=20261114-evidence">
 </head>
 <body>
@@ -120,6 +120,7 @@
   <div class="tbl-tools"><input id="rq" type="search" placeholder="筛选关系（人名/说明）">
     <select id="rtype"><option value="">全部类型</option><option value="master_disciple">师徒</option><option value="other">代拉/引保代等</option><option value="ganqin">干亲/义亲</option><option value="jiebai">结拜</option><option value="kin">亲属</option><option value="guoji">过继/收养</option><option value="marriage">姻缘</option><option value="partner">固定搭档</option></select>
     <select id="rconf"><option value="">全部可信度</option><option value="documented">确定</option><option value="disputed">存疑</option></select> <span id="rcount"></span></div>
+  <details id="rosterAudit" class="cross-evidence audit-details" hidden><summary id="rosterAuditSummary"></summary><p id="rosterAuditMethod"></p><div id="rosterAuditLeads"></div></details>
   <div class="tbl-wrap"><table id="rtable"><thead><tr>
     <th data-k="type">类型</th><th data-k="fromName">从（师/长）</th><th data-k="toName">到（徒/亲）</th><th data-k="detail">说明</th><th data-k="confidence">可信度</th><th>来源</th></tr></thead><tbody></tbody></table></div>
 </section>
@@ -195,7 +196,7 @@
 <script src="vendor/cytoscape.min.js"></script>
 <script src="assets/mobile.js?v=20261114-evidence"></script>
 <script src="assets/line-style.js"></script>
-<script src="assets/app.js?v=20261114-kin-filters"></script>
+<script src="assets/app.js?v=20261114-roster-audit"></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "337a81f2145c44d1aca19c5d9b5fbe1d"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

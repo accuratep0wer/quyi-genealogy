@@ -24,19 +24,20 @@ const Z_MIN=0.03,Z_MAX=32;
 let zoomFromSlider=false;
 
 let ORGS={organizations:[],affiliations:[]},ORG_BY={},ORG_MEM={};
-let EVIDENCE={};
+let EVIDENCE={},ROSTER_AUDIT={};
 let SPREAD={};
 let NEBULA={};
 function optionalData(url){return fetch(url).then(r=>r.ok?r.json():{}).catch(()=>({}));}
-Promise.all(['data/people.json','data/relations.json','data/layout.json','data/layout-spread.json','data/layout-nebula.json'].map(u=>fetch(u).then(r=>{if(!r.ok)throw new Error(u);return r.json()})).concat([optionalData('data/relationship-evidence.json'),optionalData('data/organizations.json'),optionalData('data/kinship-updates.json?v=1')]))
-.then(([p,r,l,s,n,e,o,k])=>{
-  const changes=k.updates||{};
-  P=p.concat(k.people||[]);
-  R=r.map(row=>changes[row.id]?{...row,...changes[row.id],id:row.id}:row).concat(k.relations||[]);
+Promise.all(['data/people.json','data/relations.json','data/layout.json','data/layout-spread.json','data/layout-nebula.json'].map(u=>fetch(u).then(r=>{if(!r.ok)throw new Error(u);return r.json()})).concat([optionalData('data/relationship-evidence.json'),optionalData('data/organizations.json'),optionalData('data/kinship-updates.json?v=1'),optionalData('data/relationship-audit.json?v=1')]))
+.then(([p,r,l,s,n,e,o,k,a])=>{
+  const changes={...(k.updates||{}),...(a.updates||{})};
+  P=p.concat(k.people||[]).map(row=>a.personUpdates?.[row.id]?{...row,...a.personUpdates[row.id],id:row.id}:row);
+  R=r.map(row=>changes[row.id]?{...row,...changes[row.id],id:row.id}:row).concat(k.relations||[],a.relations||[]);
   L={...l,...(k.layout?.network||{})};
   SPREAD={...s,...(k.layout?.spread||{})};
   NEBULA={...n,...(k.layout?.nebula||{})};
-  EVIDENCE={...(e.relations||{}),...(k.evidence||{})};
+  EVIDENCE={...(e.relations||{}),...(k.evidence||{}),...(a.evidence||{})};
+  ROSTER_AUDIT=a;
   ORGS=o;init();
 }).catch(e=>{$('#cy').innerHTML='<p style="padding:20px">数据加载失败：'+esc(e.message)+'</p>';});
 
@@ -144,6 +145,7 @@ function init(){
   bindUI();
   renderTables();
   renderSources();
+  renderAudit();
   route();
   window.addEventListener('hashchange',route);
 }
@@ -754,6 +756,40 @@ function renderRelation(r){
   $('#relationFeedback').onclick=()=>openFeedback(r.from);
   if(window.XSMobile) XSMobile.openPanel();
 }
+function rosterLeadItems(id){
+  return (ROSTER_AUDIT.leads||[]).filter(q=>!id||q.people.includes(id)).map(q=>{
+    const names=q.people.filter(x=>byId[x]).map(x=>'<a href="#graph/'+esc(x)+'">'+esc(labelOf(byId[x]))+'</a>').join('、');
+    const refs=(q.sources||[]).map(x=>'<a href="'+esc(x.url)+'" target="_blank" rel="noopener">'+esc(x.title)+'</a>').join('、');
+    return '<li>'+names+'：'+esc(q.question)+'<br><span class="muted">'+esc(q.status)+'。'+esc(q.note)+(refs?' '+refs:'')+'</span></li>';
+  }).join('');
+}
+function rosterLeadPanel(id){
+  const items=rosterLeadItems(id);
+  return items?'<section class="cross-evidence"><h3>待查线索（未确认）</h3><p class="muted">这些是待查问题，不是已知关系，不画连线。</p><ul>'+items+'</ul></section>':'';
+}
+function renderAudit(){
+  const box=$('#rosterAudit');
+  if(!box||!ROSTER_AUDIT.coverage)return;
+  const c=ROSTER_AUDIT.coverage, leads=rosterLeadItems();
+  box.hidden=false;
+  $('#rosterAuditSummary').textContent='关系查漏补缺 · '+c.roster+' 人结构扫描 · 新增 '+(ROSTER_AUDIT.relations||[]).length+' 条';
+  $('#rosterAuditMethod').textContent='先逐名用模型初筛，并检查现有连线、重名和别名；再对有线索的关系和生平核对公开材料。补录 '+Object.keys(ROSTER_AUDIT.biographies||{}).length+' 人生平。不是每个人都已完成外部资料核验；没找到不代表没有。';
+  $('#rosterAuditLeads').innerHTML=leads?'<p><strong>待查线索（不画连线，不计入关系数）</strong></p><ul>'+leads+'</ul>':'';
+}
+function personBio(id){
+  const fields=ROSTER_AUDIT.biographies?.[id]||[];
+  if(!fields.length) return '';
+  return '<section class="cross-evidence"><h3>生平补录与核对</h3><ul>'+fields.map(f=>
+    '<li><b>'+esc(f.label)+'</b>：'+esc(f.value)+' <span class="tag'+(f.status==='disputed'?' dis':'')+'">'+esc(CONF_CN[f.status])+'</span>'+
+    (f.note?'<br><span class="muted">'+esc(f.note)+'</span>':'')+
+    ' '+(f.sources||[]).map(x=>'<a href="'+esc(x.url)+'" target="_blank" rel="noopener">'+esc(x.title)+'</a>').join(' · ')+'</li>'
+  ).join('')+'</ul></section>';
+}
+function disputedYear(p,key){
+  const label=key==='birth'?'出生':'逝世';
+  return (ROSTER_AUDIT.biographies?.[p.id]||[]).some(f=>f.status==='disputed'&&f.key===key)
+    ? '<span class="tag dis" title="'+label+'资料存疑">存疑</span>' : '';
+}
 function renderPanel(id){
   const p=byId[id];const rs=adj[id];
   const masters=rs.filter(r=>r.type==='master_disciple'&&r.to===id);
@@ -768,11 +804,12 @@ function renderPanel(id){
   const ly=LIYUAN_XO[id];
   const lyBadge=ly?'<p class="xo-badge">梨园谱系里的同一人 <a href="liyuan/#graph/'+encodeURIComponent(ly)+'">打开梨园图谱</a></p>':'';
   $('#panel').innerHTML='<h2>'+esc(labelOf(p))+'</h2>'+lyBadge+off+
-   '<div class="meta">'+(p.generation?'第'+p.generation+'代'+(p.zibei?'·“'+p.zibei+'”字辈':''):'代数不详')+(p.gen_source?'<span class="tag">'+esc(p.gen_source)+'</span>':'')+(yrs?' · '+yrs:'')+(p.role==='relative'?' · 非谱系内亲属':'')+(confTag?' '+confTag:'')+'</div>'+
+   '<div class="meta">'+(p.generation?'第'+p.generation+'代'+(p.zibei?'·“'+p.zibei+'”字辈':''):'代数不详')+(p.gen_source?'<span class="tag">'+esc(p.gen_source)+'</span>':'')+(yrs?' · '+yrs:'')+disputedYear(p,'birth')+disputedYear(p,'death')+(p.role==='relative'?' · 非谱系内亲属':'')+(confTag?' '+confTag:'')+'</div>'+
    '<div class="panel-actions"><button type="button" id="egoBtn">'+(state.mode==='ego'?'回到全网络':'聚焦此人的师承子图')+'</button>'+
    '<button type="button" class="feedback-btn" id="panelFeedback">提交修正</button></div>'+
    (p.aliases&&p.aliases.length?'<div>别名/本名：'+esc(p.aliases.join('、'))+'</div>':'')+
    (p.notes&&p.notes.length?'<div class="muted" style="margin-top:6px">'+p.notes.map(esc).join('<br>')+'</div>':'')+
+   personBio(id)+
    organizationPanel(id)+
    sec('师父',masters,r=>relLine(r,r.from))+
    sec('徒弟',dis,r=>relLine(r,r.to))+
@@ -783,6 +820,7 @@ function renderPanel(id){
    sec('过继 / 收养',gj,r=>relLine(r,r.from===id?r.to:r.from))+
    sec('姻缘',mar,r=>relLine(r,r.from===id?r.to:r.from))+
    sec('固定搭档',par,r=>relLine(r,r.from===id?r.to:r.from))+
+   rosterLeadPanel(id)+
    (sib.size?'<h3>同门（'+sib.size+'）</h3><div style="line-height:1.9">'+[...sib.keys()].map(plink).join('、')+'</div>':'')+
    '<h3>来源</h3><div>'+(p.wiki_url?'<a href="'+esc(p.wiki_url)+'" target="_blank" rel="noopener">维基百科条目</a> ':'')+srcLinks(p.sources)+'</div>';
   $('#egoBtn').onclick=()=>{
@@ -1660,7 +1698,7 @@ function renderTables(){
     const key={name:p=>p.name,generation:p=>p.generation||99,zibei:p=>p.zibei||'',birth:p=>p.birth||9999,death:p=>p.death||9999,masters:p=>p._masters,ndis:p=>p._ndis,notes:p=>(p.notes||[]).join('')}[psort.k]||(p=>p.name);
     rows.sort((a,b)=>{const x=key(a),y=key(b);return (x<y?-1:x>y?1:a.name.localeCompare(b.name,'zh'))*psort.d;});
     $('#pcount').textContent=rows.length+' 人';
-    $('#ptable tbody').innerHTML=rows.map(p=>'<tr><td><a href="#graph/'+p.id+'">'+esc(labelOf(p))+'</a>'+(p.aliases.length?'<br><small class="muted">'+esc(p.aliases.join('、'))+'</small>':'')+'</td><td>'+(p.generation||'')+'</td><td>'+(p.zibei||'')+'</td><td>'+(p.birth||'')+'</td><td>'+(p.death||'')+'</td><td>'+esc(p._masters)+'</td><td>'+(p._ndis||'')+'</td><td class="notes">'+esc((p._linked?[]:['没有任何关系']).concat(p.notes||[]).join('；'))+'</td><td>'+(p.wiki_url?'<a href="'+esc(p.wiki_url)+'" target="_blank" rel="noopener">维基</a> ':'')+srcLinks(p.sources)+'</td></tr>').join('');
+    $('#ptable tbody').innerHTML=rows.map(p=>'<tr><td><a href="#graph/'+p.id+'">'+esc(labelOf(p))+'</a>'+(p.aliases.length?'<br><small class="muted">'+esc(p.aliases.join('、'))+'</small>':'')+'</td><td>'+(p.generation||'')+'</td><td>'+(p.zibei||'')+'</td><td>'+(p.birth||'')+disputedYear(p,'birth')+'</td><td>'+(p.death||'')+disputedYear(p,'death')+'</td><td>'+esc(p._masters)+'</td><td>'+(p._ndis||'')+'</td><td class="notes">'+esc((p._linked?[]:['没有任何关系']).concat(p.notes||[]).join('；'))+'</td><td>'+(p.wiki_url?'<a href="'+esc(p.wiki_url)+'" target="_blank" rel="noopener">维基</a> ':'')+srcLinks(p.sources)+'</td></tr>').join('');
   };
   const drawR=()=>{
     const v=$('#rq').value.trim(),t=$('#rtype').value,c=$('#rconf').value;

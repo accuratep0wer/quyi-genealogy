@@ -166,3 +166,8 @@ dialog::backdrop{background:rgba(0,0,0,.45)}
 .relation-filter-actions{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap}
 #applyRelations:not(:disabled){background:var(--accent,#a8322d);color:#fff;border-color:var(--accent,#a8322d);font-weight:700}
 #relationFilterStatus{color:#6f665f;white-space:nowrap}
+
+/* Unverified model leads are visible but not part of the relationship graph. */
+.audit-details{margin:8px 12px 12px;padding:8px 12px;background:#fafaf9;border-radius:6px;overflow-wrap:anywhere}
+.audit-details summary{cursor:pointer;color:var(--accent);font-weight:600}
+.audit-details li,.cross-evidence li{margin:6px 0}

@@ -1,0 +1,2050 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-11-14",
+  "coverage": {
+    "roster": 2054,
+    "nameTriage": 2054,
+    "originalRelations": 2490,
+    "nameTriageBands": [
+      [
+        0,
+        549
+      ],
+      [
+        550,
+        999
+      ],
+      [
+        1000,
+        1549
+      ],
+      [
+        1550,
+        2052
+      ]
+    ],
+    "extraSidecarPeople": 1,
+    "method": "全名单逐名模型初筛与既有记录结构核对；只对命中的线索定向考证。不承诺逐人公开文献齐全。"
+  },
+  "relations": [
+    {
+      "id": "r02514",
+      "type": "kin",
+      "to": "p1905",
+      "detail": "杨威是杨化然的父亲",
+      "confidence": "documented",
+      "sources": [
+        "https://www.shobserver.cn/wx/detail.do?id=42735"
+      ],
+      "notes": [],
+      "from": "p0732"
+    },
+    {
+      "id": "r02515",
+      "type": "kin",
+      "to": "p1905",
+      "detail": "杨少华是杨化然的祖父",
+      "confidence": "documented",
+      "sources": [
+        "https://www.shobserver.cn/wx/detail.do?id=42735"
+      ],
+      "notes": [],
+      "from": "p0354"
+    },
+    {
+      "id": "r02516",
+      "type": "kin",
+      "to": "p1554",
+      "detail": "杨威与杨议为兄弟",
+      "confidence": "documented",
+      "sources": [
+        "https://www.shobserver.cn/wx/detail.do?id=42735",
+        "https://www.yzwb.net/news/wy/202507/t20250714_236208.html"
+      ],
+      "notes": [
+        "由来源分别明确的父子关系推得，不进一步涉及母系身份。"
+      ],
+      "from": "p0732"
+    },
+    {
+      "id": "r02517",
+      "type": "kin",
+      "to": "p1905",
+      "detail": "杨议是杨化然的叔叔",
+      "confidence": "documented",
+      "sources": [
+        "https://www.shobserver.cn/wx/detail.do?id=42735",
+        "https://www.yzwb.net/news/wy/202507/t20250714_236208.html"
+      ],
+      "notes": [
+        "由两篇报道所载的父子关系推得。"
+      ],
+      "from": "p1554"
+    },
+    {
+      "id": "r02518",
+      "type": "partner",
+      "to": "p0938",
+      "detail": "杨少华与刘俊杰曾在天津市曲艺团搭档，刘逗、杨捧",
+      "confidence": "documented",
+      "sources": [
+        "https://m.bjnews.com.cn/detail/1752543150168516.html"
+      ],
+      "notes": [],
+      "from": "p0354"
+    },
+    {
+      "id": "r02519",
+      "type": "partner",
+      "to": "p0838",
+      "detail": "杨威曾与朱永义搭档",
+      "confidence": "documented",
+      "sources": [
+        "https://ent.sina.cn/2003-09-28/detail-ichzzmne8998246.d.html?vt=4",
+        "https://ent.sina.com.cn/h/2004-01-04/1719269564.html"
+      ],
+      "notes": [],
+      "from": "p0732"
+    },
+    {
+      "id": "r02520",
+      "type": "kin",
+      "to": "p0292",
+      "detail": "马敬伯是马志明的堂兄",
+      "confidence": "documented",
+      "sources": [
+        "https://yule.sohu.com/20130227/n367248331.shtml"
+      ],
+      "notes": [],
+      "from": "p0228"
+    },
+    {
+      "id": "r02521",
+      "type": "other",
+      "to": "p0292",
+      "detail": "马三立亲自传艺给马敬伯",
+      "confidence": "documented",
+      "sources": [
+        "https://yule.sohu.com/20130227/n367248331.shtml"
+      ],
+      "notes": [
+        "叔侄及家学传授，不是并列的正式拜师。"
+      ],
+      "from": "p0103"
+    },
+    {
+      "id": "r02522",
+      "type": "kin",
+      "to": "p0060",
+      "detail": "高德光是高德明的哥哥",
+      "confidence": "documented",
+      "sources": [
+        "https://www.sohu.com/a/143247905_231014"
+      ],
+      "notes": [
+        "口述转录，尚未复核纸本。"
+      ],
+      "from": "p0062"
+    },
+    {
+      "id": "r02523",
+      "type": "kin",
+      "to": "p0063",
+      "detail": "高德亮是高德明的弟弟",
+      "confidence": "documented",
+      "sources": [
+        "https://www.sohu.com/a/143247905_231014"
+      ],
+      "notes": [
+        "口述转录，尚未复核纸本。"
+      ],
+      "from": "p0060"
+    },
+    {
+      "id": "r02524",
+      "type": "kin",
+      "to": "p0063",
+      "detail": "高德光与高德亮为兄弟",
+      "confidence": "documented",
+      "sources": [
+        "https://www.sohu.com/a/143247905_231014"
+      ],
+      "notes": [
+        "据侯宝林口述记载推得，不判断是否同母。"
+      ],
+      "from": "p0062"
+    },
+    {
+      "id": "r02525",
+      "type": "partner",
+      "to": "p1332",
+      "detail": "刘春山与许健曾长期搭档",
+      "confidence": "documented",
+      "sources": [
+        "https://yule.sohu.com/20130926/n387302443.shtml"
+      ],
+      "notes": [],
+      "from": "p1190"
+    },
+    {
+      "id": "r02526",
+      "type": "partner",
+      "to": "p0938",
+      "detail": "苏明杰与刘俊杰曾在天津市曲艺团搭档",
+      "confidence": "documented",
+      "sources": [
+        "https://k.sina.cn/article_1210154912_48217fa002001dmpc.html"
+      ],
+      "notes": [],
+      "from": "p0864"
+    },
+    {
+      "id": "r02527",
+      "type": "other",
+      "to": "p0206",
+      "detail": "田立禾早年曾随杨少奎学艺",
+      "confidence": "documented",
+      "sources": [
+        "https://www.cnr.cn/tj/whtj/xs/20170608/t20170608_523791984.shtml"
+      ],
+      "notes": [
+        "只记录学艺指导，不是师徒。"
+      ],
+      "from": "p0175"
+    },
+    {
+      "id": "r02528",
+      "type": "kin",
+      "to": "p0386",
+      "detail": "魏文华是魏文亮的姐姐",
+      "confidence": "documented",
+      "sources": [
+        "https://ent.enorth.com.cn/system/2018/08/05/035930893.shtml"
+      ],
+      "notes": [],
+      "from": "p0385"
+    },
+    {
+      "id": "r02529",
+      "type": "marriage",
+      "to": "p0385",
+      "detail": "刘文亨与魏文华为夫妻",
+      "confidence": "documented",
+      "sources": [
+        "https://ent.enorth.com.cn/system/2018/08/05/035930893.shtml"
+      ],
+      "notes": [],
+      "from": "p0436"
+    },
+    {
+      "id": "r02530",
+      "type": "partner",
+      "to": "p0643",
+      "detail": "魏文亮与孟祥光曾长期搭档，合作《要条件》《二重唱》等",
+      "confidence": "documented",
+      "sources": [
+        "https://epaper.tianjinwe.com/tjrb/html/2026-09/29/content_143094_3882182.htm"
+      ],
+      "notes": [],
+      "from": "p0386"
+    },
+    {
+      "id": "r02531",
+      "type": "partner",
+      "to": "p0722",
+      "detail": "魏文亮1956年加入南开区相声队后与陈永清搭档",
+      "confidence": "documented",
+      "sources": [
+        "https://epaper.tianjinwe.com/tjrb/html/2026-09/29/content_143094_3882182.htm"
+      ],
+      "notes": [],
+      "from": "p0386"
+    },
+    {
+      "id": "r02532",
+      "type": "partner",
+      "to": "p0643",
+      "detail": "田立禾曾与孟祥光搭档，后孟祥光改与魏文亮合作",
+      "confidence": "documented",
+      "sources": [
+        "https://www.cnr.cn/tj/whtj/xs/20170608/t20170608_523791984.shtml"
+      ],
+      "notes": [],
+      "from": "p0206"
+    },
+    {
+      "id": "r02533",
+      "type": "partner",
+      "to": "p0387",
+      "detail": "田立禾与张文霞晚年成为夫妻搭档",
+      "confidence": "documented",
+      "sources": [
+        "https://www.cnr.cn/tj/whtj/xs/20170608/t20170608_523791984.shtml"
+      ],
+      "notes": [
+        "原有r01784是婚姻边；此次为不同类型的舞台搭档关系。"
+      ],
+      "from": "p0206"
+    },
+    {
+      "id": "r02534",
+      "type": "partner",
+      "to": "p1984",
+      "detail": "杨少奎与刘广文曾在天津河北鸟市搭档",
+      "confidence": "documented",
+      "sources": [
+        "https://www.cnr.cn/tj/whtj/xs/20170608/t20170608_523791984.shtml"
+      ],
+      "notes": [],
+      "from": "p0175"
+    },
+    {
+      "id": "r02535",
+      "type": "partner",
+      "to": "p0206",
+      "detail": "田立禾学艺初期与佟大方合作，田逗、佟捧",
+      "confidence": "documented",
+      "sources": [
+        "https://www.cnr.cn/tj/whtj/xs/20170608/t20170608_523791984.shtml"
+      ],
+      "notes": [],
+      "from": "p0207"
+    },
+    {
+      "id": "r02536",
+      "type": "marriage",
+      "to": "p0079",
+      "detail": "张寿臣与富寿严是儿女亲家",
+      "confidence": "documented",
+      "sources": [
+        "https://www.cnr.cn/tj/whtj/xs/20170608/t20170608_523791984.shtml"
+      ],
+      "notes": [
+        "不据此猜测具体子女的婚配方向；未建立虚构子女。"
+      ],
+      "from": "p0077"
+    },
+    {
+      "id": "r02537",
+      "type": "partner",
+      "to": "p0728",
+      "detail": "田立禾曾与范振钰搭档演出",
+      "confidence": "documented",
+      "sources": [
+        "https://news.sina.com.cn/c/2026-08-21/doc-inipaens1373530.shtml"
+      ],
+      "notes": [],
+      "from": "p0206"
+    },
+    {
+      "id": "r02538",
+      "type": "partner",
+      "to": "p0282",
+      "detail": "田立禾曾与尹笑声搭档演出",
+      "confidence": "documented",
+      "sources": [
+        "https://news.sina.com.cn/c/2026-08-21/doc-inipaens1373530.shtml"
+      ],
+      "notes": [],
+      "from": "p0206"
+    },
+    {
+      "id": "r02539",
+      "type": "partner",
+      "to": "p0509",
+      "detail": "田立禾曾与王文玉搭档演出",
+      "confidence": "documented",
+      "sources": [
+        "https://news.sina.com.cn/c/2026-08-21/doc-inipaens1373530.shtml"
+      ],
+      "notes": [],
+      "from": "p0206"
+    },
+    {
+      "id": "r02540",
+      "type": "kin",
+      "to": "p1358",
+      "detail": "刘全利与刘全和是双胞胎兄弟",
+      "confidence": "documented",
+      "sources": [
+        "https://australia.people.com.cn/n1/2018/0408/c408038-29912822.html"
+      ],
+      "notes": [],
+      "from": "p1357"
+    },
+    {
+      "id": "r02541",
+      "type": "partner",
+      "to": "p0316",
+      "detail": "魏文亮与冯宝华曾搭档演出",
+      "confidence": "documented",
+      "sources": [
+        "https://news.sina.cn/sa/2004-09-24/detail-ikknscsi4340100.d.html"
+      ],
+      "notes": [
+        "1962仅见本篇明文，独立检索未找到第二来源；detail保留搭档事实，不将1962写作确证起始年。"
+      ],
+      "from": "p0386"
+    },
+    {
+      "id": "r02542",
+      "type": "kin",
+      "to": "p0282",
+      "detail": "尹寿山是尹笑声的父亲",
+      "confidence": "documented",
+      "sources": [
+        "https://www.tjl.tj.cn/ArticleContent.aspx?ChannelId=241&ID=984"
+      ],
+      "notes": [],
+      "from": "p0138"
+    },
+    {
+      "id": "r02543",
+      "type": "partner",
+      "to": "p1378",
+      "detail": "陈印泉、侯振鹏：长期相声搭档（2020年采访有载）",
+      "confidence": "documented",
+      "sources": [
+        "https://ent.people.com.cn/n1/2020/0620/c1012-31753675.html",
+        "https://www.chinawriter.com.cn/2014/2014-02-19/192375.html"
+      ],
+      "notes": [
+        "本轮核验专业搭档关系；不据旧报道推断截至今日仍为固定组合。"
+      ],
+      "from": "p1326"
+    },
+    {
+      "id": "r02544",
+      "type": "partner",
+      "to": "p1382",
+      "detail": "董建春、李丁：相声搭档（2014—2018年合作有载）",
+      "confidence": "documented",
+      "sources": [
+        "https://www.hall.tsinghua.edu.cn/info/yc/4015"
+      ],
+      "notes": [
+        "本轮核验专业搭档关系；不据旧报道推断截至今日仍为固定组合。"
+      ],
+      "from": "p1383"
+    },
+    {
+      "id": "r02545",
+      "type": "partner",
+      "to": "p1792",
+      "detail": "李寅飞、叶蓬：大逗相声搭档（2015年报道有载）",
+      "confidence": "documented",
+      "sources": [
+        "https://www.tsinghua.edu.cn/info/1179/17258.htm"
+      ],
+      "notes": [
+        "本轮核验专业搭档关系；不据旧报道推断截至今日仍为固定组合。"
+      ],
+      "from": "p1381"
+    },
+    {
+      "id": "r02546",
+      "type": "partner",
+      "to": "p1228",
+      "detail": "金霏、陈曦：多年相声搭档（2024年采访有载）",
+      "confidence": "documented",
+      "sources": [
+        "https://www.zgwypl.com/content/details2528_442820.html",
+        "https://www.zgwypl.com/content/details2396_442820.html"
+      ],
+      "notes": [
+        "本轮核验专业搭档关系；不据旧报道推断截至今日仍为固定组合。"
+      ],
+      "from": "p1787"
+    },
+    {
+      "id": "r02547",
+      "type": "partner",
+      "to": "p1008",
+      "detail": "王振华与冯巩长期合作；2014《趣猜灯谜》、2017及2018《乡音总关情》系列",
+      "confidence": "documented",
+      "sources": [
+        "https://www.chinanews.com/m/yl/2018/02-27/8455558.shtml"
+      ],
+      "notes": [
+        "历史/报道时合作，不表示目前仍为固定搭档。"
+      ],
+      "from": "p1995"
+    },
+    {
+      "id": "r02548",
+      "type": "partner",
+      "to": "p0332",
+      "detail": "王振华曾与王志涛搭档表演相声",
+      "confidence": "documented",
+      "sources": [
+        "https://www.chinanews.com/m/yl/2018/02-27/8455558.shtml"
+      ],
+      "notes": [
+        "历史/报道时合作，不表示目前仍为固定搭档。"
+      ],
+      "from": "p1995"
+    },
+    {
+      "id": "r02549",
+      "type": "partner",
+      "to": "p1541",
+      "detail": "王振华曾与范伟搭档表演相声",
+      "confidence": "documented",
+      "sources": [
+        "https://www.chinanews.com/m/yl/2018/02-27/8455558.shtml"
+      ],
+      "notes": [
+        "历史/报道时合作，不表示目前仍为固定搭档。"
+      ],
+      "from": "p1995"
+    },
+    {
+      "id": "r02550",
+      "type": "partner",
+      "to": "p2052",
+      "detail": "岳云鹏与史爱东曾为搭档；2011年专场共同演出《学歌曲》《拴娃娃》",
+      "confidence": "documented",
+      "sources": [
+        "https://m.haiwainet.cn/middle/345416/2016/0323/content_29763720_5.html"
+      ],
+      "notes": [
+        "历史/报道时合作，不表示目前仍为固定搭档。"
+      ],
+      "from": "p1528"
+    },
+    {
+      "id": "r02551",
+      "type": "partner",
+      "to": "p2043",
+      "detail": "逗笑与逗乐合作《找堂会》《谈“心”》等节目",
+      "confidence": "documented",
+      "sources": [
+        "https://cctv.cntv.cn/special/xsds/"
+      ],
+      "notes": [
+        "按节目单确认合作，未由这些节目单单独推定起始年份或现任固定搭档。"
+      ],
+      "from": "p2042"
+    },
+    {
+      "id": "r02552",
+      "type": "partner",
+      "to": "p2052",
+      "detail": "李云天与史爱东曾为相声搭档",
+      "confidence": "documented",
+      "sources": [
+        "https://www.iq.com/actor-info/%E5%8F%B2%E7%88%B1%E4%B8%9C-shi-ai-dong-202513705?lang=zh_cn"
+      ],
+      "notes": [
+        "演员简介与2024演出介绍相符；当前主数据另有吴霄泽搭档边，故本边明确为历史合作，不替换现搭档。"
+      ],
+      "from": "p1559"
+    },
+    {
+      "id": "r02553",
+      "type": "partner",
+      "to": "p0940",
+      "detail": "早年在部队合作说相声",
+      "confidence": "documented",
+      "sources": [
+        "https://www.sohu.com/a/448525177_121006643"
+      ],
+      "notes": [
+        "第一人称访谈；发行载体为转载页。"
+      ],
+      "from": "p0941"
+    },
+    {
+      "id": "r02554",
+      "type": "other",
+      "to": "p0647",
+      "detail": "代拉师弟（2009-12-10）",
+      "confidence": "documented",
+      "sources": [
+        "https://www.guodegang.org/bulletin/one.php?id=16"
+      ],
+      "notes": [
+        "不得误写李文山为谢金之师；师承王世臣另有现存边。"
+      ],
+      "from": "p0645"
+    }
+  ],
+  "updates": {
+    "r01782": {
+      "confidence": "disputed",
+      "detail": "杨少华之子与图中相声演员杨健是否同一人，尚待核对",
+      "sources": [
+        "https://zh.wikipedia.org/wiki/%E6%9D%A8%E5%B0%91%E5%8D%8E_%28%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%29",
+        "https://m.bjnews.com.cn/detail/1752543150168516.html"
+      ],
+      "notes": [
+        "旧记录按同名接线，没有足够依据将两个身份视作同一人。"
+      ]
+    },
+    "r00351": {
+      "sources": [
+        "https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB",
+        "https://zh.wikipedia.org/wiki/%E6%9D%A8%E5%B0%91%E5%8D%8E_%28%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%29",
+        "https://zh.wikipedia.org/wiki/%E9%83%AD%E8%8D%A3%E8%B5%B7",
+        "https://github.com/jammyfu/xiangsheng-genealogy",
+        "https://www.xinhuanet.com/culture/20250710/178b7d03754c464eb558ab7db4c72d39/c.html",
+        "https://m.bjnews.com.cn/detail/1752543150168516.html"
+      ],
+      "notes": [
+        "参考项目 jammyfu/xiangsheng-genealogy 标为存疑：天津圈多按郭荣起口传弟子、宝字辈相待；严格行规说认为未正式摆知，属海清，另有归文字辈说，未有统一定论。",
+        "保留原存疑标记；随师学艺与正式摆知是两个不同主张。"
+      ]
+    },
+    "r00203": {
+      "detail": "1951年入门随学；1953年5月4日正式拜师（田立禾口述）",
+      "sources": [
+        "https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB",
+        "https://zh.wikipedia.org/wiki/%E5%BC%A0%E5%AF%BF%E8%87%A3",
+        "https://www.cnr.cn/yczg/gszx/20230616/t20230616_526290348.shtml",
+        "https://www.cnr.cn/tj/whtj/xs/20170608/t20170608_523791984.shtml"
+      ],
+      "notes": [
+        "两种说法经当事人进一步说明可以区分为两个事件，未发现师徒关系本身相冲突。"
+      ]
+    },
+    "r01733": {
+      "detail": "常宝华是相声及喜剧演员常远的祖父",
+      "sources": [
+        "https://zh.wikipedia.org/wiki/%E5%B8%B8%E5%AE%9D%E5%8D%8E",
+        "https://people.cctv.cn/2018/09/09/ARTIybqiq0ioikxoB66BGbUn180909.shtml",
+        "https://www.rmhb.com.cn/rw/201810/t20181011_800143920.html"
+      ],
+      "notes": [
+        "原表有同名合并提示，此次已用演员身份和公开采访核对该祖孙关系。"
+      ]
+    },
+    "r01691": {
+      "detail": "侯耀文生前认可；杨进明于2007年8月17日正式追拜",
+      "sources": [
+        "https://zh.wikipedia.org/wiki/%E4%BE%AF%E8%80%80%E6%96%87",
+        "https://ent.sina.com.cn/h/2007-08-18/06201680425.shtml",
+        "https://news.sina.com.cn/c/2007-08-18/144813692221.shtml"
+      ],
+      "notes": [
+        "葬礼上没有举行拜师与其后另行正式追拜并不抵触。"
+      ]
+    },
+    "r00412": {
+      "detail": "由李伯祥代拉，拜入赵佩茹门户；非赵佩茹亲授",
+      "sources": [
+        "https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB",
+        "https://zh.wikipedia.org/wiki/%E4%BE%AF%E8%80%80%E6%96%87",
+        "https://zh.wikipedia.org/wiki/%E8%B5%B5%E4%BD%A9%E8%8C%B9",
+        "https://github.com/jammyfu/xiangsheng-genealogy",
+        "https://www.llxiqu.com/yyfh/showarticle_articleid_740.html"
+      ],
+      "notes": [
+        "门户师承与本人授艺分开记录。"
+      ]
+    },
+    "r00553": {
+      "confidence": "disputed",
+      "detail": "王派快板亲传；是否还有相声门师承，未核实",
+      "sources": [
+        "https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB",
+        "https://github.com/jammyfu/xiangsheng-genealogy",
+        "https://epaper.tianjinwe.com/tjrb/h5/html5/2026-01/20/content_143094_3057905.htm"
+      ],
+      "notes": [
+        "参考项目注：按参考表归王凤山门下；天津日报2026-01-20另载其为王派快板亲传弟子，曲种需区分。",
+        "只对原图将其用作相声门关系标存疑，不否认有出处的快板传承。"
+      ]
+    },
+    "r00994": {
+      "confidence": "disputed",
+      "detail": "原相声谱列为师承；另有说法指这次拜师属于快板门",
+      "sources": [
+        "https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB",
+        "https://k.sina.cn/article_3788383772_e1ce261c001010rdw.html"
+      ],
+      "notes": [
+        "原表未附当事人或仪式资料。存疑之处是曲种与相声门归属，非断定拜师不存在。"
+      ]
+    }
+  },
+  "evidence": {
+    "r02514": {
+      "status": "documented",
+      "reviewNote": "模型提出或提示核查；此条判断依据为所列公开材料，不以模型答案作为出处。",
+      "evidence": [
+        {
+          "url": "https://www.shobserver.cn/wx/detail.do?id=42735",
+          "publisher": "上观新闻",
+          "title": "“津”夜，他们在上海说相声",
+          "claim": "报道介绍杨威、杨化然是父子。"
+        }
+      ]
+    },
+    "r02515": {
+      "status": "documented",
+      "reviewNote": "模型提出或提示核查；此条判断依据为所列公开材料，不以模型答案作为出处。",
+      "evidence": [
+        {
+          "url": "https://www.shobserver.cn/wx/detail.do?id=42735",
+          "publisher": "上观新闻",
+          "title": "“津”夜，他们在上海说相声",
+          "claim": "天津名流茶馆演出报道介绍了杨少华、杨威、杨化然祖孙三代。"
+        }
+      ]
+    },
+    "r02516": {
+      "status": "documented",
+      "reviewNote": "由来源分别明确的父子关系推得，不进一步涉及母系身份。",
+      "evidence": [
+        {
+          "url": "https://www.shobserver.cn/wx/detail.do?id=42735",
+          "publisher": "上观新闻",
+          "title": "“津”夜，他们在上海说相声",
+          "claim": "报道明确杨威是杨少华的长子。"
+        },
+        {
+          "url": "https://www.yzwb.net/news/wy/202507/t20250714_236208.html",
+          "publisher": "扬子晚报",
+          "title": "逝者｜杨议：父亲走得风光，没白干",
+          "claim": "杨议以儿子身份回忆父亲杨少华。"
+        }
+      ]
+    },
+    "r02517": {
+      "status": "documented",
+      "reviewNote": "由两篇报道所载的父子关系推得。",
+      "evidence": [
+        {
+          "url": "https://www.shobserver.cn/wx/detail.do?id=42735",
+          "publisher": "上观新闻",
+          "title": "“津”夜，他们在上海说相声",
+          "claim": "报道介绍杨威是杨化然的父亲，也是杨少华的长子。"
+        },
+        {
+          "url": "https://www.yzwb.net/news/wy/202507/t20250714_236208.html",
+          "publisher": "扬子晚报",
+          "title": "逝者｜杨议：父亲走得风光，没白干",
+          "claim": "杨议以儿子身份回忆父亲杨少华。"
+        }
+      ]
+    },
+    "r02518": {
+      "status": "documented",
+      "reviewNote": "模型提出或提示核查；此条判断依据为所列公开材料，不以模型答案作为出处。",
+      "evidence": [
+        {
+          "url": "https://m.bjnews.com.cn/detail/1752543150168516.html",
+          "publisher": "新京报",
+          "title": "“蔫坏”老头杨少华：蔫了一辈子，逗乐几代人",
+          "claim": "刘俊杰向记者回忆，20世纪80年代两人在天津市曲艺团是同事和搭档，自己逗哏、杨少华捧哏。"
+        }
+      ]
+    },
+    "r02519": {
+      "status": "documented",
+      "reviewNote": "模型提出或提示核查；此条判断依据为所列公开材料，不以模型答案作为出处。",
+      "evidence": [
+        {
+          "url": "https://ent.sina.cn/2003-09-28/detail-ichzzmne8998246.d.html?vt=4",
+          "publisher": "京华时报（新浪转载）",
+          "title": "天津相声“十一”闹京城",
+          "claim": "演出报道点名两人合说《反七口》。"
+        },
+        {
+          "url": "https://ent.sina.com.cn/h/2004-01-04/1719269564.html",
+          "publisher": "新浪娱乐",
+          "title": "杨少华父子卷土重来 天津相声进京大拜年",
+          "claim": "演出介绍将朱永义称为杨威的老搭档，并列出二人合说的《山东话》。"
+        }
+      ]
+    },
+    "r02520": {
+      "status": "documented",
+      "reviewNote": "模型提出或提示核查；此条判断依据为所列公开材料，不以模型答案作为出处。",
+      "evidence": [
+        {
+          "url": "https://yule.sohu.com/20130227/n367248331.shtml",
+          "publisher": "东方早报（搜狐转载）",
+          "title": "相声名家马敬伯病逝",
+          "claim": "记者向马志明核对马敬伯的经历，报道明确两人为堂兄弟，且马敬伯年长。"
+        }
+      ]
+    },
+    "r02521": {
+      "status": "documented",
+      "reviewNote": "叔侄及家学传授，不是并列的正式拜师。",
+      "evidence": [
+        {
+          "url": "https://yule.sohu.com/20130227/n367248331.shtml",
+          "publisher": "东方早报（搜狐转载）",
+          "title": "相声名家马敬伯病逝",
+          "claim": "马志明的回忆和记者梳理明确马三立曾亲自教授马敬伯；文中另记马敬伯拜侯一尘为师。"
+        }
+      ]
+    },
+    "r02522": {
+      "status": "documented",
+      "reviewNote": "口述转录，尚未复核纸本。",
+      "evidence": [
+        {
+          "url": "https://www.sohu.com/a/143247905_231014",
+          "publisher": "侯宝林口述（长城曲艺网据《文史资料选编》转录）",
+          "title": "宝林亲述卖艺生涯四：拜师朱阔泉，结交穷朋友",
+          "claim": "侯宝林回忆北京西单商场从艺时，指明高德光是高德明的哥哥。"
+        }
+      ]
+    },
+    "r02523": {
+      "status": "documented",
+      "reviewNote": "口述转录，尚未复核纸本。",
+      "evidence": [
+        {
+          "url": "https://www.sohu.com/a/143247905_231014",
+          "publisher": "侯宝林口述（长城曲艺网据《文史资料选编》转录）",
+          "title": "宝林亲述卖艺生涯四：拜师朱阔泉，结交穷朋友",
+          "claim": "侯宝林回忆北京西单商场从艺时，指明高德亮是高德明的弟弟。"
+        }
+      ]
+    },
+    "r02524": {
+      "status": "documented",
+      "reviewNote": "据侯宝林口述记载推得，不判断是否同母。",
+      "evidence": [
+        {
+          "url": "https://www.sohu.com/a/143247905_231014",
+          "publisher": "侯宝林口述（长城曲艺网据《文史资料选编》转录）",
+          "title": "宝林亲述卖艺生涯四：拜师朱阔泉，结交穷朋友",
+          "claim": "侯宝林在同一段回忆中，分别介绍高德光与高德亮是高德明的哥哥和弟弟。"
+        }
+      ]
+    },
+    "r02525": {
+      "status": "documented",
+      "reviewNote": "模型提出或提示核查；此条判断依据为所列公开材料，不以模型答案作为出处。",
+      "evidence": [
+        {
+          "url": "https://yule.sohu.com/20130926/n387302443.shtml",
+          "publisher": "今晚报（搜狐转载）",
+          "title": "相声节上传统节目受好评 台上台下《论捧逗》",
+          "claim": "2013年现场报道及许健采访称两人当时已合作八年。"
+        }
+      ]
+    },
+    "r02526": {
+      "status": "documented",
+      "reviewNote": "模型提出或提示核查；此条判断依据为所列公开材料，不以模型答案作为出处。",
+      "evidence": [
+        {
+          "url": "https://k.sina.cn/article_1210154912_48217fa002001dmpc.html",
+          "publisher": "《相声的故乡》采访（新浪）",
+          "title": "相声泰斗马三立，曾每月另出20块钱，请杨少华为儿子马志明捧哏",
+          "claim": "刘俊杰本人回忆进曲艺团后，最初与苏明杰搭档。"
+        }
+      ]
+    },
+    "r02527": {
+      "status": "documented",
+      "reviewNote": "只记录学艺指导，不是师徒。",
+      "evidence": [
+        {
+          "url": "https://www.cnr.cn/tj/whtj/xs/20170608/t20170608_523791984.shtml",
+          "publisher": "天津日报（央广网转载）",
+          "title": "田立禾 相声说的就是老百姓身边的事",
+          "claim": "田立禾亲述早年在杨少奎处抄词、背贯口，并说明不算正式拜师。"
+        }
+      ]
+    },
+    "r02528": {
+      "status": "documented",
+      "reviewNote": "模型提出或提示核查；此条判断依据为所列公开材料，不以模型答案作为出处。",
+      "evidence": [
+        {
+          "url": "https://ent.enorth.com.cn/system/2018/08/05/035930893.shtml",
+          "publisher": "北方网／津云记者吴涛",
+          "title": "著名相声表演艺术家魏文华在津逝世（2018-08-05）",
+          "claim": "生平明确其弟为魏文亮。"
+        }
+      ]
+    },
+    "r02529": {
+      "status": "documented",
+      "reviewNote": "模型提出或提示核查；此条判断依据为所列公开材料，不以模型答案作为出处。",
+      "evidence": [
+        {
+          "url": "https://ent.enorth.com.cn/system/2018/08/05/035930893.shtml",
+          "publisher": "北方网／津云记者吴涛",
+          "title": "著名相声表演艺术家魏文华在津逝世（2018-08-05）",
+          "claim": "生平明确魏文华的丈夫为刘文亨。"
+        }
+      ]
+    },
+    "r02530": {
+      "status": "documented",
+      "reviewNote": "模型提出或提示核查；此条判断依据为所列公开材料，不以模型答案作为出处。",
+      "evidence": [
+        {
+          "url": "https://epaper.tianjinwe.com/tjrb/html/2026-09/29/content_143094_3882182.htm",
+          "publisher": "天津日报，记者田莹",
+          "title": "魏文亮 相声把人逗笑，不算完（2026-09-29）",
+          "claim": "报道叙述二人在工厂结识、配合创作及1979年调入曲艺团。"
+        }
+      ]
+    },
+    "r02531": {
+      "status": "documented",
+      "reviewNote": "模型提出或提示核查；此条判断依据为所列公开材料，不以模型答案作为出处。",
+      "evidence": [
+        {
+          "url": "https://epaper.tianjinwe.com/tjrb/html/2026-09/29/content_143094_3882182.htm",
+          "publisher": "天津日报，记者田莹",
+          "title": "魏文亮 相声把人逗笑，不算完（2026-09-29）",
+          "claim": "报道明确1956年入队与陈永清搭档。"
+        }
+      ]
+    },
+    "r02532": {
+      "status": "documented",
+      "reviewNote": "模型提出或提示核查；此条判断依据为所列公开材料，不以模型答案作为出处。",
+      "evidence": [
+        {
+          "url": "https://www.cnr.cn/tj/whtj/xs/20170608/t20170608_523791984.shtml",
+          "publisher": "天津日报专访／央广网转载",
+          "title": "田立禾 相声说的就是老百姓身边的事（2017-06-08）",
+          "claim": "田立禾本人回忆搭档及后来调整的经过。"
+        }
+      ]
+    },
+    "r02533": {
+      "status": "documented",
+      "reviewNote": "原有r01784是婚姻边；此次为不同类型的舞台搭档关系。",
+      "evidence": [
+        {
+          "url": "https://www.cnr.cn/tj/whtj/xs/20170608/t20170608_523791984.shtml",
+          "publisher": "天津日报专访／央广网转载",
+          "title": "田立禾 相声说的就是老百姓身边的事（2017-06-08）",
+          "claim": "记者明确夫妻成为搭档并合作创作新段子。"
+        }
+      ]
+    },
+    "r02534": {
+      "status": "documented",
+      "reviewNote": "模型提出或提示核查；此条判断依据为所列公开材料，不以模型答案作为出处。",
+      "evidence": [
+        {
+          "url": "https://www.cnr.cn/tj/whtj/xs/20170608/t20170608_523791984.shtml",
+          "publisher": "天津日报专访／央广网转载",
+          "title": "田立禾 相声说的就是老百姓身边的事（2017-06-08）",
+          "claim": "田立禾亲述初学艺时见两人合作。"
+        }
+      ]
+    },
+    "r02535": {
+      "status": "documented",
+      "reviewNote": "模型提出或提示核查；此条判断依据为所列公开材料，不以模型答案作为出处。",
+      "evidence": [
+        {
+          "url": "https://www.cnr.cn/tj/whtj/xs/20170608/t20170608_523791984.shtml",
+          "publisher": "天津日报专访／央广网转载",
+          "title": "田立禾 相声说的就是老百姓身边的事（2017-06-08）",
+          "claim": "田立禾本人说明早期表演分工。"
+        }
+      ]
+    },
+    "r02536": {
+      "status": "documented",
+      "reviewNote": "不据此猜测具体子女的婚配方向；未建立虚构子女。",
+      "evidence": [
+        {
+          "url": "https://www.cnr.cn/tj/whtj/xs/20170608/t20170608_523791984.shtml",
+          "publisher": "天津日报专访／央广网转载",
+          "title": "田立禾 相声说的就是老百姓身边的事（2017-06-08）",
+          "claim": "田立禾讲述引荐拜师经过，明确儿女亲家关系。"
+        }
+      ]
+    },
+    "r02537": {
+      "status": "documented",
+      "reviewNote": "模型提出或提示核查；此条判断依据为所列公开材料，不以模型答案作为出处。",
+      "evidence": [
+        {
+          "url": "https://news.sina.com.cn/c/2026-08-21/doc-inipaens1373530.shtml",
+          "publisher": "潇湘晨报官方账号／来源天津日报、津云",
+          "title": "著名相声表演艺术家、相声“宝”字辈传人田立禾去世（2026-08-21）",
+          "claim": "人物生平段明确列出合作搭档。"
+        }
+      ]
+    },
+    "r02538": {
+      "status": "documented",
+      "reviewNote": "模型提出或提示核查；此条判断依据为所列公开材料，不以模型答案作为出处。",
+      "evidence": [
+        {
+          "url": "https://news.sina.com.cn/c/2026-08-21/doc-inipaens1373530.shtml",
+          "publisher": "潇湘晨报官方账号／来源天津日报、津云",
+          "title": "著名相声表演艺术家、相声“宝”字辈传人田立禾去世（2026-08-21）",
+          "claim": "人物生平段明确列出合作搭档。"
+        }
+      ]
+    },
+    "r02539": {
+      "status": "documented",
+      "reviewNote": "模型提出或提示核查；此条判断依据为所列公开材料，不以模型答案作为出处。",
+      "evidence": [
+        {
+          "url": "https://news.sina.com.cn/c/2026-08-21/doc-inipaens1373530.shtml",
+          "publisher": "潇湘晨报官方账号／来源天津日报、津云",
+          "title": "著名相声表演艺术家、相声“宝”字辈传人田立禾去世（2026-08-21）",
+          "claim": "人物生平段明确列出合作搭档。"
+        }
+      ]
+    },
+    "r02540": {
+      "status": "documented",
+      "reviewNote": "模型提出或提示核查；此条判断依据为所列公开材料，不以模型答案作为出处。",
+      "evidence": [
+        {
+          "url": "https://australia.people.com.cn/n1/2018/0408/c408038-29912822.html",
+          "publisher": "人民网澳大利亚频道，陈弓",
+          "title": "“笑澳江湖”综艺晚会在悉尼举行（2018-04-08）",
+          "claim": "晚会现场报道明确双胞胎兄弟身份。"
+        }
+      ]
+    },
+    "r02541": {
+      "status": "documented",
+      "reviewNote": "1962仅见本篇明文，独立检索未找到第二来源；detail保留搭档事实，不将1962写作确证起始年。",
+      "evidence": [
+        {
+          "url": "https://news.sina.cn/sa/2004-09-24/detail-ikknscsi4340100.d.html",
+          "publisher": "新地铁生活圈／新浪转载，陈笑暇",
+          "title": "名家十日谈 “汉文化使者”魏文亮（2004-09-24）",
+          "claim": "文章明确记载1962年两人合作《学电话》等节目。"
+        }
+      ]
+    },
+    "r02542": {
+      "status": "documented",
+      "reviewNote": "模型提出或提示核查；此条判断依据为所列公开材料，不以模型答案作为出处。",
+      "evidence": [
+        {
+          "url": "https://www.tjl.tj.cn/ArticleContent.aspx?ChannelId=241&ID=984",
+          "publisher": "天津图书馆",
+          "title": "天津历史文化行系列讲座第四十六讲：相声和我（2009-08-14）",
+          "claim": "本人讲座提纲为我的父亲尹寿山，主办方简介亦明确父子关系。"
+        }
+      ]
+    },
+    "r02543": {
+      "status": "documented",
+      "reviewNote": "本轮核验专业搭档关系；不据旧报道推断截至今日仍为固定组合。",
+      "evidence": [
+        {
+          "url": "https://ent.people.com.cn/n1/2020/0620/c1012-31753675.html",
+          "publisher": "人民网（转载北京日报）",
+          "title": "陈印泉：哪怕煎熬也要笑对生活",
+          "claim": "采访明确称侯振鹏为陈印泉搭档，并描述二人共同创作表演。"
+        },
+        {
+          "url": "https://www.chinawriter.com.cn/2014/2014-02-19/192375.html",
+          "publisher": "中国作家网",
+          "title": "相声不止是逗乐工具：陈印泉、侯振鹏访谈",
+          "claim": "两人共同接受采访，陈印泉介绍两人在票友圈相识并合作的经历。"
+        }
+      ]
+    },
+    "r02544": {
+      "status": "documented",
+      "reviewNote": "本轮核验专业搭档关系；不据旧报道推断截至今日仍为固定组合。",
+      "evidence": [
+        {
+          "url": "https://www.hall.tsinghua.edu.cn/info/yc/4015",
+          "publisher": "清华大学艺术教育中心",
+          "title": "大逗相声·全新相声剧《开讲了》",
+          "claim": "双方演员简介多次明确称对方为搭档，列出连续多年比赛及春晚合作。"
+        }
+      ]
+    },
+    "r02545": {
+      "status": "documented",
+      "reviewNote": "本轮核验专业搭档关系；不据旧报道推断截至今日仍为固定组合。",
+      "evidence": [
+        {
+          "url": "https://www.tsinghua.edu.cn/info/1179/17258.htm",
+          "publisher": "清华大学新闻网",
+          "title": "李寅飞：说相声的清华博士",
+          "claim": "报道明确叶蓬是李寅飞的搭档，身份为飞机维修工程师。"
+        }
+      ]
+    },
+    "r02546": {
+      "status": "documented",
+      "reviewNote": "本轮核验专业搭档关系；不据旧报道推断截至今日仍为固定组合。",
+      "evidence": [
+        {
+          "url": "https://www.zgwypl.com/content/details2528_442820.html",
+          "publisher": "中国文艺评论网",
+          "title": "艺苑百花青春篇｜金霏：相声的生命力离不开好作品好演员",
+          "claim": "采访明确称陈曦为金霏搭档并介绍多年共同演出经历；陈曦为相声演员，非同名导演或军人。"
+        },
+        {
+          "url": "https://www.zgwypl.com/content/details2396_442820.html",
+          "publisher": "中国艺术报／中国文艺评论网",
+          "title": "艺苑百花青春篇｜金霏：相声的生命力离不开好作品好演员",
+          "claim": "全文反复确认金霏与陈曦为相声搭档，并记载具体共同演出。"
+        }
+      ]
+    },
+    "r02547": {
+      "status": "documented",
+      "reviewNote": "历史/报道时合作，不表示目前仍为固定搭档。",
+      "evidence": [
+        {
+          "url": "https://www.chinanews.com/m/yl/2018/02-27/8455558.shtml",
+          "publisher": "沈阳晚报／中新网",
+          "title": "从锅炉工到编演全才 王振华：好作品都是拼出来的",
+          "claim": "报道明确称两人为老搭档，记载2014、2017、2018演出及幕后合作。"
+        }
+      ]
+    },
+    "r02548": {
+      "status": "documented",
+      "reviewNote": "历史/报道时合作，不表示目前仍为固定搭档。",
+      "evidence": [
+        {
+          "url": "https://www.chinanews.com/m/yl/2018/02-27/8455558.shtml",
+          "publisher": "沈阳晚报／中新网",
+          "title": "从锅炉工到编演全才 王振华：好作品都是拼出来的",
+          "claim": "王振华访谈明确回忆与东北相声演员王志涛搭档。"
+        }
+      ]
+    },
+    "r02549": {
+      "status": "documented",
+      "reviewNote": "历史/报道时合作，不表示目前仍为固定搭档。",
+      "evidence": [
+        {
+          "url": "https://www.chinanews.com/m/yl/2018/02-27/8455558.shtml",
+          "publisher": "沈阳晚报／中新网",
+          "title": "从锅炉工到编演全才 王振华：好作品都是拼出来的",
+          "claim": "王振华访谈明确回忆与演员范伟搭档。"
+        }
+      ]
+    },
+    "r02550": {
+      "status": "documented",
+      "reviewNote": "历史/报道时合作，不表示目前仍为固定搭档。",
+      "evidence": [
+        {
+          "url": "https://m.haiwainet.cn/middle/345416/2016/0323/content_29763720_5.html",
+          "publisher": "国际在线／海外网",
+          "title": "岳云鹏励志成名史：当保安刷厕所 当群演20元一天",
+          "claim": "正文称史爱东为岳云鹏以前的老搭档，并列明两人2011年专场节目。"
+        }
+      ]
+    },
+    "r02551": {
+      "status": "documented",
+      "reviewNote": "按节目单确认合作，未由这些节目单单独推定起始年份或现任固定搭档。",
+      "evidence": [
+        {
+          "url": "https://cctv.cntv.cn/special/xsds/",
+          "publisher": "央视网",
+          "title": "第七届全国电视相声大赛",
+          "claim": "官方节目索引列出《找堂会》《谈“心”》《报菜名》均由逗笑、逗乐表演。"
+        }
+      ]
+    },
+    "r02552": {
+      "status": "documented",
+      "reviewNote": "演员简介与2024演出介绍相符；当前主数据另有吴霄泽搭档边，故本边明确为历史合作，不替换现搭档。",
+      "evidence": [
+        {
+          "url": "https://www.iq.com/actor-info/%E5%8F%B2%E7%88%B1%E4%B8%9C-shi-ai-dong-202513705?lang=zh_cn",
+          "publisher": "爱奇艺",
+          "title": "史爱东演员简介",
+          "claim": "平台演员介绍称史爱东后来改与李云天搭档。"
+        }
+      ]
+    },
+    "r02553": {
+      "status": "documented",
+      "reviewNote": "第一人称访谈；发行载体为转载页。",
+      "evidence": [
+        {
+          "url": "https://www.sohu.com/a/448525177_121006643",
+          "publisher": "齐鲁壹点访谈转载于搜狐",
+          "title": "相声名家宋德全：不管郭德纲如何，他毕竟是在带人勤勤恳恳说相声",
+          "claim": "宋德全访谈明确回忆当兵期间与崔金泉合作说相声，并称其当时搭档。"
+        }
+      ]
+    },
+    "r02554": {
+      "status": "documented",
+      "reviewNote": "不得误写李文山为谢金之师；师承王世臣另有现存边。",
+      "evidence": [
+        {
+          "url": "https://www.guodegang.org/bulletin/one.php?id=16",
+          "publisher": "德云社官网",
+          "title": "悼念文山先生（2017-03-04）",
+          "claim": "官网讣文明确李文山于2009-12-10带拉谢金为师弟。"
+        }
+      ]
+    },
+    "r01782": {
+      "status": "disputed",
+      "reviewNote": "旧记录按同名接线，没有足够依据将两个身份视作同一人。",
+      "evidence": [
+        {
+          "url": "https://m.bjnews.com.cn/detail/1752543150168516.html",
+          "publisher": "新京报",
+          "title": "“蔫坏”老头杨少华：蔫了一辈子，逗乐几代人",
+          "claim": "报道可确认杨少华、杨威等家庭关系，但不能把原表中的同名杨健与其子对上。"
+        }
+      ]
+    },
+    "r00351": {
+      "status": "disputed",
+      "reviewNote": "保留原存疑标记；随师学艺与正式摆知是两个不同主张。",
+      "evidence": [
+        {
+          "url": "https://www.xinhuanet.com/culture/20250710/178b7d03754c464eb558ab7db4c72d39/c.html",
+          "publisher": "新华社",
+          "title": "著名相声表演艺术家杨少华逝世",
+          "claim": "明确写早年进启明茶社学相声、师从郭荣启，但未记正式拜师仪式。"
+        },
+        {
+          "url": "https://m.bjnews.com.cn/detail/1752543150168516.html",
+          "publisher": "新京报",
+          "title": "“蔫坏”老头杨少华：蔫了一辈子，逗乐几代人",
+          "claim": "回顾两人的渊源。"
+        }
+      ]
+    },
+    "r00203": {
+      "status": "documented",
+      "reviewNote": "两种说法经当事人进一步说明可以区分为两个事件，未发现师徒关系本身相冲突。",
+      "evidence": [
+        {
+          "url": "https://www.cnr.cn/yczg/gszx/20230616/t20230616_526290348.shtml",
+          "publisher": "央广网",
+          "title": "田立禾 传统相声就得咬文嚼字",
+          "claim": "田立禾明确区分1951年第一次登门与1953年5月4日正式拜师。"
+        },
+        {
+          "url": "https://www.cnr.cn/tj/whtj/xs/20170608/t20170608_523791984.shtml",
+          "publisher": "天津日报（央广网转载）",
+          "title": "田立禾 相声说的就是老百姓身边的事",
+          "claim": "较早口述把1951年入门也简称“拜师”。"
+        }
+      ]
+    },
+    "r01733": {
+      "status": "documented",
+      "reviewNote": "原表有同名合并提示，此次已用演员身份和公开采访核对该祖孙关系。",
+      "evidence": [
+        {
+          "url": "https://people.cctv.cn/2018/09/09/ARTIybqiq0ioikxoB66BGbUn180909.shtml",
+          "publisher": "央视网",
+          "title": "“匠心”八十载 观众的“贴心人儿”常宝华走了",
+          "claim": "明确常远为常宝华孙辈，并核对开心麻花演员身份。"
+        },
+        {
+          "url": "https://www.rmhb.com.cn/rw/201810/t20181011_800143920.html",
+          "publisher": "人民画报",
+          "title": "常宝华：沧海一声笑",
+          "claim": "记载常宝华公开以孙子介绍常远。"
+        }
+      ]
+    },
+    "r01691": {
+      "status": "documented",
+      "reviewNote": "葬礼上没有举行拜师与其后另行正式追拜并不抵触。",
+      "evidence": [
+        {
+          "url": "https://ent.sina.com.cn/h/2007-08-18/06201680425.shtml",
+          "publisher": "北京娱乐信报（新浪转载）",
+          "title": "纪念侯耀文艺术成就展演 仨徒弟对着遗像拜师",
+          "claim": "报道完成仪式，主持人侯耀华说明侯耀文生前认可但未及举行。"
+        },
+        {
+          "url": "https://news.sina.com.cn/c/2007-08-18/144813692221.shtml",
+          "publisher": "北京电视台（新浪转载）",
+          "title": "侯耀文三位弟子正式拜师",
+          "claim": "现场报道确认是在2007年8月17日纪念展演举行仪式。"
+        }
+      ]
+    },
+    "r00412": {
+      "status": "documented",
+      "reviewNote": "门户师承与本人授艺分开记录。",
+      "evidence": [
+        {
+          "url": "https://www.llxiqu.com/yyfh/showarticle_articleid_740.html",
+          "publisher": "中国广播网（玲珑戏曲转载）",
+          "title": "孟凡贵追述相声巨星侯耀文的拜师经过",
+          "claim": "资料记载侯耀文由李伯祥代拉，拜入赵佩茹名下。"
+        }
+      ]
+    },
+    "r00553": {
+      "status": "disputed",
+      "reviewNote": "只对原图将其用作相声门关系标存疑，不否认有出处的快板传承。",
+      "evidence": [
+        {
+          "url": "https://epaper.tianjinwe.com/tjrb/h5/html5/2026-01/20/content_143094_3057905.htm",
+          "publisher": "天津日报",
+          "title": "马六甲人物专访",
+          "claim": "报道将王凤山与马六甲明确描述为王派快板师承。"
+        }
+      ]
+    },
+    "r00994": {
+      "status": "disputed",
+      "reviewNote": "原表未附当事人或仪式资料。存疑之处是曲种与相声门归属，非断定拜师不存在。",
+      "evidence": [
+        {
+          "url": "https://k.sina.cn/article_3788383772_e1ce261c001010rdw.html",
+          "publisher": "新浪转载文章（待复核）",
+          "title": "杨进明拜师经历",
+          "claim": "转述有关拜李立山学快板的说法，仅作为曲种待查线索。"
+        }
+      ]
+    }
+  },
+  "biographies": {
+    "p0206": [
+      {
+        "label": "生卒与本名",
+        "value": "1935—2026，原名田中敏。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://epaper.tianjinwe.com/tjrb/html/2026-08/22/content_143084_3763377.htm",
+            "title": "天津日报：田立禾逝世"
+          }
+        ]
+      },
+      {
+        "label": "随师与正式拜师",
+        "value": "1951年开始跟张寿臣学艺；田立禾在后来的专访中说，正式拜师是1953年5月4日。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.cnr.cn/yczg/gszx/20230616/t20230616_526290348.shtml",
+            "title": "央广网：田立禾本人访谈"
+          },
+          {
+            "url": "https://www.cnr.cn/tj/whtj/xs/20170608/t20170608_523791984.shtml",
+            "title": "天津日报：田立禾口述"
+          }
+        ],
+        "note": "2017年口述将1951年入门也称作“拜师”；2023年当事人区分两个时间点。师徒关系本身并无这两篇材料之间的冲突。"
+      }
+    ],
+    "p0386": [
+      {
+        "label": "童年",
+        "value": "1940年生于天津，约6岁随家人赴东北，在锦州学相声并登台谋生。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://epaper.tianjinwe.com/tjrb/html/2026-09/29/content_143094_3882182.htm",
+            "title": "天津日报：魏文亮专访"
+          }
+        ]
+      },
+      {
+        "label": "早年老师的姓名用字",
+        "value": "天津日报专访写作张文斌；魏文华生平对极可能是同一早期老师的人写作张文彬。",
+        "status": "disputed",
+        "sources": [
+          {
+            "url": "https://epaper.tianjinwe.com/tjrb/html/2026-09/29/content_143094_3882182.htm",
+            "title": "天津日报：魏文亮专访"
+          },
+          {
+            "url": "https://ent.enorth.com.cn/system/2018/08/05/035930893.shtml",
+            "title": "津云：魏文华生平"
+          }
+        ],
+        "note": "暂不合并或创建新师承节点。"
+      }
+    ],
+    "p0385": [
+      {
+        "label": "生卒",
+        "value": "1937年1月出生；2018年8月5日逝世。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://ent.enorth.com.cn/system/2018/08/05/035930893.shtml",
+            "title": "津云：魏文华生平"
+          }
+        ]
+      },
+      {
+        "label": "童年",
+        "value": "6岁左右随父母在东北演出；后转入相声，1952年拜武魁海为师。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://ent.enorth.com.cn/system/2018/08/05/035930893.shtml",
+            "title": "津云：魏文华生平"
+          }
+        ]
+      },
+      {
+        "label": "早年老师的姓名用字",
+        "value": "津云写作张文彬，天津日报写作张文斌。",
+        "status": "disputed",
+        "sources": [
+          {
+            "url": "https://ent.enorth.com.cn/system/2018/08/05/035930893.shtml",
+            "title": "津云：魏文华生平"
+          },
+          {
+            "url": "https://epaper.tianjinwe.com/tjrb/html/2026-09/29/content_143094_3882182.htm",
+            "title": "天津日报：魏文亮专访"
+          }
+        ],
+        "note": "两篇均指向东北阶段的启蒙，未找到足以定字的原始名录。"
+      }
+    ],
+    "p0282": [
+      {
+        "label": "生卒",
+        "value": "1938年生于天津，2018年12月8日逝世。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.tjl.tj.cn/ArticleContent.aspx?ChannelId=241&ID=984",
+            "title": "天津图书馆：尹笑声本人讲座"
+          },
+          {
+            "url": "https://m.bjnews.com.cn/detail/154450184114533.html",
+            "title": "新京报：尹笑声追悼报道"
+          }
+        ]
+      },
+      {
+        "label": "童年",
+        "value": "约6岁跟父亲尹寿山学相声，7岁开始演出。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.tjl.tj.cn/ArticleContent.aspx?ChannelId=241&ID=984",
+            "title": "天津图书馆：尹笑声本人讲座"
+          },
+          {
+            "url": "https://m.bjnews.com.cn/detail/154450184114533.html",
+            "title": "新京报：尹笑声追悼报道"
+          }
+        ]
+      }
+    ],
+    "p0354": [
+      {
+        "label": "早年学艺",
+        "value": "年轻时在北京启明茶社学习相声，后到天津做过钢厂工人，再回到舞台。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.xinhuanet.com/culture/20250710/178b7d03754c464eb558ab7db4c72d39/c.html",
+            "title": "新华社：杨少华逝世"
+          },
+          {
+            "url": "https://m.bjnews.com.cn/detail/1752543150168516.html",
+            "title": "新京报：杨少华生平"
+          }
+        ],
+        "note": "学艺经历不等于举行正式拜师仪式。"
+      }
+    ],
+    "p0002": [
+      {
+        "label": "出生",
+        "value": "1829年，北京人",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.cntv.cn/program/tsfx/topic/geography/C18633/20070611/104307_1.shtml",
+            "title": "央视《相声人生》第一集（2007-06-11）"
+          }
+        ],
+        "note": "现库birth=1829，与央视资料一致；出生地与祖籍不混用。",
+        "key": "birth"
+      },
+      {
+        "label": "艺名与事业",
+        "value": "又名朱少文，艺名穷不怕；早期相声发展和传授的重要人物。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.cntv.cn/program/tsfx/topic/geography/C18633/20070611/104307_1.shtml",
+            "title": "央视《相声人生》第一集（2007-06-11）"
+          },
+          {
+            "url": "https://jw.beijing.gov.cn/language/ywsh/201612/t20161219_1056466.html",
+            "title": "北京市语言文字办公室：文化奇葩，视听盛宴：有声语言艺术业"
+          }
+        ],
+        "note": "现库name为朱绍文、wiki为朱少文，aliases为空；可补异名而非拆成两人。"
+      },
+      {
+        "label": "逝世年份",
+        "value": "1903年／1904年，来源不同",
+        "status": "disputed",
+        "sources": [
+          {
+            "url": "https://jw.beijing.gov.cn/language/ywsh/201612/t20161219_1056466.html",
+            "title": "北京市语言文字办公室：文化奇葩，视听盛宴：有声语言艺术业"
+          },
+          {
+            "url": "https://www.mj.org.cn/zsjg/mzzzs/mzzxyd/wz/202007/t20200724_229967.htm",
+            "title": "民主杂志：“寻找”民进一届理事会候补理事朱绍文（同名辨析）"
+          },
+          {
+            "url": "https://zh.wikipedia.org/wiki/%E6%9C%B1%E5%B0%91%E6%96%87",
+            "title": "维基百科：朱少文（当前数据库引用来源）"
+          }
+        ],
+        "note": "现库death=1903；北京市语委资料、民主杂志辨析均用1904，现库维基来源用1903。应保留冲突，不直接定论。",
+        "key": "death"
+      }
+    ],
+    "p0077": [
+      {
+        "label": "生卒",
+        "value": "1899年1月29日—1970年7月9日",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.cflac.org.cn/wywzt/2015/kangzhanwenyi/wenyijia/kzsqwyj/201508/t20150824_304422.html",
+            "title": "中国文联：张寿臣（2015-08-24）"
+          },
+          {
+            "url": "https://news.sohu.com/20090709/n265083827.shtml",
+            "title": "人民网资料／搜狐转载：张寿臣逝世（2009-07-09）"
+          }
+        ],
+        "note": "现库birth=1899、death=1970，年份一致。不要用虚岁72岁反推成1898。"
+      },
+      {
+        "label": "家庭与早年",
+        "value": "父亲张诚甫兼说评书、相声；本人相声拜焦德海为师，兼演评书，艺名张豫华。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.cflac.org.cn/wywzt/2015/kangzhanwenyi/wenyijia/kzsqwyj/201508/t20150824_304422.html",
+            "title": "中国文联：张寿臣（2015-08-24）"
+          }
+        ],
+        "note": "现库aliases中的“门长，即该代之首徒”不是人名，应作说明而非别名；张豫华才是来源支持的艺名。"
+      },
+      {
+        "label": "拜师年龄",
+        "value": "12岁／15岁两种记载",
+        "status": "disputed",
+        "sources": [
+          {
+            "url": "https://www.cflac.org.cn/wywzt/2015/kangzhanwenyi/wenyijia/kzsqwyj/201508/t20150824_304422.html",
+            "title": "中国文联：张寿臣（2015-08-24）"
+          },
+          {
+            "url": "https://news.sohu.com/20090709/n265083827.shtml",
+            "title": "人民网资料／搜狐转载：张寿臣逝世（2009-07-09）"
+          }
+        ],
+        "note": "中国文联记12岁，人民网历史资料记15岁；本轮不强行换算具体拜师年份。"
+      },
+      {
+        "label": "事业转折",
+        "value": "1925年起与陶湘如合作，立足天津，改编传统相声并创作新节目。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.cflac.org.cn/wywzt/2015/kangzhanwenyi/wenyijia/kzsqwyj/201508/t20150824_304422.html",
+            "title": "中国文联：张寿臣（2015-08-24）"
+          }
+        ]
+      }
+    ],
+    "p0190": [
+      {
+        "label": "出生",
+        "value": "1915年生于北京",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.cnr.cn/zgzb/dwt167/zbzy/20151227/t20151227_520940809.shtml",
+            "title": "央广网：单口大王刘宝瑞诞辰百年 与相声缘起缘落（2015-12-27）"
+          },
+          {
+            "url": "https://www.cnr.cn/zgzb/dwt167/zbzy/20151227/t20151227_520940811.shtml",
+            "title": "央广网：刘宝瑞与天津的不解之缘（2015-12-27）"
+          }
+        ],
+        "note": "现库birth=1915，一致。原籍山东蓬莱不是出生地。",
+        "key": "birth"
+      },
+      {
+        "label": "幼年经历",
+        "value": "据亲属回忆，出生时家境已衰落，幼年常到天桥听相声并自行练习。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.cnr.cn/zgzb/dwt167/zbzy/20151227/t20151227_520940809.shtml",
+            "title": "央广网：单口大王刘宝瑞诞辰百年 与相声缘起缘落（2015-12-27）"
+          }
+        ],
+        "note": "是亲属纪念文章叙述，非同期户籍记录；避免把回忆写成逐日可考事实。"
+      },
+      {
+        "label": "学徒经历",
+        "value": "先随崇寿峰启蒙，12岁登台，13岁正式拜张寿臣为师。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.cnr.cn/zgzb/dwt167/zbzy/20151227/t20151227_520940809.shtml",
+            "title": "央广网：单口大王刘宝瑞诞辰百年 与相声缘起缘落（2015-12-27）"
+          }
+        ],
+        "note": "本轮保留来源原有年龄，不擅自换算日历年份。"
+      },
+      {
+        "label": "逝世日期待核",
+        "value": "现库仅记1968年；精确月日暂不扩充。",
+        "status": "disputed",
+        "sources": [
+          {
+            "url": "https://zh.wikipedia.org/wiki/%E5%88%98%E5%AE%9D%E7%91%9E",
+            "title": "维基百科：刘宝瑞（当前库来源）"
+          },
+          {
+            "url": "https://wapbaike.baidu.com/item/%E5%88%98%E5%AE%9D%E7%91%9E/8260?fromModule=tashuo-article_bottom-lemma",
+            "title": "百度百科：刘宝瑞"
+          }
+        ],
+        "note": "网络百科出现10月6日与10月8日两种记载，尚未取得足够一手依据；1968年份本轮不变。"
+      }
+    ],
+    "p0159": [
+      {
+        "label": "出生",
+        "value": "1921年，河北三河",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://news.sina.com.cn/c/2004-07-09/12123656583.shtml",
+            "title": "城市快报／新浪转载，倪钟之：市井平民两“快板”（2004-07-09）"
+          },
+          {
+            "url": "https://history.xikao.com/person/%E9%AB%98%E5%87%A4%E5%B1%B1",
+            "title": "梨园百年琐记：高凤山"
+          }
+        ],
+        "note": "现库birth=1921，一致。",
+        "key": "birth"
+      },
+      {
+        "label": "艺术经历",
+        "value": "早年演唱数来宝，曾在北京、天津演出；新中国成立后参与相声改进工作，曾任北京曲艺三团团长、北京曲艺团副团长。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://news.sina.com.cn/c/2004-07-09/12123656583.shtml",
+            "title": "城市快报／新浪转载，倪钟之：市井平民两“快板”（2004-07-09）"
+          }
+        ],
+        "note": "现库简介仅有辈分说明，可以补充此职业经历。"
+      },
+      {
+        "label": "逝世年份核对",
+        "value": "外部来源作1993年，现库误记可能性较高",
+        "status": "disputed",
+        "sources": [
+          {
+            "url": "https://history.xikao.com/person/%E9%AB%98%E5%87%A4%E5%B1%B1",
+            "title": "梨园百年琐记：高凤山"
+          },
+          {
+            "url": "https://www.lfculture.cn/sys-nd/3870.html",
+            "title": "廊坊公共文化云：高凤山（2024-03-05）"
+          }
+        ],
+        "note": "现库death=1995；戏考全文记1993，廊坊公共文化云检索摘要记1921.6—1993.8，但公共文化云正文访问两次超时。建议完成该官方页复核后更正；不要把现库1995与两条1993无说明并列。",
+        "key": "death"
+      },
+      {
+        "label": "数来宝老师姓名",
+        "value": "来源分别作雷德奎与曹德奎，暂不合并",
+        "status": "disputed",
+        "sources": [
+          {
+            "url": "https://news.sina.com.cn/c/2004-07-09/12123656583.shtml",
+            "title": "城市快报／新浪转载，倪钟之：市井平民两“快板”（2004-07-09）"
+          },
+          {
+            "url": "https://history.xikao.com/person/%E9%AB%98%E5%87%A4%E5%B1%B1",
+            "title": "梨园百年琐记：高凤山"
+          }
+        ],
+        "note": "城市快报作雷德奎（雷麻子），戏考作曹德奎；姓名同一性待查。"
+      }
+    ],
+    "p0455": [
+      {
+        "label": "早年生活",
+        "value": "幼年家道中落，曾在药铺做学徒，后来转学相声。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.chinanews.com/cul/2015/05-04/7249541.shtml",
+            "title": "新京报／中新网转载：苏文茂逝世 “文哏相声”被评或成绝响（2015-05-04）"
+          }
+        ],
+        "note": "现库notes为空；此为新京报评论文章的生平记载。"
+      },
+      {
+        "label": "拜师与学艺",
+        "value": "1943年拜常宝堃为师，并在北京启明茶社观摩、演出。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.chinanews.com/cul/2015/05-04/7249541.shtml",
+            "title": "新京报／中新网转载：苏文茂逝世 “文哏相声”被评或成绝响（2015-05-04）"
+          }
+        ]
+      },
+      {
+        "label": "逝世",
+        "value": "2015年5月3日12时23分在天津逝世",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.chinanews.com/cul/2015/05-03/7248902.shtml",
+            "title": "新华社／中新网转载：文哏大师苏文茂逝世（2015-05-03）"
+          }
+        ],
+        "note": "新华社记者据天津市曲协消息报道；现库death=2015一致。报道享年86，但不由年龄倒算精确生日；现库birth=1929本轮不据年龄单独验证。",
+        "key": "death"
+      },
+      {
+        "label": "艺术特色",
+        "value": "以文哏表演和传统文本加工见长，代表作有《文章会》《苏批三国》《论捧逗》。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.chinanews.com/cul/2015/05-04/7249541.shtml",
+            "title": "新京报／中新网转载：苏文茂逝世 “文哏相声”被评或成绝响（2015-05-04）"
+          },
+          {
+            "url": "https://www.chinanews.com/cul/2015/05-03/7248902.shtml",
+            "title": "新华社／中新网转载：文哏大师苏文茂逝世（2015-05-03）"
+          }
+        ]
+      }
+    ],
+    "p0295": [
+      {
+        "label": "出生与家庭",
+        "value": "1932年生于北京；父亲陈子贞、外祖父钟子良均从事相声。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.chinanews.com/cul/2024/04-14/10198607.shtml",
+            "title": "央视新闻／中新网转载：著名相声表演艺术家陈涌泉去世（2024-04-14）"
+          }
+        ],
+        "note": "现库birth=1932一致。"
+      },
+      {
+        "label": "师承与入行",
+        "value": "师承谭伯如；1951年进入相声行业，担任北京相声改进小组文书。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.chinanews.com/cul/2024/04-14/10198607.shtml",
+            "title": "央视新闻／中新网转载：著名相声表演艺术家陈涌泉去世（2024-04-14）"
+          }
+        ],
+        "note": "师名原文写谭伯如，与现有节点拼写一致；不擅加拜师年份。"
+      },
+      {
+        "label": "创作与合作",
+        "value": "1955年开始相声创作；曾与李金斗长期搭档，1992年退休后侧重理论总结。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.chinanews.com/cul/2024/04-14/10198607.shtml",
+            "title": "央视新闻／中新网转载：著名相声表演艺术家陈涌泉去世（2024-04-14）"
+          }
+        ]
+      },
+      {
+        "label": "逝世",
+        "value": "2024年4月14日8时48分于北京逝世",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.chinanews.com/cul/2024/04-14/10198607.shtml",
+            "title": "央视新闻／中新网转载：著名相声表演艺术家陈涌泉去世（2024-04-14）"
+          }
+        ],
+        "note": "央视报道据家人讣告；现库death=2024一致，报道享年92不能机械换算实际周岁。",
+        "key": "death"
+      }
+    ],
+    "p1381": [
+      {
+        "label": "童年",
+        "value": "在北京长大，儿时听马三立、侯宝林的录音接触相声。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.tsinghua.edu.cn/info/1179/17258.htm",
+            "title": "清华大学：李寅飞，说相声的清华博士（2015-05-07）"
+          }
+        ]
+      },
+      {
+        "label": "早年学习",
+        "value": "2005年以曲艺特长生身份进入清华大学新闻与传播学院；2006年成为德云社鹤字科学员并登台演出。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.tsinghua.edu.cn/info/1179/17258.htm",
+            "title": "清华大学：李寅飞，说相声的清华博士（2015-05-07）"
+          }
+        ],
+        "note": "学员经历不等于正式拜郭德纲为师。"
+      },
+      {
+        "label": "正式学艺",
+        "value": "2014年正式拜王谦祥为师。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.tsinghua.edu.cn/info/1179/17258.htm",
+            "title": "清华大学：李寅飞，说相声的清华博士（2015-05-07）"
+          },
+          {
+            "url": "https://www.hall.tsinghua.edu.cn/info/yc/4015",
+            "title": "清华大学艺术教育中心：大逗相声·全新相声剧《开讲了》（2019）"
+          }
+        ]
+      }
+    ],
+    "p1382": [
+      {
+        "label": "童年与校园",
+        "value": "自幼喜爱相声、小品及创作；大学期间组织戏剧活动并参加校园比赛。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://kjy.jju.edu.cn/info/1089/1375.htm",
+            "title": "九江学院：第二批优秀校友事迹展（2018-04-17）"
+          }
+        ]
+      },
+      {
+        "label": "教育经历",
+        "value": "2006年毕业于九江学院机材学院机电一体化专业。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://kjy.jju.edu.cn/info/1089/1375.htm",
+            "title": "九江学院：第二批优秀校友事迹展（2018-04-17）"
+          },
+          {
+            "url": "https://www.hall.tsinghua.edu.cn/info/yc/4015",
+            "title": "清华大学艺术教育中心：大逗相声·全新相声剧《开讲了》（2019）"
+          }
+        ],
+        "note": "清华演出简介概称“机械系”；校友母校提供更具体的学院和专业，不构成明确矛盾。"
+      },
+      {
+        "label": "早年学艺",
+        "value": "师从李增瑞；大学毕业后有入伍经历。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://kjy.jju.edu.cn/info/1089/1375.htm",
+            "title": "九江学院：第二批优秀校友事迹展（2018-04-17）"
+          },
+          {
+            "url": "https://www.hall.tsinghua.edu.cn/info/yc/4015",
+            "title": "清华大学艺术教育中心：大逗相声·全新相声剧《开讲了》（2019）"
+          }
+        ],
+        "note": "两篇来源均未给出明确拜师年份，不由演出年份反推。"
+      }
+    ],
+    "p1383": [
+      {
+        "label": "出生年代",
+        "value": "清华2019年演出简介称其为“90后”。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.hall.tsinghua.edu.cn/info/yc/4015",
+            "title": "清华大学艺术教育中心：大逗相声·全新相声剧《开讲了》（2019）"
+          }
+        ],
+        "note": "仅能支持年代概述，不能据此填写具体出生年或生日。"
+      },
+      {
+        "label": "早年学艺",
+        "value": "师从李增瑞，2012年4月加入北京大逗相声。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.hall.tsinghua.edu.cn/info/yc/4015",
+            "title": "清华大学艺术教育中心：大逗相声·全新相声剧《开讲了》（2019）"
+          }
+        ],
+        "note": "该来源没有提供童年经历或拜师日期。"
+      }
+    ],
+    "p1787": [
+      {
+        "label": "童年启蒙",
+        "value": "童年想学架子鼓，母亲考虑空间与费用改为让他学习快板，由此接触曲艺。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.zgwypl.com/content/details2528_442820.html",
+            "title": "中国文艺评论网：金霏，相声的生命力离不开好作品好演员（2024-05-23）"
+          }
+        ]
+      },
+      {
+        "label": "早年教育",
+        "value": "后来考入天津北方曲艺学校，接受专业曲艺学习。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.zgwypl.com/content/details2528_442820.html",
+            "title": "中国文艺评论网：金霏，相声的生命力离不开好作品好演员（2024-05-23）"
+          }
+        ],
+        "note": "此专访未列入学年，不补推精确年龄或年份。"
+      }
+    ],
+    "p1792": [
+      {
+        "label": "教育经历",
+        "value": "毕业于北京理工大学。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.hall.tsinghua.edu.cn/info/yc/4015",
+            "title": "清华大学艺术教育中心：大逗相声·全新相声剧《开讲了》（2019）"
+          }
+        ]
+      },
+      {
+        "label": "早年学艺与职业",
+        "value": "相声师承王谦祥；2015年清华报道记载其同时是一位飞机维修工程师。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.hall.tsinghua.edu.cn/info/yc/4015",
+            "title": "清华大学艺术教育中心：大逗相声·全新相声剧《开讲了》（2019）"
+          },
+          {
+            "url": "https://www.tsinghua.edu.cn/info/1179/17258.htm",
+            "title": "清华大学：李寅飞，说相声的清华博士（2015-05-07）"
+          }
+        ],
+        "note": "职业描述限于报道时期，不作为当前职业判断。"
+      },
+      {
+        "label": "早期从艺",
+        "value": "为大逗相声创始成员之一；团队成立于2012年。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.hall.tsinghua.edu.cn/info/yc/4015",
+            "title": "清华大学艺术教育中心：大逗相声·全新相声剧《开讲了》（2019）"
+          },
+          {
+            "url": "https://www.tsinghua.edu.cn/info/1179/17258.htm",
+            "title": "清华大学：李寅飞，说相声的清华博士（2015-05-07）"
+          }
+        ]
+      }
+    ],
+    "p1071": [
+      {
+        "label": "童年登台",
+        "value": "童年曾与祖父常宝华一起表演，二人于1988年央视春晚的相声联说环节同台。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.chinanews.com/yl/2018/01-22/8429678.shtml",
+            "title": "中新网：开心麻花常远的反差喜剧路"
+          }
+        ]
+      }
+    ],
+    "p1995": [
+      {
+        "label": "早年经历",
+        "value": "早年做过锅炉工，从爱听相声逐渐转到表演和创作，后拜刘文亮为师。",
+        "status": "documented",
+        "sources": [
+          {
+            "url": "https://www.chinanews.com/m/yl/2018/02-27/8455558.shtml",
+            "title": "沈阳晚报：王振华专访"
+          }
+        ]
+      }
+    ]
+  },
+  "personUpdates": {
+    "p0282": {
+      "birth": 1938,
+      "death": 2018
+    },
+    "p0385": {
+      "birth": 1937,
+      "death": 2018
+    }
+  },
+  "leads": [
+    {
+      "people": [
+        "p0891",
+        "p0649"
+      ],
+      "question": "两人是否有可核对的相声搭档记录？",
+      "status": "仅模型线索",
+      "note": "本轮未找到能支持该关系的资料。"
+    },
+    {
+      "people": [
+        "p1190",
+        "p1167"
+      ],
+      "question": "曾短期合作，还是存在固定搭档时期？",
+      "status": "待找原始节目或当事人采访",
+      "note": "二手资料的描述不等同于固定搭档的证据。"
+    },
+    {
+      "people": [
+        "p0206",
+        "p0409"
+      ],
+      "question": "报道中的任鸣启与本库的任鸣岐是否为同一位搭档？",
+      "status": "身份存疑",
+      "note": "不同材料用字不同，暂不合并人物或画线。",
+      "sources": [
+        {
+          "title": "田立禾生平报道（任鸣启）",
+          "url": "https://news.sina.com.cn/c/2026-08-21/doc-inipaens1373530.shtml"
+        }
+      ]
+    }
+  ]
+}
