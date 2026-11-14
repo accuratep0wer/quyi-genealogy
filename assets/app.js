@@ -23,12 +23,12 @@ const adj={};
 const Z_MIN=0.03,Z_MAX=32;
 let zoomFromSlider=false;
 
-let ORGS={organizations:[],affiliations:[]},ORG_BY={},ORG_MEM={};
+let ORGS={organizations:[],affiliations:[]},ORG_BY={},ORG_MEM={},ORG_ROWS=[];
 let EVIDENCE={},ROSTER_AUDIT={};
 let SPREAD={};
 let NEBULA={};
 function optionalData(url){return fetch(url).then(r=>r.ok?r.json():{}).catch(()=>({}));}
-Promise.all(['data/people.json','data/relations.json','data/layout.json','data/layout-spread.json','data/layout-nebula.json'].map(u=>fetch(u).then(r=>{if(!r.ok)throw new Error(u);return r.json()})).concat([optionalData('data/relationship-evidence.json'),optionalData('data/organizations.json'),optionalData('data/kinship-updates.json?v=1'),optionalData('data/relationship-audit.json?v=1')]))
+Promise.all(['data/people.json','data/relations.json','data/layout.json','data/layout-spread.json','data/layout-nebula.json'].map(u=>fetch(u).then(r=>{if(!r.ok)throw new Error(u);return r.json()})).concat([optionalData('data/relationship-evidence.json'),optionalData('data/organizations.json?v=2'),optionalData('data/kinship-updates.json?v=1'),optionalData('data/relationship-audit.json?v=1')]))
 .then(([p,r,l,s,n,e,o,k,a])=>{
   const changes={...(k.updates||{}),...(a.updates||{})};
   P=p.concat(k.people||[]).map(row=>a.personUpdates?.[row.id]?{...row,...a.personUpdates[row.id],id:row.id}:row);
@@ -42,24 +42,50 @@ Promise.all(['data/people.json','data/relations.json','data/layout.json','data/l
 }).catch(e=>{$('#cy').innerHTML='<p style="padding:20px">数据加载失败：'+esc(e.message)+'</p>';});
 
 // Organization evidence is separate from lineage: affiliation never implies teaching.
-function usableAffiliation(m){
-  if(!byId[m.personId]||!ORG_BY[m.organizationId]||!(m.sources||[]).some(x=>/^https?:\/\//.test(x.url||''))) return false;
-  if(m.status==='current') return true;
-  if(m.status!=='historical') return false;
-  return !(ORG_MEM[m.personId]||[]).some(x=>x.status==='current'||(x.status==='former'&&x.organizationId===m.organizationId));
+const ORG_LABELS={current:'最新公开归属',historical:'历史归属',former:'已离团',performance:'演出记录（不等于成员）',uncertain:'存疑'};
+const ORG_ORDER={current:0,historical:1,former:2,performance:3,uncertain:4};
+const orgStatusLabel=m=>ORG_LABELS[m.status]||'待核验';
+function organizationSourceLinks(m){
+  return (m.sources||[]).filter(x=>/^https?:\/\//.test(x.url||'')).map(x=>'<a target="_blank" rel="noopener noreferrer" href="'+esc(x.url)+'">'+esc(x.publisher||x.title||'来源')+'</a>'+(x.title&&x.publisher?' <span>'+esc(x.title)+'</span>':'')+(x.published?' <small>· '+esc(x.published)+'</small>':'')).join('<br>');
+}
+function matchesOrganizationScope(m,scope){
+  if(scope==='historical') return m.status==='historical'||m.status==='former';
+  if(scope==='roster'){
+    if(m.status==='current') return true;
+    if(m.status!=='historical') return false;
+    return !(ORG_MEM[m.personId]||[]).some(x=>x.status==='former'&&x.organizationId===m.organizationId);
+  }
+  return m.status===scope;
 }
 function initOrganizations(){
   (ORGS.organizations||[]).forEach(o=>ORG_BY[o.id]=o);
-  (ORGS.affiliations||[]).forEach(m=>{(ORG_MEM[m.personId]||(ORG_MEM[m.personId]=[])).push(m);});
-  const sel=$('#organization');
+  ORG_ROWS=(ORGS.affiliations||[]).filter(m=>ORG_BY[m.organizationId]&&(m.personName||byId[m.personId])&&(m.sources||[]).some(x=>/^https?:\/\//.test(x.url||'')));
+  ORG_ROWS.forEach(m=>{if(byId[m.personId]) (ORG_MEM[m.personId]||(ORG_MEM[m.personId]=[])).push(m);});
+  Object.values(ORG_MEM).forEach(ms=>ms.sort((a,b)=>ORG_ORDER[a.status]-ORG_ORDER[b.status]));
+  const sel=$('#organization'),tbl=$('#orgTableGroup');
   (ORGS.organizations||[]).forEach(o=>{
-    const ms=(ORGS.affiliations||[]).filter(m=>m.organizationId===o.id&&usableAffiliation(m));
-    const current=new Set(ms.filter(m=>m.status==='current').map(m=>m.personId)).size;
-    const historical=new Set(ms.filter(m=>m.status==='historical').map(m=>m.personId)).size;
-    if(ms.length) sel.add(new Option(o.name+'（'+current+' 最新记录 / '+historical+' 历史）',o.id));
+    const ms=ORG_ROWS.filter(m=>m.organizationId===o.id);
+    if(ms.length){
+      const n=new Set(ms.map(m=>m.personId||m.personName)).size;
+      tbl.add(new Option(o.name+'（'+n+' 人）',o.id));
+      if(ms.some(m=>byId[m.personId]&&m.status!=='uncertain')) sel.add(new Option(o.name,o.id));
+    }
   });
-  sel.addEventListener('change',()=>{clearHL();markOrganization();});
+  sel.addEventListener('change',()=>clearHL());
+  $('#organizationScope').addEventListener('change',()=>clearHL());
   $('#organizationFocus').onclick=focusOrganization;
+  ['#orgTableGroup','#orgTableStatus','#orgTableQuery'].forEach(q=>$(q).addEventListener('input',drawOrgRoster));
+}
+function drawOrgRoster(){
+  const group=$('#orgTableGroup').value,status=$('#orgTableStatus').value,q=$('#orgTableQuery').value.trim();
+  const rows=ORG_ROWS.filter(m=>(!group||group===m.organizationId)&&(!status||status===m.status)&&(!q||[m.personName,byId[m.personId]?._search,ORG_BY[m.organizationId].name,m.note].some(t=>(t||'').includes(q))));
+  rows.sort((a,b)=>(a.organizationId===b.organizationId?0:ORG_BY[a.organizationId].name.localeCompare(ORG_BY[b.organizationId].name,'zh'))||ORG_ORDER[a.status]-ORG_ORDER[b.status]||(a.personName||byId[a.personId]?.name||'').localeCompare(b.personName||byId[b.personId]?.name||'','zh'));
+  const peopleCount=new Set(rows.map(m=>m.personId||m.personName)).size;
+  $('#orgTableCount').textContent=peopleCount+' 人 · '+rows.length+' 条记录';
+  $('#orgTable tbody').innerHTML=rows.length?rows.map(m=>{
+    const p=byId[m.personId], name=esc(m.personName||p?.name||'');
+    return '<tr><td>'+esc(ORG_BY[m.organizationId].name)+'</td><td>'+(p?'<a href="#graph/'+esc(p.id)+'">'+name+'</a>':name+' <small class="muted">仅在名册</small>')+'</td><td><span class="tag'+(m.status==='uncertain'?' dis':'')+'">'+esc(orgStatusLabel(m))+'</span></td><td class="notes">'+(m.asOf?'<small class="muted">资料时点 '+esc(m.asOf)+'</small><br>':'')+esc(m.note||'')+'</td><td class="org-source">'+organizationSourceLinks(m)+'</td></tr>';
+  }).join(''):'<tr><td colspan="5" class="muted">没有符合条件的记录</td></tr>';
 }
 function focusOrganization(){
   const nodes=cy.nodes('.org-member');
@@ -86,7 +112,9 @@ function focusOrganization(){
 function markOrganization(){
   if(!cy) return;
   const id=$('#organization').value;
-  const members=(ORGS.affiliations||[]).filter(m=>m.organizationId===id&&usableAffiliation(m));
+  const scope=$('#organizationScope').value;
+  $('#organizationScopeLabel').hidden=!id;
+  const members=ORG_ROWS.filter(m=>m.organizationId===id&&matchesOrganizationScope(m,scope));
   const ids=new Set(members.map(m=>m.personId));
   cy.batch(()=>{
     cy.nodes().forEach(n=>{
@@ -103,18 +131,20 @@ function markOrganization(){
   });
   const shown=cy.nodes('.org-member').length;
   $('#organizationFocus').disabled=!id||!shown;
+  $('#organizationRosterLink').href=id?'#organizations/'+id:'#organizations';
+  const rosterCount=new Set(members.map(m=>m.personId||m.personName)).size;
   $('#organizationStatus').textContent=id
-    ? ORG_BY[id].name+'：已收录 '+ids.size+' 人，当前视图突出 '+shown+' 人。有最新公开归属的，按最新记录突出；否则只显示有据的旧团体记录。离团者不计入原团体。点击人物查看依据。'
-    : '团体资料仅收录有来源的部分人物；历史记录不代表现属，未收录不代表没有团体。'+(ORGS.updated?' 核验日期：'+ORGS.updated:'');
+    ? ORG_BY[id].name+'：此类别名册 '+rosterCount+' 人，当前图谱突出 '+shown+' 人。'+(scope==='roster'?'历史归属不代表现属；已离团者请切到历史／曾属。':'点击人物或进入名册查看出处。')
+    : '历史归属不代表现属，未收录不代表没有团体。'+(ORGS.updated?' 核验日期：'+ORGS.updated:'');
 }
 function organizationPanel(id){
   const ms=ORG_MEM[id]||[];
   if(!ms.length) return '<h3>1949 年后团体</h3><p class="muted">尚未收录可靠团体资料，不代表没有所属团体。</p>';
-  const labels={current:'最新公开记录',historical:'历史记录（非现属）',former:'曾属（已离开）',uncertain:'存疑（不参与筛选）'};
+
   return '<h3>1949 年后团体</h3><ul class="organization-evidence">'+ms.map(m=>
-    '<li><strong>'+esc((ORG_BY[m.organizationId]||{}).name||m.organizationId)+'</strong> · '+esc(labels[m.status]||'待核验')+
+    '<li><strong>'+esc((ORG_BY[m.organizationId]||{}).name||m.organizationId)+'</strong> · '+esc(orgStatusLabel(m))+
     (m.note?'<p>'+esc(m.note)+'</p>':'')+
-    '<div>'+ (m.sources||[]).filter(x=>/^https?:\/\//.test(x.url||'')).map(x=>'<a target="_blank" rel="noopener noreferrer" href="'+esc(x.url)+'">'+esc(x.title||x.publisher||'来源')+'</a>'+(x.published?' <small>资料 '+esc(x.published)+'</small>':'')+(x.accessed?' <small>查阅 '+esc(x.accessed)+'</small>':'')).join('<br>')+'</div></li>'
+    '<div>'+organizationSourceLinks(m)+'</div></li>'
   ).join('')+'</ul>';
 }
 
@@ -144,7 +174,7 @@ function init(){
   buildCy();
   bindUI();
   renderTables();
-  renderSources();
+  renderCounts();
   renderAudit();
   route();
   window.addEventListener('hashchange',route);
@@ -1629,9 +1659,10 @@ function route(){
   const parts=h.split('/');
   const kind=canonView(parts[0]);
   const arg=parts[1];
-  const section=(kind==='nebula'||kind==='network'||kind==='tree'||kind==='graph')?'graph':(['people','relations','about'].includes(kind)?kind:'graph');
+  const section=(kind==='nebula'||kind==='network'||kind==='tree'||kind==='graph')?'graph':(['people','relations','organizations','about'].includes(kind)?kind:'graph');
   document.querySelectorAll('.view').forEach(s=>s.hidden=s.id!=='view-'+section);
   document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.dataset.view===section));
+  if(section==='organizations'){if(arg&&ORG_BY[arg]){$('#orgTableGroup').value=arg;$('#orgTableStatus').value='';$('#orgTableQuery').value='';} drawOrgRoster();}
   if(section!=='graph'){updateModeTabs();return;}
   cy.resize();
   if(arg&&byId[arg]&&!byId[arg]._linked){
@@ -1689,6 +1720,11 @@ function route(){
 }
 // ---- tables
 let psort={k:'generation',d:1},rsort={k:'type',d:1};
+function personBioLinks(id){
+  const bio=(ROSTER_AUDIT.biographies||{})[id];
+  if(!Array.isArray(bio)||!bio.length) return '';
+  return '<details class="relation-evidence"><summary>生平出处</summary>'+bio.map(x=>'<div>'+esc(x.label||x.field||'生平')+'：'+srcLinks((x.sources||[]).map(y=>typeof y==='string'?y:y.url).filter(Boolean))+'</div>').join('')+'</details>';
+}
 function renderTables(){
   P.forEach(p=>{p._masters=adj[p.id].filter(r=>r.type==='master_disciple'&&r.to===p.id).map(r=>byId[r.from].name).join('、');p._ndis=adj[p.id].filter(r=>r.type==='master_disciple'&&r.from===p.id).length;});
   R.forEach(r=>{r._fromName=labelOf(byId[r.from]);r._toName=labelOf(byId[r.to]);});
@@ -1698,7 +1734,7 @@ function renderTables(){
     const key={name:p=>p.name,generation:p=>p.generation||99,zibei:p=>p.zibei||'',birth:p=>p.birth||9999,death:p=>p.death||9999,masters:p=>p._masters,ndis:p=>p._ndis,notes:p=>(p.notes||[]).join('')}[psort.k]||(p=>p.name);
     rows.sort((a,b)=>{const x=key(a),y=key(b);return (x<y?-1:x>y?1:a.name.localeCompare(b.name,'zh'))*psort.d;});
     $('#pcount').textContent=rows.length+' 人';
-    $('#ptable tbody').innerHTML=rows.map(p=>'<tr><td><a href="#graph/'+p.id+'">'+esc(labelOf(p))+'</a>'+(p.aliases.length?'<br><small class="muted">'+esc(p.aliases.join('、'))+'</small>':'')+'</td><td>'+(p.generation||'')+'</td><td>'+(p.zibei||'')+'</td><td>'+(p.birth||'')+disputedYear(p,'birth')+'</td><td>'+(p.death||'')+disputedYear(p,'death')+'</td><td>'+esc(p._masters)+'</td><td>'+(p._ndis||'')+'</td><td class="notes">'+esc((p._linked?[]:['没有任何关系']).concat(p.notes||[]).join('；'))+'</td><td>'+(p.wiki_url?'<a href="'+esc(p.wiki_url)+'" target="_blank" rel="noopener">维基</a> ':'')+srcLinks(p.sources)+'</td></tr>').join('');
+    $('#ptable tbody').innerHTML=rows.map(p=>'<tr><td><a href="#graph/'+p.id+'">'+esc(labelOf(p))+'</a>'+(p.aliases.length?'<br><small class="muted">'+esc(p.aliases.join('、'))+'</small>':'')+'</td><td>'+(p.generation||'')+'</td><td>'+(p.zibei||'')+'</td><td>'+(p.birth||'')+disputedYear(p,'birth')+'</td><td>'+(p.death||'')+disputedYear(p,'death')+'</td><td>'+esc(p._masters)+'</td><td>'+(p._ndis||'')+'</td><td class="notes">'+esc((p._linked?[]:['没有任何关系']).concat(p.notes||[]).join('；'))+'</td><td>'+(p.wiki_url?'<a href="'+esc(p.wiki_url)+'" target="_blank" rel="noopener">维基</a> ':'')+srcLinks(p.sources)+personBioLinks(p.id)+'</td></tr>').join('');
   };
   const drawR=()=>{
     const v=$('#rq').value.trim(),t=$('#rtype').value,c=$('#rconf').value;
@@ -1716,18 +1752,12 @@ function renderTables(){
   sortable('#ptable',psort,drawP);sortable('#rtable',rsort,drawR);
   drawP();drawR();
 }
-function renderSources(){
-  const c={};
-  P.forEach(p=>(p.sources||[]).forEach(u=>c[u]=(c[u]||0)+1));
-  R.forEach(r=>(r.sources||[]).forEach(u=>c[u]=(c[u]||0)+1));
-  const arr=Object.entries(c).sort((a,b)=>b[1]-a[1]);
-  const nice=u=>{try{const x=new URL(u);if(x.hostname.endsWith('wikipedia.org'))return '维基百科：'+decodeURIComponent(x.pathname.split('/').pop()).replace(/_/g,' ');return x.hostname+decodeURIComponent(x.pathname);}catch(e){return u;}};
-  $('#sourceList').innerHTML=arr.map(([u,n])=>'<li><a href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(nice(u))+'</a> <span class="muted">('+n+')</span></li>').join('');
+function renderCounts(){
   const gens=P.map(p=>p.generation).filter(Boolean);
   const hidden=P.filter(p=>!p._linked).length;
   const shownN=P.length-hidden;
   $('#buildinfo').textContent='共收录 '+P.length+' 人、'+R.length+' 条关系，图中显示 '+shownN+' 人。另有 '+hidden+' 人没有任何关系，三张图都不画出。有关系的小团体也会画出。覆盖第 '+Math.min(...gens)+'–'+Math.max(...gens)+' 代。数据整理日期：2026-11-11。';
   const fc=$('#footcount'); if(fc) fc.textContent='图中 '+shownN+' 人（全库 '+P.length+' 人、'+R.length+' 条关系）';
-  const ha=$('#hiddenAbout'); if(ha) ha.textContent='目前是 '+hidden+' 人。';
+  const ha=$('#hiddenAbout'); if(ha) ha.textContent=hidden?'另有 '+hidden+' 人因没有师承或其他关系线，只在人物表中查看。':'';
 }
 })();

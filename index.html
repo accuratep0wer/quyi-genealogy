@@ -6,7 +6,7 @@
 <title>相声师承谱系 · 清末至今</title>
 <meta name="description" content="根据公开资料整理的中国相声演员师承谱系：正式师承、代拉/引保代、亲缘与姻缘关系。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23a8322d'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='18' fill='white' font-family='serif'%3E谱%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="assets/style.css?v=20261114-roster-audit">
+<link rel="stylesheet" href="assets/style.css?v=20261114-org-rosters">
 <link rel="stylesheet" href="assets/mobile.css?v=20261114-evidence">
 </head>
 <body>
@@ -16,7 +16,8 @@
     <a href="#tree" data-view="graph">图谱</a>
     <a href="#people" data-view="people">人物表</a>
     <a href="#relations" data-view="relations">关系表</a>
-    <a href="#about" data-view="about">说明与来源</a>
+    <a href="#organizations" data-view="organizations">团体名册</a>
+    <a href="#about" data-view="about">说明</a>
     <a href="liyuan/">梨园</a>
   </nav>
   <button type="button" id="feedbackBtn" class="feedback-btn" title="需要 GitHub 账号。将打开预填好的议题；本站不接收邮件。">提交修正</button>
@@ -48,6 +49,7 @@
       <label class="ego-only">向上代数 <select id="depthUp"><option>1</option><option selected>2</option><option>3</option><option value="99">全部</option></select></label>
       <span class="ego-only focus-presets" role="group" aria-label="师承探索范围"><button type="button" data-focus-depth="1">上下各一代</button><button type="button" data-focus-depth="2">上下各两代</button></span>
       <label>1949 年后团体 <select id="organization"><option value="">全部团体</option></select></label>
+      <label id="organizationScopeLabel" hidden><select id="organizationScope" aria-label="图谱团体记录范围"><option value="roster">最新及历史归属</option><option value="current">仅最新有据</option><option value="historical">仅历史／曾属</option><option value="performance">仅演出记录</option></select></label>
       <button type="button" id="organizationFocus" disabled>定位团体</button>
       <label class="phone-hide">代数 <select id="gmin"></select> – <select id="gmax"></select></label>
       <button type="button" id="filterToggle" aria-expanded="false">筛选</button>
@@ -69,7 +71,7 @@
       <button id="fit" type="button">适配视图</button>
     </div>
   </div>
-  <p id="organizationStatus" class="organization-status" role="status">团体资料仅收录有来源的部分人物；历史任职不代表现属，未收录不代表没有团体。</p>
+  <div class="organization-strip"><p id="organizationStatus" class="organization-status" role="status">历史任职不代表现属，未收录不代表没有团体。</p><a id="organizationRosterLink" href="#organizations">查看团体名册与出处</a></div>
   <div class="graph-wrap">
     <div class="cy-stage">
       <div id="cy" aria-label="师承关系图"></div>
@@ -125,6 +127,18 @@
     <th data-k="type">类型</th><th data-k="fromName">从（师/长）</th><th data-k="toName">到（徒/亲）</th><th data-k="detail">说明</th><th data-k="confidence">可信度</th><th>来源</th></tr></thead><tbody></tbody></table></div>
 </section>
 
+<section id="view-organizations" class="view" hidden>
+  <h2 class="org-table-title">1949 年后团体名册</h2>
+  <p class="org-table-intro muted">区别团体任职、历史归属和演出记录。仅凭师承或同台不认定在团；「最新有据」指最新找到的公开归属，不代表实时在职名单。未建人物节点的名字也可在这里查询。</p>
+  <div class="tbl-tools">
+    <label>团体 <select id="orgTableGroup"><option value="">全部团体</option></select></label>
+    <label>记录类别 <select id="orgTableStatus"><option value="">全部记录</option><option value="current">最新公开归属</option><option value="historical">历史任职／归属</option><option value="former">已离团</option><option value="performance">演出记录</option><option value="uncertain">存疑</option></select></label>
+    <input id="orgTableQuery" type="search" placeholder="搜索姓名、队别或资料" aria-label="搜索名册">
+    <span id="orgTableCount" role="status"></span>
+  </div>
+  <div class="tbl-wrap"><table id="orgTable"><thead><tr><th>团体</th><th>姓名</th><th>记录类别</th><th>核对说明</th><th>出处</th></tr></thead><tbody></tbody></table></div>
+</section>
+
 <section id="view-about" class="view" hidden>
   <article class="about">
     <h2>说明</h2>
@@ -143,41 +157,14 @@
     </ul>
     <h3>可信度</h3>
     <p><b>确定</b>：至少一个公开来源明确列出，图中用该类型自己的线型。<b>存疑</b>：来源本身标注存疑，不同来源说法冲突，师徒关系后来被解除，或只有网络转载、自媒体之类的弱来源。图中一律改成同色更淡的疏圆点；这种疏圆点只表示存疑，确定关系不用。可用「只显示确定」暂时隐去存疑关系。相声门户的师承本来就常有“改换门庭”、“代拉”、“清门”、“辈分自降”等复杂情况，请把本站当作索引，不要当作定论。</p>
-    <h3>方法</h3>
-    <ol>
-      <li>主干取自维基百科《相声演员师承关系》条目。该条目以中国相声网《师承关系表》（据阎笑儒1960年传殷文硕的《相声宗谱》誊写）为主，第九代以梨园论坛《相声师承关系——九代传人》为主。</li>
-      <li>逐一读取约190个相声演员维基条目里的“师承关系”信息框（从师、世代、辈分、徒弟）和“配偶/父母/儿女/亲属”栏目，再与正文中“之子”、“门婿”、“代拉”、“引保代”等表述互相印证，补充师徒和亲缘、姻缘关系。</li>
-      <li>德云社部分依据郭德纲条目引用的2016年《德云社家谱》（北京晨报），并参考网络整理文章补充“筱、昊、展、奉”等再传弟子；青曲社、孟鹤堂等依据公开报道补充。</li>
-      <li>同名人物：若师父不同、无法确认是否同一人，就分开收录并加注说明；繁简异体、条目消歧义造成的重复，在同一师父下按同名合并。</li>
-      <li>代数：优先采用谱系表的位置和个人条目里的“世代”，其余按师承逐代推定（标为“按师承推定”）。</li>
-    </ol>
-    <h3>参考的同类项目与资料</h3>
-    <ul>
-      <li><a href="https://github.com/jammyfu/xiangsheng-genealogy" target="_blank" rel="noopener">jammyfu/xiangsheng-genealogy《相声家谱》</a>（MIT 许可）：一个开源的水墨三维师承图谱。本站读取了它整理的 338 条带出处的师承边，用来交叉核对，并采用了其中的存疑标注、补充师承和来源链接（凡采用处都在关系的来源和备注里写明了出处）；没有复制它的代码。</li>
-      <li><a href="https://blog.xikao.com/2014/07/14/1273" target="_blank" rel="noopener">梨园百年琐记“师承谱图”</a>（戏考）：根据《相声师承关系总表》整理的逐人展开式谱图，用虚线表示代拉师弟。本站的代拉、引保代关系分类参考了它的做法。</li>
-      <li><a href="https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB" target="_blank" rel="noopener">维基百科《相声演员师承关系》</a>（CC BY-SA 4.0）：本站师承的主干数据。</li>
-      <li><a href="https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206" target="_blank" rel="noopener">百度百科《相声师承关系总表》</a>和<a href="https://big5.cctv.com/gate/big5/ent.cctv.com/special/C18744/20070624/102823.shtml" target="_blank" rel="noopener">央视网转载天津日报“中国相声师承关系族谱”</a>：早期几代的旧谱，用来核对不同说法（例如沈竹善、春长隆、冯昆治的师承归属），只作书目参考。</li>
-      <li><a href="http://ent.sina.com.cn/j/2006-12-20/18141379350.html" target="_blank" rel="noopener">新京报（2006）“中国相声门谱系”</a>：介绍了马三立《京津相声演员谱系》和《中国相声史》师承表的来历，以及张三禄是否算始祖的争议。</li>
-      <li><a href="https://www.xkls.cn/zatan/3884.html" target="_blank" rel="noopener">星空历史“相声师承关系总谱（横版世系图）”</a>、<a href="https://github.com/invictusmuzi/-" target="_blank" rel="noopener">invictusmuzi 的 Neo4j 相声师承图</a>、<a href="http://kpword.com/topics.html" target="_blank" rel="noopener">中国相声网师承图谱专题</a>：在展示方式上作了参考。</li>
-    </ul>
-    <h3>局限</h3>
-    <ul>
-      <li>收录以公开资料为限，大量基层、地方曲艺团和民间演员没有收录；当代各社团收徒更新很快，难免遗漏。</li>
-      <li>原始谱系表本身被维基标注为“原创研究”，有些人名用字彼此不同。能核对为同一人的已经合并（贾仑／贾伦、刘德智／刘德治、两位张康）。侯一尘与谱系表上的侯少尘对不上，分开收录并加了注。</li>
-      <li>图画出每一个至少有一条关系的人，小团体也画，不要求连上主谱系。只有一条关系都没有的人留在数据里、可以搜索，侧栏会写「没有任何关系」，三张图都不画。<span id="hiddenAbout"></span></li>
-      <li>亲缘、姻缘只收录有来源可查的部分；亲属中不是相声演员的，只因关系需要列出（图中显示为灰色）。</li>
-      <li>不收录任何私人联系方式。如果发现错误，请用页眉或人物侧栏的「提交修正」打开 GitHub 议题（需要 GitHub 账号，本站没有邮箱通道）。</li>
-    </ul>
-    <h3 id="srcs">来源列表</h3>
-    <p class="muted">按被引用的次数排序（数字是引用该来源的人物和关系条目数）。</p>
-    <ol id="sourceList"></ol>
-    <h3>第三方组件</h3>
-    <p>图谱使用 <a href="https://js.cytoscape.org/">Cytoscape.js</a>（MIT 许可，已本地打包在 <code>vendor/</code> 目录）。全网络有两套坐标，都由本站自己计算、不另引布局库：一套是预先算好的紧凑全图（NetworkX spring layout），另一套在此基础上把挤在一起的姓名推开。放大时在两套坐标之间平滑过渡，缩小自动回到全图；拖动时邻近门派已经疏开，不会被藏起来。聚焦某一人（地址 <code>#graph/人物编号</code>）时仍用环形谱系。人物与关系数据整理自维基百科等公开来源，维基百科内容采用 CC BY-SA 4.0 许可。</p>
+    <h3>使用提示</h3>
+    <p>在图谱选择团体可突出已有的人物节点；完整的已收录记录请看「团体名册」。历史归属与参演不等于现任；出处见人物表、关系表和团体名册。</p>
+    <p>资料可能有遗漏或异说，可点击「提交修正」。<span id="hiddenAbout"></span></p>
     <p class="muted" id="buildinfo"></p>
   </article>
 </section>
 </main>
-<footer>数据：<a href="data/people.json">people.json</a> · <a href="data/relations.json">relations.json</a> · <a href="data/kinship-updates.json">亲属补录及出处</a> · <span id="footcount"></span> · 仅供参考，请以原始来源为准</footer>
+<footer id="footcount"></footer>
 <dialog id="feedbackDlg" aria-labelledby="fbHeading">
   <div class="dlg">
     <h2 id="fbHeading">提交修正</h2>
@@ -196,7 +183,7 @@
 <script src="vendor/cytoscape.min.js"></script>
 <script src="assets/mobile.js?v=20261114-evidence"></script>
 <script src="assets/line-style.js"></script>
-<script src="assets/app.js?v=20261114-roster-audit"></script>
+<script src="assets/app.js?v=20261114-org-rosters"></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "337a81f2145c44d1aca19c5d9b5fbe1d"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

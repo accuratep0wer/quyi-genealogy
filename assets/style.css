@@ -171,3 +171,16 @@ dialog::backdrop{background:rgba(0,0,0,.45)}
 .audit-details{margin:8px 12px 12px;padding:8px 12px;background:#fafaf9;border-radius:6px;overflow-wrap:anywhere}
 .audit-details summary{cursor:pointer;color:var(--accent);font-weight:600}
 .audit-details li,.cross-evidence li{margin:6px 0}
+
+
+.organization-strip{display:flex;align-items:center;flex-wrap:wrap;gap:2px 12px;padding:4px 14px;background:#fafaf9;border-bottom:1px solid #e7e5e4;font-size:12px}
+.organization-strip .organization-status{background:transparent;border:0;padding:0}
+.organization-strip a{white-space:nowrap}
+.org-table-title{margin:.2em 0 .45em}
+.org-table-intro{max-width:64ch;margin:.3em 0 1em}
+#orgTable td:nth-child(-n+3){white-space:nowrap}
+#orgTable .notes{min-width:16em;max-width:34em}
+#orgTable .org-source{min-width:13em;max-width:24em}
+#orgTable .org-source small,#orgTable .org-source span{color:var(--muted)}
+#organization{max-width:17em}
+@media(max-width:600px){#organization{max-width:10em}.organization-strip{padding-inline:8px}#view-organizations .tbl-tools input{min-width:10em}.org-table-intro{font-size:14px}}

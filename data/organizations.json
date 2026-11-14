@@ -36,15 +36,74 @@
     {
       "id": "xingye",
       "name": "星夜相声会馆"
+    },
+    {
+      "id": "zhanyou",
+      "name": "北京军区战友文工团"
+    },
+    {
+      "id": "er-pao",
+      "name": "第二炮兵政治部文工团"
+    },
+    {
+      "id": "rocket-troupe",
+      "name": "火箭军政治工作部文工团"
+    },
+    {
+      "id": "kongzheng",
+      "name": "空军政治部文工团"
+    },
+    {
+      "id": "wuhan-air-troupe",
+      "name": "武汉军区空军文工团"
+    },
+    {
+      "id": "wujing-troupe",
+      "name": "武警文工团"
+    },
+    {
+      "id": "xinshili",
+      "name": "相声新势力"
+    },
+    {
+      "id": "hulu",
+      "name": "葫芦相声社"
+    },
+    {
+      "id": "mingliu",
+      "name": "名流茶馆"
+    },
+    {
+      "id": "rail",
+      "name": "中国铁路文工团说唱团"
+    },
+    {
+      "id": "acftu",
+      "name": "中华全国总工会文工团"
+    },
+    {
+      "id": "daduo",
+      "name": "大逗相声社"
+    },
+    {
+      "id": "tjqxy",
+      "name": "谦祥益文苑"
+    },
+    {
+      "id": "tjyxf",
+      "name": "贻笑坊相声会馆"
+    },
+    {
+      "id": "tjxa",
+      "name": "西岸相声会馆"
     }
   ],
   "affiliations": [
     {
-      "personId": "p0903",
       "personName": "郭德纲",
       "organizationId": "deyun",
       "status": "current",
-      "note": "官网艺人名录列示；2026年德云社上海剧场开幕报道交叉核对。此为公开组织归属，不表示劳动合同关系。",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。2026年政府报道交叉确认德云社演员身份。 名录队别：直属演员。",
       "sources": [
         {
           "url": "https://www.guodegang.org/artist/",
@@ -58,15 +117,30 @@
           "publisher": "上海市虹口区人民政府",
           "accessed": "2026-11-14",
           "published": "2026-03-19"
+        },
+        {
+          "url": "https://www.guodegang.org/artist/?formation=1",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        },
+        {
+          "url": "https://www.shhk.gov.cn/xwzx/002014/20260316/13b8f6dc-342d-47db-9f1e-0d3f2e3b0205.html",
+          "title": "德云社开到了上海的四川北路",
+          "publisher": "上海市虹口区人民政府",
+          "accessed": "2026-11-14",
+          "published": "2026-03-16"
         }
-      ]
+      ],
+      "sourceTeam": "直属演员",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p0903"
     },
     {
-      "personId": "p1252",
       "personName": "于谦",
       "organizationId": "deyun",
       "status": "current",
-      "note": "官网艺人名录列示；2026年德云社上海剧场开幕报道交叉核对。此为公开组织归属，不表示劳动合同关系。",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。2026年政府报道交叉确认德云社演员身份。 名录队别：直属演员。",
       "sources": [
         {
           "url": "https://www.guodegang.org/artist/",
@@ -80,15 +154,30 @@
           "publisher": "上海市虹口区人民政府",
           "accessed": "2026-11-14",
           "published": "2026-03-19"
+        },
+        {
+          "url": "https://www.guodegang.org/artist/?formation=1",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        },
+        {
+          "url": "https://www.shhk.gov.cn/xwzx/002014/20260316/13b8f6dc-342d-47db-9f1e-0d3f2e3b0205.html",
+          "title": "德云社开到了上海的四川北路",
+          "publisher": "上海市虹口区人民政府",
+          "accessed": "2026-11-14",
+          "published": "2026-03-16"
         }
-      ]
+      ],
+      "sourceTeam": "直属演员",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1252"
     },
     {
-      "personId": "p1528",
       "personName": "岳云鹏",
       "organizationId": "deyun",
       "status": "current",
-      "note": "官网艺人名录列示；2026年德云社上海剧场开幕报道交叉核对。此为公开组织归属，不表示劳动合同关系。",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。2026年政府报道交叉确认德云社演员身份。 名录队别：直属演员。",
       "sources": [
         {
           "url": "https://www.guodegang.org/artist/",
@@ -102,15 +191,30 @@
           "publisher": "上海市虹口区人民政府",
           "accessed": "2026-11-14",
           "published": "2026-03-19"
+        },
+        {
+          "url": "https://www.guodegang.org/artist/?formation=1",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        },
+        {
+          "url": "https://www.shhk.gov.cn/xwzx/002014/20260316/13b8f6dc-342d-47db-9f1e-0d3f2e3b0205.html",
+          "title": "德云社开到了上海的四川北路",
+          "publisher": "上海市虹口区人民政府",
+          "accessed": "2026-11-14",
+          "published": "2026-03-16"
         }
-      ]
+      ],
+      "sourceTeam": "直属演员",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1528"
     },
     {
-      "personId": "p1255",
       "personName": "孙越",
       "organizationId": "deyun",
       "status": "current",
-      "note": "官网艺人名录列示；2026年德云社上海剧场开幕报道交叉核对。此为公开组织归属，不表示劳动合同关系。",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。2026年政府报道交叉确认德云社演员身份。 名录队别：直属演员。",
       "sources": [
         {
           "url": "https://www.guodegang.org/artist/",
@@ -124,19 +228,34 @@
           "publisher": "上海市虹口区人民政府",
           "accessed": "2026-11-14",
           "published": "2026-03-19"
+        },
+        {
+          "url": "https://www.guodegang.org/artist/?formation=1",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        },
+        {
+          "url": "https://www.shhk.gov.cn/xwzx/002014/20260316/13b8f6dc-342d-47db-9f1e-0d3f2e3b0205.html",
+          "title": "德云社开到了上海的四川北路",
+          "publisher": "上海市虹口区人民政府",
+          "accessed": "2026-11-14",
+          "published": "2026-03-16"
         }
-      ]
+      ],
+      "sourceTeam": "直属演员",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1255"
     },
     {
-      "personId": "p1522",
       "personName": "栾云平",
       "organizationId": "deyun",
       "status": "current",
-      "note": "德云社官网演员名录列示，2026年上海剧场报道交叉核对；不把旧页面的演出队号作为现任队职。",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。2026年政府报道交叉确认德云社演员身份。 名录队别：1队（旧官网）。",
       "sources": [
         {
           "url": "https://www.guodegang.org/artist/?formation=2",
-          "title": "艺人风采（演员名录）",
+          "title": "艺人风采（旧演员名录）",
           "publisher": "德云社官网",
           "accessed": "2026-11-14"
         },
@@ -146,19 +265,28 @@
           "publisher": "上海市虹口区人民政府",
           "accessed": "2026-11-14",
           "published": "2026-03-19"
+        },
+        {
+          "url": "https://www.shhk.gov.cn/xwzx/002014/20260316/13b8f6dc-342d-47db-9f1e-0d3f2e3b0205.html",
+          "title": "德云社开到了上海的四川北路",
+          "publisher": "上海市虹口区人民政府",
+          "accessed": "2026-11-14",
+          "published": "2026-03-16"
         }
-      ]
+      ],
+      "sourceTeam": "1队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1522"
     },
     {
-      "personId": "p1192",
       "personName": "高峰",
       "organizationId": "deyun",
       "status": "current",
-      "note": "德云社官网演员名录列示，2026年上海剧场报道交叉核对；不把旧页面的演出队号作为现任队职。",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。2026年政府报道交叉确认德云社演员身份。 名录队别：1队（旧官网）。",
       "sources": [
         {
           "url": "https://www.guodegang.org/artist/?formation=2",
-          "title": "艺人风采（演员名录）",
+          "title": "艺人风采（旧演员名录）",
           "publisher": "德云社官网",
           "accessed": "2026-11-14"
         },
@@ -168,19 +296,28 @@
           "publisher": "上海市虹口区人民政府",
           "accessed": "2026-11-14",
           "published": "2026-03-19"
+        },
+        {
+          "url": "https://www.shhk.gov.cn/xwzx/002014/20260316/13b8f6dc-342d-47db-9f1e-0d3f2e3b0205.html",
+          "title": "德云社开到了上海的四川北路",
+          "publisher": "上海市虹口区人民政府",
+          "accessed": "2026-11-14",
+          "published": "2026-03-16"
         }
-      ]
+      ],
+      "sourceTeam": "1队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1192"
     },
     {
-      "personId": "p1569",
       "personName": "张鹤伦",
       "organizationId": "deyun",
       "status": "current",
-      "note": "德云社官网演员名录列示，2026年上海剧场报道交叉核对；不把旧页面的演出队号作为现任队职。",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。2026年政府报道交叉确认德云社演员身份。 名录队别：6队（旧官网）。",
       "sources": [
         {
           "url": "https://www.guodegang.org/artist/?formation=7",
-          "title": "艺人风采（演员名录）",
+          "title": "艺人风采（旧演员名录）",
           "publisher": "德云社官网",
           "accessed": "2026-11-14"
         },
@@ -190,19 +327,28 @@
           "publisher": "上海市虹口区人民政府",
           "accessed": "2026-11-14",
           "published": "2026-03-19"
+        },
+        {
+          "url": "https://www.shhk.gov.cn/xwzx/002014/20260316/13b8f6dc-342d-47db-9f1e-0d3f2e3b0205.html",
+          "title": "德云社开到了上海的四川北路",
+          "publisher": "上海市虹口区人民政府",
+          "accessed": "2026-11-14",
+          "published": "2026-03-16"
         }
-      ]
+      ],
+      "sourceTeam": "6队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1569"
     },
     {
-      "personId": "p1587",
       "personName": "郎鹤炎",
       "organizationId": "deyun",
       "status": "current",
-      "note": "德云社官网演员名录列示，2026年上海剧场报道交叉核对；不把旧页面的演出队号作为现任队职。",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。2026年政府报道交叉确认德云社演员身份。 名录队别：6队（旧官网）。",
       "sources": [
         {
           "url": "https://www.guodegang.org/artist/?formation=7",
-          "title": "艺人风采（演员名录）",
+          "title": "艺人风采（旧演员名录）",
           "publisher": "德云社官网",
           "accessed": "2026-11-14"
         },
@@ -212,19 +358,28 @@
           "publisher": "上海市虹口区人民政府",
           "accessed": "2026-11-14",
           "published": "2026-03-19"
+        },
+        {
+          "url": "https://www.shhk.gov.cn/xwzx/002014/20260316/13b8f6dc-342d-47db-9f1e-0d3f2e3b0205.html",
+          "title": "德云社开到了上海的四川北路",
+          "publisher": "上海市虹口区人民政府",
+          "accessed": "2026-11-14",
+          "published": "2026-03-16"
         }
-      ]
+      ],
+      "sourceTeam": "6队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1587"
     },
     {
-      "personId": "p1574",
       "personName": "孟鹤堂",
       "organizationId": "deyun",
       "status": "current",
-      "note": "德云社官网演员名录列示，2026年上海剧场报道交叉核对；不把旧页面的演出队号作为现任队职。",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。2026年政府报道交叉确认德云社演员身份。 名录队别：7队（旧官网）。",
       "sources": [
         {
           "url": "https://www.guodegang.org/artist/?formation=8",
-          "title": "艺人风采（演员名录）",
+          "title": "艺人风采（旧演员名录）",
           "publisher": "德云社官网",
           "accessed": "2026-11-14"
         },
@@ -234,19 +389,28 @@
           "publisher": "上海市虹口区人民政府",
           "accessed": "2026-11-14",
           "published": "2026-03-19"
+        },
+        {
+          "url": "https://www.shhk.gov.cn/xwzx/002014/20260316/13b8f6dc-342d-47db-9f1e-0d3f2e3b0205.html",
+          "title": "德云社开到了上海的四川北路",
+          "publisher": "上海市虹口区人民政府",
+          "accessed": "2026-11-14",
+          "published": "2026-03-16"
         }
-      ]
+      ],
+      "sourceTeam": "7队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1574"
     },
     {
-      "personId": "p1603",
       "personName": "周九良",
       "organizationId": "deyun",
       "status": "current",
-      "note": "德云社官网演员名录列示，2026年上海剧场报道交叉核对；不把旧页面的演出队号作为现任队职。",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。2026年政府报道交叉确认德云社演员身份。 名录队别：7队（旧官网）。",
       "sources": [
         {
           "url": "https://www.guodegang.org/artist/?formation=8",
-          "title": "艺人风采（演员名录）",
+          "title": "艺人风采（旧演员名录）",
           "publisher": "德云社官网",
           "accessed": "2026-11-14"
         },
@@ -256,15 +420,25 @@
           "publisher": "上海市虹口区人民政府",
           "accessed": "2026-11-14",
           "published": "2026-03-19"
+        },
+        {
+          "url": "https://www.shhk.gov.cn/xwzx/002014/20260316/13b8f6dc-342d-47db-9f1e-0d3f2e3b0205.html",
+          "title": "德云社开到了上海的四川北路",
+          "publisher": "上海市虹口区人民政府",
+          "accessed": "2026-11-14",
+          "published": "2026-03-16"
         }
-      ]
+      ],
+      "sourceTeam": "7队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1603"
     },
     {
-      "personId": "p1680",
-      "personName": "曹云金",
       "organizationId": "tingyun",
+      "personName": "曹云金",
+      "personId": "p1680",
       "status": "current",
-      "note": "公开报道确认其创办听云轩；2026年行政许可仍以曹云金领衔听云轩专场命名。举办单位不是成员所属单位。",
+      "note": "创办人、主理人；2026年国庆北京巡演资料继续明确为听云轩主力。",
       "sources": [
         {
           "url": "https://paper.people.com.cn/hqrw/html/2013-02/26/content_1205761.htm?div=-1",
@@ -279,6 +453,20 @@
           "publisher": "常州高新区（新北区）政务服务管理办公室",
           "accessed": "2026-11-14",
           "published": "2026-09-04"
+        },
+        {
+          "url": "https://ycpai.ycwb.com/content/ikimvkctjk/content_54265117.html?isShare=true",
+          "title": "独家丨曹云金竟是广东菜狂热粉",
+          "publisher": "羊城晚报原创专访",
+          "accessed": "2026-11-14",
+          "published": "2026-08-10"
+        },
+        {
+          "url": "https://goupiaotong.cn/mobile/Product/65007.shtml",
+          "title": "2026年听云轩北京国庆专场",
+          "publisher": "购票通（主办方节目资料）",
+          "accessed": "2026-11-14",
+          "published": "2026-10-01"
         }
       ]
     },
@@ -379,155 +567,169 @@
           "publisher": "人民网",
           "accessed": "2026-11-14",
           "published": "2015-02-19"
+        },
+        {
+          "url": "https://paper.people.com.cn/rmrbhwb/html/2014-02/14/content_1390643.htm",
+          "title": "人民日报海外版：苗阜王声",
+          "publisher": "人民日报海外版",
+          "published": "2014-02-14",
+          "accessed": "2026-11-14"
         }
       ]
     },
     {
-      "personId": "p0226",
+      "organizationId": "broadcast",
       "personName": "侯宝林",
-      "organizationId": "broadcast",
+      "personId": "p0226",
       "status": "historical",
-      "note": "中国广播说唱团官方沿革明确列为该团涌现的曲艺名家，仅确认历史关联，不推断在职或当前人事关系。",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
       "sources": [
         {
           "url": "https://www.cnbpat.com/col/col1758/index.html",
-          "title": "中国广播说唱团简介",
-          "publisher": "中国广播艺术团官网",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
           "accessed": "2026-11-14"
         }
       ]
     },
     {
-      "personId": "p0190",
+      "organizationId": "broadcast",
       "personName": "刘宝瑞",
-      "organizationId": "broadcast",
+      "personId": "p0190",
       "status": "historical",
-      "note": "中国广播说唱团官方沿革明确列为该团涌现的曲艺名家，仅确认历史关联，不推断在职或当前人事关系。",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
       "sources": [
         {
           "url": "https://www.cnbpat.com/col/col1758/index.html",
-          "title": "中国广播说唱团简介",
-          "publisher": "中国广播艺术团官网",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
           "accessed": "2026-11-14"
         }
       ]
     },
     {
-      "personId": "p0101",
+      "organizationId": "broadcast",
       "personName": "郭启儒",
-      "organizationId": "broadcast",
+      "personId": "p0101",
       "status": "historical",
-      "note": "中国广播说唱团官方沿革明确列为该团涌现的曲艺名家，仅确认历史关联，不推断在职或当前人事关系。",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
       "sources": [
         {
           "url": "https://www.cnbpat.com/col/col1758/index.html",
-          "title": "中国广播说唱团简介",
-          "publisher": "中国广播艺术团官网",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
           "accessed": "2026-11-14"
         }
       ]
     },
     {
-      "personId": "p0231",
+      "organizationId": "broadcast",
       "personName": "郭全宝",
-      "organizationId": "broadcast",
+      "personId": "p0231",
       "status": "historical",
-      "note": "中国广播说唱团官方沿革明确列为该团涌现的曲艺名家，仅确认历史关联，不推断在职或当前人事关系。",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
       "sources": [
         {
           "url": "https://www.cnbpat.com/col/col1758/index.html",
-          "title": "中国广播说唱团简介",
-          "publisher": "中国广播艺术团官网",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
           "accessed": "2026-11-14"
         }
       ]
     },
     {
-      "personId": "p0536",
+      "organizationId": "broadcast",
       "personName": "马季",
-      "organizationId": "broadcast",
+      "personId": "p0536",
       "status": "historical",
-      "note": "中国广播说唱团官方沿革明确列为该团涌现的曲艺名家，仅确认历史关联，不推断在职或当前人事关系。",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
       "sources": [
         {
           "url": "https://www.cnbpat.com/col/col1758/index.html",
-          "title": "中国广播说唱团简介",
-          "publisher": "中国广播艺术团官网",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
           "accessed": "2026-11-14"
         }
       ]
     },
     {
-      "personId": "p0463",
+      "organizationId": "broadcast",
       "personName": "唐杰忠",
-      "organizationId": "broadcast",
+      "personId": "p0463",
       "status": "historical",
-      "note": "中国广播说唱团官方沿革明确列为该团涌现的曲艺名家，仅确认历史关联，不推断在职或当前人事关系。",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
       "sources": [
         {
           "url": "https://www.cnbpat.com/col/col1758/index.html",
-          "title": "中国广播说唱团简介",
-          "publisher": "中国广播艺术团官网",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
           "accessed": "2026-11-14"
         }
       ]
     },
     {
-      "personId": "p0545",
+      "organizationId": "broadcast",
       "personName": "郝爱民",
-      "organizationId": "broadcast",
+      "personId": "p0545",
       "status": "historical",
-      "note": "中国广播说唱团官方沿革明确列为该团涌现的曲艺名家，仅确认历史关联，不推断在职或当前人事关系。",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
       "sources": [
         {
           "url": "https://www.cnbpat.com/col/col1758/index.html",
-          "title": "中国广播说唱团简介",
-          "publisher": "中国广播艺术团官网",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
           "accessed": "2026-11-14"
         }
       ]
     },
     {
-      "personId": "p1005",
+      "organizationId": "broadcast",
       "personName": "姜昆",
-      "organizationId": "broadcast",
+      "personId": "p1005",
       "status": "historical",
-      "note": "中国广播说唱团官方沿革明确列为该团涌现的曲艺名家，仅确认历史关联，不推断在职或当前人事关系。",
+      "note": "官网人物履历明确1976年调入中国广播说唱团。",
       "sources": [
         {
           "url": "https://www.cnbpat.com/col/col1758/index.html",
-          "title": "中国广播说唱团简介",
-          "publisher": "中国广播艺术团官网",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
           "accessed": "2026-11-14"
+        },
+        {
+          "url": "https://www.cnbpat.com/art/2022/8/30/art_1767_39622.html",
+          "title": "名家风采：姜昆",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2022-08-30"
         }
       ]
     },
     {
-      "personId": "p1008",
+      "organizationId": "broadcast",
       "personName": "冯巩",
-      "organizationId": "broadcast",
+      "personId": "p1008",
       "status": "historical",
-      "note": "中国广播说唱团官方沿革明确列为该团涌现的曲艺名家，仅确认历史关联，不推断在职或当前人事关系。",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
       "sources": [
         {
           "url": "https://www.cnbpat.com/col/col1758/index.html",
-          "title": "中国广播说唱团简介",
-          "publisher": "中国广播艺术团官网",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
           "accessed": "2026-11-14"
         }
       ]
     },
     {
-      "personId": "p1006",
-      "personName": "赵炎",
       "organizationId": "broadcast",
+      "personName": "赵炎",
+      "personId": "p1006",
       "status": "historical",
-      "note": "中国广播说唱团官方沿革明确列为该团涌现的曲艺名家，仅确认历史关联，不推断在职或当前人事关系。",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
       "sources": [
         {
           "url": "https://www.cnbpat.com/col/col1758/index.html",
-          "title": "中国广播说唱团简介",
-          "publisher": "中国广播艺术团官网",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
           "accessed": "2026-11-14"
         }
       ]
@@ -564,11 +766,10 @@
       ]
     },
     {
-      "personId": "p1070",
       "personName": "李菁",
       "organizationId": "deyun",
       "status": "former",
-      "note": "2010 年公开声明已退出德云社。何沄伟当时使用艺名何云伟。",
+      "note": "2010-08-06公开声明退出德云社。",
       "sources": [
         {
           "url": "https://www.chinanews.com.cn/yl/2010/08-06/2450241.shtml",
@@ -576,8 +777,16 @@
           "publisher": "中国新闻网",
           "accessed": "2026-11-14",
           "published": "2010-08-06"
+        },
+        {
+          "url": "https://news.sina.com.cn/c/2010-08-06/084720839351.shtml",
+          "title": "何云伟李菁退出德云社",
+          "publisher": "中国广播网/中国之声，经新浪转载",
+          "accessed": "2026-11-14",
+          "published": "2010-08-06"
         }
-      ]
+      ],
+      "personId": "p1070"
     },
     {
       "personId": "p1070",
@@ -592,15 +801,21 @@
           "publisher": "京华时报／中国新闻网",
           "accessed": "2026-11-14",
           "published": "2010-10-17"
+        },
+        {
+          "url": "https://s.visitbeijing.com.cn/attraction/120282",
+          "title": "星夜相声会馆",
+          "publisher": "北京旅游网",
+          "published": null,
+          "accessed": "2026-11-14"
         }
       ]
     },
     {
-      "personId": "p1070",
       "personName": "李菁",
       "organizationId": "beijing-quyi",
       "status": "current",
-      "note": "2026 年北京曲艺团专场的节目资料明确以北京曲艺团曲艺名家介绍。以最新公开团体记录展示，不代表核验了劳动关系。",
+      "note": "2026市级表彰名单明确列北京曲艺团有限责任公司副总经理、一级演员；可刷新现有归属证据。",
       "sources": [
         {
           "url": "https://www.goupiaotong.cn/mobile/Product/64533.shtml",
@@ -622,15 +837,23 @@
           "publisher": "人民网",
           "accessed": "2026-11-14",
           "published": "2024-08-09"
+        },
+        {
+          "url": "https://www.beijing.gov.cn/ywdt/gzdt/202605/t20260528_4669516.html",
+          "title": "20位中青年德艺双馨艺术家获表彰",
+          "publisher": "北京日报／北京市政府",
+          "accessed": "2026-11-14",
+          "published": "2026-05-28"
         }
-      ]
+      ],
+      "personId": "p1070",
+      "asOf": "2026-05-28"
     },
     {
-      "personId": "p1210",
       "personName": "何沄伟",
       "organizationId": "deyun",
       "status": "former",
-      "note": "2010 年公开声明已退出德云社。何沄伟当时使用艺名何云伟。",
+      "note": "2010-08-06公开声明退出德云社。来源用名何云伟，与现有名册别名一致。",
       "sources": [
         {
           "url": "https://www.chinanews.com.cn/yl/2010/08-06/2450241.shtml",
@@ -638,8 +861,16 @@
           "publisher": "中国新闻网",
           "accessed": "2026-11-14",
           "published": "2010-08-06"
+        },
+        {
+          "url": "https://news.sina.com.cn/c/2010-08-06/084720839351.shtml",
+          "title": "何云伟李菁退出德云社",
+          "publisher": "中国广播网/中国之声，经新浪转载",
+          "accessed": "2026-11-14",
+          "published": "2010-08-06"
         }
-      ]
+      ],
+      "personId": "p1210"
     },
     {
       "personId": "p1210",
@@ -661,8 +892,8 @@
       "personId": "p1210",
       "personName": "何沄伟",
       "organizationId": "beijing-quyi",
-      "status": "current",
-      "note": "2026 年北京曲艺团专场的节目资料明确以北京曲艺团曲艺名家介绍。以最新公开团体记录展示，不代表核验了劳动关系。",
+      "status": "performance",
+      "note": "2026北京曲艺团演出资料列入阵容，但未找到明确聘任或名录证据，改作演出记录。",
       "sources": [
         {
           "url": "https://www.goupiaotong.cn/mobile/Product/64533.shtml",
@@ -709,6 +940,4727 @@
           "publisher": "北方网",
           "accessed": "2026-11-14",
           "published": "2008-09-20"
+        }
+      ]
+    },
+    {
+      "personName": "闫云达",
+      "organizationId": "deyun",
+      "status": "former",
+      "note": "旧官网仍列名，但2018-04-23本人公开宣布退出；不能作为现任。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=3",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        },
+        {
+          "url": "https://ent.sina.cn/star/tv/2018-04-23/detail-ifzqvvsa0605497.d.html",
+          "title": "闫云达宣布退出德云社",
+          "publisher": "新浪娱乐",
+          "accessed": "2026-11-14",
+          "published": "2018-04-23"
+        }
+      ],
+      "personId": "p1760"
+    },
+    {
+      "personName": "刘喆",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：2队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=3",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "2队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1167"
+    },
+    {
+      "personName": "靳鹤岚",
+      "organizationId": "deyun",
+      "status": "current",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。2026年政府报道交叉确认德云社演员身份。 名录队别：2队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=3",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        },
+        {
+          "url": "https://www.shhk.gov.cn/xwzx/002014/20260316/13b8f6dc-342d-47db-9f1e-0d3f2e3b0205.html",
+          "title": "德云社开到了上海的四川北路",
+          "publisher": "上海市虹口区人民政府",
+          "accessed": "2026-11-14",
+          "published": "2026-03-16"
+        }
+      ],
+      "sourceTeam": "2队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1595"
+    },
+    {
+      "personName": "尚筱菊",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：2队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=3",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "2队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1530"
+    },
+    {
+      "personName": "朱鹤松",
+      "organizationId": "deyun",
+      "status": "current",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。2026年政府报道交叉确认德云社演员身份。 名录队别：2队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=3",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        },
+        {
+          "url": "https://www.shhk.gov.cn/xwzx/002014/20260316/13b8f6dc-342d-47db-9f1e-0d3f2e3b0205.html",
+          "title": "德云社开到了上海的四川北路",
+          "publisher": "上海市虹口区人民政府",
+          "accessed": "2026-11-14",
+          "published": "2026-03-16"
+        }
+      ],
+      "sourceTeam": "2队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1809"
+    },
+    {
+      "personName": "李九重",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：2队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=3",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "2队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1616"
+    },
+    {
+      "personName": "张鹤舰",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：2队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=3",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "2队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1592"
+    },
+    {
+      "personName": "尚九熙",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：2队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=3",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "2队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1615"
+    },
+    {
+      "personName": "何九华",
+      "organizationId": "deyun",
+      "status": "current",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。2026年政府报道交叉确认德云社演员身份。 名录队别：2队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=3",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        },
+        {
+          "url": "https://www.shhk.gov.cn/xwzx/002014/20260316/13b8f6dc-342d-47db-9f1e-0d3f2e3b0205.html",
+          "title": "德云社开到了上海的四川北路",
+          "publisher": "上海市虹口区人民政府",
+          "accessed": "2026-11-14",
+          "published": "2026-03-16"
+        }
+      ],
+      "sourceTeam": "2队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1807"
+    },
+    {
+      "personName": "陈九福",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：2队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=3",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "2队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1619"
+    },
+    {
+      "personName": "杜鹤来",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：2队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=3",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "2队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1783"
+    },
+    {
+      "personName": "郑九莲",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：2队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=3",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "2队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1609"
+    },
+    {
+      "personName": "吴鹤臣",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：2队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=3",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "2队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1573"
+    },
+    {
+      "personName": "孔云龙",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：3队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=4",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "3队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1532"
+    },
+    {
+      "personName": "李云杰",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：3队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=4",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "3队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1301"
+    },
+    {
+      "personName": "张九南",
+      "organizationId": "deyun",
+      "status": "current",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。2026年政府报道交叉确认德云社演员身份。 名录队别：3队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=4",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        },
+        {
+          "url": "https://www.shhk.gov.cn/xwzx/002014/20260316/13b8f6dc-342d-47db-9f1e-0d3f2e3b0205.html",
+          "title": "德云社开到了上海的四川北路",
+          "publisher": "上海市虹口区人民政府",
+          "accessed": "2026-11-14",
+          "published": "2026-03-16"
+        }
+      ],
+      "sourceTeam": "3队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1608"
+    },
+    {
+      "personName": "高九成",
+      "organizationId": "deyun",
+      "status": "current",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。2026年政府报道交叉确认德云社演员身份。 名录队别：3队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=4",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        },
+        {
+          "url": "https://www.shhk.gov.cn/xwzx/002014/20260316/13b8f6dc-342d-47db-9f1e-0d3f2e3b0205.html",
+          "title": "德云社开到了上海的四川北路",
+          "publisher": "上海市虹口区人民政府",
+          "accessed": "2026-11-14",
+          "published": "2026-03-16"
+        }
+      ],
+      "sourceTeam": "3队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1606"
+    },
+    {
+      "personName": "王磊",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：3队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=4",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "3队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "identityNote": "未在现有名册中唯一匹配；不创建人物或师承边。同名ID：p1111,p1118"
+    },
+    {
+      "personName": "张鹤君",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：3队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=4",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "3队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1571"
+    },
+    {
+      "personName": "张九龄",
+      "organizationId": "deyun",
+      "status": "current",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。2026年政府报道交叉确认德云社演员身份。 名录队别：3队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=4",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        },
+        {
+          "url": "https://www.shhk.gov.cn/xwzx/002014/20260316/13b8f6dc-342d-47db-9f1e-0d3f2e3b0205.html",
+          "title": "德云社开到了上海的四川北路",
+          "publisher": "上海市虹口区人民政府",
+          "accessed": "2026-11-14",
+          "published": "2026-03-16"
+        }
+      ],
+      "sourceTeam": "3队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1602"
+    },
+    {
+      "personName": "王九龙",
+      "organizationId": "deyun",
+      "status": "current",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。2026年政府报道交叉确认德云社演员身份。 名录队别：3队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=4",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        },
+        {
+          "url": "https://www.shhk.gov.cn/xwzx/002014/20260316/13b8f6dc-342d-47db-9f1e-0d3f2e3b0205.html",
+          "title": "德云社开到了上海的四川北路",
+          "publisher": "上海市虹口区人民政府",
+          "accessed": "2026-11-14",
+          "published": "2026-03-16"
+        }
+      ],
+      "sourceTeam": "3队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1607"
+    },
+    {
+      "personName": "陶云圣",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：3队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=4",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "3队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1560"
+    },
+    {
+      "personName": "许个",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：3队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=4",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "3队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "identityNote": "未在现有名册中唯一匹配；不创建人物或师承边。"
+    },
+    {
+      "personName": "赵楠",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：3队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=4",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "3队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1824"
+    },
+    {
+      "personName": "于筱怀",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：3队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=4",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "3队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1534"
+    },
+    {
+      "personName": "阎鹤祥",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：4队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=5",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "4队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1565"
+    },
+    {
+      "personName": "李云天",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：4队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=5",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "4队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1559"
+    },
+    {
+      "personName": "冯照洋",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：4队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=5",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "4队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1502"
+    },
+    {
+      "personName": "杨鹤通",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：4队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=5",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "4队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1575"
+    },
+    {
+      "personName": "史爱东",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：4队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=5",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "4队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p2052"
+    },
+    {
+      "personName": "郭麒麟",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：4队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=5",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "4队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1503"
+    },
+    {
+      "personName": "宋昊然",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：4队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=5",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "4队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1776"
+    },
+    {
+      "personName": "梅九亮",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：4队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=5",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "4队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1630"
+    },
+    {
+      "personName": "张鹤雯",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：4队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=5",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "4队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1582"
+    },
+    {
+      "personName": "陈九品",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：4队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=5",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "4队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1620"
+    },
+    {
+      "personName": "张云雷",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：8队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=9",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "8队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1555"
+    },
+    {
+      "personName": "杨九郎",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：8队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=9",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "8队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1604"
+    },
+    {
+      "personName": "李九天",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：8队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=9",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "8队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1623"
+    },
+    {
+      "personName": "李九春",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：8队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=9",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "8队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1808"
+    },
+    {
+      "personName": "梁鹤坤",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：8队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=9",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "8队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1576"
+    },
+    {
+      "personName": "张鹤帆",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：8队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=9",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "8队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1585"
+    },
+    {
+      "personName": "李思明",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：8队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=9",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "8队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "identityNote": "未在现有名册中唯一匹配；不创建人物或师承边。"
+    },
+    {
+      "personName": "董九力",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：8队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=9",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "8队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1622"
+    },
+    {
+      "personName": "王鹤江",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：8队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=9",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "8队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1589"
+    },
+    {
+      "personName": "翟国强",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：1队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=2",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "1队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1115"
+    },
+    {
+      "personName": "关鹤柏",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：1队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=2",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "1队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1588"
+    },
+    {
+      "personName": "王昊悦",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：1队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=2",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "1队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1494"
+    },
+    {
+      "personName": "李昊洋",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：1队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=2",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "1队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1495"
+    },
+    {
+      "personName": "邓德勇",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：1队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=2",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "1队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p0983"
+    },
+    {
+      "personName": "高筱贝",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：1队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=2",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "1队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1526"
+    },
+    {
+      "personName": "侯筱楼",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：1队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=2",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "1队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1525"
+    },
+    {
+      "personName": "郎昊辰",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：1队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=2",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "1队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1492"
+    },
+    {
+      "personName": "张九林",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：1队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=2",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "1队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1629"
+    },
+    {
+      "personName": "韩九鸣",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：1队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=2",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "1队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1627"
+    },
+    {
+      "personName": "王碧辉",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：1队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=2",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "1队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1117"
+    },
+    {
+      "personName": "朱云峰",
+      "organizationId": "deyun",
+      "status": "current",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。2026年政府报道交叉确认德云社演员身份。 名录队别：5队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=6",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        },
+        {
+          "url": "https://www.shhk.gov.cn/xwzx/002014/20260316/13b8f6dc-342d-47db-9f1e-0d3f2e3b0205.html",
+          "title": "德云社开到了上海的四川北路",
+          "publisher": "上海市虹口区人民政府",
+          "accessed": "2026-11-14",
+          "published": "2026-03-16"
+        }
+      ],
+      "sourceTeam": "5队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1557"
+    },
+    {
+      "personName": "曹鹤阳",
+      "organizationId": "deyun",
+      "status": "current",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。2026年政府报道交叉确认德云社演员身份。 名录队别：5队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=6",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        },
+        {
+          "url": "https://www.shhk.gov.cn/xwzx/002014/20260316/13b8f6dc-342d-47db-9f1e-0d3f2e3b0205.html",
+          "title": "德云社开到了上海的四川北路",
+          "publisher": "上海市虹口区人民政府",
+          "accessed": "2026-11-14",
+          "published": "2026-03-16"
+        }
+      ],
+      "sourceTeam": "5队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1537"
+    },
+    {
+      "personName": "侯鹤廉",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：5队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=6",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "5队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1786"
+    },
+    {
+      "personName": "刘九思",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：5队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=6",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "5队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1618"
+    },
+    {
+      "personName": "王筱阁",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：5队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=6",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "5队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1533"
+    },
+    {
+      "personName": "吕硕",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：5队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=6",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "5队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1750"
+    },
+    {
+      "personName": "刘九儒",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：5队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=6",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "5队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1617"
+    },
+    {
+      "personName": "王少立",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：5队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=6",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "5队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1049"
+    },
+    {
+      "personName": "孙九香",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：5队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=6",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "5队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1611"
+    },
+    {
+      "personName": "倪九涛",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：5队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=6",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "5队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1621"
+    },
+    {
+      "personName": "栗世锦",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：5队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=6",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "5队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1752"
+    },
+    {
+      "personName": "郑好",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：6队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=7",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "6队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p0817"
+    },
+    {
+      "personName": "张金山",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：6队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=7",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "6队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p2046"
+    },
+    {
+      "personName": "姬鹤武",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：6队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=7",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "6队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1572"
+    },
+    {
+      "personName": "孙鹤宝",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：6队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=7",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "6队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1583"
+    },
+    {
+      "personName": "李筱奎",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：6队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=7",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "6队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1524"
+    },
+    {
+      "personName": "于鹤真",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：6队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=7",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "6队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1580"
+    },
+    {
+      "personName": "关九海",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：6队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=7",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "6队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1614"
+    },
+    {
+      "personName": "李九江",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：6队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=7",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "6队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1610"
+    },
+    {
+      "personName": "张霄白",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：6队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=7",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "6队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1633"
+    },
+    {
+      "personName": "曹九台",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：6队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=7",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "6队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1625"
+    },
+    {
+      "personName": "陈奉清",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：6队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=7",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "6队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1753"
+    },
+    {
+      "personName": "董九涵",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：6队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=7",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "6队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1628"
+    },
+    {
+      "personName": "谢金",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：7队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=8",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "7队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p0647"
+    },
+    {
+      "personName": "李鹤彪",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：7队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=8",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "7队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1567"
+    },
+    {
+      "personName": "刘筱亭",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：7队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=8",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "7队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1529"
+    },
+    {
+      "personName": "张九泰",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：7队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=8",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "7队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1626"
+    },
+    {
+      "personName": "李鹤东",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：7队（旧官网）。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=8",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "7队（旧官网）",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1591"
+    },
+    {
+      "personName": "侯震",
+      "organizationId": "deyun",
+      "status": "historical",
+      "note": "旧官网明确列示演员；其分队为旧名录分组，不代表当前队职。缺少最新身份确认，历史记录不等于已经退出。 名录队别：直属演员。",
+      "sources": [
+        {
+          "url": "https://www.guodegang.org/artist/?formation=1",
+          "title": "艺人风采（旧演员名录）",
+          "publisher": "德云社官网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "sourceTeam": "直属演员",
+      "sourcePeriod": "页面无发布日期，文字年龄显示约2016年旧资料；不可当2026队表",
+      "personId": "p1254"
+    },
+    {
+      "personName": "秦霄贤",
+      "organizationId": "deyun",
+      "status": "current",
+      "note": "2026年政府报道明确列为德云社演员。",
+      "sources": [
+        {
+          "url": "https://www.shhk.gov.cn/xwzx/002014/20260316/13b8f6dc-342d-47db-9f1e-0d3f2e3b0205.html",
+          "title": "德云社开到了上海的四川北路",
+          "publisher": "上海市虹口区人民政府",
+          "accessed": "2026-11-14",
+          "published": "2026-03-16"
+        }
+      ],
+      "personId": "p1635"
+    },
+    {
+      "personName": "陈霄华",
+      "organizationId": "deyun",
+      "status": "former",
+      "note": "2022年德云社公开辞退通知；仅记录退出状态，不扩写事件细节。",
+      "sources": [
+        {
+          "url": "https://www.thepaper.cn/newsDetail_forward_18757797",
+          "title": "德云社回应：已辞退（附德云社声明）",
+          "publisher": "澎湃新闻",
+          "accessed": "2026-11-14",
+          "published": "2022-06-27"
+        }
+      ],
+      "personId": "p1777"
+    },
+    {
+      "personName": "张金山",
+      "organizationId": "deyun",
+      "status": "performance",
+      "note": "2026-10-09至11日天津德云社节目单列演；来源标演出二队，只证明该场次公开演出关联，非劳动关系或当前常驻队籍。 名录队别：二队（2026-10-09至11日演出名单）。",
+      "sources": [
+        {
+          "url": "https://i.ifeng.com/c/8x3xTT98Vej",
+          "title": "天津德云社10月9日至11日相声演出节目单",
+          "publisher": "天津本地宝综合整理，凤凰网城市速递转载",
+          "accessed": "2026-11-14",
+          "published": "2026-10-08"
+        }
+      ],
+      "sourceTeam": "二队（2026-10-09至11日演出名单）",
+      "performanceDate": "2026-10-09/2026-10-11",
+      "personId": "p2046"
+    },
+    {
+      "personName": "徐筱竹",
+      "organizationId": "deyun",
+      "status": "performance",
+      "note": "2026-10-09至11日天津德云社节目单列演；来源标演出二队，只证明该场次公开演出关联，非劳动关系或当前常驻队籍。 名录队别：二队（2026-10-09至11日演出名单）。",
+      "sources": [
+        {
+          "url": "https://i.ifeng.com/c/8x3xTT98Vej",
+          "title": "天津德云社10月9日至11日相声演出节目单",
+          "publisher": "天津本地宝综合整理，凤凰网城市速递转载",
+          "accessed": "2026-11-14",
+          "published": "2026-10-08"
+        }
+      ],
+      "sourceTeam": "二队（2026-10-09至11日演出名单）",
+      "performanceDate": "2026-10-09/2026-10-11",
+      "personId": "p1531"
+    },
+    {
+      "personName": "肖霄月",
+      "organizationId": "deyun",
+      "status": "performance",
+      "note": "2026-10-09至11日天津德云社节目单列演；来源标演出二队，只证明该场次公开演出关联，非劳动关系或当前常驻队籍。 名录队别：二队（2026-10-09至11日演出名单）。",
+      "sources": [
+        {
+          "url": "https://i.ifeng.com/c/8x3xTT98Vej",
+          "title": "天津德云社10月9日至11日相声演出节目单",
+          "publisher": "天津本地宝综合整理，凤凰网城市速递转载",
+          "accessed": "2026-11-14",
+          "published": "2026-10-08"
+        }
+      ],
+      "sourceTeam": "二队（2026-10-09至11日演出名单）",
+      "performanceDate": "2026-10-09/2026-10-11",
+      "personId": "p1653"
+    },
+    {
+      "personName": "冯义凯",
+      "organizationId": "deyun",
+      "status": "performance",
+      "note": "2026-10-09至11日天津德云社节目单列演；来源标演出二队，只证明该场次公开演出关联，非劳动关系或当前常驻队籍。 名录队别：二队（2026-10-09至11日演出名单）。",
+      "sources": [
+        {
+          "url": "https://i.ifeng.com/c/8x3xTT98Vej",
+          "title": "天津德云社10月9日至11日相声演出节目单",
+          "publisher": "天津本地宝综合整理，凤凰网城市速递转载",
+          "accessed": "2026-11-14",
+          "published": "2026-10-08"
+        }
+      ],
+      "sourceTeam": "二队（2026-10-09至11日演出名单）",
+      "performanceDate": "2026-10-09/2026-10-11",
+      "personId": "p1818"
+    },
+    {
+      "personName": "金霄琴",
+      "organizationId": "deyun",
+      "status": "performance",
+      "note": "2026-10-09至11日天津德云社节目单列演；来源标演出二队，只证明该场次公开演出关联，非劳动关系或当前常驻队籍。 名录队别：二队（2026-10-09至11日演出名单）。",
+      "sources": [
+        {
+          "url": "https://i.ifeng.com/c/8x3xTT98Vej",
+          "title": "天津德云社10月9日至11日相声演出节目单",
+          "publisher": "天津本地宝综合整理，凤凰网城市速递转载",
+          "accessed": "2026-11-14",
+          "published": "2026-10-08"
+        }
+      ],
+      "sourceTeam": "二队（2026-10-09至11日演出名单）",
+      "performanceDate": "2026-10-09/2026-10-11",
+      "personId": "p1652"
+    },
+    {
+      "personName": "韩九鸣",
+      "organizationId": "deyun",
+      "status": "performance",
+      "note": "2026-10-09至11日天津德云社节目单列演；来源标演出二队，只证明该场次公开演出关联，非劳动关系或当前常驻队籍。 名录队别：二队（2026-10-09至11日演出名单）。",
+      "sources": [
+        {
+          "url": "https://i.ifeng.com/c/8x3xTT98Vej",
+          "title": "天津德云社10月9日至11日相声演出节目单",
+          "publisher": "天津本地宝综合整理，凤凰网城市速递转载",
+          "accessed": "2026-11-14",
+          "published": "2026-10-08"
+        }
+      ],
+      "sourceTeam": "二队（2026-10-09至11日演出名单）",
+      "performanceDate": "2026-10-09/2026-10-11",
+      "personId": "p1627"
+    },
+    {
+      "personName": "张鹤雯",
+      "organizationId": "deyun",
+      "status": "performance",
+      "note": "2026-10-09至11日天津德云社节目单列演；来源标演出二队，只证明该场次公开演出关联，非劳动关系或当前常驻队籍。 名录队别：二队（2026-10-09至11日演出名单）。",
+      "sources": [
+        {
+          "url": "https://i.ifeng.com/c/8x3xTT98Vej",
+          "title": "天津德云社10月9日至11日相声演出节目单",
+          "publisher": "天津本地宝综合整理，凤凰网城市速递转载",
+          "accessed": "2026-11-14",
+          "published": "2026-10-08"
+        }
+      ],
+      "sourceTeam": "二队（2026-10-09至11日演出名单）",
+      "performanceDate": "2026-10-09/2026-10-11",
+      "personId": "p1582"
+    },
+    {
+      "personName": "孙霄亮",
+      "organizationId": "deyun",
+      "status": "performance",
+      "note": "2026-10-09至11日天津德云社节目单列演；来源标演出二队，只证明该场次公开演出关联，非劳动关系或当前常驻队籍。 名录队别：二队（2026-10-09至11日演出名单）。",
+      "sources": [
+        {
+          "url": "https://i.ifeng.com/c/8x3xTT98Vej",
+          "title": "天津德云社10月9日至11日相声演出节目单",
+          "publisher": "天津本地宝综合整理，凤凰网城市速递转载",
+          "accessed": "2026-11-14",
+          "published": "2026-10-08"
+        }
+      ],
+      "sourceTeam": "二队（2026-10-09至11日演出名单）",
+      "performanceDate": "2026-10-09/2026-10-11",
+      "personId": "p1654"
+    },
+    {
+      "personName": "张鹤君",
+      "organizationId": "deyun",
+      "status": "performance",
+      "note": "2026-10-09至11日天津德云社节目单列演；来源标演出二队，只证明该场次公开演出关联，非劳动关系或当前常驻队籍。 名录队别：二队（2026-10-09至11日演出名单）。",
+      "sources": [
+        {
+          "url": "https://i.ifeng.com/c/8x3xTT98Vej",
+          "title": "天津德云社10月9日至11日相声演出节目单",
+          "publisher": "天津本地宝综合整理，凤凰网城市速递转载",
+          "accessed": "2026-11-14",
+          "published": "2026-10-08"
+        }
+      ],
+      "sourceTeam": "二队（2026-10-09至11日演出名单）",
+      "performanceDate": "2026-10-09/2026-10-11",
+      "personId": "p1571"
+    },
+    {
+      "personName": "王磊",
+      "organizationId": "deyun",
+      "status": "performance",
+      "note": "2026-10-09至11日天津德云社节目单列演；来源标演出二队，只证明该场次公开演出关联，非劳动关系或当前常驻队籍。 名录队别：二队（2026-10-09至11日演出名单）。",
+      "sources": [
+        {
+          "url": "https://i.ifeng.com/c/8x3xTT98Vej",
+          "title": "天津德云社10月9日至11日相声演出节目单",
+          "publisher": "天津本地宝综合整理，凤凰网城市速递转载",
+          "accessed": "2026-11-14",
+          "published": "2026-10-08"
+        }
+      ],
+      "sourceTeam": "二队（2026-10-09至11日演出名单）",
+      "performanceDate": "2026-10-09/2026-10-11",
+      "identityNote": "未在现有名册中唯一匹配；不创建人物或师承边。同名ID：p1111,p1118"
+    },
+    {
+      "personName": "尚筱菊",
+      "organizationId": "deyun",
+      "status": "performance",
+      "note": "2026-10-09至11日天津德云社节目单列演；来源标演出二队，只证明该场次公开演出关联，非劳动关系或当前常驻队籍。 名录队别：二队（2026-10-09至11日演出名单）。",
+      "sources": [
+        {
+          "url": "https://i.ifeng.com/c/8x3xTT98Vej",
+          "title": "天津德云社10月9日至11日相声演出节目单",
+          "publisher": "天津本地宝综合整理，凤凰网城市速递转载",
+          "accessed": "2026-11-14",
+          "published": "2026-10-08"
+        }
+      ],
+      "sourceTeam": "二队（2026-10-09至11日演出名单）",
+      "performanceDate": "2026-10-09/2026-10-11",
+      "personId": "p1530"
+    },
+    {
+      "personName": "孙子钊",
+      "organizationId": "deyun",
+      "status": "performance",
+      "note": "2026-10-09至11日天津德云社节目单列演；来源标演出二队，只证明该场次公开演出关联，非劳动关系或当前常驻队籍。 名录队别：二队（2026-10-09至11日演出名单）。",
+      "sources": [
+        {
+          "url": "https://i.ifeng.com/c/8x3xTT98Vej",
+          "title": "天津德云社10月9日至11日相声演出节目单",
+          "publisher": "天津本地宝综合整理，凤凰网城市速递转载",
+          "accessed": "2026-11-14",
+          "published": "2026-10-08"
+        }
+      ],
+      "sourceTeam": "二队（2026-10-09至11日演出名单）",
+      "performanceDate": "2026-10-09/2026-10-11",
+      "personId": "p1751"
+    },
+    {
+      "personId": "p0735",
+      "personName": "牛群",
+      "organizationId": "zhanyou",
+      "status": "historical",
+      "note": "1974年调入北京军区战友文工团，1993年转业调入中国广播艺术团。",
+      "sources": [
+        {
+          "url": "https://ent.sina.com.cn/s/m/2007-05-13/ba1552219.shtml",
+          "title": "牛群提起相声眼睛发亮：哭过后才失去软弱",
+          "publisher": "每日新报／新浪",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "startYear": 1974,
+      "endYear": 1993
+    },
+    {
+      "personId": "p0530",
+      "personName": "李立山",
+      "organizationId": "zhanyou",
+      "status": "historical",
+      "note": "2014年报道明确称北京军区政治部文工团曲艺家；单位旧称归入战友文工团。仅为当时任职证据。",
+      "sources": [
+        {
+          "url": "https://paper.people.com.cn/rmrbhwb/html/2014-06/30/content_1447262.htm",
+          "title": "当相声遇上80后90后",
+          "publisher": "人民日报海外版",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "evidenceYear": 2014
+    },
+    {
+      "personId": "p0539",
+      "personName": "贾冀光",
+      "organizationId": "er-pao",
+      "status": "historical",
+      "note": "儿子贾仑介绍明确父亲为二炮文工团专业相声演员；不把儿子的铁路/煤矿工作单位混入。",
+      "sources": [
+        {
+          "url": "https://www.bjft.gov.cn/fengtaishibao/html/2023-03/29/content_9505_15954000.htm",
+          "title": "与丰台有什么解不开的情缘",
+          "publisher": "丰台时报／丰台区政府",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "personId": "p1375",
+      "personName": "周炜",
+      "organizationId": "er-pao",
+      "status": "historical",
+      "note": "2015年出任第二炮兵文工团团长，报道采访副团长陈思思确认。不是2026现任职。",
+      "sources": [
+        {
+          "url": "https://www.xinhuanet.com/mil/2015-01/14/c_127386197.htm",
+          "title": "相声演员周炜任第二炮兵文工团团长",
+          "publisher": "华西都市报／新华网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "evidenceYear": 2015
+    },
+    {
+      "personId": "p1375",
+      "personName": "周炜",
+      "organizationId": "rocket-troupe",
+      "status": "historical",
+      "note": "2018年报道以火箭军文工团团长身份介绍；此单位承接二炮旧称，作为历史阶段记录，不应重复算两个现任单位。",
+      "sources": [
+        {
+          "url": "https://m.thepaper.cn/newsDetail_forward_2442550",
+          "title": "火箭军文工团告别视频发布",
+          "publisher": "澎湃新闻",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "evidenceYear": 2018
+    },
+    {
+      "personId": "p1684",
+      "personName": "李博成",
+      "organizationId": "wuhan-air-troupe",
+      "status": "historical",
+      "note": "回忆文直接称孪生兄弟为本团曲艺队相声演员。历史归属，不表示现任；中国军网搜索索引完整展示该段，页面直开超时。",
+      "sources": [
+        {
+          "url": "https://www.81.cn/wh_208594/16237734.html",
+          "title": "我的战友，我们的文工团",
+          "publisher": "中国军网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "verification": "indexed-text; direct-open-timeout"
+    },
+    {
+      "personId": "p1684",
+      "personName": "李博成",
+      "organizationId": "wujing-troupe",
+      "status": "historical",
+      "note": "回忆文明确二人离开武空文工团后调入武警文工团。历史归属，不表示现任；中国军网搜索索引完整展示该段，页面直开超时。",
+      "sources": [
+        {
+          "url": "https://www.81.cn/wh_208594/16237734.html",
+          "title": "我的战友，我们的文工团",
+          "publisher": "中国军网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "verification": "indexed-text; direct-open-timeout"
+    },
+    {
+      "personId": "p1685",
+      "personName": "李博良",
+      "organizationId": "wuhan-air-troupe",
+      "status": "historical",
+      "note": "回忆文直接称孪生兄弟为本团曲艺队相声演员。历史归属，不表示现任；中国军网搜索索引完整展示该段，页面直开超时。",
+      "sources": [
+        {
+          "url": "https://www.81.cn/wh_208594/16237734.html",
+          "title": "我的战友，我们的文工团",
+          "publisher": "中国军网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "verification": "indexed-text; direct-open-timeout"
+    },
+    {
+      "personId": "p1685",
+      "personName": "李博良",
+      "organizationId": "wujing-troupe",
+      "status": "historical",
+      "note": "回忆文明确二人离开武空文工团后调入武警文工团。历史归属，不表示现任；中国军网搜索索引完整展示该段，页面直开超时。",
+      "sources": [
+        {
+          "url": "https://www.81.cn/wh_208594/16237734.html",
+          "title": "我的战友，我们的文工团",
+          "publisher": "中国军网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "verification": "indexed-text; direct-open-timeout"
+    },
+    {
+      "personId": "p0944",
+      "personName": "李艺",
+      "organizationId": "kongzheng",
+      "status": "historical",
+      "note": "1977年调入空政歌舞团曲艺队任相声演员；单位大事记另记其1988年获奖作品。不是参加一场空军慰问演出的推断。",
+      "sources": [
+        {
+          "url": "https://ent.sina.com.cn/v/22339.html",
+          "title": "冯巩的专职作家：李艺",
+          "publisher": "新浪旧报刊人物采访",
+          "accessed": "2026-11-14"
+        },
+        {
+          "url": "https://military.people.com.cn/n/2015/1124/c196706-27850692.html",
+          "title": "空军政治部文工团大事记（1950—2014）",
+          "publisher": "人民网军事",
+          "accessed": "2026-11-14",
+          "note": "搜索索引可读，直接打开超时"
+        }
+      ],
+      "startYear": 1977
+    },
+    {
+      "personId": "p1994",
+      "personName": "高洪胜",
+      "organizationId": "haizheng",
+      "status": "historical",
+      "note": "2017年报道明确称海军政治工作部文工团的高洪胜，而非只列演出名单；对应高元钧之子既有人物。",
+      "sources": [
+        {
+          "url": "https://news.cnr.cn/native/gd/20170724/t20170724_523864972.shtml",
+          "title": "欢声笑语在军营精品曲艺演出庆祝建军90周年",
+          "publisher": "央广网",
+          "accessed": "2026-11-14"
+        }
+      ],
+      "evidenceYear": 2017
+    },
+    {
+      "personName": "辛曲",
+      "organizationId": "tianjin",
+      "status": "current",
+      "note": "2026演出宣传逐人简介明确为天津市曲艺团演员，不只是节目单登台者。归属以此日期公开资料为准；不推断劳动合同关系。",
+      "sources": [
+        {
+          "url": "https://zibo.dzwww.com/zbly/202601/t20260119_17323151.htm",
+          "title": "大年初三，天津市曲艺团携相声盛宴亮相淄博保利大剧院",
+          "publisher": "淄博保利大剧院供稿／大众网",
+          "accessed": "2026-11-14",
+          "published": "2026-01-08"
+        }
+      ],
+      "personId": "p1315",
+      "asOf": "2026-01-08"
+    },
+    {
+      "personName": "刘国君",
+      "organizationId": "tianjin",
+      "status": "current",
+      "note": "2026演出宣传逐人简介明确为天津市曲艺团演员，不只是节目单登台者。归属以此日期公开资料为准；不推断劳动合同关系。",
+      "sources": [
+        {
+          "url": "https://zibo.dzwww.com/zbly/202601/t20260119_17323151.htm",
+          "title": "大年初三，天津市曲艺团携相声盛宴亮相淄博保利大剧院",
+          "publisher": "淄博保利大剧院供稿／大众网",
+          "accessed": "2026-11-14",
+          "published": "2026-01-08"
+        }
+      ],
+      "personId": "p1906",
+      "asOf": "2026-01-08"
+    },
+    {
+      "personName": "薛英杰",
+      "organizationId": "tianjin",
+      "status": "current",
+      "note": "2026演出宣传逐人简介明确为天津市曲艺团演员，不只是节目单登台者。归属以此日期公开资料为准；不推断劳动合同关系。",
+      "sources": [
+        {
+          "url": "https://zibo.dzwww.com/zbly/202601/t20260119_17323151.htm",
+          "title": "大年初三，天津市曲艺团携相声盛宴亮相淄博保利大剧院",
+          "publisher": "淄博保利大剧院供稿／大众网",
+          "accessed": "2026-11-14",
+          "published": "2026-01-08"
+        }
+      ],
+      "personId": "p1199",
+      "asOf": "2026-01-08"
+    },
+    {
+      "personName": "李梓庭",
+      "organizationId": "tianjin",
+      "status": "current",
+      "note": "2026演出宣传逐人简介明确为天津市曲艺团演员，不只是节目单登台者。归属以此日期公开资料为准；不推断劳动合同关系。",
+      "sources": [
+        {
+          "url": "https://zibo.dzwww.com/zbly/202601/t20260119_17323151.htm",
+          "title": "大年初三，天津市曲艺团携相声盛宴亮相淄博保利大剧院",
+          "publisher": "淄博保利大剧院供稿／大众网",
+          "accessed": "2026-11-14",
+          "published": "2026-01-08"
+        }
+      ],
+      "personId": "p1074",
+      "asOf": "2026-01-08"
+    },
+    {
+      "personName": "张天雷",
+      "organizationId": "beijing-quyi",
+      "status": "historical",
+      "note": "2022报道明确其为北京曲艺团艺术生产部主任、相声演员；仅确认当时任职，不能把2022职位直接当2026现任职位。",
+      "sources": [
+        {
+          "url": "https://www.beijing.gov.cn/renwen/sy/whkb/202211/t20221103_2850633.html",
+          "title": "让传统艺术在百姓身边扎根",
+          "publisher": "北京日报／北京市政府",
+          "accessed": "2026-11-14",
+          "published": "2022-11-03"
+        }
+      ],
+      "personId": "p1425",
+      "asOf": "2022-11-03"
+    },
+    {
+      "personName": "陈涌泉",
+      "organizationId": "beijing-quyi",
+      "status": "historical",
+      "note": "2024讣告报道为北京曲艺团演员，1992退休；已故艺术家，不能列current。",
+      "sources": [
+        {
+          "url": "https://www.chinanews.com/cul/2024/04-14/10198607.shtml",
+          "title": "著名相声表演艺术家陈涌泉去世",
+          "publisher": "央视新闻／中新网",
+          "accessed": "2026-11-14",
+          "published": "2024-04-14"
+        }
+      ],
+      "personId": "p0295",
+      "asOf": "2024-04-14"
+    },
+    {
+      "personName": "高凤山",
+      "organizationId": "beijing-quyi",
+      "status": "historical",
+      "note": "曲艺史文章记曾任北京曲艺三团团长、北京曲艺团副团长；历史职务，不推定任期。",
+      "sources": [
+        {
+          "url": "https://news.sina.com.cn/c/2004-07-09/12123656583.shtml",
+          "title": "名家十日谈：市井平民两快板",
+          "publisher": "城市快报，倪钟之／新浪",
+          "accessed": "2026-11-14",
+          "published": "2004-07-09"
+        }
+      ],
+      "personId": "p0159"
+    },
+    {
+      "personName": "魏文亮",
+      "organizationId": "tianjin",
+      "status": "historical",
+      "note": "2026本人采访记1979年调入天津市曲艺团。只标已证实历史归属，不以老艺术家近期助演推定现役在编。",
+      "sources": [
+        {
+          "url": "https://epaper.tianjinwe.com/tjrb/html/2026-09/29/content_143094_3882182.htm",
+          "title": "魏文亮 相声把人逗笑，不算完",
+          "publisher": "天津日报，田莹",
+          "accessed": "2026-11-14",
+          "published": "2026-09-29"
+        }
+      ],
+      "personId": "p0386"
+    },
+    {
+      "personName": "孟祥光",
+      "organizationId": "tianjin",
+      "status": "historical",
+      "note": "2026魏文亮采访记1979年二人调入天津市曲艺团；已故，历史归属。",
+      "sources": [
+        {
+          "url": "https://epaper.tianjinwe.com/tjrb/html/2026-09/29/content_143094_3882182.htm",
+          "title": "魏文亮 相声把人逗笑，不算完",
+          "publisher": "天津日报，田莹",
+          "accessed": "2026-11-14",
+          "published": "2026-09-29"
+        }
+      ],
+      "personId": "p0643"
+    },
+    {
+      "personName": "杨佳东",
+      "organizationId": "tianjin",
+      "status": "current",
+      "note": "2026演出宣传逐人简介明确为天津市曲艺团演员，不只是节目单登台者。归属以此日期公开资料为准；不推断劳动合同关系。",
+      "sources": [
+        {
+          "url": "https://zibo.dzwww.com/zbly/202601/t20260119_17323151.htm",
+          "title": "大年初三，天津市曲艺团携相声盛宴亮相淄博保利大剧院",
+          "publisher": "淄博保利大剧院供稿／大众网",
+          "accessed": "2026-11-14",
+          "published": "2026-01-08"
+        }
+      ],
+      "asOf": "2026-01-08"
+    },
+    {
+      "personName": "张弛",
+      "organizationId": "tianjin",
+      "status": "current",
+      "note": "2026演出宣传逐人简介明确为天津市曲艺团演员，不只是节目单登台者。归属以此日期公开资料为准；不推断劳动合同关系。简介另称相声队队长。",
+      "sources": [
+        {
+          "url": "https://zibo.dzwww.com/zbly/202601/t20260119_17323151.htm",
+          "title": "大年初三，天津市曲艺团携相声盛宴亮相淄博保利大剧院",
+          "publisher": "淄博保利大剧院供稿／大众网",
+          "accessed": "2026-11-14",
+          "published": "2026-01-08"
+        }
+      ],
+      "asOf": "2026-01-08"
+    },
+    {
+      "personName": "崔哲",
+      "organizationId": "tianjin",
+      "status": "current",
+      "note": "2026演出宣传逐人简介明确为天津市曲艺团演员，不只是节目单登台者。归属以此日期公开资料为准；不推断劳动合同关系。",
+      "sources": [
+        {
+          "url": "https://zibo.dzwww.com/zbly/202601/t20260119_17323151.htm",
+          "title": "大年初三，天津市曲艺团携相声盛宴亮相淄博保利大剧院",
+          "publisher": "淄博保利大剧院供稿／大众网",
+          "accessed": "2026-11-14",
+          "published": "2026-01-08"
+        }
+      ],
+      "asOf": "2026-01-08"
+    },
+    {
+      "personName": "曹学辉",
+      "organizationId": "tianjin",
+      "status": "current",
+      "note": "2026演出宣传逐人简介明确为天津市曲艺团演员，不只是节目单登台者。归属以此日期公开资料为准；不推断劳动合同关系。",
+      "sources": [
+        {
+          "url": "https://zibo.dzwww.com/zbly/202601/t20260119_17323151.htm",
+          "title": "大年初三，天津市曲艺团携相声盛宴亮相淄博保利大剧院",
+          "publisher": "淄博保利大剧院供稿／大众网",
+          "accessed": "2026-11-14",
+          "published": "2026-01-08"
+        }
+      ],
+      "asOf": "2026-01-08"
+    },
+    {
+      "personName": "李小强",
+      "organizationId": "tianjin",
+      "status": "current",
+      "note": "2026演出宣传逐人简介明确为天津市曲艺团演员，不只是节目单登台者。归属以此日期公开资料为准；不推断劳动合同关系。",
+      "sources": [
+        {
+          "url": "https://zibo.dzwww.com/zbly/202601/t20260119_17323151.htm",
+          "title": "大年初三，天津市曲艺团携相声盛宴亮相淄博保利大剧院",
+          "publisher": "淄博保利大剧院供稿／大众网",
+          "accessed": "2026-11-14",
+          "published": "2026-01-08"
+        }
+      ],
+      "asOf": "2026-01-08"
+    },
+    {
+      "personName": "亢立飞",
+      "organizationId": "beijing-quyi",
+      "status": "current",
+      "note": "2026报道直接称北京曲艺团演员；现库未发现同名节点，保留名册条目，不建图谱边。",
+      "sources": [
+        {
+          "url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202601/t20260122_4455292.html",
+          "title": "京津冀文艺演出启动 春节期间350场活动文化惠民",
+          "publisher": "北京日报／北京市政府",
+          "accessed": "2026-11-14",
+          "published": "2026-01-22"
+        }
+      ],
+      "asOf": "2026-01-22"
+    },
+    {
+      "personName": "李涵",
+      "organizationId": "beijing-quyi",
+      "status": "current",
+      "note": "2026经开区报道明确北京曲艺团青年演员；现库未找到同名节点，不与其他含涵名字混并。",
+      "sources": [
+        {
+          "url": "https://kfqgw.beijing.gov.cn/ywdt/gsprcgd/lxyz/202610/t20261021_4913043.html",
+          "title": "将曲艺舞台搬进城市楼宇空间 亦笑倾城曲艺剧场金秋专场将开演",
+          "publisher": "北京经济技术开发区",
+          "accessed": "2026-11-14",
+          "published": "2026-10-21"
+        }
+      ],
+      "asOf": "2026-10-21"
+    },
+    {
+      "personName": "郭明达",
+      "organizationId": "tianjin",
+      "evidenceType": "performance_only",
+      "note": "只出现在2026淄博专场节目单，没有本团演员个人简介；不得单凭此创建成员归属。",
+      "sources": [
+        {
+          "url": "https://zibo.dzwww.com/zbly/202601/t20260119_17323151.htm",
+          "title": "大年初三，天津市曲艺团携相声盛宴亮相淄博保利大剧院",
+          "publisher": "淄博保利大剧院供稿／大众网",
+          "accessed": "2026-11-14",
+          "published": "2026-01-08"
+        }
+      ],
+      "status": "performance"
+    },
+    {
+      "personName": "苏栩",
+      "organizationId": "tianjin",
+      "evidenceType": "performance_only",
+      "note": "只出现在2026淄博专场节目单，没有本团演员个人简介；不得单凭此创建成员归属。",
+      "sources": [
+        {
+          "url": "https://zibo.dzwww.com/zbly/202601/t20260119_17323151.htm",
+          "title": "大年初三，天津市曲艺团携相声盛宴亮相淄博保利大剧院",
+          "publisher": "淄博保利大剧院供稿／大众网",
+          "accessed": "2026-11-14",
+          "published": "2026-01-08"
+        }
+      ],
+      "status": "performance"
+    },
+    {
+      "personId": "p1119",
+      "personName": "高晓攀",
+      "organizationId": "xiha",
+      "status": "historical",
+      "asOf": "2024-07-30",
+      "evidenceKind": "official_member_bio",
+      "note": "官方演出预告除节目单外，明确高晓攀为创始人、尤宪超为实力成员；仅确认截至报道日，不当作完整现任名单。",
+      "sources": [
+        {
+          "url": "https://m.thepaper.cn/newsDetail_forward_28254538",
+          "title": "看了演唱会，不妨再听个相声",
+          "publisher": "椒江发布（区传媒中心官方账号，来源新府城小雷达）",
+          "published": "2024-07-30",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "personId": "p1283",
+      "personName": "尤宪超",
+      "organizationId": "xiha",
+      "status": "historical",
+      "asOf": "2024-07-30",
+      "evidenceKind": "official_member_bio",
+      "note": "官方演出预告除节目单外，明确高晓攀为创始人、尤宪超为实力成员；仅确认截至报道日，不当作完整现任名单。",
+      "sources": [
+        {
+          "url": "https://m.thepaper.cn/newsDetail_forward_28254538",
+          "title": "看了演唱会，不妨再听个相声",
+          "publisher": "椒江发布（区传媒中心官方账号，来源新府城小雷达）",
+          "published": "2024-07-30",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "personId": "p2001",
+      "personName": "刘宇钊",
+      "organizationId": "xiha",
+      "status": "historical",
+      "asOf": "2016-12-05",
+      "evidenceKind": "primary_reporting_member_identification",
+      "note": "2016年五棵松剧场开业报道明确称为嘻哈包袱铺演员；仅确认当时归属。",
+      "sources": [
+        {
+          "url": "https://ent.cnr.cn/gd/20161205/t20161205_523304677.shtml",
+          "title": "嘻哈包袱铺开新剧场 高晓攀透露多个节目入围春晚",
+          "publisher": "中新网记者张曦／央广网",
+          "published": "2016-12-05",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "personId": "p0879",
+      "personName": "张伯鑫",
+      "organizationId": "xiha",
+      "status": "historical",
+      "asOf": "2016-12-05",
+      "evidenceKind": "primary_reporting_member_identification",
+      "note": "2016年五棵松剧场开业报道明确称为嘻哈包袱铺演员；仅确认当时归属。",
+      "sources": [
+        {
+          "url": "https://ent.cnr.cn/gd/20161205/t20161205_523304677.shtml",
+          "title": "嘻哈包袱铺开新剧场 高晓攀透露多个节目入围春晚",
+          "publisher": "中新网记者张曦／央广网",
+          "published": "2016-12-05",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "personId": "p1190",
+      "personName": "刘春山",
+      "organizationId": "xiha",
+      "status": "historical",
+      "asOf": "2016-12-05",
+      "evidenceKind": "primary_reporting_member_identification",
+      "note": "2016年五棵松剧场开业报道明确称为嘻哈包袱铺演员；仅确认当时归属。",
+      "sources": [
+        {
+          "url": "https://ent.cnr.cn/gd/20161205/t20161205_523304677.shtml",
+          "title": "嘻哈包袱铺开新剧场 高晓攀透露多个节目入围春晚",
+          "publisher": "中新网记者张曦／央广网",
+          "published": "2016-12-05",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "personId": "p1332",
+      "personName": "许健",
+      "organizationId": "xiha",
+      "status": "historical",
+      "asOf": "2016-12-05",
+      "evidenceKind": "primary_reporting_member_identification",
+      "note": "2016年五棵松剧场开业报道明确称为嘻哈包袱铺演员；仅确认当时归属。",
+      "sources": [
+        {
+          "url": "https://ent.cnr.cn/gd/20161205/t20161205_523304677.shtml",
+          "title": "嘻哈包袱铺开新剧场 高晓攀透露多个节目入围春晚",
+          "publisher": "中新网记者张曦／央广网",
+          "published": "2016-12-05",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "personId": "p2002",
+      "personName": "程磊",
+      "organizationId": "xiha",
+      "status": "historical",
+      "asOf": "2016-12-05",
+      "evidenceKind": "primary_reporting_member_identification",
+      "note": "2016年五棵松剧场开业报道明确称为嘻哈包袱铺演员；仅确认当时归属。",
+      "sources": [
+        {
+          "url": "https://ent.cnr.cn/gd/20161205/t20161205_523304677.shtml",
+          "title": "嘻哈包袱铺开新剧场 高晓攀透露多个节目入围春晚",
+          "publisher": "中新网记者张曦／央广网",
+          "published": "2016-12-05",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "personId": "p0376",
+      "personName": "崔琦",
+      "organizationId": "xingye",
+      "status": "historical",
+      "asOf": null,
+      "evidenceKind": "official_tourism_roster",
+      "note": "北京文旅介绍列入该会馆演员阵容，页面未标发布日期；只作已公开的旧名录记录，不能作为2026现任依据。",
+      "sources": [
+        {
+          "url": "https://s.visitbeijing.com.cn/attraction/120282",
+          "title": "星夜相声会馆",
+          "publisher": "北京旅游网",
+          "published": null,
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "personId": "p0461",
+      "personName": "王文林",
+      "organizationId": "xingye",
+      "status": "historical",
+      "asOf": null,
+      "evidenceKind": "official_tourism_roster",
+      "note": "北京文旅介绍列入该会馆演员阵容，页面未标发布日期；只作已公开的旧名录记录，不能作为2026现任依据。",
+      "sources": [
+        {
+          "url": "https://s.visitbeijing.com.cn/attraction/120282",
+          "title": "星夜相声会馆",
+          "publisher": "北京旅游网",
+          "published": null,
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "personId": "p0598",
+      "personName": "康松广",
+      "organizationId": "xingye",
+      "status": "historical",
+      "asOf": null,
+      "evidenceKind": "official_tourism_roster",
+      "note": "北京文旅介绍列入该会馆演员阵容，页面未标发布日期；只作已公开的旧名录记录，不能作为2026现任依据。",
+      "sources": [
+        {
+          "url": "https://s.visitbeijing.com.cn/attraction/120282",
+          "title": "星夜相声会馆",
+          "publisher": "北京旅游网",
+          "published": null,
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "personId": "p0686",
+      "personName": "靳佩良",
+      "organizationId": "xingye",
+      "status": "historical",
+      "asOf": null,
+      "evidenceKind": "official_tourism_roster",
+      "note": "北京文旅介绍列入该会馆演员阵容，页面未标发布日期；只作已公开的旧名录记录，不能作为2026现任依据。",
+      "sources": [
+        {
+          "url": "https://s.visitbeijing.com.cn/attraction/120282",
+          "title": "星夜相声会馆",
+          "publisher": "北京旅游网",
+          "published": null,
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "personId": "p1109",
+      "personName": "王玥波",
+      "organizationId": "xingye",
+      "status": "historical",
+      "asOf": null,
+      "evidenceKind": "official_tourism_roster",
+      "note": "北京文旅介绍列入该会馆演员阵容，页面未标发布日期；只作已公开的旧名录记录，不能作为2026现任依据。",
+      "sources": [
+        {
+          "url": "https://s.visitbeijing.com.cn/attraction/120282",
+          "title": "星夜相声会馆",
+          "publisher": "北京旅游网",
+          "published": null,
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "personId": "p1699",
+      "personName": "徐德亮",
+      "organizationId": "xingye",
+      "status": "historical",
+      "asOf": null,
+      "evidenceKind": "official_tourism_roster",
+      "note": "北京文旅介绍列入该会馆演员阵容，页面未标发布日期；只作已公开的旧名录记录，不能作为2026现任依据。",
+      "sources": [
+        {
+          "url": "https://s.visitbeijing.com.cn/attraction/120282",
+          "title": "星夜相声会馆",
+          "publisher": "北京旅游网",
+          "published": null,
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "personId": "p1377",
+      "personName": "应宁",
+      "organizationId": "xingye",
+      "status": "historical",
+      "asOf": null,
+      "evidenceKind": "official_tourism_roster",
+      "note": "北京文旅介绍列入该会馆演员阵容，页面未标发布日期；只作已公开的旧名录记录，不能作为2026现任依据。",
+      "sources": [
+        {
+          "url": "https://s.visitbeijing.com.cn/attraction/120282",
+          "title": "星夜相声会馆",
+          "publisher": "北京旅游网",
+          "published": null,
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "personId": "p1426",
+      "personName": "郭天翼",
+      "organizationId": "xingye",
+      "status": "historical",
+      "asOf": null,
+      "evidenceKind": "official_tourism_roster",
+      "note": "北京文旅介绍列入该会馆演员阵容，页面未标发布日期；只作已公开的旧名录记录，不能作为2026现任依据。",
+      "sources": [
+        {
+          "url": "https://s.visitbeijing.com.cn/attraction/120282",
+          "title": "星夜相声会馆",
+          "publisher": "北京旅游网",
+          "published": null,
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "personId": "p1425",
+      "personName": "张天雷",
+      "organizationId": "xingye",
+      "status": "historical",
+      "asOf": null,
+      "evidenceKind": "official_tourism_roster",
+      "note": "北京文旅介绍列入该会馆演员阵容，页面未标发布日期；只作已公开的旧名录记录，不能作为2026现任依据。",
+      "sources": [
+        {
+          "url": "https://s.visitbeijing.com.cn/attraction/120282",
+          "title": "星夜相声会馆",
+          "publisher": "北京旅游网",
+          "published": null,
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "personId": "p1218",
+      "personName": "苗阜",
+      "organizationId": "qingqu",
+      "status": "historical",
+      "asOf": "2014-02-14",
+      "evidenceKind": "primary_reporting_member_identification",
+      "note": "报道明确称二人为青曲社当家演员；可佐证历史，不单凭此认定最新组织职务。",
+      "sources": [
+        {
+          "url": "https://paper.people.com.cn/rmrbhwb/html/2014-02/14/content_1390643.htm",
+          "title": "人民日报海外版：苗阜王声",
+          "publisher": "人民日报海外版",
+          "published": "2014-02-14",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "personId": "p1742",
+      "personName": "吕纳超",
+      "organizationId": "qingqu",
+      "status": "performance",
+      "asOf": "2019-07-24",
+      "evidenceKind": "promotional_billing",
+      "note": "名单写吕纳超/张再驰；p1743自带张再驰别名。非官方推广文章，只作为历史演出线索，未达最新官方成员表标准。",
+      "sources": [
+        {
+          "url": "https://ishare.ifeng.com/c/s/7oZFI3S06De",
+          "title": "“大周天”青曲社苗阜王声相声巡演武汉相声专场开启",
+          "publisher": "剧场牛丝／凤凰号（非官方）",
+          "published": "2019-07-24",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "personId": "p1743",
+      "personName": "张纳驰",
+      "organizationId": "qingqu",
+      "status": "performance",
+      "asOf": "2019-07-24",
+      "evidenceKind": "promotional_billing",
+      "note": "名单写吕纳超/张再驰；p1743自带张再驰别名。非官方推广文章，只作为历史演出线索，未达最新官方成员表标准。",
+      "sources": [
+        {
+          "url": "https://ishare.ifeng.com/c/s/7oZFI3S06De",
+          "title": "“大周天”青曲社苗阜王声相声巡演武汉相声专场开启",
+          "publisher": "剧场牛丝／凤凰号（非官方）",
+          "published": "2019-07-24",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "personId": "p1800",
+      "personName": "卢鑫",
+      "organizationId": "xinshili",
+      "status": "historical",
+      "asOf": "2023-04-05",
+      "evidenceKind": "primary_reporting_founder",
+      "note": "现场采访确认二人为共同创立者。2026年出现合作破裂报道，不可由旧创办资料推定二人当前仍同属或仍搭档。",
+      "sources": [
+        {
+          "url": "https://h5.cqliving.com/info/detail/98227471.html?cid=98227471&cqxhlwdc=3f&isOpenApp=isOpenApp",
+          "title": "相声新势力正从陕西走向全国",
+          "publisher": "西部网记者郭佳欣、刘望／华龙网",
+          "published": "2023-04-05",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "personId": "p1793",
+      "personName": "玉浩",
+      "organizationId": "xinshili",
+      "status": "historical",
+      "asOf": "2023-04-05",
+      "evidenceKind": "primary_reporting_founder",
+      "note": "现场采访确认二人为共同创立者。2026年出现合作破裂报道，不可由旧创办资料推定二人当前仍同属或仍搭档。",
+      "sources": [
+        {
+          "url": "https://h5.cqliving.com/info/detail/98227471.html?cid=98227471&cqxhlwdc=3f&isOpenApp=isOpenApp",
+          "title": "相声新势力正从陕西走向全国",
+          "publisher": "西部网记者郭佳欣、刘望／华龙网",
+          "published": "2023-04-05",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "personId": "p1795",
+      "personName": "王朝正",
+      "organizationId": "hulu",
+      "status": "current",
+      "asOf": "2025-08-01",
+      "evidenceKind": "member_identification",
+      "note": "2025天津相声节，天津市文联与人民网天津均明确列为来自葫芦相声社。",
+      "sources": [
+        {
+          "url": "https://tj.people.com.cn/n2/2025/0801/c408648-41310116.html",
+          "title": "第十四届天津相声节8月2日开幕 “相声巴士”即将发车",
+          "publisher": "人民网天津频道",
+          "published": "2025-08-01",
+          "accessed": "2026-11-14"
+        },
+        {
+          "url": "https://www.tjswl.cn/system/2025/08/05/030176393.shtml",
+          "title": "天津市文联：逗乐津门专场",
+          "publisher": "天津市文联",
+          "accessed": "2026-11-14",
+          "published": "2025-08-05"
+        }
+      ]
+    },
+    {
+      "personId": "p1791",
+      "personName": "孟庆龙",
+      "organizationId": "hulu",
+      "status": "current",
+      "asOf": "2025-08-01",
+      "evidenceKind": "member_identification",
+      "note": "2025天津相声节，天津市文联与人民网天津均明确列为来自葫芦相声社。",
+      "sources": [
+        {
+          "url": "https://tj.people.com.cn/n2/2025/0801/c408648-41310116.html",
+          "title": "第十四届天津相声节8月2日开幕 “相声巴士”即将发车",
+          "publisher": "人民网天津频道",
+          "published": "2025-08-01",
+          "accessed": "2026-11-14"
+        },
+        {
+          "url": "https://www.tjswl.cn/system/2025/08/05/030176393.shtml",
+          "title": "天津市文联：逗乐津门专场",
+          "publisher": "天津市文联",
+          "accessed": "2026-11-14",
+          "published": "2025-08-05"
+        }
+      ]
+    },
+    {
+      "organizationId": "xiha",
+      "personName": "刘亚群",
+      "status": "performance",
+      "note": "2024椒江演出公开阵容；未在本库联结人物节点，不推定在团。",
+      "sources": [
+        {
+          "url": "https://m.thepaper.cn/newsDetail_forward_28254538",
+          "title": "看了演唱会，不妨再听个相声",
+          "publisher": "椒江发布",
+          "accessed": "2026-11-14",
+          "published": "2024-07-30"
+        }
+      ]
+    },
+    {
+      "organizationId": "xiha",
+      "personName": "刘学艺",
+      "status": "performance",
+      "note": "2024椒江演出公开阵容；未在本库联结人物节点，不推定在团。",
+      "sources": [
+        {
+          "url": "https://m.thepaper.cn/newsDetail_forward_28254538",
+          "title": "看了演唱会，不妨再听个相声",
+          "publisher": "椒江发布",
+          "accessed": "2026-11-14",
+          "published": "2024-07-30"
+        }
+      ]
+    },
+    {
+      "organizationId": "xiha",
+      "personName": "邱延龙",
+      "status": "performance",
+      "note": "2024椒江演出公开阵容；未在本库联结人物节点，不推定在团。",
+      "sources": [
+        {
+          "url": "https://m.thepaper.cn/newsDetail_forward_28254538",
+          "title": "看了演唱会，不妨再听个相声",
+          "publisher": "椒江发布",
+          "accessed": "2026-11-14",
+          "published": "2024-07-30"
+        }
+      ]
+    },
+    {
+      "organizationId": "xiha",
+      "personName": "周广昊",
+      "status": "performance",
+      "note": "2024椒江演出公开阵容；未在本库联结人物节点，不推定在团。",
+      "sources": [
+        {
+          "url": "https://m.thepaper.cn/newsDetail_forward_28254538",
+          "title": "看了演唱会，不妨再听个相声",
+          "publisher": "椒江发布",
+          "accessed": "2026-11-14",
+          "published": "2024-07-30"
+        }
+      ]
+    },
+    {
+      "organizationId": "xiha",
+      "personName": "杨明华",
+      "status": "performance",
+      "note": "2024椒江演出公开阵容；未在本库联结人物节点，不推定在团。",
+      "sources": [
+        {
+          "url": "https://m.thepaper.cn/newsDetail_forward_28254538",
+          "title": "看了演唱会，不妨再听个相声",
+          "publisher": "椒江发布",
+          "accessed": "2026-11-14",
+          "published": "2024-07-30"
+        }
+      ]
+    },
+    {
+      "organizationId": "xiha",
+      "personName": "徐宇泽",
+      "status": "performance",
+      "note": "2024椒江演出公开阵容；未在本库联结人物节点，不推定在团。",
+      "sources": [
+        {
+          "url": "https://m.thepaper.cn/newsDetail_forward_28254538",
+          "title": "看了演唱会，不妨再听个相声",
+          "publisher": "椒江发布",
+          "accessed": "2026-11-14",
+          "published": "2024-07-30"
+        }
+      ]
+    },
+    {
+      "organizationId": "xiha",
+      "personName": "徐宇泽",
+      "status": "historical",
+      "note": "2016年开业报道明确列为嘻哈包袱铺演员；姓名按原文，尚未与图谱人物匹配。",
+      "sources": [
+        {
+          "url": "https://ent.cnr.cn/gd/20161205/t20161205_523304677.shtml",
+          "title": "嘻哈包袱铺北京五棵松新剧场开业",
+          "publisher": "央广网",
+          "accessed": "2026-11-14",
+          "published": "2016-12-05"
+        }
+      ]
+    },
+    {
+      "organizationId": "xiha",
+      "personName": "冯凤禹",
+      "status": "historical",
+      "note": "2016年开业报道明确列为嘻哈包袱铺演员；姓名按原文，尚未与图谱人物匹配。",
+      "sources": [
+        {
+          "url": "https://ent.cnr.cn/gd/20161205/t20161205_523304677.shtml",
+          "title": "嘻哈包袱铺北京五棵松新剧场开业",
+          "publisher": "央广网",
+          "accessed": "2026-11-14",
+          "published": "2016-12-05"
+        }
+      ]
+    },
+    {
+      "organizationId": "xiha",
+      "personName": "刘洪臻",
+      "status": "historical",
+      "note": "2016年开业报道明确列为嘻哈包袱铺演员；姓名按原文，尚未与图谱人物匹配。",
+      "sources": [
+        {
+          "url": "https://ent.cnr.cn/gd/20161205/t20161205_523304677.shtml",
+          "title": "嘻哈包袱铺北京五棵松新剧场开业",
+          "publisher": "央广网",
+          "accessed": "2026-11-14",
+          "published": "2016-12-05"
+        }
+      ]
+    },
+    {
+      "organizationId": "xingye",
+      "personName": "王磊",
+      "status": "historical",
+      "note": "北京文旅旧名录，未注明发布日期，不推断现属。尚未与图谱人物匹配。",
+      "sources": [
+        {
+          "url": "https://s.visitbeijing.com.cn/attraction/120282",
+          "title": "星夜相声会馆",
+          "publisher": "北京旅游网",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "xingye",
+      "personName": "张硕",
+      "status": "historical",
+      "note": "北京文旅旧名录，未注明发布日期，不推断现属。尚未与图谱人物匹配。",
+      "sources": [
+        {
+          "url": "https://s.visitbeijing.com.cn/attraction/120282",
+          "title": "星夜相声会馆",
+          "publisher": "北京旅游网",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "xingye",
+      "personName": "郭阳",
+      "status": "historical",
+      "note": "北京文旅旧名录，未注明发布日期，不推断现属。尚未与图谱人物匹配。",
+      "sources": [
+        {
+          "url": "https://s.visitbeijing.com.cn/attraction/120282",
+          "title": "星夜相声会馆",
+          "publisher": "北京旅游网",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "xingye",
+      "personName": "郭亮",
+      "status": "historical",
+      "note": "北京文旅旧名录，未注明发布日期，不推断现属。尚未与图谱人物匹配。",
+      "sources": [
+        {
+          "url": "https://s.visitbeijing.com.cn/attraction/120282",
+          "title": "星夜相声会馆",
+          "publisher": "北京旅游网",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "xingye",
+      "personName": "刘星",
+      "status": "historical",
+      "note": "北京文旅旧名录，未注明发布日期，不推断现属。尚未与图谱人物匹配。",
+      "sources": [
+        {
+          "url": "https://s.visitbeijing.com.cn/attraction/120282",
+          "title": "星夜相声会馆",
+          "publisher": "北京旅游网",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "xinshili",
+      "personName": "董蛟",
+      "status": "performance",
+      "note": "公开报道确认当场参与；未证实在团。",
+      "sources": [
+        {
+          "url": "https://h5.cqliving.com/info/detail/98227471.html?cid=98227471&cqxhlwdc=3f&isOpenApp=isOpenApp",
+          "title": "相声新势力演出报道",
+          "publisher": "华龙网",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "mingliu",
+      "personName": "谢洪利",
+      "status": "performance",
+      "note": "2025天津相声节报道列作名流茶馆节目演员；未单独证实长期任职。",
+      "sources": [
+        {
+          "url": "https://tj.people.com.cn/n2/2025/0801/c408648-41310116.html",
+          "title": "天津相声节演出活动",
+          "publisher": "人民网天津",
+          "accessed": "2026-11-14",
+          "published": "2025-08-01"
+        }
+      ]
+    },
+    {
+      "organizationId": "mingliu",
+      "personName": "李建峰",
+      "status": "performance",
+      "note": "2025天津相声节报道列作名流茶馆节目演员；未单独证实长期任职。",
+      "sources": [
+        {
+          "url": "https://tj.people.com.cn/n2/2025/0801/c408648-41310116.html",
+          "title": "天津相声节演出活动",
+          "publisher": "人民网天津",
+          "accessed": "2026-11-14",
+          "published": "2025-08-01"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "陈佩斯",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "朱时茂",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "刘伟",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "李金斗",
+      "personId": "p1091",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "李建华",
+      "personId": "p0943",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "巩汉林",
+      "personId": "p0950",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "金珠",
+      "personId": "p0814",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "刘惠",
+      "personId": "p1353",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "李金祥",
+      "personId": "p0946",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "刘全刚",
+      "personId": "p0945",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "刘全和",
+      "personId": "p1358",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "刘全利",
+      "personId": "p1357",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "戴志诚",
+      "personId": "p0854",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "郑健",
+      "personId": "p0853",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "白桦",
+      "personId": "p1354",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "邓小林",
+      "personId": "p1355",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "温淑萍",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "杨蕾",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "郭月",
+      "status": "historical",
+      "note": "官网主要演员页及团史均列名，公开名录未标注生效日期；不单据此确定近期在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        },
+        {
+          "url": "https://www.cnbpat.com/col/col1771/index.html",
+          "title": "主要演员：中国广播说唱团",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "李伟建",
+      "personId": "p1121",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "武宾",
+      "personId": "p1343",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "王宏坤",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "王彤",
+      "personId": "p1396",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "曹随风",
+      "personId": "p1803",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "付强",
+      "personId": "p1433",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "侯冠男",
+      "personId": "p1024",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "白凯南",
+      "personId": "p1395",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "宋宁",
+      "personId": "p1801",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "魏子山",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "贾旭明",
+      "personId": "p1003",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "侯林林",
+      "personId": "p1392",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "赵彦灵",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "董建春",
+      "personId": "p1383",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "李丁",
+      "personId": "p1382",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "金霏",
+      "personId": "p1787",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "陈曦",
+      "personId": "p1228",
+      "status": "historical",
+      "note": "官网团史将其列为该团曲艺名家；只证实已有历史关联，不据此认定当下在职。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1758/index.html",
+          "title": "中国广播说唱团简介与团史",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "王宏坤",
+      "status": "current",
+      "note": "2026年4月艺术团官网报道明确列为中国广播说唱团赴新马演出的演员。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/art/2026/4/22/art_1780_48717.html",
+          "title": "中国广播说唱团赴新马演出",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2026-04-22"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "王彤",
+      "personId": "p1396",
+      "status": "current",
+      "note": "2026年4月艺术团官网报道明确列为中国广播说唱团赴新马演出的演员。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/art/2026/4/22/art_1780_48717.html",
+          "title": "中国广播说唱团赴新马演出",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2026-04-22"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "金霏",
+      "personId": "p1787",
+      "status": "current",
+      "note": "2026年4月艺术团官网报道明确列为中国广播说唱团赴新马演出的演员。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/art/2026/4/22/art_1780_48717.html",
+          "title": "中国广播说唱团赴新马演出",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2026-04-22"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "陈曦",
+      "personId": "p1228",
+      "status": "current",
+      "note": "2026年4月艺术团官网报道明确列为中国广播说唱团赴新马演出的演员。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/art/2026/4/22/art_1780_48717.html",
+          "title": "中国广播说唱团赴新马演出",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2026-04-22"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "赵千惠",
+      "status": "current",
+      "note": "2026年4月艺术团官网报道明确列为中国广播说唱团赴新马演出的演员。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/art/2026/4/22/art_1780_48717.html",
+          "title": "中国广播说唱团赴新马演出",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2026-04-22"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "冯阳",
+      "status": "current",
+      "note": "2026年4月艺术团官网报道明确列为中国广播说唱团赴新马演出的演员。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/art/2026/4/22/art_1780_48717.html",
+          "title": "中国广播说唱团赴新马演出",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2026-04-22"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "窦晨光",
+      "status": "current",
+      "note": "2026年4月艺术团官网报道明确列为中国广播说唱团赴新马演出的演员。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/art/2026/4/22/art_1780_48717.html",
+          "title": "中国广播说唱团赴新马演出",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2026-04-22"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "常鹏旭",
+      "status": "current",
+      "note": "2026年4月艺术团官网报道明确列为中国广播说唱团赴新马演出的演员。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/art/2026/4/22/art_1780_48717.html",
+          "title": "中国广播说唱团赴新马演出",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2026-04-22"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "郭威",
+      "status": "current",
+      "note": "2026年4月艺术团官网报道明确列为中国广播说唱团赴新马演出的演员。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/art/2026/4/22/art_1780_48717.html",
+          "title": "中国广播说唱团赴新马演出",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2026-04-22"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "孙仲秋",
+      "personId": "p1346",
+      "status": "current",
+      "note": "2026年4月艺术团官网报道明确列为中国广播说唱团赴新马演出的演员。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/art/2026/4/22/art_1780_48717.html",
+          "title": "中国广播说唱团赴新马演出",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2026-04-22"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "李伟建",
+      "personId": "p1121",
+      "status": "current",
+      "note": "该团官网主要演员名录列示；2026年该团专场也有演出记录。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1771/index.html",
+          "title": "主要演员：中国广播说唱团",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        },
+        {
+          "url": "https://www.cnbpat.com/art/2026/10/12/art_1781_49404.html",
+          "title": "2026新作品演出圆满落幕",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "武宾",
+      "personId": "p1343",
+      "status": "current",
+      "note": "该团官网主要演员名录列示；2026年该团专场也有演出记录。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/col/col1771/index.html",
+          "title": "主要演员：中国广播说唱团",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14"
+        },
+        {
+          "url": "https://www.cnbpat.com/art/2026/10/12/art_1781_49404.html",
+          "title": "2026新作品演出圆满落幕",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "方清平",
+      "personId": "p1434",
+      "status": "performance",
+      "note": "中国广播艺术团官网列入2026年新作品演出名单；此条只确认参演，不从节目单推断现在归属。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/art/2026/10/12/art_1781_49404.html",
+          "title": "2026新作品演出圆满落幕",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "贾旭明",
+      "personId": "p1003",
+      "status": "performance",
+      "note": "中国广播艺术团官网列入2026年新作品演出名单；此条只确认参演，不从节目单推断现在归属。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/art/2026/10/12/art_1781_49404.html",
+          "title": "2026新作品演出圆满落幕",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "白凯南",
+      "personId": "p1395",
+      "status": "performance",
+      "note": "中国广播艺术团官网列入2026年新作品演出名单；此条只确认参演，不从节目单推断现在归属。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/art/2026/10/12/art_1781_49404.html",
+          "title": "2026新作品演出圆满落幕",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "郑健",
+      "personId": "p0853",
+      "status": "performance",
+      "note": "中国广播艺术团官网列入2026年新作品演出名单；此条只确认参演，不从节目单推断现在归属。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/art/2026/10/12/art_1781_49404.html",
+          "title": "2026新作品演出圆满落幕",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "曹随风",
+      "personId": "p1803",
+      "status": "performance",
+      "note": "中国广播艺术团官网列入2026年新作品演出名单；此条只确认参演，不从节目单推断现在归属。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/art/2026/10/12/art_1781_49404.html",
+          "title": "2026新作品演出圆满落幕",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "李丁",
+      "personId": "p1382",
+      "status": "performance",
+      "note": "中国广播艺术团官网列入2026年新作品演出名单；此条只确认参演，不从节目单推断现在归属。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/art/2026/10/12/art_1781_49404.html",
+          "title": "2026新作品演出圆满落幕",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "侯林林",
+      "personId": "p1392",
+      "status": "performance",
+      "note": "中国广播艺术团官网列入2026年新作品演出名单；此条只确认参演，不从节目单推断现在归属。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/art/2026/10/12/art_1781_49404.html",
+          "title": "2026新作品演出圆满落幕",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "王璐",
+      "status": "performance",
+      "note": "中国广播艺术团官网列入2026年新作品演出名单；此条只确认参演，不从节目单推断现在归属。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/art/2026/10/12/art_1781_49404.html",
+          "title": "2026新作品演出圆满落幕",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "徐涛",
+      "status": "performance",
+      "note": "中国广播艺术团官网列入2026年新作品演出名单；此条只确认参演，不从节目单推断现在归属。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/art/2026/10/12/art_1781_49404.html",
+          "title": "2026新作品演出圆满落幕",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "梁原",
+      "status": "performance",
+      "note": "中国广播艺术团官网列入2026年新作品演出名单；此条只确认参演，不从节目单推断现在归属。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/art/2026/10/12/art_1781_49404.html",
+          "title": "2026新作品演出圆满落幕",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "李鸣宇",
+      "personId": "p1389",
+      "status": "performance",
+      "note": "中国广播艺术团官网列入2026年新作品演出名单；此条只确认参演，不从节目单推断现在归属。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/art/2026/10/12/art_1781_49404.html",
+          "title": "2026新作品演出圆满落幕",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "刘涛滔",
+      "status": "performance",
+      "note": "中国广播艺术团官网列入2026年新作品演出名单；此条只确认参演，不从节目单推断现在归属。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/art/2026/10/12/art_1781_49404.html",
+          "title": "2026新作品演出圆满落幕",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "迟永志",
+      "status": "performance",
+      "note": "中国广播艺术团官网列入2026年新作品演出名单；此条只确认参演，不从节目单推断现在归属。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/art/2026/10/12/art_1781_49404.html",
+          "title": "2026新作品演出圆满落幕",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "organizationId": "broadcast",
+      "personName": "牛群",
+      "personId": "p0735",
+      "status": "historical",
+      "note": "本人访谈记载1993年由北京军区战友文工团转业，调入中国广播艺术团；本人另明确说2000年从说唱团转出。",
+      "sources": [
+        {
+          "url": "https://ent.sina.com.cn/s/m/25108.html",
+          "title": "牛群本人谈调离中国广播说唱团",
+          "publisher": "新浪娱乐",
+          "accessed": "2026-11-14",
+          "published": "2000"
+        }
+      ]
+    },
+    {
+      "organizationId": "rail",
+      "personName": "侯耀文",
+      "personId": "p0415",
+      "status": "historical",
+      "note": "原中国铁路文工团副团长兼说唱团团长。",
+      "sources": [
+        {
+          "url": "https://ent.sina.com.cn/x/2007-01-26/11001426684.html",
+          "title": "中国铁路文工团简介：说唱团",
+          "publisher": "新浪娱乐",
+          "accessed": "2026-11-14",
+          "published": "2007-01-26"
+        },
+        {
+          "url": "https://news.sina.com.cn/o/2007-06-25/063612085896s.shtml",
+          "title": "曲艺界评说侯耀文艺术建树",
+          "publisher": "光明日报",
+          "accessed": "2026-11-14",
+          "published": "2007-06-25"
+        }
+      ]
+    },
+    {
+      "organizationId": "rail",
+      "personName": "石富宽",
+      "personId": "p0374",
+      "status": "historical",
+      "note": "2007年团情介绍明确列为铁路文工团说唱团阵容；不推断现任。",
+      "sources": [
+        {
+          "url": "https://ent.sina.com.cn/x/2007-01-26/11001426684.html",
+          "title": "中国铁路文工团简介：说唱团",
+          "publisher": "新浪娱乐",
+          "accessed": "2026-11-14",
+          "published": "2007-01-26"
+        }
+      ]
+    },
+    {
+      "organizationId": "rail",
+      "personName": "笑林",
+      "personId": "p1009",
+      "status": "historical",
+      "note": "2007年团情介绍明确列为铁路文工团说唱团阵容；不推断现任。",
+      "sources": [
+        {
+          "url": "https://ent.sina.com.cn/x/2007-01-26/11001426684.html",
+          "title": "中国铁路文工团简介：说唱团",
+          "publisher": "新浪娱乐",
+          "accessed": "2026-11-14",
+          "published": "2007-01-26"
+        }
+      ]
+    },
+    {
+      "organizationId": "rail",
+      "personName": "李国盛",
+      "personId": "p0620",
+      "status": "historical",
+      "note": "2007年团情介绍明确列为铁路文工团说唱团阵容；不推断现任。",
+      "sources": [
+        {
+          "url": "https://ent.sina.com.cn/x/2007-01-26/11001426684.html",
+          "title": "中国铁路文工团简介：说唱团",
+          "publisher": "新浪娱乐",
+          "accessed": "2026-11-14",
+          "published": "2007-01-26"
+        }
+      ]
+    },
+    {
+      "organizationId": "rail",
+      "personName": "刘洪沂",
+      "personId": "p0644",
+      "status": "historical",
+      "note": "2007年团情介绍明确列为铁路文工团说唱团阵容；不推断现任。",
+      "sources": [
+        {
+          "url": "https://ent.sina.com.cn/x/2007-01-26/11001426684.html",
+          "title": "中国铁路文工团简介：说唱团",
+          "publisher": "新浪娱乐",
+          "accessed": "2026-11-14",
+          "published": "2007-01-26"
+        }
+      ]
+    },
+    {
+      "organizationId": "rail",
+      "personName": "李嘉存",
+      "personId": "p0871",
+      "status": "historical",
+      "note": "2007年团情介绍明确列为铁路文工团说唱团阵容；不推断现任。",
+      "sources": [
+        {
+          "url": "https://ent.sina.com.cn/x/2007-01-26/11001426684.html",
+          "title": "中国铁路文工团简介：说唱团",
+          "publisher": "新浪娱乐",
+          "accessed": "2026-11-14",
+          "published": "2007-01-26"
+        }
+      ]
+    },
+    {
+      "organizationId": "rail",
+      "personName": "单联丽",
+      "personId": "p0889",
+      "status": "historical",
+      "note": "2007年团情介绍明确列为铁路文工团说唱团阵容；不推断现任。",
+      "sources": [
+        {
+          "url": "https://ent.sina.com.cn/x/2007-01-26/11001426684.html",
+          "title": "中国铁路文工团简介：说唱团",
+          "publisher": "新浪娱乐",
+          "accessed": "2026-11-14",
+          "published": "2007-01-26"
+        }
+      ]
+    },
+    {
+      "organizationId": "rail",
+      "personName": "赵伟洲",
+      "personId": "p0933",
+      "status": "historical",
+      "note": "2007年团情介绍明确列为铁路文工团说唱团阵容；不推断现任。",
+      "sources": [
+        {
+          "url": "https://ent.sina.com.cn/x/2007-01-26/11001426684.html",
+          "title": "中国铁路文工团简介：说唱团",
+          "publisher": "新浪娱乐",
+          "accessed": "2026-11-14",
+          "published": "2007-01-26"
+        }
+      ]
+    },
+    {
+      "organizationId": "rail",
+      "personName": "马云路",
+      "personId": "p0920",
+      "status": "historical",
+      "note": "2007年团情介绍明确列为铁路文工团说唱团阵容；不推断现任。",
+      "sources": [
+        {
+          "url": "https://ent.sina.com.cn/x/2007-01-26/11001426684.html",
+          "title": "中国铁路文工团简介：说唱团",
+          "publisher": "新浪娱乐",
+          "accessed": "2026-11-14",
+          "published": "2007-01-26"
+        }
+      ]
+    },
+    {
+      "organizationId": "rail",
+      "personName": "刘际",
+      "personId": "p0896",
+      "status": "historical",
+      "note": "2007年团情介绍明确列为铁路文工团说唱团阵容；不推断现任。",
+      "sources": [
+        {
+          "url": "https://ent.sina.com.cn/x/2007-01-26/11001426684.html",
+          "title": "中国铁路文工团简介：说唱团",
+          "publisher": "新浪娱乐",
+          "accessed": "2026-11-14",
+          "published": "2007-01-26"
+        }
+      ]
+    },
+    {
+      "organizationId": "rail",
+      "personName": "陈寒柏",
+      "personId": "p0893",
+      "status": "historical",
+      "note": "2007年团情介绍明确列为铁路文工团说唱团阵容；不推断现任。",
+      "sources": [
+        {
+          "url": "https://ent.sina.com.cn/x/2007-01-26/11001426684.html",
+          "title": "中国铁路文工团简介：说唱团",
+          "publisher": "新浪娱乐",
+          "accessed": "2026-11-14",
+          "published": "2007-01-26"
+        }
+      ]
+    },
+    {
+      "organizationId": "rail",
+      "personName": "含笑",
+      "status": "historical",
+      "note": "2007年团情介绍明确列为铁路文工团说唱团阵容；不推断现任。",
+      "sources": [
+        {
+          "url": "https://ent.sina.com.cn/x/2007-01-26/11001426684.html",
+          "title": "中国铁路文工团简介：说唱团",
+          "publisher": "新浪娱乐",
+          "accessed": "2026-11-14",
+          "published": "2007-01-26"
+        }
+      ]
+    },
+    {
+      "organizationId": "rail",
+      "personName": "奇志",
+      "personId": "p0897",
+      "status": "historical",
+      "note": "2009年同时期演出报道明确区分该团演员与特邀嘉宾；这里只收列明的团内演员，不推断现任。",
+      "sources": [
+        {
+          "url": "https://news.sina.com.cn/o/2009-12-13/233519251661.shtml",
+          "title": "中国铁路文工团说唱团将推出新相声晚会",
+          "publisher": "中国新闻网／新浪",
+          "accessed": "2026-11-14",
+          "published": "2009-12-13"
+        }
+      ]
+    },
+    {
+      "organizationId": "rail",
+      "personName": "王敏",
+      "status": "historical",
+      "note": "2009年同时期演出报道明确区分该团演员与特邀嘉宾；这里只收列明的团内演员，不推断现任。",
+      "sources": [
+        {
+          "url": "https://news.sina.com.cn/o/2009-12-13/233519251661.shtml",
+          "title": "中国铁路文工团说唱团将推出新相声晚会",
+          "publisher": "中国新闻网／新浪",
+          "accessed": "2026-11-14",
+          "published": "2009-12-13"
+        }
+      ]
+    },
+    {
+      "organizationId": "rail",
+      "personName": "高玉庆",
+      "personId": "p0891",
+      "status": "historical",
+      "note": "2009年同时期演出报道明确区分该团演员与特邀嘉宾；这里只收列明的团内演员，不推断现任。",
+      "sources": [
+        {
+          "url": "https://news.sina.com.cn/o/2009-12-13/233519251661.shtml",
+          "title": "中国铁路文工团说唱团将推出新相声晚会",
+          "publisher": "中国新闻网／新浪",
+          "accessed": "2026-11-14",
+          "published": "2009-12-13"
+        }
+      ]
+    },
+    {
+      "organizationId": "rail",
+      "personName": "牛成志",
+      "personId": "p1048",
+      "status": "historical",
+      "note": "2009年同时期演出报道明确区分该团演员与特邀嘉宾；这里只收列明的团内演员，不推断现任。",
+      "sources": [
+        {
+          "url": "https://news.sina.com.cn/o/2009-12-13/233519251661.shtml",
+          "title": "中国铁路文工团说唱团将推出新相声晚会",
+          "publisher": "中国新闻网／新浪",
+          "accessed": "2026-11-14",
+          "published": "2009-12-13"
+        }
+      ]
+    },
+    {
+      "organizationId": "rail",
+      "personName": "杨进明",
+      "personId": "p0997",
+      "status": "historical",
+      "note": "2009年同时期演出报道明确区分该团演员与特邀嘉宾；这里只收列明的团内演员，不推断现任。",
+      "sources": [
+        {
+          "url": "https://news.sina.com.cn/o/2009-12-13/233519251661.shtml",
+          "title": "中国铁路文工团说唱团将推出新相声晚会",
+          "publisher": "中国新闻网／新浪",
+          "accessed": "2026-11-14",
+          "published": "2009-12-13"
+        }
+      ]
+    },
+    {
+      "organizationId": "rail",
+      "personName": "刘捷",
+      "personId": "p0899",
+      "status": "historical",
+      "note": "2009年同时期演出报道明确区分该团演员与特邀嘉宾；这里只收列明的团内演员，不推断现任。",
+      "sources": [
+        {
+          "url": "https://news.sina.com.cn/o/2009-12-13/233519251661.shtml",
+          "title": "中国铁路文工团说唱团将推出新相声晚会",
+          "publisher": "中国新闻网／新浪",
+          "accessed": "2026-11-14",
+          "published": "2009-12-13"
+        }
+      ]
+    },
+    {
+      "organizationId": "rail",
+      "personName": "张伟",
+      "status": "historical",
+      "note": "2009年同时期演出报道明确区分该团演员与特邀嘉宾；这里只收列明的团内演员，不推断现任。",
+      "sources": [
+        {
+          "url": "https://news.sina.com.cn/o/2009-12-13/233519251661.shtml",
+          "title": "中国铁路文工团说唱团将推出新相声晚会",
+          "publisher": "中国新闻网／新浪",
+          "accessed": "2026-11-14",
+          "published": "2009-12-13"
+        }
+      ]
+    },
+    {
+      "organizationId": "rail",
+      "personName": "刘颖",
+      "status": "historical",
+      "note": "2009年同时期演出报道明确区分该团演员与特邀嘉宾；这里只收列明的团内演员，不推断现任。",
+      "sources": [
+        {
+          "url": "https://news.sina.com.cn/o/2009-12-13/233519251661.shtml",
+          "title": "中国铁路文工团说唱团将推出新相声晚会",
+          "publisher": "中国新闻网／新浪",
+          "accessed": "2026-11-14",
+          "published": "2009-12-13"
+        }
+      ]
+    },
+    {
+      "organizationId": "rail",
+      "personName": "张浩南",
+      "personId": "p1347",
+      "status": "historical",
+      "note": "2009年同时期演出报道明确区分该团演员与特邀嘉宾；这里只收列明的团内演员，不推断现任。",
+      "sources": [
+        {
+          "url": "https://news.sina.com.cn/o/2009-12-13/233519251661.shtml",
+          "title": "中国铁路文工团说唱团将推出新相声晚会",
+          "publisher": "中国新闻网／新浪",
+          "accessed": "2026-11-14",
+          "published": "2009-12-13"
+        }
+      ]
+    },
+    {
+      "organizationId": "rail",
+      "personName": "贾仑",
+      "personId": "p0888",
+      "status": "historical",
+      "note": "中国广播网人物简介确认1981年进入中国铁路文工团说唱团。报道用名贾伦。",
+      "sources": [
+        {
+          "url": "https://wyzs.cnr.cn/qwfb/200907/t20090722_505407363.shtml",
+          "title": "相声演员介绍——《相声乐苑》",
+          "publisher": "中国广播网",
+          "accessed": "2026-11-14",
+          "published": "2009-07-22"
+        }
+      ]
+    },
+    {
+      "organizationId": "rail",
+      "personName": "侯耀华",
+      "personId": "p0734",
+      "status": "performance",
+      "note": "2009年铁路文工团说唱团相声晚会特邀嘉宾，仅记录参演，不列作团员。",
+      "sources": [
+        {
+          "url": "https://news.sina.com.cn/o/2009-12-13/233519251661.shtml",
+          "title": "中国铁路文工团说唱团将推出新相声晚会",
+          "publisher": "中国新闻网／新浪",
+          "accessed": "2026-11-14",
+          "published": "2009-12-13"
+        }
+      ]
+    },
+    {
+      "organizationId": "rail",
+      "personName": "师胜杰",
+      "personId": "p0546",
+      "status": "performance",
+      "note": "2009年铁路文工团说唱团相声晚会特邀嘉宾，仅记录参演，不列作团员。",
+      "sources": [
+        {
+          "url": "https://news.sina.com.cn/o/2009-12-13/233519251661.shtml",
+          "title": "中国铁路文工团说唱团将推出新相声晚会",
+          "publisher": "中国新闻网／新浪",
+          "accessed": "2026-11-14",
+          "published": "2009-12-13"
+        }
+      ]
+    },
+    {
+      "organizationId": "acftu",
+      "personName": "陈印泉",
+      "personId": "p1326",
+      "status": "historical",
+      "note": "2024年非遗相声大会官方节目明确署名为中华全国总工会文工团演员；不推断现任。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/art/2024/2/25/art_1780_42820.html",
+          "title": "第五届非遗相声大会",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2024-02-25"
+        }
+      ]
+    },
+    {
+      "organizationId": "acftu",
+      "personName": "侯振鹏",
+      "personId": "p1378",
+      "status": "historical",
+      "note": "2024年非遗相声大会官方节目明确署名为中华全国总工会文工团演员；不推断现任。",
+      "sources": [
+        {
+          "url": "https://www.cnbpat.com/art/2024/2/25/art_1780_42820.html",
+          "title": "第五届非遗相声大会",
+          "publisher": "中国广播艺术团",
+          "accessed": "2026-11-14",
+          "published": "2024-02-25"
+        }
+      ]
+    },
+    {
+      "organizationId": "daduo",
+      "personName": "李寅飞",
+      "personId": "p1381",
+      "status": "historical",
+      "note": "2015年《文艺报》现场报道明确列作大逗相声社演员；不推断现任。",
+      "sources": [
+        {
+          "url": "https://image.chinawriter.com.cn/61/2015/1216/U3875P843T61D1536F786DT20151216064326.pdf",
+          "title": "2015年全国相声小品优秀节目展演报道",
+          "publisher": "文艺报",
+          "accessed": "2026-11-14",
+          "published": "2015-12-16"
+        }
+      ]
+    },
+    {
+      "organizationId": "daduo",
+      "personName": "叶蓬",
+      "personId": "p1792",
+      "status": "historical",
+      "note": "2015年《文艺报》现场报道明确列作大逗相声社演员；不推断现任。",
+      "sources": [
+        {
+          "url": "https://image.chinawriter.com.cn/61/2015/1216/U3875P843T61D1536F786DT20151216064326.pdf",
+          "title": "2015年全国相声小品优秀节目展演报道",
+          "publisher": "文艺报",
+          "accessed": "2026-11-14",
+          "published": "2015-12-16"
+        }
+      ]
+    },
+    {
+      "organizationId": "daduo",
+      "personName": "董建春",
+      "personId": "p1383",
+      "status": "historical",
+      "note": "2015年《文艺报》现场报道明确列作大逗相声社演员；不推断现任。",
+      "sources": [
+        {
+          "url": "https://image.chinawriter.com.cn/61/2015/1216/U3875P843T61D1536F786DT20151216064326.pdf",
+          "title": "2015年全国相声小品优秀节目展演报道",
+          "publisher": "文艺报",
+          "accessed": "2026-11-14",
+          "published": "2015-12-16"
+        }
+      ]
+    },
+    {
+      "organizationId": "daduo",
+      "personName": "李丁",
+      "personId": "p1382",
+      "status": "historical",
+      "note": "2015年《文艺报》现场报道明确列作大逗相声社演员；不推断现任。",
+      "sources": [
+        {
+          "url": "https://image.chinawriter.com.cn/61/2015/1216/U3875P843T61D1536F786DT20151216064326.pdf",
+          "title": "2015年全国相声小品优秀节目展演报道",
+          "publisher": "文艺报",
+          "accessed": "2026-11-14",
+          "published": "2015-12-16"
+        }
+      ]
+    },
+    {
+      "organizationId": "tingyun",
+      "personName": "刘云天",
+      "personId": "p1263",
+      "status": "current",
+      "note": "2026年国庆北京专场主办方资料将刘云天列为听云轩主力，而非泛列当场嘉宾；2014年进驻老舍茶馆发布时亦与曹云金同场受访。此为公开阵容，不等同人事名册。",
+      "sources": [
+        {
+          "url": "https://goupiaotong.cn/mobile/Product/65007.shtml",
+          "title": "2026年听云轩北京国庆专场",
+          "publisher": "购票通（主办方节目资料）",
+          "accessed": "2026-11-14",
+          "published": "2026-10-01"
+        },
+        {
+          "url": "https://m.bjnews.com.cn/detail/155147943614051.html",
+          "title": "曹云金领衔听云轩进驻老舍茶馆",
+          "publisher": "新京报",
+          "accessed": "2026-11-14",
+          "published": "2014"
+        }
+      ]
+    },
+    {
+      "organizationId": "tingyun",
+      "personName": "李林",
+      "personId": "p1247",
+      "status": "historical",
+      "note": "2013年专场演员介绍明确写曾加入听云轩。保留历史身份，不推断现任。",
+      "sources": [
+        {
+          "url": "https://www.piaocn.com/yanchupiao/10405.html",
+          "title": "2013听云轩相声大会节目资料",
+          "publisher": "中国票务在线",
+          "accessed": "2026-11-14",
+          "published": "2013-08-02"
+        }
+      ]
+    },
+    {
+      "organizationId": "tingyun",
+      "personName": "程连升",
+      "status": "historical",
+      "note": "2013年专场演员介绍明确写曾加入听云轩。保留历史身份，不推断现任。",
+      "sources": [
+        {
+          "url": "https://www.piaocn.com/yanchupiao/10405.html",
+          "title": "2013听云轩相声大会节目资料",
+          "publisher": "中国票务在线",
+          "accessed": "2026-11-14",
+          "published": "2013-08-02"
+        }
+      ]
+    },
+    {
+      "organizationId": "tingyun",
+      "personName": "郑思杰",
+      "status": "performance",
+      "note": "2013年听云轩专场公开列为主要演员，单条节目资料不足以推断在团。",
+      "sources": [
+        {
+          "url": "https://www.piaocn.com/yanchupiao/10405.html",
+          "title": "2013听云轩相声大会节目资料",
+          "publisher": "中国票务在线",
+          "accessed": "2026-11-14",
+          "published": "2013-08-02"
+        }
+      ]
+    },
+    {
+      "organizationId": "tingyun",
+      "personName": "刘连喜",
+      "status": "performance",
+      "note": "2013年听云轩专场公开列为主要演员，单条节目资料不足以推断在团。",
+      "sources": [
+        {
+          "url": "https://www.piaocn.com/yanchupiao/10405.html",
+          "title": "2013听云轩相声大会节目资料",
+          "publisher": "中国票务在线",
+          "accessed": "2026-11-14",
+          "published": "2013-08-02"
+        }
+      ]
+    },
+    {
+      "organizationId": "tingyun",
+      "personName": "姜笑",
+      "status": "performance",
+      "note": "2013年听云轩专场公开列为主要演员，单条节目资料不足以推断在团。",
+      "sources": [
+        {
+          "url": "https://www.piaocn.com/yanchupiao/10405.html",
+          "title": "2013听云轩相声大会节目资料",
+          "publisher": "中国票务在线",
+          "accessed": "2026-11-14",
+          "published": "2013-08-02"
+        }
+      ]
+    },
+    {
+      "organizationId": "tingyun",
+      "personName": "杨多杰",
+      "status": "performance",
+      "note": "2013年听云轩专场公开列为主要演员，单条节目资料不足以推断在团。",
+      "sources": [
+        {
+          "url": "https://www.piaocn.com/yanchupiao/10405.html",
+          "title": "2013听云轩相声大会节目资料",
+          "publisher": "中国票务在线",
+          "accessed": "2026-11-14",
+          "published": "2013-08-02"
+        }
+      ]
+    },
+    {
+      "organizationId": "tingyun",
+      "personName": "张金山",
+      "status": "performance",
+      "note": "2013年听云轩专场公开列为主要演员，单条节目资料不足以推断在团。",
+      "sources": [
+        {
+          "url": "https://www.piaocn.com/yanchupiao/10405.html",
+          "title": "2013听云轩相声大会节目资料",
+          "publisher": "中国票务在线",
+          "accessed": "2026-11-14",
+          "published": "2013-08-02"
+        }
+      ]
+    },
+    {
+      "organizationId": "tingyun",
+      "personName": "柳连海",
+      "status": "performance",
+      "note": "2013年听云轩专场公开列为主要演员，单条节目资料不足以推断在团。",
+      "sources": [
+        {
+          "url": "https://www.piaocn.com/yanchupiao/10405.html",
+          "title": "2013听云轩相声大会节目资料",
+          "publisher": "中国票务在线",
+          "accessed": "2026-11-14",
+          "published": "2013-08-02"
+        }
+      ]
+    },
+    {
+      "organizationId": "tingyun",
+      "personName": "王琮",
+      "status": "performance",
+      "note": "2013年听云轩专场公开列为主要演员，单条节目资料不足以推断在团。",
+      "sources": [
+        {
+          "url": "https://www.piaocn.com/yanchupiao/10405.html",
+          "title": "2013听云轩相声大会节目资料",
+          "publisher": "中国票务在线",
+          "accessed": "2026-11-14",
+          "published": "2013-08-02"
+        }
+      ]
+    },
+    {
+      "organizationId": "tingyun",
+      "personName": "王玥波",
+      "personId": "p1109",
+      "status": "performance",
+      "note": "2026年北京生日特别场节目资料点名；只记录该专场，不推定长期归属。",
+      "sources": [
+        {
+          "url": "https://goupiaotong.cn/Product/61056.shtml",
+          "title": "2026听云轩北京生日特别场",
+          "publisher": "购票通（主办方节目资料）",
+          "accessed": "2026-11-14",
+          "published": "2026-01-25"
+        }
+      ]
+    },
+    {
+      "organizationId": "tingyun",
+      "personName": "何沄伟",
+      "personId": "p1210",
+      "status": "performance",
+      "note": "列入2023年北京中秋专场公开演员名单；只记录参演，不推断在团。",
+      "sources": [
+        {
+          "url": "https://m.piaowutong.com/ticket/13/14958.html?orgId=113&siteId=58&v=0902132555",
+          "title": "2023听云轩全国巡演北京中秋专场节目单",
+          "publisher": "票务通",
+          "accessed": "2026-11-14",
+          "published": "2023-09-28"
+        }
+      ]
+    },
+    {
+      "organizationId": "tingyun",
+      "personName": "孙昊",
+      "status": "performance",
+      "note": "列入2023年北京中秋专场公开演员名单；只记录参演，不推断在团。",
+      "sources": [
+        {
+          "url": "https://m.piaowutong.com/ticket/13/14958.html?orgId=113&siteId=58&v=0902132555",
+          "title": "2023听云轩全国巡演北京中秋专场节目单",
+          "publisher": "票务通",
+          "accessed": "2026-11-14",
+          "published": "2023-09-28"
+        }
+      ]
+    },
+    {
+      "organizationId": "tingyun",
+      "personName": "李春熠",
+      "status": "performance",
+      "note": "列入2023年北京中秋专场公开演员名单；只记录参演，不推断在团。",
+      "sources": [
+        {
+          "url": "https://m.piaowutong.com/ticket/13/14958.html?orgId=113&siteId=58&v=0902132555",
+          "title": "2023听云轩全国巡演北京中秋专场节目单",
+          "publisher": "票务通",
+          "accessed": "2026-11-14",
+          "published": "2023-09-28"
+        }
+      ]
+    },
+    {
+      "organizationId": "tingyun",
+      "personName": "郭鸿斌",
+      "status": "performance",
+      "note": "列入2023年北京中秋专场公开演员名单；只记录参演，不推断在团。",
+      "sources": [
+        {
+          "url": "https://m.piaowutong.com/ticket/13/14958.html?orgId=113&siteId=58&v=0902132555",
+          "title": "2023听云轩全国巡演北京中秋专场节目单",
+          "publisher": "票务通",
+          "accessed": "2026-11-14",
+          "published": "2023-09-28"
+        }
+      ]
+    },
+    {
+      "organizationId": "hulu",
+      "personName": "夏璟华",
+      "status": "performance",
+      "note": "2025天津相声节报道列为葫芦相声社节目演员；未与图谱节点匹配。",
+      "sources": [
+        {
+          "url": "https://tj.people.com.cn/n2/2025/0801/c408648-41310116.html",
+          "title": "天津相声节演出活动",
+          "publisher": "人民网天津",
+          "accessed": "2026-11-14",
+          "published": "2025-08-01"
+        }
+      ]
+    },
+    {
+      "organizationId": "tjqxy",
+      "personName": "王文水",
+      "status": "historical",
+      "note": "天津市文联的演出纪实明确注明来自该团体；仅记专场时点公开归属，不据此判定当前人事。",
+      "sources": [
+        {
+          "url": "https://www.tjswl.cn/system/2025/08/05/030176393.shtml",
+          "title": "天津市文联：逗乐津门专场",
+          "publisher": "天津市文联",
+          "accessed": "2026-11-14",
+          "published": "2025-08-05"
+        }
+      ]
+    },
+    {
+      "organizationId": "tjyxf",
+      "personName": "李震霆",
+      "status": "historical",
+      "note": "天津市文联的演出纪实明确注明来自该团体；仅记专场时点公开归属，不据此判定当前人事。",
+      "sources": [
+        {
+          "url": "https://www.tjswl.cn/system/2025/08/05/030176393.shtml",
+          "title": "天津市文联：逗乐津门专场",
+          "publisher": "天津市文联",
+          "accessed": "2026-11-14",
+          "published": "2025-08-05"
+        }
+      ]
+    },
+    {
+      "organizationId": "tjyxf",
+      "personName": "韩翰",
+      "status": "historical",
+      "note": "天津市文联的演出纪实明确注明来自该团体；仅记专场时点公开归属，不据此判定当前人事。",
+      "sources": [
+        {
+          "url": "https://www.tjswl.cn/system/2025/08/05/030176393.shtml",
+          "title": "天津市文联：逗乐津门专场",
+          "publisher": "天津市文联",
+          "accessed": "2026-11-14",
+          "published": "2025-08-05"
+        }
+      ]
+    },
+    {
+      "organizationId": "tjxa",
+      "personName": "王闻千",
+      "status": "historical",
+      "note": "天津市文联的演出纪实明确注明来自该团体；仅记专场时点公开归属，不据此判定当前人事。",
+      "sources": [
+        {
+          "url": "https://www.tjswl.cn/system/2025/08/05/030176393.shtml",
+          "title": "天津市文联：逗乐津门专场",
+          "publisher": "天津市文联",
+          "accessed": "2026-11-14",
+          "published": "2025-08-05"
+        }
+      ]
+    },
+    {
+      "organizationId": "tjxa",
+      "personName": "王奕森",
+      "status": "historical",
+      "note": "天津市文联的演出纪实明确注明来自该团体；仅记专场时点公开归属，不据此判定当前人事。",
+      "sources": [
+        {
+          "url": "https://www.tjswl.cn/system/2025/08/05/030176393.shtml",
+          "title": "天津市文联：逗乐津门专场",
+          "publisher": "天津市文联",
+          "accessed": "2026-11-14",
+          "published": "2025-08-05"
+        }
+      ]
+    },
+    {
+      "organizationId": "hulu",
+      "personName": "夏璟华",
+      "status": "historical",
+      "note": "2025天津相声节，天津市文联明确列为来自葫芦相声社；未与图谱节点匹配，不推断现任。",
+      "sources": [
+        {
+          "url": "https://www.tjswl.cn/system/2025/08/05/030176393.shtml",
+          "title": "天津市文联：逗乐津门专场",
+          "publisher": "天津市文联",
+          "accessed": "2026-11-14",
+          "published": "2025-08-05"
+        }
+      ]
+    },
+    {
+      "organizationId": "mingliu",
+      "personName": "谢洪利",
+      "status": "historical",
+      "note": "2025天津相声节，天津市文联明确列为来自名流茶馆；不推断当前任职。",
+      "sources": [
+        {
+          "url": "https://www.tjswl.cn/system/2025/08/05/030176393.shtml",
+          "title": "天津市文联：逗乐津门专场",
+          "publisher": "天津市文联",
+          "accessed": "2026-11-14",
+          "published": "2025-08-05"
+        }
+      ]
+    },
+    {
+      "organizationId": "mingliu",
+      "personName": "李建峰",
+      "status": "historical",
+      "note": "2025天津相声节，天津市文联明确列为来自名流茶馆；不推断当前任职。",
+      "sources": [
+        {
+          "url": "https://www.tjswl.cn/system/2025/08/05/030176393.shtml",
+          "title": "天津市文联：逗乐津门专场",
+          "publisher": "天津市文联",
+          "accessed": "2026-11-14",
+          "published": "2025-08-05"
+        }
+      ]
+    },
+    {
+      "organizationId": "beijing-quyi",
+      "personName": "迟永志",
+      "status": "historical",
+      "note": "2025天津市文联演出纪实明确称其为北京曲艺团演员，虽在天津作嘉宾，不把本人归入天津演出团体。",
+      "sources": [
+        {
+          "url": "https://www.tjswl.cn/system/2025/08/05/030176393.shtml",
+          "title": "天津市文联：逗乐津门专场",
+          "publisher": "天津市文联",
+          "accessed": "2026-11-14",
+          "published": "2025-08-05"
         }
       ]
     }
