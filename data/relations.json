@@ -32642,5 +32642,21 @@
 ],
 "subtype": "jiebai",
 "id": "r02489"
+},
+{
+"type": "kin",
+"from": "p0084",
+"to": "p0226",
+"detail": "收养 朱阔泉–侯宝林",
+"sources": [
+"https://web.archive.org/web/20181020071803/https://baike.baidu.com/item/%E6%9C%B1%E9%98%94%E6%B3%89"
+],
+"confidence": "disputed",
+"notes": [
+"「收养」",
+"百科快照 https://web.archive.org/web/20181020071803/https://baike.baidu.com/item/%E6%9C%B1%E9%98%94%E6%B3%89"
+],
+"subtype": "guoji",
+"id": "r02490"
 }
 ]
